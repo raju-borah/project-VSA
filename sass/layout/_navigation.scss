@@ -1,0 +1,161 @@
+.navigation
+{
+    z-index: 100;
+
+    // hide checkbox
+    &__checkbox
+    {
+       display:none;
+    }
+    // the plus icon 
+    &__icon
+    {
+        z-index: 102;
+        top: 3rem;
+        right: 1.17rem;
+        position: relative;
+        transition: all .2s;
+        cursor: pointer;
+        
+        &,&::before,&::after
+        {
+            width: 3.5rem;
+            height: .32rem;
+            background-color: $color-black;
+            display: inline-block;
+            position: absolute;    
+        }
+        // roating to sign
+        &::before,&::after
+        {
+        content: "";
+        position: absolute;
+        transition: all .1s;
+        }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+        &::before { top: -.8rem; }
+        &::after { top: .8rem; }
+    }
+
+    // background near the "+"
+    &__background
+    {
+       
+        z-index: 10;
+        height:100%;
+        width: 30rem;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        opacity: 0;
+        background-image: radial-gradient($color-tertiary-light,$color-tertiary-dark);
+        box-shadow: 0 1rem 6rem rgba($color-black,0.99);
+        transform: translateX(70%);     
+        transition: all .3s ;
+    }
+        // background near the "+"
+    &__button
+    {
+        z-index: 102;
+        background-color:$color-white;
+        position: fixed;
+        top: 4rem;
+        right: 4rem;
+
+        height: 6rem;
+        width: 6rem;
+        
+        border-radius: 50%;
+        z-index: 15;
+        box-shadow: 0 1rem 6rem rgba($color-black,0.23);
+        cursor: pointer;
+        transition: all .3s;
+     
+    }
+
+    
+    // icon effect
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+    &__checkbox:checked ~ &__background 
+    {
+        transform: translateX(0);       
+        opacity: 1;
+       
+    }
+    &__checkbox:checked + &__button 
+    {
+        transform: rotate(180deg)scale(0.89);
+       
+    }
+
+
+    // navigation list and nav
+    &__nav
+    {
+      
+        top: 10rem; //to send the list to top
+        right: 0;
+        position:fixed;
+        z-index: 14;
+        opacity: 0;
+        transform: translateX(50%);
+        transition: all .3s;
+    }
+    &__list
+    {
+    list-style: none;
+    text-align: end;
+    margin-top: 10rem;
+   
+    }
+    &__item
+    {
+        color: black;
+        margin: 1.5rem;
+       
+    }
+    &__link
+    {
+        &:link,&:visited
+        {
+        width: 20rem;
+        border-radius: 3rem;
+        background-color: $color-secondary-dark;
+        display:inline-block;
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding: 1rem 1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-black;
+        transition: all .3s;
+        } 
+    }
+    // when the button is clicked
+    &__checkbox:checked ~ &__nav
+    {
+        transform: translateX(-20%);
+        opacity: 1;
+      
+    }
+}

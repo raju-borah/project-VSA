@@ -1,0 +1,56 @@
+.header
+{
+    height: 97vh;
+    position: relative;
+    background-image:linear-gradient(to right bottom,rgba(46, 19, 199, 0.500),rgba(18, 207, 240, 0.400)),url(../img/col.jpg);
+    background-size: cover;
+    background-position: top;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+    
+
+        &__text-box
+        {
+        position: absolute;
+        top: 40%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        } 
+}
+
+
+.heading-primary
+{
+    color:$color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+
+    &--main
+    {
+        
+    display: inline-block;
+    font-size: 8rem;
+    font-weight: 600;
+    letter-spacing: 3rem; 
+    float: right;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+
+    }
+
+    &--sub
+    {
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: 1rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-delay: 0s;
+        animation-timing-function: ease-in
+
+    }
+}

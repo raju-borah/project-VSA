@@ -1,0 +1,36 @@
+.login
+{   height: 97vh;
+   
+
+    &__left
+    {
+        width: 61.84%;
+        height: 97vh;
+        float: left;
+        background-image: linear-gradient(to right bottom,rgba($color-primary-dark,0.1),rgba($color-primary-light,0.39)),
+        url('https://images.unsplash.com/photo-1472121779802-43c68a9f405f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1191&q=80') ;
+        background-size: cover;
+    }
+
+
+    &__right
+    {   
+        float: left;
+        width: 38%;
+        height: 97vh;
+        padding-top: 4rem;
+        padding-left: 1rem;
+        padding-right: 2rem;
+        background-color: $color-white;
+        background-image:linear-gradient(to right bottom,rgba(grey,1),rgba(blue,0.2)),
+        url('https://images.unsplash.com/photo-1541415534056-fad380cd68a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=650&q=80'); 
+    
+        box-shadow: 0 0 3rem rgba($color-black,0.74);
+    }
+        &__logo
+        {
+            font-size: 6rem;
+            text-align: center;
+        }
+   
+ }
