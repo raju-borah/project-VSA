@@ -1,6 +1,7 @@
 /* for button */
 .btn
 {
+    
     &,&:link,&:visited
     {
         text-decoration: none;
@@ -8,7 +9,7 @@
         text-transform: capitalize;
         
         /* for curve */
-        border-radius: 10rem;
+        border-radius: 2rem;
         transition: all .2s;
         position: relative;
 
@@ -18,10 +19,10 @@
     }
     &--white
     {  
-        font-size: 1rem;
+        font-size: 2rem;
         display: inline-block;
         backface-visibility: hidden;
-        padding: .55rem;
+        padding: 1rem;
         color:$color-black;
         background-color: $color-white;
         background-image:linear-gradient(to right,rgba(grey,0.89),rgba(blue,0.12));
@@ -35,7 +36,8 @@
     // button green
     &--green
     {
-        
+        border-radius: 10rem;
+        font-size: 3rem;
         margin-top: 1rem;
         width: 80%;
         background-color: $color-primary-dark;

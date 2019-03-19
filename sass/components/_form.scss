@@ -1,37 +1,53 @@
-.form
-{
-    margin: 3rem;
-    padding: 2rem;
-    background-color:rgba(36, 80, 83, 0.36);
-    box-shadow: 0 2rem 4rem rgba($color-black,.44);
-    &__group
-    {
-        margin: 1rem;
-    }
-    &__input
-    {   display: block;
-        padding: 1rem;
-        width: 95%;
-        border-radius: 3rem;
-        color: $color-primary-dark;
-        &:focus
-        {
-            outline: none;
-            box-shadow: 0 1rem 2rem rgba($color-black,.1);
-            border-bottom: .3rem solid $color-primary;
+.form {
+  margin: 3rem;
+  padding: 2rem;
+  background-color: rgba(36, 80, 83, 0.36);
+  box-shadow: 0 2rem 4rem rgba($color-black, 0.44);
+  &__group {
+    margin: 1rem;
+  }
+  &__input {
+    &__signin {
+      width: 95%;
+      padding: 1rem;
+      display: inline-block;
 
-            &:invalid
-            {
-            border-bottom: .3rem solid $color-secondary-light;
-            }
+      border-radius: 1.2rem;
+      text-decoration-style: none;
+      color: $color-primary-dark;
+      &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+        border-bottom: 0.1rem solid $color-primary;
+
+        &:invalid {
+          border-bottom: 0.1rem solid $color-secondary-light;
         }
+      }
+    }
+    &__signup {
         
+      width: 50rem;
+      padding: 1rem;
+      border-radius: 1.2rem;
+      text-decoration-style: none;
+      color: $color-primary-dark;
+      &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+        border-bottom: 0.3rem solid $color-primary;
+
+        &:invalid {
+          border-bottom: 0.3rem solid $color-secondary-light;
+        }
+      }
     }
-    &__label
-    {   margin-bottom: .2rem;   
-        font-size: 1.5rem;
-        color: $color-white;
-        font-weight: 900;
-        display: inline-block;
-    }
+  }
+  &__label {
+    margin-bottom: 0.2rem;
+    font-size: 1.5rem;
+    color: $color-black;
+    font-weight: 700;
+    display: block;
+  }
 }
