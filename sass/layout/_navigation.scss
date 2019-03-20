@@ -159,3 +159,281 @@
       
     }
 }
+
+
+
+
+
+
+
+//status bar
+.statusBar
+{
+
+    //search box//
+
+    &__full-width
+{
+    width: 100%;
+    box-sizing: border-box;
+
+    
+    &.search
+    {
+        position: relative;
+        background: $color-black;
+        padding: 1rem 10rem;
+        display: none;
+
+    }
+}
+
+   
+&__search-form 
+{
+    position: relative;
+    padding-left: 2rem;
+
+
+    & input
+    {
+    width: 100%;
+    height: 3rem;
+    background: none;
+    border: none;
+    outline: none;
+    color: $color-white;
+    font-size: 3rem;
+
+    
+    &::placeholder
+    {
+        color: rgba($color-white,0.3);
+    }
+
+    }
+
+
+//search bar search icon
+    &::before{
+        content: '\f002';
+        position: absolute;
+        top: 0rem;
+        color: $color-white;
+        font-family: fontAwesome;
+        left: -1rem;
+        font-size: 2rem;
+        cursor: pointer;
+
+    }
+
+
+}
+
+//search bar close icon
+&__close
+{
+    color: $color-white;
+    position: absolute;
+    right: 2rem;
+    top: 0rem;
+    cursor: pointer;
+    font-size: 2rem;
+
+}
+
+
+
+//navbar
+
+&__full-width
+{
+    position: relative;
+    font-size: 1.4rem;
+ 
+
+    &.navbar
+    {
+        z-index: 100;
+        background-image:linear-gradient(to right bottom,rgba(46, 19, 199, 0.500),rgba(18, 207, 240, 0.400));
+        padding: .5rem ;
+        border-radius: 1rem;
+    }
+
+
+}
+
+
+//brand VSA
+&__brand{
+    float: left;
+    color: $color-white;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+
+//list 
+&__list{
+    position: absolute;
+    right: 10%;
+    top: -1%;
+    display: flex;
+    
+   
+}
+
+
+
+//list items
+&__item{
+
+    list-style: none;
+    padding: 0 2rem;
+   
+   
+    
+
+
+    //search icon
+    &--icon
+    {
+        list-style: none;
+        font-size: 2rem;
+        cursor: pointer;
+        border-radius: 1rem;
+      
+       
+
+    }  
+
+    
+    //bell icon
+    &--bell
+    {
+        list-style: none;
+        font-size: 2rem;
+        cursor: pointer;
+        border-radius: 1rem;
+        margin-left: 7rem;
+      
+       
+
+    }  
+
+    
+    //user icon
+    &--user
+    {
+        list-style: none;
+        font-size: 2rem;
+        cursor: pointer;
+        border-radius: 1rem;
+      
+       
+
+    }  
+
+
+}
+
+
+
+
+
+//link a
+&__link
+{
+    display: inline-block;
+    color: $color-white;
+    text-decoration: none;
+    font-size: 2.5rem;
+    margin-top: .4rem;
+
+    &:hover
+    {
+        color: $color-tertiary-dark;
+        border-radius: 1rem;
+        cursor: pointer;
+     
+
+         
+    }
+}
+
+
+//span element
+&__span
+{
+    position: relative;
+    background:$color-black;
+    top: 30px;
+    left: -1rem;
+    font-size: 1.4rem;
+    padding: .3rem;
+    border-radius: .5rem;
+    transition: .5s;
+    z-index: 4;
+    opacity: 0;
+    visibility: hidden;  
+
+
+    //arrow on span element
+    &::before
+    {
+       content: "";
+       position: absolute; 
+       top: -4px;
+       left: 1rem;
+       width: 1rem;
+       height: 1rem;
+       background: $color-black;
+       transform: rotate(45deg);
+       z-index: 1;
+
+    }
+
+}
+
+
+//display spanm element on hover 
+&__link:hover &__span
+{
+    color: $color-white;
+    opacity: 1;
+    visibility: visible;
+    animation-name: ring;
+
+}
+
+
+
+}
+
+
+
+
+//fixed class for navbar
+.fixed
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
