@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- Icon on Title  -->
-    <link rel = "icon" type = "image/png" href = "img/icon.png">
+    <link rel="icon" type="image/png" href="img/icons/login.ico" />
     <!-- css  -->
     <link rel="stylesheet" href="css/style.css">
     <title>Login/Signup</title>
@@ -17,89 +19,103 @@
 <body>
     <!-- Creating Login Section -->
     <section class="login" id="login">
-            <div class="login__left">
-                
-            </div>
-            <div class="login__right">
-                <!-- logo -->
-                <div class="login__logo ">
-                    <i class="fas fa-users font-xxlarge"></i>
-                </div> 
-                <!-- form heading -->
-                <div class="u-margin-bottom-small u-center-text  large-font">
-                        <h1 class="font-exlarge">Sign in</h1>
-                    </div>
+        <div class="login__left">
 
-                <!-- Login form -->
-                <form action="#" class="form ">
-
-                    <!-- creating form group  -->
-                    <div class="form__group">
-                        <label for="email" class="form__label">E-mail</label>
-                        <input type="email" id="signin_email" class="form__input" placeholder="email" required>                       
-                    </div>
-                    <div class="form__group">
-                        <label for="signin_passwd" class="form__label">Password</label>
-                        <input type="password" id="signin_passwd" class="form__input" placeholder="Enter Password" required>
-                    </div>
-                     <div class="u-center-text" >  
-                    <!-- create button -->
-                        <a href="#signup" class="form__group btn btn--white" id="create_account">Create Account</a>
-                    <!-- forget button -->
-                        <a href="#" class="form__group btn btn--white"  id="forget_password">Forget Password</a>  
-                    <!-- login button -->
-                                    
-                        <Button class="btn btn--green " id="signin">Sign In <i class="fas fa-arrow-circle-right"></i></Button>
-                    </div>                      
-                        
-                </form>   
-                  
+        </div>
+        <div class="login__right">
+            <!-- logo -->
+            <div class="login__logo ">
+                <i class="fas fa-users "></i>
             </div>
-           
-    </section>
-    <!-- Create Account section -->
-    <div class="signup" id="signup">       
-                <!-- signup form -->
-         <form action="#" class="signup__form">
-                 <!-- form heading -->
-                <div class="u-margin-bottom-small u-center-text  large-font">
-                    <span>Sign Up</span>             
-                </div>
+            <!-- form heading -->
+            <div class="u-margin-bottom-small u-center-text  large-font">
+                <h1 class="heading_tag">Sign in</h1>
+            </div>
+
+            <!-- Login form -->
+            <form action="#" class="form ">
+
                 <!-- creating form group  -->
                 <div class="form__group">
+                    <label for="email" class="form__label">E-mail</label>
+                    <input type="email" id="signin_email" class="form__input__signin" placeholder="email" required>
+                </div>
+                <div class="form__group">
+                    <label for="signin_passwd" class="form__label">Password</label>
+                    <input type="password" id="signin_passwd" class="form__input__signin" placeholder="Enter Password"
+                        required>
+                </div>
+                <div class="u-center-text">
+                    <!-- create button -->
+                    <a href="#signup" class="form__group btn btn--white" id="create_account">Create Account</a>
+                    <!-- forget button -->
+                    <a href="#" class="form__group btn btn--white" id="forget_password">Forget Password</a>
+                    <!-- login button -->
+
+                    <Button class="btn btn--green " id="signin">Sign In</i></Button>
+
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+    <!-- Create Account section -->
+    <div class="signup" id="signup">
+        <!-- closing button -->
+        <span class="u-end-text">
+            <a href="#login" class=" btn signup__close ">&times;</a>
+        </span>
+        <div class="signup__left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" class="signup__left--img" alt=""/>
+                <h3 class="font-small">Welcome</h3>
+                <p class="font-small">Fun and Exciting Videos !</p>
+                <Button class="btn btn--green " id="signin">Login</i></Button>
+            </div>
+        <!-- signup form -->
+        <form action="#" class="signup__form">
+            <!-- form heading -->
+            <div class="u-margin u-center-text ">
+                <h1 class="heading_tag">SIGN UP</h1>
+            </div>
+            <div class="signup__form--left">
+
+                <!-- creating form group  -->
+                <div class="form__group ">
                     <label for="singup_firstname" class="form__label">FirstName</label>
-                    <input type="text" id="singup_firstname" class="form__input" placeholder="FirstName" required="true">                       
+                    <input type="text" id="singup_firstname" class="form__input__signup" placeholder="FirstName"
+                        required="true">
                 </div>
                 <div class="form__group">
                     <label for="signup_lastname" class="form__label">LastName</label>
-                    <input type="text" id="signup_lastname" class="form__input" placeholder="LastName" required>                       
+                    <input type="text" id="signup_lastname" class="form__input__signup" placeholder="LastName" required>
                 </div>
                 <div class="form__group">
                     <label for="signup_email" class="form__label">E-mail</label>
-                    <input type="email" id="signup_email" class="form__input" placeholder="E-mail" required>                       
+                    <input type="email" id="signup_email" class="form__input__signup" placeholder="E-mail" required>
                 </div>
                 <div class="form__group">
                     <label for="signup_passwd" class="form__label">Password</label>
-                    <input type="password" id="signup_passwd" class="form__input" placeholder="Enter Password" required>
+                    <input type="password" id="signup_passwd" class="form__input__signup" placeholder="Enter Password"
+                        required>
                 </div>
                 <div class="form__group">
                     <label for="signup_confirm_passwd" class="form__label">Confirm Password</label>
-                    <input type="password" id="signup_confirm_passwd" class="form__input" placeholder="Re-Enter Password" required>
+                    <input type="password" id="signup_confirm_passwd" class="form__input__signup"
+                        placeholder="Re-Enter Password" required>
                 </div>
-                
-                <div class="u-center-text u-margin-top-large" >                   
-                    <button class="btn btn--white" id="signup" type="submit">Sign Up <i class="fas fa-arrow-circle-right"></i></button>
+            </div>
+            <!-- button at right  -->
+            <div class="signup__form--right">
+                <div class="u-center-text u-margin-top-large">
+                    <button class="btn btn--white" id="signup" type="submit">Sign Up <i
+                            class="fas fa-arrow-circle-right"></i></button>
                 </div>
-             
-            </form> 
-
-        <!-- right section -->
-        <div class="signup__right">
-             <!-- closing button -->
-             <span class="u-end-text">
-                    <a href="#login" class=" btn signup__close ">&times;</a>
-            </span> 
-        </div>
+            </div>
+        </form>
     </div>
-   </body>
+</body>
+
 </html>

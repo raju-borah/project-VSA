@@ -18,6 +18,12 @@ body{
    
     background-color:$color-white;
 
+    &_tag
+    {
+        font-size: 4rem;
+        text-shadow: 0 1rem 2rem rgba($color-black,0.48);
+     
+    }
 
 
     &__title
