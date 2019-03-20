@@ -6,7 +6,6 @@
     opacity: 1;
     transform: translate(0); } }
 
-<<<<<<< HEAD
 @keyframes ring {
   0% {
     opacity: 1;
@@ -14,13 +13,12 @@
   100% {
     opacity: 1;
     transform: translate(0); } }
-=======
+
 @keyframes moveUpDown {
   0% {
     transform: translateY(0); }
   100% {
     transform: translateY(-20px); } }
->>>>>>> 1a328edb14daa6ab0919fcd383560056ee8e8a89
 
 *,
 *::after,
