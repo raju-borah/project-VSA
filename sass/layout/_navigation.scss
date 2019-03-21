@@ -173,7 +173,7 @@
     //search box//
 
     &__full-width
-{
+    {
     width: 100%;
     box-sizing: border-box;
 
@@ -186,7 +186,7 @@
         display: none;
 
     }
-}
+    }
 
    
 &__search-form 
@@ -255,9 +255,9 @@
     &.navbar
     {
         z-index: 100;
-        background-image:linear-gradient(to right bottom,rgba(46, 19, 199, 0.500),rgba(18, 207, 240, 0.400));
-        padding: .5rem ;
-        border-radius: 1rem;
+        background-color: $color-tertiary-light;
+        padding: 1.5rem ;
+        
     }
 
 

@@ -41,12 +41,14 @@ html {
 body {
   box-sizing: border-box; }
 
+a {
+  text-decoration: none; }
+
 body {
   font-family: "Lato" , sans-serif;
   font-weight: 400;
   /* font-size: 16px;*/
-  line-height: 1.7;
-  padding: 1rem; }
+  line-height: 1.7; }
 
 .heading {
   position: absolute;
@@ -243,10 +245,47 @@ iframe {
     font-weight: 300;
     font-size: 4rem; }
 
+.navigationbar {
+  width: 100%;
+  height: 7rem;
+  background-color: #5643fa;
+  padding: 1rem;
+  transition: all 0.3s ease; }
+  .navigationbar:hover {
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 0.1rem solid #000; }
+  .navigationbar:hover .navbarfont a {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    margin: 1.5rem; }
+    .navigationbar:hover .navbarfont a:hover {
+      color: #5643fa; }
+  .navigationbar--left {
+    width: 30%;
+    float: left; }
+  .navigationbar--mid {
+    width: 40%;
+    float: left;
+    text-align: center; }
+  .navigationbar--right {
+    text-align: end;
+    width: 30%;
+    float: left; }
+
+.navbarfont a {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 1.5rem; }
+  .navbarfont a:hover {
+    color: #5643fa; }
+
 .header {
-  height: 97vh;
+  height: 80vh;
   position: relative;
-  background-image: linear-gradient(to right bottom, rgba(46, 19, 199, 0.5), rgba(18, 207, 240, 0.4)), url(../img/col.jpg);
+  background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.7), rgba(41, 152, 255, 0.4)), url(../../img/newbackground.png);
   background-size: cover;
   background-position: top;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -426,9 +465,8 @@ iframe {
   font-size: 1.4rem; }
   .statusBar__full-width.navbar {
     z-index: 100;
-    background-image: linear-gradient(to right bottom, rgba(46, 19, 199, 0.5), rgba(18, 207, 240, 0.4));
-    padding: .5rem;
-    border-radius: 1rem; }
+    background-color: #2998ff;
+    padding: 1.5rem; }
 
 .statusBar__brand {
   float: left;
@@ -610,19 +648,27 @@ iframe {
     font-size: 8rem;
     text-align: center; }
 
-.upload__container {
-  width: 100%;
-  height: 97vh;
-  padding: 10rem;
-  background-image: radial-gradient(rgba(86, 67, 250, 0.27), rgba(0, 0, 0, 0.38)); }
-
-.upload__videos--card {
-  transform: translate(50%, 0);
-  width: 50%;
-  height: 60vh;
-  padding: 1rem;
-  padding-top: 5rem;
-  border: 2px solid black;
-  box-shadow: 0 1rem 3rem #5643fa;
-  background-color: #fff;
-  filter: blur(0); }
+.upload {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+  .upload__container {
+    width: 100%;
+    height: 100vh;
+    padding: 10rem;
+    background-image: radial-gradient(rgba(86, 67, 250, 0.27), rgba(0, 0, 0, 0.38)); }
+  .upload__videos--card {
+    transform: translate(50%, 0);
+    width: 50%;
+    height: 60vh;
+    padding: 1rem;
+    padding-top: 5rem;
+    border: 2px solid black;
+    box-shadow: 0 1rem 3rem #5643fa;
+    background-color: #fff; }
+  .upload:target {
+    opacity: 1;
+    visibility: visible; }

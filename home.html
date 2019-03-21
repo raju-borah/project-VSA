@@ -8,8 +8,11 @@
 
     <!-- google font style -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Icon on Title  -->
+    <link rel="icon" type="image/png" href="img/download.png" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
+        integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
     <!-- custom css -->
     <link rel="stylesheet" href="css/icon-font.css">
     <link rel="stylesheet" href="css/style.css">
@@ -18,7 +21,21 @@
 </head>
 
 <body>
-
+    <!-- navigation bar -->
+    <div class="navigationbar">
+        <!-- for the left part -->
+        <div class="navbarfont navigationbar--left">
+            <a href="#">Option</a>
+        </div>
+        <!-- name of the Application -->
+        <div class="navbarfont navigationbar--mid"><a href="#">Vidshare </a> </div>
+        <!-- for right option such as search, user profile, upload -->
+        <div class="navbarfont navigationbar--right">
+            <a href="#"> <i class="fas fa-search"></i></a>
+            <a href="#"> <i class="fas fa-user-tie"></i></a>
+            <a href="#upload"> <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i></a>
+        </div>
+    </div>
     <!--heading section-->
     <section class="head">
         <header class="header">
@@ -32,7 +49,7 @@
     </section>
 
     <main class="main">
-
+        <!--   i removed this.....
         <div class="statusBar">
             <div class="statusBar__full-width search">
                 <div class="statusBar__search-form">
@@ -60,15 +77,15 @@
         </div>
 
 
-
-        <section class="navigation">
-            <!-- checkbox -->
+    
+    <section class="navigation">
+             checkbox
             <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
             <label for="navi-toggle" class="navigation__button">
                 <div class="navigation__icon"></div>
             </label>
             <div class="navigation__background"> </div>
-            <!-- navigation nav and list -->
+            navigation nav and list 
             <nav class="navigation__nav">
                 <ul class="navigation__list">
                     <li class="navigation__item"><a href="#" class="navigation__link u-center-text"><i
@@ -81,7 +98,51 @@
                 </ul>
             </nav>
         </section>
+-->
 
+
+        <!-- upload section -->
+        <div class="upload" id="upload">
+            <!-- container -->
+            <div class="upload__container">
+
+
+                <!-- upload videos section -->
+                <div class="upload__videos--card u-center-text ">
+                    <span class="u-end-text">
+                        <a href="/home.html" class="btn btn--close">&times;</a>
+                    </span>
+                    <!-- heading -->
+                    <h1 class="font-medium u-margin-bottom-small">Upload Videos</h1>
+                    <!-- upload button -->
+                    <input type="file" id="upload-file" hidden="hidden" />
+                    <!-- text to display the file name to be uploaded -->
+                    <span id="custom-text">No file Choosen yet !</span>
+                    <button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A
+                        FILE</button>
+
+
+                    <!-- for title -->
+                    <input type="text" class="form__input--upload form__input--upload--1" id="upload-title"
+                        placeholder="Title">
+                    <!-- for description -->
+                    <textarea rows="2" cols="30" class="form__input--upload form__input--upload--1"
+                        id="upload-description">Description</textarea>
+                    <!-- for selecting the category -->
+                    <select id="video-category" class="form__input--upload form__input--upload--2">
+                        <option value="Select Category" selected>Select Category</option>
+                        <option value="learning">Learning</option>
+                        <option value="Events">Events</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="others">Others</option>
+                    </select>
+
+                    <button class="btn btn--upload" type="submit" id="upload-video">Upload</button>
+                </div>
+            </div>
+
+
+        </div>
         <!--slider section-->
         <section class="slider">
             <h1> SLIDER</h1>

@@ -1,6 +1,6 @@
 // upload page
 const realFileBtn = document.getElementById("upload-file");
-const customBtn = document.getElementById("upload-button");
+const customBtn = document.getElementById("choose-video");
 const customText = document.getElementById("custom-text");
 
 // when choose a file button clicked

@@ -1,14 +1,11 @@
 .header
 {
-    height: 97vh;
+    height: 80vh;
     position: relative;
-    background-image:linear-gradient(to right bottom,rgba(46, 19, 199, 0.500),rgba(18, 207, 240, 0.400)),url(../img/col.jpg);
+    background-image:linear-gradient(to right bottom,rgba($color-tertiary-dark, 0.700),rgba($color-tertiary-light, 0.400)),url(../../img/newbackground.png);
     background-size: cover;
     background-position: top;
     box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
-
-
-    
 
         &__text-box
         {
@@ -19,12 +16,7 @@
         text-align: center;
         } 
 
-
-
-
-
 }
-
 
 .heading-primary
 {

@@ -1,0 +1,14 @@
+@mixin navigationbarfonts($color){
+     // font properties
+     a{
+     font-size: 3rem;
+     font-weight: 700;
+     color: $color;
+     margin: 1.5rem;    
+    
+    &:hover{
+        color: $color-tertiary-dark;
+    }
+    }
+    
+}
