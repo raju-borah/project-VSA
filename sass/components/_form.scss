@@ -43,11 +43,12 @@
     }
     // upload page
     &--upload {
+      width: 60%;
       padding: 0.8rem;
       margin: 0.5rem;
-      border: 0.2rem solid $color-grey-dark-3;
+      margin-left: 10rem;
+      border-bottom: 0.2rem solid $color-primary-dark;
       display: block;
-     transform: translateX(14.5rem);
     }
   }
   &__label {
@@ -57,9 +58,4 @@
     font-weight: 700;
     display: block;
   }
-}
-#upload-description {
- 
-  width: 70%;
-  height: 100%;
 }

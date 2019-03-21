@@ -4,28 +4,22 @@
     &__container
     {
         width: 100%;
-        height: 89vh;
+        height: 97vh;
         padding: 10rem;
-
+        background-image: radial-gradient(rgba($color-tertiary-dark,0.27),rgba($color-black,0.38));
+        
     }
-    &__videos
-    {   transform: translate(50%,0);
-      
-        width: 50%;
-        height:20vh;
-        padding: 1rem;
-        padding-top: 5rem;
-        background-image: url(../../img/video.jpg);
-
-    }
-    &__details
-    {
-        text-align: center;
-        font-size: 2.5rem;
+    &__videos--card
+    {   
         transform: translate(50%,0);
         width: 50%;
-        height: 20vh;
+        height:60vh;
         padding: 1rem;
-        
+        padding-top: 5rem;
+        border: 2px solid black;
+        box-shadow: 0 1rem 3rem $color-tertiary-dark;
+        background-color: $color-white;
+        filter: blur(0);
+
     }
 }
