@@ -19,7 +19,6 @@
         outline: none;
         box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
         border-bottom: 0.1rem solid $color-primary;
-
         &:invalid {
           border-bottom: 0.1rem solid $color-secondary-light;
         }

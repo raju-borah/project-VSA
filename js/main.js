@@ -42,6 +42,10 @@ function position(){
     }
 }
 
+
+
+
+
 window.onscroll = function()
 {
     position();
