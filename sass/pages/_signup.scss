@@ -13,7 +13,7 @@
     // left icon
     &__left
     {   
-        margin-left: 3rem;
+        transform: translateX(100%);
         margin-top: 28rem;
         text-align: center;
         float: left;
@@ -30,7 +30,7 @@
         transform: translate(2%,5%);
         border-top-left-radius: 15rem;
         border-bottom-left-radius: 15rem;
-        width: 75%;
+        width: 55%;
         height: 90%;
         padding: 3rem;
         box-shadow: 0 2rem 3rem rgba($color-black,0.77);
@@ -43,8 +43,8 @@
         }
         &--right
         {
-            float: right;
-            transform: translate(-170%,150%);
+            
+            transform: translate(0%,0%);
            
         }
 

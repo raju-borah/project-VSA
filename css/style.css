@@ -60,6 +60,9 @@ body {
     letter-spacing: 1rem;
     text-shadow: 0.2rem 0.2rem 1rem #000000; }
 
+#custom-text {
+  font-size: 2rem; }
+
 .u-center-text {
   text-align: center; }
 
@@ -144,12 +147,22 @@ iframe {
       border-bottom: 0.3rem solid #55c57a; }
       .form__input__signup:focus:invalid {
         border-bottom: 0.3rem solid #ffb900; }
+  .form__input--upload {
+    padding: 0.8rem;
+    margin: 0.5rem;
+    border: 0.2rem solid #333;
+    display: block;
+    transform: translateX(14.5rem); }
   .form__label {
     margin-bottom: 0.2rem;
     font-size: 1.5rem;
     color: #000;
     font-weight: 700;
     display: block; }
+
+#upload-description {
+  width: 70%;
+  height: 100%; }
 
 /* for button */
 .btn {
@@ -160,12 +173,12 @@ iframe {
     text-decoration: none;
     text-transform: capitalize;
     /* for curve */
-    border-radius: 2rem;
     transition: all .2s;
     position: relative;
     border: none;
     cursor: pointer; }
   .btn--white {
+    border-radius: 2rem;
     font-size: 2rem;
     display: inline-block;
     backface-visibility: hidden;
@@ -177,13 +190,23 @@ iframe {
       background-image: none;
       background-color: #fff; }
   .btn--green {
+    border-radius: 2rem;
     border-radius: 10rem;
     font-size: 3rem;
     margin-top: 1rem;
     width: 80%;
+    display: block;
     background-color: #28b485;
     color: #fff;
     padding: 1rem; }
+  .btn--upload {
+    width: 15rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.2rem solid #000;
+    background-color: #28b485;
+    color: #fff;
+    font-size: 1.6rem; }
   .btn:hover {
     /* shadow when hover */
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -533,7 +556,7 @@ iframe {
     }
     */ }
   .signup__left {
-    margin-left: 3rem;
+    transform: translateX(100%);
     margin-top: 28rem;
     text-align: center;
     float: left; }
@@ -544,7 +567,7 @@ iframe {
     transform: translate(2%, 5%);
     border-top-left-radius: 15rem;
     border-bottom-left-radius: 15rem;
-    width: 75%;
+    width: 55%;
     height: 90%;
     padding: 3rem;
     box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.77);
@@ -553,8 +576,7 @@ iframe {
       transform: translateX(25%);
       float: left; }
     .signup__form--right {
-      float: right;
-      transform: translate(-170%, 150%); }
+      transform: translate(0%, 0%); }
   .signup__close {
     top: 3rem;
     right: 4rem;
@@ -591,20 +613,21 @@ iframe {
 
 .upload__container {
   width: 100%;
-  height: 85vh;
-  border: 0.2rem solid #c92419;
+  height: 89vh;
   padding: 10rem; }
 
 .upload__videos {
+  transform: translate(50%, 0);
   width: 50%;
-  height: 100%;
-  float: left;
-  border: 0.2rem dashed #000;
-  padding: 5rem;
+  height: 20vh;
+  padding: 1rem;
+  padding-top: 5rem;
   background-image: url(../../img/video.jpg); }
 
 .upload__details {
+  text-align: center;
+  font-size: 2.5rem;
+  transform: translate(50%, 0);
   width: 50%;
-  height: 100%;
-  float: left;
-  padding: 5rem; }
+  height: 20vh;
+  padding: 1rem; }

@@ -7,11 +7,11 @@
     margin: 1rem;
   }
   &__input {
+    // signin page
     &__signin {
       width: 95%;
       padding: 1rem;
       display: inline-block;
-
       border-radius: 1.2rem;
       text-decoration-style: none;
       color: $color-primary-dark;
@@ -20,14 +20,13 @@
         box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
         border-bottom: 0.1rem solid $color-primary;
 
-
         &:invalid {
           border-bottom: 0.1rem solid $color-secondary-light;
         }
       }
     }
+    // signup page
     &__signup {
-        
       width: 50rem;
       padding: 1rem;
       border-radius: 1.2rem;
@@ -43,6 +42,14 @@
         }
       }
     }
+    // upload page
+    &--upload {
+      padding: 0.8rem;
+      margin: 0.5rem;
+      border: 0.2rem solid $color-grey-dark-3;
+      display: block;
+     transform: translateX(14.5rem);
+    }
   }
   &__label {
     margin-bottom: 0.2rem;
@@ -51,4 +58,9 @@
     font-weight: 700;
     display: block;
   }
+}
+#upload-description {
+ 
+  width: 70%;
+  height: 100%;
 }
