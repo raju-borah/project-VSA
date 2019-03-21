@@ -162,8 +162,14 @@ iframe {
     padding: 0.8rem;
     margin: 0.5rem;
     margin-left: 10rem;
-    border-bottom: 0.2rem solid #28b485;
     display: block; }
+    .form__input--upload--1 {
+      border: none;
+      border-bottom: 0.2rem solid #28b485; }
+    .form__input--upload--2 {
+      border: 0.1rem solid #28b485; }
+    .form__input--upload:focus {
+      outline-color: #28b485; }
   .form__label {
     margin-bottom: 0.2rem;
     font-size: 1.5rem;
