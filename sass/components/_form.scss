@@ -4,44 +4,40 @@
   padding: 2rem;
   background-color: rgba(36, 80, 83, 0.36);
   box-shadow: 0 2rem 4rem rgba($color-black, 0.44);
+  // form-group property
   &__group {
     margin: 1rem;
   }
+  // input fields properties
   &__input {
-    // signin page form properties...
-    &__signin {
-      width: 95%;
       padding: 1rem;
-      display: inline-block;
       border-radius: 1.2rem;
       text-decoration-style: none;
-      color: $color-primary-dark;
+      border: .1rem;
+      // focus properties
       &:focus {
+        // when foucused no outline
         outline: none;
+        // shadow 
         box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-        border-bottom: 0.1rem solid $color-primary;
+        // bottom border 
+        border-bottom: 0.3rem solid $color-primary;
         &:invalid {
-          border-bottom: 0.1rem solid $color-secondary-light;
+          // if invalid bottom border color different
+          border-bottom: 0.3rem solid $color-secondary-light;
         }
       }
+
+    // signin page form properties...
+    &__signin {
+      width: 95%;     
+      display: inline-block;    
     }
     // signup page form properties...
     &__signup {
       width: 50rem;
-      padding: 1rem;
-      border-radius: 1.2rem;
-      text-decoration-style: none;
-      color: $color-primary-dark;
-      &:focus {
-        outline: none;
-        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-        border-bottom: 0.3rem solid $color-primary;
-
-        &:invalid {
-          border-bottom: 0.3rem solid $color-secondary-light;
-        }
-      }
     }
+
     // upload page
     &--upload {
       width: 60%;

@@ -132,44 +132,35 @@ iframe {
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.44); }
   .form__group {
     margin: 1rem; }
-  .form__input__signin {
-    width: 95%;
-    padding: 1rem;
-    display: inline-block;
-    border-radius: 1.2rem;
-    text-decoration-style: none;
-    color: #28b485; }
-    .form__input__signin:focus {
-      outline: none;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-      border-bottom: 0.1rem solid #55c57a; }
-      .form__input__signin:focus:invalid {
-        border-bottom: 0.1rem solid #ffb900; }
-  .form__input__signup {
-    width: 50rem;
+  .form__input {
     padding: 1rem;
     border-radius: 1.2rem;
     text-decoration-style: none;
-    color: #28b485; }
-    .form__input__signup:focus {
+    border: .1rem; }
+    .form__input:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
       border-bottom: 0.3rem solid #55c57a; }
-      .form__input__signup:focus:invalid {
+      .form__input:focus:invalid {
         border-bottom: 0.3rem solid #ffb900; }
-  .form__input--upload {
-    width: 60%;
-    padding: 0.8rem;
-    margin: 0.5rem;
-    margin-left: 10rem;
-    display: block; }
-    .form__input--upload--1 {
-      border: none;
-      border-bottom: 0.2rem solid #28b485; }
-    .form__input--upload--2 {
-      border: 0.1rem solid #28b485; }
-    .form__input--upload:focus {
-      outline-color: #28b485; }
+    .form__input__signin {
+      width: 95%;
+      display: inline-block; }
+    .form__input__signup {
+      width: 50rem; }
+    .form__input--upload {
+      width: 60%;
+      padding: 0.8rem;
+      margin: 0.5rem;
+      margin-left: 10rem;
+      display: block; }
+      .form__input--upload--1 {
+        border: none;
+        border-bottom: 0.2rem solid #28b485; }
+      .form__input--upload--2 {
+        border: 0.1rem solid #28b485; }
+      .form__input--upload:focus {
+        outline-color: #28b485; }
   .form__label {
     margin-bottom: 0.2rem;
     font-size: 1.5rem;
