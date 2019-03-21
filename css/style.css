@@ -6,8 +6,6 @@
     opacity: 1;
     transform: translate(0); } }
 
-<<<<<<< HEAD
-=======
 @keyframes ring {
   0% {
     opacity: 1;
@@ -16,23 +14,15 @@
     opacity: 1;
     transform: translate(0); } }
 
->>>>>>> d2a06e73cc269f57a8b0dfcae7d9336f1dd850fa
 @keyframes moveUpDown {
   0% {
     transform: translateY(0); }
   100% {
     transform: translateY(-20px); } }
-<<<<<<< HEAD
 
-.scrolldown {
-  opacity: 0;
-  transition: all .5; }
-
-.scrolltop {
-  opacity: 1;
-  transition: all .5s; }
-=======
->>>>>>> d2a06e73cc269f57a8b0dfcae7d9336f1dd850fa
+.scale {
+  transition: all 2s;
+  transform: scale(0.6); }
 
 *,
 *::after,
@@ -511,7 +501,7 @@ iframe {
   height: 97vh;
   position: sticky;
   top: 0;
-  z-index: -10000; }
+  z-index: -100; }
 
 .slider {
   padding: 25rem 0 15rem 0;

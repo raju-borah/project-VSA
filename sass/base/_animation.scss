@@ -15,8 +15,6 @@
     
     }
 
-<<<<<<< HEAD
-=======
     @keyframes ring{
         0%
         {
@@ -35,27 +33,14 @@
 
     
 
->>>>>>> d2a06e73cc269f57a8b0dfcae7d9336f1dd850fa
     @keyframes moveUpDown {
         0% { transform: translateY(0); }
         100% { transform: translateY(-20px); }
     }
 
-<<<<<<< HEAD
 
-    .scrolldown
+    .scale
     {
-        opacity: 0;
-        transition: all .5;
-
-
+        transition: all 2s;
+        transform: scale(.6);
     }
-
-    .scrolltop
-    {
-        opacity: 1;
-        transition: all .5s;
-    }
-
-=======
->>>>>>> d2a06e73cc269f57a8b0dfcae7d9336f1dd850fa
