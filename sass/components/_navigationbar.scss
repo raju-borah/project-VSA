@@ -12,7 +12,7 @@
     cursor: pointer;
   
     background-color: $color-white;
-    border-bottom: 0.1rem solid $color-black;
+    box-shadow: 0 .11rem .1rem $color-black;
   }
 //   if navigationbar hovered the class navbarfont will have font-color-->black
   &:hover .navbarfont{

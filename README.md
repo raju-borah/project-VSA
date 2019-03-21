@@ -20,7 +20,9 @@ signin form id's:
  SIGNUP BUTTON: signup
 
 ............................................
-
+ ID's
+------------------
+ upload button: upload-video
 
 
 
