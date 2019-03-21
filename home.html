@@ -8,73 +8,89 @@
 
     <!-- google font style -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-
-
-    <link rel="stylesheet" href="css/icon-font.css">
+    <!-- Icon on Title  -->
+    <link rel="icon" type="image/png" href="img/download.png" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
+        integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <!-- custom css -->
+  
     <link rel="stylesheet" href="css/style.css">
 
     <title>Video sharing web appllication</title>
 </head>
 
 <body>
-
+    <!-- navigation bar -->
+    <div class="navigationbar">
+        <!-- for the left part -->
+        <div class="navbarfont navigationbar--left">
+            <a href="#">Option</a>
+        </div>
+        <!-- name of the Application -->
+        <div class="navbarfont navigationbar--mid"><a href="#">Vidshare </a> </div>
+        <!-- for right option such as search, user profile, upload -->
+        <div class="navbarfont navigationbar--right">
+                <div class="search">
+                           <input type="text" placeholder="Search" class="search__input">
+                           <button type="button" class="search__btn" id="searchButton">
+                             <i class="fa fa-search search__icon" aria-hidden="true"></i>
+                           </a>
+                      </div>
+            <a href="#"> <i class="fas fa-user-tie"></i></a>
+            <a href="#upload"> <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i></a>
+        </div>
+    </div>
     <!--heading section-->
     <section class="head">
-    <header class="header">
-        <div class="header__text-box">
-            <h1 class="heading-primary">
-                <span class="heading-primary--main">video sharing</span>
-                <span class="heading-primary--sub">knowleadge entertainment joy</span>
-            </h1>
-        </div>
-    </header>
-</section> 
-
-   
-
-
-
-
+        <header class="header">
+            <div class="header__text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main">video sharing</span>
+                    <span class="heading-primary--sub">knowleadge entertainment joy</span>
+                </h1>
+            </div>
+        </header>
+    </section>
 
     <main class="main">
-
-        <!-- status bar -->
-
+        <!--   i removed this.....
         <div class="statusBar">
             <div class="statusBar__full-width search">
                 <div class="statusBar__search-form">
                     <input type="text" name="" placeholder="Search">
-    
+
                     <div class="statusBar__close">
-                         <i class="fa fa-times" aria-hidden="true"
-                        ></i>
+                        <i class="fa fa-times" aria-hidden="true"></i>
                     </div>
-    
+
                 </div>
             </div>
             <div class="statusBar__full-width navbar">
                 <h1 class="statusBar__brand">VSA</h1>
                 <ul class="statusBar__list">
-                    <li  class="statusBar__item--user"><a class="statusBar__link"><i class="fa fa-fw fa-user-circle"></i></a></li>
-                    <li  class="statusBar__item--bell"><a class="statusBar__link"><i class="fa fa-fw fa-bell" aria-hidden="true"></i><span class="statusBar__span">NOTIFICATION</span></a></li>
-                    <li  class="statusBar__item--icon"><a class="statusBar__link"><i class="fa fa-fw fa-search" aria-hidden="true"></i><span class="statusBar__span">SEARCH</span></a></li>
-    
+                    <li class="statusBar__item--user"><a class="statusBar__link"><i
+                                class="fa fa-fw fa-user-circle"></i></a></li>
+                    <li class="statusBar__item--bell"><a class="statusBar__link"><i class="fa fa-fw fa-bell"
+                                aria-hidden="true"></i><span class="statusBar__span">NOTIFICATION</span></a></li>
+                    <li class="statusBar__item--icon"><a class="statusBar__link"><i class="fa fa-fw fa-search"
+                                aria-hidden="true"></i><span class="statusBar__span">SEARCH</span></a></li>
+
                 </ul>
                 <div style="clear:both"></div>
             </div>
         </div>
-    
-    
 
-        <section class="navigation">
-            <!-- checkbox -->
+
+    
+    <section class="navigation">
+             checkbox
             <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
             <label for="navi-toggle" class="navigation__button">
                 <div class="navigation__icon"></div>
             </label>
             <div class="navigation__background"> </div>
-            <!-- navigation nav and list -->
+            navigation nav and list 
             <nav class="navigation__nav">
                 <ul class="navigation__list">
                     <li class="navigation__item"><a href="#" class="navigation__link u-center-text"><i
@@ -87,7 +103,51 @@
                 </ul>
             </nav>
         </section>
+-->
 
+
+        <!-- upload section -->
+        <div class="upload" id="upload">
+            <!-- container -->
+            <div class="upload__container">
+
+
+                <!-- upload videos section -->
+                <div class="upload__videos--card u-center-text ">
+                    <span class="u-end-text">
+                        <a href="/home.html" class="btn btn--close">&times;</a>
+                    </span>
+                    <!-- heading -->
+                    <h1 class="font-medium u-margin-bottom-small">Upload Videos</h1>
+                    <!-- upload button -->
+                    <input type="file" id="upload-file" hidden="hidden" />
+                    <!-- text to display the file name to be uploaded -->
+                    <span id="custom-text">No file Choosen yet !</span>
+                    <button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A
+                        FILE</button>
+
+
+                    <!-- for title -->
+                    <input type="text" class="form__input--upload form__input--upload--1" id="upload-title"
+                        placeholder="Title">
+                    <!-- for description -->
+                    <textarea rows="2" cols="30" class="form__input--upload form__input--upload--1"
+                        id="upload-description">Description</textarea>
+                    <!-- for selecting the category -->
+                    <select id="video-category" class="form__input--upload form__input--upload--2">
+                        <option value="Select Category" selected>Select Category</option>
+                        <option value="learning">Learning</option>
+                        <option value="Events">Events</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="others">Others</option>
+                    </select>
+
+                    <button class="btn btn--upload" type="submit" id="upload-video">Upload</button>
+                </div>
+            </div>
+
+
+        </div>
         <!--slider section-->
         <section class="slider">
             <h1> SLIDER</h1>
@@ -207,18 +267,12 @@
 
     </main>
 
+    <script src="js/upload.js">
+    </script>
 
-<<<<<<< HEAD
-    
+    <script src="js/main.js">
+    </script>
 
-    <script src="js/main.js"></script>
-=======
-    <<<<<<< HEAD <script src="js/main.js">
-        </script>
-        =======
-
-        >>>>>>> 1a328edb14daa6ab0919fcd383560056ee8e8a89
->>>>>>> d2a06e73cc269f57a8b0dfcae7d9336f1dd850fa
 </body>
 
 </html>

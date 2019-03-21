@@ -1,91 +1,100 @@
 /* for button */
-.btn
-{
-    
-    &,&:link,&:visited
-    {
-        text-decoration: none;
-      
-        text-transform: capitalize;
-        
-        /* for curve */
-        border-radius: 2rem;
-        transition: all .2s;
-        position: relative;
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: capitalize;
+    position: relative;
+    // change for button
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  &--white {
+    border-radius: 2rem;
+    font-size: 1.7rem;
+    display: inline-block;
+    backface-visibility: hidden;
+    padding: 1rem;
+    color: $color-black;
+    background-color: $color-white;
+    background-image: linear-gradient(to right, rgba(grey, 0.89), rgba(blue, 0.12));
+    &:hover {
+      background-image: none;
+      background-color: $color-white;
+    }
+  }
+  // button green
+  &--green {
+    border-radius: 5rem;
+    font-size: 2.5rem;
+    margin: 2rem;
+    width: 80%;
+    display: block;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    padding: 1rem;
+  }
 
-        // change for button
-        border: none;
-        cursor: pointer;
-    }
-    &--white
-    {  
-        font-size: 2rem;
-        display: inline-block;
-        backface-visibility: hidden;
-        padding: 1rem;
-        color:$color-black;
-        background-color: $color-white;
-        background-image:linear-gradient(to right,rgba(grey,0.89),rgba(blue,0.12));
-     &:hover{
-    
-       background-image: none;
-        background-color:$color-white;
-
-     }
-    }
-    // button green
-    &--green
-    {
-        border-radius: 10rem;
-        font-size: 3rem;
-        margin-top: 1rem;
-        width: 80%;
-        background-color: $color-primary-dark;
-        color: $color-white;
-        padding:1rem;
-    
-    }
+  
+  // upload button
+  &--upload {
+    width: 15rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.2rem solid $color-black;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    font-size: 1.6rem;
+ 
+  }
 
     /* button hover */
-    &:hover
-    {
-        /* shadow when hover */
-        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
-        /* for moving up */
-        transform: translateY(-.3rem);
-        &::after
-        {
-            transform: scaleX(1.1) scaleY(1.2);
-            opacity: 0 ;
-        }
+  &:hover {
+    /* shadow when hover */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    /* for moving up */
+    transform: translateY(-0.3rem);
+    &::after {
+      transform: scaleX(1.1) scaleY(1.2);
+      opacity: 0;
     }
+  }
 
-    /* when clicked */
-    &:active,
-    &:focus
-    {
-        /* for shadow to loook closer */
-        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  /* when clicked */
+  &:active,
+  &:focus {
+    /* for shadow to loook closer */
+    text-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    outline: none;
+    /* for moving down */
+    transform: translateY(-0.1rem);
+  }
 
-        /* for moving down */
-        transform: translateY(-.1rem);
-    }
+  /* pesudo effect /element */
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
-    /* pesudo effect /element */
-    &::after
-    {
-        content: "";
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-        border-radius: 10rem;
-        position: absolute;
-        top: 0;
-        left:0;
-        z-index: -1;
+    /* transition effect  */
+    transition: all 0.4s;
+  }
 
-        /* transition effect  */
-        transition: all .4s;
-    }
-
+  // close button
+  &--close {
+    top: 0rem;
+    right: 4rem;
+    z-index: 10;
+    color: $color-red;
+    font-weight: 300;
+    font-size: 4rem;
+  }
 }
