@@ -249,6 +249,9 @@ iframe {
   width: 100%;
   height: 7rem;
   background-color: #5643fa;
+  position: sticky;
+  top: 0;
+  left: 0;
   padding: 1rem;
   transition: all 0.3s ease; }
   .navigationbar:hover {
@@ -283,9 +286,9 @@ iframe {
     color: #5643fa; }
 
 .header {
-  height: 80vh;
+  height: 91vh;
   position: relative;
-  background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.7), rgba(41, 152, 255, 0.4)), url(../../img/newbackground.png);
+  background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.7), rgba(41, 152, 255, 0.4)), url(/img/col.jpg);
   background-size: cover;
   background-position: top;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
