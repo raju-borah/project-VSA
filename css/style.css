@@ -24,6 +24,12 @@
   transition: all 2s;
   transform: scale(0.6); }
 
+@keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+
 *,
 *::after,
 *::before {
@@ -397,11 +403,30 @@ border-radius for curved end of button
     width: 25rem;
     color: #000; }
 
+.slider {
+  position: relative; }
+  .slider__heading {
+    position: absolute;
+    top: 1rem;
+    left: 50rem;
+    color: #5643fa;
+    letter-spacing: 1rem;
+    font-size: 4rem;
+    font-weight: 500;
+    border-bottom: 1px solid #333; }
+  .slider__grid {
+    width: 100%;
+    margin: 30px auto;
+    border-left: 1px solid #333;
+    display: grid;
+    grid-template-rows: repeat(1, 200px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; }
+
 .header {
-  height: 91vh;
+  height: 90vh;
   position: relative;
-  background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.1), rgba(41, 152, 255, 0.2)), url(/img/col.jpg);
-  background-size: cover;
+  background-image: cover;
   background-position: top;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
   .header__text-box {
@@ -410,6 +435,16 @@ border-radius for curved end of button
     left: 70%;
     transform: translate(-50%, -50%);
     text-align: center; }
+
+img {
+  position: absolute;
+  left: 0rem;
+  height: 90vh;
+  width: 100%; }
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s; }
 
 .heading-primary {
   color: #fff;
@@ -435,230 +470,6 @@ border-radius for curved end of button
     animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: ease-in; }
-
-.navigation {
-  z-index: 100; }
-  .navigation__checkbox {
-    display: none; }
-  .navigation__icon {
-    z-index: 102;
-    top: 3rem;
-    right: 1.17rem;
-    position: relative;
-    transition: all .2s;
-    cursor: pointer; }
-    .navigation__icon, .navigation__icon::before, .navigation__icon::after {
-      width: 3.5rem;
-      height: .32rem;
-      background-color: #000;
-      display: inline-block;
-      position: absolute; }
-    .navigation__icon::before, .navigation__icon::after {
-      content: "";
-      position: absolute;
-      transition: all .1s; }
-    .navigation__icon::before, .navigation__icon::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      transition: all .2s; }
-    .navigation__icon::before {
-      top: -.8rem; }
-    .navigation__icon::after {
-      top: .8rem; }
-  .navigation__background {
-    z-index: 10;
-    height: 100%;
-    width: 30rem;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    opacity: 0;
-    background-image: radial-gradient(#2998ff, #5643fa);
-    box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.99);
-    transform: translateX(70%);
-    transition: all .3s; }
-  .navigation__button {
-    z-index: 102;
-    background-color: #fff;
-    position: fixed;
-    top: 4rem;
-    right: 4rem;
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%;
-    z-index: 15;
-    box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.23);
-    cursor: pointer;
-    transition: all .3s; }
-  .navigation__checkbox:checked + .navigation__button .navigation__icon {
-    background-color: transparent; }
-  .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
-    top: 0;
-    transform: rotate(135deg); }
-  .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
-    top: 0;
-    transform: rotate(-135deg); }
-  .navigation__checkbox:checked ~ .navigation__background {
-    transform: translateX(0);
-    opacity: 1; }
-  .navigation__checkbox:checked + .navigation__button {
-    transform: rotate(180deg) scale(0.89); }
-  .navigation__nav {
-    top: 10rem;
-    right: 0;
-    position: fixed;
-    z-index: 14;
-    opacity: 0;
-    transform: translateX(50%);
-    transition: all .3s; }
-  .navigation__list {
-    list-style: none;
-    text-align: end;
-    margin-top: 10rem; }
-  .navigation__item {
-    color: black;
-    margin: 1.5rem; }
-  .navigation__link:link, .navigation__link:visited {
-    width: 20rem;
-    border-radius: 3rem;
-    background-color: #ff7730;
-    display: inline-block;
-    font-size: 1.6rem;
-    font-weight: 400;
-    padding: 1rem 1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #000;
-    transition: all .3s; }
-  .navigation__checkbox:checked ~ .navigation__nav {
-    transform: translateX(-20%);
-    opacity: 1; }
-
-.statusBar__full-width {
-  width: 100%;
-  box-sizing: border-box; }
-  .statusBar__full-width.search {
-    position: relative;
-    background: #000;
-    padding: 1rem 10rem;
-    display: none; }
-
-.statusBar__search-form {
-  position: relative;
-  padding-left: 2rem; }
-  .statusBar__search-form input {
-    width: 100%;
-    height: 3rem;
-    background: none;
-    border: none;
-    outline: none;
-    color: #fff;
-    font-size: 3rem; }
-    .statusBar__search-form input::placeholder {
-      color: rgba(255, 255, 255, 0.3); }
-  .statusBar__search-form::before {
-    content: '\f002';
-    position: absolute;
-    top: 0rem;
-    color: #fff;
-    font-family: fontAwesome;
-    left: -1rem;
-    font-size: 2rem;
-    cursor: pointer; }
-
-.statusBar__close {
-  color: #fff;
-  position: absolute;
-  right: 2rem;
-  top: 0rem;
-  cursor: pointer;
-  font-size: 2rem; }
-
-.statusBar__full-width {
-  position: relative;
-  font-size: 1.4rem; }
-  .statusBar__full-width.navbar {
-    z-index: 100;
-    background-color: #2998ff;
-    padding: 1.5rem; }
-
-.statusBar__brand {
-  float: left;
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: 800; }
-
-.statusBar__list {
-  position: absolute;
-  right: 10%;
-  top: -1%;
-  display: flex; }
-
-.statusBar__item {
-  list-style: none;
-  padding: 0 2rem; }
-  .statusBar__item--icon {
-    list-style: none;
-    font-size: 2rem;
-    cursor: pointer;
-    border-radius: 1rem; }
-  .statusBar__item--bell {
-    list-style: none;
-    font-size: 2rem;
-    cursor: pointer;
-    border-radius: 1rem;
-    margin-left: 7rem; }
-  .statusBar__item--user {
-    list-style: none;
-    font-size: 2rem;
-    cursor: pointer;
-    border-radius: 1rem; }
-
-.statusBar__link {
-  display: inline-block;
-  color: #fff;
-  text-decoration: none;
-  font-size: 2.5rem;
-  margin-top: .4rem; }
-  .statusBar__link:hover {
-    color: #5643fa;
-    border-radius: 1rem;
-    cursor: pointer; }
-
-.statusBar__span {
-  position: relative;
-  background: #000;
-  top: 30px;
-  left: -1rem;
-  font-size: 1.4rem;
-  padding: .3rem;
-  border-radius: .5rem;
-  transition: .5s;
-  z-index: 4;
-  opacity: 0;
-  visibility: hidden; }
-  .statusBar__span::before {
-    content: "";
-    position: absolute;
-    top: -4px;
-    left: 1rem;
-    width: 1rem;
-    height: 1rem;
-    background: #000;
-    transform: rotate(45deg);
-    z-index: 1; }
-
-.statusBar__link:hover .statusBar__span {
-  color: #fff;
-  opacity: 1;
-  visibility: visible;
-  animation-name: ring; }
-
-.fixed {
-  position: fixed;
-  top: 0;
-  width: 100%; }
 
 .grid {
   width: 100%;
@@ -686,8 +497,8 @@ border-radius for curved end of button
   z-index: -1; }
 
 .slider {
-  padding: 25rem 0 15rem 0;
-  background-color: aquamarine;
+  padding: 50rem 0 15rem 0;
+  background-color: #f7f7f7;
   margin-top: 2rem;
   margin-bottom: 10rem; }
 
