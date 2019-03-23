@@ -1,17 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //to fade the header section on scroll
  function opacity() {
     var head = document.querySelector(".head");

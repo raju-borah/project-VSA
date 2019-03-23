@@ -1,8 +1,13 @@
 /* for button */
+/*
+border-radius for curved end of button
+*/
+
 .btn {
   &,
   &:link,
   &:visited {
+    // setting textdecoratio none
     text-decoration: none;
     text-transform: capitalize;
     position: relative;
@@ -20,6 +25,7 @@
     color: $color-black;
     background-color: $color-white;
     background-image: linear-gradient(to right, rgba(grey, 0.89), rgba(blue, 0.12));
+    // when the btn--white is hovered
     &:hover {
       background-image: none;
       background-color: $color-white;
