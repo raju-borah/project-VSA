@@ -4,7 +4,7 @@ body{
    /* font-size: 16px;*/
     line-height: 1.7;
    // color:$color-grey-dark;
-    padding: 1rem;
+    
   
 }
 
@@ -22,7 +22,9 @@ body{
     {
         font-size: 4rem;
         text-shadow: 0 1rem 2rem rgba($color-black,0.48);
-     
+        padding: 1rem;
+        border-bottom: .4rem solid rgba($color-black,0.48);
+        display: inline;
     }
 
 
@@ -39,4 +41,14 @@ body{
         text-shadow: 0.2rem 0.2rem 1rem #000000;
 
     }
+
+
+}
+
+#custom-text
+{
+    font-size: 2rem;
+    display: block;
+    margin: 1rem;
+
 }
