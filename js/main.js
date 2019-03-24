@@ -28,5 +28,3 @@
 
 
 window.addEventListener("scroll",opacity);//header opacity
-
-

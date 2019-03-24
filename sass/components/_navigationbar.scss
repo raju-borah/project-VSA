@@ -7,7 +7,7 @@
   // setting width,height and background-color
   width: 100%;
   height: 7rem;
-  background-color: $color-tertiary-dark-1;
+  background-color: $color-grey-dark-3;
   position: sticky;
   // position of the navigation is set to...
   top: 0;
@@ -22,21 +22,29 @@
     // when hovered shadow is display
     box-shadow: 0 1rem 1rem rgba($color-black, 0.55);
   }
+
   //   if navigationbar hovered the class navbarfont will have font-color-->black
   &:hover .navbarfont {
     // callling the mixin
     @include navigationbarfonts($color-white);
   }
+  
   // hiding the checked-box
   &__checkbox {
     display: none;
   }
+
   // when checked box is selected then the following cod eto be executed
   &__checkbox:checked ~ &__more_setting {
     // setting to visible
     opacity: 1;
     visibility: visible;
+    transform: translateX(0rem);
+    transition: all .4s ease-in;
+    
   }
+ 
+
   // the navigationbar button
   &__button {
     // setting marign left, z-index ,position
@@ -59,7 +67,9 @@
         background-color: $color-primary;
       }
     }
+
   }
+
   // for left Options
   &--left {
     width: 30%;
@@ -99,11 +109,13 @@
       &::after {
         top: 0.8rem;
       }
+      
     }
   }
 
   // style for the list in the more setting
   &__more_setting {
+   
     opacity: 0;
     visibility: hidden;
     // setting none style to list
@@ -116,10 +128,13 @@
     width: 20rem;
     // giving shadow
     box-shadow: 0 1rem 3rem rgba($color-tertiary-dark-1, 0.55);
+    transform: translateX(-20rem);
+    transition: all .4s ease-in-out;
+
     // list item property
     &--item {
       padding: 1rem;
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin-left: 1rem;
 
       // when  list item is hovered
@@ -131,6 +146,7 @@
         transform: scale(1.1);
       }
     }
+
     // using not lasr child selector for giving underline in list items
     :not(:last-child) {
       border-bottom: 0.1rem solid $color-black;
