@@ -1,35 +1,34 @@
 
 
 //to fade the header section on scroll
- function opacity() {
+function opacity() {
     var head = document.querySelector(".head");
-  
+
     //height of the window
     var height = window.innerHeight;
     console.log(height);//486
-    
-  
-                    if(window.pageYOffset !== undefined)
-                    {
-                        var scrollTop =  window.pageYOffset ;
-                    }
-                    else{
-                         scrollTop =(document.documentElement  || document.body.parentNode );
-                    }
-                    console.log(scrollTop);
-  
+
+
+    if (window.pageYOffset !== undefined) {
+        var scrollTop = window.pageYOffset;
+    }
+    else {
+        scrollTop = (document.documentElement || document.body.parentNode);
+    }
+    console.log(scrollTop);
+
     // Change this if you want it to fade faster
     height = height / 1;
-  
+
     head.style.opacity = (height - scrollTop) / height;
-  
-  };
+
+};
 
 
 
 
 
-window.addEventListener("scroll",opacity);//header opacity
+window.addEventListener("scroll", opacity);//header opacity
 
 /** 
 
@@ -63,3 +62,40 @@ function position(){
 //window.addEventListener("scroll",position);//header opacity
 
 */
+/**
+
+
+var moreSetting = document.getElementById("navi-toggle");
+
+
+window.addEventListener('click',function(){
+   
+    if(moreSetting.checked=== false){
+        moreSetting.addEventListener('click',function(){
+        moreSetting.checked=true;
+        console.log("more setting "+moreSetting.checked);
+        });
+   
+
+   }
+else{
+    moreSetting.addEventListener('click',function(){
+        moreSetting.checked=false;
+        });
+}
+
+
+console.log("starting :"+moreSetting.checked);
+});   
+console.log( moreSetting.parentNode.parentNode.parentNode);
+   
+ */
+
+
+
+
+
+
+
+
+
