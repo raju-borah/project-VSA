@@ -4,11 +4,12 @@
   "description": "video sharing web app",
   "main": "index.js",
   "scripts": {
-   "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "Naba",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.11.0"
-  }
+  },
+  "dependencies": {}
 }

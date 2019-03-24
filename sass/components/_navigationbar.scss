@@ -121,7 +121,7 @@
     // setting none style to list
     list-style-type: none;
     // setting background to white color
-    background-color: $color-white;
+    background-color: $color-black;
     // setting position from top, left and giving width
     margin-top: 6rem;
     margin-left: -1rem;
@@ -136,20 +136,31 @@
       padding: 1rem;
       font-size: 2rem;
       margin-left: 1rem;
+      color: $color-black;
+      background-image: linear-gradient(120deg, $color-black 0%, $color-black 50%, $color-tertiary-dark 50%);
+      background-size: 220%;
+      transition: all .5s;
+    
 
       // when  list item is hovered
       &:hover {
-        background-color: $color-grey-dark-2;
+ 
         box-shadow: 0 1rem 1rem rgba($color-black, 0.55);
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
         transform: scale(1.1);
+        background-position: 100%;
+        color: $color-black;
       }
+
+      
     }
+
+    
 
     // using not lasr child selector for giving underline in list items
     :not(:last-child) {
-      border-bottom: 0.1rem solid $color-black;
+      border-bottom: 0.1rem solid $color-white;
     }
   }
 
@@ -172,6 +183,20 @@
   // calling the mixin
   @include navigationbarfonts($color-white);
 }
-.listlink--item {
-  color: $color-black;
+.listlink {
+
+  &--item
+  {
+    color: $color-white;
+  }
+ 
+
+
+ 
+}
+
+
+.hidden
+{
+  display: none;
 }

@@ -6,15 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- google font style -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <!-- Icon on Title  -->
+<<<<<<< HEAD
+    <link rel="icon" type="image/png" href="img/download.png" />
+    <!--AOS-->
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+=======
     <!-- <link rel="icon" type="image/png" href="#" /> -->
+>>>>>>> b32724cbfb11a2f97f62ee9c5c2ede2c51233122
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
         integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
-    <!-- custom css -->
+       
 
+    <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
 
     <title>Video sharing web appllication</title>
@@ -33,6 +41,13 @@
                 </label>
           
             <!-- more settings option -->
+<<<<<<< HEAD
+            <ul  class="navigationbar__more_setting" >
+                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Channel<i class="fas fa-video"></i></a></li>
+                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Settings<i class="fas fa-cog"></i></a></li>
+                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Help<i class="fas fa-hands-helping"></i></a></li>
+                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Feedback<i class="fas fa-comments"></i></a></li>
+=======
             <ul class="navigationbar__more_setting">
                 <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Channel</a></li>
                 <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Settings</a></li>
@@ -40,6 +55,7 @@
                     <!--custom icon <img src="img//icons/support.png" class="icon" alt="">&nbsp; &nbsp; &nbsp; -->
                      Help</a></li>
                 <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Feedback</a></li>
+>>>>>>> b32724cbfb11a2f97f62ee9c5c2ede2c51233122
             </ul>
         </div>
         <!-- name of the Application -->
@@ -141,29 +157,62 @@
         <!-- ending of upload section -->
 
 
-        <!--slider section-->
-        <section class="slider">
+        <!--info section-->
+        <section class="info">
 
-            <!--slider heading-->
-            <div class="slider__heading">
-                <h2>What we provide?</h2>
+            <!--info heading-->
+            <div class="info__heading" data-aos="zoom-in" data-aos-duration="1000">
+                <h2>What makes us diffrent?</h2>
             </div>
 
-            <!--slider about part-->
-        <div class="slider__grid">
-            <div class="slider__info">
-                <div class="slider__info--learning">
-                      <h1>learn</h1>
+            <!--info about part-->
+        <div class="info__grid">
+                <div class="info__learning" data-aos="fade-up"   data-aos-easing="linear" data-aos-duration="500">
+
+                    <div class="info__imgbox">
+                    <img src="img/head.jpg" alt="" class="info__img">
                 </div>
 
-                <div class="slider__info--event">
-                        <h1>learn</h1>
+
+                    <h5 class="info__title">LEARNING</h5>  
+
+                    <p class="info__text">
+                        Lorem ipsum dolor sit amet consectetur
+                         adipisicing elit. Eligendi, eos fuga laudantium
+                         vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
+                    </p>
+                </div>
+
+                <div class="info__event" data-aos="fade-up"   data-aos-easing="linear" data-aos-duration="500"> 
+                    <div class="info__imgbox">
+                    <img src="img/event.jpg" alt="" class="info__img">
+                
+                    </div>
+    
+                        <h5 class="info__title">Event</h5>  
+    
+                        <p class="info__text">
+                            Lorem ipsum dolor sit amet consectetur
+                             adipisicing elit. Eligendi, eos fuga laudantium
+                             vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
+                        </p>
                     </div>
 
-                    <div class="slider__info--club">
-                            <h1>learn</h1>
+                    <div class="info__club" data-aos="fade-up"  data-aos-easing="linear"  data-aos-duration="500">
+                        <div class="info__imgbox">  
+                        <img src="img/floor.jpg" alt="" class="info__img">
+                    </div>
+    
+
+                        
+                    <h5 class="info__title">CLUB ACTIVITIES</h5>  
+
+                    <p class="info__text">
+                        Lorem ipsum dolor sit amet consectetur
+                         adipisicing elit. Eligendi, eos fuga laudantium
+                         vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
+                    </p>
                         </div>
-            </div>
         </div>
          
         </section>
@@ -175,8 +224,8 @@
         <!--Learning section-->
         <section class="learning">
 
-            <div class="heading">
-                <h3 class="heading__title">LEARNING</h3>
+            <div class="heading" >
+                <h3 class="heading__title" data-aos="fade-up">LEARNING</h3>
             </div>
 
 
@@ -292,6 +341,14 @@
     <script src="js/slider.js">
     </script>
 
+
+<script src="js/drophide.js"
+></script>
+
+ <!--aos script-->
+<script>
+    AOS.init();
+</script>
 </body>
 
 </html>
