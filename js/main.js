@@ -31,7 +31,7 @@
 
 window.addEventListener("scroll",opacity);//header opacity
 
-
+/** 
 
 //To stick the  status bar on top
     
@@ -62,3 +62,4 @@ function position(){
 }
 //window.addEventListener("scroll",position);//header opacity
 
+*/
