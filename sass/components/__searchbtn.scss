@@ -6,7 +6,7 @@
     
 
 
-
+//input area of the searcg button
   &__input
   {
     position: absolute;
@@ -29,6 +29,7 @@
 
   }
 
+  //button of the search
   &__btn
   {
     position: absolute;
@@ -52,12 +53,14 @@
 
   }
 
+  //to set the search icon position
   &__icon
   {
       position: relative;
       top: -1.3rem;
   }
 
+  //on hover on the search icon
   &:hover &__input
   {
 
