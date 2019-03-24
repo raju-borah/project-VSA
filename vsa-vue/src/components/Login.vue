@@ -1,0 +1,144 @@
+<template>
+    <div id="login">
+         <!-- Creating Login Section -->
+    <section class="login" id="login">
+        <div class="login__left">
+
+        </div>
+        <div class="login__right">
+            
+            
+            <!-- Login form -->
+            <form action="#" class="form form--login">
+                <!--signin  logo -->
+                <img src="../assets/img/icons/man.png" class="login__logo " />
+                <!-- form heading -->
+                <div class="u-margin-bottom-small u-margin-top-large u-center-text  large-font">
+                    <h1 class="heading_tag">Sign in</h1>
+                </div>
+                <div class="login--container">
+                <!-- creating form group  for every fields-->
+                <div class="form__group">
+                    <label for="email" class="form__label">E-mail</label>
+                    <input type="email" id="signin_email" class="form__input form__input__signin" placeholder="email"
+                        required>
+                </div>
+                <div class="form__group">
+                    <label for="signin_passwd" class="form__label">Password</label>
+                    <input type="password" id="signin_passwd" class="form__input form__input__signin"
+                        placeholder="Enter Password" required>
+                </div>
+                <div class="u-center-text">
+                    <!-- login button -->
+                    <Button class="btn btn--green btn--green--login " id="signin">Sign In</Button>
+                </div>
+                <div class="u-center-text " style="border-top: .11rem solid black;">
+                    <br>
+                        <!-- create button -->
+                    <a href="#signup" class="btn btn--white" id="create_account">Create Account </a> <span class="btn" >|</span>
+                    <!-- forget button -->
+                    <a href="#" class="btn btn--white" id="forget_password">Forget Password</a>
+
+                </div>
+
+            </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- Create Account section  that is hidden at first-->
+    <div class="signup" id="signup">
+        <!-- for icon and welcome message -->
+        <div class="signup__left ">
+            <!-- the rocket icon -->
+            <img src="../assets/img/icons/rocket.png" class="signup__left--img" alt="" />
+            <!-- text message -->
+            <h3 class="font-small" style="color:white;">Welcome</h3>
+            <p class="font-small"  style="color:white;">Join now to watch <br>Fun and Exciting Videos !</p>
+            <!-- login button -->
+            <div class="u-margin-left-large">
+                    <a href="#login" class="btn btn--blue btn--mid" id="signin">Login</a>
+
+            </div>
+        </div>
+        <!-- signup form section -->
+        <form action="#" class="signup__form">
+
+            <!-- closing button -->
+            <span class="u-end-text">
+                <a href="#login" class=" btn btn--close">&times;</a>
+            </span>
+
+            <!-- form heading -->
+            <div class="u-margin u-center-text ">
+                <h1 class="heading_tag">SIGN UP</h1>
+            </div>
+
+            <!-- textfields and labels -->
+            <div class="signup__form--container">
+
+                <!-- creating form group for every fields -->
+                <div class="form__group form__group--signup">
+                    <label for="singup_firstname" class="form__label">FirstName</label>
+                    <input type="text" id="singup_firstname" class="form__input form__input__signup"
+                        placeholder="FirstName" required="true">
+                </div>
+                <div class="form__group  form__group--signup">
+                    <label for="signup_lastname" class="form__label">LastName</label>
+                    <input type="text" id="signup_lastname" class="form__input form__input__signup"
+                        placeholder="LastName" required>
+                </div>
+                <div class="form__group form__group--signup">
+                    <label for="signup_email" class="form__label">E-mail</label>
+                    <input type="email" id="signup_email" class="form__input form__input__signup" placeholder="E-mail"
+                        required>
+                </div>
+                <div class="form__group form__group--signup">
+                    <label for="signup_email" class="form__label">Mobile Number</label>
+                    <input type="email" id="signup_email" class="form__input form__input__signup"
+                        placeholder="Mobile Number" required>
+                </div>
+                <div class="form__group form__group--signup">
+                    <label for="signup_passwd" class="form__label">Password</label>
+                    <input type="password" id="signup_passwd" class="form__input form__input__signup"
+                        placeholder="Enter Password" required>
+                </div>
+                <div class="form__group form__group--signup">
+                    <label for="signup_confirm_passwd" class="form__label">Confirm Password</label>
+                    <input type="password" id="signup_confirm_passwd" class="form__input form__input__signup"
+                        placeholder="Re-Enter Password" required>
+                </div>
+
+                <!-- signup button -->
+                <div style="clear:left; ">
+                    <!-- button tag -->
+                    <br>
+                    <button class="btn btn--blue " id="signup" style="left:32%;" type="submit">Sign
+                        Up <i class="fas fa-arrow-circle-right"></i></button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+    </div>
+</template>
+
+<script>
+
+export default {
+    name: 'Login',
+    data(){
+      return {
+
+      }  
+    }
+}
+</script>
+
+<style >
+  @import '../assets/css/style.css';
+</style>
