@@ -12,7 +12,7 @@ function showSlides() {
   //convert the nodelist to array
   const slides = Array.from(nodelist);
   
-  console.log(slides);//0,1,2
+  console.log(slides);//array object 0,1,2
   
   //the loop is to hide the current image 
   slides.forEach(cur => cur.style.display = "none"  );
@@ -22,9 +22,9 @@ function showSlides() {
   //increase the sildeindex to go to next image
   slideIndex++;
   
-  //is slideindex increses more than the length of the array
+  //if slideindex increses more than the length of the array
   if (slideIndex > slides.length) {
-  slideIndex = 1;
+  slideIndex = 1;//initiate it to the 1 postion
   }    
 
   //to display the image 
