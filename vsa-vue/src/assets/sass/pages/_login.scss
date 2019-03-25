@@ -1,0 +1,53 @@
+.login
+{   height: 97vh;
+   
+
+    &__left
+    {
+        width: 61.84%;
+        height: 100vh;
+        float: left;
+        background-image: linear-gradient(to right bottom,rgba($color-tertiary-dark,0.1),rgba($color-primary-light,0.19)),
+        url('../../img/back-5.jpg') ;
+        background-size: cover;
+    }
+
+
+    &__right
+    {   position: relative;
+        float: left;
+        width: 38%;
+        height: 100vh;
+        padding-top: 4rem;
+        padding-left: 1rem;
+        padding-right: 2rem;
+        background-color: $color-grey-dark-3;
+    
+        box-shadow: 0 0 3rem rgba($color-black,0.74);
+    }
+
+    // right Button
+    &--rightBtn
+    {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    // positioning the img in the login page
+        &__logo
+        {   position: absolute;
+            width: 30%;
+            height: 30%;
+            top: -8rem;;
+            left:35%;
+            border-radius: 50%;
+            box-shadow: 1rem 2rem 3rem rgba($color-tertiary-dark-1,0.88);
+        }
+
+    &--container
+    {
+        transform: translateX(2rem);
+    }
+   
+ }

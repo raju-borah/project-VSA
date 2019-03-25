@@ -95,8 +95,9 @@
           <!-- upload videos section -->
           <div class="upload__videos--card u-center-text">
             <span class="u-end-text">
-              <a href="" class="btn btn--close">&times;
-                  <router-link :to="{ name: 'Home'}"></router-link>
+              <a href class="btn btn--close">
+                &times;
+                <router-link :to="{ name: 'Home'}"></router-link>
               </a>
             </span>
             <!-- heading -->
@@ -254,80 +255,38 @@
 <script>
 export default {
   name: "Home",
-  data() {
-    return {
-      created() {
-        // upload page
-        const realFileBtn = document.getElementById("upload-file");
-        const customBtn = document.getElementById("choose-video");
-        const customText = document.getElementById("custom-text");
 
-        // when choose a file button clicked
-        customBtn.addEventListener("click", function() {
-          realFileBtn.click();
-        });
+  mounted() {
+    console.log(this.$el);
+    let slideIndex = 0; //this indicates to start from the first image
 
-        realFileBtn.addEventListener("change", function() {
-          if (realFileBtn.value) {
-            // regular expersion for finding the file name
-            customText.innerHTML = realFileBtn.value.match(
-              /[\/\\]([\w\d\s\.\-\(\)]+)$/
-            )[1];
-          } else {
-            customText.innerHTML = "No file choosen yet!";
-          }
-        });
+    const showSlides = () => {
+      //array is needed to to get the length of images
+      //here 3 images are used 0,1,2
+      const nodelist = this.$el.querySelectorAll(".mySlides");
+      //convert the nodelist to array
+      const slides = Array.from(nodelist);
 
-        //to fade the header section on scroll
-        function opacity() {
-          var head = document.querySelector(".head");
+      console.log(slides); //array object 0,1,2
 
-          //height of the window
-          var height = window.innerHeight;
-          console.log(height); //486
+      //the loop is to hide the current image
+      slides.forEach(cur => (cur.style.display = "none"));
 
-          if (window.pageYOffset !== undefined) {
-            var scrollTop = window.pageYOffset;
-          } else {
-            scrollTop = document.documentElement || document.body.parentNode;
-          }
-          console.log(scrollTop);
+      //increase the sildeindex to go to next image
+      slideIndex++;
 
-          // Change this if you want it to fade faster
-          height = height / 1;
-
-          head.style.opacity = (height - scrollTop) / height;
-        }
-
-        window.addEventListener("scroll", opacity); //header opacity
-        var slideIndex = 0;
-
-        showSlides();
-
-        function showSlides() {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-
-          slideIndex++;
-
-          if (slideIndex > slides.length) {
-            slideIndex = 1;
-          }
-
-          slides[slideIndex - 1].style.display = "block";
-          setTimeout(showSlides, 10000); // Change image every 10 seconds
-        }
+      //if slideindex increses more than the length of the array
+      if (slideIndex > slides.length) {
+        slideIndex = 1; //initiate it to the 1 postion
       }
-    };
+
+      //to display the image
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 10000); // Change image every 10 seconds
+    }
+    showSlides();
   }
 };
 </script>
 
-<style>
-@import "../assets/css/style.css";
-</style>
 

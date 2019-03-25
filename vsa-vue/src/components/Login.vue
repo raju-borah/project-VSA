@@ -133,12 +133,10 @@ export default {
     name: 'Login',
     data(){
       return {
-
+          mounted() {
+              
+          },
       }  
     }
 }
 </script>
-
-<style >
-  @import '../assets/css/style.css';
-</style>
