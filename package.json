@@ -11,5 +11,8 @@
   "devDependencies": {
     "node-sass": "^4.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "aos": "^2.3.4",
+    "autoprefixer": "^9.5.0"
+  }
 }

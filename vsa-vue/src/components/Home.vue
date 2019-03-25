@@ -2,252 +2,288 @@
   <div id="home">
     <!-- navigation bar -->
     <div class="navigationbar">
-      <!-- for the left part -->
-      <div class="navbarfont navigationbar--left">
-        <!-- checkedbox for controling list items -->
-        <input type="checkbox" class="navigationbar__checkbox" id="navi-toggle">
-        <label for="navi-toggle" class="navigationbar__button">
-          <!-- the navigation icon -->
-          <div class="navigationbar--left--icon"></div>
-        </label>
-
-        <!-- more settings option -->
-        <ul class="navigationbar__more_setting">
-          <li class="navigationbar__more_setting--item">
-            <a href="#" class="listlink--item">Channel</a>
-          </li>
-          <li class="navigationbar__more_setting--item">
-            <a href="#" class="listlink--item">Settings</a>
-          </li>
-          <li class="navigationbar__more_setting--item">
-            <a href="#" class="listlink--item">
-              <!--custom icon <img src="img//icons/support.png" class="icon" alt="">&nbsp; &nbsp; &nbsp; -->
-              Help
-            </a>
-          </li>
-          <li class="navigationbar__more_setting--item">
-            <a href="#" class="listlink--item">Feedback</a>
-          </li>
-        </ul>
-      </div>
-      <!-- name of the Application -->
-      <div class="navbarfont navigationbar--mid">
-        <a href="#" class="navbar_items">Vidshare</a>
-      </div>
-      <!-- for right option such as search, user profile, upload -->
-      <div class="navbarfont navigationbar--right">
-        <div class="search u-margin-right-medium">
-          <input type="text" placeholder="Search" class="search__input">
-          <button type="button" class="search__btn" id="searchButton">
-            <i class="fa fa-search search__icon" aria-hidden="true"></i>
-          </button>
+        <!-- for the left part -->
+        <div class="navigationbar--left navbarfont ">
+           <!-- checkedbox for controling list items -->
+           <input type="checkbox" class="navigationbar__checkbox" id="navi-toggle">
+           <label for="navi-toggle" class="navigationbar__button">
+               <!-- the navigation icon -->
+               <div class="navigationbar--left--icon"></div>
+           </label>     
+            <!-- more settings option -->
+         <ul class="navigationbar__more_setting">
+                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Channel&nbsp;<i
+                            class="fas fa-video"></i></a></li>
+                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Settings&nbsp;<i
+                            class="fas fa-cog"></i></a></li>
+                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Help&nbsp;<i
+                            class="fas fa-hands-helping"></i></a></li>
+                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Feedback&nbsp;<i
+                            class="fas fa-comments"></i></a></li>
+            </ul>      
         </div>
-        <a href="#" class="navbar_items">
-          <i class="fas fa-user-tie"></i>
-        </a>
-        <a href="#upload" class="navbar_items">
-          <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i>
-        </a>
-      </div>
+        <!-- name of the Application -->
+        <div class="navbarfont navigationbar--mid"><a href="#" class="navbar_items">Vidshare </a> </div>
+        <!-- for right option such as search, user profile, upload -->
+        <div class="navbarfont navigationbar--right">
+            <div class="search u-margin-right-medium">
+                <input type="text" placeholder="Search" class="search__input">
+                <button type="button" class="search__btn" id="searchButton">
+                    <i class="fa fa-search search__icon" aria-hidden="true"></i>
+                </button>
+            </div>
+            <a href="#" class="navbar_items"> <i class="fas fa-user-tie"></i></a>
+            <a href="#upload" class="navbar_items"> <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i></a>
+        </div>
     </div>
 
+
+
     <!--heading section-->
-    <section class="head">
-      <header class="header">
-        <!-- Events -->
-        <div class="mySlides fade">
-          <img src="../assets/img/event-2.jpg">
-          <div class="header__text-box">
-            <h1 class="heading-primary textShadow">
-              <span class="heading-primary--main">EVENTS</span>
-              <span class="heading-primary--sub">Entertainment</span>
-            </h1>
-          </div>
-        </div>
-        <!-- learning -->
-        <div class="mySlides fade">
-          <img src="../assets/img/head.jpg">
-          <div class="header__text-box textShadow">
-            <h1 class="heading-primary">
-              <span class="heading-primary--main">LEARNING</span>
-              <span class="heading-primary--sub">Knowleadge</span>
-            </h1>
-          </div>
-        </div>
-        <!-- activities -->
-        <div class="mySlides fade">
-          <img src="../assets/img/col.jpg">
-          <div class="header__text-box">
-            <h1 class="heading-primary textShadow">
-              <span class="heading-primary--main">CLUB ACTIVITIES</span>
-              <span class="heading-primary--sub">joy</span>
-            </h1>
-          </div>
-        </div>
-      </header>
+    <section class="head" id="headSection">
+        <header class="header">
+            <!-- Events -->
+            <div class="mySlides fade">
+                <img src="../assets/img/event-2.jpg">
+                <div class="header__text-box">
+                    <h1 class="heading-primary textShadow">
+                        <span class="heading-primary--main">EVENTS</span>
+                        <span class="heading-primary--sub">Entertainment</span>
+                    </h1>
+                </div>
+            </div>
+            <!-- learning -->
+            <div class="mySlides fade">
+                <img src="../assets/img/head.jpg">
+                <div class="header__text-box textShadow">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary--main">LEARNING</span>
+                        <span class="heading-primary--sub">Knowleadge </span>
+                    </h1>
+                </div>
+            </div>
+            <!-- activities -->
+            <div class="mySlides fade">
+                <img src="../assets/img/col.jpg">
+                <div class="header__text-box">
+                    <h1 class="heading-primary textShadow">
+                        <span class="heading-primary--main">CLUB ACTIVITIES</span>
+                        <span class="heading-primary--sub">joy</span>
+                    </h1>
+                </div>
+            </div>
+
+        </header>
     </section>
 
+
+
     <main class="main">
-      <!-- upload section  starting-->
-      <div class="upload" id="upload">
-        <!-- container -->
-        <div class="upload__container">
-          <!-- upload videos section -->
-          <div class="upload__videos--card u-center-text">
-            <span class="u-end-text">
-              <a href class="btn btn--close">
-                &times;
-                <router-link :to="{ name: 'Home'}"></router-link>
-              </a>
-            </span>
-            <!-- heading -->
-            <h1 class="font-medium u-margin-bottom-small">Upload Videos</h1>
-            <!-- upload button -->
-            <input type="file" id="upload-file" accept="video/*" hidden="hidden">
-            <!-- text to display the file name to be uploaded -->
-            <span id="custom-text">No file Choosen yet !</span>
-            <button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">
-              CHOOSE A
-              FILE
-            </button>
+        
+        <!-- upload section  starting-->
+        <div class="upload" id="upload">
+            <!-- container -->
+            <div class="upload__container">
+                <!-- upload videos section -->
+                <div class="upload__videos--card u-center-text ">
+                    <span class="u-end-text">
+                        <a href="#headSection" class="btn btn--close">&times;</a>
+                    </span>
+                    <!-- heading -->
+                    <h1 class="font-medium u-margin-bottom-small">Upload Videos</h1>
+                    <!-- upload button -->
+                    <input type="file" id="upload-file" accept="video/*" hidden="hidden" />
+                    <!-- text to display the file name to be uploaded -->
+                    <span id="custom-text">No file Choosen yet !</span>
+                    <button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A
+                        FILE</button>
 
-            <!-- for title -->
-            <input
-              type="text"
-              class="form__input--upload form__input--upload--1"
-              id="upload-title"
-              placeholder="Title"
-            >
-            <!-- for description -->
-            <textarea
-              rows="2"
-              cols="30"
-              class="form__input--upload form__input--upload--1"
-              id="upload-description"
-              placeholder="Description"
-            ></textarea>
-            <!-- for selecting the category -->
-            <select id="video-category" class="form__input--upload form__input--upload--2">
-              <option value="Select Category" selected>Select Category</option>
-              <option value="learning">Learning</option>
-              <option value="Events">Events</option>
-              <option value="Entertainment">Entertainment</option>
-              <option value="others">Others</option>
-            </select>
 
-            <button class="btn btn--upload" type="submit" id="upload-video">Upload</button>
-          </div>
+                    <!-- for title -->
+                    <input type="text" class="form__input--upload form__input--upload--1" id="upload-title"
+                        placeholder="Title">
+                    <!-- for description -->
+                    <textarea rows="2" cols="30" class="form__input--upload form__input--upload--1"
+                        id="upload-description" placeholder="Description"></textarea>
+                    <!-- for selecting the category -->
+                    <select id="video-category" class="form__input--upload form__input--upload--2">
+                        <option value="Select Category" selected>Select Category</option>
+                        <option value="learning">Learning</option>
+                        <option value="Events">Events</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="others">Others</option>
+                    </select>
+
+                    <button class="btn btn--upload" type="submit" id="upload-video">Upload</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- ending of upload section -->
+        <!-- ending of upload section -->
 
-      <!--slider section-->
-      <section class="slider">
-        <!--slider heading-->
-        <div class="slider__heading">
-          <h2>What we provide?</h2>
-        </div>
 
-        <!--slider about part-->
-        <div class="slider__grid">
-          <div class="slider__info">
-            <div class="slider__info--learning">
-              <h1>learn</h1>
+
+
+        <!--info section-->
+        <section class="info">
+
+            <!--info heading-->
+            <div class="info__heading u-margin-top-large" data-aos="zoom-in" data-aos-duration="1000">
+                <h2>What makes us diffrent?</h2>
             </div>
 
-            <div class="slider__info--event">
-              <h1>learn</h1>
+            <!--info about part-->
+            <div class="info__grid">
+                <div class="info__learning" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+
+                    <div class="info__imgbox">
+                        <img src="../assets/img/head.jpg" alt="" class="info__img">
+                    </div>
+
+
+                    <h5 class="info__title">LEARNING</h5>
+
+                    <p class="info__text">
+                        Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Eligendi, eos fuga laudantium
+                        vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
+                    </p>
+                </div>
+
+                 <!--Eevent card-->
+                <div class="info__event" data-aos="fade-up"   data-aos-easing="linear" data-aos-duration="500"> 
+                    <div class="info__imgbox">
+                        <img src="../assets/img/event.jpg" alt="" class="info__img">
+
+                    </div>
+                    <h5 class="info__title">Event</h5>
+
+                    <p class="info__text">
+                        Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Eligendi, eos fuga laudantium
+                        vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
+                    </p>
+                </div>
+                    <!--Club card-->
+                    <div class="info__club" data-aos="fade-up"  data-aos-easing="linear"  data-aos-duration="500">
+                        <div class="info__imgbox">  
+                        <img src="../assets/img/floor.jpg" alt="" class="info__img">
+                    </div>
+
+
+
+                    <h5 class="info__title">CLUB ACTIVITIES</h5>
+
+                    <p class="info__text">
+                        Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Eligendi, eos fuga laudantium
+                        vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
+                    </p>
+                </div>
             </div>
 
-            <div class="slider__info--club">
-              <h1>learn</h1>
+        </section>
+
+
+
+
+
+        <!--Learning section-->
+        <section class="learning">
+
+            <div class="heading">
+                <h3 class="heading__title" data-aos="fade-up">LEARNING</h3>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <!--Learning section-->
-      <section class="learning">
-        <div class="heading">
-          <h3 class="heading__title">LEARNING</h3>
-        </div>
 
-        <div class="grid">
-          <div class="item item--1">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
+            <div class="grid">
+                <div class="item item--1">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
 
-          <div class="item item--2">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
+                <div class="item item--2">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
 
-          <div class="item item--3">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
+                <div class="item item--3">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
 
-          <div class="item item--4">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
+                <div class="item item--4">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
 
-          <div class="item item--5">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </section>
+                <div class="item item--5">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
 
-      <!--Club section-->
-      <section class="club">
-        <div class="heading">
-          <h3 class="heading__title">CLUB ACTIVITIES</h3>
-        </div>
+            </div>
 
-        <div class="grid">
-          <div class="item item--1">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
+        </section>
 
-          <div class="item item--2">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
 
-          <div class="item item--3">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
 
-          <div class="item item--4">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
 
-          <div class="item item--5">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </section>
+        <!--Club section-->
+        <section class="club">
 
-      <!--Event section-->
-      <section class="event">
-        <div class="heading">
-          <h3 class="heading__title">EVENTS</h3>
-        </div>
+            <div class="heading">
+                <h3 class="heading__title">CLUB ACTIVITIES</h3>
+            </div>
 
-        <div class="grid">
-          <div class="item item--1">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="item item--2">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="item item--3">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="item item--4">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="item item--5">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </section>
+            <div class="grid">
+                <div class="item item--1">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--2">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--3">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--4">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--5">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <!--Event section-->
+        <section class="event">
+
+            <div class="heading">
+                <h3 class="heading__title">EVENTS</h3>
+            </div>
+
+            <div class="grid">
+                <div class="item item--1">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+
+                </div>
+                <div class="item item--2">
+
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item item--3">
+
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item item--4">
+
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="item item--5">
+
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
     </main>
   </div>
 </template>
