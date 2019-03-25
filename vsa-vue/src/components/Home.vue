@@ -283,8 +283,30 @@ export default {
       //to display the image
       slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 10000); // Change image every 10 seconds
-    }
+    };
     showSlides();
+
+    //to fade the header section on scroll
+    const opacity = () => {
+      const head = this.$el.querySelector(".head");
+      let scrollTop;
+      //height of the content area that is visible on screen
+      let height = window.innerHeight;
+      // console.log(window)
+      if (window.pageYOffset !== undefined) {
+        console.log("I am here");
+        scrollTop = window.pageYOffset;
+      } else {
+        scrollTop = this.$el.documentElement || this.$el.body.parentNode;
+      }
+
+      // Change this if you want it to fade faster
+      height = height / 1.1;
+      //increase or decrease the opacity according to the scroll
+      head.style.opacity = (height - scrollTop) / height;
+    };
+
+    window.addEventListener("scroll", opacity); //header opacity
   }
 };
 </script>
