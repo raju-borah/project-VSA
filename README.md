@@ -24,5 +24,18 @@ signin form id's:
 ------------------
  upload button: upload-video
 
+............................................
+ static images sources
+------------------
+background in login and signup -> '/img/back-5.jpg'
+rocket ->"img/icons/rocket.png"
+man ->"img/icons/man.png"
+title icon ->"img/icons/avatar.png"
+
+
+
+
+
+sorry for the errors earlier.....
 
 

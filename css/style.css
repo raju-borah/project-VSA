@@ -6,14 +6,6 @@
     opacity: 1;
     transform: translate(0); } }
 
-@keyframes ring {
-  0% {
-    opacity: 1;
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
 @keyframes moveUpDown {
   0% {
     transform: translateY(0); }
@@ -26,7 +18,7 @@
 
 @keyframes fade {
   from {
-    opacity: .4; }
+    opacity: 0.4; }
   to {
     opacity: 1; } }
 
@@ -83,57 +75,29 @@ body {
 .u-center-text {
   text-align: center; }
 
-.u-end-text {
-  float: right; }
-
-.u-start-text {
-  text-align: start; }
-
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
-
-.u-margin-bottom-medium {
-  margin-bottom: 4rem; }
-
-.u-margin-bottom-big {
-  margin-bottom: 8rem; }
-
-.u-margin-bottom-huge {
-  margin-bottom: 10rem; }
-
-.u-margin {
-  margin: 4rem; }
-
-.u-margin-left-small {
-  margin-left: 1.1rem; }
-
-.u-margin-left-large {
-  margin-left: 20rem; }
-
-.u-margin-right-medium {
-  margin-right: 2rem; }
-
-.u-margin-right-large {
-  margin-right: 6rem; }
-
-.u-margin-right-large {
-  margin-right: 3rem; }
 
 .u-margin-top-large {
   margin-top: 3rem; }
 
-.font-small {
-  font-size: 2rem; }
+.u-margin-left-large {
+  margin-left: 20rem; }
+
+.u-end-text {
+  float: right; }
+
+.u-margin {
+  margin: 4rem; }
 
 .font-medium {
   font-size: 3rem; }
 
-.font-xxlarge {
-  font-size: 12rem; }
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
 
-.font-exlarge {
-  font-size: 4rem;
-  margin: .5rem; }
+.u-margin-right-medium {
+  margin-right: 2rem; }
 
 .textShadow {
   text-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.99); }
@@ -142,6 +106,9 @@ body {
   width: 3rem;
   height: 3rem;
   margin-left: 2rem; }
+
+.font-small {
+  font-size: 2rem; }
 
 iframe {
   width: 100%;
@@ -317,7 +284,7 @@ border-radius for curved end of button
     position: absolute;
     height: 3.5rem;
     width: 4rem;
-    top: 2.2rem;
+    top: 1rem;
     left: 2rem;
     cursor: pointer;
     transition: all 0.3s; }
@@ -327,10 +294,12 @@ border-radius for curved end of button
       background-color: #55c57a; }
   .navigationbar--left {
     width: 30%;
-    float: left; }
+    float: left;
+    height: inherit;
+    position: relative; }
     .navigationbar--left--icon {
       z-index: 1;
-      top: 1.5rem;
+      top: 1.3rem;
       left: 0.1rem;
       position: absolute;
       transition: all 0.2s;
@@ -351,29 +320,27 @@ border-radius for curved end of button
       .navigationbar--left--icon::after {
         top: 0.8rem; }
   .navigationbar__more_setting {
+    position: absolute;
     opacity: 0;
     visibility: hidden;
     list-style-type: none;
     background-color: #000;
     margin-top: 6rem;
-    margin-left: -1rem;
+    margin-left: -0.98rem;
     width: 20rem;
     box-shadow: 0 1rem 3rem rgba(1, 42, 87, 0.55);
     transform: translateX(-20rem);
     transition: all .4s ease-in-out; }
     .navigationbar__more_setting--item {
-      padding: 1rem;
+      padding: 1.5rem;
       font-size: 2rem;
-      margin-left: 1rem;
+      padding-left: 3rem;
       color: #000;
       background-image: linear-gradient(120deg, #000 0%, #000 50%, #5643fa 50%);
       background-size: 220%;
       transition: all .5s; }
       .navigationbar__more_setting--item:hover {
         box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.55);
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        transform: scale(1.1);
         background-position: 100%;
         color: #000; }
     .navigationbar__more_setting :not(:last-child) {
@@ -385,7 +352,7 @@ border-radius for curved end of button
   .navigationbar--right {
     text-align: end;
     width: 30%;
-    float: left; }
+    float: right; }
 
 .navbarfont .navbar_items {
   font-size: 3rem;
@@ -517,7 +484,7 @@ border-radius for curved end of button
     cursor: default; }
 
 .header {
-  height: 90vh;
+  height: 91vh;
   position: relative;
   background-image: cover;
   background-position: top;
@@ -532,7 +499,7 @@ border-radius for curved end of button
 img {
   position: absolute;
   left: 0rem;
-  height: 90vh;
+  height: 91vh;
   width: 100%; }
 
 .fade {
