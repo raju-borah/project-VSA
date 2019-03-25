@@ -307,6 +307,27 @@ export default {
     };
 
     window.addEventListener("scroll", opacity); //header opacity
+
+    // upload page
+    const realFileBtn = this.$el.querySelector("#upload-file");
+    const customBtn = this.$el.querySelector("#choose-video");
+    const customText = this.$el.querySelector("#custom-text");
+
+    // when choose a file button clicked
+    customBtn.addEventListener("click", function() {
+      realFileBtn.click();
+    });
+
+    realFileBtn.addEventListener("change", function() {
+      if (realFileBtn.value) {
+        // regular expersion for finding the file name
+        customText.innerHTML = realFileBtn.value.match(
+          /[\/\\]([\w\d\s\.\-\(\)]+)$/
+        )[1];
+      } else {
+        customText.innerHTML = "No file choosen yet!";
+      }
+    });
   }
 };
 </script>
