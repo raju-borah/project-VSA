@@ -180,8 +180,11 @@
   // calling the mixin
   @include navigationbarfonts($color-white);
 }
+
+//for list items
 .listlink {
 
+  //to color the list text
   &--item
   {
     color: $color-white;

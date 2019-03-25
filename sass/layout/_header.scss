@@ -6,6 +6,7 @@
     background-position: top;
     box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
     
+    //text part in the header
         &__text-box
         {
         position: absolute;
@@ -17,6 +18,7 @@
 
 }
 
+//images in the header 
 img
 {
  position:absolute;
@@ -26,6 +28,7 @@ img
  
 }
 
+//to apply the fade effect in 
 .fade {
 
     animation-name: fade;
