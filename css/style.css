@@ -52,7 +52,7 @@ body {
   background-color: #fff; }
   .heading_tag {
     font-size: 4rem;
-    text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.48);
+    text-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.48);
     padding: 1rem;
     border-bottom: 0.4rem solid rgba(0, 0, 0, 0.48);
     display: inline; }
@@ -676,3 +676,19 @@ img {
   .upload:target {
     opacity: 1;
     visibility: visible; }
+
+.settings {
+  clear: left; }
+  .settings--left {
+    width: 20%;
+    height: 88.2vh;
+    float: left;
+    border: 1px solid black; }
+  .settings--right {
+    width: 80%;
+    height: 88.2vh;
+    float: left;
+    border: 1px solid black;
+    position: relative; }
+  .settings--info {
+    border-bottom: 0.2rem solid #999; }
