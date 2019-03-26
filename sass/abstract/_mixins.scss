@@ -12,10 +12,23 @@
         color: $color-primary;
         text-shadow: 0 1rem 3rem $color-black; 
         // when hovered the cursor will look like pointer
-        cursor: pointer;
-        
-        
+        cursor: pointer;      
     }
-    }
+    }    
+}
+@mixin focus {
+     // focus properties
+     &:focus {
+        // when foucused no outline
+        outline: none;
+        // shadow
+        box-shadow: 0 1rem 1rem rgba($color-black, 0.1);
+        // bottom border
+        border-bottom: 0.3rem solid $color-primary;
+        &:invalid {
+          // if invalid bottom border color different
+          border-bottom: 0.3rem solid $color-secondary-light;
+        }
+      }
     
 }
