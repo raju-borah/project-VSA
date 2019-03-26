@@ -2,16 +2,16 @@
 
 //to fade the header section on scroll
 function opacity() {
-    var head = document.querySelector(".head");
+    const head = document.querySelector(".head");
   
     //height of the content area that is visible on screen
-    var height = window.innerHeight;
+    let height = window.innerHeight;
     console.log(height);//486
     
    
                     if(window.pageYOffset !== undefined)
                     {
-                        var scrollTop =  window.pageYOffset ;
+                        let scrollTop =  window.pageYOffset ;
                     }
                     else{
                          scrollTop =(document.documentElement  || document.body.parentNode );
