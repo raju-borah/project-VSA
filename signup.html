@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Icon on Title  -->
+    <link rel="icon" type="image/png" href="img/icons/avatar.png" />
+    <!-- css  -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Signup | create free account</title>
+</head>
+
+<body>
+    <!-- Create Account section  that is hidden at first-->
+    <div class="signup" id="signup">
+        <!-- for icon and welcome message -->
+        <div class="signup__left ">
+            <!-- the rocket icon -->
+            <img src="img/icons/rocket.png" class="signup__left--img" alt="" />
+            <!-- text message -->
+            <h3 class="font-small" style="color:white;">Welcome</h3>
+            <p class="font-small" style="color:white;">Join now to watch <br>Fun and Exciting Videos !</p>
+            <!-- login button -->
+            <div class="u-center-text">
+                <br>
+                <h1>Already a User Click here...</h1>
+                <a href="login.html" class="btn btn--white"  id="signin">Login</a>
+
+            </div>
+        </div>
+        <!-- signup form section -->
+        <form action="#" class="signup__form">
+            <!-- form heading -->
+            <div class="u-margin u-center-text ">
+                <h1 class="heading_tag">SIGN UP</h1>
+            </div>
+
+            <!-- textfields and labels -->
+            <div class="signup__form--container">
+
+                <!-- creating form group for every fields -->
+                <div class="form__group form__group--signup">
+                    <label for="singup_firstname" class="form__label">FirstName</label>
+                    <input type="text" id="singup_firstname" class="form__input form__input__signup"
+                        placeholder="FirstName" required="true">
+                </div>
+                <div class="form__group  form__group--signup">
+                    <label for="signup_lastname" class="form__label">LastName</label>
+                    <input type="text" id="signup_lastname" class="form__input form__input__signup"
+                        placeholder="LastName" required>
+                </div>
+                <div class="form__group form__group--signup">
+                    <label for="signup_email" class="form__label">E-mail</label>
+                    <input type="email" id="signup_email" class="form__input form__input__signup" placeholder="E-mail"
+                        required>
+                </div>
+                <div class="form__group form__group--signup">
+                    <label for="signup_email" class="form__label">Mobile Number</label>
+                    <input type="email" id="signup_email" class="form__input form__input__signup"
+                        placeholder="Mobile Number" required>
+                </div>
+                <div class="form__group form__group--signup">
+                    <label for="signup_passwd" class="form__label">Password</label>
+                    <input type="password" id="signup_passwd" class="form__input form__input__signup"
+                        placeholder="Enter Password" required>
+                </div>
+                <div class="form__group form__group--signup">
+                    <label for="signup_confirm_passwd" class="form__label">Confirm Password</label>
+                    <input type="password" id="signup_confirm_passwd" class="form__input form__input__signup"
+                        placeholder="Re-Enter Password" required>
+                </div>
+
+                <!-- signup button -->
+                <div style="clear:left; ">
+                    <!-- button tag -->
+                    <br>
+                    <button class="btn btn--blue " id="signup" style="left:32%;" type="submit">Sign
+                        Up <i class="fas fa-arrow-circle-right"></i></button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

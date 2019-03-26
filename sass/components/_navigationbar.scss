@@ -54,7 +54,7 @@
     // custom height,width
     height: 3.5rem;
     width: 4rem;
-    top: 2.2rem;
+    top: 1rem;
     left: 2rem;
     // when curson hovered ..
     cursor: pointer;
@@ -74,13 +74,13 @@
   &--left {
     width: 30%;
     float: left;
-    // hide checkbox
-
+    height: inherit;
+    position: relative;
     // the 3 line icon in the nav bar
     &--icon {
       // setting the zindex to get it into top and position relative to navigationbar
       z-index: 1;
-      top: 1.5rem;
+      top: 1.3rem;
       left: 0.1rem;
       position: absolute;
       transition: all 0.2s;
@@ -115,7 +115,7 @@
 
   // style for the list in the more setting
   &__more_setting {
-   
+   position: absolute;
     opacity: 0;
     visibility: hidden;
     // setting none style to list
@@ -124,7 +124,7 @@
     background-color: $color-black;
     // setting position from top, left and giving width
     margin-top: 6rem;
-    margin-left: -1rem;
+    margin-left: -0.98rem;
     width: 20rem;
     // giving shadow
     box-shadow: 0 1rem 3rem rgba($color-tertiary-dark-1, 0.55);
@@ -133,9 +133,9 @@
 
     // list item property
     &--item {
-      padding: 1rem;
+      padding: 1.5rem;
       font-size: 2rem;
-      margin-left: 1rem;
+      padding-left: 3rem;
       color: $color-black;
       background-image: linear-gradient(120deg, $color-black 0%, $color-black 50%, $color-tertiary-dark 50%);
       background-size: 220%;
@@ -146,9 +146,6 @@
       &:hover {
  
         box-shadow: 0 1rem 1rem rgba($color-black, 0.55);
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        transform: scale(1.1);
         background-position: 100%;
         color: $color-black;
       }
@@ -175,7 +172,7 @@
   &--right {
     text-align: end;
     width: 30%;
-    float: left;
+    float: right;
   }
 }
 // for the navbar properties
@@ -192,7 +189,6 @@
   {
     color: $color-white;
   }
- 
 }
 
 

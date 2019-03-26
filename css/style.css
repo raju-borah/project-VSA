@@ -6,14 +6,6 @@
     opacity: 1;
     transform: translate(0); } }
 
-@keyframes ring {
-  0% {
-    opacity: 1;
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
 @keyframes moveUpDown {
   0% {
     transform: translateY(0); }
@@ -26,7 +18,7 @@
 
 @keyframes fade {
   from {
-    opacity: .4; }
+    opacity: 0.4; }
   to {
     opacity: 1; } }
 
@@ -60,7 +52,7 @@ body {
   background-color: #fff; }
   .heading_tag {
     font-size: 4rem;
-    text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.48);
+    text-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.48);
     padding: 1rem;
     border-bottom: 0.4rem solid rgba(0, 0, 0, 0.48);
     display: inline; }
@@ -83,57 +75,29 @@ body {
 .u-center-text {
   text-align: center; }
 
-.u-end-text {
-  float: right; }
-
-.u-start-text {
-  text-align: start; }
-
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
-
-.u-margin-bottom-medium {
-  margin-bottom: 4rem; }
-
-.u-margin-bottom-big {
-  margin-bottom: 8rem; }
-
-.u-margin-bottom-huge {
-  margin-bottom: 10rem; }
-
-.u-margin {
-  margin: 4rem; }
-
-.u-margin-left-small {
-  margin-left: 1.1rem; }
-
-.u-margin-left-large {
-  margin-left: 20rem; }
-
-.u-margin-right-medium {
-  margin-right: 2rem; }
-
-.u-margin-right-large {
-  margin-right: 6rem; }
-
-.u-margin-right-large {
-  margin-right: 3rem; }
 
 .u-margin-top-large {
   margin-top: 3rem; }
 
-.font-small {
-  font-size: 2rem; }
+.u-margin-left-large {
+  margin-left: 20rem; }
+
+.u-end-text {
+  float: right; }
+
+.u-margin {
+  margin: 4rem; }
 
 .font-medium {
   font-size: 3rem; }
 
-.font-xxlarge {
-  font-size: 12rem; }
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
 
-.font-exlarge {
-  font-size: 4rem;
-  margin: .5rem; }
+.u-margin-right-medium {
+  margin-right: 2rem; }
 
 .textShadow {
   text-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.99); }
@@ -143,14 +107,15 @@ body {
   height: 3rem;
   margin-left: 2rem; }
 
+.font-small {
+  font-size: 2rem; }
+
 iframe {
   width: 100%;
   height: 100%;
   border-radius: 2rem;
   overflow: hidden; }
 
-
-/* login form part */
 .form {
   margin: 3rem;
   padding: 2rem;
@@ -216,6 +181,7 @@ border-radius for curved end of button
   /* when clicked */ }
   .btn, .btn:link, .btn:visited {
     text-decoration: none;
+    color: #fff;
     text-transform: capitalize;
     position: relative;
     border: none;
@@ -225,13 +191,13 @@ border-radius for curved end of button
     border-radius: 1rem;
     font-size: 1.7rem;
     display: inline-block;
-    padding: .11rem;
+    padding: 0.31rem;
     color: #000;
     background-color: transparent;
-    background-image: linear-gradient(to right, rgba(128, 128, 128, 0.89), rgba(0, 0, 255, 0.12)); }
+    background-image: linear-gradient(to right, rgba(51, 51, 51, 0.99), rgba(1, 42, 87, 0.2)); }
     .btn--white:hover {
       background-image: none;
-      background-color: #fff; }
+      background-color: #999; }
   .btn--green {
     border-radius: 5rem;
     font-size: 2.5rem;
@@ -319,7 +285,7 @@ border-radius for curved end of button
     position: absolute;
     height: 3.5rem;
     width: 4rem;
-    top: 2.2rem;
+    top: 1rem;
     left: 2rem;
     cursor: pointer;
     transition: all 0.3s; }
@@ -329,10 +295,12 @@ border-radius for curved end of button
       background-color: #55c57a; }
   .navigationbar--left {
     width: 30%;
-    float: left; }
+    float: left;
+    height: inherit;
+    position: relative; }
     .navigationbar--left--icon {
       z-index: 1;
-      top: 1.5rem;
+      top: 1.3rem;
       left: 0.1rem;
       position: absolute;
       transition: all 0.2s;
@@ -353,29 +321,27 @@ border-radius for curved end of button
       .navigationbar--left--icon::after {
         top: 0.8rem; }
   .navigationbar__more_setting {
+    position: absolute;
     opacity: 0;
     visibility: hidden;
     list-style-type: none;
     background-color: #000;
     margin-top: 6rem;
-    margin-left: -1rem;
+    margin-left: -0.98rem;
     width: 20rem;
     box-shadow: 0 1rem 3rem rgba(1, 42, 87, 0.55);
     transform: translateX(-20rem);
     transition: all .4s ease-in-out; }
     .navigationbar__more_setting--item {
-      padding: 1rem;
+      padding: 1.5rem;
       font-size: 2rem;
-      margin-left: 1rem;
+      padding-left: 3rem;
       color: #000;
       background-image: linear-gradient(120deg, #000 0%, #000 50%, #5643fa 50%);
       background-size: 220%;
       transition: all .5s; }
       .navigationbar__more_setting--item:hover {
         box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.55);
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        transform: scale(1.1);
         background-position: 100%;
         color: #000; }
     .navigationbar__more_setting :not(:last-child) {
@@ -387,7 +353,7 @@ border-radius for curved end of button
   .navigationbar--right {
     text-align: end;
     width: 30%;
-    float: left; }
+    float: right; }
 
 .navbarfont .navbar_items {
   font-size: 3rem;
@@ -448,10 +414,7 @@ border-radius for curved end of button
     color: #000; }
 
 .info {
-  position: relative;
-  display: grid;
-  grid-template-rows: 80vh repeat(1, 1fr);
-  grid-template-columns: repeat(3, 1fr); }
+  position: relative; }
   .info__heading {
     position: absolute;
     top: 1rem;
@@ -467,6 +430,7 @@ border-radius for curved end of button
     padding: 10rem;
     grid-column: center-start / center-end;
     display: grid;
+    grid-template-rows: 65vh repeat(1, 1fr);
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 4rem; }
   .info__imgbox {
@@ -474,7 +438,7 @@ border-radius for curved end of button
   .info__img {
     position: relative;
     width: 100%;
-    height: 30rem;
+    height: 40rem;
     border-style: double;
     transition: all .5s; }
   .info__learning {
@@ -518,8 +482,61 @@ border-radius for curved end of button
   .info:hover {
     cursor: default; }
 
+.feature__container {
+  margin: 0px auto;
+  padding: 80px 60px;
+  overflow: hidden;
+  position: relative; }
+
+.feature__heading {
+  text-align: center;
+  color: #fff;
+  display: block;
+  font-size: 38px;
+  font-family: 'Crete Round', serif;
+  margin-bottom: 5rem;
+  font-weight: normal; }
+
+.feature__left-line {
+  background: #ccc;
+  height: .2rem;
+  width: 10rem;
+  position: relative;
+  bottom: 10px;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif; }
+
+.feature__right-line {
+  height: .2rem;
+  width: 10rem;
+  background: #ccc;
+  position: relative;
+  bottom: 10px;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif; }
+
+.feature__contents {
+  position: relative;
+  margin-top: -3rem;
+  padding: 10rem;
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-rows: 65vh repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem; }
+
+.feature__img {
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  transition: all .5s; }
+
+.feature__text {
+  color: #fff;
+  font-size: 3rem; }
+
 .header {
-  height: 90vh;
+  height: 91vh;
   position: relative;
   background-image: cover;
   background-position: top;
@@ -534,7 +551,7 @@ border-radius for curved end of button
 img {
   position: absolute;
   left: 0rem;
-  height: 90vh;
+  height: 91vh;
   width: 100%; }
 
 .fade {
@@ -594,8 +611,14 @@ img {
 .info {
   padding: 20rem 0 10rem 0;
   background-color: rgba(119, 119, 119, 0.2);
-  margin-top: 2rem;
-  margin-bottom: 10rem; }
+  margin-top: 2rem; }
+
+.feature {
+  height: 90rem;
+  background-image: linear-gradient(to right bottom, rgba(46, 19, 199, 0.5), rgba(18, 207, 240, 0.5)), url(../img/head.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
 
 .learning {
   padding: 10rem 0 15rem 0;
@@ -613,17 +636,11 @@ img {
   position: relative; }
 
 .signup {
-  visibility: hidden;
-  opacity: 0;
   position: fixed;
   background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.1), rgba(126, 213, 111, 0.19)), url("../../img/back-5.jpg");
   background-size: cover;
   height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  transform: translate(0, 0) scale(0);
-  transition: all 0.3s; }
+  width: 100%; }
   .signup__left {
     width: 40%;
     margin-top: 40rem;
@@ -648,10 +665,6 @@ img {
     background-size: cover; }
     .signup__form--container {
       transform: translate(8%, 15%); }
-  .signup:target {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(0%, 0%) scale(1); }
 
 .login {
   height: 97vh; }

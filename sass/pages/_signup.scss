@@ -1,8 +1,5 @@
 .signup {
     // property to hidde the division, setting the background, height, width etc.
-    // visibility hidden for hidding the section at starting and opacity 0
-  visibility: hidden;
-  opacity: 0;
   position: fixed;
   background-image: linear-gradient(to right bottom,rgba($color-tertiary-dark,0.1),rgba($color-primary-light,0.19)),
   url('../../img/back-5.jpg') ;
@@ -10,11 +7,7 @@
   background-size: cover;
   height: 100vh;
   width: 100%;
-  // re-positioning the division
-  top: 0;
-  left: 0;
-  transform: translate(0,0) scale(0);
-  transition: all 0.3s;
+
 
   // left icon and the message
   &__left {
@@ -51,10 +44,4 @@
 
   }
 
-  // to show the content of this section
-  &:target {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(0%, 0%) scale(1);
-  }
 }
