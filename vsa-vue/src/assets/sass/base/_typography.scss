@@ -1,0 +1,54 @@
+body{
+    font-family: "Lato" , sans-serif;
+    font-weight: 400;
+   /* font-size: 16px;*/
+    line-height: 1.7;
+   // color:$color-grey-dark;
+    
+  
+}
+
+
+.heading
+{ 
+    position: absolute;
+    top: 1%;
+    height:  10rem;
+    width: 100%;
+   
+    background-color:$color-white;
+
+    &_tag
+    {
+        font-size: 4rem;
+        text-shadow: 0 1rem 2rem rgba($color-black,0.48);
+        padding: 1rem;
+        border-bottom: .4rem solid rgba($color-black,0.48);
+        display: inline;
+    }
+
+
+    &__title
+    {
+        color: $color-black;
+        padding: 1rem;
+        float: left;
+        font-size: 5rem;
+        font-weight: 700em;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1rem; 
+        text-shadow: 0.2rem 0.2rem 1rem #000000;
+
+    }
+
+
+}
+
+#custom-text
+{
+    font-size: 2rem;
+    display: block;
+    margin: 1rem;
+
+}
