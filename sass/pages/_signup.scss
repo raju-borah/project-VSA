@@ -29,14 +29,12 @@
   &__form {
 
     float: right;
-    transform: translate(2%, 5%);
-    border-top-left-radius: 15rem;
-    border-bottom-left-radius: 15rem;
+   // transform: translate(2%, 5%);
     width: 60%;
-    height: 90%;
+    height: 100%;
     padding: 3rem;
     box-shadow: 0 2rem 3rem rgba($color-black, 0.77);
-    background-color: $color-primary-dark-1;
+    background-color: $color-grey-light-2;
     background-size: cover;
     &--container{
         transform: translate(8%,15%);

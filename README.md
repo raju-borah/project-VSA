@@ -42,7 +42,7 @@ login anchor tags:-
 
 signup anchor tags:-      
 <a href="login.html" class="btn btn--white"  id="signin">Login</a>
-
+<!-- for now the signup is created using float next update will be done by using grid property -->
 
 home anchor tags:-
 ------------------
