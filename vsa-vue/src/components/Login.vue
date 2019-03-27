@@ -5,9 +5,7 @@
         <div class="login__left">
 
         </div>
-        <div class="login__right">
-            
-            
+        <div class="login__right">           
             <!-- Login form -->
             <form action="#" class="form form--login">
                 <!--signin  logo -->
@@ -37,18 +35,13 @@
                         <!-- create button -->
                     <a href="#signup" class="btn btn--white" id="create_account">Create Account </a> <span class="btn" >|</span>
                     <!-- forget button -->
-                    <a href="#" class="btn btn--white" id="forget_password">Forget Password</a>
+                    <a href="" class="btn btn--white" id="forget_password">Forget Password</a>
 
                 </div>
-
             </div>
-
             </form>
-
         </div>
-
     </section>
-
     <!-- Create Account section  that is hidden at first-->
     <div class="signup" id="signup">
         <!-- for icon and welcome message -->
@@ -60,8 +53,7 @@
             <p class="font-small"  style="color:white;">Join now to watch <br>Fun and Exciting Videos !</p>
             <!-- login button -->
             <div class="u-margin-left-large">
-                    <a href="#login" class="btn btn--blue btn--mid" id="signin">Login</a>
-
+                <a href="#login" class="btn btn--blue btn--mid" id="signin">Login</a>
             </div>
         </div>
         <!-- signup form section -->
@@ -71,15 +63,12 @@
             <span class="u-end-text">
                 <a href="#login" class=" btn btn--close">&times;</a>
             </span>
-
             <!-- form heading -->
             <div class="u-margin u-center-text ">
                 <h1 class="heading_tag">SIGN UP</h1>
             </div>
-
             <!-- textfields and labels -->
             <div class="signup__form--container">
-
                 <!-- creating form group for every fields -->
                 <div class="form__group form__group--signup">
                     <label for="singup_firstname" class="form__label">FirstName</label>
@@ -111,24 +100,23 @@
                     <input type="password" id="signup_confirm_passwd" class="form__input form__input__signup"
                         placeholder="Re-Enter Password" required>
                 </div>
-
                 <!-- signup button -->
                 <div style="clear:left; ">
                     <!-- button tag -->
                     <br>
-                    <button class="btn btn--blue " id="signup" style="left:32%;" type="submit">Sign
-                        Up <i class="fas fa-arrow-circle-right"></i></button>
+                    <button class="btn btn--blue " id="signup" style="left:32%;" type="submit">
+                        SignUp 
+                        <i class="fas fa-arrow-circle-right"></i>
+                    </button>
                 </div>
-
             </div>
-
         </form>
     </div>
     </div>
 </template>
 
-<script>
 
+<script>
 export default {
     name: 'Login',
     data(){
