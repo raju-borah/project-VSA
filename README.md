@@ -102,6 +102,10 @@ New AOS library added
 
 ......................................................
  
+ New background image in the feature section.
+ 
+ backgorund- image use at  ->  ( _home.scss in feature section part line no. 33)
+ image name ->  "img/head.jpg"
  
 
 
