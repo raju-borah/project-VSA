@@ -10,7 +10,6 @@ border-radius for curved end of button
   &:visited {
     // setting textdecoratio none
     text-decoration: none;
-    color: $color-white;
     text-transform: capitalize;
     position: relative;
     // change for button
@@ -95,13 +94,4 @@ border-radius for curved end of button
     transform: translateY(-0.1rem);
   }
 
-  // close button
-  &--close {
-    top: 0rem;
-    right: 4rem;
-    z-index: 10;
-    color: $color-red;
-    font-weight: 300;
-    font-size: 4rem;
-  }
 }

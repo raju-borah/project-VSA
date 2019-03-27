@@ -16,7 +16,7 @@
         
     }
     &__videos--card
-    {   
+    {   position: relative;
         transform: translate(50%,0);
         width: 50%;
         height:60vh;
@@ -35,3 +35,14 @@
       
       }
 }
+.btn--close {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 1.6rem;
+    z-index: 1;
+    color: $color-red;
+    font-weight: 300;
+    font-size: 4rem;
+   
+  }
