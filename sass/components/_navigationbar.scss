@@ -3,7 +3,7 @@
   // positioning relative to refer the other division to its position
   position: relative;
   // setting zindex to 1 to be at top of other division or section
-  z-index: 1;
+  z-index: 2;
   // setting width,height and background-color
   width: 100%;
   height: 7rem;
@@ -28,7 +28,7 @@
     // callling the mixin
     @include navigationbarfonts($color-white);
   }
-  
+
   // hiding the checked-box
   &__checkbox {
     display: none;
@@ -40,10 +40,8 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(0rem);
-    transition: all .4s ease-in;
-    
+    transition: all 0.4s ease-in;
   }
- 
 
   // the navigationbar button
   &__button {
@@ -67,7 +65,6 @@
         background-color: $color-primary;
       }
     }
-
   }
 
   // for left Options
@@ -109,13 +106,12 @@
       &::after {
         top: 0.8rem;
       }
-      
     }
   }
 
   // style for the list in the more setting
   &__more_setting {
-   position: absolute;
+    position: absolute;
     opacity: 0;
     visibility: hidden;
     // setting none style to list
@@ -129,7 +125,7 @@
     // giving shadow
     box-shadow: 0 1rem 3rem rgba($color-tertiary-dark-1, 0.55);
     transform: translateX(-20rem);
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 
     // list item property
     &--item {
@@ -139,21 +135,15 @@
       color: $color-black;
       background-image: linear-gradient(120deg, $color-black 0%, $color-black 50%, $color-tertiary-dark 50%);
       background-size: 220%;
-      transition: all .5s;
-    
+      transition: all 0.5s;
 
       // when  list item is hovered
       &:hover {
- 
         box-shadow: 0 1rem 1rem rgba($color-black, 0.55);
         background-position: 100%;
         color: $color-black;
       }
-
-      
     }
-
-    
 
     // using not lasr child selector for giving underline in list items
     :not(:last-child) {
@@ -183,16 +173,12 @@
 
 //for list items
 .listlink {
-
   //to color the list text
-  &--item
-  {
+  &--item {
     color: $color-white;
   }
 }
 
-
-.hidden
-{
+.hidden {
   display: none;
 }

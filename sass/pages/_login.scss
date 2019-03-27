@@ -21,17 +21,9 @@
         padding-top: 4rem;
         padding-left: 1rem;
         padding-right: 2rem;
-        background-color: $color-grey-dark-3;
-    
-        box-shadow: 0 0 3rem rgba($color-black,0.74);
-    }
-
-    // right Button
-    &--rightBtn
-    {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
+        background-color:  $color-grey-dark;
+        
+        box-shadow: 1rem 1rem 3rem rgba($color-black,0.74);
     }
 
     // positioning the img in the login page

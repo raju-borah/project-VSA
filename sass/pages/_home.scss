@@ -20,9 +20,20 @@
     padding: 20rem 0 10rem 0;
     background-color: rgba($color-grey-dark,.2);
     margin-top: 2rem;
-    margin-bottom: 10rem;
+   
     
 
+}
+
+//feature section
+
+.feature
+{
+    height: 90rem;
+    background-image: linear-gradient(to right bottom,rgba(46, 19, 199, 0.500),rgba(18, 207, 240, 0.500)),url(../img/head.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 

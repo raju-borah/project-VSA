@@ -52,9 +52,8 @@ body {
   background-color: #fff; }
   .heading_tag {
     font-size: 4rem;
-    text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.48);
     padding: 1rem;
-    border-bottom: 0.4rem solid rgba(0, 0, 0, 0.48);
+    border-bottom: 0.4rem solid rgba(1, 42, 87, 0.78);
     display: inline; }
   .heading__title {
     color: #000;
@@ -119,7 +118,7 @@ iframe {
 .form {
   margin: 3rem;
   padding: 2rem;
-  background-color: rgba(36, 80, 83, 0.36);
+  background-color: #eee;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.44); }
   .form--login {
     padding: 4rem;
@@ -135,22 +134,21 @@ iframe {
     border-radius: 1.2rem;
     text-decoration-style: none;
     border: 0.1rem; }
-    .form__input:focus {
-      outline: none;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-      border-bottom: 0.3rem solid #55c57a; }
-      .form__input:focus:invalid {
-        border-bottom: 0.3rem solid #ffb900; }
     .form__input__signin {
       width: 90%;
       height: 4rem;
       display: inline-block; }
+      .form__input__signin:focus {
+        outline: none;
+        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+        border-bottom: 0.3rem solid #55c57a; }
+        .form__input__signin:focus:invalid {
+          border-bottom: 0.3rem solid #ffb900; }
     .form__input__signup {
-      background: transparent;
       display: inline-block;
       width: 35rem;
       border-radius: 0rem;
-      border-bottom: 0.3rem solid #012A57; }
+      border: 0.1rem solid #012A57; }
     .form__input--upload {
       width: 60%;
       padding: 0.8rem;
@@ -190,13 +188,13 @@ border-radius for curved end of button
     border-radius: 1rem;
     font-size: 1.7rem;
     display: inline-block;
-    padding: .11rem;
+    padding: 0.31rem;
     color: #000;
     background-color: transparent;
-    background-image: linear-gradient(to right, rgba(128, 128, 128, 0.89), rgba(0, 0, 255, 0.12)); }
+    background-image: linear-gradient(to right, rgba(51, 51, 51, 0.99), rgba(1, 42, 87, 0.33)); }
     .btn--white:hover {
       background-image: none;
-      background-color: #fff; }
+      background-color: #999; }
   .btn--green {
     border-radius: 5rem;
     font-size: 2.5rem;
@@ -239,17 +237,10 @@ border-radius for curved end of button
     outline: none;
     /* for moving down */
     transform: translateY(-0.1rem); }
-  .btn--close {
-    top: 0rem;
-    right: 4rem;
-    z-index: 10;
-    color: #c92419;
-    font-weight: 300;
-    font-size: 4rem; }
 
 .navigationbar {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 7rem;
   background-color: #333;
@@ -277,7 +268,7 @@ border-radius for curved end of button
     opacity: 1;
     visibility: visible;
     transform: translateX(0rem);
-    transition: all .4s ease-in; }
+    transition: all 0.4s ease-in; }
   .navigationbar__button {
     margin-left: 2rem;
     z-index: 1;
@@ -330,7 +321,7 @@ border-radius for curved end of button
     width: 20rem;
     box-shadow: 0 1rem 3rem rgba(1, 42, 87, 0.55);
     transform: translateX(-20rem);
-    transition: all .4s ease-in-out; }
+    transition: all 0.4s ease-in-out; }
     .navigationbar__more_setting--item {
       padding: 1.5rem;
       font-size: 2rem;
@@ -338,7 +329,7 @@ border-radius for curved end of button
       color: #000;
       background-image: linear-gradient(120deg, #000 0%, #000 50%, #5643fa 50%);
       background-size: 220%;
-      transition: all .5s; }
+      transition: all 0.5s; }
       .navigationbar__more_setting--item:hover {
         box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.55);
         background-position: 100%;
@@ -413,10 +404,7 @@ border-radius for curved end of button
     color: #000; }
 
 .info {
-  position: relative;
-  display: grid;
-  grid-template-rows: 80vh repeat(1, 1fr);
-  grid-template-columns: repeat(3, 1fr); }
+  position: relative; }
   .info__heading {
     position: absolute;
     top: 1rem;
@@ -432,6 +420,7 @@ border-radius for curved end of button
     padding: 10rem;
     grid-column: center-start / center-end;
     display: grid;
+    grid-template-rows: 65vh repeat(1, 1fr);
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 4rem; }
   .info__imgbox {
@@ -439,7 +428,7 @@ border-radius for curved end of button
   .info__img {
     position: relative;
     width: 100%;
-    height: 30rem;
+    height: 40rem;
     border-style: double;
     transition: all .5s; }
   .info__learning {
@@ -482,6 +471,59 @@ border-radius for curved end of button
     font-weight: 500; }
   .info:hover {
     cursor: default; }
+
+.feature__container {
+  margin: 0px auto;
+  padding: 80px 60px;
+  overflow: hidden;
+  position: relative; }
+
+.feature__heading {
+  text-align: center;
+  color: #fff;
+  display: block;
+  font-size: 38px;
+  font-family: 'Crete Round', serif;
+  margin-bottom: 5rem;
+  font-weight: normal; }
+
+.feature__left-line {
+  background: #ccc;
+  height: .2rem;
+  width: 10rem;
+  position: relative;
+  bottom: 10px;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif; }
+
+.feature__right-line {
+  height: .2rem;
+  width: 10rem;
+  background: #ccc;
+  position: relative;
+  bottom: 10px;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif; }
+
+.feature__contents {
+  position: relative;
+  margin-top: -3rem;
+  padding: 10rem;
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-rows: 65vh repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem; }
+
+.feature__img {
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  transition: all .5s; }
+
+.feature__text {
+  color: #fff;
+  font-size: 3rem; }
 
 .header {
   height: 91vh;
@@ -559,8 +601,14 @@ img {
 .info {
   padding: 20rem 0 10rem 0;
   background-color: rgba(119, 119, 119, 0.2);
-  margin-top: 2rem;
-  margin-bottom: 10rem; }
+  margin-top: 2rem; }
+
+.feature {
+  height: 90rem;
+  background-image: linear-gradient(to right bottom, rgba(46, 19, 199, 0.5), rgba(18, 207, 240, 0.5)), url(../img/head.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
 
 .learning {
   padding: 10rem 0 15rem 0;
@@ -578,17 +626,11 @@ img {
   position: relative; }
 
 .signup {
-  visibility: hidden;
-  opacity: 0;
   position: fixed;
   background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.1), rgba(126, 213, 111, 0.19)), url("../../img/back-5.jpg");
   background-size: cover;
   height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  transform: translate(0, 0) scale(0);
-  transition: all 0.3s; }
+  width: 100%; }
   .signup__left {
     width: 40%;
     margin-top: 40rem;
@@ -602,21 +644,14 @@ img {
       animation: moveUpDown 1s infinite alternate; }
   .signup__form {
     float: right;
-    transform: translate(2%, 5%);
-    border-top-left-radius: 15rem;
-    border-bottom-left-radius: 15rem;
     width: 60%;
-    height: 90%;
+    height: 100%;
     padding: 3rem;
     box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.77);
-    background-color: #304e44;
+    background-color: #eee;
     background-size: cover; }
     .signup__form--container {
       transform: translate(8%, 15%); }
-  .signup:target {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(0%, 0%) scale(1); }
 
 .login {
   height: 97vh; }
@@ -634,12 +669,8 @@ img {
     padding-top: 4rem;
     padding-left: 1rem;
     padding-right: 2rem;
-    background-color: #333;
-    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.74); }
-  .login--rightBtn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem; }
+    background-color: #777;
+    box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.74); }
   .login__logo {
     position: absolute;
     width: 30%;
@@ -665,6 +696,7 @@ img {
     padding: 10rem;
     background-image: radial-gradient(rgba(86, 67, 250, 0.27), rgba(0, 0, 0, 0.38)); }
   .upload__videos--card {
+    position: relative;
     transform: translate(50%, 0);
     width: 50%;
     height: 60vh;
@@ -676,3 +708,47 @@ img {
   .upload:target {
     opacity: 1;
     visibility: visible; }
+
+.btn--close {
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 1.6rem;
+  z-index: 1;
+  color: #c92419;
+  font-weight: 300;
+  font-size: 4rem; }
+
+.settings {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/back-3.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff; }
+  .settings__container {
+    margin-top: 30rem;
+    padding-top: 12rem;
+    position: relative;
+    color: #000;
+    width: 100%;
+    height: 100%;
+    background-color: #999; }
+  .settings__img {
+    margin-top: 2rem;
+    width: 100%;
+    height: 30rem;
+    position: absolute;
+    top: 25rem;
+    overflow: hidden; }
+  .settings__icon {
+    position: absolute;
+    margin-left: 40%;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1; }
+  .settings__form {
+    transform: translateX(5rem);
+    width: 80%; }
