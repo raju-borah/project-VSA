@@ -107,7 +107,7 @@ New AOS library added
  backgorund- image use at  ->  ( _home.scss in feature section part line no. 33)
  image name ->  "img/head.jpg"
  
- .......................................................
+ ........................................................
  
 
 
