@@ -53,7 +53,7 @@ body {
   .heading_tag {
     font-size: 4rem;
     padding: 1rem;
-    border-bottom: 0.4rem solid rgba(1, 42, 87, 0.78);
+    border-bottom: 0.4rem solid rgba(40, 180, 133, 0.98);
     display: inline; }
   .heading__title {
     color: #000;
@@ -196,8 +196,8 @@ border-radius for curved end of button
       background-image: none;
       background-color: #999; }
   .btn--green {
-    border-radius: 5rem;
-    font-size: 2.5rem;
+    border-radius: 1rem;
+    font-size: 2rem;
     margin: 2rem;
     display: block;
     background-color: #28b485;
@@ -738,12 +738,23 @@ img {
   color: #fff; }
   .settings__container {
     margin-top: 30rem;
-    padding-top: 12rem;
+    padding: 3rem;
+    padding-top: 14rem;
     position: relative;
     color: #000;
     width: 100%;
     height: 100%;
-    background-color: #999; }
+    background-color: #2998ff; }
+  .settings__editbutton {
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+    position: absolute;
+    background-color: #5643fa;
+    z-index: 1;
+    top: 20rem;
+    right: 40%;
+    border: 0.3rem solid #fff; }
   .settings__img {
     margin-top: 2rem;
     width: 100%;
@@ -760,5 +771,8 @@ img {
     overflow: hidden;
     z-index: 1; }
   .settings__form {
-    transform: translateX(5rem);
-    width: 80%; }
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.66);
+    padding: 4rem;
+    background-color: #eee;
+    transform: translateX(50%);
+    width: 50%; }

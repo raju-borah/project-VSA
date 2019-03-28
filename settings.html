@@ -62,13 +62,19 @@
             <h1 class=" heading_tag">Account</h1>
         </div>
 
-        <div class="settings__img">
-            <img src="img/setting.jpg" class="settings__icon" alt="">
+        <div class="settings__img ">
+            <img src="img/icons/man.png"  id="profileimage" class="settings__icon" alt="">
+
+            <input type="file" id="imageupload" accept="image/png" hidden="hidden"/>
+            <button type="button" class=" btn settings__editbutton" id="editprofileimage"><i
+                    class="fas fa-camera font-medium"></i></button>
+
         </div>
 
 
         <div class="settings__container">
-            <h1 class="u-center-text font-small">Signed As <span class="accountHolder">cs16msiit020@gmail.com</span>
+            <h1 class="u-center-text font-small u-margin-bottom-medium">Signed As <span
+                    class="accountHolder">cs16msiit020@gmail.com</span>
             </h1>
             <form action="#" class="settings__form">
                 <h1 class="font-small"> Change Password</h1>
@@ -87,11 +93,14 @@
                     <input type="password" id="new_confirm_passwd" class="form__input form__input__signup"
                         placeholder="Re-Enter Password" required>
                 </div>
-                <button class="btn btn--green" type="button" id="changePasswordBtn">Submit</button>
+                <button class="btn btn--green" type="button" id="changePasswordBtn">Save Changes</button>
             </form>
-         
+
         </div>
     </section>
+        <!-- Settings button JavaScript -->
+        <script src="js/settings.js">
+        </script>
 </body>
 
 </html>

@@ -59,8 +59,12 @@ close button in upload page
 setting page button id's
 ----------------------
 
->>change password Button section
+change password Button section
 ---------------------------------
+img background source=> "/img/back-3.jpg"
+   profile image=>  "img/icons/man.png"
+   
+   edit profile image button =>id "edit_profileimage"
    submit button -> id="changePasswordBtn"
 
     current password  textfield ->     id=  "current_passwd"
