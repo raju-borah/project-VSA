@@ -26,6 +26,10 @@
     top: 20rem;
     right: 40%;
     border: .3rem solid $color-white;
+    &:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
   }
   &__img {
     margin-top: 2rem;
@@ -53,4 +57,32 @@
     width: 50%;
  
   }
+// tooltip when the cursor is hovered
+  .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  font-size: 1.6rem;
+  background-color: $color-grey-light-2;
+  top: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  right: -16rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      top: 1rem;
+      left: -1.6rem;
+      border-width: .8rem;
+      border-style: solid;
+      border-color:  transparent $color-grey-light-2 transparent transparent;
+    }
+}
+
+  
+
+
+
 }
