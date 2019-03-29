@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Settings </title>
+    <title>Account </title>
     <!-- Icon on Title  -->
     <link rel="icon" type="image/png" href="img/download.png" />
     <!--AOS-->
@@ -20,52 +20,58 @@
 <body>
     <!-- Setting page layout -->
     <section class="settings">
-        <!-- navigation bar -->
-        <div class="navigationbar">
-            <!-- for the left part -->
-            <div class="navigationbar--left navbarfont ">
-                <!-- checkedbox for controling list items -->
-                <input type="checkbox" class="navigationbar__checkbox" id="navi-toggle">
-                <label for="navi-toggle" class="navigationbar__button">
-                    <!-- the navigation icon -->
-                    <div class="navigationbar--left--icon"></div>
-                </label>
-                <!-- more settings option -->
-                <ul class="navigationbar__more_setting">
-                    <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Channel&nbsp;<i
-                                class="fas fa-video"></i></a></li>
-                    <li class="navigationbar__more_setting--item"><a href="settings.html" class="listlink--item ">Settings&nbsp;<i
-                                class="fas fa-cog"></i></a></li>
-                    <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Help&nbsp;<i
-                                class="fas fa-hands-helping"></i></a></li>
-                    <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Feedback&nbsp;<i
-                                class="fas fa-comments"></i></a></li>
-                </ul>
-            </div>
+       <!-- navigation bar -->
+    <div class="navigationbar">
+      
             <!-- name of the Application -->
-            <div class="navbarfont navigationbar--mid"><a href="home.html" class="navbar_items">Vidshare </a> </div>
+            <div class="navbarfont navigationbar--left"><a href="home.html" class="navbar_items">Vidshare </a> </div>
             <!-- for right option such as search, user profile, upload -->
             <div class="navbarfont navigationbar--right">
                 <div class="search u-margin-right-medium">
                     <input type="text" placeholder="Search" class="search__input" required>
                     <button type="button" class="search__btn" id="searchButton">
                         <i class="fa fa-search search__icon" aria-hidden="true"></i>
-                    </button>
-
+                        </button>
+    
                 </div>
-                <a href="#" class="navbar_items"> <i class="fas fa-user-tie"></i></a>
+                
                 <a href="#upload" class="navbar_items"> <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i></a>
+                <button type="button" class="navbar_items userbutton"><i class="fas fa-user-tie"></i></button>
+                <div class="usercontainer">
+                    <!-- if user signed the following div will be displayed -->
+                    <div class="signincontainer">
+                        <img src="img/icons/man.png" class="signincontainer__img" alt="">
+                        <div class="margin-top">
+                                <h1 class="accountHolderName">Raju Moni Borah</h1>
+                                <h2 class="accountHolderId">cs16msiit020@gmail.com</h2>
+                        </div>
+                        <ul class="ul__list">
+                            <li><a href="settings.html" class="list--link font-small"> Account</a> &nbsp;
+                            <a href="#" class="list--link font-small">My videos</a></li>
+                            <li><button type="button" class="btn btn--green btn--green--logout">Logout</button></li>
+                        </ul>
+                    </div>
+                    <!-- if user is signed out then -->
+                    <div class="notsignincontainer">
+                            <ul class="ul__list">
+                                    <li><button type="button" class="btn btn--green btn--green--logout">Sign in</button></li>
+                                    <li><button type="button" id="logoutButton" class="btn btn--green btn--green--logout">Signup</button></li>
+                                </ul>
+                    </div>
+    
+                </div>
             </div>
         </div>
-        <br>
+    
+    
+     <br>
         <div class=" u-center-text">
             <h1 class=" heading_tag">Account</h1>
         </div>
 
         <div class="settings__img ">
-            <img src="img/icons/man.png"  id="profileimage" class="settings__icon" alt="">
-
-            <input type="file" id="imageupload" accept="image/jpg" hidden="hidden"/>
+            <img src="img/icons/man.png" id="profileimage" class="settings__icon" alt="">
+            <input type="file" id="imageupload" accept="image/jpg" hidden="hidden" />
             <button type="button" class=" btn settings__editbutton" id="editprofileimage"><i
                     class="fas fa-camera font-medium"></i> <span class="tooltiptext">Edit Profile Image</span></button>
 
@@ -73,8 +79,8 @@
 
 
         <div class="settings__container">
-            <h1 class="u-center-text font-small u-margin-bottom-medium">Signed as <span
-                    class="accountHolder">cs16msiit020@gmail.com</span>
+            <h1 class="u-center-text font-small u-margin-bottom-medium">Signed as 
+                <span class="accountHolderName">Raju</span><br><span class="accountHolderId">cs16msiit020@gmail.com</span>
             </h1>
             <form action="#" class="settings__form">
                 <h1 class="font-small"> Change Password</h1>
@@ -98,9 +104,13 @@
 
         </div>
     </section>
-        <!-- Settings button JavaScript -->
-        <script src="js/settings.js">
-        </script>
+    <!-- Settings button JavaScript -->
+    <script src="js/settings.js">
+    
+    </script>
+    
+    <script src="js/main.js">
+    </script>
 </body>
 
 </html>
