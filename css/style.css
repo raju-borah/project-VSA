@@ -59,12 +59,11 @@ body {
     color: #000;
     padding: 1rem;
     float: left;
-    font-size: 5rem;
-    font-weight: 700em;
+    font-size: 6rem;
+    font-weight: 800;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 1rem;
-    text-shadow: 0.2rem 0.2rem 1rem #000000; }
+    letter-spacing: 1rem; }
 
 #custom-text {
   font-size: 2rem;
@@ -535,6 +534,156 @@ border-radius for curved end of button
   .feature__link:visited {
     color: #fff; }
 
+.learning__heading {
+  position: relative;
+  width: 100%;
+  left: 10rem; }
+
+.learning__title {
+  color: #000;
+  padding: 1rem;
+  float: left;
+  font-size: 6rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem; }
+
+.learning__more {
+  font-size: 3rem;
+  display: inline-block;
+  padding: 1rem;
+  margin-left: .4rem;
+  cursor: pointer;
+  vertical-align: middle;
+  font-weight: 500;
+  position: absolute;
+  top: 2rem;
+  transition: color .25s ease;
+  border-left: 2px solid #5643fa;
+  z-index: 1;
+  background: none;
+  transition: all 0.5s; }
+  .learning__more::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #5643fa;
+    transform-origin: left;
+    transition: width 0.25s ease;
+    z-index: -1; }
+  .learning__more:visited {
+    color: #28b485; }
+  .learning__more:hover {
+    color: #fff;
+    transform: scale(1.1); }
+
+.learning__more:hover::after {
+  width: 100%; }
+
+.event__heading {
+  position: relative;
+  width: 100%;
+  left: 10rem; }
+
+.event__title {
+  color: #000;
+  padding: 1rem;
+  float: left;
+  font-size: 6rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem; }
+
+.event__more {
+  font-size: 3rem;
+  display: inline-block;
+  padding: 1rem;
+  margin-left: .4rem;
+  cursor: pointer;
+  vertical-align: middle;
+  font-weight: 500;
+  position: absolute;
+  top: 2rem;
+  transition: color .25s ease;
+  border-left: 2px solid #5643fa;
+  z-index: 1;
+  background: none;
+  transition: all 0.5s; }
+  .event__more::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #5643fa;
+    transform-origin: left;
+    transition: width 0.25s ease;
+    z-index: -1; }
+  .event__more:visited {
+    color: #28b485; }
+  .event__more:hover {
+    color: #fff;
+    transform: scale(1.1); }
+
+.event__more:hover::after {
+  width: 100%; }
+
+.club__heading {
+  position: relative;
+  width: 100%;
+  left: 10rem; }
+
+.club__title {
+  color: #000;
+  padding: 1rem;
+  float: left;
+  font-size: 6rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem; }
+
+.club__more {
+  font-size: 3rem;
+  display: inline-block;
+  padding: 1rem;
+  margin-left: .4rem;
+  cursor: pointer;
+  vertical-align: middle;
+  font-weight: 500;
+  position: absolute;
+  top: 2rem;
+  transition: color .25s ease;
+  border-left: 2px solid #5643fa;
+  z-index: 1;
+  background: none;
+  transition: all 0.5s; }
+  .club__more::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #5643fa;
+    transform-origin: left;
+    transition: width 0.25s ease;
+    z-index: -1; }
+  .club__more:visited {
+    color: #28b485; }
+  .club__more:hover {
+    color: #fff;
+    transform: scale(1.1); }
+
+.club__more:hover::after {
+  width: 100%; }
+
 .header {
   height: 91vh;
   position: relative;
@@ -587,13 +736,15 @@ img {
   width: 100%;
   margin: 30px auto;
   display: grid;
-  grid-template-rows: repeat(1, 200px);
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px; }
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5rem;
+  padding: 10rem; }
 
 .item {
   width: 100%;
   font-size: 30px;
+  height: 30rem;
   font-family: sans-serif;
   color: #fff;
   border-radius: 2rem; }
@@ -621,18 +772,17 @@ img {
   background-attachment: fixed; }
 
 .learning {
-  padding: 10rem 0 15rem 0;
-  margin-top: 2rem;
-  position: relative; }
+  padding: 15rem 0 15rem 0;
+  position: relative;
+  background-image: url(/img/learnBg-2.jpg);
+  background-size: cover; }
 
 .club {
-  padding: 10rem 0 15rem 0;
-  margin-top: 2rem;
+  padding: 15rem 0 15rem 0;
   position: relative; }
 
 .event {
-  padding: 10rem 0 15rem 0;
-  margin-top: 2rem;
+  padding: 15rem 0 15rem 0;
   position: relative; }
 
 .signup {

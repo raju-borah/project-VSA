@@ -32,3 +32,67 @@
       }
     
 }
+
+
+@mixin head {
+  position: relative;
+  width: 100%;
+  left: 10rem;
+}
+  
+@mixin title{
+  color: $color-black;
+  padding: 1rem;
+  float: left;
+  font-size: 6rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem; 
+}
+
+
+@mixin more{
+  
+  font-size: 3rem;
+  display: inline-block;
+  padding: 1rem;
+  margin-left: .4rem;
+  cursor: pointer;
+  vertical-align: middle;
+  font-weight: 500; 
+  position: absolute;
+  top: 2rem;
+  transition: color .25s ease;
+  border-left: 2px solid $color-tertiary-dark;
+  z-index: 1;
+  background: none;
+ 
+
+  transition: all 0.5s;
+
+  &::after{
+    position: absolute;
+    content: '';
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: $color-tertiary-dark;
+    transform-origin:left;
+    transition:width 0.25s ease;
+    z-index:-1;
+    
+
+  }
+
+  &:visited
+  {
+      color: $color-primary-dark;
+  }
+
+  &:hover{
+    color: $color-white;
+    transform: scale(1.1);
+  }
+}
