@@ -89,9 +89,6 @@ body {
 .u-margin {
   margin: 4rem; }
 
-.font-medium {
-  font-size: 3rem; }
-
 .u-margin-bottom-medium {
   margin-bottom: 4rem; }
 
@@ -108,6 +105,12 @@ body {
 
 .font-small {
   font-size: 2rem; }
+
+.font-medium {
+  font-size: 3rem; }
+
+.margin-top {
+  margin-top: 1.1rem; }
 
 iframe {
   width: 100%;
@@ -206,6 +209,8 @@ border-radius for curved end of button
     .btn--green--login {
       background-color: #2998ff;
       width: 80%; }
+    .btn--green--logout {
+      margin-left: 10rem; }
   .btn--blue {
     border-radius: 5rem;
     font-size: 2.5rem;
@@ -284,66 +289,13 @@ border-radius for curved end of button
     .navigationbar__button:hover .navigationbar--left--icon::after {
       background-color: #55c57a; }
   .navigationbar--left {
-    width: 30%;
-    float: left;
-    height: inherit;
-    position: relative; }
-    .navigationbar--left--icon {
-      z-index: 1;
-      top: 1.3rem;
-      left: 0.1rem;
-      position: absolute;
-      transition: all 0.2s;
-      cursor: pointer; }
-      .navigationbar--left--icon, .navigationbar--left--icon::before, .navigationbar--left--icon::after {
-        width: 3.5rem;
-        height: 0.32rem;
-        background-color: #fff;
-        display: inline-block;
-        position: absolute; }
-      .navigationbar--left--icon::before, .navigationbar--left--icon::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        transition: all 0.1s; }
-      .navigationbar--left--icon::before {
-        top: -0.8rem; }
-      .navigationbar--left--icon::after {
-        top: 0.8rem; }
-  .navigationbar__more_setting {
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    list-style-type: none;
-    background-color: #000;
-    margin-top: 6rem;
-    margin-left: -0.98rem;
-    width: 20rem;
-    box-shadow: 0 1rem 3rem rgba(1, 42, 87, 0.55);
-    transform: translateX(-20rem);
-    transition: all 0.4s ease-in-out; }
-    .navigationbar__more_setting--item {
-      padding: 1.5rem;
-      font-size: 2rem;
-      padding-left: 3rem;
-      color: #000;
-      background-image: linear-gradient(120deg, #000 0%, #000 50%, #5643fa 50%);
-      background-size: 220%;
-      transition: all 0.5s; }
-      .navigationbar__more_setting--item:hover {
-        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.55);
-        background-position: 100%;
-        color: #000; }
-    .navigationbar__more_setting :not(:last-child) {
-      border-bottom: 0.1rem solid #fff; }
-  .navigationbar--mid {
-    width: 40%;
-    float: left;
-    text-align: center; }
+    margin-left: 3rem;
+    width: 50%;
+    float: left; }
   .navigationbar--right {
     text-align: end;
-    width: 30%;
-    float: right; }
+    width: 45%;
+    float: left; }
 
 .navbarfont .navbar_items {
   font-size: 3rem;
@@ -361,6 +313,78 @@ border-radius for curved end of button
 
 .hidden {
   display: none; }
+
+.userbutton {
+  background: transparent;
+  border: none;
+  position: relative; }
+  .userbutton:active, .userbutton:focus {
+    outline: none; }
+
+.usercontainer {
+  display: none;
+  clear: left;
+  position: absolute;
+  width: 35rem;
+  height: 28rem;
+  top: 8rem;
+  right: 5.4rem;
+  background-color: #eee;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.55); }
+  .usercontainer::after {
+    content: "";
+    position: absolute;
+    top: -1.99rem;
+    right: 2.5rem;
+    border: 1rem solid;
+    border-color: transparent transparent #eee transparent; }
+
+.signincontainer {
+  display: none;
+  position: absolute;
+  width: 33rem;
+  height: 26rem;
+  top: 1rem;
+  left: 1rem;
+  padding: 2rem;
+  color: #000; }
+  .signincontainer__img {
+    margin-left: 1.2rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%; }
+
+.ul__list {
+  margin-top: 5rem;
+  list-style-type: none;
+  text-align: center; }
+  .ul__list li:last-child {
+    margin-top: 1.5rem;
+    border-top: 0.2rem solid #fff; }
+
+.list--link, .list--link:visited {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  padding: .86rem;
+  border-radius: 1rem;
+  margin: 1.5rem;
+  background-color: #9dcfff; }
+
+.notsignincontainer {
+  display: none;
+  position: absolute;
+  width: 33rem;
+  height: 26rem;
+  top: 1rem;
+  left: 1rem;
+  padding: 2rem;
+  background-color: red; }
+  .notsignincontainer__img {
+    margin-left: 1.2rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%; }
 
 .search {
   position: relative;

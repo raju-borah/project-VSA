@@ -67,102 +67,17 @@
     }
   }
 
-  // for left Options
+  // left
   &--left {
-    width: 30%;
+    margin-left: 3rem;
+    width: 50%;
     float: left;
-    height: inherit;
-    position: relative;
-    // the 3 line icon in the nav bar
-    &--icon {
-      // setting the zindex to get it into top and position relative to navigationbar
-      z-index: 1;
-      top: 1.3rem;
-      left: 0.1rem;
-      position: absolute;
-      transition: all 0.2s;
-      cursor: pointer;
-      // using pesudo class to create duplicate of icon
-      &,
-      &::before,
-      &::after {
-        width: 3.5rem;
-        height: 0.32rem;
-        background-color: $color-white;
-        display: inline-block;
-        position: absolute;
-      }
-      // position pesudo elements
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        transition: all 0.1s;
-      }
-      &::before {
-        top: -0.8rem;
-      }
-      &::after {
-        top: 0.8rem;
-      }
-    }
   }
-
-  // style for the list in the more setting
-  &__more_setting {
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    // setting none style to list
-    list-style-type: none;
-    // setting background to white color
-    background-color: $color-black;
-    // setting position from top, left and giving width
-    margin-top: 6rem;
-    margin-left: -0.98rem;
-    width: 20rem;
-    // giving shadow
-    box-shadow: 0 1rem 3rem rgba($color-tertiary-dark-1, 0.55);
-    transform: translateX(-20rem);
-    transition: all 0.4s ease-in-out;
-
-    // list item property
-    &--item {
-      padding: 1.5rem;
-      font-size: 2rem;
-      padding-left: 3rem;
-      color: $color-black;
-      background-image: linear-gradient(120deg, $color-black 0%, $color-black 50%, $color-tertiary-dark 50%);
-      background-size: 220%;
-      transition: all 0.5s;
-
-      // when  list item is hovered
-      &:hover {
-        box-shadow: 0 1rem 1rem rgba($color-black, 0.55);
-        background-position: 100%;
-        color: $color-black;
-      }
-    }
-
-    // using not lasr child selector for giving underline in list items
-    :not(:last-child) {
-      border-bottom: 0.1rem solid $color-white;
-    }
-  }
-
-  // for mid options
-  &--mid {
-    width: 40%;
-    float: left;
-    text-align: center;
-  }
-
   // for right options
   &--right {
     text-align: end;
-    width: 30%;
-    float: right;
+    width: 45%;
+    float: left;
   }
 }
 // for the navbar properties
@@ -181,4 +96,95 @@
 
 .hidden {
   display: none;
+}
+// userbutton
+.userbutton{
+  background: transparent;
+  border: none;
+  position: relative;
+  &:active,
+  &:focus{
+    outline: none;
+  }
+
+}
+// container settings
+.usercontainer{
+  display: none;
+  clear: left;
+  position: absolute;
+  width: 35rem;
+  height: 28rem;
+  top: 8rem;
+  right: 5.4rem;
+  background-color: $color-grey-light-2 ;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.55);
+  &::after{
+    content: "";
+    position: absolute;
+    top: -1.99rem;
+    right: 2.5rem;
+    border:1rem solid;
+    border-color:  transparent  transparent $color-grey-light-2 transparent;
+  }
+ 
+
+}
+.signincontainer{
+  display: none;
+
+  position: absolute;
+  width: 33rem;
+  height: 26rem;
+  top: 1rem;
+  left: 1rem;
+  padding: 2rem;
+  color: $color-black;
+  &__img{
+    
+    margin-left: 1.2rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+  }
+}
+.ul__list 
+{
+  margin-top: 5rem;
+  list-style-type: none;
+  text-align: center;
+  
+
+  li:last-child {
+    margin-top: 1.5rem;
+    border-top: 0.2rem solid $color-white;
+  }
+}
+.list--link{
+  &,&:visited{
+    text-decoration: none;
+    color: $color-black;
+    font-weight: 700;
+    padding: .86rem;
+    border-radius: 1rem;
+    margin: 1.5rem;
+    background-color: $color-tertiary-light-1;
+  }    
+}
+.notsignincontainer{
+  display: none;
+  position: absolute;
+  width: 33rem;
+  height: 26rem;
+  top: 1rem;
+  left: 1rem;
+  padding: 2rem;
+  background-color: red;
+  &__img{
+    
+    margin-left: 1.2rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+  }
 }

@@ -59,6 +59,8 @@ close button in upload page
 ...............................................................................................................................
 setting page button id's
 ----------------------
+<span class="accountHolderName">Raju</span>
+<span class="accountHolderId">cs16msiit020@gmail.com</span>
 
 change password Button section
 ---------------------------------
@@ -71,6 +73,15 @@ img background source=> "/img/back-3.jpg"
     current password  textfield ->     id=  "current_passwd"
     new password  textfield ->    id=   "new_passwd"
     new password(confirm)  textfield ->    id=  "new_confirm_passwd"
+
+
+
+user profile
+------------------
+logout button id =logoutButton
+
+
+
 
 ............................................................................
 >>slide show in header images source

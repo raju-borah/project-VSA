@@ -42,12 +42,15 @@ border-radius for curved end of button
     color: $color-white;
     padding: 1rem;
 
-    //
-
     // for login
     &--login {
       background-color: $color-tertiary-light;
       width: 80%;
+    }
+
+    // for logout
+    &--logout{
+    margin-left: 10rem;
     }
   }
   &--blue {
@@ -93,5 +96,4 @@ border-radius for curved end of button
     /* for moving down */
     transform: translateY(-0.1rem);
   }
-
 }
