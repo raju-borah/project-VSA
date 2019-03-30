@@ -387,13 +387,15 @@ border-radius for curved end of button
   height: 26rem;
   top: 1rem;
   left: 1rem;
-  padding: 2rem;
-  background-color: red; }
+  padding: 2rem; }
   .notsignincontainer__img {
-    margin-left: 1.2rem;
-    height: 10rem;
-    width: 10rem;
+    margin-left: 8.5rem;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%; }
+  .notsignincontainer__imgdiv {
+    height: 12rem;
+    width: 15rem; }
 
 .search {
   position: relative;

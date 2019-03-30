@@ -179,12 +179,16 @@
   top: 1rem;
   left: 1rem;
   padding: 2rem;
-  background-color: red;
+
   &__img{
     
-    margin-left: 1.2rem;
-    height: 10rem;
-    width: 10rem;
+    margin-left: 8.5rem;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%;
+  }
+  &__imgdiv{
+    height: 12rem;
+    width: 15rem;
   }
 }
