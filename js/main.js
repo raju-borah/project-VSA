@@ -32,7 +32,6 @@ const userContainer=document.querySelector('.usercontainer');
 const signindetail=document.querySelector('.signincontainer');
 // not sign in division
 const notsigin=document.querySelector('.notsignincontainer');
-let i;
 
 userBtn.addEventListener('click',function(){
     
