@@ -95,7 +95,7 @@ body {
   margin-right: 2rem; }
 
 .textShadow {
-  text-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.99); }
+  text-shadow: 0 0.61rem 1rem rgba(0, 0, 0, 0.99); }
 
 .icon {
   width: 3rem;
@@ -110,6 +110,9 @@ body {
 
 .margin-top {
   margin-top: 1.1rem; }
+
+.u-margin-small {
+  margin: 2rem; }
 
 iframe {
   width: 100%;
@@ -401,7 +404,7 @@ border-radius for curved end of button
 .search {
   position: relative;
   top: -2rem;
-  right: 20rem; }
+  right: 5rem; }
   .search__input {
     position: absolute;
     top: 20px;
@@ -1010,7 +1013,8 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 2; }
   .upload__container {
     width: 100%;
     height: 100vh;
@@ -1109,3 +1113,52 @@ img {
       border-width: .8rem;
       border-style: solid;
       border-color: transparent #eee transparent transparent; }
+
+.dashboard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #eee;
+  padding: 1rem; }
+  .dashboard__vcontainer {
+    border-top: 0.2rem solid #012A57;
+    padding: 1rem; }
+  .dashboard__list {
+    list-style-type: none; }
+    .dashboard__list--items {
+      background-color: #9dcfff;
+      margin-top: 1rem; }
+  .dashboard__vcard {
+    width: 100%;
+    height: 30rem;
+    padding: 2.5rem;
+    padding-left: 8rem; }
+  .dashboard__video {
+    width: 25%;
+    height: 25rem;
+    float: left; }
+  .dashboard__description {
+    width: 70%;
+    height: 25rem;
+    float: left;
+    padding: 3rem; }
+
+.floating {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-top: 1.7rem;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  position: fixed;
+  top: 12.9rem;
+  right: 9.1rem; }
+  .floating--btn {
+    position: absolute;
+    top: 12.8rem;
+    right: 9rem;
+    z-index: 2;
+    position: fixed;
+    font-size: 5.5rem;
+    color: #5643fa;
+    backface-visibility: hidden; }

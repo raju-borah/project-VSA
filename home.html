@@ -33,7 +33,7 @@
         <div class="navbarfont navigationbar--left"><a href="home.html" class="navbar_items">Vidshare </a> </div>
         <!-- for right option such as search, user profile, upload -->
         <div class="navbarfont navigationbar--right">
-            <div class="search u-margin-right-medium">
+            <div class="search">
                 <input type="text" placeholder="Search" class="search__input" required>
                 <button type="button" class="search__btn" id="searchButton">
                     <i class="fa fa-search search__icon" aria-hidden="true"></i>
@@ -41,7 +41,6 @@
 
             </div>
 
-            <a href="#upload" class="navbar_items"> <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i></a>
             <button type="button" class="navbar_items userbutton"> <i class="fas fa-user-tie "></i></button>
             <div class="usercontainer">
                 <!-- if user signed the following div will be displayed -->
@@ -59,12 +58,12 @@
                 </div>
                 <!-- if user is signed out then -->
                 <div class="notsignincontainer">
-                    <div class="notsignincontainer__imgdiv"> 
+                    <div class="notsignincontainer__imgdiv">
                         <img class="notsignincontainer__img" src="img/display.jpg" alt="">
                     </div>
                     <ul class="ul__list">
                         <li><a href="login.html" class="btn btn--front">login</a>
-                      <a href="signup.html"  class="btn btn--front">Signup</a></li>
+                            <a href="signup.html" class="btn btn--front">Signup</a></li>
                     </ul>
                 </div>
 
@@ -114,47 +113,6 @@
 
 
     <main class="main">
-
-        <!-- upload section  starting-->
-        <div class="upload" id="upload">
-            <!-- container -->
-            <div class="upload__container">
-                <!-- upload videos section -->
-                <div class="upload__videos--card u-center-text ">
-
-                    <a href="#headSection" class="btn--close">&times;</a>
-
-                    <!-- heading -->
-                    <h1 class="font-medium u-margin-bottom-small">Upload Videos</h1>
-                    <!-- upload button -->
-                    <input type="file" id="upload-file" accept="video/*" hidden="hidden" />
-                    <!-- text to display the file name to be uploaded -->
-                    <span id="custom-text">No file Choosen yet !</span>
-                    <button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A
-                        FILE</button>
-
-
-                    <!-- for title -->
-                    <input type="text" class="form__input--upload form__input--upload--1" id="upload-title"
-                        placeholder="Title">
-                    <!-- for description -->
-                    <textarea rows="2" cols="30" class="form__input--upload form__input--upload--1"
-                        id="upload-description" placeholder="Description"></textarea>
-                    <!-- for selecting the category -->
-                    <select id="video-category" class="form__input--upload form__input--upload--2">
-                        <option value="Select Category" selected>Select Category</option>
-                        <option value="learning">Learning</option>
-                        <option value="Events">Events</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="others">Others</option>
-                    </select>
-
-                    <button class="btn btn--upload" type="submit" id="upload-video">Upload</button>
-                </div>
-            </div>
-        </div>
-        <!-- ending of upload section -->
-
 
 
 
