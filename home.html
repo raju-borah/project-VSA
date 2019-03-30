@@ -11,7 +11,7 @@
     <!-- google font style -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <!-- Icon on Title  -->
-    <link rel="icon" type="image/png" href="img/download.png" />
+
     <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- font awesome -->
@@ -42,7 +42,7 @@
             </div>
 
             <a href="#upload" class="navbar_items"> <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i></a>
-            <button type="button" class="navbar_items userbutton"> <i class="fas fa-user-tie"></i></button>
+            <button type="button" class="navbar_items userbutton"> <i class="fas fa-user-tie "></i></button>
             <div class="usercontainer">
                 <!-- if user signed the following div will be displayed -->
                 <div class="signincontainer">
@@ -59,10 +59,10 @@
                 </div>
                 <!-- if user is signed out then -->
                 <div class="notsignincontainer">
+                    
                     <ul class="ul__list">
-                        <li><button type="button" class="btn btn--green btn--green--logout">Sign in</button></li>
-                        <li><button type="button" id="logoutButton"
-                                class="btn btn--green btn--green--logout">Signup</button></li>
+                        <li><a href="login.html" class="btn btn--front">login</a>
+                      <a href="signup.html"  class="btn btn--front">Signup</a></li>
                     </ul>
                 </div>
 
@@ -424,7 +424,8 @@
     <script src="js/slider.js">
     </script>
 
-
+    <!-- display js -->
+    <script src="js/display.js"></script>
 
     <!--aos script-->
     <script>

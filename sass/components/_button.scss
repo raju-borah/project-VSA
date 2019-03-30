@@ -62,6 +62,18 @@ border-radius for curved end of button
     color: $color-white;
     padding: 1rem;
     width: 15rem;
+   
+  }
+  &--front{
+    background-color: $color-tertiary-dark-2;
+    display: inline-block;
+    width: 10rem;
+    font-weight: 700;
+    padding: 1rem;
+    color: $color-white;
+    margin: 1rem;
+    border-radius: 1rem;
+    font-size: 1.7rem;
   }
 
   // upload button

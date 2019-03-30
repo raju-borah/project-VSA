@@ -219,6 +219,16 @@ border-radius for curved end of button
     color: #fff;
     padding: 1rem;
     width: 15rem; }
+  .btn--front {
+    background-color: #172d44;
+    display: inline-block;
+    width: 10rem;
+    font-weight: 700;
+    padding: 1rem;
+    color: #fff;
+    margin: 1rem;
+    border-radius: 1rem;
+    font-size: 1.7rem; }
   .btn--upload {
     width: 15rem;
     padding: 1rem;
@@ -561,7 +571,7 @@ border-radius for curved end of button
 .learning__heading {
   position: relative;
   width: 100%;
-  margin-left: 10rem; }
+  padding-left: 10rem; }
 
 .learning__title {
   color: #fff;
@@ -611,7 +621,7 @@ border-radius for curved end of button
 .event__heading {
   position: relative;
   width: 100%;
-  margin-left: 10rem; }
+  padding-left: 10rem; }
 
 .event__title {
   color: #fff;
@@ -661,7 +671,7 @@ border-radius for curved end of button
 .club__heading {
   position: relative;
   width: 100%;
-  margin-left: 10rem; }
+  padding-left: 10rem; }
 
 .club__title {
   color: #fff;
