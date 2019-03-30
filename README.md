@@ -46,11 +46,8 @@ signup anchor tags:-
 home anchor tags:-
 ------------------
               <a href="home.html" class="navbar_items">Vidshare </a> 
-              <a href="#" class="listlink--item ">Channel &nbsp;<i class="fas fa-video"></i></a>
-              <a href="#" class="listlink--item ">Settings &nbsp;<i class="fas fa-cog"></i></a>
-              <a href="#" class="listlink--item ">Help &nbsp;<i class="fas fa-hands-helping"></i></a>
-              <a href="#" class="listlink--item ">Feedback &nbsp;<i class="fas fa-comments"></i></a>
-
+              <li><a href="login.html" class="btn btn--front">login</a>
+                      <a href="signup.html"  class="btn btn--front">Signup</a></li>
 
 close button in upload page
 -------------------              

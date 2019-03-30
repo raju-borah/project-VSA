@@ -11,7 +11,7 @@
     <!-- google font style -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <!-- Icon on Title  -->
-    <link rel="icon" type="image/png" href="img/download.png" />
+
     <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- font awesome -->
@@ -42,7 +42,7 @@
             </div>
 
             <a href="#upload" class="navbar_items"> <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i></a>
-            <button type="button" class="navbar_items userbutton"> <i class="fas fa-user-tie"></i></button>
+            <button type="button" class="navbar_items userbutton"> <i class="fas fa-user-tie "></i></button>
             <div class="usercontainer">
                 <!-- if user signed the following div will be displayed -->
                 <div class="signincontainer">
@@ -59,10 +59,12 @@
                 </div>
                 <!-- if user is signed out then -->
                 <div class="notsignincontainer">
+                    <div class="notsignincontainer__imgdiv"> 
+                        <img class="notsignincontainer__img" src="img/display.jpg" alt="">
+                    </div>
                     <ul class="ul__list">
-                        <li><button type="button" class="btn btn--green btn--green--logout">Sign in</button></li>
-                        <li><button type="button" id="logoutButton"
-                                class="btn btn--green btn--green--logout">Signup</button></li>
+                        <li><a href="login.html" class="btn btn--front">login</a>
+                      <a href="signup.html"  class="btn btn--front">Signup</a></li>
                     </ul>
                 </div>
 
@@ -169,7 +171,7 @@
                 <div class="info__learning" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
 
                     <div class="info__imgbox">
-                        <img src="img/head.jpg" alt="" class="info__img">
+                        <img src="img/head1.jpg" alt="" class="info__img">
                     </div>
 
 
@@ -185,7 +187,7 @@
                 <!--Eevent card-->
                 <div class="info__event" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
                     <div class="info__imgbox">
-                        <img src="img/event.jpg" alt="" class="info__img">
+                        <img src="img/event1.jpg" alt="" class="info__img">
 
                     </div>
                     <h5 class="info__title">Event</h5>
@@ -199,7 +201,7 @@
                 <!--Club card-->
                 <div class="info__club" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
                     <div class="info__imgbox">
-                        <img src="img/floor.jpg" alt="" class="info__img">
+                        <img src="img/floor1.jpg" alt="" class="info__img">
                     </div>
 
 
@@ -247,6 +249,8 @@
                         </div>
                     </div>
 
+
+                    
                     <div class="feature__event">
 
 
@@ -254,8 +258,6 @@
                             <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"
                                 allowfullscreen></iframe>
                         </div>
-
-
 
                         <div class="feature__text">
                             <h3><a href="#" class="feature__link">Event Video</a></h3>
@@ -549,7 +551,8 @@
     <script src="js/slider.js">
     </script>
 
-
+    <!-- display js -->
+    <script src="js/display.js"></script>
 
     <!--aos script-->
     <script>

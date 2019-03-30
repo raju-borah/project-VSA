@@ -77,6 +77,7 @@
   &--right {
     text-align: end;
     width: 45%;
+    padding-right: 2.5rem;
     float: left;
   }
 }
@@ -116,7 +117,7 @@
   width: 35rem;
   height: 28rem;
   top: 8rem;
-  right: 5.4rem;
+  right: 7.5rem;
   background-color: $color-grey-light-2 ;
   box-shadow: 0 1rem 2rem rgba($color-black, 0.55);
   &::after{
@@ -179,12 +180,16 @@
   top: 1rem;
   left: 1rem;
   padding: 2rem;
-  background-color: red;
+
   &__img{
     
-    margin-left: 1.2rem;
-    height: 10rem;
-    width: 10rem;
+    margin-left: 8.5rem;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%;
+  }
+  &__imgdiv{
+    height: 12rem;
+    width: 15rem;
   }
 }

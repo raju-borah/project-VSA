@@ -219,6 +219,16 @@ border-radius for curved end of button
     color: #fff;
     padding: 1rem;
     width: 15rem; }
+  .btn--front {
+    background-color: #172d44;
+    display: inline-block;
+    width: 10rem;
+    font-weight: 700;
+    padding: 1rem;
+    color: #fff;
+    margin: 1rem;
+    border-radius: 1rem;
+    font-size: 1.7rem; }
   .btn--upload {
     width: 15rem;
     padding: 1rem;
@@ -294,6 +304,7 @@ border-radius for curved end of button
   .navigationbar--right {
     text-align: end;
     width: 45%;
+    padding-right: 2.5rem;
     float: left; }
 
 .navbarfont .navbar_items {
@@ -327,7 +338,7 @@ border-radius for curved end of button
   width: 35rem;
   height: 28rem;
   top: 8rem;
-  right: 5.4rem;
+  right: 7.5rem;
   background-color: #eee;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.55); }
   .usercontainer::after {
@@ -377,13 +388,15 @@ border-radius for curved end of button
   height: 26rem;
   top: 1rem;
   left: 1rem;
-  padding: 2rem;
-  background-color: red; }
+  padding: 2rem; }
   .notsignincontainer__img {
-    margin-left: 1.2rem;
-    height: 10rem;
-    width: 10rem;
+    margin-left: 8.5rem;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%; }
+  .notsignincontainer__imgdiv {
+    height: 12rem;
+    width: 15rem; }
 
 .search {
   position: relative;
