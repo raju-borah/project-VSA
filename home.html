@@ -11,7 +11,7 @@
     <!-- google font style -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <!-- Icon on Title  -->
-    <link rel="icon" type="image/png" href="img/download.png" />
+
     <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- font awesome -->
@@ -28,39 +28,47 @@
 <body>
     <!-- navigation bar -->
     <div class="navigationbar">
-        <!-- for the left part -->
-        <div class="navigationbar--left navbarfont ">
-           <!-- checkedbox for controling list items -->
-           <input type="checkbox" class="navigationbar__checkbox" id="navi-toggle">
-           <label for="navi-toggle" class="navigationbar__button">
-               <!-- the navigation icon -->
-               <div class="navigationbar--left--icon"></div>
-           </label>     
-            <!-- more settings option -->
-         <ul class="navigationbar__more_setting">
-                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Channel&nbsp;<i
-                            class="fas fa-video"></i></a></li>
-                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Settings&nbsp;<i
-                            class="fas fa-cog"></i></a></li>
-                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Help&nbsp;<i
-                            class="fas fa-hands-helping"></i></a></li>
-                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Feedback&nbsp;<i
-                            class="fas fa-comments"></i></a></li>
-            </ul>      
-        </div>
+
         <!-- name of the Application -->
-        <div class="navbarfont navigationbar--mid"><a href="#" class="navbar_items">Vidshare </a> </div>
+        <div class="navbarfont navigationbar--left"><a href="home.html" class="navbar_items">Vidshare </a> </div>
         <!-- for right option such as search, user profile, upload -->
         <div class="navbarfont navigationbar--right">
             <div class="search u-margin-right-medium">
                 <input type="text" placeholder="Search" class="search__input" required>
                 <button type="button" class="search__btn" id="searchButton">
                     <i class="fa fa-search search__icon" aria-hidden="true"></i>
-                    </button>
+                </button>
 
             </div>
-            <a href="#" class="navbar_items"> <i class="fas fa-user-tie"></i></a>
+
             <a href="#upload" class="navbar_items"> <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i></a>
+            <button type="button" class="navbar_items userbutton"> <i class="fas fa-user-tie "></i></button>
+            <div class="usercontainer">
+                <!-- if user signed the following div will be displayed -->
+                <div class="signincontainer">
+                    <img src="img/icons/man.png" class="signincontainer__img" alt="">
+                    <div class="margin-top">
+                        <h1 class="accountHolderName">Raju Moni Borah</h1>
+                        <h2 class="accountHolderId">cs16msiit020@gmail.com</h2>
+                    </div>
+                    <ul class="ul__list">
+                        <li><a href="settings.html" class="list--link font-small"> Account</a> &nbsp;
+                            <a href="#" class="list--link font-small">My videos</a></li>
+                        <li><button type="button" class="btn btn--green btn--green--logout">Logout</button></li>
+                    </ul>
+                </div>
+                <!-- if user is signed out then -->
+                <div class="notsignincontainer">
+                    <div class="notsignincontainer__imgdiv"> 
+                        <img class="notsignincontainer__img" src="img/display.jpg" alt="">
+                    </div>
+                    <ul class="ul__list">
+                        <li><a href="login.html" class="btn btn--front">login</a>
+                      <a href="signup.html"  class="btn btn--front">Signup</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -106,16 +114,16 @@
 
 
     <main class="main">
-        
+
         <!-- upload section  starting-->
         <div class="upload" id="upload">
             <!-- container -->
             <div class="upload__container">
                 <!-- upload videos section -->
                 <div class="upload__videos--card u-center-text ">
-             
-                        <a href="#headSection" class="btn--close">&times;</a>
-                  
+
+                    <a href="#headSection" class="btn--close">&times;</a>
+
                     <!-- heading -->
                     <h1 class="font-medium u-margin-bottom-small">Upload Videos</h1>
                     <!-- upload button -->
@@ -163,7 +171,7 @@
                 <div class="info__learning" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
 
                     <div class="info__imgbox">
-                        <img src="img/head.jpg" alt="" class="info__img">
+                        <img src="img/head1.jpg" alt="" class="info__img">
                     </div>
 
 
@@ -176,10 +184,10 @@
                     </p>
                 </div>
 
-                 <!--Eevent card-->
-                <div class="info__event" data-aos="fade-up"   data-aos-easing="linear" data-aos-duration="500"> 
+                <!--Eevent card-->
+                <div class="info__event" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
                     <div class="info__imgbox">
-                        <img src="img/event.jpg" alt="" class="info__img">
+                        <img src="img/event1.jpg" alt="" class="info__img">
 
                     </div>
                     <h5 class="info__title">Event</h5>
@@ -190,10 +198,10 @@
                         vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
                     </p>
                 </div>
-                    <!--Club card-->
-                    <div class="info__club" data-aos="fade-up"  data-aos-easing="linear"  data-aos-duration="500">
-                        <div class="info__imgbox">  
-                        <img src="img/floor.jpg" alt="" class="info__img">
+                <!--Club card-->
+                <div class="info__club" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+                    <div class="info__imgbox">
+                        <img src="img/floor1.jpg" alt="" class="info__img">
                     </div>
 
 
@@ -214,75 +222,81 @@
 
 
 
-        
-            <!--Featured section-->
-            <section class="feature">
-                    <div class="feature__container">
-                        
-                         <div class="feature__heading">
-                             <h3>Featured Videos</h3>
-                             <span class="feature__left-line"></span>
-                             <span><i class="fas fa-play"></i></span>
-                             <span class="feature__right-line"></span>
-                         </div>
+
+        <!--Featured section-->
+        <section class="feature">
+            <div class="feature__container">
+
+                <div class="feature__heading">
+                    <h3>Featured Videos</h3>
+                    <span class="feature__left-line"></span>
+                    <span><i class="fas fa-play"></i></span>
+                    <span class="feature__right-line"></span>
+                </div>
 
 
-                        <div class="feature__contents">
+                <div class="feature__contents">
 
-                            <div class="feature__learn">
+                    <div class="feature__learn">
 
-                                <div class="feature__video">
-                                <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"  allowfullscreen></iframe>
-                                </div>
-                                            <div class="feature__text">
-                                                    <h3><a href="#"  class="feature__link">Learning Video</a></h3>
-                        
-                                                  </div>
-                            </div>
-
-                            <div class="feature__event">
-
-
-                                <div class="feature__video">
-                                    <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"  allowfullscreen></iframe>
-                                    </div>
-                    
-                     
-                                            
-                                            <div class="feature__text">
-                                                    <h3><a href="#" class="feature__link">Event Video</a></h3>
-                                     
-                                                  </div>
-                                
-                                </div>
-
-
-                                <div class="feature__club">
-                                      
-                                    <div class="feature__video">
-                                        <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"  allowfullscreen></iframe>
-                                        </div>
-            
-                                                
-                                            <div class="feature__text">
-                                                    <h3><a href="#"  class="feature__link">Club Video</a></h3>
-                                                    
-                                    </div>
+                        <div class="feature__video">
+                            <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"
+                                allowfullscreen></iframe>
                         </div>
-   
-
+                        <div class="feature__text">
+                            <h3><a href="#" class="feature__link">Learning Video</a></h3>
 
                         </div>
-                </section>
-                <!--feature osimai-->
+                    </div>
+
+                    <div class="feature__event">
+
+
+                        <div class="feature__video">
+                            <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+
+
+
+                        <div class="feature__text">
+                            <h3><a href="#" class="feature__link">Event Video</a></h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature__club">
+
+                        <div class="feature__video">
+                            <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+
+
+                        <div class="feature__text">
+                            <h3><a href="#" class="feature__link">Club Video</a></h3>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+        </section>
+        <!--feature osimai-->
 
 
         <!--Learning section-->
         <section class="learning">
 
-            <div class="heading">
-                <h3 class="heading__title" >LEARNING</h3>
-                <a class="heading__more"><span>View More</span></a>
+            <div class="learning__heading">
+                <h3 class="learning__title">LEARNING</h3>
+                <a href="" class="learning__more"><span>View More</span></a>
             </div>
 
 
@@ -299,6 +313,17 @@
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
                 </div>
 
+                <div class="item item--4">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--5">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--6">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
 
         </section>
@@ -309,9 +334,9 @@
         <!--Club section-->
         <section class="club">
 
-            <div class="heading">
-                <h3 class="heading__title">CLUB ACTIVITIES</h3>
-                <a class="heading__more"><span>View More</span></a>
+            <div class="club__heading">
+                <h3 class="club__title">CLUB ACTIVITIES</h3>
+                <a href="" class="club__more"><span>View More</span></a>
             </div>
 
             <div class="grid">
@@ -324,6 +349,18 @@
                 </div>
 
                 <div class="item item--3">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--4">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--5">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--6">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
                 </div>
 
@@ -333,27 +370,38 @@
 
 
 
-    
+
 
         <!--Event section-->
         <section class="event">
 
-            <div class="heading">
-                <h3 class="heading__title">EVENTS</h3>
-                <a class="heading__more"><span>View More</span></a>
+            <div class="event__heading">
+                <h3 class="event__title">EVENTS</h3>
+                <a href="" class="event__more"><span>View More</span></a>
             </div>
 
             <div class="grid">
                 <div class="item item--1">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-
                 </div>
-                <div class="item item--2">
 
+                <div class="item item--2">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="item item--3">
 
+                <div class="item item--3">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--4">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--5">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="item item--6">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
@@ -378,7 +426,8 @@
     <script src="js/slider.js">
     </script>
 
-
+    <!-- display js -->
+    <script src="js/display.js"></script>
 
     <!--aos script-->
     <script>

@@ -58,10 +58,13 @@
     padding: 10rem;
     grid-column: center-start / center-end;
 
+    
     display: grid;
     grid-template-rows: 65vh  repeat(1, 1fr);
     grid-template-columns: repeat(3,1fr);
     grid-gap: 4rem;
+
+
 
    }
 

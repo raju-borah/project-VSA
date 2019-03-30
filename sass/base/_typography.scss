@@ -23,7 +23,7 @@ body{
         font-size: 4rem;
      //   text-shadow: 0 1rem 1rem rgba($color-black,0.48);
         padding: 1rem;
-        border-bottom: .4rem solid rgba($color-tertiary-dark-1,0.78);
+        border-bottom: .4rem solid rgba($color-primary-dark,0.98);
         display: inline;
     }
 
@@ -33,15 +33,21 @@ body{
         color: $color-black;
         padding: 1rem;
         float: left;
-        font-size: 5rem;
-        font-weight: 700em;
+        font-size: 6rem;
+        font-weight: 800;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 1rem; 
-        text-shadow: 0.2rem 0.2rem 1rem #000000;
+       
 
     }
 
+
+
+    
+
+
+  
 
 }
 

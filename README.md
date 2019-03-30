@@ -45,11 +45,9 @@ signup anchor tags:-
 
 home anchor tags:-
 ------------------
-              <a href="#" class="listlink--item ">Channel &nbsp;<i class="fas fa-video"></i></a>
-              <a href="#" class="listlink--item ">Settings &nbsp;<i class="fas fa-cog"></i></a>
-              <a href="#" class="listlink--item ">Help &nbsp;<i class="fas fa-hands-helping"></i></a>
-              <a href="#" class="listlink--item ">Feedback &nbsp;<i class="fas fa-comments"></i></a>
-
+              <a href="home.html" class="navbar_items">Vidshare </a> 
+              <li><a href="login.html" class="btn btn--front">login</a>
+                      <a href="signup.html"  class="btn btn--front">Signup</a></li>
 
 close button in upload page
 -------------------              
@@ -58,14 +56,29 @@ close button in upload page
 ...............................................................................................................................
 setting page button id's
 ----------------------
+<span class="accountHolderName">Raju</span>
+<span class="accountHolderId">cs16msiit020@gmail.com</span>
 
->>change password Button section
+change password Button section
 ---------------------------------
+img background source=> "/img/back-3.jpg"
+   profile image=>  "img/icons/man.png"
+   
+   edit profile image button =>id "edit_profileimage"
    submit button -> id="changePasswordBtn"
 
     current password  textfield ->     id=  "current_passwd"
     new password  textfield ->    id=   "new_passwd"
     new password(confirm)  textfield ->    id=  "new_confirm_passwd"
+
+
+
+user profile
+------------------
+logout button id =logoutButton
+
+
+
 
 ............................................................................
 >>slide show in header images source
@@ -79,10 +92,6 @@ img3->"img/col.jpg"
 img1->"img/head.jpg" 
 img2->"img/event.jpg"
 img3->"img/floor.jpg"
-
-
-sorry for the errors earlier.....
-( ^_^ lol np )
 
 
 ........................................................................

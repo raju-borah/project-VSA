@@ -40,9 +40,12 @@
 //learning section//
 .learning
 {
-    padding: 10rem 0 15rem 0;
-    margin-top: 2rem;
+    padding: 15rem 0 15rem 0;
+   
     position: relative;
+    background-image: url(/img/learnBg-3.jpg);
+    
+    background-size: cover;
 
 }
 
@@ -51,8 +54,9 @@
 //club activities section//
 .club
 {
-    padding: 10rem 0 15rem 0;
-    margin-top: 2rem;
+    padding: 15rem 0 15rem 0;
+    background-image: url(/img/club-2.jpg);
+    background-size: cover;
     position: relative;
 
 }
@@ -62,8 +66,10 @@
 //event section//
 .event
 {
-    padding: 10rem 0 15rem 0;
-    margin-top: 2rem;
+    padding: 15rem 0 15rem 0;
+    background-image: url(/img/even.jpg);
+    background-size: cover;
+
     position: relative;
 
 }

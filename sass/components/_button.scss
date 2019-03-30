@@ -34,20 +34,23 @@ border-radius for curved end of button
   }
   // button green
   &--green {
-    border-radius: 5rem;
-    font-size: 2.5rem;
+    border-radius: 1rem;
+    font-size: 2rem;
     margin: 2rem;
     display: block;
     background-color: $color-primary-dark;
     color: $color-white;
     padding: 1rem;
 
-    //
-
     // for login
     &--login {
       background-color: $color-tertiary-light;
       width: 80%;
+    }
+
+    // for logout
+    &--logout{
+    margin-left: 10rem;
     }
   }
   &--blue {
@@ -59,6 +62,18 @@ border-radius for curved end of button
     color: $color-white;
     padding: 1rem;
     width: 15rem;
+   
+  }
+  &--front{
+    background-color: $color-tertiary-dark-2;
+    display: inline-block;
+    width: 10rem;
+    font-weight: 700;
+    padding: 1rem;
+    color: $color-white;
+    margin: 1rem;
+    border-radius: 1rem;
+    font-size: 1.7rem;
   }
 
   // upload button
@@ -93,5 +108,4 @@ border-radius for curved end of button
     /* for moving down */
     transform: translateY(-0.1rem);
   }
-
 }
