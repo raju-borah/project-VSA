@@ -304,6 +304,7 @@ border-radius for curved end of button
   .navigationbar--right {
     text-align: end;
     width: 45%;
+    padding-right: 2.5rem;
     float: left; }
 
 .navbarfont .navbar_items {
@@ -337,7 +338,7 @@ border-radius for curved end of button
   width: 35rem;
   height: 28rem;
   top: 8rem;
-  right: 5.4rem;
+  right: 7.5rem;
   background-color: #eee;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.55); }
   .usercontainer::after {
