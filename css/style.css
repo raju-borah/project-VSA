@@ -1026,13 +1026,13 @@ img {
 .floating {
   width: 4.5rem;
   height: 4.5rem;
-  margin-top: 1.7rem;
+  margin-top: 1.9rem;
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
   position: fixed;
   top: 12.9rem;
-  right: 9.1rem; }
+  right: 9.3rem; }
   .floating--btn {
     position: absolute;
     top: 12.8rem;
