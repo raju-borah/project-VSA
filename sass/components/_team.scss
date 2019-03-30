@@ -1,0 +1,195 @@
+.team {
+  position: relative;
+ 
+
+  //main title:Meet your team
+  &__title {
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 6rem;
+    letter-spacing: 1rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: "norwester";
+  }
+
+  //left-bar
+  &__left {
+    background: $color-white;
+    height: 0.2rem;
+    width: 20rem;
+    position: absolute;
+    left: 29rem;
+    top: 15rem;
+    bottom: 10px;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  //right-bar
+  &__right {
+    background: $color-white;
+    height: 0.2rem;
+    width: 20rem;
+    right: 29rem;
+    position: absolute;
+    top: 15rem;
+    bottom: 10px;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  //icon 
+  &__icon {
+    position: absolute;
+    font-size: 6rem;
+    color: $color-white;
+    top: 2rem;
+    left: 80rem;
+  }
+
+  //description part
+  &__description {
+    color: $color-white;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 5rem;
+    line-height: 6rem;
+    display: block;
+    text-align: center;
+  }
+
+
+
+
+  //team grid
+  &__grid {
+    position: relative;
+    padding: 4rem;
+
+
+    display: grid;
+    grid-template-rows: 75vh repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 8rem;
+
+    text-align: center;
+  }
+
+  &__img
+  {	
+    width: 100%;
+	border-radius: 50%; 
+	border: 15px solid transparent; 
+	box-shadow: 2px 2px 0px rgba(0,0,0, 0.18);
+    transition: all 0.1s ease-in;
+    height: 50%;
+
+    &:hover{
+        border: 15px solid rgb(9, 74, 139);
+        z-index: 10;
+        transition: all 0.3s ease-in;	
+        height: 50%;
+    }
+  }
+
+
+
+  //member grid space
+  &__member {
+      position: relative;
+    width: 100%;
+
+    
+  }
+
+  &__member:hover &__unhover-img
+  {
+      display: none;
+  }
+
+  &__member:hover &__hover-img
+  {
+      display: block;
+  }
+
+  //profile part of member
+  &__profile {
+    text-decoration: none;
+    color:$color-white;
+    transition: all 0.1s ease-in;
+  }
+
+  //when the image is hovered
+  &__hover-img {
+      display: none;
+  }
+
+  //designation of memebers
+  &__designation {
+    padding: 8px 20px;
+	display: inline-block;
+	background: #308be6;
+	border-radius: 0 16px 16px 0;
+	font-size: 1.8rem;
+    color: $color-white;
+    position: relative;
+    top: 24rem;
+    left: -4.1rem;
+
+    
+  }
+
+  //first name
+  &__h4 {
+    font-size: 32px;
+    font-weight: 700;
+    color: $color-white;
+    position: relative;
+    top: 30rem;
+  }
+
+  //second name part
+  &__name {
+    display: block;
+    top: 1rem;
+    font-size: 2rem;
+    background: none;
+    padding: 0;
+    color: $color-white;
+  }
+
+
+  //list item / social icons
+  &__list
+  {
+      position: relative;
+      top: 30rem;
+
+  
+
+  }
+
+  &__item
+  {
+    display: inline-block; 
+    padding: 0 6px;
+    font-size: 3rem;
+   
+
+
+  }
+
+  
+  &__link
+  {
+    color: $color-white;
+    transition: all 0.1s ease-in;
+
+    &:hover{
+        color: rgba(0,0,0, 0.7);
+
+    }
+
+  }
+}

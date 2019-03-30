@@ -576,8 +576,9 @@ border-radius for curved end of button
 
 .learning__heading {
   position: relative;
-  width: 100%;
-  padding-left: 10rem; }
+  width: 90%;
+  display: inline-block;
+  left: 10rem; }
 
 .learning__title {
   color: #fff;
@@ -626,8 +627,9 @@ border-radius for curved end of button
 
 .event__heading {
   position: relative;
-  width: 100%;
-  padding-left: 10rem; }
+  width: 90%;
+  display: inline-block;
+  left: 10rem; }
 
 .event__title {
   color: #fff;
@@ -676,8 +678,9 @@ border-radius for curved end of button
 
 .club__heading {
   position: relative;
-  width: 100%;
-  padding-left: 10rem; }
+  width: 90%;
+  display: inline-block;
+  left: 10rem; }
 
 .club__title {
   color: #fff;
@@ -723,6 +726,119 @@ border-radius for curved end of button
 
 .club__more:hover::after {
   width: 100%; }
+
+.team {
+  position: relative; }
+  .team__title {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 6rem;
+    letter-spacing: 1rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: "norwester"; }
+  .team__left {
+    background: #fff;
+    height: 0.2rem;
+    width: 20rem;
+    position: absolute;
+    left: 29rem;
+    top: 15rem;
+    bottom: 10px;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif; }
+  .team__right {
+    background: #fff;
+    height: 0.2rem;
+    width: 20rem;
+    right: 29rem;
+    position: absolute;
+    top: 15rem;
+    bottom: 10px;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif; }
+  .team__icon {
+    position: absolute;
+    font-size: 6rem;
+    color: #fff;
+    top: 2rem;
+    left: 80rem; }
+  .team__description {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 5rem;
+    line-height: 6rem;
+    display: block;
+    text-align: center; }
+  .team__grid {
+    position: relative;
+    padding: 4rem;
+    display: grid;
+    grid-template-rows: 75vh repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 8rem;
+    text-align: center; }
+  .team__img {
+    width: 100%;
+    border-radius: 50%;
+    border: 15px solid transparent;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.18);
+    transition: all 0.1s ease-in;
+    height: 50%; }
+    .team__img:hover {
+      border: 15px solid #094a8b;
+      z-index: 10;
+      transition: all 0.3s ease-in;
+      height: 50%; }
+  .team__member {
+    position: relative;
+    width: 100%; }
+  .team__member:hover .team__unhover-img {
+    display: none; }
+  .team__member:hover .team__hover-img {
+    display: block; }
+  .team__profile {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.1s ease-in; }
+  .team__hover-img {
+    display: none; }
+  .team__designation {
+    padding: 8px 20px;
+    display: inline-block;
+    background: #308be6;
+    border-radius: 0 16px 16px 0;
+    font-size: 1.8rem;
+    color: #fff;
+    position: relative;
+    top: 24rem;
+    left: -4.1rem; }
+  .team__h4 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    top: 30rem; }
+  .team__name {
+    display: block;
+    top: 1rem;
+    font-size: 2rem;
+    background: none;
+    padding: 0;
+    color: #fff; }
+  .team__list {
+    position: relative;
+    top: 30rem; }
+  .team__item {
+    display: inline-block;
+    padding: 0 6px;
+    font-size: 3rem; }
+  .team__link {
+    color: #fff;
+    transition: all 0.1s ease-in; }
+    .team__link:hover {
+      color: rgba(0, 0, 0, 0.7); }
 
 .header {
   height: 91vh;
@@ -828,6 +944,10 @@ img {
   background-image: url(/img/even.jpg);
   background-size: cover;
   position: relative; }
+
+.team {
+  padding: 10rem 0 10rem 0;
+  background-image: linear-gradient(to bottom, #2e13c7, rgba(18, 207, 240, 0.8)); }
 
 .signup {
   position: fixed;

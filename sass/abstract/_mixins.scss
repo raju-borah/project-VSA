@@ -34,12 +34,17 @@
 }
 
 
+
+//mixins for three contents sections 
+//1.Main heading division
 @mixin head {
   position: relative;
-  width: 100%;
-  padding-left: 10rem;
+  width: 90%;
+  display: inline-block;
+  left: 10rem;
 }
-  
+ 
+//2.main heading
 @mixin title{
   color: $color-white;
   padding: 1rem;
@@ -51,7 +56,7 @@
   letter-spacing: 1rem; 
 }
 
-
+//3.view more part
 @mixin more{
   
   font-size: 3rem;
@@ -67,10 +72,10 @@
   border-left: 2px solid $color-tertiary-dark;
   z-index: 1;
   background: none;
- 
-
   transition: all 0.5s;
 
+
+  //after element on view more 
   &::after{
     position: absolute;
     content: '';
@@ -86,11 +91,12 @@
 
   }
 
+  //when the view more link is visited or clicked
   &:visited
   {
       color: $color-primary-dark;
   }
-
+//when view more link is hovered
   &:hover{
     color: $color-white;
     transform: scale(1.1);
