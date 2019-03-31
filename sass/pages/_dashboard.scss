@@ -2,18 +2,26 @@
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: $color-grey-light-2;
+  background-color: $color-grey-dark;
   padding: 1rem;
 
   &__vcontainer {
     border-top: 0.2rem solid $color-tertiary-dark-1;
     padding: 1rem;
+    padding-top: 4rem;
   }
   &__list {
     list-style-type: none;
+    padding-left: 8rem;
     &--items {
-      background-color: $color-tertiary-light-1;
-      margin-top: 1rem;
+      background-color: $color-grey-light-2;
+      margin-top: 3rem;
+      width: 90%;
+      border-radius: 3rem;
+
+     &:hover{
+       box-shadow: 0 1rem 1rem rgba($color-tertiary-dark-1,.66);
+     }
     }
   }
   &__vcard {
@@ -28,31 +36,22 @@
     float: left;
   }
   &__description {
-    width: 70%;
+    width:75%;
     height: 25rem;
     float: left;
     padding: 3rem;
   }
 }
-.floating {
-  width: 4.5rem;
-  height: 4.5rem;
-  margin-top: 1.9rem;
-  border-radius: 50%;
-  background-color: $color-white;
-  position: absolute;
-  position: fixed;
-
-  top: 12.9rem;
-  right: 9.3rem;
-  &--btn {
+.floating--btn {
     position: absolute;
-    top: 12.8rem;
-    right: 9rem;
-    z-index: 2;
+    border-radius: 2rem;
+    padding: .3rem;
+    top:9.3rem;
+    right: 3rem;
+    z-index: 1;
     position: fixed;
-    font-size: 5.5rem;
+    font-size: 3rem;
     color: $color-tertiary-dark;
-    backface-visibility: hidden;
+    background-color: $color-grey-light-2;
   }
-}
+

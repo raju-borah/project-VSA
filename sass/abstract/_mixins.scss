@@ -5,11 +5,13 @@
      font-size: 3rem;
      font-weight: 700;
      color: $color;
-     margin: 1.5rem;    
-        margin-right: 2rem;
+      
+     &--icon{
+       font-size: 5.09rem;
+     }
     //  when hovered the following changes will be taking place 
     &:hover{
-        color: $color-primary;
+        color:$color-tertiary-light-1;
         text-shadow: 0 1rem 3rem $color-black; 
         // when hovered the cursor will look like pointer
         cursor: pointer;      

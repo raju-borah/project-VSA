@@ -7,6 +7,7 @@ signin form id's:
  create_account
  forget_password
  button--> signin
+ forget password->forget_passwordBtn
 
 ..........................................
 

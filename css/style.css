@@ -112,7 +112,11 @@ body {
   margin-top: 1.1rem; }
 
 .u-margin-small {
-  margin: 2rem; }
+  margin: 2rem;
+  margin-left: 9rem; }
+
+.u-margin-right-large {
+  margin-right: 4rem; }
 
 iframe {
   width: 100%;
@@ -195,8 +199,7 @@ border-radius for curved end of button
     display: inline-block;
     padding: 0.31rem;
     color: #000;
-    background-color: transparent;
-    background-image: linear-gradient(to right, rgba(51, 51, 51, 0.99), rgba(1, 42, 87, 0.33)); }
+    background-image: linear-gradient(to right, rgba(51, 51, 51, 0.29), rgba(1, 42, 87, 0.33)); }
     .btn--white:hover {
       background-image: none;
       background-color: #999; }
@@ -272,11 +275,11 @@ border-radius for curved end of button
   .navigationbar:hover .navbarfont .navbar_items {
     font-size: 3rem;
     font-weight: 700;
-    color: #fff;
-    margin: 1.5rem;
-    margin-right: 2rem; }
+    color: #fff; }
+    .navigationbar:hover .navbarfont .navbar_items--icon {
+      font-size: 5.09rem; }
     .navigationbar:hover .navbarfont .navbar_items:hover {
-      color: #55c57a;
+      color: #9dcfff;
       text-shadow: 0 1rem 3rem #000;
       cursor: pointer; }
   .navigationbar__checkbox {
@@ -301,23 +304,23 @@ border-radius for curved end of button
     .navigationbar__button:hover .navigationbar--left--icon::after {
       background-color: #55c57a; }
   .navigationbar--left {
-    margin-left: 3rem;
     width: 50%;
-    float: left; }
+    float: left;
+    padding-left: 2rem; }
   .navigationbar--right {
     text-align: end;
-    width: 45%;
-    padding-right: 2.5rem;
+    width: 50%;
+    padding-right: 4rem;
     float: left; }
 
 .navbarfont .navbar_items {
   font-size: 3rem;
   font-weight: 700;
-  color: #fff;
-  margin: 1.5rem;
-  margin-right: 2rem; }
+  color: #fff; }
+  .navbarfont .navbar_items--icon {
+    font-size: 5.09rem; }
   .navbarfont .navbar_items:hover {
-    color: #55c57a;
+    color: #9dcfff;
     text-shadow: 0 1rem 3rem #000;
     cursor: pointer; }
 
@@ -335,25 +338,27 @@ border-radius for curved end of button
     outline: none; }
 
 .usercontainer {
+  z-index: 2;
   display: none;
   clear: left;
   position: absolute;
   width: 35rem;
   height: 28rem;
   top: 8rem;
-  right: 7.5rem;
+  right: 3rem;
   background-color: #eee;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.55); }
   .usercontainer::after {
     content: "";
     position: absolute;
     top: -1.99rem;
-    right: 2.5rem;
+    right: 3.4rem;
     border: 1rem solid;
     border-color: transparent transparent #eee transparent; }
 
 .signincontainer {
   display: none;
+  z-index: 2;
   position: absolute;
   width: 33rem;
   height: 26rem;
@@ -386,6 +391,7 @@ border-radius for curved end of button
 
 .notsignincontainer {
   display: none;
+  z-index: 2;
   position: absolute;
   width: 33rem;
   height: 26rem;
@@ -404,7 +410,7 @@ border-radius for curved end of button
 .search {
   position: relative;
   top: -2rem;
-  right: 5rem; }
+  right: 6rem; }
   .search__input {
     position: absolute;
     top: 20px;
@@ -951,7 +957,7 @@ img {
 
 .signup {
   position: fixed;
-  background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.1), rgba(126, 213, 111, 0.19)), url("../../img/back-5.jpg");
+  background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.1), rgba(126, 213, 111, 0.19)), url("../../img/back-1.jpg");
   background-size: cover;
   height: 100vh;
   width: 100%; }
@@ -983,7 +989,7 @@ img {
     width: 61.84%;
     height: 100vh;
     float: left;
-    background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.1), rgba(126, 213, 111, 0.19)), url("../../img/back-5.jpg");
+    background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.1), rgba(126, 213, 111, 0.19)), url("../../img/back-1.jpg");
     background-size: cover; }
   .login__right {
     position: relative;
@@ -993,16 +999,17 @@ img {
     padding-top: 4rem;
     padding-left: 1rem;
     padding-right: 2rem;
-    background-color: #777;
+    background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.31), rgba(126, 213, 111, 0.19));
     box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.74); }
   .login__logo {
     position: absolute;
-    width: 30%;
-    height: 30%;
+    width: 16rem;
+    height: 16rem;
     top: -8rem;
     left: 35%;
     border-radius: 50%;
-    box-shadow: 1rem 2rem 3rem rgba(1, 42, 87, 0.88); }
+    background-color: #fff;
+    box-shadow: 1rem 2rem 1rem rgba(1, 42, 87, 0.28); }
   .login--container {
     transform: translateX(2rem); }
 
@@ -1118,16 +1125,22 @@ img {
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: #eee;
+  background-color: #777;
   padding: 1rem; }
   .dashboard__vcontainer {
     border-top: 0.2rem solid #012A57;
-    padding: 1rem; }
+    padding: 1rem;
+    padding-top: 4rem; }
   .dashboard__list {
-    list-style-type: none; }
+    list-style-type: none;
+    padding-left: 8rem; }
     .dashboard__list--items {
-      background-color: #9dcfff;
-      margin-top: 1rem; }
+      background-color: #eee;
+      margin-top: 3rem;
+      width: 90%;
+      border-radius: 3rem; }
+      .dashboard__list--items:hover {
+        box-shadow: 0 1rem 1rem rgba(1, 42, 87, 0.66); }
   .dashboard__vcard {
     width: 100%;
     height: 30rem;
@@ -1138,27 +1151,19 @@ img {
     height: 25rem;
     float: left; }
   .dashboard__description {
-    width: 70%;
+    width: 75%;
     height: 25rem;
     float: left;
     padding: 3rem; }
 
-.floating {
-  width: 4.5rem;
-  height: 4.5rem;
-  margin-top: 1.9rem;
-  border-radius: 50%;
-  background-color: #fff;
+.floating--btn {
   position: absolute;
+  border-radius: 2rem;
+  padding: .3rem;
+  top: 9.3rem;
+  right: 3rem;
+  z-index: 1;
   position: fixed;
-  top: 12.9rem;
-  right: 9.3rem; }
-  .floating--btn {
-    position: absolute;
-    top: 12.8rem;
-    right: 9rem;
-    z-index: 2;
-    position: fixed;
-    font-size: 5.5rem;
-    color: #5643fa;
-    backface-visibility: hidden; }
+  font-size: 3rem;
+  color: #5643fa;
+  background-color: #eee; }
