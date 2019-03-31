@@ -118,6 +118,11 @@ New AOS library added
  image name ->  "img/head.jpg"
  
  ........................................................
+
+ New background image in footer
+
+ background-image -> _footer.scss ( at line no. 8)
+ image name -> "img/foot.jpg"
  
 
 
