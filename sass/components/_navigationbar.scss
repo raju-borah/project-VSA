@@ -69,15 +69,15 @@
 
   // left
   &--left {
-    margin-left: 3rem;
     width: 50%;
     float: left;
+    padding-left: 2rem;
   }
   // for right options
   &--right {
     text-align: end;
-    width: 45%;
-    padding-right: 2.5rem;
+    width: 50%;
+    padding-right: 4rem;
     float: left;
   }
 }
@@ -111,20 +111,22 @@
 }
 // container settings
 .usercontainer{
+  z-index: 2;
+
   display: none;
   clear: left;
   position: absolute;
   width: 35rem;
   height: 28rem;
   top: 8rem;
-  right: 7.5rem;
+  right: 3rem;
   background-color: $color-grey-light-2 ;
   box-shadow: 0 1rem 2rem rgba($color-black, 0.55);
   &::after{
     content: "";
     position: absolute;
     top: -1.99rem;
-    right: 2.5rem;
+    right: 3.4rem;
     border:1rem solid;
     border-color:  transparent  transparent $color-grey-light-2 transparent;
   }
@@ -133,7 +135,7 @@
 }
 .signincontainer{
   display: none;
-
+  z-index: 2;
   position: absolute;
   width: 33rem;
   height: 26rem;
@@ -174,6 +176,7 @@
 }
 .notsignincontainer{
   display: none;
+  z-index: 2;
   position: absolute;
   width: 33rem;
   height: 26rem;

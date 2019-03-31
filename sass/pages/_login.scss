@@ -8,7 +8,7 @@
         height: 100vh;
         float: left;
         background-image: linear-gradient(to right bottom,rgba($color-tertiary-dark,0.1),rgba($color-primary-light,0.19)),
-        url('../../img/back-5.jpg') ;
+        url('../../img/back-1.jpg') ;
         background-size: cover;
     }
 
@@ -21,20 +21,20 @@
         padding-top: 4rem;
         padding-left: 1rem;
         padding-right: 2rem;
-        background-color:  $color-grey-dark;
-        
+        background-image: linear-gradient(to right bottom,rgba($color-tertiary-dark,0.31),rgba($color-primary-light,0.19));
         box-shadow: 1rem 1rem 3rem rgba($color-black,0.74);
     }
 
     // positioning the img in the login page
         &__logo
         {   position: absolute;
-            width: 30%;
-            height: 30%;
+            width: 16rem;
+            height: 16rem;
             top: -8rem;;
             left:35%;
             border-radius: 50%;
-            box-shadow: 1rem 2rem 3rem rgba($color-tertiary-dark-1,0.88);
+            background-color: $color-white;
+            box-shadow: 1rem 2rem 1rem rgba($color-tertiary-dark-1,0.28);
         }
 
     &--container
