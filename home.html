@@ -26,55 +26,55 @@
 </head>
 
 <body>
-    
-     <!-- navigation bar -->
-     <div class="navigationbar">
 
-            <!-- name of the Application -->
-            <div class="navbarfont navigationbar--left">
-                    <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
-                    <a href="home.html" class="navbar_items">Vidshare </a>
+    <!-- navigation bar -->
+    <div class="navigationbar">
+
+        <!-- name of the Application -->
+        <div class="navbarfont navigationbar--left">
+            <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
+            <a href="home.html" class="navbar_items">Vidshare </a>
+        </div>
+        <!-- for right option such as search, user profile, upload -->
+        <div class="navbarfont navigationbar--right">
+            <div class="search">
+                <input type="text" placeholder="Search" class="search__input" required>
+                <button type="button" class="search__btn" id="searchButton">
+                    <i class="fa fa-search search__icon" aria-hidden="true"></i>
+                </button>
+
             </div>
-            <!-- for right option such as search, user profile, upload -->
-            <div class="navbarfont navigationbar--right">
-                <div class="search">
-                    <input type="text" placeholder="Search" class="search__input" required>
-                    <button type="button" class="search__btn" id="searchButton">
-                        <i class="fa fa-search search__icon" aria-hidden="true"></i>
-                    </button>
-    
-                </div>
-                <button type="button" class="navbar_items navbar_items--icon userbutton"><i
-                        class="fas fa-user-circle font-large"></i></button>
-                <div class="usercontainer">
-                    <!-- if user signed the following div will be displayed -->
-                    <div class="signincontainer">
-                        <img src="img/icons/man.png" class="signincontainer__img" alt="">
-                        <div class="margin-top">
-                            <h1 class="accountHolderName">Raju Moni Borah</h1>
-                            <h2 class="accountHolderId">cs16msiit020@gmail.com</h2>
-                        </div>
-                        <ul class="ul__list">
-                            <li><a href="settings.html" class="list--link font-small"> Account</a> &nbsp;
-                                <a href="#" class="list--link font-small">My videos</a></li>
-                            <li><button type="button" class="btn btn--green btn--green--logout">Logout</button></li>
-                        </ul>
+            <button type="button" class="navbar_items navbar_items--icon userbutton"><i
+                    class="fas fa-user-circle font-large"></i></button>
+            <div class="usercontainer">
+                <!-- if user signed the following div will be displayed -->
+                <div class="signincontainer">
+                    <img src="img/icons/man.png" class="signincontainer__img" alt="">
+                    <div class="margin-top">
+                        <h1 class="accountHolderName">Raju Moni Borah</h1>
+                        <h2 class="accountHolderId">cs16msiit020@gmail.com</h2>
                     </div>
-                    <!-- if user is signed out then -->
-                    <div class="notsignincontainer">
-                        <div class="notsignincontainer__imgdiv">
-                            <img class="notsignincontainer__img" src="img/display.jpg" alt="">
-                        </div>
-                        <ul class="ul__list">
-                            <li><a href="login.html" class="btn btn--front">login</a>
-                                <a href="signup.html" class="btn btn--front">Signup</a></li>
-                        </ul>
-                    </div>
-    
+                    <ul class="ul__list">
+                        <li><a href="settings.html" class="list--link font-small"> Account</a> &nbsp;
+                            <a href="#" class="list--link font-small">My videos</a></li>
+                        <li><button type="button" class="btn btn--green btn--green--logout">Logout</button></li>
+                    </ul>
                 </div>
+                <!-- if user is signed out then -->
+                <div class="notsignincontainer">
+                    <div class="notsignincontainer__imgdiv">
+                        <img class="notsignincontainer__img" src="img/display.jpg" alt="">
+                    </div>
+                    <ul class="ul__list">
+                        <li><a href="login.html" class="btn btn--front">login</a>
+                            <a href="signup.html" class="btn btn--front">Signup</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-
+    </div>
+    <!-- ending of navigation bar -->
 
     <!--heading section-->
     <section class="head" id="headSection">
@@ -211,7 +211,7 @@
                     </div>
 
 
-                    
+
                     <div class="feature__event">
 
 
@@ -412,10 +412,13 @@
                     </a>
 
                     <ul class="team__list">
-                            <li class="team__item"><a href="#" class="team__link" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                            <li class="team__item"><a href="#" class="team__link" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-                            <li class="team__item"> <a href="#" class="team__link" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-google-plus"></i></a></li>
+                        <li class="team__item"> <a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a></li>
+                    </ul>
 
                 </div>
 
@@ -437,10 +440,13 @@
                     </a>
 
                     <ul class="team__list">
-                            <li class="team__item"><a href="#" class="team__link" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                            <li class="team__item"><a href="#" class="team__link" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-                            <li class="team__item"> <a href="#" class="team__link" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-google-plus"></i></a></li>
+                        <li class="team__item"> <a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a></li>
+                    </ul>
 
                 </div>
 
@@ -461,10 +467,13 @@
                     </a>
 
                     <ul class="team__list">
-                            <li class="team__item"><a href="#" class="team__link" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                            <li class="team__item"><a href="#" class="team__link" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-                            <li class="team__item"> <a href="#" class="team__link" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                        </ul>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-google-plus"></i></a></li>
+                        <li class="team__item"> <a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a></li>
+                    </ul>
 
                 </div>
 
@@ -487,10 +496,13 @@
 
 
                     <ul class="team__list">
-                            <li class="team__item"><a href="#" class="team__link" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                            <li class="team__item"><a href="#" class="team__link" target="_blank"><i class="fab fa-google-plus"></i></a></li>
-                            <li class="team__item"> <a href="#" class="team__link" target="_blank"> <i class="fab fa-linkedin"></i></a></li>
-                        </ul>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-google-plus"></i></a></li>
+                        <li class="team__item"> <a href="#" class="team__link" target="_blank"> <i
+                                    class="fab fa-linkedin"></i></a></li>
+                    </ul>
 
                 </div>
             </div>
