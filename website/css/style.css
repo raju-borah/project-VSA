@@ -116,7 +116,7 @@ body {
   margin-left: 9rem; }
 
 .u-margin-right-large {
-  margin-right: 4rem; }
+  margin-right: 3rem; }
 
 .list {
   list-style-type: none; }
@@ -312,11 +312,11 @@ border-radius for curved end of button
   .navigationbar--left {
     width: 50%;
     float: left;
-    padding-left: 4rem; }
+    padding-left: 3rem; }
   .navigationbar--right {
     text-align: end;
     width: 50%;
-    padding-right: 4rem;
+    padding-right: 3rem;
     float: left; }
 
 .navbarfont .navbar_items {
@@ -417,7 +417,7 @@ border-radius for curved end of button
 .search {
   position: relative;
   top: -2.2rem;
-  margin-right: 4.7rem; }
+  margin-right: 4rem; }
   .search__input {
     position: absolute;
     top: 20px;
