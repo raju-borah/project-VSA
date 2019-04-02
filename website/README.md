@@ -25,7 +25,12 @@ signin form id's:
  ID's
 ------------------
  upload button: upload-video
-
+  <!-- for title -->
+<input type="text" class="form__input--upload form__input--upload--1" id="upload-title"
+                    placeholder="Title">
+                <!-- for description -->
+<textarea rows="2" cols="30" class="form__input--upload form__input--upload--1" id="upload-description"
+                    placeholder="Description"></textarea>
 ............................................
  static images sources
 ------------------
@@ -63,14 +68,14 @@ setting page button id's
 change password Button section
 ---------------------------------
 img background source=> "/img/back-3.jpg"
-   profile image=>  "img/icons/man.png"
+profile image=>  "img/icons/man.png"
    
-   edit profile image button =>id "edit_profileimage"
-   submit button -> id="changePasswordBtn"
+edit profile image button =>id "edit_profileimage"
+submit button -> id="changePasswordBtn"
 
-    current password  textfield ->     id=  "current_passwd"
-    new password  textfield ->    id=   "new_passwd"
-    new password(confirm)  textfield ->    id=  "new_confirm_passwd"
+current password  textfield ->     id=  "current_passwd"
+new password  textfield ->    id=   "new_passwd"
+new password(confirm)  textfield ->    id=  "new_confirm_passwd"
 
 
 
@@ -78,7 +83,10 @@ user profile
 ------------------
 logout button id =logoutButton
 
-
+..........................................................................
+ play video page
+  id="video-title"
+  id="video-description"
 
 
 ............................................................................
@@ -90,9 +98,9 @@ img3->"img/col.jpg"
 
 >>info section-->
 ------------------
-img1->"img/head.jpg" 
-img2->"img/event.jpg"
-img3->"img/floor.jpg"
+img1->"img/head1.jpg" 
+img2->"img/event1.jpg"
+img3->"img/floor1.jpg"
 
 
 ........................................................................

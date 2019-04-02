@@ -1,0 +1,34 @@
+.player {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 4rem;
+  &__container {
+    width: 75%;
+    height: 100%;
+    float: left;
+  }
+  &__suggestedvideo {
+    margin-left: 3rem;
+    width: 22%;
+    height: 100%;
+    float: left;
+    border: 2px solid black;
+  }
+  
+}
+.videoplayer {
+  width: 100%;
+  height: 10%;
+}
+.videoinfo{
+    width: 100%;
+    height: 100%;
+    padding: .55rem 1.5rem;
+}
+.video__comments {
+    border-top: .2rem solid $color-black;
+    color: $color-tertiary-dark;
+    padding: 1.5rem;
+    width: 100%;
+    height: 10rem;  
+  }

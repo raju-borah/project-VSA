@@ -118,6 +118,11 @@ body {
 .u-margin-right-large {
   margin-right: 4rem; }
 
+.list {
+  list-style-type: none; }
+  .list--items {
+    margin: 2rem; }
+
 iframe {
   width: 100%;
   height: 100%;
@@ -1282,3 +1287,34 @@ img {
   font-size: 3rem;
   color: #5643fa;
   background-color: #eee; }
+
+.player {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 4rem; }
+  .player__container {
+    width: 75%;
+    height: 100%;
+    float: left; }
+  .player__suggestedvideo {
+    margin-left: 3rem;
+    width: 22%;
+    height: 100%;
+    float: left;
+    border: 2px solid black; }
+
+.videoplayer {
+  width: 100%;
+  height: 10%; }
+
+.videoinfo {
+  width: 100%;
+  height: 100%;
+  padding: .55rem 1.5rem; }
+
+.video__comments {
+  border-top: 0.2rem solid #000;
+  color: #5643fa;
+  padding: 1.5rem;
+  width: 100%;
+  height: 10rem; }
