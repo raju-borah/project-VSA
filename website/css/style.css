@@ -1263,6 +1263,8 @@ img {
       border-radius: 3rem; }
       .dashboard__list--items:hover {
         box-shadow: 0 1rem 1rem rgba(1, 42, 87, 0.66); }
+      .dashboard__list--items:hover #videodelete {
+        display: block; }
   .dashboard__vcard {
     width: 100%;
     height: 30rem;
@@ -1281,7 +1283,7 @@ img {
 .floating--btn {
   position: absolute;
   border-radius: 2rem;
-  padding: .3rem;
+  padding: 0.3rem;
   top: 9.3rem;
   right: 3rem;
   z-index: 1;
@@ -1289,6 +1291,9 @@ img {
   font-size: 3rem;
   color: #5643fa;
   background-color: #eee; }
+
+#videodelete {
+  display: none; }
 
 .player {
   width: 100%;

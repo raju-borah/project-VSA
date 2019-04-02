@@ -4,24 +4,28 @@
   position: relative;
   background-color: $color-grey-dark;
   padding: 1rem;
-
   &__vcontainer {
     border-top: 0.2rem solid $color-tertiary-dark-1;
     padding: 1rem;
     padding-top: 4rem;
+
   }
   &__list {
+    
     list-style-type: none;
     padding-left: 8rem;
     &--items {
+      
       background-color: $color-grey-light-2;
       margin-top: 3rem;
       width: 90%;
       border-radius: 3rem;
-
-     &:hover{
-       box-shadow: 0 1rem 1rem rgba($color-tertiary-dark-1,.66);
-     }
+      &:hover {
+        box-shadow: 0 1rem 1rem rgba($color-tertiary-dark-1, 0.66);
+      }
+      &:hover #videodelete {
+        display: block;
+      }
     }
   }
   &__vcard {
@@ -36,22 +40,26 @@
     float: left;
   }
   &__description {
-    width:75%;
+    width: 75%;
     height: 25rem;
     float: left;
     padding: 3rem;
+    
   }
 }
 .floating--btn {
-    position: absolute;
-    border-radius: 2rem;
-    padding: .3rem;
-    top:9.3rem;
-    right: 3rem;
-    z-index: 1;
-    position: fixed;
-    font-size: 3rem;
-    color: $color-tertiary-dark;
-    background-color: $color-grey-light-2;
-  }
+  position: absolute;
+  border-radius: 2rem;
+  padding: 0.3rem;
+  top: 9.3rem;
+  right: 3rem;
+  z-index: 1;
+  position: fixed;
+  font-size: 3rem;
+  color: $color-tertiary-dark;
+  background-color: $color-grey-light-2;
+}
 
+#videodelete {
+  display: none;
+}
