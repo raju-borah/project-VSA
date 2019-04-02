@@ -6,29 +6,33 @@
     width: 75%;
     height: 100%;
     float: left;
+    padding-left: 4rem;
+    
   }
   &__suggestedvideo {
     margin-left: 3rem;
     width: 22%;
     height: 100%;
     float: left;
-    border: 2px solid black;
+    box-shadow: 0 1rem 3rem rgba($color-black,.33);
   }
-  
 }
 .videoplayer {
-  width: 100%;
-  height: 10%;
+  width: 960px;
+  height: 540px;
+  border: none;
+  box-shadow: 0 1rem 3rem rgba($color-black,.33);
+
 }
-.videoinfo{
-    width: 100%;
-    height: 100%;
-    padding: .55rem 1.5rem;
+.videoinfo {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 4rem;
 }
 .video__comments {
-    border-top: .2rem solid $color-black;
-    color: $color-tertiary-dark;
-    padding: 1.5rem;
-    width: 100%;
-    height: 10rem;  
-  }
+  border-top: 0.2rem solid $color-black;
+  color: $color-tertiary-dark;
+  padding-top: 1rem;
+  width: 100%;
+  height: 10rem;
+}

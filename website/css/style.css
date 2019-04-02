@@ -282,7 +282,8 @@ border-radius for curved end of button
     font-weight: 700;
     color: #fff; }
     .navigationbar:hover .navbarfont .navbar_items--icon {
-      font-size: 5.09rem; }
+      font-size: 5.5rem;
+      top: -.39rem; }
     .navigationbar:hover .navbarfont .navbar_items:hover {
       color: #9dcfff;
       text-shadow: 0 1rem 3rem #000;
@@ -311,7 +312,7 @@ border-radius for curved end of button
   .navigationbar--left {
     width: 50%;
     float: left;
-    padding-left: 2rem; }
+    padding-left: 4rem; }
   .navigationbar--right {
     text-align: end;
     width: 50%;
@@ -323,7 +324,8 @@ border-radius for curved end of button
   font-weight: 700;
   color: #fff; }
   .navbarfont .navbar_items--icon {
-    font-size: 5.09rem; }
+    font-size: 5.5rem;
+    top: -.39rem; }
   .navbarfont .navbar_items:hover {
     color: #9dcfff;
     text-shadow: 0 1rem 3rem #000;
@@ -414,8 +416,8 @@ border-radius for curved end of button
 
 .search {
   position: relative;
-  top: -2rem;
-  right: 6rem; }
+  top: -2.2rem;
+  margin-right: 4.7rem; }
   .search__input {
     position: absolute;
     top: 20px;
@@ -1295,26 +1297,29 @@ img {
   .player__container {
     width: 75%;
     height: 100%;
-    float: left; }
+    float: left;
+    padding-left: 4rem; }
   .player__suggestedvideo {
     margin-left: 3rem;
     width: 22%;
     height: 100%;
     float: left;
-    border: 2px solid black; }
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.33); }
 
 .videoplayer {
-  width: 100%;
-  height: 10%; }
+  width: 960px;
+  height: 540px;
+  border: none;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.33); }
 
 .videoinfo {
   width: 100%;
   height: 100%;
-  padding: .55rem 1.5rem; }
+  padding-bottom: 4rem; }
 
 .video__comments {
   border-top: 0.2rem solid #000;
   color: #5643fa;
-  padding: 1.5rem;
+  padding-top: 1rem;
   width: 100%;
   height: 10rem; }
