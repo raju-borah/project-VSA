@@ -27,13 +27,24 @@
     border-radius: 1.2rem;
     text-decoration-style: none;
     border: 0.1rem;
+    &__pin {
+      border-radius: 0rem;
+      padding-left: 3rem;
+      letter-spacing: 2.5rem;
+      font-size: 1.9rem;
+      width: 26rem;
 
+      &:focus {
+        outline: none;
+      }
+    }
     // signin page form properties...
     &__signin {
-      width: 90%;
+      width: 80%;
       height: 4rem;
       display: inline-block;
       @include focus;
+      margin-left: 4rem;
     }
     // signup page form properties...
     &__signup {
@@ -71,5 +82,8 @@
     color: $color-black;
     font-weight: 700;
     display: block;
+    &--signin {
+      margin-left: 4rem;
+    }
   }
 }

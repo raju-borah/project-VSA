@@ -148,10 +148,19 @@ iframe {
     border-radius: 1.2rem;
     text-decoration-style: none;
     border: 0.1rem; }
+    .form__input__pin {
+      border-radius: 0rem;
+      padding-left: 3rem;
+      letter-spacing: 2.5rem;
+      font-size: 1.9rem;
+      width: 26rem; }
+      .form__input__pin:focus {
+        outline: none; }
     .form__input__signin {
-      width: 90%;
+      width: 80%;
       height: 4rem;
-      display: inline-block; }
+      display: inline-block;
+      margin-left: 4rem; }
       .form__input__signin:focus {
         outline: none;
         box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
@@ -182,6 +191,8 @@ iframe {
     color: #000;
     font-weight: 700;
     display: block; }
+    .form__label--signin {
+      margin-left: 4rem; }
 
 /* for button */
 /*
@@ -218,7 +229,8 @@ border-radius for curved end of button
     padding: 1rem; }
     .btn--green--login {
       background-color: #2998ff;
-      width: 80%; }
+      margin-left: 8rem;
+      width: 70%; }
     .btn--green--logout {
       margin-left: 10rem; }
   .btn--blue {
@@ -1088,7 +1100,7 @@ img {
 
 .signup {
   position: fixed;
-  background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.1), rgba(126, 213, 111, 0.19)), url("../../img/back-1.jpg");
+  background-image: url("../../img/back-2.jpg");
   background-size: cover;
   height: 100vh;
   width: 100%; }
@@ -1117,27 +1129,27 @@ img {
 .login {
   height: 97vh; }
   .login__left {
-    width: 61.84%;
+    width: 40%;
     height: 100vh;
     float: left;
-    background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.1), rgba(126, 213, 111, 0.19)), url("../../img/back-1.jpg");
+    background-image: url("../../img/back-2.jpg");
     background-size: cover; }
   .login__right {
     position: relative;
     float: left;
-    width: 38%;
+    width: 60%;
     height: 100vh;
     padding-top: 4rem;
     padding-left: 1rem;
     padding-right: 2rem;
-    background-image: linear-gradient(to right bottom, rgba(86, 67, 250, 0.31), rgba(126, 213, 111, 0.19));
+    background-color: #eee;
     box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.74); }
   .login__logo {
     position: absolute;
     width: 16rem;
     height: 16rem;
     top: -8rem;
-    left: 35%;
+    left: 40%;
     border-radius: 50%;
     background-color: #fff;
     box-shadow: 1rem 2rem 1rem rgba(1, 42, 87, 0.28); }

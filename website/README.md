@@ -7,7 +7,7 @@ signin form id's:
  create_account
  forget_password
  button--> signin
- forget password->forget_passwordBtn
+
 
 ..........................................
 
@@ -87,7 +87,12 @@ logout button id =logoutButton
  play video page
   id="video-title"
   id="video-description"
-
+...........................................................................
+forgot password IDs
+ 
+forget password->forget_passwordBtn
+OTP input ->otp_field
+Confirm otp button ->submit_otp
 
 ............................................................................
 >>slide show in header images source
