@@ -29,7 +29,7 @@
 
 .feature
 {
-    height: 90rem;
+    height: 70rem;
     background-image: linear-gradient(to right bottom,rgba(46, 19, 199, 0.500),rgba(18, 207, 240, 0.500)),url(../img/head.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,11 +40,12 @@
 //learning section//
 .learning
 {
-    padding: 15rem 0 15rem 0;
+    padding: 15rem 0 5rem 0;//top right bottom left
    
     position: relative;
     
     background-size: cover;
+
 
 }
 
@@ -53,7 +54,7 @@
 //club activities section//
 .club
 {
-    padding: 15rem 0 15rem 0;
+    padding: 15rem 0 5rem 0;
     background-size: cover;
     position: relative;
 
@@ -64,7 +65,7 @@
 //event section//
 .event
 {
-    padding: 15rem 0 15rem 0;
+    padding: 15rem 0 8rem 0;
     background-size: cover;
 
     position: relative;

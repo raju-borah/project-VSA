@@ -526,7 +526,7 @@ border-radius for curved end of button
 
 .feature__container {
   margin: 0px auto;
-  padding: 80px 60px;
+  padding: 5rem 0 2rem 0;
   overflow: hidden;
   position: relative; }
 
@@ -559,27 +559,23 @@ border-radius for curved end of button
 
 .feature__contents {
   position: relative;
-  margin-top: -3rem;
-  padding: 10rem;
-  grid-column: center-start / center-end;
-  display: grid;
-  grid-template-rows: 65vh repeat(1, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 4rem; }
+  white-space: nowrap;
+  padding: 5rem 0 9rem 0;
+  overflow-x: auto; }
 
-.feature__img {
-  position: relative;
-  width: 100%;
-  height: 40rem;
-  transition: all .5s; }
+.feature__vid {
+  width: 30rem;
+  height: 20rem;
+  margin: 1.5rem;
+  display: inline-block; }
 
 .feature__text {
   color: #fff;
-  font-size: 3rem; }
+  font-size: 2.4rem; }
 
 .feature__video {
   width: 100%;
-  height: 40rem;
+  height: 25rem;
   border: 3px solid black; }
 
 .feature__link {
@@ -594,7 +590,7 @@ border-radius for curved end of button
   left: 10rem; }
 
 .learning__title {
-  color: #fff;
+  color: #000;
   padding: 1rem;
   float: left;
   font-size: 6rem;
@@ -645,7 +641,7 @@ border-radius for curved end of button
   left: 10rem; }
 
 .event__title {
-  color: #fff;
+  color: #000;
   padding: 1rem;
   float: left;
   font-size: 6rem;
@@ -696,7 +692,7 @@ border-radius for curved end of button
   left: 10rem; }
 
 .club__title {
-  color: #fff;
+  color: #000;
   padding: 1rem;
   float: left;
   font-size: 6rem;
@@ -1025,16 +1021,29 @@ img {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5rem;
-  padding: 10rem; }
+  grid-row-gap: 15rem;
+  grid-column-gap: 5rem;
+  padding: 3rem 10rem 10rem 10rem; }
 
 .item {
+  position: relative;
   width: 100%;
   font-size: 30px;
-  height: 30rem;
+  height: 22rem;
   font-family: sans-serif;
   color: #fff;
   border-radius: 2rem; }
+  .item__name {
+    position: absolute;
+    top: 21rem;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #000; }
+  .item__description {
+    position: absolute;
+    top: 25rem;
+    color: #000;
+    font-size: 1.5rem; }
 
 .main {
   background-color: #fff; }
@@ -1052,24 +1061,24 @@ img {
   margin-top: 2rem; }
 
 .feature {
-  height: 90rem;
+  height: 70rem;
   background-image: linear-gradient(to right bottom, rgba(46, 19, 199, 0.5), rgba(18, 207, 240, 0.5)), url(../img/head.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; }
 
 .learning {
-  padding: 15rem 0 15rem 0;
+  padding: 15rem 0 5rem 0;
   position: relative;
   background-size: cover; }
 
 .club {
-  padding: 15rem 0 15rem 0;
+  padding: 15rem 0 5rem 0;
   background-size: cover;
   position: relative; }
 
 .event {
-  padding: 15rem 0 15rem 0;
+  padding: 15rem 0 8rem 0;
   background-size: cover;
   position: relative; }
 
@@ -1328,3 +1337,85 @@ img {
   padding-top: 1rem;
   width: 100%;
   height: 10rem; }
+
+.morehead {
+  position: sticky;
+  top: 7rem;
+  width: 100%;
+  height: 10rem;
+  font-size: 6rem;
+  font-weight: 600;
+  letter-spacing: 1rem;
+  color: #fff;
+  background-image: linear-gradient(120deg, #28b485 30%, #5643fa 60%, #ff7730 90%); }
+  .morehead__learn {
+    position: absolute;
+    left: 5rem; }
+  .morehead__event {
+    position: absolute;
+    left: 65rem; }
+  .morehead__club {
+    position: absolute;
+    right: 10rem; }
+
+.learn {
+  position: fixed;
+  width: 55rem;
+  height: 100%;
+  overflow-y: scroll;
+  margin-left: 5rem;
+  padding: 1rem; }
+  .learn__videos {
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 10rem; }
+  .learn__videos {
+    width: 80%;
+    height: 40rem; }
+
+.eve {
+  position: fixed;
+  left: 60rem;
+  width: 50rem;
+  height: 100vh;
+  overflow-y: scroll;
+  margin-left: 5rem;
+  padding: 1rem; }
+  .eve__videos {
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 10rem; }
+  .eve__videos {
+    width: 80%;
+    height: 40rem; }
+
+.clb {
+  position: fixed;
+  right: 3rem;
+  width: 40rem;
+  height: 100vh;
+  overflow-y: scroll;
+  margin-left: 5rem;
+  padding: 1rem; }
+  .clb__videos {
+    display: grid;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 10rem; }
+  .clb__videos {
+    width: 100%;
+    height: 40rem; }
+
+::-webkit-scrollbar {
+  width: 0rem; }
+
+/*
+::-webkit-scrollbar-thumb
+{
+    background-color: $color-tertiary-dark;
+    border-radius: 10rem;
+    height: 1rem;
+}
+*/

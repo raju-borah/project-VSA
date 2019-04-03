@@ -4,7 +4,7 @@
     &__container
     {
         margin: 0px auto;
-        padding: 80px 60px;
+        padding: 5rem 0 2rem 0;
         overflow: hidden;
         position: relative;
 
@@ -51,45 +51,38 @@
     }
 
 
+
+    //conatiner to store videos in feature section
    &__contents
    {
     position: relative;
-    margin-top: -3rem;
-    padding: 10rem;
-    grid-column: center-start / center-end;
-
-    
-    display: grid;
-    grid-template-rows: 65vh  repeat(1, 1fr);
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 4rem;
-
-
+    white-space:nowrap;
+    padding: 5rem 0 9rem 0;//top right bottom left
+    overflow-x:auto;
 
    }
 
-   &__img
+
+   &__vid
    {
-    
-        position: relative;
-        width: 100%;
-        height: 40rem;
-        transition: all .5s;
-     
-    
+    width:30rem;
+    height:20rem;
+    margin:1.5rem;
+    display:inline-block
    }
 
+  
    
    &__text
    {
       color: $color-white;
-      font-size: 3rem; 
+      font-size: 2.4rem; 
    }
 
    &__video
    {
        width: 100%;
-       height: 40rem;
+       height: 25rem;
        border: 3px solid black;
    }
 
