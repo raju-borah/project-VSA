@@ -11,7 +11,7 @@
     color: $color-white;
     background-image: linear-gradient(120deg, 
                        $color-primary-dark 30%,
-                        $color-tertiary-dark 60%,
+                       $color-tertiary-dark 60%,
                         $color-secondary-dark 90%);
     
 
@@ -56,8 +56,8 @@
     //conatiner of the videos
     position: fixed;
     width: 55rem;
-    height: 100%;
-    overflow-y: scroll;
+    height: 75%;
+    overflow-y: auto;
     margin-left: 5rem;
     padding: 1rem;//top right bottom l
 
@@ -70,14 +70,50 @@
         grid-template-rows:  repeat(20, 1fr);//20 rows
         grid-template-columns: repeat(1,1fr);//1 coloumn
         grid-row-gap: 10rem;//gap between rows
+
    }
 
     //size of the video
     &__videos
     {
-        width: 80%;
+        width: 75%;
         height: 40rem;
 
+    }
+
+
+    //conatiner storing video frame , name and description
+    &__item
+    {
+
+        position: relative;
+        width: 100%;
+        font-size: 30px;
+        height: 22rem;
+        font-family: sans-serif;
+        color: $color-white;
+        border-radius: 2rem;
+    }
+
+
+    //name of the video
+    &__name
+    {
+        position: absolute;;
+        top: 21rem;
+        font-size: 3rem;
+        font-weight: 500;
+        color: $color-black;
+    }
+
+    //description of the video
+    &__description
+    {
+
+        position: absolute;
+        top: 25rem;
+        color: $color-black;
+        font-size: 1.5rem;
     }
     
 }
@@ -87,9 +123,9 @@
 .eve
 {
     position: fixed;
-    left: 60rem;
+    left: 54rem;
     width: 50rem;
-    height:100vh;
+    height:75%;
     overflow-y: scroll;
     margin-left: 5rem;
     padding: 1rem;
@@ -109,6 +145,38 @@
         height: 40rem;
 
     }
+
+    
+    &__item
+    {
+
+        position: relative;
+        width: 100%;
+        font-size: 30px;
+        height: 22rem;
+        font-family: sans-serif;
+        color: $color-white;
+        border-radius: 2rem;
+    }
+
+
+    &__name
+    {
+        position: absolute;;
+        top: 21rem;
+        font-size: 3rem;
+        font-weight: 500;
+        color: $color-black;
+    }
+
+    &__description
+    {
+
+        position: absolute;
+        top: 25rem;
+        color: $color-black;
+        font-size: 1.5rem;
+    }
     
 }
 
@@ -120,7 +188,7 @@
     position:fixed;
     right: 3rem;
     width: 40rem;
-    height:100vh;
+    height:75%;
     overflow-y: scroll;
     margin-left: 5rem;
     padding: 1rem;
@@ -142,6 +210,38 @@
         width: 100%;
         height: 40rem;
 
+    }
+
+    
+    &__item
+    {
+
+        position: relative;
+        width: 100%;
+        font-size: 30px;
+        height: 22rem;
+        font-family: sans-serif;
+        color: $color-white;
+        border-radius: 2rem;
+    }
+
+
+    &__name
+    {
+        position: absolute;;
+        top: 21rem;
+        font-size: 3rem;
+        font-weight: 500;
+        color: $color-black;
+    }
+
+    &__description
+    {
+
+        position: absolute;
+        top: 25rem;
+        color: $color-black;
+        font-size: 1.5rem;
     }
     
 }

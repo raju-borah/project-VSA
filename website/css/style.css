@@ -1361,8 +1361,8 @@ img {
 .learn {
   position: fixed;
   width: 55rem;
-  height: 100%;
-  overflow-y: scroll;
+  height: 75%;
+  overflow-y: auto;
   margin-left: 5rem;
   padding: 1rem; }
   .learn__videos {
@@ -1371,14 +1371,33 @@ img {
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 10rem; }
   .learn__videos {
-    width: 80%;
+    width: 75%;
     height: 40rem; }
+  .learn__item {
+    position: relative;
+    width: 100%;
+    font-size: 30px;
+    height: 22rem;
+    font-family: sans-serif;
+    color: #fff;
+    border-radius: 2rem; }
+  .learn__name {
+    position: absolute;
+    top: 21rem;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #000; }
+  .learn__description {
+    position: absolute;
+    top: 25rem;
+    color: #000;
+    font-size: 1.5rem; }
 
 .eve {
   position: fixed;
-  left: 60rem;
+  left: 54rem;
   width: 50rem;
-  height: 100vh;
+  height: 75%;
   overflow-y: scroll;
   margin-left: 5rem;
   padding: 1rem; }
@@ -1390,12 +1409,31 @@ img {
   .eve__videos {
     width: 80%;
     height: 40rem; }
+  .eve__item {
+    position: relative;
+    width: 100%;
+    font-size: 30px;
+    height: 22rem;
+    font-family: sans-serif;
+    color: #fff;
+    border-radius: 2rem; }
+  .eve__name {
+    position: absolute;
+    top: 21rem;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #000; }
+  .eve__description {
+    position: absolute;
+    top: 25rem;
+    color: #000;
+    font-size: 1.5rem; }
 
 .clb {
   position: fixed;
   right: 3rem;
   width: 40rem;
-  height: 100vh;
+  height: 75%;
   overflow-y: scroll;
   margin-left: 5rem;
   padding: 1rem; }
@@ -1407,6 +1445,25 @@ img {
   .clb__videos {
     width: 100%;
     height: 40rem; }
+  .clb__item {
+    position: relative;
+    width: 100%;
+    font-size: 30px;
+    height: 22rem;
+    font-family: sans-serif;
+    color: #fff;
+    border-radius: 2rem; }
+  .clb__name {
+    position: absolute;
+    top: 21rem;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #000; }
+  .clb__description {
+    position: absolute;
+    top: 25rem;
+    color: #000;
+    font-size: 1.5rem; }
 
 ::-webkit-scrollbar {
   width: 0rem; }
