@@ -1,7 +1,7 @@
 .signup {
     // property to hidde the division, setting the background, height, width etc.
   position: fixed;
-  background-image: url('../../img/back-2.jpg') ;
+  background-image: radial-gradient(rgba($color-tertiary-light-2,.36),rgba($color-tertiary-light-1,.52)),url('/img/back-1.png');
 
   background-size: cover;
   height: 100vh;
