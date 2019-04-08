@@ -1,45 +1,42 @@
-.login
-{   height: 97vh;
-   
+.login {
+  height: 97vh;
 
-    &__left
-    {
-        width: 40%;
-        height: 100vh;
-        float: left;
-      // background-image:url('http://www.pptbackgrounds.org/uploads/blue-cubes-pattern-powerpoint-backgrounds.jpg') ;
-      background-image: url('../../img/back-2.jpg'); 
-      background-size: cover;
-    }
+  &__left {
+    width: 40%;
+    height: 100vh;
+    float: left;
+    // background-image:url('http://www.pptbackgrounds.org/uploads/blue-cubes-pattern-powerpoint-backgrounds.jpg') ;
+    background-image: url("/img/back-2.jpg");
+    background-size: cover;
+  }
 
+  &__right {
+    position: relative;
+    float: left;
+    width: 60%;
+    height: 100vh;
+    padding-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    background-image: radial-gradient(rgba($color-tertiary-light-2, 0.36), rgba($color-tertiary-light-1, 0.52)),
+      url("/img/back-1.png");
 
-    &__right
-    {   position: relative;
-        float: left;
-        width: 60%;
-        height: 100vh;
-        padding-top: 4rem;
-        padding-left: 1rem;
-        padding-right: 2rem;
-        background-color: $color-grey-light-2;
-        box-shadow: 1rem 1rem 3rem rgba($color-black,0.74);
-    }
+    box-shadow: 1rem 1rem 3rem rgba($color-black, 0.74);
+  }
 
-    // positioning the img in the login page
-        &__logo
-        {   position: absolute;
-            width: 16rem;
-            height: 16rem;
-            top: -8rem;;
-            left:40%;
-            border-radius: 50%;
-            background-color: $color-white;
-            box-shadow: 1rem 2rem 1rem rgba($color-tertiary-dark-1,0.28);
-        }
+  // positioning the img in the login page
+  &__logo {
+    position: absolute;
+    width: 16rem;
+    height: 16rem;
+    top: -8rem;
+    left: 40%;
+    border-radius: 50%;
+    background-color: $color-white;
+    box-shadow: 1rem 2rem 1rem rgba($color-tertiary-dark-1, 0.28);
+  }
 
-    &--container
-    {
-        transform: translateX(2rem);
-    }
-   
- }
+  &--container {
+    transform: translateX(2rem);
+  }
+}
