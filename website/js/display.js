@@ -13,7 +13,7 @@ let display="none";
 userBtn.addEventListener('click',function(){
     
 
-    
+     /**
     if(display==="none"){
         notsigin.style.display="block";
         userContainer.style.display="block";
@@ -25,7 +25,7 @@ userBtn.addEventListener('click',function(){
         display="none";
     }
     
-     /**
+      */  
 
   if(display==="none"){
         signindetail.style.display="block";
@@ -38,7 +38,7 @@ userBtn.addEventListener('click',function(){
         display="none";
         
     }
-     */  
+   
    
     
 });

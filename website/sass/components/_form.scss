@@ -7,8 +7,9 @@
   // form signup properties
   &--login {
     // for bring down the form
+    width: 80%;
     padding: 4rem;
-    transform: translateY(25%);
+    transform: translate(10%,22%);
   }
 
   // form-group property
@@ -29,10 +30,14 @@
     border: 0.1rem;
     &__pin {
       border-radius: 0rem;
-      padding-left: 3rem;
+      padding-left: 2rem;
+      padding-right: 3rem;
       letter-spacing: 2.5rem;
       font-size: 1.9rem;
       width: 26rem;
+      background: transparent;
+      border-bottom: .2rem double $color-tertiary-light-2;
+      
 
       &:focus {
         outline: none;
@@ -86,4 +91,9 @@
       margin-left: 4rem;
     }
   }
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

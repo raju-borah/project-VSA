@@ -135,8 +135,9 @@ iframe {
   background-color: #eee;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.44); }
   .form--login {
+    width: 80%;
     padding: 4rem;
-    transform: translateY(25%); }
+    transform: translate(10%, 22%); }
   .form__group {
     margin: 1rem; }
     .form__group--signup {
@@ -150,10 +151,13 @@ iframe {
     border: 0.1rem; }
     .form__input__pin {
       border-radius: 0rem;
-      padding-left: 3rem;
+      padding-left: 2rem;
+      padding-right: 3rem;
       letter-spacing: 2.5rem;
       font-size: 1.9rem;
-      width: 26rem; }
+      width: 26rem;
+      background: transparent;
+      border-bottom: 0.2rem double #006064; }
       .form__input__pin:focus {
         outline: none; }
     .form__input__signin {
@@ -193,6 +197,11 @@ iframe {
     display: block; }
     .form__label--signin {
       margin-left: 4rem; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
 
 /* for button */
 /*
@@ -1100,7 +1109,7 @@ img {
 
 .signup {
   position: fixed;
-  background-image: url("../../img/back-2.jpg");
+  background-image: radial-gradient(rgba(0, 96, 100, 0.36), rgba(157, 207, 255, 0.52)), url("/img/back-1.png");
   background-size: cover;
   height: 100vh;
   width: 100%; }
@@ -1132,7 +1141,7 @@ img {
     width: 40%;
     height: 100vh;
     float: left;
-    background-image: url("../../img/back-2.jpg");
+    background-image: url("/img/back-2.jpg");
     background-size: cover; }
   .login__right {
     position: relative;
@@ -1142,7 +1151,7 @@ img {
     padding-top: 4rem;
     padding-left: 1rem;
     padding-right: 2rem;
-    background-color: #eee;
+    background-image: radial-gradient(rgba(0, 96, 100, 0.36), rgba(157, 207, 255, 0.52)), url("/img/back-1.png");
     box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.74); }
   .login__logo {
     position: absolute;
