@@ -1293,7 +1293,7 @@ img {
       border-radius: 3rem; }
       .dashboard__list--items:hover {
         box-shadow: 0 1rem 1rem rgba(1, 42, 87, 0.66); }
-      .dashboard__list--items:hover #videodelete {
+      .dashboard__list--items:hover .videodelete {
         display: block; }
   .dashboard__vcard {
     width: 100%;
@@ -1322,7 +1322,7 @@ img {
   color: #5643fa;
   background-color: #eee; }
 
-#videodelete {
+.videodelete {
   display: none; }
 
 .player {
