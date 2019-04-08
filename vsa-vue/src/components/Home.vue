@@ -1,43 +1,54 @@
 <template>
-  <div id="home">
+    <div id="home">
+        
     <!-- navigation bar -->
     <div class="navigationbar">
-        <!-- for the left part -->
-        <div class="navigationbar--left navbarfont ">
-           <!-- checkedbox for controling list items -->
-           <input type="checkbox" class="navigationbar__checkbox" id="navi-toggle">
-           <label for="navi-toggle" class="navigationbar__button">
-               <!-- the navigation icon -->
-               <div class="navigationbar--left--icon"></div>
-           </label>     
-            <!-- more settings option -->
-         <ul class="navigationbar__more_setting">
-                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Channel&nbsp;<i
-                            class="fas fa-video"></i></a></li>
-                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Settings&nbsp;<i
-                            class="fas fa-cog"></i></a></li>
-                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Help&nbsp;<i
-                            class="fas fa-hands-helping"></i></a></li>
-                <li class="navigationbar__more_setting--item"><a href="#" class="listlink--item ">Feedback&nbsp;<i
-                            class="fas fa-comments"></i></a></li>
-            </ul>      
-        </div>
+
         <!-- name of the Application -->
-        <div class="navbarfont navigationbar--mid"><a href="#" class="navbar_items">Vidshare </a> </div>
+        <div class="navbarfont navigationbar--left">
+            <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
+            <a href="home.html" class="navbar_items">Vidshare </a>
+        </div>
         <!-- for right option such as search, user profile, upload -->
         <div class="navbarfont navigationbar--right">
-            <div class="search u-margin-right-medium">
-                <input type="text" placeholder="Search" class="search__input">
+            <div class="search">
+                <input type="text" placeholder="Search" class="search__input" required>
                 <button type="button" class="search__btn" id="searchButton">
                     <i class="fa fa-search search__icon" aria-hidden="true"></i>
                 </button>
+
             </div>
-            <a href="#" class="navbar_items"> <i class="fas fa-user-tie"></i></a>
-            <a href="#upload" class="navbar_items"> <i class="fas fa-cloud-upload-alt">&nbsp; Upload</i></a>
+            <button type="button" class="navbar_items navbar_items--icon userbutton"><i
+                    class="fas fa-user-circle font-large"></i></button>
+            <div class="usercontainer">
+                <!-- if user signed the following div will be displayed -->
+                <div class="signincontainer">
+                    <img src="../assets/img/icons/man.png" class="signincontainer__img" alt="">
+                    <div class="margin-top">
+                        <h1 class="accountHolderName">Raju Moni Borah</h1>
+                        <h2 class="accountHolderId">cs16msiit020@gmail.com</h2>
+                    </div>
+                    <ul class="ul__list">
+                        <li><a href="settings.html" class="list--link font-small"> Account</a> &nbsp;
+                            <a href="#" class="list--link font-small">My videos</a></li>
+                        <li><button type="button" class="btn btn--green btn--green--logout">Logout</button></li>
+                    </ul>
+                </div>
+                <!-- if user is signed out then -->
+                <div class="notsignincontainer">
+                    <div class="notsignincontainer__imgdiv">
+                        <img class="notsignincontainer__img" src="../assets/img/display.jpg" alt="">
+                    </div>
+                    <ul class="ul__list">
+                        <li><a href="login.html" class="btn btn--front">login</a>
+                            <a href="signup.html" class="btn btn--front">Signup</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </div>
-
-
+    <!-- ending of navigation bar -->
 
     <!--heading section-->
     <section class="head" id="headSection">
@@ -79,47 +90,6 @@
 
 
     <main class="main">
-        
-        <!-- upload section  starting-->
-        <div class="upload" id="upload">
-            <!-- container -->
-            <div class="upload__container">
-                <!-- upload videos section -->
-                <div class="upload__videos--card u-center-text ">
-                    <span class="u-end-text">
-                        <a href="#headSection" class="btn btn--close">&times;</a>
-                    </span>
-                    <!-- heading -->
-                    <h1 class="font-medium u-margin-bottom-small">Upload Videos</h1>
-                    <!-- upload button -->
-                    <input type="file" id="upload-file" accept="video/*" hidden="hidden" />
-                    <!-- text to display the file name to be uploaded -->
-                    <span id="custom-text">No file Choosen yet !</span>
-                    <button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A
-                        FILE</button>
-
-
-                    <!-- for title -->
-                    <input type="text" class="form__input--upload form__input--upload--1" id="upload-title"
-                        placeholder="Title">
-                    <!-- for description -->
-                    <textarea rows="2" cols="30" class="form__input--upload form__input--upload--1"
-                        id="upload-description" placeholder="Description"></textarea>
-                    <!-- for selecting the category -->
-                    <select id="video-category" class="form__input--upload form__input--upload--2">
-                        <option value="Select Category" selected>Select Category</option>
-                        <option value="learning">Learning</option>
-                        <option value="Events">Events</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="others">Others</option>
-                    </select>
-
-                    <button class="btn btn--upload" type="submit" id="upload-video">Upload</button>
-                </div>
-            </div>
-        </div>
-        <!-- ending of upload section -->
-
 
 
 
@@ -136,7 +106,7 @@
                 <div class="info__learning" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
 
                     <div class="info__imgbox">
-                        <img src="../assets/img/head.jpg" alt="" class="info__img">
+                        <img src="../assets/img/head1.jpg" alt="" class="info__img">
                     </div>
 
 
@@ -149,10 +119,10 @@
                     </p>
                 </div>
 
-                 <!--Eevent card-->
-                <div class="info__event" data-aos="fade-up"   data-aos-easing="linear" data-aos-duration="500"> 
+                <!--Eevent card-->
+                <div class="info__event" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
                     <div class="info__imgbox">
-                        <img src="../assets/img/event.jpg" alt="" class="info__img">
+                        <img src="../assets/img/event1.jpg" alt="" class="info__img">
 
                     </div>
                     <h5 class="info__title">Event</h5>
@@ -163,10 +133,10 @@
                         vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
                     </p>
                 </div>
-                    <!--Club card-->
-                    <div class="info__club" data-aos="fade-up"  data-aos-easing="linear"  data-aos-duration="500">
-                        <div class="info__imgbox">  
-                        <img src="../assets/img/floor.jpg" alt="" class="info__img">
+                <!--Club card-->
+                <div class="info__club" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+                    <div class="info__imgbox">
+                        <img src="../assets/img/floor1.jpg" alt="" class="info__img">
                     </div>
 
 
@@ -187,33 +157,172 @@
 
 
 
+
+        <!--Featured section-->
+        <section class="feature">
+            <div class="feature__container">
+
+                <div class="feature__heading">
+                    <h3>Featured Videos</h3>
+                    <span class="feature__left-line"></span>
+                    <span><i class="fas fa-play"></i></span>
+                    <span class="feature__right-line"></span>
+                </div>
+
+
+
+                <div class="feature__contents">
+
+
+                    <div class="feature__vid">
+                        <div class="feature__video">
+                            <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="feature__text">
+                            <h3><a href="#" class="feature__link">Learning Video</a></h3>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="feature__vid">
+                        <div class="feature__video">
+                            <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+
+                        <div class="feature__text">
+                            <h3><a href="#" class="feature__link">Event Video</a></h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature__vid">
+
+                        <div class="feature__video">
+                            <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+
+
+                        <div class="feature__text">
+                            <h3><a href="#" class="feature__link">Club Video</a></h3>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="feature__vid">
+
+                        <div class="feature__video">
+                            <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+
+
+                        <div class="feature__text">
+                            <h3><a href="#" class="feature__link">Club Video</a></h3>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="feature__vid">
+
+                        <div class="feature__video">
+                            <iframe src="https://www.youtube.com/embed/auZrENOILpQ" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+
+
+                        <div class="feature__text">
+                            <h3><a href="#" class="feature__link">Club Video</a></h3>
+
+                        </div>
+                    </div>
+
+                </div>
+        </section>
+        <!--feature osimai-->
+
+
+
+
         <!--Learning section-->
         <section class="learning">
 
-            <div class="heading">
-                <h3 class="heading__title" data-aos="fade-up">LEARNING</h3>
+            <div class="learning__heading">
+                <h3 class="learning__title">LEARNING</h3>
+                <a href="" class="learning__more"><span>View More</span></a>
             </div>
 
 
             <div class="grid">
-                <div class="item item--1">
+
+                <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
-                <div class="item item--2">
+                <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
-                <div class="item item--3">
+                <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
+                </div>
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
-                <div class="item item--4">
+                <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
-                <div class="item item--5">
+                <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
             </div>
@@ -226,146 +335,360 @@
         <!--Club section-->
         <section class="club">
 
-            <div class="heading">
-                <h3 class="heading__title">CLUB ACTIVITIES</h3>
+            <div class="club__heading">
+                <h3 class="club__title">CLUB ACTIVITIES</h3>
+                <a href="" class="club__more"><span>View More</span></a>
             </div>
 
             <div class="grid">
-                <div class="item item--1">
+                 <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
-                <div class="item item--2">
+                <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
-                <div class="item item--3">
+                <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
+                </div>
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
-                <div class="item item--4">
+                <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
-                <div class="item item--5">
+                <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item__name">
+                        Basic Css tutorial
+                    </div>
+                    <div class="item__description">
+                        learn some basic css commands and tricks to improve your absic css skills
+                    </div>
                 </div>
 
             </div>
         </section>
+
+
+
+
+
 
         <!--Event section-->
         <section class="event">
 
-            <div class="heading">
-                <h3 class="heading__title">EVENTS</h3>
+            <div class="event__heading">
+                <h3 class="event__title">EVENTS</h3>
+                <a href="" class="event__more"><span>View More</span></a>
             </div>
 
             <div class="grid">
-                <div class="item item--1">
-                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                    <div class="item">
+                            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                            <div class="item__name">
+                                Basic Css tutorial
+                            </div>
+                            <div class="item__description">
+                                learn some basic css commands and tricks to improve your absic css skills
+                            </div>
+                        </div>
+        
+                        <div class="item">
+                            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                            <div class="item__name">
+                                Basic Css tutorial
+                            </div>
+                            <div class="item__description">
+                                learn some basic css commands and tricks to improve your absic css skills
+                            </div>
+                        </div>
+        
+                        <div class="item">
+                            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                            <div class="item__name">
+                                Basic Css tutorial
+                            </div>
+                            <div class="item__description">
+                                learn some basic css commands and tricks to improve your absic css skills
+                            </div>
+                        </div>
+                        <div class="item">
+                            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                            <div class="item__name">
+                                Basic Css tutorial
+                            </div>
+                            <div class="item__description">
+                                learn some basic css commands and tricks to improve your absic css skills
+                            </div>
+                        </div>
+        
+                        <div class="item">
+                            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                            <div class="item__name">
+                                Basic Css tutorial
+                            </div>
+                            <div class="item__description">
+                                learn some basic css commands and tricks to improve your absic css skills
+                            </div>
+                        </div>
+        
+                        <div class="item">
+                            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                            <div class="item__name">
+                                Basic Css tutorial
+                            </div>
+                            <div class="item__description">
+                                learn some basic css commands and tricks to improve your absic css skills
+                            </div>
+                        </div>
+            </div>
+
+
+        </section>
+
+
+
+
+        <!--MY team section-->
+
+        <section class="team">
+            <!--team title-->
+            <span class="team__icon"><i class="fas fa-users"></i></span>
+            <span class="team__left"></span>
+            <h3 class="team__title">MEET OUR TEAM</h3>
+            <span class="team__right"></span>
+
+
+            <!-- Section Description -->
+            <div class="team__description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+            </div>
+
+
+
+            <div class="team__grid">
+
+                <!--member 1-->
+                <div class="team__member">
+                    <a href="#" class="team__profile">
+
+                        <div class="team__unhover-img">
+                            <img class="team__img" src="../assets/img/setting.jpg" alt="" />
+                        </div>
+
+                        <div class="team__hover-img">
+                            <img class="team__img" src="../assets/img/man.png" alt="" />
+                        </div>
+
+                        <span class="team__designation">CS16MSIIT004</span>
+
+                        <h4 class="team__h4"><span class="team__name">Vivek</span>Chetia</h4>
+                    </a>
+
+                    <ul class="team__list">
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-google-plus"></i></a></li>
+                        <li class="team__item"> <a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a></li>
+                    </ul>
 
                 </div>
-                <div class="item item--2">
 
-                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+                <!--member 2-->
+                <div class="team__member">
+                    <a href="#" class="team__profile">
+
+                        <div class="team__unhover-img">
+                            <img class="team__img" src="../assets/img/setting.jpg" alt="" />
+                        </div>
+
+                        <div class="team__hover-img">
+                            <img class="team__img" src="../assets/img/setting.jpg" alt="" />
+                        </div>
+
+                        <span class="team__designation">CS16MSIIT020</span>
+
+                        <h4 class="team__h4"><span class="team__name">Raju Moni</span>Borah</h4>
+                    </a>
+
+                    <ul class="team__list">
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-google-plus"></i></a></li>
+                        <li class="team__item"> <a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a></li>
+                    </ul>
+
                 </div>
-                <div class="item item--3">
 
-                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+
+                <!--member 3-->
+                <div class="team__member">
+                    <a href="#" class="team__profile">
+                        <div class="team__unhover-img">
+                            <img class="team__img" src="../assets/img/setting.jpg" alt="" />
+                        </div>
+
+                        <div class="team__hover-img">
+                            <img class="team__img" src="../assets/img/setting.jpg" alt="" />
+                        </div>
+                        <span class="team__designation">CS16MSIIT024</span>
+
+                        <h4 class="team__h4"><span class="team__name">Rahish</span>Gogoi</h4>
+                    </a>
+
+                    <ul class="team__list">
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-google-plus"></i></a></li>
+                        <li class="team__item"> <a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a></li>
+                    </ul>
+
                 </div>
-                <div class="item item--4">
 
-                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="item item--5">
 
-                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
+
+                <!--member 4-->
+                <div class="team__member">
+                    <a href="#" class="team__profile">
+                        <div class="team__unhover-img">
+                            <img class="team__img" src="../assets/img/setting.jpg" alt="" />
+                        </div>
+
+                        <div class="team__hover-img">
+                            <img class="team__img" src="../assets/img/setting.jpg" alt="" />
+                        </div>
+                        <span class="team__designation">CS16MSIIT035</span>
+
+                        <h4 class="team__h4"><span class="team__name">Nabajyoti</span>Borah</h4>
+                    </a>
+
+
+                    <ul class="team__list">
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-facebook-square"></i></a></li>
+                        <li class="team__item"><a href="#" class="team__link" target="_blank"><i
+                                    class="fab fa-google-plus"></i></a></li>
+                        <li class="team__item"> <a href="#" class="team__link" target="_blank"> <i
+                                    class="fab fa-linkedin"></i></a></li>
+                    </ul>
+
                 </div>
             </div>
+
         </section>
+
+
+
+
     </main>
-  </div>
+
+    <footer>
+
+        <section class="footer">
+            <div class="footer__back">
+                <div class="footer__logo">
+                    <i class="fa fa-camera-retro"></i>
+                    <h3 class="footer__logo-name">VSA</h3>
+                    <span class="footer__copy">Copyright © 2019 KU. All Rights Reserved</span>
+                </div>
+
+                <div class="footer__communication">
+                    <div class="footer__communication--text">
+                        CONTACT US
+                    </div>
+                    <a href="#" class="footer__communication--call">
+                        <i class="fa fa-phone"></i>
+                        <span class="footer__communication--callinfo">
+                            +919876543210
+                        </span>
+                    </a>
+
+                    <a href="#" class="footer__communication--location">
+
+                        <i class="fa fa-map-marker"></i>
+                        <span class="footer__communication--locationinfo">
+                            Kaziranga university
+                        </span>
+                    </a>
+
+                    <a href="#" class="footer__communication--mail">
+
+                        <i class="fa fa-envelope"></i>
+                        <span class="footer__communication--mailinfo">
+                            kazirangaVSA@gmail.com
+                        </span>
+                    </a>
+                </div>
+
+                <div class="footer__description">
+                </div>
+
+                <div class="footer__social">
+
+                    <div class="footer__social--text">
+                        FOLLOW US AT
+                    </div>
+                    <a href="#" class="footer__social--fb">
+
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+
+                    <a href="#" class="footer__social--twit">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+
+                    <a href="#" class="footer__social--link">
+                        <i class="fab fa-linkedin"></i>
+
+                    </a>
+
+                </div>
+            </div>
+
+        </section>
+
+    </footer>
+    </div>
 </template>
-
-<script>
-export default {
-  name: "Home",
-
-  mounted() {
-    console.log(this.$el);
-    let slideIndex = 0; //this indicates to start from the first image
-
-    const showSlides = () => {
-      //array is needed to to get the length of images
-      //here 3 images are used 0,1,2
-      const nodelist = this.$el.querySelectorAll(".mySlides");
-      //convert the nodelist to array
-      const slides = Array.from(nodelist);
-
-      console.log(slides); //array object 0,1,2
-
-      //the loop is to hide the current image
-      slides.forEach(cur => (cur.style.display = "none"));
-
-      //increase the sildeindex to go to next image
-      slideIndex++;
-
-      //if slideindex increses more than the length of the array
-      if (slideIndex > slides.length) {
-        slideIndex = 1; //initiate it to the 1 postion
-      }
-
-      //to display the image
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 10000); // Change image every 10 seconds
-    };
-    showSlides();
-
-    //to fade the header section on scroll
-    const opacity = () => {
-      const head = this.$el.querySelector(".head");
-      let scrollTop;
-      //height of the content area that is visible on screen
-      let height = window.innerHeight;
-      // console.log(window)
-      if (window.pageYOffset !== undefined) {
-        console.log("I am here");
-        scrollTop = window.pageYOffset;
-      } else {
-        scrollTop = this.$el.documentElement || this.$el.body.parentNode;
-      }
-
-      // Change this if you want it to fade faster
-      height = height / 1.1;
-      //increase or decrease the opacity according to the scroll
-      head.style.opacity = (height - scrollTop) / height;
-    };
-
-    window.addEventListener("scroll", opacity); //header opacity
-
-    // upload page
-    const realFileBtn = this.$el.querySelector("#upload-file");
-    const customBtn = this.$el.querySelector("#choose-video");
-    const customText = this.$el.querySelector("#custom-text");
-
-    // when choose a file button clicked
-    customBtn.addEventListener("click", function() {
-      realFileBtn.click();
-    });
-
-    realFileBtn.addEventListener("change", function() {
-      if (realFileBtn.value) {
-        // regular expersion for finding the file name
-        customText.innerHTML = realFileBtn.value.match(
-          /[\/\\]([\w\d\s\.\-\(\)]+)$/
-        )[1];
-      } else {
-        customText.innerHTML = "No file choosen yet!";
-      }
-    });
-  }
-};
-</script>
-
-

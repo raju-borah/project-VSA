@@ -1,0 +1,26 @@
+.club
+{
+    &__heading
+    { 
+          @include head;
+
+    }
+
+    &__title
+    {
+
+     @include title;
+    }
+
+    &__more
+    {
+
+        @include more;
+    }
+
+    
+    &__more:hover::after
+    {
+        width: 100%;
+    }
+}

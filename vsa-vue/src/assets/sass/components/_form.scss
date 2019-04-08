@@ -2,19 +2,19 @@
   // form properties....
   margin: 3rem;
   padding: 2rem;
-  background-color: rgba(36, 80, 83, 0.36);
+  background-color: $color-grey-light-2;
   box-shadow: 0 2rem 4rem rgba($color-black, 0.44);
   // form signup properties
   &--login {
     // for bring down the form
     padding: 4rem;
-   transform: translateY(25%);
+    transform: translateY(25%);
   }
 
   // form-group property
   &__group {
     margin: 1rem;
-    
+
     &--signup {
       margin: 1rem;
       margin-right: 4rem;
@@ -27,34 +27,32 @@
     border-radius: 1.2rem;
     text-decoration-style: none;
     border: 0.1rem;
-    // focus properties
-    &:focus {
-      // when foucused no outline
-      outline: none;
-      // shadow
-      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-      // bottom border
-      border-bottom: 0.3rem solid $color-primary;
-      &:invalid {
-        // if invalid bottom border color different
-        border-bottom: 0.3rem solid $color-secondary-light;
+    &__pin {
+      border-radius: 0rem;
+      padding-left: 3rem;
+      letter-spacing: 2.5rem;
+      font-size: 1.9rem;
+      width: 26rem;
+
+      &:focus {
+        outline: none;
       }
     }
-
     // signin page form properties...
     &__signin {
-      width: 90%;
-      height:4rem;
+      width: 80%;
+      height: 4rem;
       display: inline-block;
+      @include focus;
+      margin-left: 4rem;
     }
     // signup page form properties...
     &__signup {
-      background: transparent;
       display: inline-block;
-    
+
       width: 35rem;
       border-radius: 0rem;
-      border-bottom: 0.3rem solid $color-tertiary-dark-1;
+      border: 0.1rem solid $color-tertiary-dark-1;
     }
 
     // upload page
@@ -84,5 +82,8 @@
     color: $color-black;
     font-weight: 700;
     display: block;
+    &--signin {
+      margin-left: 4rem;
+    }
   }
 }
