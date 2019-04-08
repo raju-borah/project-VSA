@@ -1,0 +1,198 @@
+// navigation bar
+.navigationbar {
+  // positioning relative to refer the other division to its position
+  position: relative;
+  // setting zindex to 1 to be at top of other division or section
+  z-index: 2;
+  // setting width,height and background-color
+  width: 100%;
+  height: 7rem;
+  background-color: $color-grey-dark-3;
+  position: sticky;
+  // position of the navigation is set to...
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  transition: all 0.3s ease;
+
+  // when hovered
+  &:hover {
+    // when hovered the background color will change to the given color
+    background-color: $color-tertiary-dark-2;
+    // when hovered shadow is display
+    box-shadow: 0 1rem 1rem rgba($color-black, 0.55);
+  }
+
+  //   if navigationbar hovered the class navbarfont will have font-color-->black
+  &:hover .navbarfont {
+    // callling the mixin
+    @include navigationbarfonts($color-white);
+  }
+
+  // hiding the checked-box
+  &__checkbox {
+    display: none;
+  }
+
+  // when checked box is selected then the following cod eto be executed
+  &__checkbox:checked ~ &__more_setting {
+    // setting to visible
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0rem);
+    transition: all 0.4s ease-in;
+  }
+
+  // the navigationbar button
+  &__button {
+    // setting marign left, z-index ,position
+    margin-left: 2rem;
+    z-index: 1;
+    position: absolute;
+    // custom height,width
+    height: 3.5rem;
+    width: 4rem;
+    top: 1rem;
+    left: 2rem;
+    // when curson hovered ..
+    cursor: pointer;
+    transition: all 0.3s;
+    // when the button is hovered the background-color of icon will be changed
+    &:hover {
+      .navigationbar--left--icon,
+      .navigationbar--left--icon::before,
+      .navigationbar--left--icon::after {
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  // left
+  &--left {
+    width: 50%;
+    float: left;
+    padding-left: 3rem;
+  }
+  // for right options
+  &--right {
+    text-align: end;
+    width: 50%;
+    padding-right: 3rem;
+    float: left;
+  }
+}
+// for the navbar properties
+.navbarfont {
+  // calling the mixin
+  @include navigationbarfonts($color-white);
+}
+
+//for list items
+.listlink {
+  //to color the list text
+  &--item {
+    color: $color-white;
+  }
+}
+
+.hidden {
+  display: none;
+}
+// userbutton
+.userbutton{
+  background: transparent;
+  border: none;
+  position: relative;
+  &:active,
+  &:focus{
+    outline: none;
+  }
+
+}
+// container settings
+.usercontainer{
+  z-index: 2;
+
+  display: none;
+  clear: left;
+  position: absolute;
+  width: 35rem;
+  height: 28rem;
+  top: 8rem;
+  right: 3rem;
+  background-color: $color-grey-light-2 ;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.55);
+  &::after{
+    content: "";
+    position: absolute;
+    top: -1.99rem;
+    right: 3.4rem;
+    border:1rem solid;
+    border-color:  transparent  transparent $color-grey-light-2 transparent;
+  }
+ 
+
+}
+.signincontainer{
+  display: none;
+  z-index: 2;
+  position: absolute;
+  width: 33rem;
+  height: 26rem;
+  top: 1rem;
+  left: 1rem;
+  padding: 2rem;
+  color: $color-black;
+  &__img{
+    
+    margin-left: 1.2rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+  }
+}
+.ul__list 
+{
+  margin-top: 5rem;
+  list-style-type: none;
+  text-align: center;
+  
+
+  li:last-child {
+    margin-top: 1.5rem;
+    border-top: 0.2rem solid $color-white;
+  }
+}
+.list--link{
+  &,&:visited{
+    text-decoration: none;
+    color: $color-black;
+    font-weight: 700;
+    padding: .86rem;
+    border-radius: 1rem;
+    margin: 1.5rem;
+    background-color: $color-tertiary-light-1;
+  }    
+}
+.notsignincontainer{
+  display: none;
+  z-index: 2;
+  position: absolute;
+  width: 33rem;
+  height: 26rem;
+  top: 1rem;
+  left: 1rem;
+  padding: 2rem;
+
+  &__img{
+    
+    margin-left: 8.5rem;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+  }
+  &__imgdiv{
+    height: 12rem;
+    width: 15rem;
+  }
+}

@@ -1,0 +1,49 @@
+.upload
+{   
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+    &__container
+    {
+        width: 100%;
+        height: 100vh;
+        padding: 10rem;
+        background-image: radial-gradient(rgba($color-tertiary-dark,0.27),rgba($color-black,0.38));
+        
+    }
+    &__videos--card
+    {   position: relative;
+        transform: translate(50%,0);
+        width: 50%;
+        height:60vh;
+        padding: 1rem;
+        padding-top: 5rem;
+        border: 2px solid black;
+        box-shadow: 0 1rem 3rem $color-tertiary-dark;
+        background-color: $color-white;
+        
+
+    }
+    
+    &:target {
+        opacity: 1;
+        visibility: visible;
+      
+      }
+}
+.btn--close {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 1.6rem;
+    z-index: 1;
+    color: $color-red;
+    font-weight: 300;
+    font-size: 4rem;
+   
+  }

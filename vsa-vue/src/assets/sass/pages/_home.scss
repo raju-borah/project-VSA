@@ -1,0 +1,84 @@
+//slider section//
+.main
+{
+    background-color: $color-white;
+}
+
+//header conatiner
+.head
+{
+    width: 100%;
+    height: 97vh;
+    position: sticky;
+    top: 0;
+    z-index:-1;
+}
+
+//info section
+.info
+{
+    padding: 20rem 0 10rem 0;
+    background-color: rgba($color-grey-dark,.2);
+    margin-top: 2rem;
+   
+    
+
+}
+
+//feature section
+
+.feature
+{
+    height: 70rem;
+    background-image: linear-gradient(to right bottom,rgba(46, 19, 199, 0.500),rgba(18, 207, 240, 0.500)),url(../img/head.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+//learning section//
+.learning
+{
+    padding: 15rem 0 5rem 0;//top right bottom left
+   
+    position: relative;
+    
+    background-size: cover;
+
+
+}
+
+
+
+//club activities section//
+.club
+{
+    padding: 15rem 0 5rem 0;
+    background-size: cover;
+    position: relative;
+
+}
+
+
+
+//event section//
+.event
+{
+    padding: 15rem 0 8rem 0;
+    background-size: cover;
+
+    position: relative;
+
+}
+
+
+//team section
+.team
+{
+    padding: 10rem 0 0 0;
+    background-image: linear-gradient(to bottom,rgba(46, 19, 199, 2),rgba(18, 207, 240, 0.800));
+    
+}
+
+

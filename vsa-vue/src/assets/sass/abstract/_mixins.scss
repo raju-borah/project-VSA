@@ -1,0 +1,107 @@
+@mixin navigationbarfonts($color){
+     // font properties for the navigation bar as all option needed the same property
+     .navbar_items{
+        //  settings font properties....
+     font-size: 3rem;
+     font-weight: 700;
+     color: $color;
+      
+     &--icon{
+       font-size: 5.5rem;
+       top: -.39rem;
+     }
+    //  when hovered the following changes will be taking place 
+    &:hover{
+        color:$color-tertiary-light-1;
+        text-shadow: 0 1rem 3rem $color-black; 
+        // when hovered the cursor will look like pointer
+        cursor: pointer;      
+    }
+    }    
+}
+@mixin focus {
+     // focus properties
+     &:focus {
+        // when foucused no outline
+        outline: none;
+        // shadow
+        box-shadow: 0 1rem 1rem rgba($color-black, 0.1);
+        // bottom border
+        border-bottom: 0.3rem solid $color-primary;
+        &:invalid {
+          // if invalid bottom border color different
+          border-bottom: 0.3rem solid $color-secondary-light;
+        }
+      }
+    
+}
+
+
+
+//mixins for three contents sections 
+//1.Main heading division
+@mixin head {
+  position: relative;
+  width: 90%;
+  display: inline-block;
+  left: 10rem;
+}
+ 
+//2.main heading
+@mixin title{
+  color: $color-black;
+  padding: 1rem;
+  float: left;
+  font-size: 6rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem; 
+}
+
+//3.view more part
+@mixin more{
+  
+  font-size: 3rem;
+  display: inline-block;
+  padding: 1rem;
+  margin-left: .4rem;
+  cursor: pointer;
+  vertical-align: middle;
+  font-weight: 500; 
+  position: absolute;
+  top: 2rem;
+  transition: color .25s ease;
+  border-left: 2px solid $color-tertiary-dark;
+  z-index: 1;
+  background: none;
+  transition: all 0.5s;
+
+
+  //after element on view more 
+  &::after{
+    position: absolute;
+    content: '';
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: $color-tertiary-dark;
+    transform-origin:left;
+    transition:width 0.25s ease;
+    z-index:-1;
+    
+
+  }
+
+  //when the view more link is visited or clicked
+  &:visited
+  {
+      color: $color-primary-dark;
+  }
+//when view more link is hovered
+  &:hover{
+    color: $color-white;
+    transform: scale(1.1);
+  }
+}
