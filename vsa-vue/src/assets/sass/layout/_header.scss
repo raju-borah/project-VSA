@@ -1,11 +1,12 @@
 .header
 {
-    height: 90vh;
+    height: 91vh;
     position: relative;
     background-image: cover;
     background-position: top;
     box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
     
+    //text part in the header
         &__text-box
         {
         position: absolute;
@@ -17,15 +18,17 @@
 
 }
 
+//images in the header 
 img
 {
  position:absolute;
  left: 0rem;//to fit the images in the middle of the screen
- height: 90vh;
+ height: 91vh;
  width: 100%;
  
 }
 
+//to apply the fade effect in 
 .fade {
 
     animation-name: fade;

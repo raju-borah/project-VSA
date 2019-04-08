@@ -1,4 +1,4 @@
-# vsa
+# vsa-vue
 
 > A Vue.js project
 

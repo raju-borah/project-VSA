@@ -13,6 +13,11 @@
 @import "components/navigationbar";
 @import "components/_searchbtn";
 @import "components/info";
+@import "components/feature";
+@import "components/learning";
+@import "components/event";
+@import "components/club";
+@import "components/team";
 
 @import "layout/footer";
 @import "layout/header";
@@ -22,3 +27,7 @@
 @import "pages/signup";
 @import "pages/login";
 @import "pages/upload";
+@import "pages/settings";
+@import "pages/dashboard";
+@import "pages/videoplay";
+@import "pages/more";

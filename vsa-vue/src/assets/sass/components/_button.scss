@@ -16,56 +16,67 @@ border-radius for curved end of button
     border: none;
     cursor: pointer;
     transition: all 0.2s;
-    
-
   }
   &--white {
     border-radius: 1rem;
     font-size: 1.7rem;
     display: inline-block;
-    padding: .11rem;
+    padding: 0.31rem;
     color: $color-black;
-    background-color:transparent;
-    background-image: linear-gradient(to right, rgba(grey, 0.89), rgba(blue, 0.12));
+ 
+    background-image: linear-gradient(to right, rgba($color-grey-dark-3, 0.29), rgba($color-tertiary-dark-1, 0.33));
 
     // when the btn--white is hovered
     &:hover {
       background-image: none;
-      background-color: $color-white;
+      background-color: $color-grey-dark-2;
     }
   }
   // button green
   &--green {
-    border-radius: 5rem;
-    font-size: 2.5rem;
+    border-radius: 1rem;
+    font-size: 2rem;
     margin: 2rem;
     display: block;
     background-color: $color-primary-dark;
     color: $color-white;
     padding: 1rem;
-  
-  // 
-    
-  // for login 
-  &--login{
-    background-color:$color-tertiary-light;
-      width:80%;
-    } }
-    &--blue{
-      border-radius: 5rem;
-      font-size: 2.5rem;
-      margin: 2rem;
-      display: block;
-      background-color: $color-tertiary-dark;
-      color: $color-white;
-      padding: 1rem;
-      width: 15rem;
-  
+
+    // for login
+    &--login {
+      background-color: $color-tertiary-light;
+      margin-left: 8rem;
+      width: 70%;
     }
 
-  
+    // for logout
+    &--logout{
+    margin-left: 10rem;
+    }
+  }
+  &--blue {
+    border-radius: 5rem;
+    font-size: 2.5rem;
+    margin: 2rem;
+    display: block;
+    background-color: $color-tertiary-dark;
+    color: $color-white;
+    padding: 1rem;
+    width: 15rem;
+   
+  }
+  &--front{
+    background-color: $color-tertiary-dark-2;
+    display: inline-block;
+    width: 10rem;
+    font-weight: 700;
+    padding: 1rem;
+    color: $color-white;
+    margin: 1rem;
+    border-radius: 1rem;
+    font-size: 1.7rem;
+  }
 
-  
   // upload button
   &--upload {
     width: 15rem;
@@ -75,10 +86,9 @@ border-radius for curved end of button
     background-color: $color-primary-dark;
     color: $color-white;
     font-size: 1.6rem;
- 
   }
 
-    /* button hover */
+  /* button hover */
   &:hover {
     /* shadow when hover */
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
@@ -99,15 +109,5 @@ border-radius for curved end of button
     /* for moving down */
     transform: translateY(-0.1rem);
   }
-
-
-  // close button
-  &--close {
-    top: 0rem;
-    right: 4rem;
-    z-index: 10;
-    color: $color-red;
-    font-weight: 300;
-    font-size: 4rem;
-  }
 }
+

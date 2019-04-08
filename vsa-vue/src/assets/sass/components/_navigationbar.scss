@@ -3,7 +3,7 @@
   // positioning relative to refer the other division to its position
   position: relative;
   // setting zindex to 1 to be at top of other division or section
-  z-index: 1;
+  z-index: 2;
   // setting width,height and background-color
   width: 100%;
   height: 7rem;
@@ -28,7 +28,7 @@
     // callling the mixin
     @include navigationbarfonts($color-white);
   }
-  
+
   // hiding the checked-box
   &__checkbox {
     display: none;
@@ -40,10 +40,8 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(0rem);
-    transition: all .4s ease-in;
-    
+    transition: all 0.4s ease-in;
   }
- 
 
   // the navigationbar button
   &__button {
@@ -54,7 +52,7 @@
     // custom height,width
     height: 3.5rem;
     width: 4rem;
-    top: 2.2rem;
+    top: 1rem;
     left: 2rem;
     // when curson hovered ..
     cursor: pointer;
@@ -67,114 +65,19 @@
         background-color: $color-primary;
       }
     }
-
   }
 
-  // for left Options
+  // left
   &--left {
-    width: 30%;
+    width: 50%;
     float: left;
-    // hide checkbox
-
-    // the 3 line icon in the nav bar
-    &--icon {
-      // setting the zindex to get it into top and position relative to navigationbar
-      z-index: 1;
-      top: 1.5rem;
-      left: 0.1rem;
-      position: absolute;
-      transition: all 0.2s;
-      cursor: pointer;
-      // using pesudo class to create duplicate of icon
-      &,
-      &::before,
-      &::after {
-        width: 3.5rem;
-        height: 0.32rem;
-        background-color: $color-white;
-        display: inline-block;
-        position: absolute;
-      }
-      // position pesudo elements
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        transition: all 0.1s;
-      }
-      &::before {
-        top: -0.8rem;
-      }
-      &::after {
-        top: 0.8rem;
-      }
-      
-    }
+    padding-left: 3rem;
   }
-
-  // style for the list in the more setting
-  &__more_setting {
-   
-    opacity: 0;
-    visibility: hidden;
-    // setting none style to list
-    list-style-type: none;
-    // setting background to white color
-    background-color: $color-black;
-    // setting position from top, left and giving width
-    margin-top: 6rem;
-    margin-left: -1rem;
-    width: 20rem;
-    // giving shadow
-    box-shadow: 0 1rem 3rem rgba($color-tertiary-dark-1, 0.55);
-    transform: translateX(-20rem);
-    transition: all .4s ease-in-out;
-
-    // list item property
-    &--item {
-      padding: 1rem;
-      font-size: 2rem;
-      margin-left: 1rem;
-      color: $color-black;
-      background-image: linear-gradient(120deg, $color-black 0%, $color-black 50%, $color-tertiary-dark 50%);
-      background-size: 220%;
-      transition: all .5s;
-    
-
-      // when  list item is hovered
-      &:hover {
- 
-        box-shadow: 0 1rem 1rem rgba($color-black, 0.55);
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        transform: scale(1.1);
-        background-position: 100%;
-        color: $color-black;
-      }
-
-      
-    }
-
-    
-
-    // using not lasr child selector for giving underline in list items
-    :not(:last-child) {
-      border-bottom: 0.1rem solid $color-white;
-    }
-  }
-
-  // for mid options
-  &--mid {
-    width: 40%;
-    float: left;
-    text-align: center;
-  }
-
   // for right options
   &--right {
     text-align: end;
-    width: 30%;
+    width: 50%;
+    padding-right: 3rem;
     float: left;
   }
 }
@@ -183,20 +86,113 @@
   // calling the mixin
   @include navigationbarfonts($color-white);
 }
-.listlink {
 
-  &--item
-  {
+//for list items
+.listlink {
+  //to color the list text
+  &--item {
     color: $color-white;
+  }
+}
+
+.hidden {
+  display: none;
+}
+// userbutton
+.userbutton{
+  background: transparent;
+  border: none;
+  position: relative;
+  &:active,
+  &:focus{
+    outline: none;
+  }
+
+}
+// container settings
+.usercontainer{
+  z-index: 2;
+
+  display: none;
+  clear: left;
+  position: absolute;
+  width: 35rem;
+  height: 28rem;
+  top: 8rem;
+  right: 3rem;
+  background-color: $color-grey-light-2 ;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.55);
+  &::after{
+    content: "";
+    position: absolute;
+    top: -1.99rem;
+    right: 3.4rem;
+    border:1rem solid;
+    border-color:  transparent  transparent $color-grey-light-2 transparent;
   }
  
 
-
- 
 }
-
-
-.hidden
-{
+.signincontainer{
   display: none;
+  z-index: 2;
+  position: absolute;
+  width: 33rem;
+  height: 26rem;
+  top: 1rem;
+  left: 1rem;
+  padding: 2rem;
+  color: $color-black;
+  &__img{
+    
+    margin-left: 1.2rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+  }
+}
+.ul__list 
+{
+  margin-top: 5rem;
+  list-style-type: none;
+  text-align: center;
+  
+
+  li:last-child {
+    margin-top: 1.5rem;
+    border-top: 0.2rem solid $color-white;
+  }
+}
+.list--link{
+  &,&:visited{
+    text-decoration: none;
+    color: $color-black;
+    font-weight: 700;
+    padding: .86rem;
+    border-radius: 1rem;
+    margin: 1.5rem;
+    background-color: $color-tertiary-light-1;
+  }    
+}
+.notsignincontainer{
+  display: none;
+  z-index: 2;
+  position: absolute;
+  width: 33rem;
+  height: 26rem;
+  top: 1rem;
+  left: 1rem;
+  padding: 2rem;
+
+  &__img{
+    
+    margin-left: 8.5rem;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+  }
+  &__imgdiv{
+    height: 12rem;
+    width: 15rem;
+  }
 }

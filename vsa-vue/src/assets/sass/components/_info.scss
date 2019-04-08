@@ -1,10 +1,9 @@
 .info
 {
+    //creating a grid in info section for cards 
     position: relative;
-    display: grid;
-    grid-template-rows: 80vh  repeat(1, 1fr);
-    grid-template-columns: repeat(3,1fr);
-
+   
+    
 
 
     //heading part
@@ -31,11 +30,13 @@
         grid-column: center-start / center-end;
 
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 65vh  repeat(1, 1fr);
+        grid-template-columns: repeat(3,1fr);
         grid-gap: 4rem;
 
     }
 
+    //image box to store the image
     &__imgbox
 
     {
@@ -43,12 +44,13 @@
     
       
     }
+
     //image part
     &__img
     {
         position: relative;
         width: 100%;
-        height: 30rem;
+        height: 40rem;
         border-style:double; 
         transition: all .5s;
      
@@ -59,6 +61,8 @@
 
 
     //for all three cards
+
+    //learning card
     &__learning
 
     {
@@ -67,12 +71,14 @@
     
     }
 
+//when we hover on learning card
     &__learning:hover &__img{
         transform: scale(1.2);
     }
 
 
   
+    //event card
     &__event
 
     {
@@ -80,23 +86,25 @@
     
     }
 
-       
+ 
+    //when we hover on event card
     &__event:hover &__img{
         transform: scale(1.2);
     }
 
 
 
+ 
+    //club card
     &__club
 
     {
         position: relative;
-        
-
 
     }
     
       
+    //when we hover on club card
     &__club:hover &__img{
         transform: scale(1.2);
     }
@@ -105,7 +113,7 @@
 
 
 
-    //the title part of the card
+    //the name part of the card
     &__title
     {  
         z-index: 2;
@@ -124,7 +132,7 @@
         padding: 2rem;
 
 
-        //when hover the title part
+        //when hover the title part it will scale
         &:hover{
             transform: scale(1.1);
              cursor: default;
@@ -152,6 +160,7 @@
     }
 
 
+    //when we hover on the info section the cursor will we default
     &:hover{
         cursor: default;
     }
