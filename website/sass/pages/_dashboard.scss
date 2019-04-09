@@ -23,7 +23,7 @@
       &:hover {
         box-shadow: 0 1rem 1rem rgba($color-tertiary-dark-1, 0.66);
       }
-      &:hover #videodelete {
+      &:hover .videodelete {
         display: block;
       }
     }
@@ -60,6 +60,6 @@
   background-color: $color-grey-light-2;
 }
 
-#videodelete {
+.videodelete {
   display: none;
 }

@@ -874,7 +874,7 @@ border-radius for curved end of button
 .footer {
   position: relative; }
   .footer__back {
-    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(../img/foot.jpg);
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("/img/foot.jpg");
     width: 100%;
     height: 55rem;
     background-size: 100% 100%;
@@ -1083,7 +1083,7 @@ img {
 
 .feature {
   height: 70rem;
-  background-image: linear-gradient(to right bottom, rgba(46, 19, 199, 0.5), rgba(18, 207, 240, 0.5)), url(../img/head.jpg);
+  background-image: linear-gradient(to right bottom, rgba(46, 19, 199, 0.5), rgba(18, 207, 240, 0.5)), url("/img/head.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; }
@@ -1293,7 +1293,7 @@ img {
       border-radius: 3rem; }
       .dashboard__list--items:hover {
         box-shadow: 0 1rem 1rem rgba(1, 42, 87, 0.66); }
-      .dashboard__list--items:hover #videodelete {
+      .dashboard__list--items:hover .videodelete {
         display: block; }
   .dashboard__vcard {
     width: 100%;
@@ -1322,7 +1322,7 @@ img {
   color: #5643fa;
   background-color: #eee; }
 
-#videodelete {
+.videodelete {
   display: none; }
 
 .player {
