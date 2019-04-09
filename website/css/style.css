@@ -303,8 +303,8 @@ border-radius for curved end of button
     font-weight: 700;
     color: #fff; }
     .navigationbar:hover .navbarfont .navbar_items--icon {
-      font-size: 5.5rem;
-      top: -.39rem; }
+      font-size: 4.6rem;
+      top: 0; }
     .navigationbar:hover .navbarfont .navbar_items:hover {
       color: #9dcfff;
       text-shadow: 0 1rem 3rem #000;
@@ -345,8 +345,8 @@ border-radius for curved end of button
   font-weight: 700;
   color: #fff; }
   .navbarfont .navbar_items--icon {
-    font-size: 5.5rem;
-    top: -.39rem; }
+    font-size: 4.6rem;
+    top: 0; }
   .navbarfont .navbar_items:hover {
     color: #9dcfff;
     text-shadow: 0 1rem 3rem #000;
@@ -437,15 +437,15 @@ border-radius for curved end of button
 
 .search {
   position: relative;
-  top: -2.2rem;
+  top: -1.8rem;
   margin-right: 4rem; }
   .search__input {
     position: absolute;
     top: 20px;
-    right: 50px;
+    right: 4.6rem;
     box-sizing: border-box;
     width: 0px;
-    height: 5rem;
+    height: 4.5rem;
     padding: 0 20px;
     outline: none;
     font-size: 18px;
@@ -455,8 +455,8 @@ border-radius for curved end of button
     transition: all 0.8s; }
   .search__btn {
     position: absolute;
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     background: #5643fa;
     border-radius: 50%;
     right: 4.6rem;
@@ -464,9 +464,9 @@ border-radius for curved end of button
     cursor: pointer;
     text-align: center;
     line-height: 80px;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #fff;
-    transition: all 0.8s ease;
+    transition: all 0.1s;
     border: none;
     outline: none; }
   .search__icon {
@@ -490,18 +490,19 @@ border-radius for curved end of button
   .info__grid {
     position: relative;
     margin-top: -3rem;
+    margin-left: 2.5rem;
     padding: 10rem;
     grid-column: center-start / center-end;
     display: grid;
-    grid-template-rows: 65vh repeat(1, 1fr);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 60vh repeat(1, 1fr);
+    grid-template-columns: repeat(3, 40rem);
     grid-gap: 4rem; }
   .info__imgbox {
     overflow: hidden; }
   .info__img {
     position: relative;
     width: 100%;
-    height: 40rem;
+    height: 25rem;
     border-style: double;
     transition: all .5s; }
   .info__learning {
@@ -528,7 +529,7 @@ border-radius for curved end of button
     letter-spacing: .5rem;
     width: 80%;
     left: 4rem;
-    top: 27rem;
+    top: 21.5rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.55);
     padding: 2rem; }
     .info__title:hover {
@@ -537,7 +538,7 @@ border-radius for curved end of button
       transition: all .2s; }
   .info__text {
     position: absolute;
-    top: 30rem;
+    top: 25rem;
     padding: 10rem 2rem 6rem 2rem;
     background-color: #fff;
     font-size: 1.6rem;
@@ -818,7 +819,7 @@ border-radius for curved end of button
     height: 50%; }
     .team__img:hover {
       border: 15px solid #094a8b;
-      z-index: 10;
+      z-index: 1;
       transition: all 0.3s ease-in;
       height: 50%; }
   .team__member {

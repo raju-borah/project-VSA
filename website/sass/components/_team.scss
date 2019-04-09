@@ -91,7 +91,7 @@
     //when we hover on image a new image is shown
     &:hover{
         border: 15px solid rgb(9, 74, 139);
-        z-index: 10;
+        z-index: 1;
         transition: all 0.3s ease-in;	
         height: 50%;
     }
