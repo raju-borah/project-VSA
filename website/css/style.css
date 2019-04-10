@@ -1067,6 +1067,16 @@ img {
     color: #000;
     font-size: 1.5rem; }
 
+.grid2 {
+  width: 100%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 10rem;
+  grid-column-gap: 5rem;
+  padding: 1rem; }
+
 .main {
   background-color: #fff; }
 
@@ -1361,140 +1371,76 @@ img {
   height: 10rem; }
 
 .morehead {
-  position: sticky;
-  top: 7rem;
-  width: 100%;
-  height: 10rem;
-  font-size: 6rem;
-  font-weight: 600;
-  letter-spacing: 1rem;
-  color: #fff;
-  background-image: linear-gradient(120deg, #28b485 30%, #5643fa 60%, #ff7730 90%); }
+  position: sticky; }
+  .morehead button:focus {
+    outline: none; }
+  .morehead__back {
+    top: 7rem;
+    width: 100%;
+    height: 10rem;
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: 1rem;
+    color: #fff;
+    background-image: linear-gradient(120deg, #28b485 30%, #5643fa 60%, #ff7730 90%); }
   .morehead__learn {
     position: absolute;
-    left: 5rem; }
+    padding: 2rem;
+    background-color: transparent;
+    border-style: none;
+    color: #fff;
+    height: 10rem; }
+    .morehead__learn:hover {
+      transition: all .4s;
+      width: 100%;
+      background-color: #28b485;
+      height: 10rem; }
+  .morehead__learntext {
+    font-size: 5rem;
+    top: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1rem;
+    position: fixed;
+    z-index: 2; }
   .morehead__event {
     position: absolute;
-    left: 65rem; }
+    padding: 2rem;
+    background-color: transparent;
+    border-style: none;
+    color: #fff;
+    height: 10rem; }
+    .morehead__event:hover {
+      transition: all .4s;
+      width: 100%;
+      background-color: #5643fa;
+      position: absolute; }
+  .morehead__eventtext {
+    font-size: 5rem;
+    top: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1rem;
+    position: fixed;
+    left: 72rem;
+    z-index: 2; }
   .morehead__club {
     position: absolute;
-    right: 10rem; }
+    padding: 2rem;
+    background-color: transparent;
+    border-style: none;
+    color: #fff; }
+    .morehead__club:hover {
+      transition: all .4s;
+      width: 100%;
+      background-color: #ff7730;
+      height: 10rem; }
+  .morehead__clubtext {
+    font-size: 5rem;
+    top: 1.8rem;
+    right: 2rem;
+    font-weight: 600;
+    letter-spacing: 1rem;
+    position: fixed; }
 
-.learn {
-  position: fixed;
-  width: 55rem;
-  height: 75%;
-  overflow-y: auto;
-  margin-left: 5rem;
-  padding: 1rem; }
-  .learn__videos {
-    display: grid;
-    grid-template-rows: repeat(20, 1fr);
-    grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 10rem; }
-  .learn__videos {
-    width: 75%;
-    height: 40rem; }
-  .learn__item {
-    position: relative;
-    width: 100%;
-    font-size: 30px;
-    height: 22rem;
-    font-family: sans-serif;
-    color: #fff;
-    border-radius: 2rem; }
-  .learn__name {
-    position: absolute;
-    top: 21rem;
-    font-size: 3rem;
-    font-weight: 500;
-    color: #000; }
-  .learn__description {
-    position: absolute;
-    top: 25rem;
-    color: #000;
-    font-size: 1.5rem; }
-
-.eve {
-  position: fixed;
-  left: 54rem;
-  width: 50rem;
-  height: 75%;
-  overflow-y: scroll;
-  margin-left: 5rem;
-  padding: 1rem; }
-  .eve__videos {
-    display: grid;
-    grid-template-rows: repeat(20, 1fr);
-    grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 10rem; }
-  .eve__videos {
-    width: 80%;
-    height: 40rem; }
-  .eve__item {
-    position: relative;
-    width: 100%;
-    font-size: 30px;
-    height: 22rem;
-    font-family: sans-serif;
-    color: #fff;
-    border-radius: 2rem; }
-  .eve__name {
-    position: absolute;
-    top: 21rem;
-    font-size: 3rem;
-    font-weight: 500;
-    color: #000; }
-  .eve__description {
-    position: absolute;
-    top: 25rem;
-    color: #000;
-    font-size: 1.5rem; }
-
-.clb {
-  position: fixed;
-  right: 3rem;
-  width: 40rem;
-  height: 75%;
-  overflow-y: scroll;
-  margin-left: 5rem;
-  padding: 1rem; }
-  .clb__videos {
-    display: grid;
-    grid-template-rows: repeat(20, 1fr);
-    grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 10rem; }
-  .clb__videos {
-    width: 100%;
-    height: 40rem; }
-  .clb__item {
-    position: relative;
-    width: 100%;
-    font-size: 30px;
-    height: 22rem;
-    font-family: sans-serif;
-    color: #fff;
-    border-radius: 2rem; }
-  .clb__name {
-    position: absolute;
-    top: 21rem;
-    font-size: 3rem;
-    font-weight: 500;
-    color: #000; }
-  .clb__description {
-    position: absolute;
-    top: 25rem;
-    color: #000;
-    font-size: 1.5rem; }
-
-::-webkit-scrollbar {
-  width: 0rem; }
-
-/*
-::-webkit-scrollbar-thumb
-{
-    background-color: $color-tertiary-dark;
-    border-radius: 10rem;
-    height: 1rem;
-}
-*/
+.morecontainer {
+  width: 100%;
+  height: 100%; }

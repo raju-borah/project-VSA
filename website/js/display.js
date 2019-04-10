@@ -1,5 +1,6 @@
 
 
+
 // user profile button in navbar
 const userBtn=document.querySelector('.userbutton');
 // div for data display
@@ -42,3 +43,5 @@ userBtn.addEventListener('click',function(){
    
     
 });
+
+
