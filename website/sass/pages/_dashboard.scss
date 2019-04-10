@@ -4,6 +4,7 @@
   position: relative;
   background-color: $color-grey-dark;
   padding: 1rem;
+ 
   &__vcontainer {
     border-top: 0.2rem solid $color-tertiary-dark-1;
     padding: 1rem;
@@ -14,12 +15,13 @@
     
     list-style-type: none;
     padding-left: 8rem;
+    
     &--items {
       
       background-color: $color-grey-light-2;
       margin-top: 3rem;
       width: 90%;
-      border-radius: 3rem;
+      border-radius: 1.5rem;
       &:hover {
         box-shadow: 0 1rem 1rem rgba($color-tertiary-dark-1, 0.66);
       }

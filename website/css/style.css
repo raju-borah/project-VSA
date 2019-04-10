@@ -1183,7 +1183,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  overflow: hidden;
+  overflow-y: hidden;
   z-index: 2; }
   .upload__container {
     width: 100%;
@@ -1194,6 +1194,7 @@ img {
     position: relative;
     transform: translate(50%, 0);
     width: 50%;
+    border-radius: 1.5rem;
     height: 60vh;
     padding: 1rem;
     padding-top: 5rem;
@@ -1301,7 +1302,7 @@ img {
       background-color: #eee;
       margin-top: 3rem;
       width: 90%;
-      border-radius: 3rem; }
+      border-radius: 1.5rem; }
       .dashboard__list--items:hover {
         box-shadow: 0 1rem 1rem rgba(1, 42, 87, 0.66); }
       .dashboard__list--items:hover .videodelete {
@@ -1371,13 +1372,15 @@ img {
   height: 10rem; }
 
 .morehead {
-  position: sticky; }
+  position: sticky;
+  top: 7rem;
+  z-index: 2; }
   .morehead button:focus {
     outline: none; }
   .morehead__back {
     top: 7rem;
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     font-size: 6rem;
     font-weight: 600;
     letter-spacing: 1rem;
@@ -1389,15 +1392,15 @@ img {
     background-color: transparent;
     border-style: none;
     color: #fff;
-    height: 10rem; }
+    height: 8rem; }
     .morehead__learn:hover {
       transition: all .4s;
       width: 100%;
       background-color: #28b485;
-      height: 10rem; }
+      height: 8rem; }
   .morehead__learntext {
     font-size: 5rem;
-    top: 1.8rem;
+    top: 8rem;
     font-weight: 600;
     letter-spacing: 1rem;
     position: fixed;
@@ -1408,7 +1411,7 @@ img {
     background-color: transparent;
     border-style: none;
     color: #fff;
-    height: 10rem; }
+    height: 8rem; }
     .morehead__event:hover {
       transition: all .4s;
       width: 100%;
@@ -1416,26 +1419,26 @@ img {
       position: absolute; }
   .morehead__eventtext {
     font-size: 5rem;
-    top: 1.8rem;
+    top: 8rem;
     font-weight: 600;
     letter-spacing: 1rem;
     position: fixed;
-    left: 72rem;
+    left: 69rem;
     z-index: 2; }
   .morehead__club {
     position: absolute;
     padding: 2rem;
     background-color: transparent;
     border-style: none;
-    color: #fff; }
+    color: #fff;
+    height: 8rem; }
     .morehead__club:hover {
       transition: all .4s;
       width: 100%;
-      background-color: #ff7730;
-      height: 10rem; }
+      background-color: #ff7730; }
   .morehead__clubtext {
     font-size: 5rem;
-    top: 1.8rem;
+    top: 8rem;
     right: 2rem;
     font-weight: 600;
     letter-spacing: 1rem;
