@@ -2,6 +2,8 @@
 .morehead
 {
     position: sticky;
+    top: 7rem;
+    z-index: 2;
 
     button:focus
     {
@@ -15,7 +17,7 @@
     {
         top:7rem;
         width: 100%;
-        height: 10rem;
+        height: 8rem;
         font-size: 6rem;
         font-weight: 600;
         letter-spacing: 1rem;
@@ -38,7 +40,7 @@
         background-color: transparent;
         border-style: none;
         color: $color-white;
-        height: 10rem;
+        height: 8rem;
     
 
 
@@ -46,7 +48,7 @@
             transition: all .4s;
             width: 100%;
             background-color: $color-primary-dark;
-            height: 10rem;
+            height: 8rem;
         }
     
         
@@ -55,7 +57,7 @@
     &__learntext
     {
         font-size: 5rem;
-        top: 1.8rem;
+        top: 8rem;
         font-weight: 600;
         letter-spacing: 1rem;
         position: fixed;
@@ -75,7 +77,7 @@
         background-color: transparent;
         border-style: none;
         color: $color-white;
-        height: 10rem;
+        height: 8rem;
 
         &:hover{
             transition: all .4s;
@@ -90,11 +92,11 @@
     &__eventtext
     {
         font-size: 5rem;
-        top: 1.8rem;
+        top: 8rem;
         font-weight: 600;
         letter-spacing: 1rem;
         position: fixed;
-        left: 72rem;
+        left: 69rem;
         z-index: 2;
 
 
@@ -109,13 +111,14 @@
         background-color: transparent;
         border-style: none;
         color: $color-white;
+        height: 8rem;
     
     
         &:hover{
             transition: all .4s;
             width: 100%;
             background-color: $color-secondary-dark;
-            height: 10rem;
+       
         }
 
 
@@ -124,7 +127,7 @@
     &__clubtext
     {
         font-size: 5rem;
-        top: 1.8rem;
+        top: 8rem;
         right: 2rem;
         font-weight: 600;
         letter-spacing: 1rem;
@@ -140,6 +143,7 @@
 {
     width: 100%;
     height: 100%;
+
     
 }
 
