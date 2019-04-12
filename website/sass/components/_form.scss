@@ -10,6 +10,7 @@
     width: 80%;
     padding: 4rem;
     transform: translate(10%,22%);
+    border-radius: 1rem;
   }
 
   // form-group property
@@ -54,10 +55,12 @@
     // signup page form properties...
     &__signup {
       display: inline-block;
-
       width: 35rem;
-      border-radius: 0rem;
-      border: 0.1rem solid $color-tertiary-dark-1;
+      padding: 1.2rem;
+      border-radius: 1rem;
+      &:focus{
+        outline: none;
+      }
     }
 
     // upload page

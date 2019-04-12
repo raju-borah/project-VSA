@@ -131,7 +131,8 @@ iframe {
   .form--login {
     width: 80%;
     padding: 4rem;
-    transform: translate(10%, 22%); }
+    transform: translate(10%, 22%);
+    border-radius: 1rem; }
   .form__group {
     margin: 1rem; }
     .form__group--signup {
@@ -168,8 +169,10 @@ iframe {
     .form__input__signup {
       display: inline-block;
       width: 35rem;
-      border-radius: 0rem;
-      border: 0.1rem solid #012A57; }
+      padding: 1.2rem;
+      border-radius: 1rem; }
+      .form__input__signup:focus {
+        outline: none; }
     .form__input--upload {
       width: 60%;
       padding: 0.8rem;
