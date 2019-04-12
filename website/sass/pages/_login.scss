@@ -17,10 +17,10 @@
     padding-top: 4rem;
     padding-left: 1rem;
     padding-right: 2rem;
-    background-image: radial-gradient(rgba($color-tertiary-light-2, 0.36), rgba($color-tertiary-light-1, 0.52)),
-      url("/img/back-1.png");
-
-    box-shadow: 1rem 1rem 3rem rgba($color-black, 0.74);
+    background-image: radial-gradient(rgba($color-tertiary-light-2, 0.16), rgba($color-black, 0.59)),
+      url("/img/colors.jpg");
+    background-size: cover;
+    box-shadow: 0 2rem 3rem rgba($color-black, 0.99);
   }
 
   // positioning the img in the login page
@@ -29,7 +29,7 @@
     width: 16rem;
     height: 16rem;
     top: -8rem;
-    left: 40%;
+    left: 39%;
     border-radius: 50%;
     background-color: $color-white;
     box-shadow: 1rem 2rem 1rem rgba($color-tertiary-dark-1, 0.28);

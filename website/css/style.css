@@ -6,12 +6,6 @@
     opacity: 1;
     transform: translate(0); } }
 
-@keyframes moveUpDown {
-  0% {
-    transform: translateY(0); }
-  100% {
-    transform: translateY(-20px); } }
-
 .scale {
   transition: all 2s;
   transform: scale(0.6); }
@@ -1120,7 +1114,7 @@ img {
 
 .signup {
   position: fixed;
-  background-image: radial-gradient(rgba(0, 96, 100, 0.36), rgba(157, 207, 255, 0.52)), url("/img/back-1.png");
+  background-image: radial-gradient(rgba(0, 96, 100, 0.16), rgba(0, 0, 0, 0.59)), url("/img/colors.jpg");
   background-size: cover;
   height: 100vh;
   width: 100%; }
@@ -1130,11 +1124,10 @@ img {
     text-align: center;
     float: left; }
     .signup__left--img {
-      top: 25%;
-      left: 9.55%;
-      height: 20rem;
-      width: 30rem;
-      animation: moveUpDown 1s infinite alternate; }
+      top: 23%;
+      left: 10.5%;
+      height: 23rem;
+      width: 28rem; }
   .signup__form {
     float: right;
     width: 60%;
@@ -1144,7 +1137,7 @@ img {
     background-color: #eee;
     background-size: cover; }
     .signup__form--container {
-      transform: translate(8%, 15%); }
+      transform: translate(5%, 15%); }
 
 .login {
   height: 97vh; }
@@ -1162,14 +1155,15 @@ img {
     padding-top: 4rem;
     padding-left: 1rem;
     padding-right: 2rem;
-    background-image: radial-gradient(rgba(0, 96, 100, 0.36), rgba(157, 207, 255, 0.52)), url("/img/back-1.png");
-    box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.74); }
+    background-image: radial-gradient(rgba(0, 96, 100, 0.16), rgba(0, 0, 0, 0.59)), url("/img/colors.jpg");
+    background-size: cover;
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.99); }
   .login__logo {
     position: absolute;
     width: 16rem;
     height: 16rem;
     top: -8rem;
-    left: 40%;
+    left: 39%;
     border-radius: 50%;
     background-color: #fff;
     box-shadow: 1rem 2rem 1rem rgba(1, 42, 87, 0.28); }
