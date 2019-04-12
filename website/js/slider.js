@@ -2,7 +2,7 @@ let slideIndex = 0;//this indicates to start from the first image
 
 showSlides();
 
-function showSlides() {
+const showSlides = () => {
   
 
   //array is needed to to get the length of images
