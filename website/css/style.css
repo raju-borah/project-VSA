@@ -1444,3 +1444,9 @@ img {
 .morecontainer {
   width: 100%;
   height: 100%; }
+
+.bgcontain
+.bgcontain {
+  background-image: url("../../img/404-1.png");
+  width: 100%;
+  height: 100vh; }
