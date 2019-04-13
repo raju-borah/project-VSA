@@ -7,9 +7,10 @@
   // form signup properties
   &--login {
     // for bring down the form
-    width: 80%;
+    width: 75%;
     padding: 4rem;
-    transform: translate(10%,22%);
+    background: rgba($color-white,.44);
+    transform: translate(10%,2%);
     border-radius: 1rem;
   }
 
@@ -48,8 +49,11 @@
     &__signin {
       width: 80%;
       height: 4rem;
+      background: transparent;
       display: inline-block;
-      @include focus;
+      border-radius: 0rem;
+      border-bottom: .3rem solid $color-tertiary-dark-1;
+      outline: none;
       margin-left: 4rem;
     }
     // signup page form properties...
@@ -58,9 +62,13 @@
       width: 35rem;
       padding: 1.2rem;
       border-radius: 1rem;
-      &:focus{
+      border: .1rem double $color-tertiary-dark-1;
+       &:focus{
         outline: none;
+        border: .1rem solid red;
+    
       }
+      
     }
 
     // upload page

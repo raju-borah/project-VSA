@@ -1,10 +1,9 @@
 .bgcontain
-.bgcontain
 {
  
-    background-image: url("../../img/404-1.png");
+    background-image: url("/img/404-1.png");
     width: 100%;//width of the division
     height: 100vh;//the heightof the divion 
-   // background-size: cover;//height and width of the image to fit in the conatiner
-   // background-repeat: no-repeat;
+    background-size: cover;//height and width of the image to fit in the conatiner
+    background-repeat: no-repeat;
 }
