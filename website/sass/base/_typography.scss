@@ -1,60 +1,43 @@
-body{
-    font-family: "Lato" , sans-serif;
-    font-weight: 400;
-   /* font-size: 16px;*/
-    line-height: 1.7;
-   // color:$color-grey-dark;
-    
-  
+body {
+  //   font-family: "Lato" , sans-serif;
+  font-weight: 400;
+  /* font-size: 16px;*/
+  line-height: 1.7;
+  // color:$color-grey-dark;
+  //  font-family: 'Philosopher', sans-serif;
+  font-family: "Signika", sans-serif;
 }
 
+.heading {
+  position: absolute;
+  top: 1%;
+  height: 10rem;
+  width: 100%;
 
-.heading
-{ 
-    position: absolute;
-    top: 1%;
-    height:  10rem;
-    width: 100%;
-   
-    background-color:$color-white;
+  background-color: $color-white;
 
-    &_tag
-    {
-        font-size: 4rem;
-        //text-shadow: 0 1rem 1rem rgba($color-black,0.48);
-        padding: 1rem;
-        border-bottom: .4rem solid rgba($color-primary-dark,0.98);
-        display: inline;
-    }
+  &_tag {
+    font-size: 4rem;
+    //text-shadow: 0 1rem 1rem rgba($color-black,0.48);
+    padding: 1rem;
+    border-bottom: 0.4rem solid rgba($color-primary-dark, 0.98);
+    display: inline;
+  }
 
-
-    &__title
-    {
-        color: $color-black;
-        padding: 1rem;
-        float: left;
-        font-size: 6rem;
-        font-weight: 800;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 1rem; 
-       
-
-    }
-
-
-
-    
-
-
-  
-
+  &__title {
+    color: $color-black;
+    padding: 1rem;
+    float: left;
+    font-size: 6rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+  }
 }
 
-#custom-text
-{
-    font-size: 2rem;
-    display: block;
-    margin: 1rem;
-
+#custom-text {
+  font-size: 2rem;
+  display: block;
+  margin: 1rem;
 }

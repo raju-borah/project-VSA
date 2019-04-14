@@ -1,34 +1,22 @@
 .login {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-image:radial-gradient(rgba($color-tertiary-light,.39),rgba($color-white,.16)), url('/img/Capture.JPG');
   position: relative;
+  background-size: cover;
+  background-position: center;
   
-  .login1 {
-    width: 70%;
-    height: 80vh;
-    position: absolute;
-    top: 8rem;
-    left: 23rem;
-  }
-  &__left {
-    width: 40%;
-    height: 80vh;
-    float: left;
-    background-image: url("/img/back-2.jpg");
-    background-size: cover;
-  }
 
-  &__right {
-    position: relative;
-    float: left;
-    width: 60%;
+  &__container {
+    position: absolute;
+    width: 32%;
     height: 80vh;
-    padding-top: 4rem;
-    padding-left: 1rem;
-    padding-right: 2rem;
-    background-image: radial-gradient(rgba($color-tertiary-light-2, 0.16), rgba($color-black, 0.59)),
-      url("/img/colors.jpg");
-    background-size: cover;
+    padding: 1rem;
+    top: 10rem;
+    left: 50rem;
+    background-image: url('/img/Capture.jpg');
+    border: 2px solid black;
+    border-radius: .55rem;
   }
 
   // positioning the img in the login page
@@ -36,12 +24,9 @@
     position: absolute;
     width: 14rem;
     height: 14rem;
-    top: -7rem;
-    left: 35%;
+    top: 5rem;
+    left: 15.9rem;
     border-radius: 50%;
     background-color: $color-white;
-    box-shadow: 1rem 2rem 1rem rgba($color-tertiary-dark-1, 0.28);
   }
-
-
 }

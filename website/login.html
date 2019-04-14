@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Philosopher|Rancho" rel="stylesheet">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -19,54 +19,47 @@
 
 <body>
     <!-- Creating Login Section -->
-    <section class="login">
+    <div class="login">
+        <div class="login__container">
+            <!-- Login form -->
+            <form action="#" class="form form--login">
+                <!--signin  logo -->
+                <img src="img/icons/man.png" class="login__logo " />
+                <!-- form heading -->
+                <div class="u-margin-bottom-small u-margin-top-large u-center-text large-font">
+                    <h1 class="heading_tag">Login</h1>
+                </div>
 
-        <div class="login1">
-            <div class="login__left">
+                <!-- creating form group  for every fields-->
+                <div class="form__group">
+                    <label for="email" class="form__label form__label--login">Email</label>
+                    <i class="fas fa-envelope form__input__login--icons form__input__login--icons--iconuser"></i>
+                    <input type="email" id="signin_email" class="form__input form__input__login" placeholder="Email"
+                        required>
+                </div>
+                <div class="form__group">
+                    <label for="signin_passwd" class="form__label form__label--login">Password</label>
+                    <i class="fas fa-lock form__input__login--icons form__input__login--icons--iconlock"></i>
+                    <input type="password" id="signin_passwd" class="form__input form__input__login"
+                        placeholder="Enter Password" required>
+                </div>
+                <div class="u-center-text ">
+                    <!-- login button -->
+                    <button class="btn btn--green btn--green--login " id="signin">Login</button>
+                </div>
+                <div class="u-center-text ">
+                    <!-- create button -->
+                    <a href="signup.html" class="btn btn--white" id="create_account">Create Account </a>
+                    <span class="font-small">|</span>
+                    <!-- forget button -->
+                    <a href="forget.html" class="btn btn--white" id="forget_password">Forget Password</a>
+                </div>
 
-            </div>
-            <div class="login__right">
-                <!-- Login form -->
-                <form action="#" class="form form--login">
-                    <!--signin  logo -->
-                    <img src="img/icons/man.png" class="login__logo " />
-                    <!-- form heading -->
-                    <div class="u-margin-bottom-small u-margin-top-large u-center-text large-font">
-                        <h1 class="heading_tag">Login</h1>
-                    </div>
-                    <div class="login--container">
-                        <!-- creating form group  for every fields-->
-                        <div class="form__group">
-                            <label for="email" class="form__label form__label--signin">E-mail</label>
-                            <input type="email" id="signin_email" class="form__input form__input__signin"
-                                placeholder="Email" required>
-                        </div>
-                        <div class="form__group">
-                            <label for="signin_passwd" class="form__label form__label--signin">Password</label>
-                            <input type="password" id="signin_passwd" class="form__input form__input__signin"
-                                placeholder="Enter Password" required>
-                        </div>
-                        <div class="u-center-text ">
-                            <!-- login button -->
-                            <button class="btn btn--green btn--green--login " id="signin">Sign In</button>
-                        </div>
-                        <div class="u-center-text ">
-                            <br>
-                            <!-- create button -->
-                            <a href="signup.html" class="btn btn--white" id="create_account">Create Account </a>
-                            &nbsp;<span class="btn">&nbsp;|&nbsp;</span>
-                            <!-- forget button -->
-                            <a href="forget.html" class="btn btn--white" id="forget_password">Forget Password</a>
+            </form>
 
-                        </div>
-
-                    </div>
-
-                </form>
-            </div>
         </div>
 
-    </section>
+    </div>
 
 </body>
 

@@ -33,10 +33,10 @@ a {
   text-decoration: none; }
 
 body {
-  font-family: "Lato" , sans-serif;
   font-weight: 400;
   /* font-size: 16px;*/
-  line-height: 1.7; }
+  line-height: 1.7;
+  font-family: "Signika", sans-serif; }
 
 .heading {
   position: absolute;
@@ -102,9 +102,6 @@ body {
 .font-medium {
   font-size: 3rem; }
 
-.margin-top {
-  margin-top: 1.1rem; }
-
 .u-margin-small {
   margin: 2rem;
   margin-left: 9rem; }
@@ -127,44 +124,48 @@ iframe {
   margin: 3rem;
   padding: 2rem;
   background-color: #eee;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.44); }
+  font-family: "Philosopher", sans-serif; }
   .form--login {
-    width: 75%;
-    padding: 4rem;
-    background: rgba(255, 255, 255, 0.44);
-    transform: translate(10%, 2%);
-    border-radius: 1rem; }
+    padding-top: 15rem;
+    width: 100%;
+    height: 100%;
+    transform: translate(-3rem, -3rem);
+    box-shadow: 1rem 2rem 6rem rgba(0, 0, 0, 0.33); }
+  .form--signup {
+    width: 100%;
+    height: 100%;
+    box-shadow: 1rem 2rem 6rem rgba(0, 0, 0, 0.33);
+    transform: translate(-3rem, -3rem);
+    padding-left: 4rem; }
   .form__group {
     margin: 1rem; }
-    .form__group--signup {
-      margin: 1rem;
-      margin-right: 4rem;
-      float: left; }
   .form__input {
     padding: 1rem;
     border-radius: 1.2rem;
     text-decoration-style: none;
+    font-family: "Philosopher", sans-serif;
+    font-size: 2rem;
     border: 0.1rem; }
-    .form__input__pin {
-      border-radius: 0rem;
-      padding-left: 2rem;
-      padding-right: 3rem;
-      letter-spacing: 2.5rem;
-      font-size: 1.9rem;
-      width: 26rem;
-      background: transparent;
-      border-bottom: 0.2rem double #006064; }
-      .form__input__pin:focus {
-        outline: none; }
-    .form__input__signin {
-      width: 80%;
+    .form__input__login {
+      width: 68%;
       height: 4rem;
+      position: relative;
       background: transparent;
       display: inline-block;
+      padding: 0.55rem;
       border-radius: 0rem;
       border-bottom: 0.3rem solid #012A57;
       outline: none;
-      margin-left: 4rem; }
+      margin-left: 8rem; }
+      .form__input__login--icons {
+        position: absolute;
+        font-size: 3rem; }
+        .form__input__login--icons--iconuser {
+          top: 30.3rem;
+          left: 7rem; }
+        .form__input__login--icons--iconlock {
+          top: 38rem;
+          left: 7rem; }
     .form__input__signup {
       display: inline-block;
       width: 35rem;
@@ -173,7 +174,7 @@ iframe {
       border: 0.1rem double #012A57; }
       .form__input__signup:focus {
         outline: none;
-        border: .1rem solid red; }
+        border: 0.1rem solid red; }
     .form__input--upload {
       width: 60%;
       padding: 0.8rem;
@@ -189,17 +190,12 @@ iframe {
         outline-color: #28b485; }
   .form__label {
     margin-bottom: 0.2rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #000;
     font-weight: 700;
     display: block; }
-    .form__label--signin {
-      margin-left: 4rem; }
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0; }
+    .form__label--login {
+      margin-left: 4.1rem; }
 
 /* for button */
 /*
@@ -207,6 +203,7 @@ border-radius for curved end of button
 */
 .btn {
   font-size: 1.9rem;
+  background-color: #eee;
   /* button hover */
   /* when clicked */ }
   .btn, .btn:link, .btn:visited {
@@ -217,11 +214,12 @@ border-radius for curved end of button
     cursor: pointer;
     transition: all 0.2s; }
   .btn--white {
-    border-radius: 1rem;
+    border-radius: 4rem;
     font-size: 1.7rem;
     display: inline-block;
     padding: 0.31rem;
     color: #000;
+    padding: 0.68rem;
     background-image: linear-gradient(to right, rgba(51, 51, 51, 0.29), rgba(1, 42, 87, 0.33)); }
     .btn--white:hover {
       background-image: none;
@@ -229,26 +227,31 @@ border-radius for curved end of button
   .btn--green {
     border-radius: 1rem;
     font-size: 2rem;
-    margin: 2rem;
+    margin: 1rem;
     display: block;
     background-color: #28b485;
     color: #fff;
     padding: 1rem; }
     .btn--green--login {
+      border-radius: 4rem;
+      padding: 1.2rem;
       background-color: #2998ff;
       left: 4rem;
       width: 70%; }
     .btn--green--logout {
+      font-size: 1.8rem;
+      font-weight: 200;
       margin-left: 10rem; }
   .btn--blue {
-    border-radius: 5rem;
+    border-radius: 4rem;
     font-size: 2.5rem;
     margin: 2rem;
     display: block;
     background-color: #5643fa;
     color: #fff;
     padding: 1rem;
-    width: 15rem; }
+    width: 15rem;
+    left: 22%; }
   .btn--front {
     background-color: #172d44;
     display: inline-block;
@@ -280,7 +283,7 @@ border-radius for curved end of button
     text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     outline: none;
     /* for moving down */
-    transform: translateY(-0.1rem); }
+    transform: translateY(-0.01rem); }
 
 .navigationbar {
   position: relative;
@@ -307,27 +310,6 @@ border-radius for curved end of button
       color: #9dcfff;
       text-shadow: 0 1rem 3rem #000;
       cursor: pointer; }
-  .navigationbar__checkbox {
-    display: none; }
-  .navigationbar__checkbox:checked ~ .navigationbar__more_setting {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0rem);
-    transition: all 0.4s ease-in; }
-  .navigationbar__button {
-    margin-left: 2rem;
-    z-index: 1;
-    position: absolute;
-    height: 3.5rem;
-    width: 4rem;
-    top: 1rem;
-    left: 2rem;
-    cursor: pointer;
-    transition: all 0.3s; }
-    .navigationbar__button:hover .navigationbar--left--icon,
-    .navigationbar__button:hover .navigationbar--left--icon::before,
-    .navigationbar__button:hover .navigationbar--left--icon::after {
-      background-color: #55c57a; }
   .navigationbar--left {
     width: 50%;
     float: left;
@@ -353,9 +335,6 @@ border-radius for curved end of button
 .listlink--item {
   color: #fff; }
 
-.hidden {
-  display: none; }
-
 .userbutton {
   background: transparent;
   border: none;
@@ -368,8 +347,9 @@ border-radius for curved end of button
   display: none;
   clear: left;
   position: absolute;
-  width: 35rem;
-  height: 28rem;
+  width: 38rem;
+  height: 39rem;
+  border-radius: 1rem;
   top: 8rem;
   right: 3rem;
   background-color: #eee;
@@ -386,52 +366,62 @@ border-radius for curved end of button
   display: none;
   z-index: 2;
   position: absolute;
-  width: 33rem;
-  height: 26rem;
+  width: 36rem;
+  height: 37rem;
   top: 1rem;
   left: 1rem;
   padding: 2rem;
+  border: 1px solid black;
   color: #000; }
   .signincontainer__img {
-    margin-left: 1.2rem;
+    position: absolute;
+    top: .55rem;
+    left: 36%;
     height: 10rem;
     width: 10rem;
+    background-position: center;
     border-radius: 50%; }
 
 .ul__list {
-  margin-top: 5rem;
+  margin: 1rem;
+  margin-top: 9rem;
   list-style-type: none;
   text-align: center; }
+  .ul__list--items {
+    margin: .55rem; }
+    .ul__list--items--progress {
+      display: block; }
   .ul__list li:last-child {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     border-top: 0.2rem solid #fff; }
 
 .list--link, .list--link:visited {
   text-decoration: none;
   color: #000;
   font-weight: 700;
-  padding: .86rem;
+  padding: .56rem;
   border-radius: 1rem;
-  margin: 1.5rem;
+  margin: 1rem;
   background-color: #9dcfff; }
 
 .notsignincontainer {
   display: none;
   z-index: 2;
   position: absolute;
-  width: 33rem;
-  height: 26rem;
+  width: 36rem;
+  height: 37rem;
+  border: 1px solid black;
   top: 1rem;
   left: 1rem;
   padding: 2rem; }
   .notsignincontainer__img {
-    margin-left: 8.5rem;
-    height: 15rem;
-    width: 15rem;
+    margin-left: 7.2rem;
+    width: 22rem;
+    height: 22rem;
     border-radius: 50%; }
   .notsignincontainer__imgdiv {
-    height: 12rem;
-    width: 15rem; }
+    width: 20rem;
+    height: 15rem; }
 
 .search {
   position: relative;
@@ -1118,67 +1108,48 @@ img {
   background-image: linear-gradient(to bottom, #2e13c7, rgba(18, 207, 240, 0.8)); }
 
 .signup {
-  position: fixed;
-  background-image: radial-gradient(rgba(0, 96, 100, 0.16), rgba(0, 0, 0, 0.59)), url("/img/colors.jpg");
-  background-size: cover;
+  width: 100%;
   height: 100vh;
-  width: 100%; }
-  .signup__left {
-    width: 40%;
-    margin-top: 40rem;
-    text-align: center;
-    float: left; }
-    .signup__left--img {
-      top: 23%;
-      left: 10.5%;
-      height: 23rem;
-      width: 28rem; }
-  .signup__form {
-    float: right;
-    width: 60%;
-    height: 100%;
-    padding: 3rem;
-    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.77);
-    background-color: #eee;
-    background-size: cover; }
-    .signup__form--container {
-      transform: translate(5%, 15%); }
+  background-image: radial-gradient(rgba(41, 152, 255, 0.39), rgba(255, 255, 255, 0.16)), url("/img/Capture.JPG");
+  position: relative;
+  background-size: cover;
+  background-position: center; }
+  .signup__container {
+    position: absolute;
+    width: 32%;
+    height: 90vh;
+    padding: 1rem;
+    top: 5rem;
+    left: 50rem;
+    background-image: url("/img/Capture.jpg");
+    border: 2px solid black;
+    border-radius: .55rem; }
 
 .login {
   width: 100%;
-  height: 100%;
-  position: relative; }
-  .login .login1 {
-    width: 70%;
-    height: 80vh;
+  height: 100vh;
+  background-image: radial-gradient(rgba(41, 152, 255, 0.39), rgba(255, 255, 255, 0.16)), url("/img/Capture.JPG");
+  position: relative;
+  background-size: cover;
+  background-position: center; }
+  .login__container {
     position: absolute;
-    top: 8rem;
-    left: 23rem; }
-  .login__left {
-    width: 40%;
+    width: 32%;
     height: 80vh;
-    float: left;
-    background-image: url("/img/back-2.jpg");
-    background-size: cover; }
-  .login__right {
-    position: relative;
-    float: left;
-    width: 60%;
-    height: 80vh;
-    padding-top: 4rem;
-    padding-left: 1rem;
-    padding-right: 2rem;
-    background-image: radial-gradient(rgba(0, 96, 100, 0.16), rgba(0, 0, 0, 0.59)), url("/img/colors.jpg");
-    background-size: cover; }
+    padding: 1rem;
+    top: 10rem;
+    left: 50rem;
+    background-image: url("/img/Capture.jpg");
+    border: 2px solid black;
+    border-radius: .55rem; }
   .login__logo {
     position: absolute;
     width: 14rem;
     height: 14rem;
-    top: -7rem;
-    left: 35%;
+    top: 5rem;
+    left: 15.9rem;
     border-radius: 50%;
-    background-color: #fff;
-    box-shadow: 1rem 2rem 1rem rgba(1, 42, 87, 0.28); }
+    background-color: #fff; }
 
 .upload {
   visibility: hidden;

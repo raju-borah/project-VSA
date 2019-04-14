@@ -29,44 +29,6 @@
     @include navigationbarfonts($color-white);
   }
 
-  // hiding the checked-box
-  &__checkbox {
-    display: none;
-  }
-
-  // when checked box is selected then the following cod eto be executed
-  &__checkbox:checked ~ &__more_setting {
-    // setting to visible
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0rem);
-    transition: all 0.4s ease-in;
-  }
-
-  // the navigationbar button
-  &__button {
-    // setting marign left, z-index ,position
-    margin-left: 2rem;
-    z-index: 1;
-    position: absolute;
-    // custom height,width
-    height: 3.5rem;
-    width: 4rem;
-    top: 1rem;
-    left: 2rem;
-    // when curson hovered ..
-    cursor: pointer;
-    transition: all 0.3s;
-    // when the button is hovered the background-color of icon will be changed
-    &:hover {
-      .navigationbar--left--icon,
-      .navigationbar--left--icon::before,
-      .navigationbar--left--icon::after {
-        background-color: $color-primary;
-      }
-    }
-  }
-
   // left
   &--left {
     width: 50%;
@@ -94,10 +56,6 @@
     color: $color-white;
   }
 }
-
-.hidden {
-  display: none;
-}
 // userbutton
 .userbutton{
   background: transparent;
@@ -116,8 +74,9 @@
   display: none;
   clear: left;
   position: absolute;
-  width: 35rem;
-  height: 28rem;
+  width: 38rem;
+  height: 39rem;
+  border-radius: 1rem;
   top: 8rem;
   right: 3rem;
   background-color: $color-grey-light-2 ;
@@ -137,40 +96,51 @@
   display: none;
   z-index: 2;
   position: absolute;
-  width: 33rem;
-  height: 26rem;
+  width: 36rem;
+  height: 37rem;
   top: 1rem;
   left: 1rem;
   padding: 2rem;
+  border: 1px solid black;
   color: $color-black;
   &__img{
-    
-    margin-left: 1.2rem;
+    position: absolute;
+    top:.55rem;
+    left: 36%;
     height: 10rem;
     width: 10rem;
+    background-position: center;
     border-radius: 50%;
   }
 }
 .ul__list 
 {
-  margin-top: 5rem;
+  margin: 1rem;
+  margin-top: 9rem;
   list-style-type: none;
   text-align: center;
-  
 
+  &--items{
+    margin: .55rem;
+
+    &--progress{
+      display: block;
+    }
+  }
   li:last-child {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     border-top: 0.2rem solid $color-white;
   }
 }
 .list--link{
   &,&:visited{
+
     text-decoration: none;
     color: $color-black;
     font-weight: 700;
-    padding: .86rem;
+    padding: .56rem;
     border-radius: 1rem;
-    margin: 1.5rem;
+    margin: 1rem;
     background-color: $color-tertiary-light-1;
   }    
 }
@@ -178,21 +148,22 @@
   display: none;
   z-index: 2;
   position: absolute;
-  width: 33rem;
-  height: 26rem;
+  width: 36rem;
+  height: 37rem;
+  border: 1px solid black;
   top: 1rem;
   left: 1rem;
   padding: 2rem;
 
   &__img{
     
-    margin-left: 8.5rem;
-    height: 15rem;
-    width: 15rem;
+    margin-left: 7.2rem;
+    width: 22rem;
+    height: 22rem;
     border-radius: 50%;
   }
   &__imgdiv{
-    height: 12rem;
-    width: 15rem;
+    width: 20rem;
+    height: 15rem;
   }
 }
