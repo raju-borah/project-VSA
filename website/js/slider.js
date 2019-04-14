@@ -1,6 +1,6 @@
 let slideIndex = 0;//this indicates to start from the first image 
 
-showSlides();
+
 
 const showSlides = () => {
   
@@ -31,3 +31,6 @@ const showSlides = () => {
   slides[slideIndex-1].style.display = "block";  
   setTimeout(showSlides, 10000); // Change image every 10 seconds
 }
+
+showSlides();
+

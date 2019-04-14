@@ -21,15 +21,16 @@
 
 .progressbox
 {
-   position: absolute;;
-   top: 8rem;
-   right: 10rem;
+   position: relative;
+   top: 1rem;
+   right: 2.9rem;
    background-color:$color-white;
 
    width: 34rem;
    height: 9rem;
 
    border-radius: 2rem;
+   margin-bottom: 2rem;
 
    &::after{
     content: "";
@@ -44,7 +45,7 @@
   &__text
   {
     position: relative;
-    left: -22rem;
+    left: -10rem;
     top: .1rem;
     font-size: 2rem;
 
@@ -62,19 +63,36 @@
     &__percentage
     {
       position: relative;
-      color: white;
-      left: -20rem;
+      color:$color-black;
+      left: 1rem;
+      top: -.8rem;
+      font-size: 2rem;
     }
 
 
     &__btn
     {
       position: relative;
-      top: 1rem;
-      left: -15rem;
-
+      top: -1.2rem;
+      padding: .4rem;
     }
 
+
+}
+
+.vidbtn
+{
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.7rem;
+  margin-right: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  :hover{
+    color: $color-tertiary-dark;
+  }
 }
 
 

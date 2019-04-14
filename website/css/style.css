@@ -348,7 +348,7 @@ border-radius for curved end of button
   clear: left;
   position: absolute;
   width: 38rem;
-  height: 39rem;
+  height: 41rem;
   border-radius: 1rem;
   top: 8rem;
   right: 3rem;
@@ -367,7 +367,7 @@ border-radius for curved end of button
   z-index: 2;
   position: absolute;
   width: 36rem;
-  height: 37rem;
+  height: 39rem;
   top: 1rem;
   left: 1rem;
   padding: 2rem;
@@ -392,8 +392,7 @@ border-radius for curved end of button
     .ul__list--items--progress {
       display: block; }
   .ul__list li:last-child {
-    margin-top: 1rem;
-    border-top: 0.2rem solid #fff; }
+    margin-top: 1rem; }
 
 .list--link, .list--link:visited {
   text-decoration: none;
@@ -1462,13 +1461,14 @@ button:focus {
   background-color: rgba(0, 0, 0, 0); }
 
 .progressbox {
-  position: absolute;
-  top: 8rem;
-  right: 10rem;
+  position: relative;
+  top: 1rem;
+  right: 2.9rem;
   background-color: #fff;
   width: 34rem;
   height: 9rem;
-  border-radius: 2rem; }
+  border-radius: 2rem;
+  margin-bottom: 2rem; }
   .progressbox::after {
     content: "";
     position: absolute;
@@ -1478,7 +1478,7 @@ button:focus {
     border-color: transparent transparent #eee transparent; }
   .progressbox__text {
     position: relative;
-    left: -22rem;
+    left: -10rem;
     top: .1rem;
     font-size: 2rem; }
   .progressbox__bar {
@@ -1487,12 +1487,25 @@ button:focus {
     right: 22rem; }
   .progressbox__percentage {
     position: relative;
-    color: white;
-    left: -20rem; }
+    color: #000;
+    left: 1rem;
+    top: -.8rem;
+    font-size: 2rem; }
   .progressbox__btn {
     position: relative;
-    top: 1rem;
-    left: -15rem; }
+    top: -1.2rem;
+    padding: .4rem; }
+
+.vidbtn {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.7rem;
+  margin-right: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer; }
+  .vidbtn :hover {
+    color: #5643fa; }
 
 progress {
   -webkit-appearance: none; }

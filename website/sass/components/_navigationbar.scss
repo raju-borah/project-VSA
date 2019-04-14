@@ -75,7 +75,7 @@
   clear: left;
   position: absolute;
   width: 38rem;
-  height: 39rem;
+  height: 41rem;
   border-radius: 1rem;
   top: 8rem;
   right: 3rem;
@@ -97,7 +97,7 @@
   z-index: 2;
   position: absolute;
   width: 36rem;
-  height: 37rem;
+  height: 39rem;
   top: 1rem;
   left: 1rem;
   padding: 2rem;
@@ -129,7 +129,7 @@
   }
   li:last-child {
     margin-top: 1rem;
-    border-top: 0.2rem solid $color-white;
+   
   }
 }
 .list--link{

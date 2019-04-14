@@ -44,16 +44,8 @@
 
 
             <!--progress bar division-->
-            <div class="progressbox">
-            <h4 class="progressbox__text">FILENAME</h4>
-                <progress class="progressbox__bar" value="50" max="100"></progress>
-               <div class="progressbox__percentage">50%</div>
-                <div class="progressbox__btn">
-                    <button type="button" class="progressbox__play"><i class="fas fa-play-circle"></i></button>
-                    <button type="button" class="progressbox__pause"><i class="far fa-pause-circle"></i></button>
-                    <button type="button" class="progressbox__cancel"><i class="far fa-window-close"></i></button>
-                </div>
-            </div>
+      
+      
             <!--end -->
 
 
@@ -102,12 +94,28 @@
                         </li>
                         <li class="ul__list--items"><a href="settings.html" class="list--link font-small"> Account</a>
                             &nbsp;
-                            <a href="dashboard.html" class="list--link font-small">My videos</a></li>
+                          
+                  <a href="dashboard.html" class="list--link font-small">My videos</a></li>
+
+
                         <li class="ul__list--items ul__list--items--progress ">
-                            <h1>idhar naba</h1>
+                            <div class="progressbox">
+                                <h4 class="progressbox__text">FILENAME</h4>
+                                    <progress class="progressbox__bar" value="50" max="100"></progress>
+                                   <div class="progressbox__percentage">50%</div>
+                                    <div class="progressbox__btn">
+                                        <button type="button" class="progressbox__play vidbtn"><i class="fas fa-play-circle"></i></button>
+                                        <button type="button" class="progressbox__pause vidbtn"><i class="far fa-pause-circle"></i></button>
+                                        <button type="button" class="progressbox__cancel vidbtn"><i class="far fa-window-close"></i></button>
+                                    </div>
+                                </div>
                         </li>
+
+
                         <li class="ul__list--items"><button type="button"
                                 class="btn btn--green btn--green--logout">Logout</button></li>
+
+
                     </ul>
                 </div>
                 <!-- if user is signed out then -->
