@@ -27,7 +27,7 @@
    background-color:$color-white;
 
    width: 34rem;
-   height: 4rem;
+   height: 9rem;
 
    border-radius: 2rem;
 
@@ -40,15 +40,44 @@
     border-color:  transparent  transparent $color-grey-light-2 transparent;
   }
 
+
+  &__text
+  {
+    position: relative;
+    left: -22rem;
+    top: .1rem;
+    font-size: 2rem;
+
+  }
+
+
+      &__bar
+    {
+        position: absolute;
+        top: 3rem;
+        right: 22rem;
+
+    }
+
+    &__percentage
+    {
+      position: relative;
+      color: white;
+      left: -20rem;
+    }
+
+
+    &__btn
+    {
+      position: relative;
+      top: 1rem;
+      left: -15rem;
+
+    }
+
 }
 
-.progressbar
-{
-    position: absolute;
-    top: .8rem;
-    right: 22rem;
 
-}
 progress{
    -webkit-appearance: none;
    

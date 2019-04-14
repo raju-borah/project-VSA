@@ -11,36 +11,39 @@
         &__link
         {
             position: relative;
+            width:20%;
+            background-color: #fff;
             font-size: 2rem;
             color: $color-white;
-
-            
-
-
-            
-        }
-
-
-        &__link:hover &__hove
-        {
-            visibility: visible;
         
+
+        
+
+
+            
         }
+
 
 
 
         &__hove
         {
-            background-image: url("../img/light.png");
-            width: 100%;//width of the division
-            height: 100vh;//the heightof the divion 
+            background-image: url("../img/light-2.png");
+            width: 1930px;//width of the division
+            height: 919px;//the heightof the divion 
             background-size: cover;//height and width of the image to fit in the conatiner
             background-repeat: no-repeat;
             position: relative;
-            left: -31.2rem;
+            left: -30rem;
             top: -21.5rem;
+            display: none;
            
 
+        }
+
+
+        &:hover &__hove{
+            display: block;
         }
  
 }

@@ -1460,19 +1460,22 @@ img {
   background-repeat: no-repeat; }
   .bgcontain__link {
     position: relative;
+    width: 20%;
+    background-color: #fff;
     font-size: 2rem;
     color: #fff; }
-  .bgcontain__link:hover .bgcontain__hove {
-    visibility: visible; }
   .bgcontain__hove {
-    background-image: url("../img/light.png");
-    width: 100%;
-    height: 100vh;
+    background-image: url("../img/light-2.png");
+    width: 1930px;
+    height: 919px;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    left: -31.2rem;
-    top: -21.5rem; }
+    left: -30rem;
+    top: -21.5rem;
+    display: none; }
+  .bgcontain:hover .bgcontain__hove {
+    display: block; }
 
 button:focus {
   outline: none; }
@@ -1493,7 +1496,7 @@ button:focus {
   right: 10rem;
   background-color: #fff;
   width: 34rem;
-  height: 4rem;
+  height: 9rem;
   border-radius: 2rem; }
   .progressbox::after {
     content: "";
@@ -1502,11 +1505,23 @@ button:focus {
     right: 3.4rem;
     border: 1rem solid;
     border-color: transparent transparent #eee transparent; }
-
-.progressbar {
-  position: absolute;
-  top: .8rem;
-  right: 22rem; }
+  .progressbox__text {
+    position: relative;
+    left: -22rem;
+    top: .1rem;
+    font-size: 2rem; }
+  .progressbox__bar {
+    position: absolute;
+    top: 3rem;
+    right: 22rem; }
+  .progressbox__percentage {
+    position: relative;
+    color: white;
+    left: -20rem; }
+  .progressbox__btn {
+    position: relative;
+    top: 1rem;
+    left: -15rem; }
 
 progress {
   -webkit-appearance: none; }
