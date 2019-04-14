@@ -16,80 +16,52 @@
 </head>
 
 <body>
-    <!-- Create Account section  that is hidden at first-->
     <div class="signup">
-        <!-- for icon and welcome message -->
-        <div class="signup__left ">
-            <!-- link to home button -->
-            <a href="home.html">VidShare</a>
-            
-            <!-- the rocket icon -->
-            <img src="img/icons/joinus.jpg" class="signup__left--img" alt="" />
-            <!-- text message -->
-            <p class="font-small" style="color:white;">Join now to watch <br>Fun and Exciting Videos !</p>
-            <!-- login button -->
-            <div class="u-center-text">
-                <br>
-                <h1>Already a User Click here...</h1><br>
-                <a href="login.html" class="btn btn--upload"  id="signin">Login</a>
-
-            </div>
+    <div class="signup__container">
+    <!-- signup form section -->
+    <form action="#" class="form form--signup">
+        <!-- form heading -->
+        <div class="u-center-text ">
+            <h1 class="heading_tag">SIGN UP</h1>
         </div>
-        <!-- signup form section -->
-        <form action="#" class="signup__form">
-            <!-- form heading -->
-            <div class="u-margin u-center-text ">
-                <h1 class="heading_tag">SIGN UP</h1>
-            </div>
+        <!-- creating form group for every fields -->
+        <div class="form__group">
+            <label for="singup_firstname" class="form__label">FirstName</label>
+            <input type="text" id="singup_firstname" class="form__input form__input__signup" placeholder="FirstName"
+                required="true">
+        </div>
+        <div class="form__group">
+            <label for="signup_lastname" class="form__label">LastName</label>
+            <input type="text" id="signup_lastname" class="form__input form__input__signup" placeholder="LastName"
+                required>
+        </div>
+        <div class="form__group">
+            <label for="signup_email" class="form__label">E-mail</label>
+            <input type="email" id="signup_email" class="form__input form__input__signup" placeholder="E-mail" required>
+        </div>
+        <div class="form__group">
+            <label for="signup_passwd" class="form__label">Password</label>
+            <input type="password" id="signup_passwd" class="form__input form__input__signup"
+                placeholder="Enter Password" required>
+        </div>
+        <div class="form__group">
+            <label for="signup_confirm_passwd" class="form__label">Confirm Password</label>
+            <input type="password" id="signup_confirm_passwd" class="form__input form__input__signup"
+                placeholder="Re-Enter Password" required>
+        </div>
+        <!-- signup button -->
+            <button class="btn btn--blue " id="signup" type="submit">Sign
+                Up <i class="fas fa-arrow-circle-right"></i></button>
+            
+            <div class="font-small u-center-text ">
+            Already a User Click here...
+            <a href="login.html">Login</a></div> 
+            
+    </form>
+</div>
 
-            <!-- textfields and labels -->
-            <div class="signup__form--container">
 
-                <!-- creating form group for every fields -->
-                <div class="form__group form__group--signup">
-                    <label for="singup_firstname" class="form__label">FirstName</label>
-                    <input type="text" id="singup_firstname" class="form__input form__input__signup"
-                        placeholder="FirstName" required="true">
-                </div>
-                <div class="form__group  form__group--signup">
-                    <label for="signup_lastname" class="form__label">LastName</label>
-                    <input type="text" id="signup_lastname" class="form__input form__input__signup"
-                        placeholder="LastName" required>
-                </div>
-                <div class="form__group form__group--signup">
-                    <label for="signup_email" class="form__label">E-mail</label>
-                    <input type="email" id="signup_email" class="form__input form__input__signup" placeholder="E-mail"
-                        required>
-                </div>
-                <div class="form__group form__group--signup">
-                    <label for="signup_number" class="form__label">Mobile Number</label>
-                    <input type="tel" id="signup_number" class="form__input form__input__signup"
-                        placeholder="Mobile Number" minlength="10" maxlength="10" required>
-                </div>
-                <div class="form__group form__group--signup">
-                    <label for="signup_passwd" class="form__label">Password</label>
-                    <input type="password" id="signup_passwd" class="form__input form__input__signup"
-                        placeholder="Enter Password" required>
-                </div>
-                <div class="form__group form__group--signup">
-                    <label for="signup_confirm_passwd" class="form__label">Confirm Password</label>
-                    <input type="password" id="signup_confirm_passwd" class="form__input form__input__signup"
-                        placeholder="Re-Enter Password" required>
-                </div>
-
-                <!-- signup button -->
-                <div style="clear:left; ">
-                    <!-- button tag -->
-                    <br>
-                    <button class="btn btn--blue " id="signup" style="left:32%;" type="submit">Sign
-                        Up <i class="fas fa-arrow-circle-right"></i></button>
-                </div>
-
-            </div>
-
-        </form>
-    </div>
-
+</div>
 </body>
 
 </html>

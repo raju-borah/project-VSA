@@ -5,6 +5,8 @@ border-radius for curved end of button
 
 .btn {
   font-size: 1.9rem;
+  background-color: $color-grey-light-2;
+
   &,
   &:link,
   &:visited {
@@ -18,12 +20,12 @@ border-radius for curved end of button
     transition: all 0.2s;
   }
   &--white {
-    border-radius: 1rem;
+    border-radius: 4rem;
     font-size: 1.7rem;
     display: inline-block;
     padding: 0.31rem;
     color: $color-black;
- 
+    padding: .68rem;
     background-image: linear-gradient(to right, rgba($color-grey-dark-3, 0.29), rgba($color-tertiary-dark-1, 0.33));
 
     // when the btn--white is hovered
@@ -44,6 +46,8 @@ border-radius for curved end of button
 
     // for login
     &--login {
+      border-radius: 4rem;
+      padding: 1.2rem;
       background-color: $color-tertiary-light;
       left: 4rem;
       width: 70%;
@@ -55,7 +59,7 @@ border-radius for curved end of button
     }
   }
   &--blue {
-    border-radius: 5rem;
+    border-radius: 4rem;
     font-size: 2.5rem;
     margin: 2rem;
     display: block;
@@ -63,7 +67,7 @@ border-radius for curved end of button
     color: $color-white;
     padding: 1rem;
     width: 15rem;
-   
+    left: 22%;
   }
   &--front{
     background-color: $color-tertiary-dark-2;
@@ -107,7 +111,7 @@ border-radius for curved end of button
     text-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     outline: none;
     /* for moving down */
-    transform: translateY(-0.1rem);
+    transform: translateY(-0.01rem);
   }
 }
 

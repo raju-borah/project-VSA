@@ -8,17 +8,11 @@
 
     <!--AOS SCRIPT-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- google font style -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Philosopher|Rancho" rel="stylesheet">
     <!-- Icon on Title  -->
-
-    <!--AOS-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
         integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
-
-
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -26,41 +20,33 @@
 </head>
 
 <body>
-
     <!-- Creating Login Section -->
     <section class="login" id="login">
-        <div class="login__left">
 
-        </div>
-        <div class="login__right">
-
+        <div class="login__container">
             <!-- Login form -->
             <form action="#" class="form form--login">
                 <!--signin  logo -->
                 <img src="img/icons/confused.png" class="login__logo " />
+
                 <!-- form heading -->
                 <div class="u-margin-bottom-small u-margin-top-large u-center-text  large-font">
                     <h1 class="heading_tag">Forgot password </h1>
                 </div>
-                <div class="login--container">
-                    <!-- creating form group  for every fields-->
-                    <div class="form__group">
-                        <label for="email" class="form__label form__label--signin">E-mail</label>
-                        <input type="email" id="signin_email" class="form__input form__input__signin"
-                            placeholder="Enter registered email" required>
-                    </div>
-                    <div class="u-center-text">
-                        <!-- login button -->
-                        <button class="btn btn--green btn--green--login " id="forget_passwordBtn">Request OTP</button>
-                    </div>
-                   
 
+                <!-- creating form group  for every fields-->
+                <div class="form__group">
+                    <label for="email" class="form__label form__label--login">E-mail</label>
+                    <i class="fas fa-envelope form__input__login--icons form__input__login--icons--iconuser"></i>
+                    <input type="email" id="signin_email" class="form__input form__input__login" placeholder="Email"
+                        required>
                 </div>
-
+                <div class="u-center-text">
+                    <!-- login button -->
+                    <button class="btn btn--green btn--green--login " id="forget_passwordBtn">Request OTP</button>
+                </div>
             </form>
-
         </div>
-
     </section>
 </body>
 

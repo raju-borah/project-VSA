@@ -1,39 +1,21 @@
 .signup {
-  // property to hidde the division, setting the background, height, width etc.
-  position: fixed;
-  background-image: radial-gradient(rgba($color-tertiary-light-2, 0.16), rgba($color-black, 0.59)),
-    url("/img/colors.jpg");
-  background-size: cover;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
+  background-image:radial-gradient(rgba($color-tertiary-light,.39),rgba($color-white,.16)), url('/img/Capture.JPG');
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  
 
-  // left icon and the message
-  &__left {
-    width: 40%;
-    margin-top: 40rem;
-    text-align: center;
-    float: left;
-    &--img {
-      top: 23%;
-      left:10.5%;
-      height: 23rem;
-      width: 28rem;
-     
-    }
-  }
-
-  // form divison properties
-  &__form {
-    float: right;
-    // transform: translate(2%, 5%);
-    width: 60%;
-    height: 100%;
-    padding: 3rem;
-    box-shadow: 0 2rem 3rem rgba($color-black, 0.77);
-    background-color: $color-grey-light-2;
-    background-size: cover;
-    &--container {
-      transform: translate(5%, 15%);
-    }
+  &__container {
+    position: absolute;
+    width: 32%;
+    height: 90vh;
+    padding: 1rem;
+    top: 5rem;
+    left: 50rem;
+    background-image: url('/img/Capture.jpg');
+    border: 2px solid black;
+    border-radius: .55rem;
   }
 }
