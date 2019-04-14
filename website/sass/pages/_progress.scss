@@ -1,0 +1,78 @@
+
+  button:focus
+  {
+      outline:none;
+  }
+  
+.progress__btn
+{
+  
+
+    font-size: 4.2rem;
+    position: relative;
+    top: -.4rem;
+    left: -3rem;
+    color: $color-white;
+    border: none;
+    border-radius: 3rem;
+    background-color:rgba($color-black,0);
+}
+
+
+.progressbox
+{
+   position: absolute;;
+   top: 8rem;
+   right: 10rem;
+   background-color:$color-white;
+
+   width: 34rem;
+   height: 4rem;
+
+   border-radius: 2rem;
+
+   &::after{
+    content: "";
+    position: absolute;
+    top: -1.99rem;
+    right: 3.4rem;
+    border:1rem solid;
+    border-color:  transparent  transparent $color-grey-light-2 transparent;
+  }
+
+}
+
+.progressbar
+{
+    position: absolute;
+    top: .8rem;
+    right: 22rem;
+
+}
+progress{
+   -webkit-appearance: none;
+   
+}
+
+::-webkit-progress-bar {
+    width: 30rem;
+    height: 2.5rem;
+    background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+
+
+ ::-webkit-progress-value {
+    background-image:
+         -webkit-linear-gradient(-45deg, 
+                                 transparent 33%, rgba(0, 0, 0, .1) 33%, 
+                                 rgba(0,0, 0, .1) 66%, transparent 66%),
+         -webkit-linear-gradient(top, 
+                                 rgba(255, 255, 255, .25), 
+                                 rgba(0, 0, 0, .25)),
+         -webkit-linear-gradient(left, #09c, #f44);
+  
+      border-radius: 2px; 
+      background-size: 30px 30px, 100% 100%, 100% 100%;
+  }

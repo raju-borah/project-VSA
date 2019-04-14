@@ -431,6 +431,7 @@ border-radius for curved end of button
 
 .search {
   position: relative;
+  left: -6rem;
   top: -1.8rem;
   margin-right: 4rem; }
   .search__input {
@@ -1442,8 +1443,73 @@ img {
   width: 100%;
   height: 100%; }
 
-.bgcontain
 .bgcontain {
-  background-image: url("../../img/404-1.png");
+  background-image: url("../img/404-1.png");
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .bgcontain__link {
+    position: relative;
+    font-size: 2rem;
+    color: #fff; }
+  .bgcontain__link:hover .bgcontain__hove {
+    visibility: visible; }
+  .bgcontain__hove {
+    background-image: url("../img/light.png");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    left: -31.2rem;
+    top: -21.5rem; }
+
+button:focus {
+  outline: none; }
+
+.progress__btn {
+  font-size: 4.2rem;
+  position: relative;
+  top: -.4rem;
+  left: -3rem;
+  color: #fff;
+  border: none;
+  border-radius: 3rem;
+  background-color: rgba(0, 0, 0, 0); }
+
+.progressbox {
+  position: absolute;
+  top: 8rem;
+  right: 10rem;
+  background-color: #fff;
+  width: 34rem;
+  height: 4rem;
+  border-radius: 2rem; }
+  .progressbox::after {
+    content: "";
+    position: absolute;
+    top: -1.99rem;
+    right: 3.4rem;
+    border: 1rem solid;
+    border-color: transparent transparent #eee transparent; }
+
+.progressbar {
+  position: absolute;
+  top: .8rem;
+  right: 22rem; }
+
+progress {
+  -webkit-appearance: none; }
+
+::-webkit-progress-bar {
+  width: 30rem;
+  height: 2.5rem;
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
+
+::-webkit-progress-value {
+  background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)), -webkit-linear-gradient(left, #09c, #f44);
+  border-radius: 2px;
+  background-size: 30px 30px, 100% 100%, 100% 100%; }
