@@ -1,68 +1,47 @@
 
+.progressbox {
+  position: relative;
+  top: 1rem;
+  right: 2.7rem;
+  background-color: $color-grey-light-2;
 
-.progressbox
-{
-   position: relative;
-   top: 1rem;
-   right: 2.9rem;
-   background-color:$color-white;
+  width: 34rem;
+  height: 9rem;
 
-   width: 34rem;
-   height: 9rem;
-
-   border-radius: 2rem;
-   margin-bottom: 2rem;
-
-   &::after{
-    content: "";
-    position: absolute;
-    top: -1.99rem;
-    right: 3.4rem;
-    border:1rem solid;
-    border-color:  transparent  transparent $color-grey-light-2 transparent;
-  }
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  border: 0.1rem solid $color-black;
 
 
-  &__text
-  {
+  &__text {
     position: relative;
     left: -10rem;
-    top: .1rem;
+    top: 0.1rem;
     font-size: 2rem;
-
   }
 
+  &__bar {
+    position: absolute;
+    top: 3rem;
+    right: 22rem;
+  }
 
-      &__bar
-    {
-        position: absolute;
-        top: 3rem;
-        right: 22rem;
+  &__percentage {
+    position: relative;
+    color: $color-black;
+    left: 1rem;
+    top: -0.8rem;
+    font-size: 2rem;
+  }
 
-    }
-
-    &__percentage
-    {
-      position: relative;
-      color:$color-black;
-      left: 1rem;
-      top: -.8rem;
-      font-size: 2rem;
-    }
-
-
-    &__btn
-    {
-      position: relative;
-      top: -1.2rem;
-      padding: .4rem;
-    }
-
-
+  &__btn {
+    position: relative;
+    top: -1.2rem;
+    padding: 0.4rem;
+  }
 }
 
-.vidbtn
-{
+.vidbtn {
   width: 3rem;
   height: 3rem;
   font-size: 2.7rem;
@@ -71,36 +50,34 @@
   border: none;
   cursor: pointer;
 
-  :hover{
+  :hover {
     color: $color-tertiary-dark;
   }
 }
 
-
-progress{
-   -webkit-appearance: none;
-   
+progress {
+  -webkit-appearance: none;
 }
 
 ::-webkit-progress-bar {
-    width: 30rem;
-    height: 2.5rem;
-    background-color: #eee;
+  width: 30rem;
+  height: 2.5rem;
+  background-color: #eee;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-  }
+}
 
+::-webkit-progress-value {
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%,
+      transparent 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #09c, #f44);
 
- ::-webkit-progress-value {
-    background-image:
-         -webkit-linear-gradient(-45deg, 
-                                 transparent 33%, rgba(0, 0, 0, .1) 33%, 
-                                 rgba(0,0, 0, .1) 66%, transparent 66%),
-         -webkit-linear-gradient(top, 
-                                 rgba(255, 255, 255, .25), 
-                                 rgba(0, 0, 0, .25)),
-         -webkit-linear-gradient(left, #09c, #f44);
-  
-      border-radius: 2px; 
-      background-size: 30px 30px, 100% 100%, 100% 100%;
-  }
+  border-radius: 2px;
+  background-size: 30px 30px, 100% 100%, 100% 100%;
+}

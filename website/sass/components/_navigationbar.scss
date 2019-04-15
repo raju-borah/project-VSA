@@ -79,13 +79,14 @@
   border-radius: 1rem;
   top: 8rem;
   right: 3rem;
-  background-color: $color-grey-light-2 ;
-  box-shadow: 0 1rem 2rem rgba($color-black, 0.55);
+  padding: 1rem;
+  background-image: radial-gradient(rgba($color-tertiary-dark-2,1),rgba($color-white,.1)),url('/img/Capture.jpg');
+  box-shadow: .44rem 1rem 1rem rgba($color-black, 0.55);
   &::after{
     content: "";
     position: absolute;
     top: -1.99rem;
-    right: 3.4rem;
+    right: 2rem;
     border:1rem solid;
     border-color:  transparent  transparent $color-grey-light-2 transparent;
   }
@@ -99,10 +100,12 @@
   width: 36rem;
   height: 39rem;
   top: 1rem;
-  left: 1rem;
+  left: .97rem;
   padding: 2rem;
-  border: 1px solid black;
+  background-color: $color-grey-light-2 ;
   color: $color-black;
+  border-radius: .55rem;
+  
   &__img{
     position: absolute;
     top:.55rem;
@@ -122,15 +125,12 @@
 
   &--items{
     margin: .55rem;
-
+    // change to hide or visible the progress bar
     &--progress{
       display: block;
     }
   }
-  li:last-child {
-    margin-top: 1rem;
-   
-  }
+
 }
 .list--link{
   &,&:visited{
@@ -150,10 +150,10 @@
   position: absolute;
   width: 36rem;
   height: 37rem;
-  border: 1px solid black;
   top: 1rem;
   left: 1rem;
   padding: 2rem;
+  background-color: $color-grey-light-2 ;
 
   &__img{
     
