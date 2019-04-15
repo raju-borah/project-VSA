@@ -1447,19 +1447,6 @@ img {
   .bgcontain:hover .bgcontain__hove {
     display: block; }
 
-button:focus {
-  outline: none; }
-
-.progress__btn {
-  font-size: 4.2rem;
-  position: relative;
-  top: -.4rem;
-  left: -3rem;
-  color: #fff;
-  border: none;
-  border-radius: 3rem;
-  background-color: rgba(0, 0, 0, 0); }
-
 .progressbox {
   position: relative;
   top: 1rem;
