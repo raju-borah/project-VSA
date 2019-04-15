@@ -13,7 +13,8 @@ const notsigin=document.querySelector('.notsignincontainer');
 let display="none";
 userBtn.addEventListener('click',function(){
     // change to see the effect in home page
- /** 
+
+    /** 
 // when user is not SIGNED IN ,then following codes execute
    
     if(display==="none"){
@@ -28,7 +29,7 @@ userBtn.addEventListener('click',function(){
     }
     */   
      
-// when user is SIGNED IN ,then following codes execute
+//when user is SIGNED IN ,then following codes execute
   if(display==="none"){
         signindetail.style.display="block";
         userContainer.style.display="block";

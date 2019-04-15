@@ -6,6 +6,7 @@
   background-size: cover;
   background-position: center;
   
+  &__
 
   &__container {
     position: absolute;
@@ -28,5 +29,6 @@
     left: 15.9rem;
     border-radius: 50%;
     background-color: $color-white;
+    background-position: center;
   }
 }
