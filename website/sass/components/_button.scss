@@ -7,6 +7,15 @@ border-radius for curved end of button
   font-size: 1.9rem;
   background-color: $color-grey-light-2;
 
+  &__confirm--btn{
+    margin: .55rem;
+    padding: 1rem;
+    
+    &--yes{
+      font-weight: 700;
+    }
+
+  }
   &,
   &:link,
   &:visited {
@@ -49,7 +58,7 @@ border-radius for curved end of button
       border-radius: 4rem;
       padding: 1.2rem;
       background-color: $color-tertiary-light;
-      left: 4rem;
+      left: 5rem;
       width: 70%;
     }
 

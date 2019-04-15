@@ -4,17 +4,33 @@
   position: relative;
   background-color: $color-grey-light-2;
 
+  &__deletemsg_container{
+    display: none;
+    width: 50rem;
+    list-style-type: none;
+    text-align: center;
+    position: absolute;
+    padding: 2.5rem;
+    border: .2rem solid $color-black;
+    background-color: $color-grey-light-2;
+    top: 50%;
+    left: 30%;
+
+    &--listitems{
+      width: 100%;
+      font-size: 2rem;
+    }
+  }
   &__header{
-    background-color: $color-tertiary-dark;
+    background-image: linear-gradient(to right,rgba($color-tertiary-light,.88),rgba($color-tertiary-dark-1,.88));
     padding: 2rem;
 
   }
   &__title{
     margin-left: 7rem;
-
+    color: $color-white;
   }
   &__vcontainer {
-    border-top: 0.2rem solid $color-tertiary-dark-1;
     padding: 1rem;
     padding-top: 4rem;
   }
@@ -53,6 +69,11 @@
     height: 25rem;
     float: left;
     padding: 3rem;
+
+    &--title{
+      font-weight: 900;
+      color: $color-tertiary-light-2;
+    }
   }
 }
 .floating--btn {
@@ -74,4 +95,8 @@
 
 .videodelete {
   display: none;
+}
+
+.blur{
+  filter: blur(5px);
 }

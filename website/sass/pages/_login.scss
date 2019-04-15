@@ -8,7 +8,15 @@
   position: relative;
   background-size: cover;
   background-position: center;
+  &__home {
+    z-index: 5;
+    position: absolute;
+    font-size: 3rem;
+    color: $color-black;
+    top: 1rem;
+    right: 2rem;
 
+  }
   &__container {
     position: absolute;
     width: 32%;
@@ -19,21 +27,7 @@
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: 0.55rem;
-    &__header {
-      font-family: 'Boogaloo', cursive;
-      z-index: 1;
-      position: absolute;
-      top: -2rem;
-      left: 29%;
-      width: 20rem;
-      height: 5rem;
-      font-size: 2.8rem;
-      font-weight: 900;
-      text-align: center;
-      background-color: $color-grey-light-2;
-      border: 0.4rem solid $color-tertiary-dark-2;
-      border-radius: 0.55rem;
-    }
+ 
   }
 
   // positioning the img in the login page
@@ -42,7 +36,7 @@
     width: 14rem;
     height: 14rem;
     top: 5rem;
-    left: 15.9rem;
+    left: 35%;
     border-radius: 50%;
     background-color: $color-white;
     background-position: center;

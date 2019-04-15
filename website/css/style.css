@@ -203,6 +203,11 @@ border-radius for curved end of button
   background-color: #eee;
   /* button hover */
   /* when clicked */ }
+  .btn__confirm--btn {
+    margin: .55rem;
+    padding: 1rem; }
+    .btn__confirm--btn--yes {
+      font-weight: 700; }
   .btn, .btn:link, .btn:visited {
     text-decoration: none;
     text-transform: capitalize;
@@ -233,7 +238,7 @@ border-radius for curved end of button
       border-radius: 4rem;
       padding: 1.2rem;
       background-color: #2998ff;
-      left: 4rem;
+      left: 5rem;
       width: 70%; }
     .btn--green--logout {
       font-size: 1.8rem;
@@ -406,7 +411,7 @@ border-radius for curved end of button
   position: absolute;
   width: 36rem;
   height: 37rem;
-  top: 1rem;
+  top: 2rem;
   left: 1rem;
   padding: 2rem;
   background-color: #eee; }
@@ -1128,6 +1133,13 @@ img {
   position: relative;
   background-size: cover;
   background-position: center; }
+  .login__home {
+    z-index: 5;
+    position: absolute;
+    font-size: 3rem;
+    color: #000;
+    top: 1rem;
+    right: 2rem; }
   .login__container {
     position: absolute;
     width: 32%;
@@ -1138,26 +1150,12 @@ img {
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: 0.55rem; }
-    .login__container__header {
-      font-family: 'Boogaloo', cursive;
-      z-index: 1;
-      position: absolute;
-      top: -2rem;
-      left: 29%;
-      width: 20rem;
-      height: 5rem;
-      font-size: 2.8rem;
-      font-weight: 900;
-      text-align: center;
-      background-color: #eee;
-      border: 0.4rem solid #172d44;
-      border-radius: 0.55rem; }
   .login__logo {
     position: absolute;
     width: 14rem;
     height: 14rem;
     top: 5rem;
-    left: 15.9rem;
+    left: 35%;
     border-radius: 50%;
     background-color: #fff;
     background-position: center; }
@@ -1276,14 +1274,27 @@ img {
   height: 100%;
   position: relative;
   background-color: #eee; }
+  .dashboard__deletemsg_container {
+    display: none;
+    width: 50rem;
+    list-style-type: none;
+    text-align: center;
+    position: absolute;
+    padding: 2.5rem;
+    border: 0.2rem solid #000;
+    background-color: #eee;
+    top: 50%;
+    left: 30%; }
+    .dashboard__deletemsg_container--listitems {
+      width: 100%;
+      font-size: 2rem; }
   .dashboard__header {
-    background-color: #5643fa;
+    background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
     padding: 2rem; }
   .dashboard__title {
-    color: #fff;
-    margin-left: 7rem; }
+    margin-left: 7rem;
+    color: #fff; }
   .dashboard__vcontainer {
-    border-top: 0.2rem solid #012A57;
     padding: 1rem;
     padding-top: 4rem; }
   .dashboard__list {
@@ -1313,6 +1324,9 @@ img {
     height: 25rem;
     float: left;
     padding: 3rem; }
+    .dashboard__description--title {
+      font-weight: 900;
+      color: #006064; }
 
 .floating--btn {
   position: absolute;
@@ -1331,6 +1345,9 @@ img {
 
 .videodelete {
   display: none; }
+
+.blur {
+  filter: blur(5px); }
 
 .player {
   width: 100%;
