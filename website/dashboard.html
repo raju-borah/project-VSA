@@ -27,8 +27,8 @@
 
 <body>
     <!-- Dashboard -->
-  <!-- navigation bar -->
-  <div class="navigationbar">
+    <!-- navigation bar -->
+    <div class="navigationbar">
 
         <!-- name of the Application -->
         <div class="navbarfont navigationbar--left">
@@ -117,11 +117,10 @@
     <!-- dashboard -->
     <div class="dashboard">
         <!-- floating upload button -->
+        <div class="dashboard__header ">
+            <a href="#upload" class="floating--btn"><i class="fas fa-upload">upload</i></a>
 
-        <a href="#upload" class="floating--btn"><i class="fas fa-upload">upload</i></a>
-
-        <div>
-            <h1 class="font-medium u-margin-small">My videos</h1>
+            <h1 class="font-medium dashboard__title">My videos</h1>
         </div>
         <div class="dashboard__vcontainer">
             <ul class="dashboard__list">
@@ -132,7 +131,7 @@
                             <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0"></iframe>
                         </div>
                         <div class="dashboard__description">
-                            <button type="button"  class="videodelete u-end-text btn"><i
+                            <button type="button" class="videodelete u-end-text btn"><i
                                     class="fas fa-trash-alt font-small"></i></button>
 
                             <div class="dashboard__description--title font-medium">
@@ -141,7 +140,7 @@
                                 </span>
                             </div>
                             <div class="dashboard__description--vdesc font-small">
-                                <span >
+                                <span>
                                     Javascript tutotial for beginner.
                                     Lorem ipsum dolor sit amet, consectetur adipisicing e
                                     nostrum, animi facere amet numquam aliquid, ex eius veniam tempore suscipit commodi
@@ -163,12 +162,12 @@
                                     class="fas fa-trash-alt font-small"></i></button>
 
                             <div class="dashboard__description--title font-medium">
-                                <span >
+                                <span>
                                     Fun way to Learn JavaScript.
                                 </span>
                             </div>
                             <div class="dashboard__description--vdesc font-small">
-                                <span >
+                                <span>
                                     Javascript tutotial for beginner.
                                     Lorem ipsum dolor sit amet, consectetur adipisicing e
                                     nostrum, animi facere amet numquam aliquid, ex eius veniam tempore suscipit commodi
@@ -190,12 +189,12 @@
                                     class="fas fa-trash-alt font-small"></i></button>
 
                             <div class="dashboard__description--title font-medium">
-                                <span >
+                                <span>
                                     Fun way to Learn JavaScript.
                                 </span>
                             </div>
                             <div class="dashboard__description--vdesc font-small">
-                                <span >
+                                <span>
                                     Javascript tutotial for beginner.
                                     Lorem ipsum dolor sit amet, consectetur adipisicing e
                                     nostrum, animi facere amet numquam aliquid, ex eius veniam tempore suscipit commodi
@@ -206,8 +205,8 @@
                         </div>
                     </div>
                 </li>
-              
-             
+
+
             </ul>
         </div>
     </div>
@@ -257,7 +256,8 @@
     <script src="js/main.js">
     </script>
 
-
+    <!-- hide the navbar when scroll -->
+    <script src="js/navbar.js"></script>
     <!-- display js -->
     <script src="js/display.js"></script>
 

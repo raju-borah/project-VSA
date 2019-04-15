@@ -2,26 +2,33 @@
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: $color-grey-dark;
-  padding: 1rem;
- 
+  background-color: $color-grey-light-2;
+
+  &__header{
+    background-color: $color-tertiary-dark;
+    padding: 2rem;
+
+  }
+  &__title{
+    margin-left: 7rem;
+
+  }
   &__vcontainer {
     border-top: 0.2rem solid $color-tertiary-dark-1;
     padding: 1rem;
     padding-top: 4rem;
-
   }
   &__list {
-    
     list-style-type: none;
     padding-left: 8rem;
-    
+
     &--items {
-      
       background-color: $color-grey-light-2;
+
       margin-top: 3rem;
-      width: 90%;
+      width: 89%;
       border-radius: 1.5rem;
+      border: 0.1rem solid $color-tertiary-dark-1;
       &:hover {
         box-shadow: 0 1rem 1rem rgba($color-tertiary-dark-1, 0.66);
       }
@@ -46,20 +53,23 @@
     height: 25rem;
     float: left;
     padding: 3rem;
-    
   }
 }
 .floating--btn {
   position: absolute;
   border-radius: 2rem;
-  padding: 0.3rem;
+  padding: 0.8rem;
   top: 9.3rem;
   right: 3rem;
   z-index: 1;
   position: fixed;
-  font-size: 3rem;
-  color: $color-tertiary-dark;
-  background-color: $color-grey-light-2;
+  font-size: 2.3rem;
+  color: $color-white;
+  background-color:$color-grey-dark-3;
+  &:hover{
+    background-color: $color-tertiary-dark-1;
+    transform: translateY(-.1rem);
+  }
 }
 
 .videodelete {

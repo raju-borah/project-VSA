@@ -70,7 +70,6 @@
 // container settings
 .usercontainer{
   z-index: 2;
-
   display: none;
   clear: left;
   position: absolute;
@@ -86,7 +85,7 @@
     content: "";
     position: absolute;
     top: -1.99rem;
-    right: 2rem;
+    right: 2.8rem;
     border:1rem solid;
     border-color:  transparent  transparent $color-grey-light-2 transparent;
   }
@@ -167,3 +166,5 @@
     height: 15rem;
   }
 }
+
+

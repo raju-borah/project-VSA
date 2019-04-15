@@ -102,10 +102,6 @@ body {
 .font-medium {
   font-size: 3rem; }
 
-.u-margin-small {
-  margin: 2rem;
-  margin-left: 9rem; }
-
 .u-margin-right-large {
   margin-right: 3rem; }
 
@@ -360,7 +356,7 @@ border-radius for curved end of button
     content: "";
     position: absolute;
     top: -1.99rem;
-    right: 2rem;
+    right: 2.8rem;
     border: 1rem solid;
     border-color: transparent transparent #eee transparent; }
 
@@ -425,9 +421,8 @@ border-radius for curved end of button
 
 .search {
   position: relative;
-  left: -6rem;
-  top: -1.8rem;
-  margin-right: 4rem; }
+  right: 3rem;
+  top: -1.8rem; }
   .search__input {
     position: absolute;
     top: 20px;
@@ -444,9 +439,9 @@ border-radius for curved end of button
     transition: all 0.8s; }
   .search__btn {
     position: absolute;
-    width: 4.5rem;
-    height: 4.5rem;
-    background: #5643fa;
+    width: 4.59rem;
+    height: 4.59rem;
+    background: #2998ff;
     border-radius: 50%;
     right: 4.6rem;
     top: 2rem;
@@ -1280,8 +1275,13 @@ img {
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: #777;
-  padding: 1rem; }
+  background-color: #eee; }
+  .dashboard__header {
+    background-color: #5643fa;
+    padding: 2rem; }
+  .dashboard__title {
+    color: #fff;
+    margin-left: 7rem; }
   .dashboard__vcontainer {
     border-top: 0.2rem solid #012A57;
     padding: 1rem;
@@ -1292,8 +1292,9 @@ img {
     .dashboard__list--items {
       background-color: #eee;
       margin-top: 3rem;
-      width: 90%;
-      border-radius: 1.5rem; }
+      width: 89%;
+      border-radius: 1.5rem;
+      border: 0.1rem solid #012A57; }
       .dashboard__list--items:hover {
         box-shadow: 0 1rem 1rem rgba(1, 42, 87, 0.66); }
       .dashboard__list--items:hover .videodelete {
@@ -1316,14 +1317,17 @@ img {
 .floating--btn {
   position: absolute;
   border-radius: 2rem;
-  padding: 0.3rem;
+  padding: 0.8rem;
   top: 9.3rem;
   right: 3rem;
   z-index: 1;
   position: fixed;
-  font-size: 3rem;
-  color: #5643fa;
-  background-color: #eee; }
+  font-size: 2.3rem;
+  color: #fff;
+  background-color: #333; }
+  .floating--btn:hover {
+    background-color: #012A57;
+    transform: translateY(-0.1rem); }
 
 .videodelete {
   display: none; }
