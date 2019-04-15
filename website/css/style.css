@@ -1131,7 +1131,7 @@ img {
   position: relative;
   background-size: cover;
   background-position: center; }
-  .login__ .login__container {
+  .login__container {
     position: absolute;
     width: 32%;
     height: 80vh;
