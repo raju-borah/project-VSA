@@ -4,7 +4,7 @@ const delbtn=document.querySelector('.videodelete');
 const confirmbox=document.querySelector('.dashboard__deletemsg_container');
 // for NO option 
 const optionNO=document.querySelector('.btn__confirm--btn--no');
-// the parent division 
+// the parent division  
 const containerElement = document.querySelector('.dashboard');
 // when delete button clicked
 delbtn.addEventListener('click',function(){
