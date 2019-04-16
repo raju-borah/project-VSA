@@ -6,7 +6,7 @@ border-radius for curved end of button
 .btn {
   font-size: 1.9rem;
   background-color: $color-grey-light-2;
-
+// for the confirm option in delete video 
   &__confirm--btn{
     margin: .55rem;
     padding: 1rem;
@@ -14,8 +14,13 @@ border-radius for curved end of button
     &--yes{
       font-weight: 700;
     }
+    &--no{
+      font-weight: 700;
+    }
 
   }
+
+
   &,
   &:link,
   &:visited {

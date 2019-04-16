@@ -208,6 +208,8 @@ border-radius for curved end of button
     padding: 1rem; }
     .btn__confirm--btn--yes {
       font-weight: 700; }
+    .btn__confirm--btn--no {
+      font-weight: 700; }
   .btn, .btn:link, .btn:visited {
     text-decoration: none;
     text-transform: capitalize;
