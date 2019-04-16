@@ -1,9 +1,9 @@
 // delete button class
 const delbtn=document.querySelector('.videodelete');
 // confirmation message box division
-const confirmbox=document.querySelector('.dashboard__deletemsg_container');
+const confirmbox=document.querySelector('.deletemsgbox');
 // for NO option 
-const optionNO=document.querySelector('.btn__confirm--btn--no');
+const optionNO=document.querySelector('.deletemsgbox__no');
 // the parent division  
 const containerElement = document.querySelector('.dashboard');
 // when delete button clicked
@@ -19,4 +19,8 @@ optionNO.addEventListener('click',function(){
     containerElement.setAttribute('class', null);    
 
 });
+
+
+
+
 

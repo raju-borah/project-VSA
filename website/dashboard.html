@@ -256,17 +256,26 @@
     </div>
     <!-- ending of upload section -->
 
+
+
     <!-- delete confirmation option box -->
-    <ul class="dashboard__deletemsg_container" id="deletemsg_container">
+    <ul class="deletemsgbox" id="deletemsg_container">
+
+        
+        <!--buttons for yes and no option-->
+            <button type="button" class="deletemsgbox__yes">Yes</button> 
+            <button type="button" class="deletemsgbox__no">No</button>
+
+           <!--conatiner to chmage the color on hover on yes and no--> 
+        <div class="deletemsgbox__inside"></div>
         <!-- confirmation message -->
-        <li class="dashboard__deletemsg_container--listitems">
+        <li class="deletemsgbox__listitems">
            Are you sure you want to delete this video <span>"video name"</span>? 
         </li>
         <!-- confirmation options -->
         <!-- btn design code written in button.scss -->
-        <button class="btn btn__confirm--btn btn__confirm--btn--yes">Yes</button> 
-
-        <button class="btn btn__confirm--btn btn__confirm--btn--no">No</button>
+    
+  
 
     </ul>
 
