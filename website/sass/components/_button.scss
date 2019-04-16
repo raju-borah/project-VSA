@@ -13,6 +13,9 @@ border-radius for curved end of button
     
     &--yes{
       font-weight: 700;
+      &:hover ~ #deletemsg_container{
+        background: red;
+      }
     }
     &--no{
       font-weight: 700;

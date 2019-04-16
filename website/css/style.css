@@ -208,6 +208,8 @@ border-radius for curved end of button
     padding: 1rem; }
     .btn__confirm--btn--yes {
       font-weight: 700; }
+      .btn__confirm--btn--yes:hover ~ #deletemsg_container {
+        background: red; }
     .btn__confirm--btn--no {
       font-weight: 700; }
   .btn, .btn:link, .btn:visited {
@@ -1334,8 +1336,8 @@ img {
   position: absolute;
   border-radius: 2rem;
   padding: 0.8rem;
-  top: 9.3rem;
-  right: 3rem;
+  top: 12%;
+  right: 2%;
   z-index: 1;
   position: fixed;
   font-size: 2.3rem;
@@ -1343,13 +1345,14 @@ img {
   background-color: #333; }
   .floating--btn:hover {
     background-color: #012A57;
-    transform: translateY(-0.1rem); }
+    transform: translateY(-0.2rem); }
 
 .videodelete {
   display: none; }
 
 .blur {
-  filter: blur(5px); }
+  filter: blur(2px);
+  position: fixed; }
 
 .player {
   width: 100%;

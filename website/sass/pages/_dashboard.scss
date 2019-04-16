@@ -4,6 +4,7 @@
   position: relative;
   background-color: $color-grey-light-2;
 
+  // confirmation box for delete
   &__deletemsg_container{
     display: none;
     width: 50rem;
@@ -15,12 +16,13 @@
     background-color: $color-grey-light-2;
     top: 50%;
     left: 30%;
-
+    // the list items
     &--listitems{
       width: 100%;
       font-size: 2rem;
     }
   }
+  
   &__header{
     background-image: linear-gradient(to right,rgba($color-tertiary-light,.88),rgba($color-tertiary-dark-1,.88));
     padding: 2rem;
@@ -80,8 +82,8 @@
   position: absolute;
   border-radius: 2rem;
   padding: 0.8rem;
-  top: 9.3rem;
-  right: 3rem;
+  top: 12%;
+  right: 2%;
   z-index: 1;
   position: fixed;
   font-size: 2.3rem;
@@ -89,14 +91,15 @@
   background-color:$color-grey-dark-3;
   &:hover{
     background-color: $color-tertiary-dark-1;
-    transform: translateY(-.1rem);
+    transform: translateY(-.2rem);
   }
 }
-
+// the delete button is hidden the pointer is hover to the video division
 .videodelete {
   display: none;
 }
-
+// blur effect when delete confirmation message box appears
 .blur{
-  filter: blur(5px);
+  filter: blur(2px);
+  position: fixed;
 }
