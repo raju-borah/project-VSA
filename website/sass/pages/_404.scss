@@ -1,24 +1,24 @@
 .bgcontain {
- background-image: url("../img/error.jpg");
+  background-image: url("../img/error.jpg");
   width: 100%; //width of the division
   height: 100vh; //the heightof the divion
   //  background-size: cover;//height and width of the image to fit in the conatiner
   //   background-repeat: no-repeat;
   border: 2px solid black;
 
-//   &__link {
-//     position: relative;
-//     width: 20%;
-//     background-color: #fff;
-//     font-size: 2rem;
-//     color: $color-white;
-//   }
+  //   &__link {
+  //     position: relative;
+  //     width: 20%;
+  //     background-color: #fff;
+  //     font-size: 2rem;
+  //     color: $color-white;
+  //   }
 
   &__hove {
     width: 100%; //width of the division
     height: 100%; //the heightof the divion
- background-image: url("../img/error-1.jpg");
-    
+    background-image: url("../img/error-1.jpg");
+
     // background-size: cover;//height and width of the image to fit in the conatiner
     // background-repeat: no-repeat;
     // position: relative;
