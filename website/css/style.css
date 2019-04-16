@@ -1456,9 +1456,6 @@ img {
     letter-spacing: 1rem;
     position: fixed;
     z-index: 2; }
-    .morehead__learntext:hover {
-      transition: all .4s;
-      font-size: 6rem; }
   .morehead__event {
     position: absolute;
     padding: 2rem;
@@ -1527,23 +1524,29 @@ img {
   margin-bottom: 2rem;
   border: 0.1rem solid #000; }
   .progressbox__text {
-    position: relative;
-    left: -10rem;
+    position: absolute;
+    width: 30rem;
+    left: 1rem;
     top: 0.1rem;
-    font-size: 2rem; }
+    top: 0.1rem;
+    font-size: 1.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .progressbox__bar {
     position: absolute;
     top: 3rem;
     right: 22rem; }
   .progressbox__percentage {
-    position: relative;
+    position: absolute;
     color: #000;
-    left: 1rem;
-    top: -0.8rem;
+    left: 15rem;
+    top: 2.4rem;
     font-size: 2rem; }
   .progressbox__btn {
-    position: relative;
-    top: -1.2rem;
+    position: absolute;
+    top: 5.3rem;
+    left: 9rem;
     padding: 0.4rem; }
 
 .vidbtn {

@@ -14,10 +14,15 @@
 
 
   &__text {
-    position: relative;
-    left: -10rem;
+    position: absolute;
+    width:30rem;
+    left: 1rem;
     top: 0.1rem;
-    font-size: 2rem;
+    top: 0.1rem;
+    font-size: 1.9rem;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
   }
 
   &__bar {
@@ -27,16 +32,17 @@
   }
 
   &__percentage {
-    position: relative;
+    position: absolute;
     color: $color-black;
-    left: 1rem;
-    top: -0.8rem;
+    left: 15rem;
+    top: 2.4rem;
     font-size: 2rem;
   }
 
   &__btn {
-    position: relative;
-    top: -1.2rem;
+    position: absolute;
+    top: 5.3rem;
+    left: 9rem;
     padding: 0.4rem;
   }
 }
