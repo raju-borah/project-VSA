@@ -1269,20 +1269,6 @@ img {
   height: 100%;
   position: relative;
   background-color: #eee; }
-  .dashboard__deletemsg {
-    display: none;
-    width: 50rem;
-    list-style-type: none;
-    text-align: center;
-    position: absolute;
-    padding: 2.5rem;
-    border: 0.2rem solid #000;
-    background-color: #eee;
-    top: 50%;
-    left: 30%; }
-    .dashboard__deletemsg--listitems {
-      width: 100%;
-      font-size: 2rem; }
   .dashboard__header {
     background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
     padding: 2rem; }
@@ -1499,14 +1485,14 @@ img {
   height: 100%; }
 
 .bgcontain {
-  background-image: url("../img/error.png");
+  background-image: url("../img/error.jpg");
   width: 100%;
   height: 100vh;
   border: 2px solid black; }
   .bgcontain__hove {
     width: 100%;
     height: 100%;
-    background-image: url("../img/error-1.png");
+    background-image: url("../img/error-1.jpg");
     display: none;
     border: 2px solid black; }
   .bgcontain:hover .bgcontain__hove {
