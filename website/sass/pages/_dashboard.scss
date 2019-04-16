@@ -6,6 +6,24 @@
   position: relative;
   background-color: $color-grey-light-2;
 
+  // confirmation box for delete
+  &__deletemsg{
+    display: none;
+    width: 50rem;
+    list-style-type: none;
+    text-align: center;
+    position: absolute;
+    padding: 2.5rem;
+    border: .2rem solid $color-black;
+    background-color: $color-grey-light-2;
+    top: 50%;
+    left: 30%;
+    // the list items
+    &--listitems{
+      width: 100%;
+      font-size: 2rem;
+    }
+  }
   
 
   &__header{
