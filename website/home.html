@@ -30,14 +30,14 @@
         <!-- name of the Application -->
         <div class="navbarfont navigationbar--left">
             <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
-            <a href="home.html" class="navbar_items">Vidshare </a>
+            <a href="card.html" class="navbar_items">Vidshare </a>
         </div>
 
         <!-- for right option such as search, user profile, upload -->
         <div class="navbarfont navigationbar--right">
 
             <!--Search button-->
-            
+
             <div class="search">
                 <input type="text" placeholder="Search" class="search__input" required>
                 <button type="button" class="search__btn" id="searchButton">
@@ -146,70 +146,52 @@
         </header>
     </section>
 
-
-
     <main class="main">
 
 
 
-        <!--info section-->
-        <section class="info">
+        <!--info story section-->
+        <!---------------------------New html and css-------------------------------->
 
-            <!--info heading-->
-            <div class="info__heading u-margin-top-large" data-aos="zoom-in" data-aos-duration="1000">
-                <h2>What makes us different?</h2>
+        <section class="story">
+            <div class="story__heading" data-aos="zoom-in" data-aos-duration="1000">
+                What makes us different?
             </div>
 
-            <!--info about part-->
-            <div class="info__grid">
 
-                <div class="info__learning" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+            <!--grid for the cards-->
+            <div class="cardsgrid">
 
-                    <div class="info__imgbox">
-                        <img src="img/head1.jpg" alt="" class="info__img">
+                <!--cards-->
+                <div class="card">
+                    <img src="img/floor1.jpg" alt="House 1" class="card__img">
+                    <h5 class="card__name"> 1 House</h5>
+                    <div class="card__description">
+                        <p>USA</p>
                     </div>
-
-
-                    <h5 class="info__title">LEARNING</h5>
-
-                    <p class="info__text">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Eligendi, eos fuga laudantium
-                        vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
-                    </p>
                 </div>
 
-                <!--Eevent card-->
-                <div class="info__event" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
-                    <div class="info__imgbox">
-                        <img src="img/event1.jpg" alt="" class="info__img">
 
+                <div class="card">
+                    <img src="img/head1.jpg" alt="House 1" class="card__img">
+
+                    <h5 class="card__name"> 2 House</h5>
+                    <div class="card__description">
+                        <p>india</p>
                     </div>
-                    <h5 class="info__title">Event</h5>
-
-
-                    <p class="info__text">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Eligendi, eos fuga laudantium
-                        vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
-                    </p>
                 </div>
-                <!--Club card-->
-                <div class="info__club" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
-                    <div class="info__imgbox">
-                        <img src="img/floor1.jpg" alt="" class="info__img">
+
+
+
+                <div class="card">
+                    <img src="img/event1.jpg" alt="House 1" class="card__img">
+                    <h5 class="card__name"> 2 House</h5>
+                    <div class="card__description">
+                        <p>india</p>
                     </div>
-
-
-
-                    <h5 class="info__title">CLUB ACTIVITIES</h5>
-
-                    <p class="info__text">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Eligendi, eos fuga laudantium
-                        vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
-                    </p>
                 </div>
+
+
             </div>
 
         </section>
@@ -754,7 +736,7 @@
         </section>
 
     </footer>
-    
+
 
     <script src="js/main.js">
     </script>

@@ -1,124 +1,74 @@
-.info
+.story
 {
-    //creating a grid in info section for cards 
-    position: relative;
-   
+
+    //grid for the story section with two rows
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2rem;
+
     
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 6rem;
 
 
-    //heading part
+    //heading part of the story section
+
     &__heading
     {
-        position: absolute;
-        top: 1rem;
-        left: 40rem;
         color: $color-tertiary-dark;
         letter-spacing: 1rem; 
-        font-size: 4rem;
-        font-weight: 500;
-        border-bottom: 1px solid $color-grey-dark-3;
+        font-size: 6.5rem;
+        font-weight: 600;
+        text-align: center; 
+        margin-top: 5rem;
 
     }
 
-    
-    //grid layout
-    &__grid
-    {
-        position: relative;
-        margin-top: -3rem;
-        margin-left: 2.5rem;
-        padding: 10rem;
-        grid-column: center-start / center-end;
+}
 
-        display: grid;
-        grid-template-rows:60vh  repeat(1, 1fr);
-        grid-template-columns: repeat(3,40rem);
-        grid-gap: 4rem;
 
-    }
+//grid part for the cards section with auto row and auto coloums
+.cardsgrid {
 
-    //image box to store the image
-    &__imgbox
+    display: grid;
+    grid-template-rows: repeat(1, minmax(50rem, min-content));//50rem should be same with 50rem of auto-grid-rows to create new rows of same size 
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 3rem;
+    grid-auto-rows: 50rem;//amount of space for each new row created when size of the window is decreased in horizontal side
+    justify-content: center;
 
-    {
-        overflow: hidden;//so the box remains in its orginal postion and only the image gets zoomed
-    
-      
-    }
 
-    //image part
-    &__img
-    {
-        position: relative;
-        width: 100%;
-        height: 25rem;
-        border-style:double; 
-        transition: all .5s;
-    
+    padding: 2rem;
 
-    }
+ 
+
+}
+
+//css for the desgin of the cards
+.card
+{
+    background-color: $color-grey-light-1;
+    position: relative;
+
    
+    //to adjust the image
+    &__img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+       
+
+    }
 
 
-    //for all three cards
-
-    //learning card
-    &__learning
-
+//name of the card
+    &__name
     {
-        position: relative;
-    
         
-    
-    }
-
-//when we hover on learning card
-    &__learning:hover &__img{
-        transform: scale(1.2);
-    }
-
-
-  
-    //event card
-    &__event
-
-    {
-        position: relative;
-    
-    }
-
- 
-    //when we hover on event card
-    &__event:hover &__img{
-        transform: scale(1.2);
-    }
-
-
-
- 
-    //club card
-    &__club
-
-    {
-        position: relative;
-
-    }
-    
-      
-    //when we hover on club card
-    &__club:hover &__img{
-        transform: scale(1.2);
-    }
-
-
-
-
-
-    //the name part of the card
-    &__title
-    {  
         z-index: 2;
-         position:absolute;
+        position:absolute;
         background-color:$color-black;
         color: $color-white;
         text-transform: uppercase;
@@ -132,40 +82,8 @@
         box-shadow: 0 1rem 3rem rgba($color-black, 0.55);
         padding: 2rem;
 
-
-        //when hover the title part it will scale
-        &:hover{
-            transform: scale(1.1);
-             cursor: default;
-             transition: all .2s;
-
-            
-        }
-
-    
-
     }
 
-    //the paragrapgh part
-    &__text
-    {
-      
-        position: absolute;
-        top: 25rem;
-        padding: 10rem 2rem 6rem 2rem;//top right bottom left
-        background-color:$color-white;
-        font-size: 1.6rem;
-        font-weight: 500;
-
-        
-    }
-
-
-    //when we hover on the info section the cursor will we default
-    &:hover{
-        cursor: default;
-    }
-    
 
 
 }
