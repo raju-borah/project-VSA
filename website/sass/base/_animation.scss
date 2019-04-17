@@ -10,7 +10,6 @@
   }
 }
 
-
 .scale {
   transition: all 2s;
   transform: scale(0.6);
@@ -23,5 +22,20 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes change {
+  0% {
+    background-image: url("../img/error.png");
+  }
+  20% {
+    background-image: url("../img/error-1.png");
+  }
+  40% {
+    background-image: url("../img/error-2.png");
+  }
+  100% {
+    background-image: url("../img/error-2.png");
   }
 }

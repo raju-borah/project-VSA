@@ -16,6 +16,16 @@
   to {
     opacity: 1; } }
 
+@keyframes change {
+  0% {
+    background-image: url("../img/error.png"); }
+  20% {
+    background-image: url("../img/error-1.png"); }
+  40% {
+    background-image: url("../img/error-2.png"); }
+  100% {
+    background-image: url("../img/error-2.png"); } }
+
 *,
 *::after,
 *::before {
@@ -1500,18 +1510,9 @@ img {
   height: 100%; }
 
 .bgcontain {
-  background-image: url("../img/error.jpg");
   width: 100%;
-  height: 100vh;
-  border: 2px solid black; }
-  .bgcontain__hove {
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/error-1.jpg");
-    display: none;
-    border: 2px solid black; }
-  .bgcontain:hover .bgcontain__hove {
-    display: block; }
+  height: 90.5vh;
+  animation: change steps(1) 5s infinite; }
 
 .progressbox {
   position: relative;
