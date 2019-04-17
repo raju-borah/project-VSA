@@ -5,7 +5,7 @@
     //for the background image in footer section
     &__back
     {
-        background-image: linear-gradient(to right bottom,rgba($color-black, 0.800),rgba($color-black, 0.500)),url('/img/foot.jpg');
+        background-image: linear-gradient(to right bottom,rgba($color-black, 0.800),rgba($color-black, 0.500)),url('../img/foot.jpg');
         width: 100%;//width of the division
         height: 55rem;//the heightof the divion 
         background-size: 100% 100%;//height and width of the image to fit in the conatiner
