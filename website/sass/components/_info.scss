@@ -51,8 +51,12 @@
 {
     background-color: $color-grey-light-1;
     position: relative;
+    transition: all .6s;
 
    
+    &:hover{
+        transform: rotateY(180deg);
+    }
     //to adjust the image
     &__img {
     position: absolute;
