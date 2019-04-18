@@ -23,3 +23,20 @@ list-style-type: none;
 &--items{
     margin:2rem;
 }}
+
+
+//colours for all categories
+.colorlearn
+{
+    background-color: $color-primary-dark;
+}
+
+.colorevent
+{
+    background-color:  $color-tertiary-dark;
+}
+
+.colorclub
+{
+    background-color: $color-secondary-dark;
+}
