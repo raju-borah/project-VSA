@@ -250,7 +250,8 @@ border-radius for curved end of button
       padding: 1.2rem;
       background-color: #2998ff;
       position: relative;
-      left: 16%;
+      margin-top: 2rem;
+      left: 14%;
       width: 70%; }
     .btn--green--logout {
       font-size: 1.8rem;
@@ -1154,11 +1155,11 @@ img {
     right: 2rem; }
   .login__container {
     position: absolute;
-    width: 33%;
+    width: 50rem;
     height: 80vh;
     padding: 1rem;
     top: 10rem;
-    left: 33%;
+    left: 31%;
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: 0.55rem; }
