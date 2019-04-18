@@ -23,8 +23,8 @@
     width: 50%;
     top: 73.5%;
     left: 0;
-    &--dashboard{
-       box-shadow: 1rem 1rem 5rem rgba($color-tertiary-dark-2,.66);
+    &--dashboard {
+      box-shadow: 1rem 1rem 5rem rgba($color-tertiary-dark-2, 0.66);
     }
   }
   // division for storing the video info
@@ -34,11 +34,12 @@
     width: 100%;
     // fot the title
     &--title {
-      font-size: 2.1rem;
-      font-weight: 1000;
-      color: $color-grey-dark-3;
+      font-size: 2.12rem;
+
+      font-weight: bold;
+      color: $color-primary-light;
     }
-    //
+    //descrpition of the video uploaded...
     &--des {
       height: 50rem;
     }
@@ -50,9 +51,9 @@
     width: 100%;
     background-color: red;
   }
-  &:hover{
-      transition: all .5s;
-      transform: translateY(-.5rem);
+  &:hover {
+    transition: all 0.5s;
+    transform: translateY(-0.1rem);
   }
   // when hovered thw delete video display
   &:hover .videodelete {

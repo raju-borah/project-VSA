@@ -18,123 +18,127 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
         integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 
+        <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
 
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+      
+        <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
     <title>Video sharing web appllication</title>
 </head>
 
 <body>
-   <!-- navigation bar -->
-   <div class="navigationbar">
+    <!-- navigation bar -->
+    <div class="navigationbar">
 
-    <!-- name of the Application -->
-    <div class="navbarfont navigationbar--left">
-        <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
-        <a href="home.html" class="navbar_items">Vidshare </a>
-    </div>
-
-    <!-- for right option such as search, user profile, upload -->
-    <div class="navbarfont navigationbar--right">
-
-        <!--Search button-->
-        
-        <div class="search">
-            <input type="text" placeholder="Search" class="search__input" required>
-            <button type="button" class="search__btn" id="searchButton">
-                <i class="navbar_items fa fa-search search__icon" aria-hidden="true"></i>
-            </button>
+        <!-- name of the Application -->
+        <div class="navbarfont navigationbar--left">
+            <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
+            <a href="home.html" class="navbar_items">Vidshare </a>
         </div>
-        <!--seacrh button end-->
 
-        <!-- user button -->
+        <!-- for right option such as search, user profile, upload -->
+        <div class="navbarfont navigationbar--right">
 
-        <button type="button" class="navbar_items navbar_items--icon userbutton"><i
-                class="fas fa-user-circle"></i></button>
-        <div class="usercontainer">
+            <!--Search button-->
 
-            <!-- if user signed the following div will be displayed -->
-            <div class="signincontainer">
-                <img src="img/icons/man.png" class="signincontainer__img" alt="">
-                <ul class="ul__list">
-                    <li class="ul__list--items">
-                        <h1 class="accountHolderName">Raju Moni Borah</h1>
-                    </li>
-                    <li class="ul__list--items">
-                        <h2 class="accountHolderId">cs16msiit020@kazirangauniversity.in</h2>
-                    </li>
-                    <li class="ul__list--items"><a href="settings.html" class="list--link font-small"> Account</a>
-                        &nbsp;
+            <div class="search">
+                <input type="text" placeholder="Search" class="search__input" required>
+                <button type="button" class="search__btn" id="searchButton">
+                    <i class="navbar_items fa fa-search search__icon" aria-hidden="true"></i>
+                </button>
+            </div>
+            <!--seacrh button end-->
 
-                        <a href="dashboard.html" class="list--link font-small">My videos</a></li>
+            <!-- user button -->
 
-                    <!-- list item for progress bar -->
-                    <li class="ul__list--items ul__list--items--progress ">
-                        <!-- line  128  navigationbar.scsss  -->
-                        <div class="progressbox">
-                            <h4 class="progressbox__text">FILENAME</h4>
-                            <progress class="progressbox__bar" value="50" max="100"></progress>
-                            <div class="progressbox__percentage">50%</div>
-                            <div class="progressbox__btn">
-                                <button type="button" class="progressbox__play vidbtn"><i
-                                        class="fas fa-play-circle"></i></button>
-                                <button type="button" class="progressbox__pause vidbtn"><i
-                                        class="far fa-pause-circle"></i></button>
-                                <button type="button" class="progressbox__cancel vidbtn"><i
-                                        class="far fa-window-close"></i></button>
+            <button type="button" class="navbar_items navbar_items--icon userbutton"><i
+                    class="fas fa-user-circle"></i></button>
+            <div class="usercontainer">
+
+                <!-- if user signed the following div will be displayed -->
+                <div class="signincontainer">
+                    <img src="img/icons/man.png" class="signincontainer__img" alt="">
+                    <ul class="ul__list">
+                        <li class="ul__list--items">
+                            <h1 class="accountHolderName">Raju Moni Borah</h1>
+                        </li>
+                        <li class="ul__list--items">
+                            <h2 class="accountHolderId">cs16msiit020@kazirangauniversity.in</h2>
+                        </li>
+                        <li class="ul__list--items"><a href="settings.html" class="list--link font-small"> Account</a>
+                            &nbsp;
+
+                            <a href="dashboard.html" class="list--link font-small">My videos</a></li>
+
+                        <!-- list item for progress bar -->
+                        <li class="ul__list--items ul__list--items--progress ">
+                            <!-- line  128  navigationbar.scsss  -->
+                            <div class="progressbox">
+                                <h4 class="progressbox__text">FILENAME</h4>
+                                <progress class="progressbox__bar" value="50" max="100"></progress>
+                                <div class="progressbox__percentage">50%</div>
+                                <div class="progressbox__btn">
+                                    <button type="button" class="progressbox__play vidbtn"><i
+                                            class="fas fa-play-circle"></i></button>
+                                    <button type="button" class="progressbox__pause vidbtn"><i
+                                            class="far fa-pause-circle"></i></button>
+                                    <button type="button" class="progressbox__cancel vidbtn"><i
+                                            class="far fa-window-close"></i></button>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
 
 
-                    <li class="ul__list--items"><button type="button"
-                            class="btn btn--green btn--green--logout">Logout</button></li>
+                        <li class="ul__list--items"><button type="button"
+                                class="btn btn--green btn--green--logout">Logout</button></li>
 
 
-                </ul>
-            </div>
-            <!-- if user is signed out then -->
-            <div class="notsignincontainer">
-                <div class="notsignincontainer__imgdiv">
-                    <img class="notsignincontainer__img" src="img/display.jpg" alt="">
+                    </ul>
                 </div>
-                <ul class="ul__list">
-                    <li><a href="login.html" class="btn btn--front">login</a>
-                        <a href="signup.html" class="btn btn--front">Signup</a></li>
-                </ul>
-            </div>
+                <!-- if user is signed out then -->
+                <div class="notsignincontainer">
+                    <div class="notsignincontainer__imgdiv">
+                        <img class="notsignincontainer__img" src="img/display.jpg" alt="">
+                    </div>
+                    <ul class="ul__list">
+                        <li><a href="login.html" class="btn btn--front">login</a>
+                            <a href="signup.html" class="btn btn--front">Signup</a></li>
+                    </ul>
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
-<!-- ending of navigation bar -->
+    <!-- ending of navigation bar -->
 
 
     <!-- play -->
     <div class="player">
 
         <div class="player__container">
-            <video controls class="videoplayer">
-                <source src="img/sample.mp4" type="video/mp4">
-            </video>
-        
-        </div>
-        <div class="player__suggestedvideo">
-                <h1>&nbsp;&nbsp; Suggested Videos</h1>
-                <!--list define is utilities -->
-                <ul class="list">
-                    <li class="list--items">item 1
-                    </li>
-                    <li class="list--items">item 2 
-                    </li>
-                    <li class="list--items">item 3 
-                    </li>
-                    <li class="list--items">item 4 
-                    </li>
-                </ul>
+            <div class="player__container--1">
+              <video id="my-video" class="video-js vjs-default-skin vjs-big-play-centered " controls preload="none"
+             data-setup='{"fluid":true}'>
+              <source src="img/Avicii.mp4" type="video/mp4">
+             
+                <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
+            </video>    
             </div>
-        <div class="videoinfo">
+          
+          
+          
+       
+        </div>
+        <div class="play__grid">
+            <!-- video titles and descrptions -->
+            <div class="videoinfo">
                 <h1 class="font-medium" id="video-title">JavaScript</h1>
                 <h2 class="font-small" id="video-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Rerum recusandae animi, nostrum,
@@ -142,14 +146,53 @@
                     assumenda vitae aliquam?</h2>
 
             </div>
-
+            <!-- suggested videos -->
+            <div class="play__grid--suggest">
+                <h1>&nbsp;&nbsp; Suggested Videos</h1>
+                <!--list define is utilities -->
+                <ul class="list">
+                    <li class="list--items">item 1
+                    </li>
+                    <li class="list--items">item 2
+                    </li>
+                    <li class="list--items">item 3
+                    </li>
+                    <li class="list--items">item 4
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- comment section -->
             <div class="video__comments">
-                <h1>Comments</h1>
+                <h1>Comments</h1>  
+                 <ul class="list">
+                        <li class="list--items">item 1
+                        </li>
+                        <li class="list--items">item 2
+                        </li>
+                        <li class="list--items">item 3
+                        </li>
+                        <li class="list--items">item 4
+                        </li>
+                        
+                    </ul>   <ul class="list">
+                            <li class="list--items">item 1
+                            </li>
+                            <li class="list--items">item 2
+                            </li>
+                            <li class="list--items">item 3
+                            </li>
+                            <li class="list--items">item 4
+                            </li>
+                            
+                        </ul>
 
             </div>
-        
+        </div>
+
     </div>
 
+    <script src="https://vjs.zencdn.net/7.4.1/video.js"></script>
     <!-- display js -->
     <script src="js/display.js"></script>
 </body>
