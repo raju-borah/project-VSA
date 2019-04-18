@@ -1297,8 +1297,8 @@ img {
     padding: 1rem;
     padding-top: 4rem;
     display: grid;
-    grid-template-rows: repeat(1, 1fr);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(minmax(150px, max-content));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 8rem;
     padding: 10rem;
     padding-left: 15rem;
@@ -1306,28 +1306,40 @@ img {
   .dashboard__vcard {
     width: 100%;
     height: 100%;
-    border: 1px solid black; }
+    border: 0.1rem solid black;
+    box-shadow: 1rem 1rem 1rem rgba(23, 45, 68, 0.36); }
+    .dashboard__vcard:hover .dashboard__vcard--tag {
+      transition: all .5s;
+      width: 100%;
+      background-color: red; }
+    .dashboard__vcard:hover .videodelete {
+      display: inline; }
     .dashboard__vcard--img {
       width: 100%;
       height: 20rem;
       background-image: url("/img/error-1.png");
-      background-size: cover; }
+      background-size: cover;
+      cursor: pointer; }
     .dashboard__vcard--tag {
-      display: inline;
       font-size: 2rem;
       font-weight: 700;
       color: white;
       padding: 1rem;
       background-color: #2998ff;
       position: relative;
-      top: -4rem;
+      width: 50%;
+      top: 73.5%;
       left: 0; }
     .dashboard__vcard__info {
       padding: 2rem;
-      font-size: 1.7rem; }
+      font-size: 1.7rem;
+      width: 100%; }
       .dashboard__vcard__info--title {
-        font-weight: 900;
-        color: #006064; }
+        font-size: 2.1rem;
+        font-weight: 1000;
+        color: #333; }
+      .dashboard__vcard__info--des {
+        height: 50rem; }
 
 .timestamp {
   font-size: 1.4rem; }
@@ -1348,6 +1360,9 @@ img {
     transform: translateY(-0.2rem); }
 
 .videodelete {
+  background: transparent;
+  color: #fff;
+  padding-top: .77rem;
   display: none; }
 
 .blur {
@@ -1375,10 +1390,10 @@ img {
     position: absolute;
     padding: 1rem;
     top: 8rem;
-    left: -.1rem;
+    left: -0.1rem;
     font-weight: 700; }
   .deletemsgbox__yes {
-    margin: .55rem;
+    margin: 0.55rem;
     padding: 1rem;
     font-weight: 700;
     position: relative;
@@ -1387,7 +1402,7 @@ img {
     width: 5rem;
     transition: all 11s; }
   .deletemsgbox__no {
-    margin: .55rem;
+    margin: 0.55rem;
     padding: 1rem;
     font-weight: 700;
     position: relative;
