@@ -1301,6 +1301,7 @@ img {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 8rem;
     padding: 10rem;
+    padding-top: 6rem;
     padding-left: 15rem;
     padding-right: 15rem; }
   .dashboard__vcard {
