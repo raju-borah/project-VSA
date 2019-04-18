@@ -12,7 +12,7 @@
     margin-left: 8rem;
     color: $color-white;
   }
-  // grid
+  // grid layout for the dashboard
   &__vcontainer {
     padding: 1rem;
     padding-top: 4rem;
@@ -25,58 +25,16 @@
     padding-left: 15rem;
     padding-right: 15rem;
   }
-  // for each video the info is hold by the vcard division
-  &__vcard {
-    width: 100%;
-    height: 100%;
-    border: 0.1rem solid black;
-    box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
-    &:hover .dashboard__vcard--tag{
-      transition: all .5s;
-      width: 100%;
-      background-color: red;
-    }
-    &:hover .videodelete {
-      display: inline;
-    }
-    &--img {
-      width: 100%;
-      height: 20rem;
-      background-image: url("/img/error-1.png");
-      background-size: cover;
-      cursor: pointer;
-      
-    
-     
-    }
-    &--tag {
-      font-size: 2rem;
-      font-weight: 700;
-      color: white;
-      padding: 1rem;
-      background-color: $color-tertiary-light;
-      position: relative;
-      width: 50%;
-      top: 73.5%;
-      left: 0;
-    }
+  // the video card stored in video--card.scss--->
 
-    &__info {
-      padding: 2rem;
-      font-size: 1.7rem;
+}
+// the delete button is hidden the pointer is hover to the video division
+.videodelete {
+  background: transparent;
+  color: $color-white;
+  padding-top: .77rem;
+  display: none;
 
-      width: 100%;
-      &--title {
-        font-size: 2.1rem;
-        font-weight: 1000;
-        color: $color-grey-dark-3;
-      }
-      &--des {
-        height: 50rem;
-      }
-     
-    }
-  }
 }
 
 // for the timpestamp of the video
@@ -101,14 +59,7 @@
     transform: translateY(-0.2rem);
   }
 }
-// the delete button is hidden the pointer is hover to the video division
-.videodelete {
-  background: transparent;
-  color: $color-white;
-  padding-top: .77rem;
-  display: none;
 
-}
 // blur effect when delete confirmation message box appears
 .blur {
   filter: blur(2px);
