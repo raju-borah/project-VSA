@@ -1,4 +1,6 @@
 #project-VSA
+<!-- install video.js -->
+npm install video.js
 
 signin form id's:
 ------------------
@@ -138,4 +140,9 @@ New AOS library added
  image name -> "img/foot.jpg"
  
 
+..................................................
+Grid used for the story section with 3 cards view
 
+.story > main section grid name with 2 rows
+
+.cardsgrid > grid for the cards dyanmic row and column

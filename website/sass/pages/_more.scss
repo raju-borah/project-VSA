@@ -2,7 +2,7 @@
 .morehead
 {
     position: sticky;
-    top: 7rem;
+    top: 0rem;
     z-index: 2;
 
     button:focus
@@ -15,7 +15,8 @@
 
     &__back
     {
-        top:7rem;
+        position: relative;
+        top:0rem;
         width: 100%;
         height: 8rem;
         font-size: 6rem;
