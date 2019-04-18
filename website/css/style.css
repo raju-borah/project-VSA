@@ -16,6 +16,16 @@
   to {
     opacity: 1; } }
 
+@keyframes change {
+  0% {
+    background-image: url("../img/error.png"); }
+  20% {
+    background-image: url("../img/error-1.png"); }
+  40% {
+    background-image: url("../img/error-2.png"); }
+  100% {
+    background-image: url("../img/error-2.png"); } }
+
 *,
 *::after,
 *::before {
@@ -116,6 +126,12 @@ iframe {
   border-radius: 2rem;
   overflow: hidden; }
 
+.videoplayer {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  overflow: hidden; }
+
 .form {
   margin: 3rem;
   padding: 2rem;
@@ -143,7 +159,7 @@ iframe {
     font-size: 2rem;
     border: 0.1rem; }
     .form__input__login {
-      width: 68%;
+      width: 74%;
       height: 4rem;
       position: relative;
       background: transparent;
@@ -233,7 +249,9 @@ border-radius for curved end of button
       border-radius: 4rem;
       padding: 1.2rem;
       background-color: #2998ff;
-      left: 5rem;
+      position: relative;
+      margin-top: 2rem;
+      left: 14%;
       width: 70%; }
     .btn--green--logout {
       font-size: 1.8rem;
@@ -837,6 +855,49 @@ border-radius for curved end of button
     .team__link:hover {
       color: rgba(0, 0, 0, 0.7); }
 
+.vcard {
+  width: 100%;
+  height: 100%;
+  border: 0.1rem solid black;
+  box-shadow: 1rem 1rem 1rem rgba(23, 45, 68, 0.36); }
+  .vcard--img {
+    width: 100%;
+    height: 20rem;
+    background-image: url("/img/error-1.png");
+    background-size: cover;
+    cursor: pointer; }
+  .vcard--tag {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    padding: 1rem;
+    background-color: #2998ff;
+    position: relative;
+    width: 50%;
+    top: 73.5%;
+    left: 0; }
+    .vcard--tag--dashboard {
+      box-shadow: 1rem 1rem 5rem rgba(23, 45, 68, 0.66); }
+  .vcard__info {
+    padding: 2rem;
+    font-size: 1.7rem;
+    width: 100%; }
+    .vcard__info--title {
+      font-size: 2.1rem;
+      font-weight: 1000;
+      color: #333; }
+    .vcard__info--des {
+      height: 50rem; }
+  .vcard:hover .vcard--tag--dashboard {
+    transition: all 0.5s;
+    width: 100%;
+    background-color: red; }
+  .vcard:hover {
+    transition: all .5s;
+    transform: translateY(-0.5rem); }
+  .vcard:hover .videodelete {
+    display: inline; }
+
 .footer {
   position: relative; }
   .footer__back {
@@ -1114,11 +1175,11 @@ img {
     right: 2rem; }
   .login__container {
     position: absolute;
-    width: 32%;
+    width: 50rem;
     height: 80vh;
     padding: 1rem;
     top: 10rem;
-    left: 50rem;
+    left: 31%;
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: 0.55rem; }
@@ -1250,41 +1311,28 @@ img {
     background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
     padding: 2rem; }
   .dashboard__title {
-    margin-left: 7rem;
+    margin-left: 8rem;
     color: #fff; }
   .dashboard__vcontainer {
     padding: 1rem;
-    padding-top: 4rem; }
-  .dashboard__list {
-    list-style-type: none;
-    padding-left: 8rem; }
-    .dashboard__list--items {
-      background-color: #eee;
-      margin-top: 3rem;
-      width: 89%;
-      border-radius: 1.5rem;
-      border: 0.1rem solid #012A57; }
-      .dashboard__list--items:hover {
-        box-shadow: 0 1rem 1rem rgba(1, 42, 87, 0.66); }
-      .dashboard__list--items:hover .videodelete {
-        display: block; }
-  .dashboard__vcard {
-    width: 100%;
-    height: 30rem;
-    padding: 2.5rem;
-    padding-left: 8rem; }
-  .dashboard__video {
-    width: 25%;
-    height: 25rem;
-    float: left; }
-  .dashboard__description {
-    width: 75%;
-    height: 25rem;
-    float: left;
-    padding: 3rem; }
-    .dashboard__description--title {
-      font-weight: 900;
-      color: #006064; }
+    padding-top: 4rem;
+    display: grid;
+    grid-template-rows: repeat(minmax(150px, max-content));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 8rem;
+    padding: 10rem;
+    padding-top: 6rem;
+    padding-left: 15rem;
+    padding-right: 15rem; }
+
+.videodelete {
+  background: transparent;
+  color: #fff;
+  padding-top: .77rem;
+  display: none; }
+
+.timestamp {
+  font-size: 1.4rem; }
 
 .floating--btn {
   position: absolute;
@@ -1300,9 +1348,6 @@ img {
   .floating--btn:hover {
     background-color: #012A57;
     transform: translateY(-0.2rem); }
-
-.videodelete {
-  display: none; }
 
 .blur {
   filter: blur(2px);
@@ -1329,10 +1374,10 @@ img {
     position: absolute;
     padding: 1rem;
     top: 8rem;
-    left: -.1rem;
+    left: -0.1rem;
     font-weight: 700; }
   .deletemsgbox__yes {
-    margin: .55rem;
+    margin: 0.55rem;
     padding: 1rem;
     font-weight: 700;
     position: relative;
@@ -1341,7 +1386,7 @@ img {
     width: 5rem;
     transition: all 11s; }
   .deletemsgbox__no {
-    margin: .55rem;
+    margin: 0.55rem;
     padding: 1rem;
     font-weight: 700;
     position: relative;
@@ -1368,24 +1413,15 @@ img {
 .player {
   width: 100%;
   height: 100%;
-  padding: 2rem 4rem; }
+  display: grid;
+  grid-template-rows: minmax(500px, max-content) minmax(700px, max-content);
+  grid-template-columns: 3fr minmax(200px, 1fr);
+  padding: 3rem;
+  grid-gap: 5rem; }
   .player__container {
-    width: 75%;
-    height: 100%;
-    float: left;
-    padding-left: 4rem; }
+    background-color: greenyellow; }
   .player__suggestedvideo {
-    margin-left: 3rem;
-    width: 22%;
-    height: 100%;
-    float: left;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.33); }
-
-.videoplayer {
-  width: 960px;
-  height: 540px;
-  border: none;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.33); }
+    background-color: red; }
 
 .videoinfo {
   width: 100%;
@@ -1478,18 +1514,9 @@ img {
   height: 100%; }
 
 .bgcontain {
-  background-image: url("../img/error.jpg");
   width: 100%;
-  height: 100vh;
-  border: 2px solid black; }
-  .bgcontain__hove {
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/error-1.jpg");
-    display: none;
-    border: 2px solid black; }
-  .bgcontain:hover .bgcontain__hove {
-    display: block; }
+  height: 90.5vh;
+  animation: change steps(1) 5s infinite; }
 
 .progressbox {
   position: relative;

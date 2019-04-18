@@ -51,7 +51,9 @@ border-radius for curved end of button
       border-radius: 4rem;
       padding: 1.2rem;
       background-color: $color-tertiary-light;
-      left: 5rem;
+      position: relative;
+      margin-top: 2rem;
+      left: 14%;
       width: 70%;
     }
 

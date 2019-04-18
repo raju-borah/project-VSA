@@ -1,0 +1,61 @@
+.vcard {
+  // for each video the info is hold by the vcard division
+  width: 100%;
+  height: 100%;
+  border: 0.1rem solid black;
+  box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
+  // for the image division
+  &--img {
+    width: 100%;
+    height: 20rem;
+    background-image: url("/img/error-1.png");
+    background-size: cover;
+    cursor: pointer;
+  }
+  // tag for identifying the type of video category
+  &--tag {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    padding: 1rem;
+    background-color: $color-tertiary-light;
+    position: relative;
+    width: 50%;
+    top: 73.5%;
+    left: 0;
+    &--dashboard{
+       box-shadow: 1rem 1rem 5rem rgba($color-tertiary-dark-2,.66);
+    }
+  }
+  // division for storing the video info
+  &__info {
+    padding: 2rem;
+    font-size: 1.7rem;
+    width: 100%;
+    // fot the title
+    &--title {
+      font-size: 2.1rem;
+      font-weight: 1000;
+      color: $color-grey-dark-3;
+    }
+    //
+    &--des {
+      height: 50rem;
+    }
+  }
+
+  // the tag width increases with change in bgcolor
+  &:hover .vcard--tag--dashboard {
+    transition: all 0.5s;
+    width: 100%;
+    background-color: red;
+  }
+  &:hover{
+      transition: all .5s;
+      transform: translateY(-.5rem);
+  }
+  // when hovered thw delete video display
+  &:hover .videodelete {
+    display: inline;
+  }
+}
