@@ -11,56 +11,65 @@
 
   }
   &__title{
-    margin-left: 7rem;
+    margin-left: 8rem;
     color: $color-white;
   }
+  // grid
   &__vcontainer {
     padding: 1rem;
     padding-top: 4rem;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8rem;
+    padding: 10rem;
+    padding-left: 15rem;
+    padding-right: 15rem;
   }
-  &__list {
-    list-style-type: none;
-    padding-left: 8rem;
-
-    &--items {
-      background-color: $color-grey-light-2;
-
-      margin-top: 3rem;
-      width: 89%;
-      border-radius: 1.5rem;
-      border: 0.1rem solid $color-tertiary-dark-1;
-      &:hover {
-        box-shadow: 0 1rem 1rem rgba($color-tertiary-dark-1, 0.66);
-      }
-      &:hover .videodelete {
-        display: block;
-      }
-    }
-  }
+  // for each video the info is hold by the vcard division
   &__vcard {
     width: 100%;
-    height: 30rem;
-    padding: 2.5rem;
-    padding-left: 8rem;
-  }
-  &__video {
-    width: 25%;
-    height: 25rem;
-    float: left;
-  }
-  &__description {
-    width: 75%;
-    height: 25rem;
-    float: left;
-    padding: 3rem;
+    height: 100%;
+    border: 1px solid black;
+    &--img{
+      width: 100%;
+      height: 20rem;;
+      background-image: url('/img/error-1.png');
+      background-size: cover;
+    }
+    &--tag{
+      display: inline;
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      padding: 1rem;
+      background-color: $color-tertiary-light;
+      position: relative;
+      top: -4rem;
+      left: 0;
+    }
 
-    &--title{
-      font-weight: 900;
-      color: $color-tertiary-light-2;
+    &__info {
+      padding: 2rem;
+      font-size: 1.7rem;
+      
+      &--title{
+        font-weight: 900;
+        color: $color-tertiary-light-2;
+      }
     }
   }
+
+}  
+
+
+// for the timpestamp of the video
+.timestamp{
+  font-size: 1.4rem;
 }
 
+
+// for the upload button
 .floating--btn {
   position: absolute;
   border-radius: 2rem;
