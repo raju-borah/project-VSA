@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!--AOS SCRIPT-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- google font style -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <!-- Icon on Title  -->
+
+     <!-- google font style -->
+     <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Philosopher|Boogaloo" rel="stylesheet">
+     <!-- Icon on Title  -->
 
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
@@ -115,7 +114,8 @@
         <!-- floating upload button -->
         <div class="dashboard__header ">
             <!-- the upload button on right side -->
-            <a href="#upload" class="floating--btn"><i class="fas fa-upload">upload</i></a>
+            <a href="upload.html" class="floating--btn"><i class="fas fa-upload">upload</i></a>
+            <!-- the title  -->
             <h1 class="font-medium dashboard__title">My videos &nbsp;<i class="fas fa-tasks font-small"></i></h1>
         </div>
 
@@ -161,44 +161,6 @@
 
     </div>
 
-    <!-- upload section  starting-->
-    <div class="upload" id="upload">
-        <!-- container -->
-        <div class="upload__container">
-            <!-- upload videos section -->
-            <div class="upload__videos--card u-center-text ">
-                <!-- anchor tag  -->
-                <a href="#" class="btn--close">&times;</a>
-
-                <!-- heading -->
-                <h1 class="font-medium u-margin-bottom-small">Upload Videos</h1>
-                <!-- upload button -->
-                <input type="file" id="upload-file" accept="video/*" hidden="hidden" />
-                <!-- text to display the file name to be uploaded -->
-                <span id="custom-text">No file Choosen yet !</span>
-                <button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A
-                    FILE</button>
-
-
-                <!-- for title -->
-                <input type="text" class="form__input--upload form__input--upload--1" id="upload-title"
-                    placeholder="Title">
-                <!-- for description -->
-                <textarea class="form__input--upload form__input--upload--1" id="upload-description"
-                    placeholder="Description"></textarea>
-                <!-- for selecting the category -->
-                <select id="video-category" class="form__input--upload form__input--upload--2">
-                    <option value="Select Category" selected>Select Category</option>
-                    <option value="learning">Learning</option>
-                    <option value="Events">Events</option>
-                    <option value="Entertainment">Club activities</option>
-                </select>
-
-                <button class="btn btn--upload" type="submit" id="upload-video">Upload</button>
-            </div>
-        </div>
-    </div>
-    <!-- ending of upload section -->
 
 
 
