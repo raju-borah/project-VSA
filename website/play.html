@@ -6,22 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!--AOS SCRIPT-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- google font style -->
     <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Philosopher|Boogaloo" rel="stylesheet">
     <!-- Icon on Title  -->
-
-    <!--AOS-->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
         integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 
-    <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
-
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- videojs -->
     <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
 
     <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
@@ -116,15 +110,18 @@
     <!-- ending of navigation bar -->
 
 
-    <!-- play -->
+    <!-- play page when user click the video card thwn this page will open with respective video that user ha clicked -->
     <div class="player">
-
+        <!-- grid of video player -->
         <div class="player__container">
+            <!-- division of video player -->
             <div class="player__container--1">
+                <!-- video player of video.js -->
                 <video id="my-video" class="video-js vjs-big-play-centered vjs-default-skin" controls preload="none"
                     data-setup='{"fluid":true , "playbackRates": [1, 1.5, 2]} '>
+                    <!-- source willbe dynamic -->
                     <source src="img/sample.mp4" type="video/mp4">
-
+                        <!-- if the video cannot be played ... -->
                     <p class="vjs-no-js">
                         To view this video please enable JavaScript, and consider upgrading to a web browser that
                         <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
