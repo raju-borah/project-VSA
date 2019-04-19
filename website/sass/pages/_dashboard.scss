@@ -1,7 +1,6 @@
 .dashboard {
   width: 100%;
-  height: 100vh;
-  background-color: $color-grey-light-2;
+  height: auto;
 
   &__header {
     background-image: linear-gradient(to right, rgba($color-tertiary-light, 0.88), rgba($color-tertiary-dark-1, 0.88));

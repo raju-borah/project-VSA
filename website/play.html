@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
         integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 
-    <!-- custom css -->
-    <link rel="stylesheet" href="css/style.css">
+
     <!-- videojs -->
     <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
 
     <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
     <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
     <title>Video sharing web appllication</title>
 </head>
 
@@ -118,14 +118,9 @@
             <div class="player__container--1">
                 <!-- video player of video.js -->
                 <video id="my-video" class="video-js vjs-big-play-centered vjs-default-skin" controls preload="none"
-                    data-setup='{"fluid":true , "playbackRates": [1, 1.5, 2]} '>
+                    data-setup='{"fluid":true , "playbackRates": [1, 1.5, 2]}'>
                     <!-- source willbe dynamic -->
                     <source src="img/sample.mp4" type="video/mp4">
-                        <!-- if the video cannot be played ... -->
-                    <p class="vjs-no-js">
-                        To view this video please enable JavaScript, and consider upgrading to a web browser that
-                        <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                    </p>
                 </video>
             </div>
 
@@ -133,10 +128,16 @@
 
 
         </div>
+
+        <!-- grid for the below section -->
         <div class="play__grid">
             <!-- video titles and descrptions -->
             <div class="videoinfo">
-                <h1 class="font-medium" id="video-title">JavaScript</h1>
+
+                
+                <img class="profile--image" src="/img/man.png">
+
+                <h1 class="font-medium" id="video-title"> JavaScript</h1>
                 <h2 class="font-small" id="video-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Rerum recusandae animi, nostrum,
                     facilis dicta, excepturi atque dolore quam velit quas cum. Quae unde dolor doloremque delectus, qui
