@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!--AOS SCRIPT-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- google font style -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Philosopher|Boogaloo" rel="stylesheet">
     <!-- Icon on Title  -->
 
     <!-- font awesome -->
@@ -115,90 +114,55 @@
         <!-- floating upload button -->
         <div class="dashboard__header ">
             <!-- the upload button on right side -->
-            <a href="#upload" class="floating--btn"><i class="fas fa-upload">upload</i></a>
+            <a href="upload.html" class="floating--btn"><i class="fas fa-upload">upload</i></a>
+            <!-- the title  -->
             <h1 class="font-medium dashboard__title">My videos &nbsp;<i class="fas fa-tasks font-small"></i></h1>
         </div>
 
         <div class="dashboard__vcontainer">
             <!-- the videos uploaded by user will be displayed in this division along with the details -->
 
+            <!-- video cards -->
             <div class="vcard">
-
+                <!-- the thumbnail position  vcard 1 st part-->
                 <div class="vcard--img">
-                    <!-- the tag for video -->
-                    <h1 class="vcard--tag vcard--tag--dashboard">Learning <button type="button" class="videodelete u-end-text btn"><i
-                        class="fas fa-trash-alt font-small"></i></button>
+                    <!-- the tag for video  defining the category of video-->
+                    <h1 class="vcard--tag vcard--tag--dashboard">Learning
+                        <!-- the delete button  -->
+                        <button type="button" class="videodelete u-end-text btn"><i
+                                class="fas fa-trash-alt font-small"></i></button>
                     </h1>
-                   
-                </div>
 
+                </div>
+                <!-- the division that contain the information of the video .It is the second part of the vcard -->
                 <div class="vcard__info">
-                
-                    <div class="vcard__info--title">
+
+                    <div class="vcard__info--title ">
                         <!-- dynamiv title of the video -->
                         <span>
                             Fun way to Learn JavaScript.
-                        </span>
-                        <br>
-                        <!-- timestamp when the video was created -->
-                        <span class="timestamp font-small">Created on: 15-04-2019</span>
+                        </span>                        
                     </div>
-
+                    <!-- timestamp when the video was created -->
+                    <span class="timestamp font-small">Created on: 15-04-2019</span>
+                    <br>
                     <span style="font-weight: 550;">Description: </span>
                     <!-- dynamic descrptiob of the video -->
                     <span class="vcard__info--des">Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit.Suscipit sit, explicabo hic nostrum
-                     </span>
+                    </span>
 
 
                 </div>
 
             </div>
-                
-                                        
+            <!-- end of vcard -->
+
 
         </div>
 
     </div>
 
-    <!-- upload section  starting-->
-    <div class="upload" id="upload">
-        <!-- container -->
-        <div class="upload__container">
-            <!-- upload videos section -->
-            <div class="upload__videos--card u-center-text ">
-                <!-- anchor tag  -->
-                <a href="#" class="btn--close">&times;</a>
-
-                <!-- heading -->
-                <h1 class="font-medium u-margin-bottom-small">Upload Videos</h1>
-                <!-- upload button -->
-                <input type="file" id="upload-file" accept="video/*" hidden="hidden" />
-                <!-- text to display the file name to be uploaded -->
-                <span id="custom-text">No file Choosen yet !</span>
-                <button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A
-                    FILE</button>
-
-
-                <!-- for title -->
-                <input type="text" class="form__input--upload form__input--upload--1" id="upload-title"
-                    placeholder="Title">
-                <!-- for description -->
-                <textarea class="form__input--upload form__input--upload--1" id="upload-description"
-                    placeholder="Description"></textarea>
-                <!-- for selecting the category -->
-                <select id="video-category" class="form__input--upload form__input--upload--2">
-                    <option value="Select Category" selected>Select Category</option>
-                    <option value="learning">Learning</option>
-                    <option value="Events">Events</option>
-                    <option value="Entertainment">Club activities</option>
-                </select>
-
-                <button class="btn btn--upload" type="submit" id="upload-video">Upload</button>
-            </div>
-        </div>
-    </div>
-    <!-- ending of upload section -->
 
 
 

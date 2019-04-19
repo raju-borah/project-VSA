@@ -2,7 +2,7 @@
 // update note: change getElement to querySelector
 const realFileBtn = document.querySelector("#upload-file");
 const customBtn = document.querySelector("#choose-video");
-const customText = document.querySelector("#custom-text");
+const customText = document.querySelector(".custom-text");
 
 // when choose a file button clicked
 customBtn.addEventListener('click',function(){

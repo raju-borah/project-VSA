@@ -1,4 +1,6 @@
 #project-VSA
+<!-- install video.js -->
+npm install video.js
 
 signin form id's:
 ------------------

@@ -36,11 +36,12 @@
     width: 100%;
     // fot the title
     &--title {
-      font-size: 2.1rem;
-      font-weight: 1000;
-      color: $color-grey-dark-3;
+      font-size: 2.12rem;
+
+      font-weight: bold;
+      color: $color-primary-dark-1;
     }
-    //
+    //descrpition of the video uploaded...
     &--des {
       height: 50rem;
     }
@@ -50,11 +51,11 @@
   &:hover .vcard--tag--dashboard {
     transition: all 0.5s;
     width: 100%;
-    background-color: red;
+    background-color: $color-red;
   }
-  &:hover{
-      transition: all .5s;
-      transform: translateY(-.5rem);
+  &:hover {
+    transition: all 0.5s;
+    transform: translateY(-0.1rem);
   }
   // when hovered thw delete video display
   &:hover .videodelete {

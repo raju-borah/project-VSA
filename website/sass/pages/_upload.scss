@@ -1,51 +1,47 @@
-.upload
-{   
-    visibility: hidden;
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow-y: hidden;
-    z-index: 2;
-   
-    &__container
-    {
-        width: 100%;
-        height: 100vh;
-        padding: 15rem;
-        background-image: radial-gradient(rgba($color-tertiary-dark,0.27),rgba($color-black,0.38));
-        
-    }
-    &__videos--card
-    {   position: relative;
-        transform: translate(50%,0);
-        width: 50%;
-        border-radius: 1.5rem;
-        height:60vh;
-        padding: 1rem;
-        padding-top: 5rem;
-        border: 2px solid black;
-        box-shadow: 0 1rem 3rem $color-tertiary-dark-1;
-        background-color: $color-white;
-        
+// the upload section properties
+.upload {
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  display: grid;
+  background-image: radial-gradient(rgba($color-tertiary-dark-2, 0.67), rgba($color-grey-dark-3, 0.38));
 
-    }
-    
-    &:target {
-        opacity: 1;
-        visibility: visible;
-      
-      }
-}
-.btn--close {
-    text-decoration: none;
-    position: absolute;
-    top: 0;
-    right: 1.6rem;
-    z-index: 1;
-    color: $color-red;
-    font-weight: 300;
-    font-size: 4rem;
-   
+  //    the upload form container where all the details will be put
+  &__container {
+    justify-self: center;
+    align-self: center;
+    width: 50%;
+    height: auto;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    padding-top: 5rem;
+    border: 2px solid black;
+    box-shadow: 0 1rem 3rem $color-tertiary-dark-1;
+    background-color: $color-white;
   }
+}
+// for the close button in the upload form
+.btn--close {
+  text-decoration: none;
+  position: relative;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  top: 0;
+  left: 40%;
+  z-index: 1;
+  color: $color-red;
+  font-weight: 600;
+  font-size: 4rem;
+}
+// custom text
+.custom-text {
+  font-size: 2rem;
+  width: 24rem;
+  margin: 1rem;
+    position: relative;
+    left: 30%;
+  display: block;
+  text-overflow: ellipsis;
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}

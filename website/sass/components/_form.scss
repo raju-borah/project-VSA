@@ -85,14 +85,14 @@
       display: block;
       &--1 {
         border: none;
-        border-bottom: 0.2rem solid $color-primary-dark;
+        border-bottom: 0.2rem solid $color-tertiary-light;
       }
       &--2 {
-        border: 0.1rem solid $color-primary-dark;
+        border: 0.1rem solid $color-tertiary-light;
       }
 
       &:focus {
-        outline-color: $color-primary-dark;
+        outline-color: $color-tertiary-light;
       }
     }
   }
