@@ -27,6 +27,7 @@
         $color-primary-dark 30%,
         $color-tertiary-dark 60%,
          $color-secondary-dark 90%);
+     
 
     }
   
@@ -42,6 +43,7 @@
         border-style: none;
         color: $color-white;
         height: 8rem;
+        cursor: pointer;  
     
 
 
@@ -58,11 +60,13 @@
     &__learntext
     {
         font-size: 5rem;
-        top: 8rem;
+        top: 1.5rem;
         font-weight: 600;
         letter-spacing: 1rem;
         position: fixed;
         z-index: 2;
+        font-family: 'Averia Serif Libre', cursive;
+ 
 
 
     }
@@ -79,6 +83,7 @@
         border-style: none;
         color: $color-white;
         height: 8rem;
+        cursor: pointer;  
 
         &:hover{
             transition: all .4s;
@@ -93,12 +98,13 @@
     &__eventtext
     {
         font-size: 5rem;
-        top: 8rem;
+        top: 1.5rem;
         font-weight: 600;
         letter-spacing: 1rem;
         position: fixed;
         left: 69rem;
         z-index: 2;
+        font-family: 'Averia Serif Libre', cursive;
 
 
     }
@@ -113,6 +119,7 @@
         border-style: none;
         color: $color-white;
         height: 8rem;
+        cursor: pointer;  
     
     
         &:hover{
@@ -128,17 +135,76 @@
     &__clubtext
     {
         font-size: 5rem;
-        top: 8rem;
+        top: 1.5rem;
         right: 2rem;
         font-weight: 600;
         letter-spacing: 1rem;
         position: fixed;
+        font-family: 'Averia Serif Libre', cursive;
 
 
     }     
   
 
 }
+
+.morenav
+{
+    position: relative;
+    // setting zindex to 1 to be at top of other division or section
+    z-index: 1;
+    // setting width,height and background-color
+    width: 100%;
+    height: 7rem;
+    background-image: linear-gradient(120deg, 
+    $color-tertiary-dark-1 60%,
+    $color-tertiary-light 80%,
+);
+
+border-radius: .8rem;
+
+
+    left: 0;
+    padding: 1rem;
+    transition: all 0.3s ease;
+
+
+    &__right {
+        text-align: end;
+        width: 50%;    
+        float: right;
+        margin-right: .5rem;
+          }
+
+
+}
+
+.morebar_items{
+    //  settings font properties....
+ font-size: 3rem;
+ font-weight: 700;
+ color: $color-white;
+ margin-right: 3rem;
+  
+ &--icon{
+   font-size: 4.6rem;
+   top: 0;
+ }
+//  when hovered the following changes will be taking place 
+&:hover{
+    color:$color-primary-light;
+    text-shadow: 0 1rem 3rem $color-black; 
+    // when hovered the cursor will look like pointer
+    cursor: pointer;      
+}
+}    
+
+.homebutton{
+   @include buttonnav;
+   margin-right: 5rem;
+  
+  }
+
 
 .morecontainer
 {
@@ -147,6 +213,58 @@
 
     
 }
+
+
+
+
+//search button for more section
+.searchmore
+{
+    position: relative;
+    right: 18rem;
+    top: -1.8rem;
+    
+
+
+//input area of the searcg button
+  &__input
+  {
+    @include inputbox;
+
+    
+  }
+
+  //button of the search
+  &__btn
+  {
+    @include button;
+
+    background: $color-tertiary-dark;
+    
+    
+
+
+  }
+
+  //to set the search icon position
+  &__icon
+  {
+      position: relative;
+      top: -1.5rem;
+  }
+
+  //on hover on the search icon
+  &:hover &__input
+  {
+
+    width: 25rem;
+    color: $color-black;
+
+  }
+
+
+}
+
 
 
 

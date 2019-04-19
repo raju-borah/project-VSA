@@ -9,19 +9,8 @@
 //input area of the searcg button
   &__input
   {
-    position: absolute;
-    top: 20px;
-    right: 4.6rem;
-    box-sizing: border-box;
-    width: 0px;
-    height: 4.5rem;
-    padding: 0 20px;
-    outline: none;
-    font-size: 18px;
-    border-radius: 50px;
-    color: #29313a;
-    border: 3px solid rgba(46, 19, 199, 0.500);
-    transition: all 0.8s;
+    @include inputbox;
+
 
     
   }
@@ -29,21 +18,10 @@
   //button of the search
   &__btn
   {
-    position: absolute;
-    width: 4.59rem;
-    height: 4.59rem;
+  
+    @include button;
+
     background: $color-tertiary-light;
-    border-radius: 50%;
-    right: 4.6rem;
-    top: 2rem;
-    cursor: pointer;
-    text-align: center;
-    line-height: 80px;
-    font-size: 2rem;
-    color: #fff;
-    transition: all 0.1s;
-    border: none;
-    outline:none;
 
     
 
@@ -53,7 +31,7 @@
   //to set the search icon position
   &__icon
   {
-      position: relative;
+      position: absolute;
       top: -1.3rem;
   }
 

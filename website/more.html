@@ -10,7 +10,8 @@
     <!--AOS SCRIPT-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- google font style -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Philosopher|Boogaloo" rel="stylesheet">
+    <!-- Icon on Title  -->
     <!-- Icon on Title  -->
 
     <!--AOS-->
@@ -27,90 +28,7 @@
 
 <body>
 
-   <!-- navigation bar -->
-   <div class="navigationbar">
-
-    <!-- name of the Application -->
-    <div class="navbarfont navigationbar--left">
-        <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
-        <a href="home.html" class="navbar_items">Vidshare </a>
-    </div>
-
-    <!-- for right option such as search, user profile, upload -->
-    <div class="navbarfont navigationbar--right">
-
-        <!--Search button-->
-        
-        <div class="search">
-            <input type="text" placeholder="Search" class="search__input" required>
-            <button type="button" class="search__btn" id="searchButton">
-                <i class="navbar_items fa fa-search search__icon" aria-hidden="true"></i>
-            </button>
-        </div>
-        <!--seacrh button end-->
-
-        <!-- user button -->
-
-        <button type="button" class="navbar_items navbar_items--icon userbutton"><i
-                class="fas fa-user-circle"></i></button>
-        <div class="usercontainer">
-
-            <!-- if user signed the following div will be displayed -->
-            <div class="signincontainer">
-                <img src="img/icons/man.png" class="signincontainer__img" alt="">
-                <ul class="ul__list">
-                    <li class="ul__list--items">
-                        <h1 class="accountHolderName">Raju Moni Borah</h1>
-                    </li>
-                    <li class="ul__list--items">
-                        <h2 class="accountHolderId">cs16msiit020@kazirangauniversity.in</h2>
-                    </li>
-                    <li class="ul__list--items"><a href="settings.html" class="list--link font-small"> Account</a>
-                        &nbsp;
-
-                        <a href="dashboard.html" class="list--link font-small">My videos</a></li>
-
-                    <!-- list item for progress bar -->
-                    <li class="ul__list--items ul__list--items--progress ">
-                        <!-- line  128  navigationbar.scsss  -->
-                        <div class="progressbox">
-                            <h4 class="progressbox__text">FILENAME</h4>
-                            <progress class="progressbox__bar" value="50" max="100"></progress>
-                            <div class="progressbox__percentage">50%</div>
-                            <div class="progressbox__btn">
-                                <button type="button" class="progressbox__play vidbtn"><i
-                                        class="fas fa-play-circle"></i></button>
-                                <button type="button" class="progressbox__pause vidbtn"><i
-                                        class="far fa-pause-circle"></i></button>
-                                <button type="button" class="progressbox__cancel vidbtn"><i
-                                        class="far fa-window-close"></i></button>
-                            </div>
-                        </div>
-                    </li>
-
-
-                    <li class="ul__list--items"><button type="button"
-                            class="btn btn--green btn--green--logout">Logout</button></li>
-
-
-                </ul>
-            </div>
-            <!-- if user is signed out then -->
-            <div class="notsignincontainer">
-                <div class="notsignincontainer__imgdiv">
-                    <img class="notsignincontainer__img" src="img/display.jpg" alt="">
-                </div>
-                <ul class="ul__list">
-                    <li><a href="login.html" class="btn btn--front">login</a>
-                        <a href="signup.html" class="btn btn--front">Signup</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- ending of navigation bar -->
-
+  
 
 
     <div class="morehead">
@@ -138,62 +56,219 @@
 
 
 
+    
+    <!--nav bar for more page-->
+    <div class="morenav">
+        
+    
+            <!-- for right option such as usr, home button -->
+            <div class="morebarfont morenav__right">
+    
+                
+                <div class="searchmore">
+                    <input type="text" placeholder="searchmore" class="searchmore__input" required>
+                    <button type="button" class="searchmore__btn" id="searchmoreButton">
+                        <i class="navbar_items fa fa-search searchmore__icon" aria-hidden="true"></i>
+                    </button>
+                </div>
+    
+                     <!--home button-->
+          <button type="button" class="morebar_items morebar_items--icon homebutton">
+                            <i class="fas fa-home"></i></button>  
+
+
+                <!-- user button -->
+    
+            <button type="button" class="morebar_items morebar_items--icon userbutton"><i
+                     class="fas fa-user-circle"></i></button>
+
+                         
+
+                             
+                <div class="usercontainer">
+    
+                    <!-- if user signed the following div will be displayed -->
+                    <div class="signincontainer">
+                        <img src="img/icons/man.png" class="signincontainer__img" alt="">
+                        <ul class="ul__list">
+                            <li class="ul__list--items">
+                                <h1 class="accountHolderName">Raju Moni Borah</h1>
+                            </li>
+                            <li class="ul__list--items">
+                                <h2 class="accountHolderId">cs16msiit020@kazirangauniversity.in</h2>
+                            </li>
+                            <li class="ul__list--items"><a href="settings.html" class="list--link font-small"> Account</a>
+                                &nbsp;
+    
+                                <a href="dashboard.html" class="list--link font-small">My videos</a></li>
+    
+                            <!-- list item for progress bar -->
+                            <li class="ul__list--items ul__list--items--progress ">
+                                <!-- line  128  morenav.scsss  -->
+                                <div class="progressbox">
+                                    <h4 class="progressbox__text">FILENAME heloooooooooooooooooooooooooooooooooo</h4>
+                                    <progress class="progressbox__bar" value="50" max="100"></progress>
+                                    <div class="progressbox__percentage">50%</div>
+                                    <div class="progressbox__btn">
+                                        <button type="button" class="progressbox__play vidbtn"><i
+                                                class="fas fa-play-circle"></i></button>
+                                        <button type="button" class="progressbox__pause vidbtn"><i
+                                                class="far fa-pause-circle"></i></button>
+                                        <button type="button" class="progressbox__cancel vidbtn"><i
+                                                class="far fa-window-close"></i></button>
+                                    </div>
+                                </div>
+                            </li>
+    
+    
+                            <li class="ul__list--items"><button type="button"
+                                    class="btn btn--green btn--green--logout">Logout</button></li>
+    
+    
+                        </ul>
+                    </div>
+                    <!-- if user is signed out then -->
+                    <div class="notsignincontainer">
+                        <div class="notsignincontainer__imgdiv">
+                            <img class="notsignincontainer__img" src="img/display.jpg" alt="">
+                        </div>
+                        <ul class="ul__list">
+                            <li><a href="login.html" class="btn btn--front">login</a>
+                                <a href="signup.html" class="btn btn--front">Signup</a></li>
+                        </ul>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+        <!--navbar  end-->
+
+
+
     <div class="morecontainer">
 
-        
-        <div class="item">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-            <div class="item__name">
-                Basic Css tutorial
-            </div>
-            <div class="item__description">
-                learn some basic css commands and tricks to improve your absic css skills
-            </div>
-        </div>
+            <div class="learningBody grid2">
 
-        
-        <div class="item">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-            <div class="item__name">
-                Basic Css tutorial
-            </div>
-            <div class="item__description">
-                learn some basic css commands and tricks to improve your absic css skills
-            </div>
-        </div>
-
-        
-        <div class="item">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-            <div class="item__name">
-                Basic Css tutorial
-            </div>
-            <div class="item__description">
-                learn some basic css commands and tricks to improve your absic css skills
-            </div>
-        </div>
-
-        
-        <div class="item">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-            <div class="item__name">
-                Basic Css tutorial
-            </div>
-            <div class="item__description">
-                learn some basic css commands and tricks to improve your absic css skills
-            </div>
-        </div>
-
-        
-        <div class="item">
-            <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-            <div class="item__name">
-                Basic Css tutorial
-            </div>
-            <div class="item__description">
-                learn some basic css commands and tricks to improve your absic css skills
-            </div>
-        </div>
+                    <div class="vcard">
+                        <div class="vcard--img">
+                            <!-- the tag for video -->
+                            <!--new colours for all categories added in grid.scss-->
+                            <h1 class="vcard--tag vcard--tag colorlearn">Learning</h1>
+                        </div>
+            
+                        <div class="vcard__info">
+            
+                            <div class="vcard__info--title">
+                                <!-- dynamiv title of the video -->
+                                <span>
+                                    Fun way to Learn JavaScript.
+                                </span>
+                                <br>
+                                <!-- timestamp when the video was created -->
+                                <span class="timestamp font-small">Created on: 15-04-2019</span>
+                            </div>
+            
+                            <span style="font-weight: 550;">Description: </span>
+                            <!-- dynamic descrptiob of the video -->
+                            <span class="vcard__info--des">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                elit.Suscipit sit, explicabo hic nostrum
+                            </span>
+            
+            
+                        </div>
+                    </div>
+            
+            
+                    <div class="vcard">
+                        <div class="vcard--img">
+                            <!-- the tag for video -->
+                            <h1 class="vcard--tag vcard--tag colorlearn">Learning</h1>
+                        </div>
+            
+                        <div class="vcard__info">
+            
+                            <div class="vcard__info--title">
+                                <!-- dynamiv title of the video -->
+                                <span>
+                                    Fun way to Learn JavaScript.
+                                </span>
+                                <br>
+                                <!-- timestamp when the video was created -->
+                                <span class="timestamp font-small">Created on: 15-04-2019</span>
+                            </div>
+            
+                            <span style="font-weight: 550;">Description: </span>
+                            <!-- dynamic descrptiob of the video -->
+                            <span class="vcard__info--des">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                elit.Suscipit sit, explicabo hic nostrum
+                            </span>
+            
+            
+                        </div>
+            
+            
+                    </div>
+            
+                    <div class="vcard">
+                        <div class="vcard--img">
+                            <!-- the tag for video -->
+                            <h1 class="vcard--tag vcard--tag colorlearn">Learning</h1>
+                        </div>
+            
+                        <div class="vcard__info">
+            
+                            <div class="vcard__info--title">
+                                <!-- dynamiv title of the video -->
+                                <span>
+                                    Fun way to Learn JavaScript.
+                                </span>
+                                <br>
+                                <!-- timestamp when the video was created -->
+                                <span class="timestamp font-small">Created on: 15-04-2019</span>
+                            </div>
+            
+                            <span style="font-weight: 550;">Description: </span>
+                            <!-- dynamic descrptiob of the video -->
+                            <span class="vcard__info--des">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                elit.Suscipit sit, explicabo hic nostrum
+                            </span>
+                        </div>
+                    </div>
+            
+                    <div class="vcard">
+                        <div class="vcard--img">
+                            <!-- the tag for video -->
+                            <h1 class="vcard--tag vcard--tag colorlearn">Learning</h1>
+                        </div>
+            
+                        <div class="vcard__info">
+            
+                            <div class="vcard__info--title">
+                                <!-- dynamiv title of the video -->
+                                <span>
+                                    Fun way to Learn JavaScript.
+                                </span>
+                                <br>
+                                <!-- timestamp when the video was created -->
+                                <span class="timestamp font-small">Created on: 15-04-2019</span>
+                            </div>
+            
+                            <span style="font-weight: 550;">Description: </span>
+                            <!-- dynamic descrptiob of the video -->
+                            <span class="vcard__info--des">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                elit.Suscipit sit, explicabo hic nostrum
+                            </span>
+            
+            
+                        </div>
+            
+                    </div>
+            
+            
+                    <!--add more videos from here-->
+            
+                </div>
 
         <!--conatiner for videos to show from diffrent pages-->
 
@@ -225,7 +300,8 @@
 
 
 
-    <script src="js/navbar.js"></script>
+
+    <script src="js/display.js"></script>
 </body>
 
 </html>
