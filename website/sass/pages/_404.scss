@@ -1,5 +1,24 @@
 .bgcontain {
   width: 100%; //width of the division
   height: 90.5vh; //the heightof the divion
-  animation: change steps(1) 5s infinite ;
+  animation: change steps(1) 2s infinite ;
+}
+
+.backhome{
+  position: relative;
+  top: 30%;
+  left: 60%;
+  color: $color-white;
+  font-weight: 900;
+  font-size: 2rem;
+  padding: .77rem;
+  border: .2rem solid $color-white;
+  border-radius: 2rem;
+
+  &:hover{
+    transition: all .6s;
+    background-color:$color-grey-light-2;
+    border-color: $color-black;
+    color: $color-black;
+  }
 }
