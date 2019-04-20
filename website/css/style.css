@@ -113,7 +113,7 @@ body {
 .list {
   list-style-type: none; }
   .list--items {
-    margin: 2rem; }
+    margin: 1rem; }
 
 iframe {
   width: 100%;
@@ -462,7 +462,7 @@ border-radius for curved end of button
     outline: none;
     background: #2998ff; }
   .search__icon {
-    position: absolute;
+    position: relative;
     top: -1.3rem; }
   .search:hover .search__input {
     width: 25rem;
@@ -857,6 +857,8 @@ border-radius for curved end of button
     background-image: url("/img/error-1.png");
     background-size: cover;
     cursor: pointer; }
+    .vcard--img--suggested {
+      height: 10rem; }
   .vcard--tag {
     font-size: 2rem;
     font-weight: 700;
@@ -1430,13 +1432,14 @@ img {
 
 .play__grid {
   display: grid;
-  grid-template-rows: max-content;
-  grid-template-columns: minmax(500px, max-content) minmax(300px, max-content);
-  grid-gap: 4rem;
-  padding: 4rem; }
-  .play__grid--suggest {
-    background-color: red;
-    grid-area: 1/2/3/-1; }
+  grid-template-rows: 100px minmax(150px, min-content);
+  grid-template-columns: 0.1fr 2fr minmax(300px, min-content);
+  grid-gap: 2rem;
+  padding: 5rem; }
+
+.user-name {
+  padding-top: 2rem;
+  font-size: 2.2rem; }
 
 .profile--image {
   height: 8rem;
@@ -1444,20 +1447,28 @@ img {
   border-radius: 50%;
   position: relative;
   left: 0;
-  top: 0;
+  top: 0.3rem;
   background-image: url("/img/man.png"); }
+
+.suggest {
+  padding: 1rem;
+  padding-top: 0rem;
+  text-align: center;
+  background-color: #eee;
+  grid-area: 1/3/4/-1; }
 
 .videoinfo {
   width: 100%;
   height: 100%;
-  padding-bottom: 4rem; }
+  padding-bottom: 4rem;
+  grid-area: 2/1/2/3; }
 
 .video__comments {
   border-top: 0.2rem solid #000;
   color: #012A57;
-  background-color: #5643fa;
   padding-top: 1rem;
-  width: 100%; }
+  width: 100%;
+  grid-area: 3/1/3/3; }
 
 .morehead {
   position: sticky;
