@@ -27,3 +27,18 @@
         width: 100%;
     }
 }
+
+
+.line
+{
+    background:$color-white;
+    height: 1rem;
+    width: 60%;
+    position: relative;
+    bottom: 10px;
+    left: 30rem;
+    bottom: -6rem;
+    z-index: 1;
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+}

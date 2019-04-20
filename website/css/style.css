@@ -680,6 +680,18 @@ border-radius for curved end of button
 .learning__more:hover::after {
   width: 100%; }
 
+.line {
+  background: #fff;
+  height: 1rem;
+  width: 60%;
+  position: relative;
+  bottom: 10px;
+  left: 30rem;
+  bottom: -6rem;
+  z-index: 1;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif; }
+
 .event__heading {
   position: relative;
   width: 87%;
@@ -1747,7 +1759,7 @@ img {
     grid-template-columns: repeat(3, minmax(max-content, 1fr));
     position: absolute;
     top: 5.3rem;
-    left: 9rem;
+    left: 15rem;
     padding: 0.4rem; }
 
 .vidbtn {
