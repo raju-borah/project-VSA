@@ -58,15 +58,10 @@
 }
 // userbutton
 .userbutton{
-  background: transparent;
-  border: none;
-  position: relative;
-  &:active,
-  &:focus{
-    outline: none;
-  }
+  @include buttonnav;
 
 }
+
 // container settings
 .usercontainer{
   z-index: 2;
