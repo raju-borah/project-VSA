@@ -6,8 +6,15 @@ border-radius for curved end of button
 .btn {
   font-size: 1.9rem;
   background-color: $color-grey-light-2;
-
-
+  // for comment
+  &--comment {
+    border-radius: 2rem;
+    font-size: 2rem;
+    background: transparent;
+    background-color: $color-tertiary-dark-1;
+    color: $color-white;
+    padding: .99rem;
+  }
 
   &,
   &:link,
@@ -74,7 +81,6 @@ border-radius for curved end of button
     padding: 1rem;
     width: 15rem;
     left: 22%;
-  
   }
   &--front {
     background-color: $color-tertiary-dark-2;

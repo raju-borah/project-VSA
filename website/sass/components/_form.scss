@@ -14,7 +14,7 @@
     //border: 0.3rem solid $color-black;
     box-shadow: 1rem 2rem 6rem rgba($color-black, 0.33);
   }
-  &--signup{
+  &--signup {
     width: 100%;
     height: 100%;
     box-shadow: 1rem 2rem 6rem rgba($color-black, 0.33);
@@ -35,6 +35,14 @@
     font-size: 2rem;
     border: 0.1rem;
 
+    // for comment
+    &--comment {
+      width: 90%;
+      font-size: 1.8rem;
+      padding: .99rem;
+      border: 0.2rem dotted $color-grey-dark-3;
+      outline: none;
+    }
     // signin page input field  properties...
     &__login {
       width: 74%;
@@ -108,4 +116,3 @@
     }
   }
 }
-

@@ -147,6 +147,12 @@ iframe {
     font-family: "Philosopher", sans-serif;
     font-size: 2rem;
     border: 0.1rem; }
+    .form__input--comment {
+      width: 90%;
+      font-size: 1.8rem;
+      padding: .99rem;
+      border: 0.2rem dotted #333;
+      outline: none; }
     .form__input__login {
       width: 74%;
       height: 4rem;
@@ -208,6 +214,13 @@ border-radius for curved end of button
   background-color: #eee;
   /* button hover */
   /* when clicked */ }
+  .btn--comment {
+    border-radius: 2rem;
+    font-size: 2rem;
+    background: transparent;
+    background-color: #012A57;
+    color: #fff;
+    padding: .99rem; }
   .btn, .btn:link, .btn:visited {
     text-decoration: none;
     text-transform: capitalize;
@@ -1447,8 +1460,7 @@ img {
   border-radius: 50%;
   position: relative;
   left: 0;
-  top: 0.3rem;
-  background-image: url("/img/man.png"); }
+  top: 0.3rem; }
 
 .suggest {
   padding: 1rem;
