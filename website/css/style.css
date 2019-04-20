@@ -1308,6 +1308,7 @@ img {
   z-index: 1;
   background: transparent;
   border: none;
+  outline: none;
   color: #d85047;
   font-weight: 600;
   font-size: 4rem; }
