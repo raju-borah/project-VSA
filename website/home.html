@@ -154,47 +154,65 @@
         <!---------------------------New html and css-------------------------------->
 
         <section class="story">
-            <div class="story__heading" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="story__title" data-aos="zoom-in" data-aos-duration="1000">
                 What makes us different?
             </div>
 
 
             <!--grid for the cards-->
             <div class="cardsgrid">
-
-                <!--cards-->
                 <div class="card">
-                    <img src="img/floor1.jpg" alt="House 1" class="card__img">
-                    <h5 class="card__name"> 1 House</h5>
-                    <div class="card__description">
-                        <p>USA</p>
+                    <div class="card__side card__side--front">
+                        <img src="img/head1.jpg" alt="House 1" class="card__img">
+                        <h4 class="card__heading card__heading--1">
+                          <span class="card__text">learning</span>
+                        </h4>
+                    </div>
+                    <div class="card__side card__side--back card__side--back-1">
+                        <div class="card__cta">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae assumenda impedit quos laudantium ducimus voluptatum quae! Vero hic ullam sint quae accusantium temporibus? Doloremque deleniti perferendis similique consectetur minima consequuntur?</p>
+            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__side card__side--front">
+                        <img src="img/head1.jpg" alt="House 1" class="card__img">
+                        <h4 class="card__heading card__heading--2">
+                            <span class="card__text">club</span>
+                          </h4>
+                    </div>
+                    <div class="card__side card__side--back card__side--back-2">
+                        <div class="card__cta">
+                                <p>Corem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae assumenda impedit quos laudantium ducimus voluptatum quae! Vero hic ullam sint quae accusantium temporibus? Doloremque deleniti perferendis similique consectetur minima consequuntur?</p>
+            
+                        </div>
                     </div>
                 </div>
 
 
-                <div class="card">
-                    <img src="img/head1.jpg" alt="House 1" class="card__img">
 
-                    <h5 class="card__name"> 2 House</h5>
-                    <div class="card__description">
-                        <p>india</p>
+                <div class="card">
+                    <div class="card__side card__side--front">
+                        <img src="img/head1.jpg" alt="House 1" class="card__img">
+                        <h4 class="card__heading card__heading--3">
+                            <span class="card__text">event</span>
+                          </h4>
+                    </div>
+                    <div class="card__side card__side--back card__side--back-3">
+                        <div class="card__cta">
+                                <p>Eorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae assumenda impedit quos laudantium ducimus voluptatum quae! Vero hic ullam sint quae accusantium temporibus? Doloremque deleniti perferendis similique consectetur minima consequuntur?</p>
+                        </div>
                     </div>
                 </div>
 
-
-
-                <div class="card">
-                    <img src="img/event1.jpg" alt="House 1" class="card__img">
-                    <h5 class="card__name"> 2 House</h5>
-                    <div class="card__description">
-                        <p>india</p>
-                    </div>
-                </div>
 
 
             </div>
 
         </section>
+        <!--INFO SECTION DONE-->
 
 
 
@@ -294,7 +312,7 @@
                 </div>
             </div>
         </section>
-        <!--feature osimai-->
+        <!--feature SECTION DONE-->
 
 
 
@@ -310,15 +328,37 @@
 
             <div class="grid">
 
-                <div class="item">
-                    <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
-                    <div class="item__name">
-                        Basic Css tutorial
-                    </div>
-                    <div class="item__description">
-                        learn some basic css commands and tricks to improve your absic css skills
-                    </div>
-                </div>
+                    <div class="vcard">
+                            <div class="vcard--img">
+                                <!-- the tag for video -->
+                                <!--new colours for all categories added in grid.scss-->
+                                <h1 class="vcard--tag vcard--tag colorlearn">Learning</h1>
+                            </div>
+                
+                            <div class="vcard__info">
+                
+                                <div class="vcard__info--title">
+                                    <!-- dynamiv title of the video -->
+                                    <span>
+                                        Fun way to Learn JavaScript.
+                                    </span>
+                                    <br>
+                                    <!-- timestamp when the video was created -->
+                                    <span class="timestamp font-small">Created on: 15-04-2019</span>
+                                </div>
+                
+                                <span style="font-weight: 550;">Description: </span>
+                                <!-- dynamic descrptiob of the video -->
+                                <span class="vcard__info--des">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit.Suscipit sit, explicabo hic nostrum
+                                </span>
+                
+                
+                            </div>
+                        </div>
+
+
+
 
                 <div class="item">
                     <iframe src="https://www.youtube.com/embed/1-xGerv5FOk" frameborder="0" allowfullscreen></iframe>
@@ -372,6 +412,8 @@
             
 
             </div>
+
+            <span class="line"></span>
 
         </section>
 

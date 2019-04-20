@@ -1,5 +1,11 @@
 
 .progressbox {
+
+  button:focus
+  {
+    outline: none;
+  }
+
   position: relative;
   top: 1rem;
   right: 2.7rem;
@@ -40,9 +46,13 @@
   }
 
   &__btn {
+    display: grid;
+    grid-template-rows: repeat(1, minmax(1rem, max-content));
+    grid-template-columns: repeat(3, minmax(max-content, 1fr));
+
     position: absolute;
     top: 5.3rem;
-    left: 9rem;
+    left: 12.2rem;
     padding: 0.4rem;
   }
 }

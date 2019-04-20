@@ -36,6 +36,9 @@
     position: relative;
     
     background-size: cover;
+    background-image: linear-gradient(to right bottom, 
+    rgba($color-primary-light, .85), 
+    rgba($color-primary-dark, .85));
 
 
 }
@@ -48,7 +51,9 @@
     padding: 15rem 0 5rem 0;
     background-size: cover;
     position: relative;
-
+    background-image: linear-gradient(to right bottom, 
+    rgba($color-secondary-light, .85), 
+    rgba($color-secondary-dark, .85));
 }
 
 
@@ -61,6 +66,9 @@
 
     position: relative;
 
+    background-image: linear-gradient(to right bottom, 
+    rgba($color-tertiary-light, .85), 
+    rgba($color-tertiary-dark, .85));
 }
 
 

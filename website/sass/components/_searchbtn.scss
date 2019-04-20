@@ -31,8 +31,9 @@
   //to set the search icon position
   &__icon
   {
-      position: relative;
-      top: -1.3rem;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
   }
 
   //on hover on the search icon

@@ -3,18 +3,20 @@
 
     //grid for the story section with two rows
     display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
     grid-gap: 2rem;
 
     
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+
+    
     margin-bottom: 6rem;
 
 
     //heading part of the story section
 
-    &__heading
+    &__title
     {
         color: $color-tertiary-dark;
         letter-spacing: 1rem; 
@@ -22,6 +24,7 @@
         font-weight: 600;
         text-align: center; 
         margin-top: 5rem;
+        border-bottom: 1px solid blue;
 
     }
 
@@ -40,54 +43,149 @@
     justify-content: center;
 
 
-    padding: 2rem;
+    padding: 3rem;
 
  
 
 }
 
 //css for the desgin of the cards
-.card
-{
-    background-color: $color-grey-light-1;
+.card {
+
+    // FUNCTIONALITY
+    perspective: 150rem;
+    -moz-perspective: 150rem;
     position: relative;
-    transition: all .6s;
+    
+    &__side {
+        height: 45rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
-   
-    &:hover{
-        transform: rotateY(180deg);
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+               
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+        }
     }
-    //to adjust the image
+  
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+
+    // FRONT SIDE STYLING
     &__img {
-    position: absolute;
-    width: 100%;
-    height: auto;
-       
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+           
+    
+        }
 
-    }
+    &__heading {
+   
+        position: absolute;
+        top: 40rem;
+        width: 100%;
+        height: 50%;
+        margin-top: -9.5rem;
+        clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
 
+        &--1
+        {
+         
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-primary-light, .85), 
+            rgba($color-primary-dark, .85));
 
-//name of the card
-    &__name
-    {
+        }
+
         
-        z-index: 2;
-        position:absolute;
-        background-color:$color-black;
-        color: $color-white;
-        text-transform: uppercase;
-        font-size: 2rem;
-        text-align: center;
-        font-weight: 1000;
-        letter-spacing: .5rem;
-        width: 80%;
+        &--2 {
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary-light, .85), 
+            rgba($color-secondary-dark, .85));
+        }
+    
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-tertiary-light, .85), 
+            rgba($color-tertiary-dark, .85));
+        }
+    }
+
+    &__text
+    {
+        position: absolute;
+        top: 5rem;
         left: 4rem;
-        top: 21.5rem;
-        box-shadow: 0 1rem 3rem rgba($color-black, 0.55);
-        padding: 2rem;
+        font-size: 5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+
+        color: $color-white;
+    }
+
+    // back  SIDE text STYLING
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+        font-size: 2rem;
+        color: $color-white;
+        font-weight: 600;
+        letter-spacing: .1rem;
+
+
+        p:first-child:first-letter {
+            color: #903;
+            float: left;
+            font-family: Georgia;
+            font-size: 75px;
+            line-height: 60px;
+            margin-right: -4rem;
+          }
+
+
+
+
 
     }
 
-
-
+ 
 }
+
+
