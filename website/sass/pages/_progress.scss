@@ -1,5 +1,10 @@
 
 .progressbox {
+
+  button:focus
+  {
+    outline: none;
+  }
   position: relative;
   top: 1rem;
   right: 2.7rem;

@@ -23,7 +23,6 @@
         position: relative;
         width: 100%;
         font-size: 30px;
-        height: 22rem;
         font-family: sans-serif;
         color: $color-white;
         border-radius: 2rem;
@@ -47,7 +46,8 @@
             top: 25rem;
             color: $color-black;
             font-size: 1.5rem;
-        }
+        }   height: 22rem;
+     
     }
 
 

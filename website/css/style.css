@@ -463,25 +463,27 @@ border-radius for curved end of button
     background: #2998ff; }
   .search__icon {
     position: absolute;
-    top: -1.3rem; }
+    top: 1rem;
+    left: 1rem; }
   .search:hover .search__input {
     width: 25rem;
     color: #000; }
 
 .story {
   display: grid;
-  grid-template-rows: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
   grid-gap: 2rem;
-  margin-left: 4rem;
-  margin-right: 4rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
   margin-bottom: 6rem; }
-  .story__heading {
+  .story__title {
     color: #5643fa;
     letter-spacing: 1rem;
     font-size: 6.5rem;
     font-weight: 600;
     text-align: center;
-    margin-top: 5rem; }
+    margin-top: 5rem;
+    border-bottom: 1px solid blue; }
 
 .cardsgrid {
   display: grid;
@@ -491,33 +493,81 @@ border-radius for curved end of button
   grid-gap: 3rem;
   grid-auto-rows: 50rem;
   justify-content: center;
-  padding: 2rem; }
+  padding: 3rem; }
 
 .card {
-  background-color: #f7f7f7;
-  position: relative;
-  transition: all .6s; }
-  .card:hover {
-    transform: rotateY(180deg); }
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative; }
+  .card__side {
+    height: 45rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
   .card__img {
     position: absolute;
     width: 100%;
-    height: auto; }
-  .card__name {
-    z-index: 2;
+    height: 80%;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+  .card__heading {
     position: absolute;
-    background-color: #000;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: 1000;
-    letter-spacing: .5rem;
-    width: 80%;
+    top: 40rem;
+    width: 100%;
+    height: 50%;
+    margin-top: -9.5rem;
+    clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%); }
+    .card__heading--1 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card__heading--2 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .card__text {
+    position: absolute;
+    top: 5rem;
     left: 4rem;
-    top: 21.5rem;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.55);
-    padding: 2rem; }
+    font-size: 5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: .1rem; }
+    .card__cta p:first-child:first-letter {
+      color: #903;
+      float: left;
+      font-family: Georgia;
+      font-size: 75px;
+      line-height: 60px;
+      margin-right: -4rem; }
 
 .feature__container {
   margin: 0px auto;
@@ -580,15 +630,15 @@ border-radius for curved end of button
 
 .learning__heading {
   position: relative;
-  width: 90%;
+  width: 87%;
   display: inline-block;
-  left: 10rem; }
+  left: 10rem;
+  background-image: linear-gradient(120deg, #28b485 50%, rgba(40, 180, 133, 0.3) 30%); }
 
 .learning__title {
-  color: #000;
-  padding: 1rem;
+  color: #fff;
   float: left;
-  font-size: 6rem;
+  font-size: 7rem;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
@@ -604,6 +654,7 @@ border-radius for curved end of button
   font-weight: 500;
   position: absolute;
   top: 2rem;
+  right: 5rem;
   transition: color .25s ease;
   border-left: 2px solid #5643fa;
   z-index: 1;
@@ -621,7 +672,7 @@ border-radius for curved end of button
     transition: width 0.25s ease;
     z-index: -1; }
   .learning__more:visited {
-    color: #28b485; }
+    color: #000; }
   .learning__more:hover {
     color: #fff;
     transform: scale(1.1); }
@@ -631,15 +682,15 @@ border-radius for curved end of button
 
 .event__heading {
   position: relative;
-  width: 90%;
+  width: 87%;
   display: inline-block;
-  left: 10rem; }
+  left: 10rem;
+  background-image: linear-gradient(120deg, #5643fa 50%, rgba(86, 67, 250, 0.3) 30%); }
 
 .event__title {
-  color: #000;
-  padding: 1rem;
+  color: #fff;
   float: left;
-  font-size: 6rem;
+  font-size: 7rem;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
@@ -655,6 +706,7 @@ border-radius for curved end of button
   font-weight: 500;
   position: absolute;
   top: 2rem;
+  right: 5rem;
   transition: color .25s ease;
   border-left: 2px solid #5643fa;
   z-index: 1;
@@ -672,7 +724,7 @@ border-radius for curved end of button
     transition: width 0.25s ease;
     z-index: -1; }
   .event__more:visited {
-    color: #28b485; }
+    color: #000; }
   .event__more:hover {
     color: #fff;
     transform: scale(1.1); }
@@ -682,15 +734,15 @@ border-radius for curved end of button
 
 .club__heading {
   position: relative;
-  width: 90%;
+  width: 87%;
   display: inline-block;
-  left: 10rem; }
+  left: 10rem;
+  background-image: linear-gradient(120deg, #ff7730 50%, rgba(255, 119, 48, 0.3) 30%); }
 
 .club__title {
-  color: #000;
-  padding: 1rem;
+  color: #fff;
   float: left;
-  font-size: 6rem;
+  font-size: 7rem;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
@@ -706,6 +758,7 @@ border-radius for curved end of button
   font-weight: 500;
   position: absolute;
   top: 2rem;
+  right: 5rem;
   transition: color .25s ease;
   border-left: 2px solid #5643fa;
   z-index: 1;
@@ -723,7 +776,7 @@ border-radius for curved end of button
     transition: width 0.25s ease;
     z-index: -1; }
   .club__more:visited {
-    color: #28b485; }
+    color: #000; }
   .club__more:hover {
     color: #fff;
     transform: scale(1.1); }
@@ -1071,10 +1124,10 @@ img {
   position: relative;
   width: 100%;
   font-size: 30px;
-  height: 22rem;
   font-family: sans-serif;
   color: #fff;
-  border-radius: 2rem; }
+  border-radius: 2rem;
+  height: 22rem; }
   .item__name {
     position: absolute;
     top: 21rem;
@@ -1129,17 +1182,20 @@ img {
 .learning {
   padding: 15rem 0 5rem 0;
   position: relative;
-  background-size: cover; }
+  background-size: cover;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
 
 .club {
   padding: 15rem 0 5rem 0;
   background-size: cover;
-  position: relative; }
+  position: relative;
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
 
 .event {
   padding: 15rem 0 8rem 0;
   background-size: cover;
-  position: relative; }
+  position: relative;
+  background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
 
 .team {
   padding: 10rem 0 0 0;
@@ -1652,6 +1708,8 @@ img {
   border-radius: 2rem;
   margin-bottom: 2rem;
   border: 0.1rem solid #000; }
+  .progressbox button:focus {
+    outline: none; }
   .progressbox__text {
     position: absolute;
     width: 30rem;

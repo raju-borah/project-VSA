@@ -3,6 +3,9 @@
     &__heading
     { 
           @include head;
+          background-image: linear-gradient(120deg, 
+          $color-secondary-dark 50%,
+          rgba($color-secondary-dark,.3) 30%);
 
     }
 
