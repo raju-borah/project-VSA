@@ -1742,6 +1742,9 @@ img {
     top: 2.4rem;
     font-size: 2rem; }
   .progressbox__btn {
+    display: grid;
+    grid-template-rows: repeat(1, minmax(1rem, max-content));
+    grid-template-columns: repeat(3, minmax(max-content, 1fr));
     position: absolute;
     top: 5.3rem;
     left: 9rem;
