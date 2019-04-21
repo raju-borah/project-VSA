@@ -1,0 +1,67 @@
+.vcardhome {
+    // for each video the info is hold by the vcard division
+    width: 100%;
+    height: 100%;
+    border: 2px solid $color-primary-dark-1;
+   box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
+    background-color: #fff;
+    // for the image division
+    &__img {
+      position: relative;
+      width: 100%;
+      height: 25rem;
+      background-image: url('../img/error-1.png');
+      background-size: cover;
+      cursor: pointer;
+      overflow: hidden;
+  
+    }
+    // division for storing the video info
+    &__info {
+      padding: 1rem;
+      font-size: 1.7rem;
+      width: 100%;
+      // fot the title
+      &--title {
+        font-size: 2.12rem;
+  
+        font-weight: bold;
+        color: $color-primary-dark-1;
+        white-space: nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        width: 100%;
+      }
+    }
+  
+    // the tag width increases with change in bgcolor
+  
+    &:hover .hoverbtn{
+        transition: all .5s;
+ opacity: 1;
+   
+   
+    }
+  }
+  
+
+  .hoverbtn
+  {
+ 
+      font-size: 8rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding-top: 14%;
+      padding-bottom: 14%;
+      padding-left: 45%;
+      padding-right: 45%;  
+      opacity: 0;
+
+      
+      color: $color-primary-light;
+      background-color:rgba( $color-primary-dark,.3);
+  }
+
+
