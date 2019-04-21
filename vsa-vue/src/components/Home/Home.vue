@@ -1,12 +1,10 @@
-/* eslint-disable */
 <template>
   <div id="Home">
     <!-- 
       nested component for 
       Navigation bar
     -->
-    <Navbar/>
-
+    <Navbar :user="user"/>
     <!--heading section-->
     <!-- nested component for SlideShow -->
     <SlideShow/>
@@ -16,7 +14,7 @@
       <section class="info">
         <!--info heading-->
         <div class="info__heading u-margin-top-large" data-aos="zoom-in" data-aos-duration="1000">
-          <h2>What makes us diffrent?</h2>
+          <h2>What makes us different?</h2>
         </div>
 
         <!--info about part-->
@@ -79,17 +77,14 @@
           </div>
         </div>
       </section>
-
       <!-- nested component forfeatured -->
       <Featured/>
-
       <!-- nested component for learning -->
       <Learning/>
       <!-- nested component for Club -->
       <Event/>
       <!-- nested component for Event section -->
       <ClubActivities/>
-
       <!-- nested component About Team  -->
       <Team/>
     </main>
@@ -113,6 +108,7 @@ import Navbar from "@/components/Navbar/Navbar";
 
 export default {
   name: "Home",
+  props: ["user"],
   components: {
     Learning,
     Event,
@@ -126,6 +122,7 @@ export default {
   data() {
     return {};
   },
+
   mounted() {
     let slideIndex = 0; //this indicates to start from the first image
 
@@ -156,6 +153,7 @@ export default {
 
     //to fade the header section on scroll
     const opacity = () => {
+
       const head = this.$el.querySelector(".head");
       let scrollTop;
       //height of the content area that is visible on screen
@@ -171,6 +169,7 @@ export default {
       height = height / 1.1;
       //increase or decrease the opacity according to the scroll
       head.style.opacity = (height - scrollTop) / height;
+
     };
 
     window.addEventListener("scroll", opacity); //header opacity
