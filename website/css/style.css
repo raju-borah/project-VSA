@@ -1454,24 +1454,6 @@ img {
     background-color: #fff;
     background-position: center; }
 
-.upload {
-  width: 100%;
-  height: 100vh;
-  z-index: 2;
-  display: grid;
-  background-image: radial-gradient(rgba(23, 45, 68, 0.67), rgba(51, 51, 51, 0.38)); }
-  .upload__container {
-    justify-self: center;
-    align-self: center;
-    width: 50%;
-    height: auto;
-    border-radius: 1.5rem;
-    padding: 3rem;
-    padding-top: 5rem;
-    border: 2px solid black;
-    box-shadow: 0 1rem 3rem #012A57;
-    background-color: #fff; }
-
 .btn--close {
   text-decoration: none;
   position: relative;
@@ -1611,66 +1593,6 @@ img {
   .floating--btn:hover {
     background-color: #012A57;
     transform: translateY(-0.2rem); }
-
-.blur {
-  filter: blur(2px);
-  position: fixed; }
-
-.deletemsgbox {
-  display: none;
-  width: 30%;
-  height: 20%;
-  list-style-type: none;
-  text-align: center;
-  position: absolute;
-  top: 35%;
-  left: 33%; }
-  .deletemsgbox__inside {
-    width: 100%;
-    height: 100%;
-    border: 0.2rem solid #000;
-    background-color: #eee;
-    border-radius: 2rem; }
-  .deletemsgbox__listitems {
-    width: 100%;
-    font-size: 2rem;
-    position: absolute;
-    padding: 1rem;
-    top: 8rem;
-    left: -0.1rem;
-    font-weight: 700; }
-  .deletemsgbox__yes {
-    margin: 0.55rem;
-    padding: 1rem;
-    font-weight: 700;
-    position: relative;
-    top: 14rem;
-    left: -2rem;
-    width: 5rem; }
-  .deletemsgbox__no {
-    margin: 0.55rem;
-    padding: 1rem;
-    font-weight: 700;
-    position: relative;
-    top: 14rem;
-    right: 1rem;
-    width: 5rem; }
-
-.deletemsgbox__yes:hover ~ .deletemsgbox__inside {
-  transition: all 1s;
-  background: rgba(216, 80, 71, 0.981); }
-
-.deletemsgbox__yes:hover ~ .deletemsgbox__listitems {
-  transition: all 1s;
-  color: #fff; }
-
-.deletemsgbox__no:hover ~ .deletemsgbox__inside {
-  transition: all 1s;
-  background: rgba(40, 180, 133, 0.98); }
-
-.deletemsgbox__no:hover ~ .deletemsgbox__listitems {
-  transition: all 1s;
-  color: #fff; }
 
 .player {
   width: 100%;
