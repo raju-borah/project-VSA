@@ -650,14 +650,14 @@ border-radius for curved end of button
     width: 25rem;
     color: #000; }
 
-.story {
+.infocard {
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
   grid-gap: 2rem;
   margin-left: 6rem;
   margin-right: 6rem;
   margin-bottom: 6rem; }
-  .story__title {
+  .infocard__title {
     color: #5643fa;
     letter-spacing: 1rem;
     font-size: 6.5rem;
@@ -1136,6 +1136,50 @@ border-radius for curved end of button
     transform: translateY(-0.1rem); }
   .vcard:hover .videodelete {
     display: inline; }
+
+.vcardhome {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #228B22;
+  box-shadow: 1rem 1rem 1rem rgba(23, 45, 68, 0.36);
+  background-color: #fff; }
+  .vcardhome__img {
+    position: relative;
+    width: 100%;
+    height: 25rem;
+    background-image: url("../img/error-1.png");
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden; }
+  .vcardhome__info {
+    padding: 1rem;
+    font-size: 1.7rem;
+    width: 100%; }
+    .vcardhome__info--title {
+      font-size: 2.12rem;
+      font-weight: bold;
+      color: #228B22;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%; }
+  .vcardhome:hover .hoverbtn {
+    transition: all .5s;
+    opacity: 1; }
+
+.hoverbtn {
+  font-size: 8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 14%;
+  padding-bottom: 14%;
+  padding-left: 45%;
+  padding-right: 45%;
+  opacity: 0;
+  color: #7ed56f;
+  background-color: rgba(40, 180, 133, 0.3); }
 
 .footer {
   position: relative; }
