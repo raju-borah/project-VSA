@@ -1,25 +1,4 @@
-// the upload section properties
-.upload {
-  width: 100%;
-  height: 100vh;
-  z-index: 2;
-  display: grid;
-  background-image: radial-gradient(rgba($color-tertiary-dark-2, 0.67), rgba($color-grey-dark-3, 0.38));
 
-  //    the upload form container where all the details will be put
-  &__container {
-    justify-self: center;
-    align-self: center;
-    width: 50%;
-    height: auto;
-    border-radius: 1.5rem;
-    padding: 3rem;
-    padding-top: 5rem;
-    border: 2px solid black;
-    box-shadow: 0 1rem 3rem $color-tertiary-dark-1;
-    background-color: $color-white;
-  }
-}
 // for the close button in the upload form
 .btn--close {
   text-decoration: none;
