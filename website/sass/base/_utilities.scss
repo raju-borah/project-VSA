@@ -14,12 +14,16 @@
     height: 3rem;
     margin-left: 2rem;
 }
+.font-xsmall{ font-size: 1.3rem;}
+
 .font-small{ font-size: 2rem;}
 
 .font-medium{   font-size: 3rem;}
 .u-margin-right-large{        margin-right: 3rem;   }
 .list{   
-list-style-type: none;   
+list-style-type: none;
+height: 100%;
+overflow-y: scroll; 
 &--items{
     margin:1rem;
 }}

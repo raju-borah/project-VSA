@@ -101,6 +101,9 @@ body {
   height: 3rem;
   margin-left: 2rem; }
 
+.font-xsmall {
+  font-size: 1.3rem; }
+
 .font-small {
   font-size: 2rem; }
 
@@ -111,7 +114,9 @@ body {
   margin-right: 3rem; }
 
 .list {
-  list-style-type: none; }
+  list-style-type: none;
+  height: 100%;
+  overflow-y: scroll; }
   .list--items {
     margin: 1rem; }
 
@@ -316,7 +321,7 @@ iframe {
     font-size: 2rem;
     border: 0.1rem; }
     .form__input--comment {
-      width: 90%;
+      width: 50%;
       font-size: 1.8rem;
       padding: .99rem;
       border: 0.2rem dotted #333;
@@ -1670,6 +1675,8 @@ img {
 .player {
   width: 100%;
   height: 100%; }
+  .player ::-webkit-scrollbar {
+    width: 0px; }
   .player__container {
     display: grid;
     grid-template-rows: minmax(360px, 1fr);
@@ -1683,9 +1690,10 @@ img {
 .play__grid {
   display: grid;
   grid-template-rows: 100px minmax(150px, min-content);
-  grid-template-columns: 0.1fr 2fr minmax(300px, min-content);
+  grid-template-columns: 0.1fr 2fr minmax(360px, min-content);
   grid-gap: 2rem;
-  padding: 5rem; }
+  padding: 5rem;
+  padding-right: 0rem; }
 
 .user-name {
   padding-top: 2rem;
@@ -1700,10 +1708,9 @@ img {
   top: 0.3rem; }
 
 .suggest {
-  padding: 1rem;
   padding-top: 0rem;
   text-align: center;
-  background-color: #eee;
+  height: 900px;
   grid-area: 1/3/4/-1; }
 
 .videoinfo {
@@ -1718,6 +1725,28 @@ img {
   padding-top: 1rem;
   width: 100%;
   grid-area: 3/1/3/3; }
+
+.comment--area {
+  width: 100%;
+  height: 450px; }
+
+.comment--card {
+  font-size: 1.6rem;
+  color: #000;
+  border: 1px solid black;
+  border-radius: 1rem;
+  display: grid;
+  overflow: hidden;
+  padding: .55rem;
+  grid-template-columns: min-content 2fr;
+  grid-template-rows: minmax(50px, min-content); }
+  .comment--card--commenter {
+    padding-right: .88rem;
+    align-self: center; }
+  .comment--card--comments {
+    align-self: center;
+    padding-left: .88rem;
+    border-left: .1rem dotted black; }
 
 .morehead {
   position: sticky;

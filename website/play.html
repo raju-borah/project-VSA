@@ -117,10 +117,10 @@
             <!-- division of video player -->
             <div class="player__container--1">
                 <!-- video player of video.js -->
-                <video id="my-video" class="video-js vjs-big-play-centered vjs-default-skin" controls preload="none" 
-                    data-setup='{"fluid":true ,"playbackRates": [1, 1.5, 2]}'>
+                <video id="my-video" class="video-js vjs-big-play-centered vjs-default-skin" controls autoplay
+                    preload="auto" data-setup='{"fluid":true ,"playbackRates": [1, 1.5, 2]}'>
                     <!-- source willbe dynamic -->
-                   
+
                     <source src="img/sample.mp4" type="video/mp4">
                 </video>
             </div>
@@ -132,10 +132,11 @@
 
         <!-- grid for the below section -->
         <div class="play__grid">
+            <!-- image of the user that has uplodede the video  -->
             <div class="uploader-image">
                 <img class="profile--image" src="/img/man.png">
             </div>
-            <div class="user-name" >
+            <div class="user-name">
                 <!-- the that have uploaded the video -->
                 <span> Vivek Chetia </span>
             </div>
@@ -145,6 +146,100 @@
                 <h1> Suggested Videos</h1>
                 <!--list define is utilities -->
                 <ul class="list">
+                    <li class="list--items">
+                        <!-- video cards -->
+                        <div class="vcard">
+                            <!-- the thumbnail position  vcard 1 st part-->
+                            <div class="vcard--img vcard--img--suggested">
+                                <!-- the tag for video  defining the category of video-->
+                                <h1 class="vcard--tag vcard--tag">Learning
+                                </h1>
+
+                            </div>
+                            <!-- the division that contain the information of the video .It is the second part of the vcard -->
+                            <div class="vcard__info">
+                                <div class="vcard__info--title ">
+                                    <!-- dynamiv title of the video -->
+                                    <span>
+                                        Fun way to Learn JavaScript.
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end of vcard -->
+
+                    </li>
+                    <li class="list--items">
+
+                        <!-- video cards -->
+                        <div class="vcard">
+                            <!-- the thumbnail position  vcard 1 st part-->
+                            <div class="vcard--img vcard--img--suggested">
+                                <!-- the tag for video  defining the category of video-->
+                                <h1 class="vcard--tag vcard--tag">Learning</h1>
+                            </div>
+                            <!-- the division that contain the information of the video .It is the second part of the vcard -->
+                            <div class="vcard__info">
+                                <div class="vcard__info--title ">
+                                    <!-- dynamic title of the video -->
+                                    <span>
+                                        Fun way to Learn JavaScript.
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end of vcard -->
+
+                    </li>
+                    <li class="list--items">
+                        <!-- video cards -->
+                        <div class="vcard">
+                            <!-- the thumbnail position  vcard 1 st part-->
+                            <div class="vcard--img vcard--img--suggested">
+                                <!-- the tag for video  defining the category of video-->
+                                <h1 class="vcard--tag vcard--tag">Learning
+                                </h1>
+
+                            </div>
+                            <!-- the division that contain the information of the video .It is the second part of the vcard -->
+                            <div class="vcard__info">
+                                <div class="vcard__info--title ">
+                                    <!-- dynamiv title of the video -->
+                                    <span>
+                                        Fun way to Learn JavaScript.
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end of vcard -->
+
+                    </li>
+                    <li class="list--items">
+
+                        <!-- video cards -->
+                        <div class="vcard">
+                            <!-- the thumbnail position  vcard 1 st part-->
+                            <div class="vcard--img vcard--img--suggested">
+                                <!-- the tag for video  defining the category of video-->
+                                <h1 class="vcard--tag vcard--tag">Learning</h1>
+                            </div>
+                            <!-- the division that contain the information of the video .It is the second part of the vcard -->
+                            <div class="vcard__info">
+                                <div class="vcard__info--title ">
+                                    <!-- dynamic title of the video -->
+                                    <span>
+                                        Fun way to Learn JavaScript.
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end of vcard -->
+
+                    </li>
                     <li class="list--items">
                         <!-- video cards -->
                         <div class="vcard">
@@ -249,7 +344,9 @@
 
             <!-- video titles and descrptions in the play page -->
             <div class="videoinfo">
+                <!-- video title -->
                 <div class="font-medium" id="video-title"> JavaScript</div>
+                <!-- description -->
                 <div class="font-small" id="video-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Rerum recusandae animi, nostrum,
                     facilis dicta, excepturi atque dolore quam velit quas cum. Quae unde dolor doloremque delectus, qui
@@ -259,24 +356,117 @@
             <!-- comment section -->
             <div class="video__comments">
                 <div class="font-medium">Comments</div>
-
-                <div class="comment--area">
-                    <div>
-                        <div class="user-image">
-                            <img class="profile--image" src="/img/man.png">
-                        </div>
-                        <div class="user-name" >
-                                <!-- the usre that is SIGNED IN-->
-                                <span> Vivek Chetia </span>
-                            </div>
-                       <!-- input field for the comment -->
-                        <input type="text" class="form__input form__input--comment" placeholder="Enter comment"
-                            required /> <button class="btn btn--comment">send<i
-                                class="far fa-arrow-alt-circle-right"></i></button>
-
-                    </div>
-
+                <div class="user-name">
+                    <!-- the user that is SIGNED IN-->
+                    <span> Vivek Chetia </span>
                 </div>
+
+
+                <!-- input field for the comment -->
+                <input type="text" class="form__input form__input--comment" placeholder="Enter comment" required />
+                <!-- button to send the comment  -->
+                <button class="btn btn--comment">send<i class="far fa-arrow-alt-circle-right"></i></button>
+                <br>
+                <br>
+                <!-- user comments list -->
+                <ul class="comment--area list">
+                    <!-- contains the user comments and username -->
+                    <li class="list--items">
+                        <!-- card to hold the data of the user and comment given by him -->
+                        <div class="comment--card">
+                            <!-- username -->
+                            <div class="comment--card--commenter">
+                                <!-- username -->
+                                <span class="font-small">Raju</span><br>
+                                <!-- email id -->
+                                <span class="font-xsmall">cs16msiit020@kazirangauniversity.in</span>
+                            </div>
+                            <!-- comment given by the user -->
+                            <div class="comment--card--comments">
+                                Nice video Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non aut nulla
+                                soluta dolorum earum? Temporibus adipisci eum aliquam est iusto quo dignissimos facilis
+                                assumenda nam? Temporibus ex cupiditate vitae odit. Lorem ipsum dolor sit amet
+                                consectetur, adipisicing elit. Dolorem ratione maxime, et fugiat doloribus expedita.
+                                Aperiam sed amet corporis omnis nobis. Cumque, aperiam. Vero laborum rem consequuntur
+                                voluptate suscipit inventore.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- contains the user comments and username -->
+                    <li class="list--items">
+                        <!-- card to hold the data of the user and comment given by him -->
+                        <div class="comment--card">
+                            <!-- username -->
+                            <div class="comment--card--commenter">
+                                <!-- username -->
+                                <span class="font-small">David</span><br>
+                                <!-- email id -->
+                                <span class="font-xsmall">cs16msiit020@kazirangauniversity.in</span>
+                            </div>
+                            <!-- comment given by the user -->
+                            <div class="comment--card--comments">
+                                Nice video L
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- contains the user comments and username -->
+                    <li class="list--items">
+                        <!-- card to hold the data of the user and comment given by him -->
+                        <div class="comment--card">
+                            <!-- username -->
+                            <div class="comment--card--commenter">
+                                <!-- username -->
+                                <span class="font-small">Abdul</span><br>
+                                <!-- email id -->
+                                <span class="font-xsmall">cs16msiit020@kazirangauniversity.in</span>
+                            </div>
+                            <!-- comment given by the user -->
+                            <div class="comment--card--comments">
+                                Nice video Lor rem consequuntur
+                                voluptate suscipit inventore.
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- contains the user comments and username -->
+                    <li class="list--items">
+                        <!-- card to hold the data of the user and comment given by him -->
+                        <div class="comment--card">
+                            <!-- username -->
+                            <div class="comment--card--commenter">
+                                <!-- username -->
+                                <span class="font-small">Naba</span><br>
+                                <!-- email id -->
+                                <span class="font-xsmall">cs16msiit020@kazirangauniversity.in</span>
+                            </div>
+                            <!-- comment given by the user -->
+                            <div class="comment--card--comments">
+                                Nice video Lorem ipsum, dolor sit amet consecte
+                            </div>
+                        </div>
+                    </li>
+                    <!-- contains the user comments and username -->
+                    <li class="list--items">
+                        <!-- card to hold the data of the user and comment given by him -->
+                        <div class="comment--card">
+                            <!-- username -->
+                            <div class="comment--card--commenter">
+                                <!-- username -->
+                                <span class="font-small">Naba</span><br>
+                                <!-- email id -->
+                                <span class="font-xsmall">cs16msiit020@kazirangauniversity.in</span>
+                            </div>
+                            <!-- comment given by the user -->
+                            <div class="comment--card--comments">
+                                Nice video Lorem ipsum, dolor sit amet consecte
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+
 
 
             </div>
