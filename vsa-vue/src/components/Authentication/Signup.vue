@@ -45,7 +45,7 @@
           <div class="form__group">
             <label for="signup_email" class="form__label">
               E-mail
-              <span v-if="errMsgEmail">{{ errMsgEmail }}</span>
+              <span style="color:red" v-if="errMsgEmail">{{ errMsgEmail }}</span>
             </label>
             <input
               type="email"
@@ -59,7 +59,7 @@
           <div class="form__group">
             <label for="signup_passwd" class="form__label">
               Password
-              <span v-if="errMsgPassStren">{{ errMsgPassStren }}</span>
+              <span style="color:red" v-if="errMsgPassStren">{{ errMsgPassStren }}</span>
             </label>
             <input
               type="password"
@@ -73,7 +73,7 @@
           <div class="form__group">
             <label for="signup_confirm_passwd" class="form__label">
               Confirm Password
-              <span v-if="errMsgPass">{{ errMsgPass }}</span>
+              <span style="color:red" v-if="errMsgPass">{{ errMsgPass }}</span>
             </label>
             <input
               type="password"
