@@ -34,12 +34,15 @@
     font-family: "Philosopher", sans-serif;
     font-size: 2rem;
     border: 0.1rem;
-
+    // for settings
+    &--settings {
+    width: 57%;
+    }
     // for comment
     &--comment {
       width: 50%;
       font-size: 1.8rem;
-      padding: .99rem;
+      padding: 0.99rem;
       border: 0.2rem dotted $color-grey-dark-3;
       outline: none;
     }

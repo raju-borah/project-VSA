@@ -4,7 +4,6 @@
   font-family: "Philosopher", sans-serif;
   background-image: radial-gradient(rgba($color-tertiary-light, 0.39), rgba($color-white, 0.16)),
     url("/img/Capture.JPG");
-  position: relative;
   background-size: cover;
   background-position: center;
 
@@ -20,7 +19,7 @@
   &__container {
     position: absolute;
     width: 50rem;
-    height: 80vh;
+    height: 80%;
     padding: 1rem;
     top: 10rem;
     left: 31%;
