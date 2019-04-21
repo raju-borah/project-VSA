@@ -85,7 +85,7 @@
             >
           </div>
           <!-- signup button -->
-          <button class="btn btn--blue" id="signup" type="submit">
+          <button class="btn btn--blue" id="signup" type="submit" @click.prevent="onSignup">
             Sign
             Up
             <i class="fas fa-arrow-circle-right"></i>
