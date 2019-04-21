@@ -1108,8 +1108,6 @@ border-radius for curved end of button
     background-image: url("/img/error-1.png");
     background-size: cover;
     cursor: pointer; }
-    .vcard--img--suggested {
-      height: 10rem; }
   .vcard--tag {
     font-size: 2rem;
     font-weight: 700;
