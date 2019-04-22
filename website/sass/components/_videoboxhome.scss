@@ -2,9 +2,34 @@
     // for each video the info is hold by the vcard division
     width: 100%;
     height: 100%;
-    border: 2px solid $color-primary-dark-1;
-   box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
     background-color: #fff;
+
+    &__learning
+    {
+      border: 2px solid $color-primary-dark-1;
+      box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
+
+    }
+
+    &__club
+    {
+      border: 2px solid $color-secondary-dark;
+      box-shadow: 1rem 1rem 1rem rgba($color-secondary-dark, 0.36);
+
+    }
+
+    &__event
+    {
+      border: 2px solid $color-tertiary-dark;
+      box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark, 0.36);
+
+    }
+
+  
+
+
+
+
     // for the image division
     &__img {
       position: relative;
@@ -21,12 +46,30 @@
       padding: 1rem;
       font-size: 1.7rem;
       width: 100%;
+
+      //for differnt text color in three categories
+      &--learning
+      {
+        color: $color-primary-dark-1;
+
+      }
+
+      &--club
+      {
+        color:$color-secondary-dark;
+
+      }
+
+      &--event
+      {
+        color:$color-tertiary-dark;
+
+      }
+      
       // fot the title
       &--title {
         font-size: 2.12rem;
-  
         font-weight: bold;
-        color: $color-primary-dark-1;
         white-space: nowrap;
         overflow:hidden;
         text-overflow:ellipsis;
@@ -38,7 +81,7 @@
   
     &:hover .hoverbtn{
         transition: all .5s;
- opacity: 1;
+        opacity: 1;
    
    
     }
@@ -59,9 +102,32 @@
       padding-right: 45%;  
       opacity: 0;
 
+    //for diffrent hover color on icon
+      &__learning
+      {
+        color: $color-primary-light;
+        background-color:rgba( $color-primary-dark,.3);
+
+      }
+
+      &__club
+      {
+        color: $color-secondary-light;
+        background-color:rgba( $color-secondary-dark,.3);
+
+      }
+
+      &__event
+      {
+        color: $color-tertiary-light;
+        background-color:rgba( $color-tertiary-dark,.3);
+
+      }
       
-      color: $color-primary-light;
-      background-color:rgba( $color-primary-dark,.3);
+    
   }
+
+
+
 
 
