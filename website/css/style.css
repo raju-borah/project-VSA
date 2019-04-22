@@ -120,6 +120,9 @@ body {
   .list--items {
     margin: 1rem; }
 
+.u-margin-top {
+  margin-top: 15%; }
+
 iframe {
   width: 100%;
   height: 100%;
@@ -320,10 +323,12 @@ iframe {
     font-family: "Philosopher", sans-serif;
     font-size: 2rem;
     border: 0.1rem; }
+    .form__input--settings {
+      width: 57%; }
     .form__input--comment {
       width: 50%;
       font-size: 1.8rem;
-      padding: .99rem;
+      padding: 0.99rem;
       border: 0.2rem dotted #333;
       outline: none; }
     .form__input__login {
@@ -1123,7 +1128,7 @@ border-radius for curved end of button
     top: 73.5%;
     left: 0; }
     .vcard--tag--dashboard {
-      box-shadow: 1rem 1rem 5rem rgba(23, 45, 68, 0.66); }
+      box-shadow: 1rem 1rem 5rem rgba(23, 45, 68, 0.46); }
   .vcard__info {
     padding: 2rem;
     font-size: 1.7rem;
@@ -1488,7 +1493,6 @@ img {
   height: 100vh;
   font-family: "Philosopher", sans-serif;
   background-image: radial-gradient(rgba(41, 152, 255, 0.39), rgba(255, 255, 255, 0.16)), url("/img/Capture.JPG");
-  position: relative;
   background-size: cover;
   background-position: center; }
   .login__home {
@@ -1501,7 +1505,7 @@ img {
   .login__container {
     position: absolute;
     width: 50rem;
-    height: 80vh;
+    height: 80%;
     padding: 1rem;
     top: 10rem;
     left: 31%;
@@ -1550,23 +1554,26 @@ img {
   background-attachment: fixed;
   color: #fff; }
   .settings__container {
-    margin-top: 30rem;
+    margin-top: 20%;
     padding: 3rem;
-    padding-top: 14rem;
-    position: relative;
+    padding-top: 8%;
     color: #000;
     width: 100%;
     height: 100%;
-    background-color: #2998ff; }
+    background-color: #2998ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
   .settings__editbutton {
     border-radius: 50%;
     height: 8rem;
     width: 8rem;
-    position: absolute;
+    position: relative;
     background-color: #5643fa;
     z-index: 1;
-    top: 20rem;
-    right: 40%;
+    top: 65%;
+    left: 55%;
     border: 0.3rem solid #fff; }
     .settings__editbutton:hover .tooltiptext {
       visibility: visible;
@@ -1580,7 +1587,7 @@ img {
     overflow: hidden; }
   .settings__icon {
     position: absolute;
-    margin-left: 40%;
+    left: 40%;
     width: 30rem;
     height: 30rem;
     border-radius: 50%;
@@ -1590,8 +1597,7 @@ img {
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.66);
     padding: 4rem;
     background-color: #eee;
-    transform: translateX(50%);
-    width: 50%; }
+    width: 35%; }
   .settings .tooltiptext {
     visibility: hidden;
     position: absolute;

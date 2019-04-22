@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home/Home'
@@ -11,16 +11,20 @@ import Play from '@/components/Play/Play'
 import More from '@/components/More/More'
 import Setting from '@/components/Setting/Setting'
 
+
+import firebase from 'firebase'
+
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     // Home page
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      props: true,
     },
     // Login page
     {
@@ -44,15 +48,19 @@ export default new Router({
     {
       path: '/dashboard',
       name: 'Dashboard',
-      component: Dashboard
+      component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
     },
     // Play Page
+    // will add uid of the video to play in this path
     {
       path: '/play',
       name: 'Play',
       component: Play
-    },   
-     // More Page
+    },
+    // More Page
     {
       path: '/more',
       name: 'More',
@@ -62,14 +70,42 @@ export default new Router({
     {
       path: '/setting',
       name: 'Setting',
-      component: Setting
+      component: Setting,
+      meta: {
+        requiresAuth: true
+      }
     },
-
     // for rest not registered path show page not found
-    { 
+    {
       path: '*',
       name: 'PageNotFound',
-      component: PageNotFound 
+      component: PageNotFound
     }
   ]
 })
+
+// router guards
+router.beforeEach((to, from, next) => {
+  // check to see if route has auth guard
+  if (to.matched.some(rec => rec.meta.requiresAuth)) {
+    // check auth state of user
+    // let user = firebase.auth().currentUser
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        // User is signed in. Proceed to route
+        next()
+      } else {
+        // No user is signed in. Redirect to login
+        next({
+          name: 'Home'
+        })
+      }
+    })
+
+  } else {
+    // if route is not guarded by auth, proceed
+    next()
+  }
+})
+
+export default router

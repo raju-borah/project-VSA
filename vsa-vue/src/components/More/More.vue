@@ -2,6 +2,7 @@
 <template>
   <div id="More">
     <Navbar/>
+
     <div class="morehead">
       <div class="morehead__back">
         <!--button for learning -->
@@ -33,22 +34,42 @@
 <script>
 import Navbar from "@/components/Navbar/Navbar";
 import Learn from "@/components/More/Learn";
+import Club from "@/components/More/Club";
+import Event from "@/components/More/Event";
 export default {
   name: "More",
   components: {
     Navbar,
-    Learn
+    Learn,
+    Club,
+    Event
   },
   data() {
     return {
-      showLearnVis: false
+      showLearnVis: false,
+      showClubVis: false,
+      showEventVis: false
     };
   },
   methods: {
     showLearn() {
-      if(!this.showLearnVis) {
+      if (!this.showLearnVis) {
         this.showLearnVis = true;
-      }else {
+      } else {
+        this.showLearnVis = false;
+      }
+    },
+    showClub() {
+      if (!this.showLearnVis) {
+        this.showLearnVis = true;
+      } else {
+        this.showLearnVis = false;
+      }
+    },
+    showEvent() {
+      if (!this.showLearnVis) {
+        this.showLearnVis = true;
+      } else {
         this.showLearnVis = false;
       }
     }
