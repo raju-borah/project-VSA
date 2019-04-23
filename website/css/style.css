@@ -1473,7 +1473,7 @@ img {
 .signup {
   width: 100%;
   height: 100vh;
-  background-image: radial-gradient(rgba(41, 152, 255, 0.39), rgba(255, 255, 255, 0.16)), url("/img/Capture.JPG");
+  background-image: radial-gradient(rgba(41, 152, 255, 0.39), rgba(255, 255, 255, 0.16)), url("/img/Capture.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -1491,7 +1491,7 @@ img {
   width: 100%;
   height: 100vh;
   font-family: "Philosopher", sans-serif;
-  background-image: radial-gradient(rgba(41, 152, 255, 0.39), rgba(255, 255, 255, 0.16)), url("/img/Capture.JPG");
+  background-image: radial-gradient(rgba(41, 152, 255, 0.39), rgba(255, 255, 255, 0.16)), url("/img/Capture.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
