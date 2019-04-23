@@ -134,21 +134,23 @@
                     class="accountHolderId">cs16msiit020@gmail.com</span>
             </h1>
 
-            <form action="#" class="settings__form">
+            <div class="settings__form">
                 <h1 class="font-small"> Change Account Settings</h1>
                 <div class="form__group ">
 
-
-                    <label for="current_username" class="form__label">Change UserName</label>
-                    <input type="text" id="current_passwd" class="form__input form__input--settings"
-                        placeholder="Enter UserName" required>
-                    <!-- for changing username -->
-                    <button class="btn btn--upload" type="submit">Save Changes</button>
-                    <br>
+                    <form>
+                        <label for="current_username" class="form__label">Change UserName</label>
+                        <input type="text" id="current_passwd" class="form__input form__input--settings"
+                            placeholder="Enter UserName" required>
+                        <!-- for changing username -->
+                        <button class="btn btn--upload" type="submit">Save Changes</button>
+                    </form>
+                    <span class="upperline"></span>
                     <!-- for sending the password reset link -->
                     <label class="font-small">Send reset Password link</label>
-                    <button class="btn btn--upload">Reset Password </button></div>
-            </form>
+                    <button class="btn btn--upload">Reset Password </button>
+                </div>
+            </div>
 
         </div>
     </div>

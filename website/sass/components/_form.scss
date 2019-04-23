@@ -36,7 +36,9 @@
     border: 0.1rem;
     // for settings
     &--settings {
-    width: 57%;
+    width: 58%;
+    border: 1px solid $color-black;
+    outline: none;
     }
     // for comment
     &--comment {

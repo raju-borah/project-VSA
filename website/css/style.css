@@ -324,7 +324,9 @@ iframe {
     font-size: 2rem;
     border: 0.1rem; }
     .form__input--settings {
-      width: 57%; }
+      width: 58%;
+      border: 1px solid #000;
+      outline: none; }
     .form__input--comment {
       width: 50%;
       font-size: 1.8rem;
@@ -1547,15 +1549,13 @@ img {
 
 .settings {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url("/img/back-3.jpg");
   background-size: cover;
   background-attachment: fixed;
   color: #fff; }
   .settings__container {
-    margin-top: 20%;
-    padding: 3rem;
-    padding-top: 8%;
+    margin-top: 5rem;
     color: #000;
     width: 100%;
     height: 100%;
@@ -1564,39 +1564,59 @@ img {
     align-items: center;
     justify-content: center;
     flex-direction: column; }
+    @media (max-width: 1025px) {
+      .settings__container {
+        height: 81.1rem; } }
   .settings__editbutton {
     border-radius: 50%;
     height: 8rem;
     width: 8rem;
     position: relative;
-    background-color: #5643fa;
+    background-color: #006064;
     z-index: 1;
-    top: 65%;
-    left: 55%;
+    top: 22rem;
+    left: 7%;
     border: 0.3rem solid #fff; }
     .settings__editbutton:hover .tooltiptext {
       visibility: visible;
       opacity: 1; }
+    @media (max-width: 1367px) {
+      .settings__editbutton {
+        top: 23rem;
+        left: 8%; } }
+    @media (max-width: 1025px) {
+      .settings__editbutton {
+        top: 31rem;
+        left: 10%; } }
   .settings__img {
-    margin-top: 2rem;
-    width: 100%;
-    height: 30rem;
-    position: absolute;
-    top: 25rem;
-    overflow: hidden; }
+    height: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+    @media (max-width: 1025px) {
+      .settings__img {
+        height: 35rem; } }
   .settings__icon {
-    position: absolute;
-    left: 40%;
     width: 30rem;
     height: 30rem;
     border-radius: 50%;
     overflow: hidden;
-    z-index: 1; }
+    z-index: 1;
+    top: 30%;
+    position: absolute;
+    left: 40%; }
+    @media (max-width: 1367px) {
+      .settings__icon {
+        left: 39%; } }
+    @media (max-width: 1025px) {
+      .settings__icon {
+        left: 35%; } }
   .settings__form {
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.66);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.66);
     padding: 4rem;
     background-color: #eee;
-    width: 35%; }
+    width: 50rem; }
   .settings .tooltiptext {
     visibility: hidden;
     position: absolute;
@@ -1613,9 +1633,15 @@ img {
       position: absolute;
       top: 1rem;
       left: -1.6rem;
-      border-width: .8rem;
+      border-width: 0.8rem;
       border-style: solid;
       border-color: transparent #eee transparent transparent; }
+
+.upperline {
+  border-top: 0.15rem dotted #000;
+  display: inline-block;
+  width: 100%;
+  margin-top: 2rem; }
 
 .dashboard {
   width: 100%;
