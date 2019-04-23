@@ -19,7 +19,6 @@
 
 .feature
 {
-    height: 70rem;
     background-image: linear-gradient(to right bottom,rgba(46, 19, 199, 0.500),rgba(18, 207, 240, 0.500)),url("../img/head.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -52,8 +51,8 @@
     background-size: cover;
     position: relative;
     background-image: linear-gradient(to right bottom, 
-    rgba($color-secondary-light, .85), 
-    rgba($color-secondary-dark, .85));
+    rgba($color-secondary-light, .55), 
+    rgba($color-secondary-dark, .55));
 }
 
 
@@ -67,8 +66,8 @@
     position: relative;
 
     background-image: linear-gradient(to right bottom, 
-    rgba($color-tertiary-light, .85), 
-    rgba($color-tertiary-dark, .85));
+    rgba($color-tertiary-light, .65), 
+    rgba($color-tertiary-dark, .65));
 }
 
 
