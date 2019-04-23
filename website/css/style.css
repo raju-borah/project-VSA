@@ -354,13 +354,13 @@ iframe {
           left: 7rem; }
     .form__input__signup {
       display: inline-block;
-      width: 35rem;
+      width: 89%;
       padding: 1.2rem;
       border-radius: 1rem;
       border: 0.1rem double #012A57; }
       .form__input__signup:focus {
         outline: none;
-        border: 0.1rem solid red; }
+        border: 0.1rem solid #012A57; }
     .form__input--upload {
       width: 65%;
       padding: 0.8rem;
@@ -1474,16 +1474,15 @@ img {
   width: 100%;
   height: 100vh;
   background-image: radial-gradient(rgba(41, 152, 255, 0.39), rgba(255, 255, 255, 0.16)), url("/img/Capture.JPG");
-  position: relative;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
   .signup__container {
-    position: absolute;
-    width: 32%;
-    height: 90vh;
+    width: 50rem;
+    height: 70rem;
     padding: 1rem;
-    top: 5rem;
-    left: 50rem;
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: .55rem; }
@@ -1494,7 +1493,10 @@ img {
   font-family: "Philosopher", sans-serif;
   background-image: radial-gradient(rgba(41, 152, 255, 0.39), rgba(255, 255, 255, 0.16)), url("/img/Capture.JPG");
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
   .login__home {
     z-index: 5;
     position: absolute;
@@ -1503,12 +1505,9 @@ img {
     top: 1rem;
     right: 2rem; }
   .login__container {
-    position: absolute;
     width: 50rem;
-    height: 80%;
+    height: 60rem;
     padding: 1rem;
-    top: 10rem;
-    left: 31%;
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: 0.55rem; }

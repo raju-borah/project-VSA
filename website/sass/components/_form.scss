@@ -76,13 +76,13 @@
     // signup page form properties...
     &__signup {
       display: inline-block;
-      width: 35rem;
+      width:89%;
       padding: 1.2rem;
       border-radius: 1rem;
       border: 0.1rem double $color-tertiary-dark-1;
       &:focus {
         outline: none;
-        border: 0.1rem solid red;
+        border: 0.1rem solid $color-tertiary-dark-1;
       }
     }
 

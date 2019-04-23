@@ -6,6 +6,9 @@
     url("/img/Capture.JPG");
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   // the home button
   &__home {
@@ -17,15 +20,13 @@
     right: 2rem;
   }
   &__container {
-    position: absolute;
     width: 50rem;
-    height: 80%;
+    height: 60rem;
     padding: 1rem;
-    top: 10rem;
-    left: 31%;
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: 0.55rem;
+  
   }
 
   // positioning the img in the login page
