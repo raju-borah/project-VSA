@@ -39,3 +39,58 @@
     background-image: url("../img/error-2.png");
   }
 }
+
+
+// for upload
+@keyframes downup {
+  0% {
+      color: orangered;
+      transform: translateY(0rem);
+  }
+
+  10% {
+      transform: translateY(-.5rem);
+  }
+
+  20% {
+      transform: translateY(-1rem);
+  }
+
+  30% {
+      transform: translateY(-1.5rem);
+  }
+
+  40% {
+      transform: translateY(-2rem);
+  }
+
+  50% {color: green;
+      transform: translateY(-2.5rem);
+  }
+
+  60% {
+      transform: translateY(-3rem);
+  }
+
+  70% {
+      transform: translateY(-3.5rem);
+  }
+
+  80% {
+      transform: translateY(-4rem);
+  }
+
+  90% {
+      transform: translateY(-4.5rem);
+  }
+
+  99% {
+
+      
+      transform: translateY(-5rem);
+  }
+  100%{
+      opacity: 0;
+      transform: translateY(0rem);
+  }
+}
