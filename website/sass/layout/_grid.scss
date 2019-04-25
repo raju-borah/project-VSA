@@ -8,48 +8,20 @@
 
     display: grid;
     grid-template-rows: repeat(1, minmax(30rem, min-content));
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 450px));
     grid-auto-rows: 35rem;
     grid-row-gap: 10rem;
-    grid-column-gap: 5rem;
-    padding: 3rem 10rem 10rem 10rem;
+    grid-column-gap: 1rem;
+
+    padding-top: 4rem;
+  
 
     justify-content: center;
     align-content: center;
 
 }
 
-    .item
-    {
-        position: relative;
-        width: 100%;
-        font-size: 30px;
-        font-family: sans-serif;
-        color: $color-white;
-        border-radius: 2rem;
-    
 
-
-        &__name
-        {
-            position: absolute;;
-            top: 21rem;
-            font-size: 3rem;
-            font-weight: 500;
-            color: $color-black;
-
-        }
-
-
-        &__description
-        {
-            position: absolute;
-            top: 25rem;
-            color: $color-black;
-            font-size: 1.5rem;
-        }   height: 22rem;
-     
-    }
 
 
 

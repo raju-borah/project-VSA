@@ -7,6 +7,7 @@
         padding: 5rem 0 2rem 0;
         overflow: hidden;
         position: relative;
+        padding-bottom: 7rem;
 
     }
   
@@ -59,13 +60,24 @@
     display: grid;
     grid-template-rows: repeat(1, minmax(30rem, min-content));//50rem should be same with 50rem of auto-grid-rows to create new rows of same size 
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(470px, 473px));
     grid-gap: 3rem;
-    grid-auto-rows: 30rem;
+    grid-auto-rows: 35rem;
     padding: 2rem;
+
+    
+    justify-content: center;
+    align-content: center;
    
    }
 
+
+  
+   &__video
+   {
+       width: 100%;
+       height: auto;
+   }
 
 
 }
