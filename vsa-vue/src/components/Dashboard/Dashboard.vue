@@ -4,6 +4,7 @@
     <!-- nested nav required -->
     <div v-if="spinner">
       <half-circle-spinner :animation-duration="1000" :size="100" :color="'#FFFFFF'"/>
+      <p class="uploadActive" v-if="deleteAction">Deleting</p>
     </div>
     <div v-else>
       <Navbar :percentage="percentage" :fileName="fileName" :task="task"/>
@@ -29,7 +30,7 @@
           >No Videos uploaded yet!!, Click Upload and get started !! :)</p>
           <!-- the videos uploaded by user will be displayed in this division along with the details -->
           <div class="vcard" v-for="video in videos" :key="video.id">
-            <div class="vcard--img">
+            <div class="vcard--img" :style="{backgroundImage: 'url(' +video.imgBase64 + ')',}">
               <!-- the tag for video -->
               <h1 class="vcard--tag vcard--tag--dashboard">
                 {{video.category}}
@@ -37,7 +38,7 @@
                 <button
                   type="button"
                   class="videodelete u-end-text btn"
-                  @click="warningDisplay(video.id)"
+                  @click="warningDisplay(video.id, video.url)"
                 >
                   <i class="fas fa-trash-alt font-small"></i>
                 </button>
@@ -69,6 +70,11 @@
           v-if="isActiveUpload"
         >
           <form class="testBox">
+            <video id="main-video" controls hidden="hidden">
+              <source type="video/mp4">
+            </video>
+            <canvas id="video-canvas"></canvas>
+
             <!-- upload videos section -->
             <!-- anchor tag  to redirect to the dashboard-->
             <button class="btn--close" @click.self="handleBackgroundClick" type="reset">&times;</button>
@@ -181,6 +187,20 @@
           >One upload task is already active, click on navbar profile option to check the progress</p>
         </div>
       </transition>
+
+      <!-- delete warning if video is still under process -->
+      <transition name="fade">
+        <div
+          id="uploadActiveModal"
+          class="v--modal-overlay scrollable"
+          @click.self="handleBackgroundClickVideoProcess"
+          v-if="isVideoInProcess"
+        >
+          <p
+            class="uploadActive"
+          >Video is still under process, wait for it to finish before deleting it !</p>
+        </div>
+      </transition>
     </div>
     <!-- spinner when delete -->
   </div>
@@ -201,6 +221,7 @@ export default {
   },
   data() {
     return {
+      deleteAction: false,
       spinner: false,
       activeModal: null,
       evt: null,
@@ -208,21 +229,24 @@ export default {
       stop: false,
       fileName: null,
       task: null,
-      url: null,
       id: null,
       videos: [],
+      checkUrl: null,
       isActiveUpload: false,
       isActiveWarning: false,
       isUploadActive: false,
+      isVideoInProcess: false,
       category: "Select Category",
       title: null,
       description: null,
       errMsgTitle: null,
+      errMsgFileType: null,
       deleteId: null,
       deleteRef: null,
       bgColor: "#fff",
       fontColor: "#000",
-      borColor: "#000"
+      borColor: "#000",
+      videoThumbnail: null
     };
   },
   created() {
@@ -254,6 +278,27 @@ export default {
                   description: doc.data().description,
                   url: doc.data().url,
                   category: doc.data().category,
+                  imgBase64: doc.data().imgBase64,
+                  timestamp: moment(doc.data().timestamp).format("lll")
+                });
+              } else if (change.type === "modified") {
+                let doc = change.doc;
+                let length = this.videos.length;
+                this.videos = this.videos.filter(video => {
+                  // when id matches with applied id
+                  // below condition retuns false
+                  return video.id !== doc.id;
+                });
+
+                this.videos.push({
+                  //doc keeps id can retrive using;
+                  id: doc.id,
+                  // field that we have created can be retirve using;
+                  title: doc.data().title,
+                  description: doc.data().description,
+                  url: doc.data().url,
+                  category: doc.data().category,
+                  imgBase64: doc.data().imgBase64,
                   timestamp: moment(doc.data().timestamp).format("lll")
                 });
               }
@@ -288,7 +333,7 @@ export default {
         } else {
           db.collection("uploadedVideos")
             .where("by", "==", this.id)
-            .where("title", "==", this.title)
+            .where("title", "==", this.title.trim())
             .get()
             .then(querySnaphot => {
               if (!querySnaphot.empty) {
@@ -313,9 +358,10 @@ export default {
         this.isActiveUpload = !this.isActiveUpload;
       }
     },
-    warningDisplay(id) {
+    warningDisplay(id, url) {
       this.isActiveWarning = !this.isActiveWarning;
       this.deleteId = id;
+      this.checkUrl = url;
     },
     handleBackgroundClick() {
       this.category = null;
@@ -334,9 +380,13 @@ export default {
     handleBackgroundClickUpload() {
       this.isUploadActive = !this.isUploadActive;
     },
+    handleBackgroundClickVideoProcess() {
+      this.isVideoInProcess = !this.isVideoInProcess;
+    },
     upload() {
       if (
         this.errMsgTitle === null &&
+        this.errMsgFileType === null &&
         this.category !== null &&
         this.category !== "Select Category"
       ) {
@@ -346,7 +396,7 @@ export default {
           // create a storage ref
           let storageRef = firebase
             .storage()
-            .ref("video/" + this.id + "/" + this.title);
+            .ref("video/" + this.id + "/" + this.title + ".mp4");
           // reset form
           this.$el.querySelector("form").reset();
           // hide the upload form
@@ -372,35 +422,29 @@ export default {
             },
             // when upload is completed
             () => {
-              storageRef
-                .getDownloadURL()
-                .then(url => {
-                  this.url = url;
-                  db.collection("uploadedVideos")
-                    .doc()
-                    .set({
-                      title: this.title,
-                      description: this.description,
-                      url: this.url,
-                      category: this.category,
-                      by: this.id,
-                      timestamp: Date.now()
-                    })
-                    .then(() => {
-                      this.task = null;
-                      this.percentage = 0;
-                      this.fileName = null;
-                      this.evt = null;
-                      this.category = "Select Category";
-                      this.title = null;
-                      this.description = null;
-                    })
-                    .catch(err => {
-                      console.error("Document write error: " + err.message);
-                    });
+              db.collection("uploadedVideos")
+                .doc()
+                .set({
+                  title: this.title,
+                  description: this.description,
+                  url: null,
+                  category: this.category,
+                  by: this.id,
+                  imgBase64: this.videoThumbnail,
+                  timestamp: Date.now()
+                })
+                .then(() => {
+                  this.task = null;
+                  this.percentage = 0;
+                  this.fileName = null;
+                  this.evt = null;
+                  this.category = "Select Category";
+                  this.title = null;
+                  this.description = null;
+                  this.videoThumbnail = null;
                 })
                 .catch(err => {
-                  console.error(err.message);
+                  console.error("Document write error: " + err.message);
                 });
             }
           );
@@ -408,7 +452,9 @@ export default {
           alert("Select a video to upload!");
         }
       } else {
-        if (this.errMsgTitle) {
+        if (this.errMsgFileType) {
+          alert(this.errMsgFileType);
+        } else if (this.errMsgTitle) {
           alert(this.errMsgTitle);
         } else {
           alert("Category or title cannot be empty");
@@ -421,6 +467,11 @@ export default {
       this.borColor = "#000";
       // filtering our videos array to remove the deleted video
       // filter -> return false -> remove
+      if (!this.checkUrl) {
+        this.isActiveWarning = !this.isActiveWarning;
+        this.isVideoInProcess = !this.isVideoInProcess;
+        return;
+      }
       this.videos = this.videos.filter(video => {
         // when id matches with applied id
         // below condition retuns false
@@ -429,6 +480,7 @@ export default {
 
       // hide the delete warning
       this.isActiveWarning = !this.isActiveWarning;
+      this.deleteAction = true;
       this.spinner = true;
       // remove the video and video doc from db
       db.collection("uploadedVideos")
@@ -451,11 +503,13 @@ export default {
                   this.spinner = false;
                 })
                 .catch(error => {
+                  this.deleteAction = false;
                   this.spinner = false;
                   console.error("Error removing document: ", error.message);
                 });
             })
             .catch(error => {
+              this.deleteAction = false;
               this.spinner = false;
               console.error(error.message);
             });
@@ -466,17 +520,73 @@ export default {
         });
     },
     filePick() {
+      // globals
+      this.videoThumbnail = null;
       const realFileBtn = this.$el.querySelector("#upload-file");
       const customText = this.$el.querySelector(".custom-text");
       realFileBtn.click();
+      let changeTime;
+      // canvas
+      const _CANVAS = this.$el.querySelector("#video-canvas"),
+        _CTX = _CANVAS.getContext("2d"),
+        // video tag
+        _VIDEO = this.$el.querySelector("#main-video");
 
-      realFileBtn.addEventListener("change", function() {
-        if (realFileBtn.value) {
-          // regular expersion for finding the file name
-          customText.innerHTML = realFileBtn.value.match(
-            /[\/\\]([\w\d\s\.\-\(\)]+)$/
-          )[1];
+      realFileBtn.addEventListener("change", () => {
+        if (realFileBtn.files.length > 0) {
+          // check if file chose is .mp4 or not!
+          if (["video/mp4"].indexOf(realFileBtn.files[0].type) == -1) {
+            this.errMsgFileType = "Error : Only MP4 format allowed";
+            customText.innerHTML = "Error : Only MP4 format allowed";
+          } else if (realFileBtn.files[0].size / 1024 / 1024 > 100) {
+            // if file size is greater than 100MB show error
+            this.errMsgFileType =
+              "Error : File size cannot be greater than 100MB";
+            customText.innerHTML =
+              "Error : File size cannot be greater than 100MB";
+          } else {
+            this.errMsgFileType = null;
+            if (realFileBtn.value) {
+              // regular expersion for finding the file name
+              customText.innerHTML = realFileBtn.value.match(
+                /[\/\\]([\w\d\s\.\-\(\)]+)$/
+              )[1];
+
+              // load video to the video tag that is hidden
+              this.$el
+                .querySelector("#main-video source")
+                .setAttribute("src", URL.createObjectURL(realFileBtn.files[0]));
+              _VIDEO.load();
+
+              // after the video is loaded
+              _VIDEO.addEventListener("loadedmetadata", () => {
+                let video_duration = _VIDEO.duration;
+                changeTime = (video_duration / 100) * 5;
+                let newTime = Math.floor(changeTime);
+                _VIDEO.currentTime = newTime;
+                _CANVAS.width = _VIDEO.videoWidth;
+                _CANVAS.height = _VIDEO.videoHeight;
+              });
+
+              // Seeking video to the specified duration is complete
+              this.$el
+                .querySelector("#main-video")
+                .addEventListener("timeupdate", () => {
+                  _CTX.drawImage(
+                    _VIDEO,
+                    0,
+                    0,
+                    _VIDEO.videoWidth,
+                    _VIDEO.videoHeight
+                  );
+                  this.videoThumbnail = _CANVAS.toDataURL();
+                });
+            } else {
+              customText.innerHTML = "No file choosen yet!";
+            }
+          }
         } else {
+          this.evt = null;
           customText.innerHTML = "No file choosen yet!";
         }
       });
@@ -512,6 +622,14 @@ export default {
 </script>
 
 <style scoped>
+#main-video {
+  display: none;
+}
+#video-canvas {
+  /* display: inline;
+  z-index: 0; */
+  display: none;
+}
 .emptyBox {
   height: 100%;
   display: flex;
