@@ -6,6 +6,7 @@ import router from './router'
 import AOS from 'aos'
 import "aos/dist/aos.css"
 Vue.config.productionTip = false
+import "video.js/dist/video-js.min.css";
 
 /* eslint-disable no-new */
 new Vue({

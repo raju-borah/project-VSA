@@ -4,7 +4,7 @@
       nested component for 
       Navigation bar
     -->
-    <Navbar :user="user"/>
+    <Navbar/>
     <!--heading section-->
     <!-- nested component for SlideShow -->
     <SlideShow/>

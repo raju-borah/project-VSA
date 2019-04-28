@@ -109,6 +109,7 @@ export default {
       hideAccountBtn: false
     };
   },
+
   methods: {
     logOut() {
       this.$root.$emit("logOut");
@@ -133,15 +134,8 @@ export default {
       }
     }
   },
-  created() {
-    if (this.$route.name === "Dashboard") {
-      this.hideMyVideoBtn = true;
-    }
-
-    if (this.$route.name === "Setting") {
-      this.hideAccountBtn = true;
-    }
-    const getName = () => {
+  beforeCreate() {
+      const getName = () => {
       let ref = db.collection("validuser");
       ref = ref
         .where("email", "==", this.user.email)
@@ -160,6 +154,16 @@ export default {
         this.user = null;
       }
     });
+  },
+  created() {
+    if (this.$route.name === "Dashboard") {
+      this.hideMyVideoBtn = true;
+    }
+
+    if (this.$route.name === "Setting") {
+      this.hideAccountBtn = true;
+    }
+
   },
   mounted() {
     const userContainer = this.$el.querySelector(".usercontainer");

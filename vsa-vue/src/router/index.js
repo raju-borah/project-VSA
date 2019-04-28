@@ -56,9 +56,11 @@ const router = new Router({
     // Play Page
     // will add uid of the video to play in this path
     {
-      path: '/play',
+      path: '/play/:id',
       name: 'Play',
-      component: Play
+      component: Play,
+      props: true,
+      
     },
     // More Page
     {
@@ -77,10 +79,14 @@ const router = new Router({
     },
     // for rest not registered path show page not found
     {
-      path: '*',
       name: 'PageNotFound',
+      path: '/pagenotfound',
       component: PageNotFound
-    }
+    },
+    {
+      path: '*',
+      redirect: 'PageNotFound'
+    },
   ]
 })
 

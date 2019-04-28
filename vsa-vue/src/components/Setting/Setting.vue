@@ -2,14 +2,15 @@
   <div id="Setting">
     <!-- Setting page layout -->
     <Navbar/>
-    <section class="settings">
+    <div class="settings">
+      <br>
       <div class="u-center-text">
         <h1 class="heading_tag">Account</h1>
       </div>
 
-      <!-- upload img load here -->
       <div class="settings__img">
         <img src="../../assets/img/icons/man.png" id="profileimage" class="settings__icon" alt>
+
         <input type="file" id="imageupload" accept="image/jpeg" hidden="hidden">
         <button type="button" class="btn settings__editbutton" id="editprofileimage">
           <i class="fas fa-camera font-medium"></i>
@@ -17,50 +18,37 @@
         </button>
       </div>
 
-      <!-- user data from server -->
       <div class="settings__container">
         <h1 class="u-center-text font-small u-margin-bottom-medium">
           Signed as
-          <span class="accountHolderName">{{ name }}</span>
+          <span class="accountHolderName">{{name}}</span>
           <br>
-          <span class="accountHolderId">{{ user.email }}</span>
+          <span class="accountHolderId">{{user.email}}</span>
         </h1>
-        <form action="#" class="settings__form">
-          <h1 class="font-small">Change Password</h1>
+
+        <div class="settings__form">
+          <h1 class="font-small">Change Account Settings</h1>
           <div class="form__group">
-            <label for="current_passwd" class="form__label">Current Password</label>
-            <input
-              type="password"
-              id="current_passwd"
-              class="form__input form__input__signup"
-              placeholder="Enter Password"
-              required
-            >
+            <form>
+              <label for="current_username" class="form__label">Change UserName</label>
+              <input
+                type="text"
+                id="current_passwd"
+                class="form__input form__input--settings"
+                placeholder="Enter UserName"
+                v-model="userName"
+              >
+              <!-- for changing username -->
+              <button class="btn btn--upload" type="submit" @click.prevent="saveChange">Save Changes</button>
+            </form>
+            <span class="upperline"></span>
+            <!-- for sending the password reset link -->
+            <label class="font-small">Send reset Password link</label>
+            <button class="btn btn--upload" @click="reset">Reset Password</button>
           </div>
-          <div class="form__group">
-            <label for="signup_passwd" class="form__label">New Password</label>
-            <input
-              type="password"
-              id="new_passwd"
-              class="form__input form__input__signup"
-              placeholder="Enter Password"
-              required
-            >
-          </div>
-          <div class="form__group">
-            <label for="signup_confirm_passwd" class="form__label">New Password (Confirm)</label>
-            <input
-              type="password"
-              id="new_confirm_passwd"
-              class="form__input form__input__signup"
-              placeholder="Re-Enter Password"
-              required
-            >
-          </div>
-          <button class="btn btn--green" type="button" id="changePasswordBtn">Save Changes</button>
-        </form>
+        </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -78,8 +66,36 @@ export default {
     return {
       user: null,
       name: null,
-
+      userName: null,
+      id: null
     };
+  },
+  methods: {
+    saveChange() {
+      console.log(this.userName);
+      console.log(this.id);
+      db.collection("validuser")
+        .doc(this.id)
+        .update({
+          name: this.userName
+        })
+        .then(() => {
+          alert("User Name Chnaged!");
+          this.userName = null;
+          this.$router.go(0)
+        });
+    },
+    reset() {
+      firebase
+        .auth()
+        .sendPasswordResetEmail(this.user.email)
+        .then(() => {
+          alert("Password reset link sent to your email!");
+        })
+        .catch(error => {
+          alert("" + error.message);
+        });
+    }
   },
   created() {
     const getName = () => {
@@ -90,6 +106,7 @@ export default {
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
             this.name = doc.data().name;
+            this.id = doc.data().uid;
           });
         });
     };

@@ -29,16 +29,28 @@
             v-if="videos.length === 0"
           >No Videos uploaded yet!!, Click Upload and get started !! :)</p>
           <!-- the videos uploaded by user will be displayed in this division along with the details -->
-          <div class="vcard" v-for="video in videos" :key="video.id">
+          <div
+            class="vcard"
+            v-for="video in videos"
+            :key="video.id"
+            @click.stop="redirectToPlay(video)"
+          >
             <div class="vcard--img" :style="{backgroundImage: 'url(' +video.imgBase64 + ')',}">
               <!-- the tag for video -->
-              <h1 class="vcard--tag vcard--tag--dashboard">
+              <h1
+                class="vcard--tag vcard--tag--dashboard"
+                :class="{
+                'vcard--tag--learning': video.category === 'Learning', 
+                'vcard--tag--event': video.category === 'Events', 
+                'vcard--tag--club': video.category === 'Club activities'
+                }"
+              >
                 {{video.category}}
                 <!-- event to trigger delete and show warning window -->
                 <button
                   type="button"
                   class="videodelete u-end-text btn"
-                  @click="warningDisplay(video.id, video.url)"
+                  @click.stop="warningDisplay(video.id, video.url)"
                 >
                   <i class="fas fa-trash-alt font-small"></i>
                 </button>
@@ -201,6 +213,19 @@
           >Video is still under process, wait for it to finish before deleting it !</p>
         </div>
       </transition>
+      <!-- play warning if video is still under process -->
+      <transition name="fade">
+        <div
+          id="uploadActiveModal"
+          class="v--modal-overlay scrollable"
+          @click.self="handleBackgroundClickVideo"
+          v-if="showModal"
+        >
+          <p
+            class="uploadActive"
+          >Video is still under process, wait for it to finish before playing ^.^!</p>
+        </div>
+      </transition>
     </div>
     <!-- spinner when delete -->
   </div>
@@ -221,6 +246,7 @@ export default {
   },
   data() {
     return {
+      showModal: false,
       deleteAction: false,
       spinner: false,
       activeModal: null,
@@ -249,7 +275,7 @@ export default {
       videoThumbnail: null
     };
   },
-  created() {
+  beforeCreate() {
     const getId = () => {
       this.spinner = true;
       let ref = db.collection("validuser");
@@ -283,7 +309,6 @@ export default {
                 });
               } else if (change.type === "modified") {
                 let doc = change.doc;
-                let length = this.videos.length;
                 this.videos = this.videos.filter(video => {
                   // when id matches with applied id
                   // below condition retuns false
@@ -348,6 +373,13 @@ export default {
     }
   },
   methods: {
+    redirectToPlay(video) {
+      if (video.url) {
+        this.$router.push({ name: "Play", params: { id: video.id } });
+      } else {
+        this.showModal = !this.showModal;
+      }
+    },
     change(event) {
       this.evt = event;
     },
@@ -383,6 +415,9 @@ export default {
     handleBackgroundClickVideoProcess() {
       this.isVideoInProcess = !this.isVideoInProcess;
     },
+    handleBackgroundClickVideo() {
+      this.showModal = !this.showModal;
+    },
     upload() {
       if (
         this.errMsgTitle === null &&
@@ -405,6 +440,7 @@ export default {
           // upload file
           this.task = storageRef.put(file);
 
+          // this.$root.$emit('task', this.task)
           this.task.on(
             "state_changed",
             // when upload is in progress

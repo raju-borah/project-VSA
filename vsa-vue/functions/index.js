@@ -175,11 +175,6 @@ exports.compressVideo = functions.storage.object().onFinalize(async object => {
     return fs.remove(workingDir);
 })
 
-// const img_url = 'https://firebasestorage.googleapis.com/v0/b/[YOUR BUCKET]/o/'
-// + encodeURIComponent(object.name)
-// + '?alt=media&token='
-// + object.metadata.firebaseStorageDownloadTokens;
-
 // function to replace and delete the old url with compress video 
 exports.replaceUrl = functions.storage.object().onFinalize(async object => {
     // full path of uploaded file 
@@ -211,36 +206,33 @@ exports.replaceUrl = functions.storage.object().onFinalize(async object => {
                 querySnapshot.forEach(doc => {
                     console.log('doc id: ' + doc.id)
                     console.log(doc.data())
-                    // const old_url = doc.data().url
                     //update the old url with new_url
-                    db
-                        .collection('uploadedVideos')
+                    db.collection('uploadedVideos')
                         .doc(doc.id)
                         .update({
                             'url': new_url
-                        })
-                        .then(() => {
-                            console.log('updated url success')
-                            // delete the original file as the url is replaced with compressed version of file
-                            return fb_storage
-                                .bucket()
-                                .file(`video/${doc.data().by}/${doc.data().title}.mp4`)
-                                .delete()
-                                .then(console.log('old video deleted successfully'))
-                                .catch(err => {
-                                    console.log('err: ' + err.message)
-                                })
-                        })
-                        .catch(err => {
-                            console.log('err: ' + err.message)
-                        })
+                        }).then(() => { return console.log('updated url success') })
                 })
             })
             .catch(err => {
                 console.log('err: ' + err.message)
             })
+
     } else {
         console.log('exiting funciton');
         return false;
     }
+})
+
+exports.deleteVideo = functions.firestore.document('uploadedVideos/{id}').onUpdate((snap, context) => {
+    fb_storage
+        .bucket()
+        .file(`video/${snap.after.data().by}/${snap.after.data().title}.mp4`)
+        .delete()
+        .then(() => { console.log('old video deleted successfully') })
+        .catch(err => {
+            console.log('err: ' + err.message)
+        })
+
+    return true;
 })

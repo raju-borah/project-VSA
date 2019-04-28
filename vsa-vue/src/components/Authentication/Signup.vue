@@ -196,7 +196,7 @@ export default {
         this.errMsgEmail === null &&
         this.errMsgPassStren === null
       ) {
-        if (this.fName != null && this.lName != null) {
+        if (this.fName.trim().length > 0 && this.lName.trim().length > 0) {
           // take in email and pass for signup
           this.spinner = true;
           firebase
