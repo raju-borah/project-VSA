@@ -21,7 +21,8 @@
         <div class="play__grid">
           <!-- image of the user that has uplodede the video  -->
           <div class="uploader-image">
-            <img class="profile--image" src="../../assets/img/man.png">
+            <img class="profile--image" src="../../assets/img/man.png" v-if="!pic">
+            <img class="profile--image" :src="pic" v-else>
           </div>
           <div class="user-name">
             <!-- the that have uploaded the video -->
@@ -170,6 +171,7 @@ export default {
       signedEmail: null,
       name: null,
       show: false,
+      pic: null,
       displayComment: false,
       spinner: false,
       suggestedCategory: null,
@@ -221,7 +223,7 @@ export default {
       }
     }
   },
-  created() {
+  beforeCreate() {
     const getName = usr => {
       let ref = db.collection("validuser");
       ref = ref
@@ -259,6 +261,7 @@ export default {
           .get()
           .then(doc => {
             this.name = doc.data().name;
+            this.pic = doc.data().profilePic;
           })
           .catch(err => {
             console.log("err: " + err.message);
