@@ -53,7 +53,7 @@
 @mixin title{
   color: $color-white;
   float: left;
-  font-size: 7rem;
+  font-size: 5rem;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
@@ -73,7 +73,7 @@
   vertical-align: middle;
   font-weight: 500; 
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   right:5rem;
   transition: color .25s ease;
   border-left: 2px solid $color-tertiary-dark;

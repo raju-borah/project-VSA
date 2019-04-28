@@ -27,7 +27,7 @@
 
 
 
-    //grid for more videos page 
+ //grid for more videos page 
 .grid2
 {
     width: 100%;
@@ -48,7 +48,7 @@
 }
 
 
-//colours for all categories
+//title color for all categories
 .colorlearn
 {
     background-color: $color-primary-dark;
@@ -63,3 +63,96 @@
 {
     background-color: $color-secondary-dark;
 }
+
+//text color for all cards
+.textlearn
+{
+    color: $color-primary-dark-1;
+
+}
+
+.textevent
+{
+   color:$color-tertiary-dark;
+}
+
+
+.textclub
+{
+    color:$color-secondary-dark;
+
+}
+
+
+
+.vcardmore {
+    // for each video the info is hold by the vcard division
+    width: 100%;
+    height: 100%;
+    border: 0.1rem solid black;
+    box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
+    background-color: #fff;
+    position: relative;
+    // for the image division
+    &--img {
+      width: 100%;
+      height: 20rem;
+      cursor: pointer;
+    }
+    // tag for identifying the type of video category
+    &--tag {
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      padding: 1rem;
+      position: absolute;
+      width: 50%;
+      top: 49%;
+      left: 0;
+    }
+    // division for storing the video info
+    &__info {
+        position:ABSOLUTE;
+        top: 56%;
+      padding: 2rem;
+      font-size: 1.7rem;
+      width: 100%;
+      // fot the title
+      &--title {
+        font-size: 2.12rem;
+        white-space: nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        width: 100%;
+        font-weight: bold;
+
+      }
+      //descrpition of the video uploaded...
+      &--des {
+        overflow:hidden;
+        text-overflow:ellipsis;
+        width: 100%;
+      }
+    }
+
+  }
+  
+
+  .playicon
+  {
+      color: black;
+      position:absolute;
+      font-size: 6rem;
+      z-index:1;
+      top:15%;
+      left: 40%;
+      transition: all .3s;
+
+  }
+
+  .vcardmore:hover .playicon
+  {
+    transform: scale(1.2);
+    transition: all .3s;
+  }
+
