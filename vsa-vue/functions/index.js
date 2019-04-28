@@ -57,60 +57,6 @@ exports.deleteUser = functions.pubsub.topic('deleteUser').onPublish(() => {
     return true;
 });
 
-// function to resize the uploaded image
-exports.imageThumb = functions.storage.object().onFinalize(async object => {
-    // reference to the firebase storage bucket
-    const bucket = gcs.bucket(object.bucket)
-
-    // full path of uploaded file 
-    const filePath = object.name;
-    console.log(filePath);
-    // reference to file name
-    const fileName = filePath.split('/').pop();
-    // reference to dir where the file came from so to use it to save the thumbnail back again
-    const bucketDir = dirname(filePath);
-    console.log('bucketDir:')
-    console.log(bucketDir)
-    // creating a working directory called thumbs where we are going to do the operation
-    const workingDir = join(tmpdir(), 'thumbs')
-    // source name path
-    const tempFilePath = join(workingDir, 'source.png');
-
-    // break point to prevent event loop
-    if (fileName.includes('thumb@') || !object.contentType.includes('image')) {
-        console.log('exiting funciton');
-        return false;
-    }
-
-    // ensure if the working dir exists
-    await fs.ensureDir(workingDir);
-
-    await bucket.file(filePath).download({
-        destination: tempFilePath
-    })
-
-    const sizes = [64, 128, 256]
-
-    const uploadPromise = sizes.map(async size => {
-        const thumbName = `thumb@${size}_${fileName}`;
-        const thumbPath = join(workingDir, thumbName);
-
-        await sharp(tempFilePath)
-            .resize(size, size)
-            .toFile(thumbPath)
-
-        return bucket.upload(thumbPath, {
-            destination: join(bucketDir, thumbName)
-            // destination: bucketDir
-        })
-
-    })
-
-    await Promise.all(uploadPromise)
-
-    return fs.remove(workingDir);
-})
-
 // function to compress the uplaoded video using ffmpeg
 exports.compressVideo = functions.storage.object().onFinalize(async object => {
     // reference to the firebase storage bucket

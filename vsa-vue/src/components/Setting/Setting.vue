@@ -9,10 +9,22 @@
       </div>
 
       <div class="settings__img">
-        <img src="../../assets/img/icons/man.png" id="profileimage" class="settings__icon" alt>
+        <img
+          src="../../assets/img/icons/man.png"
+          id="profileimage"
+          class="settings__icon"
+          alt
+          v-if="!pic"
+        >
+        <img :src="pic" id="profileimage" class="settings__icon" alt v-else>
 
-        <input type="file" id="imageupload" accept="image/jpeg" hidden="hidden">
-        <button type="button" class="btn settings__editbutton" id="editprofileimage">
+        <input type="file" id="imageupload" accept="image/jpeg" hidden="hidden" @change="change">
+        <button
+          type="button"
+          class="btn settings__editbutton"
+          id="editprofileimage"
+          @click="pickImage"
+        >
           <i class="fas fa-camera font-medium"></i>
           <span class="tooltiptext">Edit Profile Image</span>
         </button>
@@ -67,10 +79,66 @@ export default {
       user: null,
       name: null,
       userName: null,
-      id: null
+      id: null,
+      evt: null,
+      pic: null
     };
   },
   methods: {
+    change(event) {
+      const imageUpload = this.$el.querySelector("#imageupload");
+      this.evt = event;
+
+      let canvas = document.createElement("canvas");
+      let ctx = canvas.getContext("2d");
+
+      canvas.width = 512; // target width
+      canvas.height = 512; // target height
+
+      let image = new Image();
+      // document.getElementById("original").appendChild(image);
+      image.onload = e => {
+        ctx.drawImage(
+          // draw the image as original
+          image,
+          0,
+          0,
+          image.width,
+          image.height,
+          //convert it to the target hit
+          0,
+          0,
+          canvas.width,
+          canvas.height
+        );
+        // create a new base64 encoding
+        let imageConv = canvas.toDataURL("image/jpeg");
+        console.log(imageConv);
+
+        db.collection("validuser")
+          .doc(this.id)
+          .update({
+            profilePic: imageConv
+          })
+          .then(() => {
+            alert("Profile Pic Changed!");
+          });
+      };
+
+      if (imageUpload.files.length > 0) {
+        console.log(imageUpload.files[0].type);
+        // check if file chose is .mp4 or not!
+        if (["image"].indexOf(imageUpload.files[0].type) == -1) {
+          image.setAttribute("src", URL.createObjectURL(imageUpload.files[0]));
+        } else {
+          alert("Unsupported Image type!");
+        }
+      }
+    },
+    pickImage() {
+      const imageUpload = this.$el.querySelector("#imageupload");
+      imageUpload.click();
+    },
     saveChange() {
       console.log(this.userName);
       console.log(this.id);
@@ -82,7 +150,7 @@ export default {
         .then(() => {
           alert("User Name Chnaged!");
           this.userName = null;
-          this.$router.go(0)
+          this.$router.go(0);
         });
     },
     reset() {
@@ -97,7 +165,7 @@ export default {
         });
     }
   },
-  created() {
+  beforeCreate() {
     const getName = () => {
       let ref = db.collection("validuser");
       ref = ref
@@ -107,42 +175,21 @@ export default {
           querySnapshot.forEach(doc => {
             this.name = doc.data().name;
             this.id = doc.data().uid;
+            this.pic = doc.data().profilePic;
           });
         });
     };
-    if (firebase.auth().currentUser) {
-      this.user = firebase.auth().currentUser;
-      getName();
-    } else {
-      firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-          this.user = user;
-          getName();
-        } else {
-          this.user = null;
-        }
-      });
-    }
+    firebase.auth().onAuthStateChanged(user => {
+      console.log("here1");
+      if (user) {
+        this.user = user;
+        getName();
+      } else {
+        this.user = null;
+      }
+    });
   },
-  mounted() {
-    // current profile image
-    const profileimg = this.$el.querySelector("#profileimage");
-    // upload button
-    const imageUpload = this.$el.querySelector("#imageupload");
-    // custom button for upload
-    const editImageButton = this.$el.querySelector("#editprofileimage");
-
-    // save Edit image button clicked button
-    editImageButton.addEventListener("click", function() {
-      imageUpload.click();
-    });
-
-    /* 
-    imageUpload.addEventListener('change',function(){
-
-    });
-    */
-  }
+  mounted() {}
 };
 </script>
 
