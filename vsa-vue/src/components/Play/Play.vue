@@ -223,7 +223,7 @@ export default {
       }
     }
   },
-  beforeCreate() {
+  created() {
     const getName = usr => {
       let ref = db.collection("validuser");
       ref = ref
