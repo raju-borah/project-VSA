@@ -3,7 +3,8 @@
     <div class="usercontainer">
       <!-- if user signed the following div will be displayed -->
       <div class="signincontainer">
-        <img src="../../assets/img/icons/man.png" class="signincontainer__img" alt>
+        <img src="../../assets/img/icons/man.png" class="signincontainer__img" alt v-if="!pic">
+        <img :src="pic" class="signincontainer__img" alt v-else>
         <ul class="ul__list">
           <li class="ul__list--items">
             <h1 class="accountHolderName" v-if="name">{{ name }}</h1>
@@ -104,11 +105,13 @@ export default {
     return {
       user: null,
       name: null,
+      pic: null,
       paused: false,
       hideMyVideoBtn: false,
       hideAccountBtn: false
     };
   },
+
   methods: {
     logOut() {
       this.$root.$emit("logOut");
@@ -133,14 +136,7 @@ export default {
       }
     }
   },
-  created() {
-    if (this.$route.name === "Dashboard") {
-      this.hideMyVideoBtn = true;
-    }
-
-    if (this.$route.name === "Setting") {
-      this.hideAccountBtn = true;
-    }
+  beforeCreate() {
     const getName = () => {
       let ref = db.collection("validuser");
       ref = ref
@@ -149,6 +145,7 @@ export default {
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
             this.name = doc.data().name;
+            this.pic = doc.data().profilePic;
           });
         });
     };
@@ -160,6 +157,15 @@ export default {
         this.user = null;
       }
     });
+  },
+  created() {
+    if (this.$route.name === "Dashboard") {
+      this.hideMyVideoBtn = true;
+    }
+
+    if (this.$route.name === "Setting") {
+      this.hideAccountBtn = true;
+    }
   },
   mounted() {
     const userContainer = this.$el.querySelector(".usercontainer");

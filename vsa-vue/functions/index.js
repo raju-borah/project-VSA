@@ -57,60 +57,6 @@ exports.deleteUser = functions.pubsub.topic('deleteUser').onPublish(() => {
     return true;
 });
 
-// function to resize the uploaded image
-exports.imageThumb = functions.storage.object().onFinalize(async object => {
-    // reference to the firebase storage bucket
-    const bucket = gcs.bucket(object.bucket)
-
-    // full path of uploaded file 
-    const filePath = object.name;
-    console.log(filePath);
-    // reference to file name
-    const fileName = filePath.split('/').pop();
-    // reference to dir where the file came from so to use it to save the thumbnail back again
-    const bucketDir = dirname(filePath);
-    console.log('bucketDir:')
-    console.log(bucketDir)
-    // creating a working directory called thumbs where we are going to do the operation
-    const workingDir = join(tmpdir(), 'thumbs')
-    // source name path
-    const tempFilePath = join(workingDir, 'source.png');
-
-    // break point to prevent event loop
-    if (fileName.includes('thumb@') || !object.contentType.includes('image')) {
-        console.log('exiting funciton');
-        return false;
-    }
-
-    // ensure if the working dir exists
-    await fs.ensureDir(workingDir);
-
-    await bucket.file(filePath).download({
-        destination: tempFilePath
-    })
-
-    const sizes = [64, 128, 256]
-
-    const uploadPromise = sizes.map(async size => {
-        const thumbName = `thumb@${size}_${fileName}`;
-        const thumbPath = join(workingDir, thumbName);
-
-        await sharp(tempFilePath)
-            .resize(size, size)
-            .toFile(thumbPath)
-
-        return bucket.upload(thumbPath, {
-            destination: join(bucketDir, thumbName)
-            // destination: bucketDir
-        })
-
-    })
-
-    await Promise.all(uploadPromise)
-
-    return fs.remove(workingDir);
-})
-
 // function to compress the uplaoded video using ffmpeg
 exports.compressVideo = functions.storage.object().onFinalize(async object => {
     // reference to the firebase storage bucket
@@ -175,11 +121,6 @@ exports.compressVideo = functions.storage.object().onFinalize(async object => {
     return fs.remove(workingDir);
 })
 
-// const img_url = 'https://firebasestorage.googleapis.com/v0/b/[YOUR BUCKET]/o/'
-// + encodeURIComponent(object.name)
-// + '?alt=media&token='
-// + object.metadata.firebaseStorageDownloadTokens;
-
 // function to replace and delete the old url with compress video 
 exports.replaceUrl = functions.storage.object().onFinalize(async object => {
     // full path of uploaded file 
@@ -211,36 +152,33 @@ exports.replaceUrl = functions.storage.object().onFinalize(async object => {
                 querySnapshot.forEach(doc => {
                     console.log('doc id: ' + doc.id)
                     console.log(doc.data())
-                    // const old_url = doc.data().url
                     //update the old url with new_url
-                    db
-                        .collection('uploadedVideos')
+                    db.collection('uploadedVideos')
                         .doc(doc.id)
                         .update({
                             'url': new_url
-                        })
-                        .then(() => {
-                            console.log('updated url success')
-                            // delete the original file as the url is replaced with compressed version of file
-                            return fb_storage
-                                .bucket()
-                                .file(`video/${doc.data().by}/${doc.data().title}.mp4`)
-                                .delete()
-                                .then(console.log('old video deleted successfully'))
-                                .catch(err => {
-                                    console.log('err: ' + err.message)
-                                })
-                        })
-                        .catch(err => {
-                            console.log('err: ' + err.message)
-                        })
+                        }).then(() => { return console.log('updated url success') })
                 })
             })
             .catch(err => {
                 console.log('err: ' + err.message)
             })
+
     } else {
         console.log('exiting funciton');
         return false;
     }
+})
+
+exports.deleteVideo = functions.firestore.document('uploadedVideos/{id}').onUpdate((snap, context) => {
+    fb_storage
+        .bucket()
+        .file(`video/${snap.after.data().by}/${snap.after.data().title}.mp4`)
+        .delete()
+        .then(() => { console.log('old video deleted successfully') })
+        .catch(err => {
+            console.log('err: ' + err.message)
+        })
+
+    return true;
 })
