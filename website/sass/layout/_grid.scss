@@ -101,19 +101,19 @@
     }
     // tag for identifying the type of video category
     &--tag {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 700;
       color: white;
-      padding: 1rem;
+      padding: .3rem;
       position: absolute;
       width: 50%;
-      top: 49%;
+      top: 50%;
       left: 0;
     }
     // division for storing the video info
     &__info {
         position:ABSOLUTE;
-        top: 56%;
+        top: 57%;
       padding: 2rem;
       font-size: 1.7rem;
       width: 100%;
@@ -140,7 +140,7 @@
 
   .playicon
   {
-      color: black;
+      color:rgba($color-black,.4);
       position:absolute;
       font-size: 6rem;
       z-index:1;

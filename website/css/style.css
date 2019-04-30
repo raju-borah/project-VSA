@@ -1457,17 +1457,17 @@ img {
     height: 20rem;
     cursor: pointer; }
   .vcardmore--tag {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
     color: white;
-    padding: 1rem;
+    padding: .3rem;
     position: absolute;
     width: 50%;
-    top: 49%;
+    top: 50%;
     left: 0; }
   .vcardmore__info {
     position: ABSOLUTE;
-    top: 56%;
+    top: 57%;
     padding: 2rem;
     font-size: 1.7rem;
     width: 100%; }
@@ -1484,7 +1484,7 @@ img {
       width: 100%; }
 
 .playicon {
-  color: black;
+  color: rgba(0, 0, 0, 0.4);
   position: absolute;
   font-size: 6rem;
   z-index: 1;
