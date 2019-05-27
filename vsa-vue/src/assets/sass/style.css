@@ -852,7 +852,7 @@ border-radius for curved end of button
 .learning__title {
   color: #fff;
   float: left;
-  font-size: 7rem;
+  font-size: 5rem;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
@@ -867,7 +867,7 @@ border-radius for curved end of button
   vertical-align: middle;
   font-weight: 500;
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   right: 5rem;
   transition: color .25s ease;
   border-left: 2px solid #5643fa;
@@ -916,7 +916,7 @@ border-radius for curved end of button
 .event__title {
   color: #fff;
   float: left;
-  font-size: 7rem;
+  font-size: 5rem;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
@@ -931,7 +931,7 @@ border-radius for curved end of button
   vertical-align: middle;
   font-weight: 500;
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   right: 5rem;
   transition: color .25s ease;
   border-left: 2px solid #5643fa;
@@ -968,7 +968,7 @@ border-radius for curved end of button
 .club__title {
   color: #fff;
   float: left;
-  font-size: 7rem;
+  font-size: 5rem;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
@@ -983,7 +983,7 @@ border-radius for curved end of button
   vertical-align: middle;
   font-weight: 500;
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   right: 5rem;
   transition: color .25s ease;
   border-left: 2px solid #5643fa;
@@ -1023,7 +1023,7 @@ border-radius for curved end of button
   .team__left {
     background: #fff;
     height: 0.2rem;
-    width: 20rem;
+    width: 13%;
     position: absolute;
     left: 23rem;
     top: 15rem;
@@ -1033,7 +1033,7 @@ border-radius for curved end of button
   .team__right {
     background: #fff;
     height: 0.2rem;
-    width: 20rem;
+    width: 13%;
     right: 23rem;
     position: absolute;
     top: 15rem;
@@ -1045,7 +1045,8 @@ border-radius for curved end of button
     font-size: 6rem;
     color: #fff;
     top: 2rem;
-    left: 74rem; }
+    left: 74rem;
+    text-align: center; }
   .team__description {
     color: #fff;
     font-size: 3rem;
@@ -1149,7 +1150,7 @@ border-radius for curved end of button
     .vcard--tag--learning {
       background-color: #28b485; }
     .vcard--tag--event {
-      background-color: #012A57; }
+      background-color: #5643fa; }
     .vcard--tag--club {
       background-color: #ff7730; }
     .vcard--tag--dashboard {
@@ -1192,7 +1193,8 @@ border-radius for curved end of button
     position: relative;
     width: 100%;
     height: 73%;
-    cursor: pointer;
+    border: 1px solid black;
+    background-size: cover;
     overflow: hidden; }
   .vcardhome__info {
     padding: 1rem;
@@ -1405,7 +1407,7 @@ img {
   width: 100%;
   margin: 30px auto;
   display: grid;
-  grid-template-rows: repeat(1, minmax(30rem, min-content));
+  grid-template-rows: repeat(1, minmax(35rem, min-content));
   grid-template-columns: repeat(auto-fill, minmax(200px, 450px));
   grid-auto-rows: 35rem;
   grid-row-gap: 10rem;
@@ -1435,6 +1437,66 @@ img {
 
 .colorclub {
   background-color: #ff7730; }
+
+.textlearn {
+  color: #228B22; }
+
+.textevent {
+  color: #5643fa; }
+
+.textclub {
+  color: #ff7730; }
+
+.vcardmore {
+  width: 100%;
+  height: 100%;
+  border: 0.1rem solid black;
+  box-shadow: 1rem 1rem 1rem rgba(23, 45, 68, 0.36);
+  background-color: #fff;
+  position: relative; }
+  .vcardmore--img {
+    width: 100%;
+    height: 20rem;
+    cursor: pointer; }
+  .vcardmore--tag {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    padding: .3rem;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 0; }
+  .vcardmore__info {
+    position: ABSOLUTE;
+    top: 57%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    width: 100%; }
+    .vcardmore__info--title {
+      font-size: 2.12rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      font-weight: bold; }
+    .vcardmore__info--des {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%; }
+
+.playicon {
+  color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  font-size: 6rem;
+  z-index: 1;
+  top: 15%;
+  left: 40%;
+  transition: all .3s; }
+
+.vcardmore:hover .playicon {
+  transform: scale(1.2);
+  transition: all .3s; }
 
 .main {
   background-color: #fff; }
@@ -1853,7 +1915,6 @@ img {
   width: 100%;
   height: 7rem;
   background-image: linear-gradient(120deg, #012A57 60%, #2998ff 80%);
-  border-radius: .8rem;
   left: 0;
   padding: 1rem;
   transition: all 0.3s ease; }

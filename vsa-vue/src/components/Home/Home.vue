@@ -11,69 +11,67 @@
 
     <main class="main">
       <!--info section-->
-      <section class="info">
-        <!--info heading-->
-        <div class="info__heading u-margin-top-large" data-aos="zoom-in" data-aos-duration="1000">
-          <h2>What makes us different?</h2>
-        </div>
+      <section class="infocard">
+        <div
+          class="infocard__title"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >What makes us different?</div>
 
-        <!--info about part-->
-        <div class="info__grid">
-          <div
-            class="info__learning"
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="500"
-          >
-            <div class="info__imgbox">
-              <img src="../../assets/img/head1.jpg" alt class="info__img">
+        <!--grid for the cards-->
+        <div class="cardsgrid">
+          <div class="card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="card__side card__side--front">
+              <img src="../../assets/img/card-learn.jpg" alt="House 1" class="card__img">
+              <h4 class="card__heading card__heading--1">
+                <span class="card__text">learning</span>
+              </h4>
             </div>
-
-            <h5 class="info__title">LEARNING</h5>
-
-            <p class="info__text">
-              Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Eligendi, eos fuga laudantium
-              vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
-            </p>
+            <div class="card__side card__side--back card__side--back-1">
+              <div class="card__cta">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae assumenda impedit
+                  quos laudantium ducimus voluptatum quae! Vero hic ullam sint quae accusantium
+                  temporibus? Doloremque deleniti perferendis similique consectetur minima consequuntur?
+                </p>
+              </div>
+            </div>
           </div>
 
-          <!--Eevent card-->
-          <div
-            class="info__event"
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="500"
-          >
-            <div class="info__imgbox">
-              <img src="../../assets/img/event1.jpg" alt class="info__img">
+          <div class="card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="card__side card__side--front">
+              <img src="../../assets/img/card-club.jpg" alt="House 1" class="card__img">
+              <h4 class="card__heading card__heading--2">
+                <span class="card__text">club</span>
+              </h4>
             </div>
-            <h5 class="info__title">Event</h5>
-
-            <p class="info__text">
-              Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Eligendi, eos fuga laudantium
-              vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
-            </p>
+            <div class="card__side card__side--back card__side--back-2">
+              <div class="card__cta">
+                <p>
+                  Corem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae assumenda impedit
+                  quos laudantium ducimus voluptatum quae! Vero hic ullam sint quae accusantium
+                  temporibus? Doloremque deleniti perferendis similique consectetur minima consequuntur?
+                </p>
+              </div>
+            </div>
           </div>
-          <!--Club card-->
-          <div
-            class="info__club"
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="500"
-          >
-            <div class="info__imgbox">
-              <img src="../../assets/img/floor1.jpg" alt class="info__img">
+
+          <div class="card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="card__side card__side--front">
+              <img src="../../assets/img/head1.jpg" alt="House 1" class="card__img">
+              <h4 class="card__heading card__heading--3">
+                <span class="card__text">event</span>
+              </h4>
             </div>
-
-            <h5 class="info__title">CLUB ACTIVITIES</h5>
-
-            <p class="info__text">
-              Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Eligendi, eos fuga laudantium
-              vel sunt cupiditate vero. Mollitia placeat ratione aliquam!
-            </p>
+            <div class="card__side card__side--back card__side--back-3">
+              <div class="card__cta">
+                <p>
+                  Eorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae assumenda impedit
+                  quos laudantium ducimus voluptatum quae! Vero hic ullam sint quae accusantium
+                  temporibus? Doloremque deleniti perferendis similique consectetur minima consequuntur?
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -85,6 +83,8 @@
       <Event/>
       <!-- nested component for Event section -->
       <ClubActivities/>
+
+      <!-- till here -->
       <!-- nested component About Team  -->
       <Team/>
     </main>
@@ -153,7 +153,6 @@ export default {
 
     //to fade the header section on scroll
     const opacity = () => {
-
       const head = this.$el.querySelector(".head");
       let scrollTop;
       //height of the content area that is visible on screen
@@ -169,7 +168,6 @@ export default {
       height = height / 1.1;
       //increase or decrease the opacity according to the scroll
       head.style.opacity = (height - scrollTop) / height;
-
     };
 
     window.addEventListener("scroll", opacity); //header opacity

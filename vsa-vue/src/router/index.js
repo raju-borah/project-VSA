@@ -60,13 +60,14 @@ const router = new Router({
       name: 'Play',
       component: Play,
       props: true,
-      
+
     },
     // More Page
     {
-      path: '/more',
+      path: '/more/:id',
       name: 'More',
-      component: More
+      component: More,
+      props: true,
     },
     // Setting Page
     {
