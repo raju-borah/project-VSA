@@ -76,13 +76,13 @@
         </div>
       </section>
       <!-- nested component forfeatured -->
-      <Featured/>
+      <Featured :thumb="videoThumb"/>
       <!-- nested component for learning -->
-      <Learning/>
+      <Learning :thumb="videoThumb"/>
       <!-- nested component for Club -->
-      <Event/>
+      <Event :thumb="videoThumb"/>
       <!-- nested component for Event section -->
-      <ClubActivities/>
+      <ClubActivities :thumb="videoThumb"/>
 
       <!-- till here -->
       <!-- nested component About Team  -->
@@ -105,6 +105,7 @@ import Footer from "@/components/Home/Footer";
 import Team from "@/components/Home/Team";
 import SlideShow from "@/components/Home/SlideShow";
 import Navbar from "@/components/Navbar/Navbar";
+import db from "@/firebase/init";
 
 export default {
   name: "Home",
@@ -120,9 +121,10 @@ export default {
     SlideShow
   },
   data() {
-    return {};
+    return {
+      videoThumb: ""
+    };
   },
-
   mounted() {
     let slideIndex = 0; //this indicates to start from the first image
 

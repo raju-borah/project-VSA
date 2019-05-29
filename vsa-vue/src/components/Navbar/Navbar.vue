@@ -13,8 +13,15 @@
       <!-- for right option such as search, user profile, upload -->
       <div class="navbarfont navigationbar--right">
         <div class="search">
-          <input type="text" placeholder="Search" class="search__input" required>
-          <button type="button" class="search__btn" id="searchButton">
+          <input
+            type="text"
+            placeholder="Search"
+            class="search__input"
+            required
+            v-model="searchText"
+            @keyup.enter="search"
+          >
+          <button type="button" class="search__btn" id="searchButton" @click="search">
             <i class="navbar_items fa fa-search search__icon" aria-hidden="true"></i>
           </button>
         </div>
@@ -59,6 +66,7 @@
 
 <script>
 import firebase from "firebase";
+import db from "@/firebase/init";
 
 import UserContainer from "@/components/Navbar/UserContainer";
 export default {
@@ -70,12 +78,19 @@ export default {
   data() {
     return {
       key: 0,
-      toggleMore: false
+      toggleMore: false,
+      searchText: ""
     };
   },
   methods: {
     toggle() {
       this.$root.$emit("toggle");
+    },
+    search() {
+      if (this.searchText.trim()) {
+        this.$router.push({ name: "Search", params: { id: this.searchText } });
+        this.searchText = "";
+      }
     }
   },
   created() {
