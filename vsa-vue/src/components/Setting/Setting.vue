@@ -33,9 +33,9 @@
       <div class="settings__container">
         <h1 class="u-center-text font-small u-margin-bottom-medium">
           Signed as
-          <span class="accountHolderName">{{name}}</span>
+          <span class="accountHolderName" v-if="name">{{name}}</span>
           <br>
-          <span class="accountHolderId">{{user.email}}</span>
+          <span class="accountHolderId" v-if="user">{{user.email}}</span>
         </h1>
 
         <div class="settings__form">
@@ -113,20 +113,18 @@ export default {
         );
         // create a new base64 encoding
         let imageConv = canvas.toDataURL("image/jpeg");
-        console.log(imageConv);
-
+        this.pic = imageConv;
         db.collection("validuser")
           .doc(this.id)
           .update({
             profilePic: imageConv
           })
           .then(() => {
-            alert("Profile Pic Changed!");
+            alert("Profile Pic Changed! :)");
           });
       };
 
       if (imageUpload.files.length > 0) {
-        console.log(imageUpload.files[0].type);
         // check if file chose is .mp4 or not!
         if (["image"].indexOf(imageUpload.files[0].type) == -1) {
           image.setAttribute("src", URL.createObjectURL(imageUpload.files[0]));
@@ -140,8 +138,6 @@ export default {
       imageUpload.click();
     },
     saveChange() {
-      console.log(this.userName);
-      console.log(this.id);
       db.collection("validuser")
         .doc(this.id)
         .update({
@@ -165,25 +161,22 @@ export default {
         });
     }
   },
-  beforeCreate() {
-    const getName = () => {
-      let ref = db.collection("validuser");
-      ref = ref
-        .where("email", "==", this.user.email)
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            this.name = doc.data().name;
-            this.id = doc.data().uid;
-            this.pic = doc.data().profilePic;
-          });
-        });
-    };
+  created() {
+    const getName = () => {};
     firebase.auth().onAuthStateChanged(user => {
-      console.log("here1");
       if (user) {
         this.user = user;
-        getName();
+        let ref = db.collection("validuser");
+        ref = ref
+          .where("email", "==", user.email)
+          .get()
+          .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+              this.name = doc.data().name;
+              this.id = doc.data().uid;
+              this.pic = doc.data().profilePic;
+            });
+          });
       } else {
         this.user = null;
       }
