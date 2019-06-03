@@ -81,6 +81,7 @@
     background-color: $color-grey-light-2;
     width: 50rem;
   }
+}
   // tooltip when the cursor is hovered
   .tooltiptext {
     visibility: hidden;
@@ -104,7 +105,7 @@
       border-color: transparent $color-grey-light-2 transparent transparent;
     }
   }
-}
+
 
 .upperline{
   border-top: .15rem dotted $color-black;

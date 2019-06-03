@@ -81,3 +81,37 @@
   border-left: .1rem dotted black;
 }
 }
+.tooltiptext1{
+  position: absolute;
+  left:4rem;
+  top: -.2rem;
+  visibility: hidden;
+  font-size: 1.6rem;
+  color: white;
+  background-color: $color-secondary-light;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: opacity 0.3s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    border-width: 0.8rem;
+    border-style: solid;
+    border-color: transparent $color-secondary-light transparent transparent;
+  }
+}
+.reportbtn{
+  background: none;
+  border: none;
+  position: relative;
+  left: 10%;
+  &:hover{
+    color: orange;
+  }
+  &:hover .tooltiptext1{
+    visibility: visible;
+    opacity: 1;
+  }
+}
