@@ -1680,25 +1680,26 @@ img {
     padding: 4rem;
     background-color: #eee;
     width: 50rem; }
-  .settings .tooltiptext {
-    visibility: hidden;
+
+.tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  font-size: 1.6rem;
+  background-color: #eee;
+  top: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  right: -16rem;
+  opacity: 0;
+  transition: opacity 0.3s; }
+  .tooltiptext::after {
+    content: "";
     position: absolute;
-    font-size: 1.6rem;
-    background-color: #eee;
-    top: 2rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    right: -16rem;
-    opacity: 0;
-    transition: opacity 0.3s; }
-    .settings .tooltiptext::after {
-      content: "";
-      position: absolute;
-      top: 1rem;
-      left: -1.6rem;
-      border-width: 0.8rem;
-      border-style: solid;
-      border-color: transparent #eee transparent transparent; }
+    top: 1rem;
+    left: -1.6rem;
+    border-width: 0.8rem;
+    border-style: solid;
+    border-color: transparent #eee transparent transparent; }
 
 .upperline {
   border-top: 0.15rem dotted #000;
@@ -1827,6 +1828,36 @@ img {
     align-self: center;
     padding-left: .88rem;
     border-left: .1rem dotted black; }
+
+.tooltiptext1 {
+  position: absolute;
+  left: 4rem;
+  top: -.2rem;
+  visibility: hidden;
+  font-size: 1.6rem;
+  color: white;
+  background-color: #ffb900;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: opacity 0.3s; }
+  .tooltiptext1::after {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    border-width: 0.8rem;
+    border-style: solid;
+    border-color: transparent #ffb900 transparent transparent; }
+
+.reportbtn {
+  background: none;
+  border: none;
+  position: relative;
+  left: 10%; }
+  .reportbtn:hover {
+    color: orange; }
+  .reportbtn:hover .tooltiptext1 {
+    visibility: visible;
+    opacity: 1; }
 
 .morehead {
   position: sticky;
