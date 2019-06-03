@@ -1,7 +1,7 @@
 <template>
   <div id="Navbar">
     <!-- navigation bar -->
-    <div class="navigationbar">
+    <div class="navigationbar" v-if="!toggleMore">
       <!-- name of the Application -->
       <div class="navbarfont navigationbar--left">
         <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
@@ -13,8 +13,15 @@
       <!-- for right option such as search, user profile, upload -->
       <div class="navbarfont navigationbar--right">
         <div class="search">
-          <input type="text" placeholder="Search" class="search__input" required>
-          <button type="button" class="search__btn" id="searchButton">
+          <input
+            type="text"
+            placeholder="Search"
+            class="search__input"
+            required
+            v-model="searchText"
+            @keyup.enter="search"
+          >
+          <button type="button" class="search__btn" id="searchButton" @click="search">
             <i class="navbar_items fa fa-search search__icon" aria-hidden="true"></i>
           </button>
         </div>
@@ -29,11 +36,37 @@
       </div>
     </div>
     <!-- ending of navigation bar -->
+    <div class="morenav" v-else>
+      <!-- for right option such as usr, home button -->
+      <div class="morebarfont morenav__right">
+        <div class="searchmore">
+          <input type="text" placeholder="searchmore" class="searchmore__input" required>
+          <button type="button" class="searchmore__btn" id="searchmoreButton">
+            <i class="navbar_items fa fa-search searchmore__icon" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!--home button-->
+        <router-link :to="{ name: 'Home'}">
+          <button type="button" class="morebar_items morebar_items--icon homebutton">
+            <i class="fas fa-home"></i>
+          </button>
+        </router-link>
+
+        <!-- user button -->
+
+        <button type="button" class="morebar_items morebar_items--icon userbutton" @click="toggle">
+          <i class="fas fa-user-circle"></i>
+        </button>
+        <UserContainer :percentage="percentage" :fileName="fileName" :task="task" :key="key"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import firebase from "firebase";
+import db from "@/firebase/init";
 
 import UserContainer from "@/components/Navbar/UserContainer";
 export default {
@@ -44,15 +77,28 @@ export default {
   },
   data() {
     return {
-      key: 0
+      key: 0,
+      toggleMore: false,
+      searchText: ""
     };
   },
   methods: {
     toggle() {
       this.$root.$emit("toggle");
+    },
+    search() {
+      if (this.searchText.trim()) {
+        this.$router.push({ name: "Search", params: { id: this.searchText } });
+        this.searchText = "";
+      }
     }
   },
   created() {
+    if (this.$route.name === "More") {
+      this.toggleMore = true;
+    } else {
+      this.toggleMore = false;
+    }
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.key++;
@@ -74,25 +120,27 @@ export default {
     });
     //not the scroll position at the starting of page loading
     let prevScrollpos = window.pageYOffset; //at starting it is 0
+    if (!this.toggleMore) {
+      const navposition = () => {
+        //note the scroll position while scrolling on the page
+        let currentScrollPos = window.pageYOffset; //increases as we scroll down and decreses as we scroll up
 
-    const navposition = () => {
-      //note the scroll position while scrolling on the page
-      let currentScrollPos = window.pageYOffset; //increases as we scroll down and decreses as we scroll up
+        //if we scroll up it will show the scroll bar
+        if (prevScrollpos > currentScrollPos) {
+          this.$el.querySelector(".navigationbar").style.opacity = "1"; //show the navbar
+        } else {
+          //else hide it when we go down
+          this.$el.querySelector(".navigationbar").style.opacity = "0"; //hide the navbar
+        }
 
-      //if we scroll up it will show the scroll bar
-      if (prevScrollpos > currentScrollPos) {
-        this.$el.querySelector(".navigationbar").style.opacity = "1"; //show the navbar
-      } else {
-        //else hide it when we go down
-        this.$el.querySelector(".navigationbar").style.opacity = "0"; //hide the navbar
-      }
+        //using the current scroll position to compare with previous postion
+        prevScrollpos = currentScrollPos;
+      };
 
-      //using the current scroll position to compare with previous postion
-      prevScrollpos = currentScrollPos;
-    };
+      //call the function navposition
 
-    //call the function navposition
-    window.addEventListener("scroll", navposition);
+      window.addEventListener("scroll", navposition);
+    }
   }
 };
 </script>

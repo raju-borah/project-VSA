@@ -10,10 +10,9 @@ import PageNotFound from '@/components/404/PageNotFound'
 import Play from '@/components/Play/Play'
 import More from '@/components/More/More'
 import Setting from '@/components/Setting/Setting'
-
+import Search from '@/components/Search/Search'
 
 import firebase from 'firebase'
-
 Vue.use(Router)
 
 const router = new Router({
@@ -60,13 +59,30 @@ const router = new Router({
       name: 'Play',
       component: Play,
       props: true,
-      
+
     },
     // More Page
     {
-      path: '/more',
+      path: '/more/:id',
       name: 'More',
-      component: More
+      component: More,
+      props: true,
+    },
+    // search page
+    {
+      path: '/search/:id',
+      name: 'Search',
+      component: Search,
+      props: true,
+      beforeEnter: (to, from, next) => {
+        if (to.params.id.trim() === "") {
+          next(false);
+        }
+        else {
+          next();
+        }
+      }
+
     },
     // Setting Page
     {
