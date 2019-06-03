@@ -104,8 +104,8 @@ import Featured from "@/components/Home/Featured";
 import Footer from "@/components/Home/Footer";
 import Team from "@/components/Home/Team";
 import SlideShow from "@/components/Home/SlideShow";
-import Navbar from "@/components/Navbar/Navbar";
 import db from "@/firebase/init";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default {
   name: "Home",

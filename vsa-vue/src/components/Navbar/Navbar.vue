@@ -32,7 +32,7 @@
         <!-- 
         nested UserContainer required -> db required
         -->
-        <UserContainer :percentage="percentage" :fileName="fileName" :task="task" :key="key"/>
+        <UserContainer :key="key"/>
       </div>
     </div>
     <!-- ending of navigation bar -->
@@ -40,7 +40,14 @@
       <!-- for right option such as usr, home button -->
       <div class="morebarfont morenav__right">
         <div class="searchmore">
-          <input type="text" placeholder="searchmore" class="searchmore__input" required>
+          <input
+            type="text"
+            placeholder="Search"
+            class="searchmore__input"
+            required
+            v-model="searchText"
+            @keyup.enter="search"
+          >
           <button type="button" class="searchmore__btn" id="searchmoreButton">
             <i class="navbar_items fa fa-search searchmore__icon" aria-hidden="true"></i>
           </button>
@@ -58,7 +65,7 @@
         <button type="button" class="morebar_items morebar_items--icon userbutton" @click="toggle">
           <i class="fas fa-user-circle"></i>
         </button>
-        <UserContainer :percentage="percentage" :fileName="fileName" :task="task" :key="key"/>
+        <UserContainer :key="key"/>
       </div>
     </div>
   </div>
@@ -67,11 +74,10 @@
 <script>
 import firebase from "firebase";
 import db from "@/firebase/init";
-
 import UserContainer from "@/components/Navbar/UserContainer";
+
 export default {
   name: "Navbar",
-  props: ["percentage", "fileName", "task"],
   components: {
     UserContainer
   },
@@ -138,7 +144,6 @@ export default {
       };
 
       //call the function navposition
-
       window.addEventListener("scroll", navposition);
     }
   }

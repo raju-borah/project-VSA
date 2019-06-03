@@ -36,8 +36,8 @@
             <!-- line  128  navigationbar.scsss  -->
             <div class="progressbox">
               <h4 class="progressbox__text">{{fileName}}</h4>
-              <progress class="progressbox__bar" id="prog" value="10" max="100"></progress>
-              <div class="progressbox__percentage">{{percentage}}%</div>
+              <progress class="progressbox__bar" id="prog" :value="value" max="100"></progress>
+              <div class="progressbox__percentage">{{percent}}%</div>
               <div class="progressbox__btn">
                 <button
                   type="button"
@@ -100,13 +100,28 @@ import firebase from "firebase";
 import db from "@/firebase/init";
 export default {
   name: "UserContainer",
-  props: ["percentage", "fileName", "task"],
+  computed: {
+    percent() {
+      return this.$store.state.percentage;
+    },
+    task() {
+      return this.$store.state.task;
+    },
+    fileName() {
+      return this.$store.state.fileName;
+    },
+    value() {
+      return this.$store.state.value;
+    },
+    paused() {
+      return this.$store.state.paused;
+    }
+  },
   data() {
     return {
       user: null,
       name: null,
       pic: null,
-      paused: false,
       hideMyVideoBtn: false,
       hideAccountBtn: false
     };
@@ -119,19 +134,20 @@ export default {
     resumeUpload() {
       if (this.task) {
         this.task.resume();
-        this.paused = false;
+        this.$store.state.paused = false;
       }
     },
     pauseUpload() {
       if (this.task) {
         this.task.pause();
-        this.paused = true;
+        this.$store.state.paused = true;
       }
     },
     cancelUpload() {
       if (this.task) {
+        this.task.resume();
+        this.$store.state.paused = false;
         this.task.cancel();
-        // alert("Alert Upload canceled!");
         this.$root.$emit("cancelUpload");
       }
     }
@@ -147,6 +163,9 @@ export default {
             this.name = doc.data().name;
             this.pic = doc.data().profilePic;
           });
+        })
+        .catch(err => {
+          console.error(err.message);
         });
     };
     firebase.auth().onAuthStateChanged(user => {
@@ -154,6 +173,7 @@ export default {
         this.user = user;
         getName();
       } else {
+        this.$store.state.homeSpinner = false;
         this.user = null;
       }
     });

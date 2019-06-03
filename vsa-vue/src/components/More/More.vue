@@ -1,26 +1,49 @@
 <template>
   <div id="More">
-    <div class="morehead">
-      <div class="morehead__back">
-        <!--button for learning -->
-        <button type="button" class="morehead__learn" id="LearnButton" @click="showLearn">
+    <div class="morehead" :style="{background: bgColor}">
+      <!--button for learning -->
+      <div>
+        <button
+          type="button"
+          class="morehead__learn"
+          id="LearnButton"
+          @click="showLearn"
+          @mouseover="learnColor"
+          @mouseout="defaultColor"
+        >
           <h1 class="morehead__learntext">LEARNING</h1>
         </button>
+      </div>
 
-        <!--button for event-->
-        <button type="button" class="morehead__event" id="eventButton" @click="showEvent">
+      <!--button for event-->
+      <div>
+        <button
+          type="button"
+          class="morehead__event"
+          id="eventButton"
+          @click="showEvent"
+          @mouseover="eventColor"
+          @mouseout="defaultColor"
+        >
           <h1 class="morehead__eventtext">EVENT</h1>
         </button>
+      </div>
 
-        <!--button for club-->
-        <button type="button" class="morehead__club" id="clubButton" @click="showClub">
+      <!--button for club-->
+      <div>
+        <button
+          type="button"
+          class="morehead__club"
+          id="clubButton"
+          @click="showClub"
+          @mouseover="clubColor"
+          @mouseout="defaultColor"
+        >
           <h1 class="morehead__clubtext">CLUB</h1>
         </button>
       </div>
     </div>
-    <!--nav bar for more page-->
     <Navbar/>
-    <!--navbar  end-->
     <div class="morecontainer">
       <!--lerning part-->
       <transition name="fade">
@@ -38,10 +61,11 @@
 
 <script>
 import UserContainer from "@/components/Navbar/UserContainer";
-import Navbar from "@/components/Navbar/Navbar";
 import Learn from "@/components/More/Learn";
 import Club from "@/components/More/Club";
 import Event from "@/components/More/Event";
+import Navbar from "@/components/Navbar/Navbar";
+
 export default {
   name: "More",
   components: {
@@ -56,7 +80,8 @@ export default {
     return {
       showLearnVis: false,
       showClubVis: false,
-      showEventVis: false
+      showEventVis: false,
+      bgColor: "linear-gradient(120deg, #28b485 30%, #5643fa 60%, #ff7730 90%)"
     };
   },
   methods: {
@@ -74,6 +99,19 @@ export default {
       this.showEventVis = true;
       this.showClubVis = false;
       this.showLearnVis = false;
+    },
+    learnColor() {
+      this.bgColor = "#28b485";
+    },
+    clubColor() {
+      this.bgColor = "#ff7730";
+    },
+    eventColor() {
+      this.bgColor = "#5643fa";
+    },
+    defaultColor() {
+      this.bgColor =
+        "linear-gradient(120deg, #28b485 30%, #5643fa 60%, #ff7730 90%)";
     }
   },
   created() {

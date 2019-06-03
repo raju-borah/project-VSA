@@ -4,7 +4,6 @@
       <half-circle-spinner :animation-duration="1000" :size="100" :color="'#FFFFFF'"/>
     </div>
     <div v-else>
-      <!-- nested Navbar required  -->
       <Navbar/>
       <!-- play page when user click the video card thwn this page will open with respective video that user ha clicked -->
       <div class="player">
@@ -89,19 +88,21 @@
               <span>{{signedUser}}</span>
             </div>
 
-            <!-- input field for the comment -->
-            <input
-              type="text"
-              class="form__input form__input--comment"
-              placeholder="Enter comment"
-              required
-              ref="commentField"
-            >
-            <!-- button to send the comment  -->
-            <button class="btn btn--comment" @click="comment">
-              send
-              <i class="far fa-arrow-alt-circle-right"></i>
-            </button>
+            <div v-if="signedEmail">
+              <!-- input field for the comment -->
+              <input
+                type="text"
+                class="form__input form__input--comment"
+                placeholder="Enter comment"
+                required
+                ref="commentField"
+              >
+              <!-- button to send the comment  -->
+              <button class="btn btn--comment" @click="comment">
+                send
+                <i class="far fa-arrow-alt-circle-right"></i>
+              </button>
+            </div>
             <br>
             <br>
             <!-- user comments list -->
@@ -153,17 +154,17 @@
 <script>
 import firebase from "firebase";
 import db from "@/firebase/init";
-import Navbar from "@/components/Navbar/Navbar";
 import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 import moment from "moment";
 import { HalfCircleSpinner } from "epic-spinners";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default {
   name: "Play",
   components: {
-    Navbar,
     VideoPlayer,
-    HalfCircleSpinner
+    HalfCircleSpinner,
+    Navbar
   },
   data() {
     return {
@@ -197,7 +198,6 @@ export default {
   methods: {
     redirectToPlay(video) {
       if (video.url) {
-        console.log("here");
         this.$router.push({ name: "Play", params: { id: video.id } });
         this.$router.go(0);
         window.scrollTo(0, 0);
