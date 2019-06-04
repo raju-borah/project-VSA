@@ -1,0 +1,39 @@
+.adminpanel{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: .5fr 2fr;
+}
+.adminoptions{
+    background-color: $color-white;
+
+}
+.admindetail{
+    background-color: $color-grey-dark;
+    
+}
+.adminlist{
+    font-size: 2.5rem;
+   
+    list-style-type: none;
+}
+.adminlistitem{
+    padding: .5rem;
+    padding-left: 3rem;
+    border-bottom: .2rem solid black;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-tertiary-light-1 50%);
+    background-size: 230%;
+    transition: all 0.4s;
+    &:hover{
+        cursor: pointer;
+        background-color: $color-tertiary-dark-1;
+        background-position: 100%;
+        color: white;
+    }
+
+}
+.adminhead{
+    padding: .4rem;
+    padding-left: 3rem;
+    border-bottom: .2rem solid $color-grey-dark-3;
+}

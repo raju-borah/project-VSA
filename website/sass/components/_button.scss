@@ -13,7 +13,7 @@ border-radius for curved end of button
     background: transparent;
     background-color: $color-tertiary-dark-1;
     color: $color-white;
-    padding: .99rem;
+    padding: 0.99rem;
   }
 
   &,
@@ -81,6 +81,9 @@ border-radius for curved end of button
     padding: 1rem;
     width: 15rem;
     left: 22%;
+    &--1 {
+      left: -4rem;
+    }
   }
   &--front {
     background-color: $color-tertiary-dark-2;
