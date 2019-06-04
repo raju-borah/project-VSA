@@ -194,6 +194,9 @@
           @click.self="handleBackgroundClickUpload"
           v-if="isUploadActive"
         >
+          <div class="downloadContainer">
+            <i class="fas fa-arrow-circle-up" style="animation:downup .6s infinite; font-size:2rem;"></i>
+          </div>
           <p
             class="uploadActive"
           >One upload task is already active, click on navbar profile option to check the progress</p>

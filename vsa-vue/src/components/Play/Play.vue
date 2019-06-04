@@ -75,7 +75,13 @@
           <!-- video titles and descrptions in the play page -->
           <div class="videoinfo">
             <!-- video title -->
-            <div class="font-medium" id="video-title" v-if="video">{{video.title}}</div>
+            <div class="font-medium" id="video-title" v-if="video">
+              {{video.title}}
+              <button class="reportbtn font-medium" @click="showReportModal">
+                <i class="fas fa-exclamation-circle"></i>
+                <span class="tooltiptext1">Report</span>
+              </button>
+            </div>
             <!-- description -->
             <div class="font-small" id="video-description" v-if="video">{{video.description}}</div>
           </div>
@@ -147,6 +153,31 @@
           >Video is still under process, wait for it to finish before playing ^.^!</p>
         </div>
       </transition>
+      <!-- report modal -->
+      <transition name="fade">
+        <div
+          class="v--modal-overlay scrollable"
+          @click.self="handleBackgroundClick"
+          v-if="showReport"
+        >
+          <form class="testBox">
+            <textarea
+              class="form__input--upload form__input--upload--1"
+              id="upload-description"
+              placeholder="Reason"
+              v-model="report"
+              style="resize:none; height:45%"
+            ></textarea>
+            <!-- button that will start the process of upload the file to server -->
+            <button
+              class="btn btn--upload"
+              type="submit"
+              id="upload-video"
+              @click.prevent="submitReport"
+            >Report</button>
+          </form>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -179,6 +210,8 @@ export default {
       suggestedVideos: [],
       comments: [],
       showModal: false,
+      showReport: false,
+      report: null,
       video: null,
       videoOptions: {
         autoplay: true,
@@ -196,6 +229,35 @@ export default {
     };
   },
   methods: {
+    showReportModal() {
+      this.showReport = true;
+    },
+    handleBackgroundClick() {
+      this.showReport = false;
+      this.report = null;
+    },
+    submitReport() {
+      if (this.report) {
+        this.showReport = false;
+        db.collection("reportedVideos")
+          .doc()
+          .set({
+            reason: this.report,
+            videoTitle: this.video.title,
+            by: this.video.by,
+            videoID: this.$route.params.id,
+            url: this.video.url,
+            reportedBy: this.signedEmail
+          })
+          .then(() => {
+            this.report = null;
+            alert("Report Success");
+          })
+          .catch(err => {
+            console.error(err.message);
+          });
+      }
+    },
     redirectToPlay(video) {
       if (video.url) {
         this.$router.push({ name: "Play", params: { id: video.id } });
@@ -389,6 +451,18 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+.testBox {
+  text-align: center;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  padding-top: 3.8rem;
+  border: 2px solid black;
+  position: relative;
+  height: 250px;
+  width: 45%;
+  box-shadow: 0 1rem 3rem #012a57;
+  background-color: #fff;
 }
 </style>
 

@@ -8,10 +8,45 @@ const { tmpdir } = require('os');
 const { Storage } = require('@google-cloud/storage');
 const gcs = new Storage();
 const fs = require('fs-extra');
-const sharp = require('sharp');
 const ffmpeg_static = require('ffmpeg-static');
 const ffmpeg = require("fluent-ffmpeg");
 
+const algolia = require('algoliasearch');
+const ALGOLIA_ID = '9P69AUNI16';
+const ALGOLIA_ADMIN_KEY = '97ecc8cf58d7cbb654bfb66f1d46ec0b';
+
+const ALGOLIA_INDEX_NAME = 'videos';
+const client = algolia(ALGOLIA_ID, ALGOLIA_ADMIN_KEY);
+
+exports.uploadedVideos = functions.firestore.document('/uploadedVideos/{docID}').onWrite((change, context) => {
+    const index = client.initIndex(ALGOLIA_INDEX_NAME);
+    // checking if the video doc exist in the db
+    if (change.after.exists) {
+        console.log('copying to Algolia');
+        newDataObjectForAlgolia = change.after.data();
+        newDataObjectForAlgolia.objectID = change.after.id;
+
+        return index.saveObject(newDataObjectForAlgolia)
+            .then(successObject => {
+                console.log('Added to Algolia Success')
+                console.log(newDataObjectForAlgolia);
+                console.log(successObject);
+            })
+            .catch(err => {
+                console.log('Algolia Failed ' + err);
+            });
+    } else {
+        console.log('deleteing from Algolia');
+        return index.deleteObject(change.after.id)
+            .then(successObject => {
+                console.log('Deleted From Algolia Success');
+                console.log(successObject);
+            })
+            .catch(err => {
+                console.log('Algolia delete failed ' + err);
+            })
+    }
+});
 
 // Makes an ffmpeg command return a promise.
 function promisifyCommand(command) {
@@ -44,7 +79,8 @@ exports.deleteUser = functions.pubsub.topic('deleteUser').onPublish(() => {
                         db.collection('validuser').doc(doc.data().uid).set({
                             active: false,
                             email: email,
-                            uid: uid
+                            uid: uid,
+                            profilePic: ''
                         })
                     })
                     .catch(function (error) {
@@ -56,6 +92,27 @@ exports.deleteUser = functions.pubsub.topic('deleteUser').onPublish(() => {
         })
     return true;
 });
+
+// function to delete the complete user db and auth
+exports.deleteUserAuthAsAdmin = functions.https.onCall((data, context) => {
+    return admin.auth().getUserByEmail(data.email)
+        .then(function (userRecord) {
+            admin.auth().deleteUser(userRecord.uid)
+                .then(function () {
+                    console.log("Successfully deleted user auth");
+                })
+                .catch(function (error) {
+                    console.log("Error deleting user:", error);
+                });
+        })
+})
+exports.deleteUserAsAdmin = functions.https.onCall((data, context) => {
+    return db.collection('validuser').doc(data.uid).delete().then(() => {
+        console.log(data.uid + " removed")
+    }).catch(err => {
+        console.log(err.message)
+    })
+})
 
 // function to compress the uplaoded video using ffmpeg
 exports.compressVideo = functions.storage.object().onFinalize(async object => {
@@ -92,8 +149,6 @@ exports.compressVideo = functions.storage.object().onFinalize(async object => {
     })
 
     console.log('downloaded source' + tempFilePath)
-    // const thumbName = `thumb@_${fileName}.png`;
-    // const thumbPath = join(workingDir, thumbName);
 
     // default .mp4 
     let command = ffmpeg('/tmp/thumbs/source.mp4')
@@ -182,3 +237,18 @@ exports.deleteVideo = functions.firestore.document('uploadedVideos/{id}').onUpda
 
     return true;
 })
+
+exports.addAdminRole = functions.https.onCall((data, context) => {
+    // get user and add admin custom claim
+    return admin.auth().getUserByEmail(data.email).then(user => {
+        return admin.auth().setCustomUserClaims(user.uid, {
+            admin: true
+        })
+    }).then(() => {
+        return {
+            message: `Success! ${data.email} has been made an admin.`
+        }
+    }).catch(err => {
+        return err;
+    });
+});

@@ -1,5 +1,6 @@
 <template>
   <div id="PageNotFound">
+    <Navbar/>
     <!-- for the background -->
     <div class="bgcontain">
       <router-link :to="{name : 'Home'}">
@@ -14,7 +15,10 @@
 import Navbar from "@/components/Navbar/Navbar";
 
 export default {
-  name: "PageNotFound"
+  name: "PageNotFound",
+  components: {
+    Navbar
+  }
 };
 </script>
 

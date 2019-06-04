@@ -11,8 +11,11 @@ import Play from '@/components/Play/Play'
 import More from '@/components/More/More'
 import Setting from '@/components/Setting/Setting'
 import Search from '@/components/Search/Search'
+import AdminLogin from '@/components/Admin/AdminLogin'
+import AdminPanel from '@/components/Admin/AdminPanel'
 
 import firebase from 'firebase'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -90,6 +93,22 @@ const router = new Router({
       name: 'Setting',
       component: Setting,
       meta: {
+        requiresAuth: true,
+      }
+    },
+    // Admin Login
+    {
+      path: '/coradmin',
+      name: 'AdminLogin',
+      component: AdminLogin,
+    },
+
+    // Admin panel 
+    {
+      path: '/coradmin/panel',
+      name: 'AdminPanel',
+      component: AdminPanel,
+      meta: {
         requiresAuth: true
       }
     },
@@ -108,8 +127,42 @@ const router = new Router({
 
 // router guards
 router.beforeEach((to, from, next) => {
+  // for admin login 
+  if (to.name === 'AdminLogin') {
+    firebase.auth().signOut();
+    next()
+  }
+  else if (to.name === 'AdminPanel') {
+    if (to.matched.some(rec => rec.meta.requiresAuth)) {
+      firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+          firebase
+            .auth()
+            .currentUser.getIdTokenResult()
+            .then(idTokenResult => {
+              // Confirm the user is an Admin.
+              if (!!idTokenResult.claims.admin) {
+                next()
+              } else {
+                next({
+                  name: 'AdminLogin'
+                })
+              }
+            })
+            .catch(error => {
+              console.error(error);
+            });
+        } else {
+          next({
+            name: 'PageNotFound'
+          })
+        }
+      })
+    }
+  }
+
   // check to see if route has auth guard
-  if (to.matched.some(rec => rec.meta.requiresAuth)) {
+  else if (to.matched.some(rec => rec.meta.requiresAuth)) {
     // check auth state of user
     // let user = firebase.auth().currentUser
     firebase.auth().onAuthStateChanged(user => {
