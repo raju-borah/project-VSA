@@ -7,7 +7,7 @@
       <p class="uploadActive" v-if="deleteAction">Deleting</p>
     </div>
     <div v-else>
-      <Navbar :percentage="percentage" :fileName="fileName" :task="task"/>
+      <Navbar/>
       <div class="dashboard">
         <!-- floating upload button -->
         <div class="dashboard__header">
@@ -232,17 +232,17 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar/Navbar";
 import db from "@/firebase/init";
 import firebase from "firebase";
 import moment from "moment";
 import { HalfCircleSpinner } from "epic-spinners";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default {
   name: "Dashboard",
   components: {
-    Navbar,
-    HalfCircleSpinner
+    HalfCircleSpinner,
+    Navbar
   },
   data() {
     return {
@@ -307,26 +307,27 @@ export default {
                   imgBase64: doc.data().imgBase64,
                   timestamp: moment(doc.data().timestamp).format("lll")
                 });
-              } else if (change.type === "modified") {
-                let doc = change.doc;
-                this.videos = this.videos.filter(video => {
-                  // when id matches with applied id
-                  // below condition retuns false
-                  return video.id !== doc.id;
-                });
-
-                this.videos.push({
-                  //doc keeps id can retrive using;
-                  id: doc.id,
-                  // field that we have created can be retirve using;
-                  title: doc.data().title,
-                  description: doc.data().description,
-                  url: doc.data().url,
-                  category: doc.data().category,
-                  imgBase64: doc.data().imgBase64,
-                  timestamp: moment(doc.data().timestamp).format("lll")
-                });
               }
+              // } else if (change.type === "modified") {
+              //   let doc = change.doc;
+              //   this.videos = this.videos.filter(video => {
+              //     // when id matches with applied id
+              //     // below condition retuns false
+              //     return video.id !== doc.id;
+              //   });
+
+              //   this.videos.push({
+              //     //doc keeps id can retrive using;
+              //     id: doc.id,
+              //     // field that we have created can be retirve using;
+              //     title: doc.data().title,
+              //     description: doc.data().description,
+              //     url: doc.data().url,
+              //     category: doc.data().category,
+              //     imgBase64: doc.data().imgBase64,
+              //     timestamp: moment(doc.data().timestamp).format("lll")
+              //   });
+              // }
               this.spinner = false;
             });
             this.spinner = false;
@@ -358,7 +359,7 @@ export default {
         } else {
           db.collection("uploadedVideos")
             .where("by", "==", this.id)
-            .where("title", "==", this.title.trim())
+            .where("title", "==", this.title)
             .get()
             .then(querySnaphot => {
               if (!querySnaphot.empty) {
@@ -384,7 +385,7 @@ export default {
       this.evt = event;
     },
     uploadDisplay() {
-      if (this.task) {
+      if (this.$store.state.task) {
         this.isUploadActive = !this.isUploadActive;
       } else {
         this.isActiveUpload = !this.isActiveUpload;
@@ -428,6 +429,7 @@ export default {
         if (this.evt) {
           let file = this.evt.target.files[0];
           this.fileName = file.name;
+          this.$store.state.fileName = file.name;
           // create a storage ref
           let storageRef = firebase
             .storage()
@@ -439,48 +441,51 @@ export default {
 
           // upload file
           this.task = storageRef.put(file);
+          this.$store.dispatch("upload", this.task);
 
-          // this.$root.$emit('task', this.task)
+          // this.$root.$emit("task", this.task);
           this.task.on(
             "state_changed",
             // when upload is in progress
-            snapShot => {
-              // update the progress bar
-              const progressBar = this.$el.querySelector("#prog");
-              this.percentage = Math.floor(
-                (snapShot.bytesTransferred / snapShot.totalBytes) * 100
-              );
-              progressBar.value = Math.floor(this.percentage);
-            },
+            snapShot => {},
             // incase any error
-            err => {
-              console.error(err.message);
-            },
+            err => {},
             // when upload is completed
             () => {
-              db.collection("uploadedVideos")
-                .doc()
-                .set({
-                  title: this.title,
-                  description: this.description,
-                  url: null,
-                  category: this.category,
-                  by: this.id,
-                  imgBase64: this.videoThumbnail,
-                  timestamp: Date.now()
+              storageRef
+                .getDownloadURL()
+                .then(downloadURL => {
+                  this.$store.state.url = downloadURL;
                 })
                 .then(() => {
-                  this.task = null;
-                  this.percentage = 0;
-                  this.fileName = null;
-                  this.evt = null;
-                  this.category = "Select Category";
-                  this.title = null;
-                  this.description = null;
-                  this.videoThumbnail = null;
+                  db.collection("uploadedVideos")
+                    .doc()
+                    .set({
+                      title: this.title,
+                      description: this.description,
+                      url: this.$store.state.url,
+                      category: this.category,
+                      by: this.id,
+                      imgBase64: this.videoThumbnail,
+                      timestamp: Date.now()
+                    })
+                    .then(() => {
+                      this.task = null;
+                      this.percentage = 0;
+                      this.fileName = null;
+                      this.evt = null;
+                      this.category = "Select Category";
+                      this.title = null;
+                      this.description = null;
+                      this.videoThumbnail = null;
+                      this.$store.state.url = null;
+                    })
+                    .catch(err => {
+                      console.error("Document write error: " + err.message);
+                    });
                 })
                 .catch(err => {
-                  console.error("Document write error: " + err.message);
+                  console.error(err.message);
                 });
             }
           );
@@ -652,6 +657,17 @@ export default {
       this.title = null;
       this.description = null;
       this.task = null;
+    });
+
+    this.$root.$on("done", () => {
+      this.task = null;
+      this.percentage = 0;
+      this.fileName = null;
+      this.evt = null;
+      this.category = "Select Category";
+      this.title = null;
+      this.description = null;
+      this.videoThumbnail = null;
     });
   }
 };

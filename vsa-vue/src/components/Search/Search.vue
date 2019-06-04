@@ -47,16 +47,16 @@
   </div>
 </template>
 <script>
-import Navbar from "@/components/Navbar/Navbar";
 import db from "@/firebase/init";
 import moment from "moment";
 import { HalfCircleSpinner } from "epic-spinners";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default {
   name: "Seacrh",
   components: {
-    Navbar,
-    HalfCircleSpinner
+    HalfCircleSpinner,
+    Navbar
   },
   data() {
     return {
@@ -73,8 +73,6 @@ export default {
   watch: {
     "$route.params.id": function() {
       this.spinner = true;
-      // this.$router.go(0);
-      console.log("here"+ this.query.length)
         this.query = this.$route.params.id.toUpperCase();
         this.videos = [];
         db.collection("uploadedVideos")

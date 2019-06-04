@@ -1,6 +1,5 @@
 <template>
   <div id="Setting">
-    <!-- Setting page layout -->
     <Navbar/>
     <div class="settings">
       <br>
@@ -65,9 +64,9 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar/Navbar";
 import firebase from "firebase";
 import db from "@/firebase/init";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default {
   name: "Setting",

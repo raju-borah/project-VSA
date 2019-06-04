@@ -7,8 +7,46 @@
 </template>
 
 <script>
+import db from "@/firebase/init";
+import firebase from "firebase";
+
 export default {
-  name: "App"
+  name: "App",
+  data() {
+    return {
+    };
+  },
+  // computed: {
+  //   percent() {
+  //     return this.$store.state.percentage;
+  //   },
+  //   task() {
+  //     return this.$store.state.task;
+  //     this.$store.state.key++;
+  //   },
+  //   fileName() {
+  //     return this.$store.state.fileName;
+  //   },
+  //   progress() {}
+  // },
+  mounted() {
+    // console.log(this.$store.state.task);
+    // if (this.$store.state.task) {
+    //   console.log("here");
+    //   this.$store.state.task.on(
+    //     "state_changed",
+    //     // when upload is in progress
+    //     snapShot => {
+    //       // update the progress bar
+    //       const progressBar = this.$el.querySelector("#prog");
+    //       this.$store.state.percentage = Math.floor(
+    //         (snapShot.bytesTransferred / snapShot.totalBytes) * 100
+    //       );
+    //       progressBar.value = Math.floor(this.$store.state.percentage);
+    //     }
+    //   );
+    // }
+  },
 };
 </script>
 
