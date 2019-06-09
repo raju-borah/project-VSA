@@ -92,7 +92,6 @@ export default {
       email: null,
       password: null,
       feedback: null,
-      user: null,
       spinner: false
     };
   },
@@ -107,17 +106,18 @@ export default {
           .then(user => {
             if (user.user.emailVerified) {
               // retrive the existing user
-              if (firebase.auth().currentUser) {
-                this.user = firebase.auth().currentUser;
-              } else {
-                firebase.auth().onAuthStateChanged(user => {
-                  if (user) {
-                    this.user = user;
-                  } else {
-                    this.user = null;
-                  }
-                });
-              }
+              // if (firebase.auth().currentUser) {
+              //   this.user = firebase.auth().currentUser;
+              // } else {
+              //   firebase.auth().onAuthStateChanged(user => {
+              //     if (user) {
+              //       this.user = user;
+              //     } else {
+              //       this.user = null;
+              //     }
+              //   });
+              // }
+
               // in case logged in happen or logout
 
               let ref = db.collection("validuser");
@@ -130,13 +130,14 @@ export default {
                     querySnapshot.docs[0].ref.update({ active: true });
                   }
                   this.spinner = false;
-                  this.$router.push({
-                    name: "Home",
-                    params: { user: this.user }
-                  });
+                  this.$router.push({ name: "Home" });
+                })
+                .catch(err => {
+                  console.error(err.message);
                 });
             } else {
               this.spinner = false;
+              console.log("here");
               firebase.auth().signOut();
               alert("email not verified");
             }
@@ -144,6 +145,7 @@ export default {
           // .then()
           .catch(err => {
             this.spinner = false;
+            console.error(err.message);
             if (err.code === "auth/user-not-found")
               alert("Email not verified or User does not exist!");
             else if (err.code === "auth/invalid-email") alert("Bad email");

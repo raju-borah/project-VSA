@@ -169,6 +169,9 @@ export default {
             } else {
               this.errMsgEmail = "Email is not valid or already used!";
             }
+          })
+          .catch(err => {
+            console.error(err.message);
           });
       }
     },
@@ -203,17 +206,17 @@ export default {
             .auth()
             .createUserWithEmailAndPassword(this.email, this.password)
             .then(user => {
-              user.user.sendEmailVerification().then(
+              user.user.sendEmailVerification().then(() => {
                 // as signup will login the user automatically but dont want than
                 // untill user is verifired !
                 firebase
                   .auth()
                   .signOut()
                   .then(() => {
-                    this.spinner = false;
                     this.$router.push({ name: "Login" });
-                  })
-              );
+                    this.spinner = false;
+                  });
+              });
             })
             .then(() => {
               this.ref.get().then(querySnapshot => {

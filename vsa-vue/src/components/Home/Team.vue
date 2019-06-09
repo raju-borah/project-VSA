@@ -24,11 +24,11 @@
         <div class="team__member">
           <a href="#" class="team__profile">
             <div class="team__unhover-img">
-              <img class="team__img" src="../../assets/img/man.png" alt>
+              <img class="team__img" src="../../assets/img/viv.jpg" alt>
             </div>
 
             <div class="team__hover-img">
-              <img class="team__img" src="../../assets/img/man.png" alt>
+              <img class="team__img" src="../../assets/img/viv.jpg" alt>
             </div>
 
             <span class="team__designation">CS16MSIIT004</span>
@@ -61,11 +61,11 @@
         <div class="team__member">
           <a href="#" class="team__profile">
             <div class="team__unhover-img">
-              <img class="team__img" src="../../assets/img/man.png" alt>
+              <img class="team__img" src="../../assets/img/raj.jpg" alt>
             </div>
 
             <div class="team__hover-img">
-              <img class="team__img" src="../../assets/img/man.png" alt>
+              <img class="team__img" src="../../assets/img/raj.jpg" alt>
             </div>
 
             <span class="team__designation">CS16MSIIT020</span>
@@ -98,11 +98,11 @@
         <div class="team__member">
           <a href="#" class="team__profile">
             <div class="team__unhover-img">
-              <img class="team__img" src="../../assets/img/man.png" alt>
+              <img class="team__img" src="../../assets/img/rah.png" alt>
             </div>
 
             <div class="team__hover-img">
-              <img class="team__img" src="../../assets/img/man.png" alt>
+              <img class="team__img" src="../../assets/img/rah.png" alt>
             </div>
             <span class="team__designation">CS16MSIIT024</span>
 
@@ -134,11 +134,11 @@
         <div class="team__member">
           <a href="#" class="team__profile">
             <div class="team__unhover-img">
-              <img class="team__img" src="../../assets/img/man.png" alt>
+              <img class="team__img" src="../../assets/img/nab.jpg" alt>
             </div>
 
             <div class="team__hover-img">
-              <img class="team__img" src="../../assets/img/man.png" alt>
+              <img class="team__img" src="../../assets/img/nab.jpg" alt>
             </div>
             <span class="team__designation">CS16MSIIT035</span>
 

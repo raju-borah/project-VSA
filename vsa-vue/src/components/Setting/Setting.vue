@@ -120,6 +120,7 @@ export default {
           })
           .then(() => {
             alert("Profile Pic Changed! :)");
+            this.$root.$emit("refresh");
           });
       };
 
@@ -145,7 +146,9 @@ export default {
         .then(() => {
           alert("User Name Chnaged!");
           this.userName = null;
-          this.$router.go(0);
+          this.$root.$emit("refresh");
+
+          // this.$router.go(0);
         });
     },
     reset() {

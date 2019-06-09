@@ -4,41 +4,39 @@
       <half-circle-spinner :animation-duration="1000" :size="100" :color="'#FFFFFF'"/>
     </div>
     <div v-else>
-      <div id="Event">
-        <div v-if="videos.length > 0" class="EventBody grid2">
-          <div>
-            <div
-              class="vcardmore"
-              v-for="video in videos"
-              :key="video.id"
-              @click="redirectToPlay(video)"
-            >
-              <div class="vcard--img" :style="{backgroundImage: 'url(' +video.imgBase64 + ')',}">
-                <div class="playicon">
-                  <i class="fas fa-play-circle"></i>
-                </div>
-              </div>
-              <h1 class="vcardmore--tag vcardmore--tag colorclub">Event</h1>
-              <div class="vcardmore__info">
-                <div class="vcardmore__info--title textclub">
-                  <!-- dynamiv title of the video -->
-                  <span>{{video.title}}</span>
-                  <br>
-                  <!-- timestamp when the video was created -->
-                  <span class="timestamp font-small">Created on: {{video.timestamp}}</span>
-                </div>
-
-                <span style="font-weight: 550;">Description:</span>
-                <!-- dynamic descrptiob of the video -->
-                <span class="vcardmore__info--des">{{video.description}}</span>
+      <div v-if="videos.length > 0" id="Learn">
+        <div class="learningBody grid2">
+          <div
+            class="vcardmore"
+            v-for="video in videos"
+            :key="video.id"
+            @click="redirectToPlay(video)"
+          >
+            <div class="vcard--img" :style="{backgroundImage: 'url(' +video.imgBase64 + ')',}">
+              <div class="playicon">
+                <i class="fas fa-play-circle"></i>
               </div>
             </div>
+            <h1 class="vcardmore--tag vcardmore--tag colorevent">Event</h1>
+
+            <div class="vcardmore__info">
+              <div class="vcardmore__info--title textevent">
+                <!-- dynamiv title of the video -->
+                <span>{{video.title}}</span>
+                <br>
+                <!-- timestamp when the video was created -->
+                <span class="timestamp font-small">Created on: {{video.timestamp}}</span>
+              </div>
+
+              <span style="font-weight: 550;">Description:</span>
+              <!-- dynamic descrptiob of the video -->
+              <span class="vcardmore__info--des">{{video.description}}</span>
+            </div>
           </div>
-          <!--add more videos from here-->
         </div>
-        <div v-else style="text-align:center">
-          <p style="font-size: 2.8vw; color: grey;">No Videos Found 0_0 !</p>
-        </div>
+      </div>
+      <div v-else style="text-align:center">
+        <p style="font-size: 2.8vw; color: grey;">No Videos Found 0_0 !</p>
       </div>
     </div>
   </div>
@@ -71,7 +69,7 @@ export default {
   created() {
     this.spinner = true;
     db.collection("uploadedVideos")
-      .where("category", "==", "Event")
+      .where("category", "==", "Events")
       .onSnapshot(snapshot => {
         //we will use docChanges() to get the type changes
         if (snapshot.size === 0) this.spinner = false;

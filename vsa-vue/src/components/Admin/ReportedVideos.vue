@@ -74,7 +74,6 @@ export default {
       db.collection('reportedVideos').doc(id).delete().then(() => {
         redo(id);
         if(vid !== null) {
-          console.log('heer', vid)
           db.collection('reportedVideos').where('videoID', '==', vid).get().then(snapshot => {
             snapshot.forEach(doc => {
               db.collection('reportedVideos').doc(doc.id).delete();

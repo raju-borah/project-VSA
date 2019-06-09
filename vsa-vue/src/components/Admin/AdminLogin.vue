@@ -104,6 +104,7 @@ export default {
           .catch(error => {
             this.spinner = false;
             console.log(error);
+            alert(error.message);
           });
         // });
       } else {

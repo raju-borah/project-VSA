@@ -147,10 +147,10 @@ export default {
         });
         this.loading = false;
       })
-      .catch(err => {
-        this.loading = false;
-        console.error(err.message);
-      });
+      // .catch(err => {
+      //   this.loading = false;
+      //   console.error(err.message);
+      // });
   }
 };
 </script>

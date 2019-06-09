@@ -76,13 +76,13 @@
         </div>
       </section>
       <!-- nested component forfeatured -->
-      <Featured :thumb="videoThumb"/>
+      <Featured />
       <!-- nested component for learning -->
-      <Learning :thumb="videoThumb"/>
+      <Learning />
       <!-- nested component for Club -->
-      <Event :thumb="videoThumb"/>
+      <Event />
       <!-- nested component for Event section -->
-      <ClubActivities :thumb="videoThumb"/>
+      <ClubActivities />
 
       <!-- till here -->
       <!-- nested component About Team  -->
@@ -104,12 +104,9 @@ import Featured from "@/components/Home/Featured";
 import Footer from "@/components/Home/Footer";
 import Team from "@/components/Home/Team";
 import SlideShow from "@/components/Home/SlideShow";
-import db from "@/firebase/init";
 import Navbar from "@/components/Navbar/Navbar";
-
 export default {
   name: "Home",
-  props: ["user"],
   components: {
     Learning,
     Event,
@@ -122,7 +119,6 @@ export default {
   },
   data() {
     return {
-      videoThumb: ""
     };
   },
   mounted() {

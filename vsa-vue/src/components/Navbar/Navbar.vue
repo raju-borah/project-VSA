@@ -124,6 +124,9 @@ export default {
     this.$root.$on("cancelUpload", () => {
       this.key++;
     });
+    this.$root.$on("refresh", () => {
+      this.key++;
+    });
     //not the scroll position at the starting of page loading
     let prevScrollpos = window.pageYOffset; //at starting it is 0
     if (!this.toggleMore) {

@@ -254,7 +254,6 @@ export default {
       spinner: false,
       activeModal: null,
       evt: null,
-      percentage: 0,
       stop: false,
       fileName: null,
       task: null,
@@ -311,26 +310,6 @@ export default {
                   timestamp: moment(doc.data().timestamp).format("lll")
                 });
               }
-              // } else if (change.type === "modified") {
-              //   let doc = change.doc;
-              //   this.videos = this.videos.filter(video => {
-              //     // when id matches with applied id
-              //     // below condition retuns false
-              //     return video.id !== doc.id;
-              //   });
-
-              //   this.videos.push({
-              //     //doc keeps id can retrive using;
-              //     id: doc.id,
-              //     // field that we have created can be retirve using;
-              //     title: doc.data().title,
-              //     description: doc.data().description,
-              //     url: doc.data().url,
-              //     category: doc.data().category,
-              //     imgBase64: doc.data().imgBase64,
-              //     timestamp: moment(doc.data().timestamp).format("lll")
-              //   });
-              // }
               this.spinner = false;
             });
             this.spinner = false;
@@ -474,7 +453,6 @@ export default {
                     })
                     .then(() => {
                       this.task = null;
-                      this.percentage = 0;
                       this.fileName = null;
                       this.evt = null;
                       this.category = "Select Category";
@@ -623,7 +601,7 @@ export default {
                     _VIDEO.videoWidth,
                     _VIDEO.videoHeight
                   );
-                  this.videoThumbnail = _CANVAS.toDataURL();
+                  this.videoThumbnail = _CANVAS.toDataURL('image/jpeg', 0.5);
                 });
             } else {
               customText.innerHTML = "No file choosen yet!";
@@ -653,7 +631,6 @@ export default {
   },
   mounted() {
     this.$root.$on("cancelUpload", () => {
-      this.percentage = 0;
       this.fileName = null;
       this.evt = null;
       this.category = "Select Category";
@@ -664,7 +641,6 @@ export default {
 
     this.$root.$on("done", () => {
       this.task = null;
-      this.percentage = 0;
       this.fileName = null;
       this.evt = null;
       this.category = "Select Category";

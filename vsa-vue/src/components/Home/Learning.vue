@@ -1,5 +1,5 @@
 <template>
-  <div id="Learning">
+  <div id="Learning" v-if="videos.length === 6">
     <!--Learning section-->
     <section class="learning">
       <div class="learning__heading">
@@ -10,15 +10,14 @@
       </div>
 
       <div class="grid">
-        <div class="vcardhome vcardhome__learning" @click.stop="redirectToPlay">
-          <div class="vcardhome__img">
-            <video class="feature__video" preload="auto">
-              <!-- source willbe dynamic -->
-              <source
-                src="https://firebasestorage.googleapis.com/v0/b/thevsapp.appspot.com/o/video%2Fcs16msiit004%2Fvideo%40Design%20.mp4?alt=media&token=2fde8966-6c27-4395-bdc1-6ab9ff384119"
-                type="video/mp4"
-              >
-            </video>
+        <!-- main -->
+        <div
+          class="vcardhome vcardhome__learning"
+          v-for="(video, index) in videos"
+          @click.stop="redirectToPlay(video.id)"
+          :key="index"
+        >
+          <div class="vcardhome__img" :style="{backgroundImage: 'url(' +video.imgBase64 + ')'}">
             <div class="hoverbtn hoverbtn__learning">
               <i class="fas fa-play-circle homeplay"></i>
             </div>
@@ -28,150 +27,10 @@
             <div class="vcardhome__info--title">
               <!-- dynamiv title of the video -->
 
-              <span>Fun way to Learn JavaScript And other new contents</span>
+              <span>{{video.title}}</span>
               <br>
               <!-- timestamp when the video was created -->
-              <span class="timestamp font-small">Created on: 15-04-2019</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="vcardhome vcardhome__learning" @click.stop="redirectToPlay">
-          <div class="vcardhome__img">
-            <!-- the tag for video -->
-            <!--new colours for all categories added in grid.scss-->
-            <video class="feature__video" preload="auto">
-              <!-- source willbe dynamic -->
-              <source
-                src="https://firebasestorage.googleapis.com/v0/b/thevsapp.appspot.com/o/video%2Fcs16msiit004%2Fvideo%40Design%20.mp4?alt=media&token=2fde8966-6c27-4395-bdc1-6ab9ff384119"
-                type="video/mp4"
-              >
-            </video>
-            <div class="hoverbtn hoverbtn__learning">
-              <i class="fas fa-play-circle homeplay"></i>
-            </div>
-          </div>
-
-          <div class="vcardhome__info vcardhome__info--learning">
-            <div class="vcardhome__info--title">
-              <!-- dynamiv title of the video -->
-
-              <span>Fun way to Learn JavaScript And other new contents</span>
-              <br>
-              <!-- timestamp when the video was created -->
-              <span class="timestamp font-small">Created on: 15-04-2019</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="vcardhome vcardhome__learning" @click.stop="redirectToPlay">
-          <div class="vcardhome__img">
-            <!-- the tag for video -->
-            <!--new colours for all categories added in grid.scss-->
-            <video class="feature__video" preload="auto">
-              <!-- source willbe dynamic -->
-              <source
-                src="https://firebasestorage.googleapis.com/v0/b/thevsapp.appspot.com/o/video%2Fcs16msiit004%2Fvideo%40Design%20.mp4?alt=media&token=2fde8966-6c27-4395-bdc1-6ab9ff384119"
-                type="video/mp4"
-              >
-            </video>
-            <div class="hoverbtn hoverbtn__learning">
-              <i class="fas fa-play-circle homeplay"></i>
-            </div>
-          </div>
-
-          <div class="vcardhome__info vcardhome__info--learning">
-            <div class="vcardhome__info--title">
-              <!-- dynamiv title of the video -->
-
-              <span>Fun way to Learn JavaScript And other new contents</span>
-              <br>
-              <!-- timestamp when the video was created -->
-              <span class="timestamp font-small">Created on: 15-04-2019</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="vcardhome vcardhome__learning" @click.stop="redirectToPlay">
-          <div class="vcardhome__img">
-            <!-- the tag for video -->
-            <!--new colours for all categories added in grid.scss-->
-            <video class="feature__video" preload="auto">
-              <!-- source willbe dynamic -->
-              <source
-                src="https://firebasestorage.googleapis.com/v0/b/thevsapp.appspot.com/o/video%2Fcs16msiit004%2Fvideo%40Design%20.mp4?alt=media&token=2fde8966-6c27-4395-bdc1-6ab9ff384119"
-                type="video/mp4"
-              >
-            </video>
-            <div class="hoverbtn hoverbtn__learning">
-              <i class="fas fa-play-circle homeplay"></i>
-            </div>
-          </div>
-
-          <div class="vcardhome__info vcardhome__info--learning">
-            <div class="vcardhome__info--title">
-              <!-- dynamiv title of the video -->
-
-              <span>Fun way to Learn JavaScript And other new contents</span>
-              <br>
-              <!-- timestamp when the video was created -->
-              <span class="timestamp font-small">Created on: 15-04-2019</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="vcardhome vcardhome__learning" @click.stop="redirectToPlay">
-          <div class="vcardhome__img">
-            <!-- the tag for video -->
-            <!--new colours for all categories added in grid.scss-->
-            <video class="feature__video" preload="auto">
-              <!-- source willbe dynamic -->
-              <source
-                src="https://firebasestorage.googleapis.com/v0/b/thevsapp.appspot.com/o/video%2Fcs16msiit004%2Fvideo%40Design%20.mp4?alt=media&token=2fde8966-6c27-4395-bdc1-6ab9ff384119"
-                type="video/mp4"
-              >
-            </video>
-            <div class="hoverbtn hoverbtn__learning">
-              <i class="fas fa-play-circle homeplay"></i>
-            </div>
-          </div>
-
-          <div class="vcardhome__info vcardhome__info--learning">
-            <div class="vcardhome__info--title">
-              <!-- dynamiv title of the video -->
-
-              <span>Fun way to Learn JavaScript And other new contents</span>
-              <br>
-              <!-- timestamp when the video was created -->
-              <span class="timestamp font-small">Created on: 15-04-2019</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="vcardhome vcardhome__learning" @click.stop="redirectToPlay">
-          <div class="vcardhome__img">
-            <!-- the tag for video -->
-            <!--new colours for all categories added in grid.scss-->
-            <video class="feature__video" preload="auto">
-              <!-- source willbe dynamic -->
-              <source
-                src="https://firebasestorage.googleapis.com/v0/b/thevsapp.appspot.com/o/video%2Fcs16msiit004%2Fvideo%40Design%20.mp4?alt=media&token=2fde8966-6c27-4395-bdc1-6ab9ff384119"
-                type="video/mp4"
-              >
-            </video>
-            <div class="hoverbtn hoverbtn__learning">
-              <i class="fas fa-play-circle homeplay"></i>
-            </div>
-          </div>
-
-          <div class="vcardhome__info vcardhome__info--learning">
-            <div class="vcardhome__info--title">
-              <!-- dynamiv title of the video -->
-
-              <span>Fun way to Learn JavaScript And other new contents</span>
-              <br>
-              <!-- timestamp when the video was created -->
-              <span class="timestamp font-small">Created on: 15-04-2019</span>
+              <span class="timestamp font-small">{{video.timestamp}}</span>
             </div>
           </div>
         </div>
@@ -183,16 +42,21 @@
 </template>
 
 <script>
+import db from "@/firebase/init";
+import moment from "moment";
 export default {
   name: "Learning",
   data() {
-    return {};
+    return {
+      videos: [],
+      loading: false
+    };
   },
   methods: {
-    redirectToPlay() {
+    redirectToPlay(id) {
       this.$router.push({
         name: "Play",
-        params: { id: "MXuiOrYKHZEcEx4jIuSS" }
+        params: { id: id }
       });
     },
     redirectToMore() {
@@ -201,6 +65,32 @@ export default {
         params: { id: "AxL" }
       });
     }
+  },
+  created() {
+    db.collection("homeVideos").onSnapshot(snapshot => {
+      snapshot.docChanges().forEach(change => {
+        if (change.type === "added") {
+          if (change.doc.data().featured !== true) {
+            db.collection("uploadedVideos")
+              .doc(change.doc.data().id)
+              .get()
+              .then(doc => {
+                if (doc.data().category === "Learning") {
+                  this.videos.push({
+                    //doc keeps id can retrive using;
+                    id: doc.id,
+                    // field that we have created can be retirve using;
+                    title: doc.data().title,
+                    category: doc.data().category,
+                    imgBase64: doc.data().imgBase64,
+                    timestamp: moment(doc.data().timestamp).format("lll")
+                  });
+                }
+              });
+          }
+        }
+      });
+    });
   }
 };
 </script>

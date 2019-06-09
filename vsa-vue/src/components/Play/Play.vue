@@ -77,7 +77,11 @@
             <!-- video title -->
             <div class="font-medium" id="video-title" v-if="video">
               {{video.title}}
-              <button class="reportbtn font-medium" @click="showReportModal">
+              <button
+                class="reportbtn font-medium"
+                @click="showReportModal"
+                v-if="video.by !== 'Admin'"
+              >
                 <i class="fas fa-exclamation-circle"></i>
                 <span class="tooltiptext1">Report</span>
               </button>
@@ -318,16 +322,20 @@ export default {
         this.spinner = false;
       })
       .then(() => {
-        db.collection("validuser")
-          .doc(this.video.by)
-          .get()
-          .then(doc => {
-            this.name = doc.data().name;
-            this.pic = doc.data().profilePic;
-          })
-          .catch(err => {
-            console.log("err: " + err.message);
-          });
+        if (this.video.by !== "Admin") {
+          db.collection("validuser")
+            .doc(this.video.by)
+            .get()
+            .then(doc => {
+              this.name = doc.data().name;
+              this.pic = doc.data().profilePic;
+            })
+            .catch(err => {
+              console.log("err: " + err.message);
+            });
+        } else {
+          this.name = this.video.by;
+        }
       })
       .then(() => {
         let ref = db

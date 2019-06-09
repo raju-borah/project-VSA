@@ -14,6 +14,7 @@ import Search from '@/components/Search/Search'
 import AdminLogin from '@/components/Admin/AdminLogin'
 import AdminPanel from '@/components/Admin/AdminPanel'
 
+import { store } from '@/Store/Store'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -26,7 +27,6 @@ const router = new Router({
       path: '/',
       name: 'Home',
       component: Home,
-      props: true,
     },
     // Login page
     {
@@ -124,11 +124,11 @@ const router = new Router({
     },
   ]
 })
-
 // router guards
 router.beforeEach((to, from, next) => {
   // for admin login 
   if (to.name === 'AdminLogin') {
+    alert('If any upload is active it will be canceled!')
     firebase.auth().signOut();
     next()
   }
