@@ -274,7 +274,8 @@ iframe {
   padding: 0 4em 0 0.4em;
   top: -2.3em;
   border-radius: 1em;
-  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear, -moz-transform 150ms linear, -o-transform 150ms linear;
+  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear,
+ -moz-transform 150ms linear, -o-transform 150ms linear;
   z-index: 1;
   opacity: 0; }
 
