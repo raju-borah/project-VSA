@@ -6,15 +6,11 @@
 
 
   display: grid;
-  grid-template-rows:5rem 10rem 15rem;
-  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
+   grid-gap: 2rem;
 
 
 
-  justify-content: center;
-  align-content: center;
-
-  position: relative;
 
   //main title:Meet your team
   &__title {
@@ -25,33 +21,13 @@
     font-weight: bold;
     text-align: center;
     font-family: "norwester";
+
+    @include respond(phone){
+      font-size: 32px; 
+      }
   }
 
-  //left-bar
-  &__left {
-    background: $color-white;
-    height: 0.2rem;
-    width: 13%;
-    position:absolute;
-    left: 20%;
-    top: 13%;
-    bottom: 10px;
-    display: inline-block;
-    font-family: "Open Sans", sans-serif;
-  }
 
-  //right-bar
-  &__right {
-    position: absolute;
-    background: $color-white;
-    height: 0.2rem;
-    width: 13%;
-    right: 20%;
-    top: 13%;
-    bottom: 10px;
-    display: inline-block;
-    font-family: "Open Sans", sans-serif;
-  }
 
   //icon 
   &__icon {
@@ -60,6 +36,10 @@
     font-size: 40px;
     color: $color-white;
     text-align: center;
+
+    @include respond(phone){
+      font-size: 32px; 
+      }
   }
 
   //description part
@@ -71,6 +51,12 @@
     line-height: 6rem;
     display: block;
     text-align: center;
+
+    @include respond(phone){
+      font-size: 16px; 
+      font-weight: 100;
+      line-height: 2.5rem;
+      }
   }
 
 
@@ -79,23 +65,38 @@
   //team grid
   &__grid {
     position: relative;
-    padding: 4rem;
-
+  
+    
 
     width: 100%;
 
 
     display: grid;
     grid-template-rows: repeat(1, minmax(10rem, min-content));
-    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
-    grid-auto-rows: 10rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px,300px));
+
     grid-row-gap: 5rem;
-    grid-column-gap: 10rem;
+    grid-column-gap: 3rem;
+
+    justify-content: center;
 
   
 
-    justify-content: center;
-    align-content: center;
+
+    
+    @include respond(phone){
+      grid-template-rows: repeat(1, minmax(5rem, min-content));
+      grid-template-columns: repeat(auto-fill, minmax(100px,250px));
+  
+      grid-row-gap: 2rem;
+      grid-column-gap: 3rem;
+
+    
+    
+      }
+
+
+    
   }
 
 
@@ -125,6 +126,7 @@
   &__member {
       position: relative;
     width: 100%;
+    border-bottom: 1px solid white;
 
     
   }
@@ -162,6 +164,16 @@
     position: relative;
     top: -10rem;
     left: 3rem;
+
+      
+    @include respond(phone){
+     padding: .2rem;
+     top: -7rem;
+     font-size: 14px;
+    left: 7.5rem;
+
+
+      }
    
 
     
@@ -175,11 +187,18 @@
     position: relative;
     top: -2rem;
     left: 10rem;
+  
+   
+    @include respond(phone){
+      width: 40%;
+      left: 8rem;
+
+      }
   }
 
   //second name part
   &__name {
-    display: block;
+    display:block;
     top: 1rem;
     font-size: 2rem;
     background: none;
@@ -194,7 +213,13 @@
       position: relative;
       top: -2rem;
       padding: 1rem;
-      left: 7rem;
+      left: 9rem;
+      @include respond(phone){
+        width: 60%;
+        left: 7.5rem;
+   
+  
+        }
 
   
 

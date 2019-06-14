@@ -42,4 +42,9 @@
     z-index: 1;
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
+    @include respond(phone){
+    left: 7rem;
+    height: .6rem;
+
+    }
 }

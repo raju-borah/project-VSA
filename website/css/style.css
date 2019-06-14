@@ -706,6 +706,9 @@ border-radius for curved end of button
   margin-left: 6rem;
   margin-right: 6rem;
   margin-bottom: 6rem; }
+  @media (max-width: 813px) {
+    .infocard {
+      margin: 4rem; } }
   .infocard__title {
     color: #5643fa;
     letter-spacing: .5rem;
@@ -725,6 +728,14 @@ border-radius for curved end of button
   grid-auto-rows: 40rem;
   justify-content: center;
   padding: 3rem; }
+  @media (max-width: 813px) {
+    .cardsgrid {
+      grid-template-rows: repeat(1, minmax(30rem, min-content));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+      grid-gap: 70px;
+      padding: 0rem;
+      margin: 0;
+      grid-auto-rows: 30rem; } }
 
 .card {
   perspective: 150rem;
@@ -741,6 +752,9 @@ border-radius for curved end of button
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    @media (max-width: 813px) {
+      .card__side {
+        height: 30rem; } }
     .card__side--front {
       background-color: #fff; }
     .card__side--back {
@@ -767,6 +781,9 @@ border-radius for curved end of button
     height: 34%;
     margin-top: -9.5rem;
     clip-path: polygon(0 37.5%, 100% 0, 100% 100%, 0% 100%); }
+    @media (max-width: 813px) {
+      .card__heading {
+        top: 29.7rem; } }
     .card__heading--1 {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
     .card__heading--2 {
@@ -781,6 +798,9 @@ border-radius for curved end of button
     font-weight: 600;
     text-transform: uppercase;
     color: #fff; }
+    @media (max-width: 813px) {
+      .card__text {
+        top: 3rem; } }
   .card__cta {
     position: absolute;
     top: 50%;
@@ -813,10 +833,12 @@ border-radius for curved end of button
   display: block;
   font-size: 40px;
   letter-spacing: .5rem;
-  font-family: 'Crete Round', serif;
   margin-bottom: 5rem;
   text-transform: uppercase;
   font-weight: normal; }
+  @media (max-width: 813px) {
+    .feature__heading {
+      font-size: 30px; } }
 
 .feature__left-line {
   background: #ccc;
@@ -853,6 +875,10 @@ border-radius for curved end of button
   display: inline-block;
   left: 10rem;
   background-image: linear-gradient(120deg, #28b485 50%, rgba(40, 180, 133, 0.3) 30%); }
+  @media (max-width: 813px) {
+    .learning__heading {
+      width: 87%;
+      left: 2rem; } }
 
 .learning__title {
   color: #fff;
@@ -862,6 +888,12 @@ border-radius for curved end of button
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1rem; }
+  @media (max-width: 813px) {
+    .learning__title {
+      letter-spacing: .2rem;
+      font-size: 30px;
+      font-weight: 300;
+      width: 60%; } }
 
 .learning__more {
   font-size: 3rem;
@@ -879,6 +911,12 @@ border-radius for curved end of button
   z-index: 1;
   background: none;
   transition: all 0.5s; }
+  @media (max-width: 813px) {
+    .learning__more {
+      font-size: 20px;
+      right: 0rem;
+      top: 0rem;
+      border: none; } }
   .learning__more::after {
     position: absolute;
     content: '';
@@ -890,6 +928,10 @@ border-radius for curved end of button
     transform-origin: left;
     transition: width 0.25s ease;
     z-index: -1; }
+    @media (max-width: 813px) {
+      .learning__more::after {
+        top: 2px;
+        height: 86%; } }
   .learning__more:visited {
     color: #000; }
   .learning__more:hover {
@@ -910,6 +952,10 @@ border-radius for curved end of button
   z-index: 1;
   display: inline-block;
   font-family: 'Open Sans', sans-serif; }
+  @media (max-width: 813px) {
+    .line {
+      left: 7rem;
+      height: .6rem; } }
 
 .event__heading {
   position: relative;
@@ -917,6 +963,10 @@ border-radius for curved end of button
   display: inline-block;
   left: 10rem;
   background-image: linear-gradient(120deg, #5643fa 50%, rgba(86, 67, 250, 0.3) 30%); }
+  @media (max-width: 813px) {
+    .event__heading {
+      width: 87%;
+      left: 2rem; } }
 
 .event__title {
   color: #fff;
@@ -926,6 +976,12 @@ border-radius for curved end of button
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1rem; }
+  @media (max-width: 813px) {
+    .event__title {
+      letter-spacing: .2rem;
+      font-size: 30px;
+      font-weight: 300;
+      width: 60%; } }
 
 .event__more {
   font-size: 3rem;
@@ -943,6 +999,12 @@ border-radius for curved end of button
   z-index: 1;
   background: none;
   transition: all 0.5s; }
+  @media (max-width: 813px) {
+    .event__more {
+      font-size: 20px;
+      right: 0rem;
+      top: 0rem;
+      border: none; } }
   .event__more::after {
     position: absolute;
     content: '';
@@ -954,6 +1016,10 @@ border-radius for curved end of button
     transform-origin: left;
     transition: width 0.25s ease;
     z-index: -1; }
+    @media (max-width: 813px) {
+      .event__more::after {
+        top: 2px;
+        height: 86%; } }
   .event__more:visited {
     color: #000; }
   .event__more:hover {
@@ -969,6 +1035,10 @@ border-radius for curved end of button
   display: inline-block;
   left: 10rem;
   background-image: linear-gradient(120deg, #ff7730 50%, rgba(255, 119, 48, 0.3) 30%); }
+  @media (max-width: 813px) {
+    .club__heading {
+      width: 87%;
+      left: 2rem; } }
 
 .club__title {
   color: #fff;
@@ -978,6 +1048,12 @@ border-radius for curved end of button
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1rem; }
+  @media (max-width: 813px) {
+    .club__title {
+      letter-spacing: .2rem;
+      font-size: 30px;
+      font-weight: 300;
+      width: 60%; } }
 
 .club__more {
   font-size: 3rem;
@@ -995,6 +1071,12 @@ border-radius for curved end of button
   z-index: 1;
   background: none;
   transition: all 0.5s; }
+  @media (max-width: 813px) {
+    .club__more {
+      font-size: 20px;
+      right: 0rem;
+      top: 0rem;
+      border: none; } }
   .club__more::after {
     position: absolute;
     content: '';
@@ -1006,6 +1088,10 @@ border-radius for curved end of button
     transform-origin: left;
     transition: width 0.25s ease;
     z-index: -1; }
+    @media (max-width: 813px) {
+      .club__more::after {
+        top: 2px;
+        height: 86%; } }
   .club__more:visited {
     color: #000; }
   .club__more:hover {
@@ -1019,11 +1105,8 @@ border-radius for curved end of button
   background-image: linear-gradient(to bottom, #2e13c7, rgba(18, 207, 240, 0.8));
   width: 100%;
   display: grid;
-  grid-template-rows: 5rem 10rem 15rem;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  align-content: center;
-  position: relative; }
+  grid-template-rows: repeat(auto-fit, minmax(2rem, 1fr));
+  grid-gap: 2rem; }
   .team__title {
     color: #fff;
     text-transform: uppercase;
@@ -1032,31 +1115,17 @@ border-radius for curved end of button
     font-weight: bold;
     text-align: center;
     font-family: "norwester"; }
-  .team__left {
-    background: #fff;
-    height: 0.2rem;
-    width: 13%;
-    position: absolute;
-    left: 20%;
-    top: 13%;
-    bottom: 10px;
-    display: inline-block;
-    font-family: "Open Sans", sans-serif; }
-  .team__right {
-    position: absolute;
-    background: #fff;
-    height: 0.2rem;
-    width: 13%;
-    right: 20%;
-    top: 13%;
-    bottom: 10px;
-    display: inline-block;
-    font-family: "Open Sans", sans-serif; }
+    @media (max-width: 813px) {
+      .team__title {
+        font-size: 32px; } }
   .team__icon {
     position: absolute;
     font-size: 40px;
     color: #fff;
     text-align: center; }
+    @media (max-width: 813px) {
+      .team__icon {
+        font-size: 32px; } }
   .team__description {
     color: #fff;
     font-size: 25px;
@@ -1065,18 +1134,26 @@ border-radius for curved end of button
     line-height: 6rem;
     display: block;
     text-align: center; }
+    @media (max-width: 813px) {
+      .team__description {
+        font-size: 16px;
+        font-weight: 100;
+        line-height: 2.5rem; } }
   .team__grid {
     position: relative;
-    padding: 4rem;
     width: 100%;
     display: grid;
     grid-template-rows: repeat(1, minmax(10rem, min-content));
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 10rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
     grid-row-gap: 5rem;
-    grid-column-gap: 10rem;
-    justify-content: center;
-    align-content: center; }
+    grid-column-gap: 3rem;
+    justify-content: center; }
+    @media (max-width: 813px) {
+      .team__grid {
+        grid-template-rows: repeat(1, minmax(5rem, min-content));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 250px));
+        grid-row-gap: 2rem;
+        grid-column-gap: 3rem; } }
   .team__img {
     width: 100%;
     border-radius: 50%;
@@ -1091,7 +1168,8 @@ border-radius for curved end of button
       height: 50%; }
   .team__member {
     position: relative;
-    width: 100%; }
+    width: 100%;
+    border-bottom: 1px solid white; }
   .team__member:hover .team__unhover-img {
     display: none; }
   .team__member:hover .team__hover-img {
@@ -1112,6 +1190,12 @@ border-radius for curved end of button
     position: relative;
     top: -10rem;
     left: 3rem; }
+    @media (max-width: 813px) {
+      .team__designation {
+        padding: .2rem;
+        top: -7rem;
+        font-size: 14px;
+        left: 7.5rem; } }
   .team__h4 {
     font-size: 32px;
     font-weight: 700;
@@ -1119,6 +1203,10 @@ border-radius for curved end of button
     position: relative;
     top: -2rem;
     left: 10rem; }
+    @media (max-width: 813px) {
+      .team__h4 {
+        width: 40%;
+        left: 8rem; } }
   .team__name {
     display: block;
     top: 1rem;
@@ -1130,7 +1218,11 @@ border-radius for curved end of button
     position: relative;
     top: -2rem;
     padding: 1rem;
-    left: 7rem; }
+    left: 9rem; }
+    @media (max-width: 813px) {
+      .team__list {
+        width: 60%;
+        left: 7.5rem; } }
   .team__item {
     display: inline-block;
     padding: 0 6px;
@@ -1262,23 +1354,47 @@ border-radius for curved end of button
     height: 55rem;
     background-size: 100% 100%;
     background-repeat: no-repeat; }
+    @media (max-width: 813px) {
+      .footer__back {
+        height: 50rem;
+        background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)); } }
   .footer__logo {
     position: absolute;
     top: 5rem;
     font-size: 20rem;
     left: 65rem; }
+    @media (max-width: 813px) {
+      .footer__logo {
+        font-size: 100px;
+        left: 13rem;
+        top: -2rem;
+        color: white; } }
   .footer__logo-name {
     position: absolute;
     color: #5643fa;
     font-size: 5rem;
     top: 25rem;
     left: 4rem; }
+    @media (max-width: 813px) {
+      .footer__logo-name {
+        font-size: 35px;
+        left: 1.5rem;
+        top: 11.5rem; } }
   .footer__copy {
     position: absolute;
     font-size: 2rem;
     top: 35rem; }
+    @media (max-width: 813px) {
+      .footer__copy {
+        font-size: 15px;
+        top: 45rem;
+        left: -2rem;
+        width: 150%; } }
   .footer__communication {
     font-size: 5rem; }
+    @media (max-width: 813px) {
+      .footer__communication {
+        font-size: 35px; } }
     .footer__communication--text {
       position: absolute;
       top: 11rem;
@@ -1288,12 +1404,23 @@ border-radius for curved end of button
       font-weight: 600;
       letter-spacing: .5rem;
       transform: rotate(7deg); }
+      @media (max-width: 813px) {
+        .footer__communication--text {
+          font-size: 20px;
+          transform: rotate(0);
+          font-weight: 200;
+          top: 15rem;
+          left: 22rem; } }
     .footer__communication--call {
       position: absolute;
       color: #5643fa;
       top: 18rem;
       left: 23rem;
       transition: all .4s; }
+      @media (max-width: 813px) {
+        .footer__communication--call {
+          top: 22rem;
+          left: 25rem; } }
       .footer__communication--call:hover {
         transform: translateY(-2rem); }
     .footer__communication--callinfo {
@@ -1303,6 +1430,11 @@ border-radius for curved end of button
       visibility: hidden;
       color: #fff;
       transition: all .4s; }
+      @media (max-width: 813px) {
+        .footer__communication--callinfo {
+          position: relative;
+          font-size: 15px;
+          top: -4rem; } }
     .footer__communication--call:hover .footer__communication--callinfo {
       visibility: visible;
       color: #fff; }
@@ -1312,6 +1444,10 @@ border-radius for curved end of button
       top: 30rem;
       left: 20rem;
       transition: all .4s; }
+      @media (max-width: 813px) {
+        .footer__communication--location {
+          top: 29rem;
+          left: 25rem; } }
       .footer__communication--location:hover {
         transform: translateY(-2rem); }
     .footer__communication--locationinfo {
@@ -1322,6 +1458,11 @@ border-radius for curved end of button
       transition: all .4s;
       color: #fff;
       padding: .7rem; }
+      @media (max-width: 813px) {
+        .footer__communication--locationinfo {
+          position: relative;
+          font-size: 10px;
+          top: -3rem; } }
     .footer__communication--location:hover .footer__communication--locationinfo {
       visibility: visible;
       color: #fff; }
@@ -1331,6 +1472,10 @@ border-radius for curved end of button
       top: 40rem;
       left: 15rem;
       transition: all .4s; }
+      @media (max-width: 813px) {
+        .footer__communication--mail {
+          top: 35rem;
+          left: 25rem; } }
       .footer__communication--mail:hover {
         transform: translateY(-2rem); }
     .footer__communication--mailinfo {
@@ -1341,6 +1486,11 @@ border-radius for curved end of button
       transition: all .4s;
       padding: .7rem;
       color: #fff; }
+      @media (max-width: 813px) {
+        .footer__communication--mailinfo {
+          position: relative;
+          font-size: 10px;
+          top: -3rem; } }
     .footer__communication--mail:hover .footer__communication--mailinfo {
       visibility: visible;
       color: #fff; }
@@ -1352,24 +1502,47 @@ border-radius for curved end of button
     letter-spacing: .5rem;
     right: 29rem;
     top: 10rem; }
+    @media (max-width: 813px) {
+      .footer__social--text {
+        font-size: 20px;
+        transform: rotate(0);
+        font-weight: 200;
+        top: 15rem;
+        left: 2rem;
+        width: 30%; } }
   .footer__social--fb {
     position: absolute;
     color: #5643fa;
     font-size: 6rem;
     right: 40rem;
     top: 13rem; }
+    @media (max-width: 813px) {
+      .footer__social--fb {
+        font-size: 35px;
+        left: 5rem;
+        top: 22rem; } }
   .footer__social--twit {
     position: absolute;
     color: #2998ff;
     font-size: 6rem;
     right: 35rem;
     top: 23rem; }
+    @media (max-width: 813px) {
+      .footer__social--twit {
+        font-size: 35px;
+        left: 5rem;
+        top: 29rem; } }
   .footer__social--link {
     position: absolute;
     color: #2998ff;
     font-size: 6rem;
     right: 30rem;
     top: 33rem; }
+    @media (max-width: 813px) {
+      .footer__social--link {
+        font-size: 35px;
+        left: 5rem;
+        top: 35rem; } }
 
 .header {
   height: 91vh;
@@ -1383,11 +1556,18 @@ border-radius for curved end of button
     left: 70%;
     transform: translate(-50%, -50%);
     text-align: center; }
+    @media (max-width: 813px) {
+      .header__text-box {
+        left: 50%; } }
   .header_img {
     position: absolute;
     left: 0rem;
     height: 91vh;
     min-width: 100%; }
+    @media (max-width: 813px) {
+      .header_img {
+        width: 100%;
+        height: 60%; } }
 
 .fade {
   animation-name: fade;
@@ -1402,12 +1582,15 @@ border-radius for curved end of button
     font-size: 8rem;
     font-weight: 600;
     letter-spacing: 3rem;
-    float: right;
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in; }
+    @media (max-width: 813px) {
+      .heading-primary--main {
+        font-size: 38px;
+        letter-spacing: 0.8rem; } }
   .heading-primary--sub {
     display: inline-block;
     font-size: 3rem;
@@ -1417,6 +1600,10 @@ border-radius for curved end of button
     animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: ease-in; }
+    @media (max-width: 813px) {
+      .heading-primary--sub {
+        font-size: 23px;
+        letter-spacing: 0; } }
 
 .grid {
   width: 100%;
@@ -1425,11 +1612,15 @@ border-radius for curved end of button
   grid-template-rows: repeat(1, minmax(30rem, min-content));
   grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
   grid-auto-rows: 30rem;
-  grid-row-gap: 5rem;
-  grid-column-gap: 5rem;
+  grid-row-gap: 8rem;
+  grid-column-gap: 8rem;
   padding-top: 4rem;
   justify-content: center;
   align-content: center; }
+  @media (max-width: 813px) {
+    .grid {
+      width: 80%;
+      grid-template-rows: repeat(1, minmax(28rem, min-content)); } }
 
 .grid2 {
   width: 100%;
@@ -1528,6 +1719,9 @@ border-radius for curved end of button
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; }
+  @media (max-width: 813px) {
+    .feature {
+      background-attachment: fixed; } }
 
 .learning {
   padding: 5rem 0 5rem 0;

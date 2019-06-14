@@ -45,7 +45,11 @@
   width: 87%;
   display: inline-block;
   left: 10rem;
+  @include respond(phone){
+  width: 87%;
+  left: 2rem;
 
+  }
 
 }
  
@@ -58,7 +62,12 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1rem; 
-
+  @include respond(phone){
+  letter-spacing: .2rem; 
+  font-size: 30px;
+  font-weight: 300;
+  width: 60%;
+    }
 
 }
 
@@ -81,6 +90,14 @@
   background: none;
   transition: all 0.5s;
 
+  @include respond(phone){
+    font-size: 20px;
+    right:0rem;
+    top: 0rem;
+    border: none;
+
+      
+      }
 
   //after element on view more 
   &::after{
@@ -95,7 +112,12 @@
     transition:width 0.25s ease;
     z-index:-1;
     
-
+    @include respond(phone){
+    top:2px;
+    height: 86%;
+  
+        
+        }
   }
 
   //when the view more link is visited or clicked

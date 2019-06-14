@@ -12,7 +12,10 @@
 
     
     margin-bottom: 6rem;
-
+    
+    @include respond(phone){
+    margin: 4rem;
+    }
 
     //heading part of the story section
 
@@ -46,6 +49,16 @@
 
     padding: 3rem;
 
+    @include respond(phone){
+    grid-template-rows: repeat(1, minmax(30rem, min-content));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    grid-gap: 70px;
+    padding: 0rem;
+    margin: 0;
+    grid-auto-rows: 30rem;
+
+    }
+
  
 
 }
@@ -69,7 +82,9 @@
         border-radius: 3px;
         overflow: hidden;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-
+        @include respond(phone){
+            height: 30rem;
+        }
         &--front {
             background-color: $color-white;
         }
@@ -120,7 +135,10 @@
         height: 34%;
         margin-top: -9.5rem;
         clip-path: polygon(0 37.5%, 100% 0, 100% 100%, 0% 100%);
-
+        @include respond(phone){
+        top: 29.7rem;
+           
+        }
         &--1
         {
          
@@ -153,8 +171,12 @@
         font-size: 35px;
         font-weight: 600;
         text-transform: uppercase;
-
         color: $color-white;
+
+        @include respond(phone){
+        top: 3rem;
+               
+            }
     }
 
     // back  SIDE text STYLING
