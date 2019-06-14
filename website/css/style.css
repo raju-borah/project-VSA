@@ -1,7 +1,7 @@
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(15rem); }
+    transform: translateX(5rem); }
   100% {
     opacity: 1;
     transform: translate(0); } }
@@ -152,6 +152,9 @@ body {
 .u-margin-top {
   margin-top: 15%; }
 
+.border {
+  border-radius: 1rem; }
+
 iframe {
   width: 100%;
   height: 100%;
@@ -274,8 +277,7 @@ iframe {
   padding: 0 4em 0 0.4em;
   top: -2.3em;
   border-radius: 1em;
-  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear,
- -moz-transform 150ms linear, -o-transform 150ms linear;
+  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear, -moz-transform 150ms linear, -o-transform 150ms linear;
   z-index: 1;
   opacity: 0; }
 
@@ -703,8 +705,9 @@ border-radius for curved end of button
   margin-bottom: 6rem; }
   .infocard__title {
     color: #5643fa;
-    letter-spacing: 1rem;
-    font-size: 6.5rem;
+    letter-spacing: .5rem;
+    font-size: 36px;
+    text-transform: uppercase;
     font-weight: 600;
     text-align: center;
     margin-top: 5rem;
@@ -712,11 +715,11 @@ border-radius for curved end of button
 
 .cardsgrid {
   display: grid;
-  grid-template-rows: repeat(1, minmax(50rem, min-content));
+  grid-template-rows: repeat(1, minmax(40rem, min-content));
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: 3rem;
-  grid-auto-rows: 50rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+  grid-gap: 30px;
+  grid-auto-rows: 40rem;
   justify-content: center;
   padding: 3rem; }
 
@@ -725,7 +728,7 @@ border-radius for curved end of button
   -moz-perspective: 150rem;
   position: relative; }
   .card__side {
-    height: 45rem;
+    height: 40rem;
     transition: all .8s ease;
     position: absolute;
     top: 0;
@@ -756,11 +759,11 @@ border-radius for curved end of button
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
   .card__heading {
     position: absolute;
-    top: 40rem;
+    top: 36.5rem;
     width: 100%;
-    height: 50%;
+    height: 34%;
     margin-top: -9.5rem;
-    clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%); }
+    clip-path: polygon(0 37.5%, 100% 0, 100% 100%, 0% 100%); }
     .card__heading--1 {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
     .card__heading--2 {
@@ -771,8 +774,8 @@ border-radius for curved end of button
     position: absolute;
     top: 5rem;
     left: 4rem;
-    font-size: 5rem;
-    font-weight: 300;
+    font-size: 35px;
+    font-weight: 600;
     text-transform: uppercase;
     color: #fff; }
   .card__cta {
@@ -782,15 +785,15 @@ border-radius for curved end of button
     transform: translate(-50%, -50%);
     width: 90%;
     text-align: center;
-    font-size: 2rem;
+    font-size: 14px;
     color: #fff;
-    font-weight: 600;
+    font-weight: 300;
     letter-spacing: .1rem; }
     .card__cta p:first-child:first-letter {
       color: #903;
       float: left;
       font-family: Georgia;
-      font-size: 75px;
+      font-size: 40px;
       line-height: 60px;
       margin-right: -4rem; }
 
@@ -805,9 +808,11 @@ border-radius for curved end of button
   text-align: center;
   color: #fff;
   display: block;
-  font-size: 38px;
+  font-size: 40px;
+  letter-spacing: .5rem;
   font-family: 'Crete Round', serif;
   margin-bottom: 5rem;
+  text-transform: uppercase;
   font-weight: normal; }
 
 .feature__left-line {
@@ -829,20 +834,15 @@ border-radius for curved end of button
   font-family: 'Open Sans', sans-serif; }
 
 .feature__contents {
-  position: relative;
   display: grid;
   grid-template-rows: repeat(1, minmax(30rem, min-content));
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(470px, 473px));
-  grid-gap: 3rem;
-  grid-auto-rows: 35rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  grid-gap: 5rem;
+  grid-auto-rows: 30rem;
   padding: 2rem;
   justify-content: center;
   align-content: center; }
-
-.feature__video {
-  width: 100%;
-  height: auto; }
 
 .learning__heading {
   position: relative;
@@ -1013,12 +1013,19 @@ border-radius for curved end of button
   width: 100%; }
 
 .team {
+  background-image: linear-gradient(to bottom, #2e13c7, rgba(18, 207, 240, 0.8));
+  width: 100%;
+  display: grid;
+  grid-template-rows: 5rem 10rem 15rem;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-content: center;
   position: relative; }
   .team__title {
     color: #fff;
     text-transform: uppercase;
-    font-size: 6rem;
-    letter-spacing: 1rem;
+    font-size: 50px;
+    letter-spacing: .5rem;
     font-weight: bold;
     text-align: center;
     font-family: "norwester"; }
@@ -1027,44 +1034,46 @@ border-radius for curved end of button
     height: 0.2rem;
     width: 13%;
     position: absolute;
-    left: 23rem;
-    top: 15rem;
+    left: 20%;
+    top: 13%;
     bottom: 10px;
     display: inline-block;
     font-family: "Open Sans", sans-serif; }
   .team__right {
+    position: absolute;
     background: #fff;
     height: 0.2rem;
     width: 13%;
-    right: 23rem;
-    position: absolute;
-    top: 15rem;
+    right: 20%;
+    top: 13%;
     bottom: 10px;
     display: inline-block;
     font-family: "Open Sans", sans-serif; }
   .team__icon {
     position: absolute;
-    font-size: 6rem;
+    font-size: 40px;
     color: #fff;
-    top: 2rem;
-    left: 74rem;
     text-align: center; }
   .team__description {
     color: #fff;
-    font-size: 3rem;
+    font-size: 25px;
     font-weight: 300;
-    padding: 5rem;
+    padding: 1rem;
     line-height: 6rem;
     display: block;
     text-align: center; }
   .team__grid {
     position: relative;
     padding: 4rem;
+    width: 100%;
     display: grid;
-    grid-template-rows: 70vh repeat(1, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 8rem;
-    text-align: center; }
+    grid-template-rows: repeat(1, minmax(10rem, min-content));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 10rem;
+    grid-row-gap: 5rem;
+    grid-column-gap: 10rem;
+    justify-content: center;
+    align-content: center; }
   .team__img {
     width: 100%;
     border-radius: 50%;
@@ -1098,14 +1107,15 @@ border-radius for curved end of button
     font-size: 1.8rem;
     color: #fff;
     position: relative;
-    top: 20rem;
-    left: -3rem; }
+    top: -10rem;
+    left: 3rem; }
   .team__h4 {
     font-size: 32px;
     font-weight: 700;
     color: #fff;
     position: relative;
-    top: 25rem; }
+    top: -2rem;
+    left: 10rem; }
   .team__name {
     display: block;
     top: 1rem;
@@ -1115,8 +1125,9 @@ border-radius for curved end of button
     color: #fff; }
   .team__list {
     position: relative;
-    top: 25rem;
-    padding: 1rem; }
+    top: -2rem;
+    padding: 1rem;
+    left: 7rem; }
   .team__item {
     display: inline-block;
     padding: 0 6px;
@@ -1369,12 +1380,11 @@ border-radius for curved end of button
     left: 70%;
     transform: translate(-50%, -50%);
     text-align: center; }
-
-img {
-  position: absolute;
-  left: 0rem;
-  height: 91vh;
-  width: 100%; }
+  .header_img {
+    position: absolute;
+    left: 0rem;
+    height: 91vh;
+    min-width: 100%; }
 
 .fade {
   animation-name: fade;
@@ -1409,11 +1419,11 @@ img {
   width: 100%;
   margin: 30px auto;
   display: grid;
-  grid-template-rows: repeat(1, minmax(35rem, min-content));
-  grid-template-columns: repeat(auto-fill, minmax(200px, 450px));
-  grid-auto-rows: 35rem;
-  grid-row-gap: 10rem;
-  grid-column-gap: 1rem;
+  grid-template-rows: repeat(1, minmax(30rem, min-content));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
+  grid-auto-rows: 30rem;
+  grid-row-gap: 5rem;
+  grid-column-gap: 5rem;
   padding-top: 4rem;
   justify-content: center;
   align-content: center; }
@@ -1517,26 +1527,19 @@ img {
   background-attachment: fixed; }
 
 .learning {
-  padding: 15rem 0 5rem 0;
-  position: relative;
+  padding: 5rem 0 5rem 0;
   background-size: cover;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
 
 .club {
-  padding: 15rem 0 5rem 0;
+  padding: 5rem 0 5rem 0;
   background-size: cover;
-  position: relative;
   background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.55), rgba(255, 119, 48, 0.55)); }
 
 .event {
-  padding: 15rem 0 8rem 0;
+  padding: 5rem 0 8rem 0;
   background-size: cover;
-  position: relative;
   background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.65), rgba(86, 67, 250, 0.65)); }
-
-.team {
-  padding: 10rem 0 0 0;
-  background-image: linear-gradient(to bottom, #2e13c7, rgba(18, 207, 240, 0.8)); }
 
 .signup {
   width: 100%;

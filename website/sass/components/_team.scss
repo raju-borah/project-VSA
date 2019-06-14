@@ -1,13 +1,27 @@
 .team {
-  position: relative;
+  background-image: linear-gradient(to bottom,rgba(46, 19, 199, 2),rgba(18, 207, 240, 0.800));
  
+
+  width: 100%;
+
+
+  display: grid;
+  grid-template-rows:5rem 10rem 15rem;
+  grid-template-columns: 1fr;
+
+
+
+  justify-content: center;
+  align-content: center;
+
+  position: relative;
 
   //main title:Meet your team
   &__title {
     color: $color-white;
     text-transform: uppercase;
-    font-size: 6rem;
-    letter-spacing: 1rem;
+    font-size: 50px;
+    letter-spacing: .5rem;
     font-weight: bold;
     text-align: center;
     font-family: "norwester";
@@ -18,9 +32,9 @@
     background: $color-white;
     height: 0.2rem;
     width: 13%;
-    position: absolute;
-    left: 23rem;
-    top: 15rem;
+    position:absolute;
+    left: 20%;
+    top: 13%;
     bottom: 10px;
     display: inline-block;
     font-family: "Open Sans", sans-serif;
@@ -28,12 +42,12 @@
 
   //right-bar
   &__right {
+    position: absolute;
     background: $color-white;
     height: 0.2rem;
     width: 13%;
-    right: 23rem;
-    position: absolute;
-    top: 15rem;
+    right: 20%;
+    top: 13%;
     bottom: 10px;
     display: inline-block;
     font-family: "Open Sans", sans-serif;
@@ -41,20 +55,19 @@
 
   //icon 
   &__icon {
-    position: absolute;
-    font-size: 6rem;
+
+    position:absolute;
+    font-size: 40px;
     color: $color-white;
-    top: 2rem;
-    left: 74rem;
     text-align: center;
   }
 
   //description part
   &__description {
     color: $color-white;
-    font-size: 3rem;
+    font-size: 25px;
     font-weight: 300;
-    padding: 5rem;
+    padding: 1rem;
     line-height: 6rem;
     display: block;
     text-align: center;
@@ -69,14 +82,20 @@
     padding: 4rem;
 
 
-  
+    width: 100%;
+
+
     display: grid;
-    grid-template-rows: 70vh repeat(1, 1fr);
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, minmax(10rem, min-content));
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-auto-rows: 10rem;
+    grid-row-gap: 5rem;
+    grid-column-gap: 10rem;
 
-    grid-column-gap: 8rem;
+  
 
-    text-align: center;
+    justify-content: center;
+    align-content: center;
   }
 
 
@@ -141,8 +160,9 @@
 	font-size: 1.8rem;
     color: $color-white;
     position: relative;
-    top: 20rem;
-    left: -3rem;
+    top: -10rem;
+    left: 3rem;
+   
 
     
   }
@@ -153,7 +173,8 @@
     font-weight: 700;
     color: $color-white;
     position: relative;
-    top: 25rem;
+    top: -2rem;
+    left: 10rem;
   }
 
   //second name part
@@ -171,8 +192,9 @@
   &__list
   {
       position: relative;
-      top: 25rem;
+      top: -2rem;
       padding: 1rem;
+      left: 7rem;
 
   
 

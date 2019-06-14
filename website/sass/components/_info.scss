@@ -19,8 +19,9 @@
     &__title
     {
         color: $color-tertiary-dark;
-        letter-spacing: 1rem; 
-        font-size: 6.5rem;
+        letter-spacing: .5rem; 
+        font-size: 36px;
+        text-transform: uppercase;
         font-weight: 600;
         text-align: center; 
         margin-top: 5rem;
@@ -35,11 +36,11 @@
 .cardsgrid {
 
     display: grid;
-    grid-template-rows: repeat(1, minmax(50rem, min-content));//50rem should be same with 50rem of auto-grid-rows to create new rows of same size 
+    grid-template-rows: repeat(1, minmax(40rem, min-content));//50rem should be same with 50rem of auto-grid-rows to create new rows of same size 
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap: 3rem;
-    grid-auto-rows: 50rem;//amount of space for each new row created when size of the window is decreased in horizontal side
+    grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+    grid-gap: 30px;
+    grid-auto-rows: 40rem;//amount of space for each new row created when size of the window is decreased in horizontal side
     justify-content: center;
 
 
@@ -58,7 +59,7 @@
     position: relative;
     
     &__side {
-        height: 45rem;
+        height: 40rem;
         transition: all .8s ease;
         position: absolute;
         top: 0;
@@ -114,11 +115,11 @@
     &__heading {
    
         position: absolute;
-        top: 40rem;
+        top: 36.5rem;
         width: 100%;
-        height: 50%;
+        height: 34%;
         margin-top: -9.5rem;
-        clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 37.5%, 100% 0, 100% 100%, 0% 100%);
 
         &--1
         {
@@ -149,8 +150,8 @@
         position: absolute;
         top: 5rem;
         left: 4rem;
-        font-size: 5rem;
-        font-weight: 300;
+        font-size: 35px;
+        font-weight: 600;
         text-transform: uppercase;
 
         color: $color-white;
@@ -164,9 +165,9 @@
         transform: translate(-50%, -50%);
         width: 90%;
         text-align: center;
-        font-size: 2rem;
+        font-size: 14px;
         color: $color-white;
-        font-weight: 600;
+        font-weight: 300;
         letter-spacing: .1rem;
 
 
@@ -174,7 +175,7 @@
             color: #903;
             float: left;
             font-family: Georgia;
-            font-size: 75px;
+            font-size: 40px;
             line-height: 60px;
             margin-right: -4rem;
           }

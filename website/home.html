@@ -116,7 +116,7 @@
         <header class="header">
             <!-- Events -->
             <div class="mySlides fade">
-                <img src="img/event-1.jpg">
+                <img src="img/event-1.jpg" class="header_img">
                 <div class="header__text-box">
                     <h1 class="heading-primary textShadow">
                         <span class="heading-primary--main">EVENTS</span>
@@ -126,7 +126,7 @@
             </div>
             <!-- learning -->
             <div class="mySlides fade">
-                <img src="img/head.jpg">
+                <img src="img/head.jpg" class="header_img">
                 <div class="header__text-box textShadow">
                     <h1 class="heading-primary">
                         <span class="heading-primary--main">LEARNING</span>
@@ -136,7 +136,7 @@
             </div>
             <!-- activities -->
             <div class="mySlides fade">
-                <img src="img/col.jpg">
+                <img src="img/col.jpg" class="header_img">
                 <div class="header__text-box">
                     <h1 class="heading-primary textShadow">
                         <span class="heading-primary--main">CLUB ACTIVITIES</span>
@@ -251,7 +251,7 @@
                 <div class="feature__contents">
 
                     
-                <div class="vcardhome vcardhome__learning" data-aos="fade-right" data-aos-duration="1000">
+                <div class="vcardhome vcardhome__learning " data-aos="fade-right" data-aos-duration="1000">
 
                     <div class="vcardhome__img">
                       <!--video place-->
@@ -307,10 +307,6 @@
                 <div class="vcardhome vcardhome__event" data-aos="fade-left" data-aos-duration="1000">
 
                     <div class="vcardhome__img">
-                        <video class="feature__video"  preload="auto" >
-                            <!-- source willbe dynamic -->
-                            <source src="img/sample.mp4" type="video/mp4">
-                            </video>
 
                         <div class="hoverbtn hoverbtn__event">
                             <i class="fas fa-play-circle homeplay"></i>
@@ -358,7 +354,7 @@
 
             <div class="grid">
 
-                <div class="vcardhome vcardhome__learning">
+                <div class="vcardhome vcardhome__learning border">
 
                     <div class="vcardhome__img">
                    
@@ -384,7 +380,7 @@
                     </div>
                 </div>
 
-                <div class="vcardhome vcardhome__learning">
+                <div class="vcardhome vcardhome__learning border">
 
                     <div class="vcardhome__img">
                         <!-- the tag for video -->
@@ -412,7 +408,7 @@
                 </div>
 
 
-                <div class="vcardhome vcardhome__learning">
+                <div class="vcardhome vcardhome__learning border">
 
                     <div class="vcardhome__img">
                         <!-- the tag for video -->
@@ -439,35 +435,7 @@
                     </div>
                 </div>
 
-                <div class="vcardhome vcardhome__learning">
-
-                    <div class="vcardhome__img">
-                        <!-- the tag for video -->
-                        <!--new colours for all categories added in grid.scss-->
-
-                        <div class="hoverbtn hoverbtn__learning">
-                            <i class="fas fa-play-circle homeplay"></i>
-                        </div>
-                    </div>
-
-                    <div class="vcardhome__info vcardhome__info--learning ">
-                        <div class="vcardhome__info--title">
-                            <!-- dynamiv title of the video -->
-
-
-                            <span>
-                                Fun way to Learn JavaScript And other new contents
-                            </span>
-                            <br>
-                            <!-- timestamp when the video was created -->
-                            <span class="timestamp font-small">Created on: 15-04-2019</span>
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <div class="vcardhome vcardhome__learning">
+                <div class="vcardhome vcardhome__learning border">
 
                     <div class="vcardhome__img">
                         <!-- the tag for video -->
@@ -495,7 +463,35 @@
                 </div>
 
 
-                <div class="vcardhome vcardhome__learning">
+                <div class="vcardhome vcardhome__learning border">
+
+                    <div class="vcardhome__img">
+                        <!-- the tag for video -->
+                        <!--new colours for all categories added in grid.scss-->
+
+                        <div class="hoverbtn hoverbtn__learning">
+                            <i class="fas fa-play-circle homeplay"></i>
+                        </div>
+                    </div>
+
+                    <div class="vcardhome__info vcardhome__info--learning ">
+                        <div class="vcardhome__info--title">
+                            <!-- dynamiv title of the video -->
+
+
+                            <span>
+                                Fun way to Learn JavaScript And other new contents
+                            </span>
+                            <br>
+                            <!-- timestamp when the video was created -->
+                            <span class="timestamp font-small">Created on: 15-04-2019</span>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="vcardhome vcardhome__learning border">
 
                     <div class="vcardhome__img">
                         <!-- the tag for video -->
@@ -902,11 +898,21 @@
         <!--MY team section-->
 
         <section class="team">
+            <!--team icon-->
+            <div>
+                <center>
+                        <span class="team__icon"><i class="fas fa-users"></i></span>
+                </center>
+        
+            </div>
+
             <!--team title-->
-            <span class="team__icon"><i class="fas fa-users"></i></span>
-            <span class="team__left"></span>
+            <div>
             <h3 class="team__title">MEET OUR TEAM</h3>
+            <span class="team__left"></span>
             <span class="team__right"></span>
+            </div>
+
 
 
             <!-- Section Description -->
