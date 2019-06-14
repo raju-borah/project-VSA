@@ -117,8 +117,8 @@
             <!-- division of video player -->
             <div class="player__container--1">
                 <!-- video player of video.js -->
-                <video id="my-video" class="video-js vjs-big-play-centered vjs-default-skin" 
-                    preload="auto" data-setup='{"fluid":true ,"playbackRates": [1, 1.5, 2]}'>
+                <video id="my-video" class="video-js vjs-big-play-centered vjs-default-skin" preload="auto"
+                    data-setup='{"fluid":true ,"playbackRates": [1, 1.5, 2]}'>
                     <!-- source willbe dynamic -->
 
                     <source src="img/sample.mp4" type="video/mp4">
@@ -129,9 +129,22 @@
 
 
         </div>
+        <div style="background: #208b82;">
+            <span class="font-medium videopanel" >
+                #views
+            </span>
+            <span class="endd">
+                <button class="playpagebtn font-medium"> <i class="far fa-thumbs-up"></i></button>
+                <button class="playpagebtn font-medium"><i class="far fa-thumbs-down"></i></button>
+                <button class="playpagebtn playpagebtn--report font-medium"><i class="fas fa-exclamation-circle"></i><span
+                        class="tooltiptext1">Report</span></button>
+            </span>
+        </div>
 
         <!-- grid for the below section -->
         <div class="play__grid">
+
+
             <!-- image of the user that has uplodede the video  -->
             <div class="uploader-image">
                 <img class="profile--image" src="/img/man.png">
@@ -181,7 +194,8 @@
             <!-- video titles and descrptions in the play page -->
             <div class="videoinfo">
                 <!-- video title -->
-                <div class="font-medium" id="video-title"> JavaScript <button class="reportbtn font-medium"><i class="fas fa-exclamation-circle"></i><span class="tooltiptext1">Report</span></button></div>
+                <div class="font-medium" id="video-title"
+                    style="border-bottom: 1px solid black; border-top:  1px solid black; "> JavaScript </div>
                 <!-- description -->
                 <div class="font-small" id="video-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Rerum recusandae animi, nostrum,

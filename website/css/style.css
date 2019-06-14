@@ -274,8 +274,7 @@ iframe {
   padding: 0 4em 0 0.4em;
   top: -2.3em;
   border-radius: 1em;
-  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear,
- -moz-transform 150ms linear, -o-transform 150ms linear;
+  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear, -moz-transform 150ms linear, -o-transform 150ms linear;
   z-index: 1;
   opacity: 0; }
 
@@ -363,6 +362,9 @@ iframe {
       padding: 0.99rem;
       border: 0.2rem dotted #333;
       outline: none; }
+      @media (max-width: 813px) {
+        .form__input--comment {
+          width: 72%; } }
     .form__input__login {
       width: 74%;
       height: 4rem;
@@ -1758,7 +1760,10 @@ img {
 
 .player {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(1fr);
+  grid-template-columns: 1fr; }
   .player ::-webkit-scrollbar {
     width: 0px; }
   .player__container {
@@ -1770,6 +1775,13 @@ img {
     padding: 2rem; }
     .player__container--1 {
       width: 65%; }
+      @media (max-width: 813px) {
+        .player__container--1 {
+          width: 100%; } }
+    @media (max-width: 813px) {
+      .player__container {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr; } }
 
 .play__grid {
   display: grid;
@@ -1778,6 +1790,11 @@ img {
   grid-gap: 2rem;
   padding: 5rem;
   padding-right: 0rem; }
+  @media (max-width: 813px) {
+    .play__grid {
+      padding: 2rem;
+      grid-template-rows: 1fr;
+      grid-template-columns: .1fr .9fr; } }
 
 .user-name {
   padding-top: 2rem;
@@ -1796,12 +1813,18 @@ img {
   text-align: center;
   height: 900px;
   grid-area: 1/3/4/-1; }
+  @media (max-width: 813px) {
+    .suggest {
+      grid-area: 4/1/4/-1; } }
 
 .videoinfo {
   width: 100%;
   height: 100%;
   padding-bottom: 4rem;
   grid-area: 2/1/2/3; }
+  @media (max-width: 813px) {
+    .videoinfo {
+      grid-area: 2/1/2/-1; } }
 
 .video__comments {
   border-top: 0.2rem solid #000;
@@ -1851,16 +1874,33 @@ img {
     border-style: solid;
     border-color: transparent #ffb900 transparent transparent; }
 
-.reportbtn {
+.playpagebtn {
   background: none;
   border: none;
   position: relative;
-  left: 10%; }
-  .reportbtn:hover {
-    color: orange; }
-  .reportbtn:hover .tooltiptext1 {
+  left: 5%;
+  padding-right: 1rem;
+  outline: none; }
+  .playpagebtn:hover {
+    color: #fff;
+    transform: scale(1.2); }
+  .playpagebtn--report:hover .tooltiptext1 {
     visibility: visible;
     opacity: 1; }
+
+.videopanel {
+  padding-left: 18%; }
+  @media (max-width: 813px) {
+    .videopanel {
+      padding: 2rem; } }
+
+.endd {
+  padding-left: 44%; }
+  @media (max-width: 813px) {
+    .endd {
+      padding: 1rem;
+      display: flex;
+      justify-items: start; } }
 
 .morehead {
   position: sticky;

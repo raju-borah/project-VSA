@@ -47,6 +47,11 @@
       padding: 0.99rem;
       border: 0.2rem dotted $color-grey-dark-3;
       outline: none;
+      
+      @include respond(phone)
+      {
+        width: 72%;
+      }
     }
     // signin page input field  properties...
     &__login {
