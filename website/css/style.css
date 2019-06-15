@@ -1927,6 +1927,9 @@ border-radius for curved end of button
   .dashboard__header {
     background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
     padding: 2rem; }
+    @media (max-width: 1024px) {
+      .dashboard__header {
+        padding: 1rem; } }
     @media (max-width: 813px) {
       .dashboard__header {
         padding: 0.62rem; } }
@@ -1946,7 +1949,7 @@ border-radius for curved end of button
     padding-top: 6rem;
     padding-left: 15rem;
     padding-right: 15rem; }
-    @media (max-width: 1367px) {
+    @media (max-width: 1024px) {
       .dashboard__vcontainer {
         padding: 4rem;
         grid-gap: 6rem;
@@ -1979,9 +1982,9 @@ border-radius for curved end of button
   .floating--btn:hover {
     background-color: #012A57;
     transform: translateY(-0.2rem); }
-  @media (max-width: 1367px) {
+  @media (max-width: 1024px) {
     .floating--btn {
-      top: 9.8%;
+      top: 10.5%;
       padding: 0.52rem; } }
   @media (max-width: 813px) {
     .floating--btn {

@@ -5,6 +5,11 @@
   &__header {
     background-image: linear-gradient(to right, rgba($color-tertiary-light, 0.88), rgba($color-tertiary-dark-1, 0.88));
     padding: 2rem;
+
+    @include respond(tab-land) {
+      padding: 1rem;
+    }
+
     @include respond(phone) {
       padding: 0.62rem;
     }
@@ -76,7 +81,7 @@
   }
 // larger screen mixin at first then the smaller
   @include respond(tab-land) {
-    top: 9.8%;
+    top: 10.5%;
     padding: 0.52rem;
   }
   @include respond(phone) {
