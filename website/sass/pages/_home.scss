@@ -23,6 +23,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+
+    @include respond(phone){
+        background-attachment: fixed;
+    }
+
 }
 
 
@@ -30,9 +35,7 @@
 //learning section//
 .learning
 {
-    padding: 15rem 0 5rem 0;//top right bottom left
-   
-    position: relative;
+    padding: 5rem 0 5rem 0;//top right bottom left
     
     background-size: cover;
     background-image: linear-gradient(to right bottom, 
@@ -47,9 +50,8 @@
 //club activities section//
 .club
 {
-    padding: 15rem 0 5rem 0;
+    padding: 5rem 0 5rem 0;
     background-size: cover;
-    position: relative;
     background-image: linear-gradient(to right bottom, 
     rgba($color-secondary-light, .55), 
     rgba($color-secondary-dark, .55));
@@ -60,10 +62,8 @@
 //event section//
 .event
 {
-    padding: 15rem 0 8rem 0;
+    padding: 5rem 0 8rem 0;
     background-size: cover;
-
-    position: relative;
 
     background-image: linear-gradient(to right bottom, 
     rgba($color-tertiary-light, .65), 
@@ -71,12 +71,5 @@
 }
 
 
-//team section
-.team
-{
-    padding: 10rem 0 0 0;
-    background-image: linear-gradient(to bottom,rgba(46, 19, 199, 2),rgba(18, 207, 240, 0.800));
-    
-}
 
 

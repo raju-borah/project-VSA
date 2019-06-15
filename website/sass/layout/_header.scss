@@ -14,19 +14,29 @@
         left: 70%;
         transform: translate(-50%, -50%);
         text-align: center;
+        @include respond(phone){
+        left: 50%;
+        }
         } 
+
+
+        &_img
+            {
+            position:absolute;
+            left: 0rem;//to fit the images in the middle of the screen
+            height: 91vh;
+            min-width: 100%;
+            @include respond(phone){
+                width: 100%;
+                height: 60%;
+            }
+            
+            }
 
 }
 
 //images in the header 
-img
-{
- position:absolute;
- left: 0rem;//to fit the images in the middle of the screen
- height: 91vh;
- width: 100%;
- 
-}
+
 
 //to apply the fade effect in 
 .fade {
@@ -41,7 +51,7 @@ img
     color:$color-white;
     text-transform: uppercase;
     margin-bottom: 6rem;
-
+  
     &--main
     {
         
@@ -49,12 +59,16 @@ img
     font-size: 8rem;
     font-weight: 600;
     letter-spacing: 3rem; 
-    float: right;
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
+    @include respond(phone){
+        font-size: 38px;
+        letter-spacing: 0.8rem;
+
+    }
 
     }
 
@@ -67,7 +81,10 @@ img
         animation-name: moveInLeft;
         animation-duration: 1s;
         animation-delay: 0s;
-        animation-timing-function: ease-in
-
+        animation-timing-function: ease-in;
+        @include respond(phone){
+            font-size: 23px;
+            letter-spacing: 0;
+        }
     }
 }
