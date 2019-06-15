@@ -1355,16 +1355,8 @@ border-radius for curved end of button
 .vcardhome {
   width: 100%;
   height: 100%;
-  background-color: #fff; }
-  .vcardhome__learning {
-    border: 2px solid #228B22;
-    box-shadow: 1rem 1rem 1rem rgba(23, 45, 68, 0.36); }
-  .vcardhome__club {
-    border: 2px solid #ff7730;
-    box-shadow: 1rem 1rem 1rem rgba(255, 119, 48, 0.36); }
-  .vcardhome__event {
-    border: 2px solid #5643fa;
-    box-shadow: 1rem 1rem 1rem rgba(86, 67, 250, 0.36); }
+  background-color: #fff;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.36); }
   .vcardhome__img {
     position: relative;
     width: 100%;
@@ -1375,13 +1367,15 @@ border-radius for curved end of button
   .vcardhome__info {
     padding: 1rem;
     font-size: 1.7rem;
-    width: 100%; }
+    width: 100%;
+    color: #fff;
+    overflow: hidden; }
     .vcardhome__info--learning {
-      color: #228B22; }
+      background-color: #28b485; }
     .vcardhome__info--club {
-      color: #ff7730; }
+      background-color: #ff7730; }
     .vcardhome__info--event {
-      color: #5643fa; }
+      background-color: #5643fa; }
     .vcardhome__info--title {
       font-size: 2.12rem;
       font-weight: bold;
@@ -1794,7 +1788,7 @@ border-radius for curved end of button
 .learning {
   padding: 5rem 0 5rem 0;
   background-size: cover;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.75), rgba(40, 180, 133, 0.75)); }
 
 .club {
   padding: 5rem 0 5rem 0;

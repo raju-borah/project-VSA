@@ -3,27 +3,9 @@
     width: 100%;
     height: 100%;
     background-color: #fff;
+    box-shadow: 1rem 1rem 1rem rgba($color-black, 0.36);
 
-    &__learning
-    {
-      border: 2px solid $color-primary-dark-1;
-      box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
-
-    }
-
-    &__club
-    {
-      border: 2px solid $color-secondary-dark;
-      box-shadow: 1rem 1rem 1rem rgba($color-secondary-dark, 0.36);
-
-    }
-
-    &__event
-    {
-      border: 2px solid $color-tertiary-dark;
-      box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark, 0.36);
-
-    }
+   
 
   
 
@@ -45,23 +27,25 @@
       padding: 1rem;
       font-size: 1.7rem;
       width: 100%;
-
+      color: $color-white;
+      overflow: hidden;
       //for differnt text color in three categories
       &--learning
       {
-        color: $color-primary-dark-1;
+       
+        background-color: $color-primary-dark;
 
       }
 
       &--club
       {
-        color:$color-secondary-dark;
+        background-color:$color-secondary-dark;
 
       }
 
       &--event
       {
-        color:$color-tertiary-dark;
+        background-color:$color-tertiary-dark;
 
       }
       
