@@ -3,6 +3,7 @@
     position: relative;
     right: 3rem;
     top: -1.8rem;
+
     
 
 
@@ -43,6 +44,11 @@
     width: 25rem;
     color: $color-black;
 
+    
+    @include respond(phone){
+      width: 20rem;
+        
+        }
   }
 
 

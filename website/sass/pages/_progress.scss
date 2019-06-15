@@ -18,6 +18,16 @@
   margin-bottom: 2rem;
   border: 0.1rem solid $color-black;
 
+  
+  @include respond(phone){
+    width: 27rem;
+  height: 8rem;
+  top: -10rem;
+  right: 3rem;
+  border-radius: 1rem;
+      
+      }
+
 
   &__text {
     position: absolute;
@@ -29,12 +39,22 @@
     white-space: nowrap;
     overflow:hidden;
     text-overflow: ellipsis;
+    @include respond(phone){
+      font-size: 1.5rem;
+      width:25rem;
+        
+        }
+
+
   }
 
   &__bar {
     position: absolute;
     top: 3rem;
     right: 22rem;
+    @include respond(phone){
+      right:6rem;
+        }
   }
 
   &__percentage {
@@ -43,6 +63,10 @@
     left: 15rem;
     top: 2.4rem;
     font-size: 2rem;
+
+    @include respond(phone){
+      left: 12rem;
+        }
   }
 
   &__btn {
@@ -54,6 +78,13 @@
     top: 5.3rem;
     left: 12.2rem;
     padding: 0.4rem;
+
+    @include respond(phone){
+      top: 4.8rem;
+      left: 8.5rem;
+    
+        
+        }
   }
 }
 
@@ -69,6 +100,12 @@
   :hover {
     color: $color-tertiary-dark;
   }
+  
+  @include respond(phone){
+    font-size: 2.4rem;
+  
+      
+      }
 }
 
 progress {
@@ -81,6 +118,12 @@ progress {
   background-color: #eee;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  @include respond(phone){
+    width: 25rem;
+    height: 2rem;
+  
+      
+      }
 }
 
 ::-webkit-progress-value {
