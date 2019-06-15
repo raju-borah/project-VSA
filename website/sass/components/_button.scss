@@ -14,6 +14,11 @@ border-radius for curved end of button
     background-color: $color-tertiary-dark-1;
     color: $color-white;
     padding: 0.99rem;
+    &-1{
+      font-size: .99rem;
+      float: right;
+      right: 2rem;
+    }
   }
 
   &,
@@ -36,7 +41,6 @@ border-radius for curved end of button
     color: $color-black;
     padding: 0.68rem;
     background-image: linear-gradient(to right, rgba($color-grey-dark-3, 0.29), rgba($color-tertiary-dark-1, 0.33));
-
     // when the btn--white is hovered
     &:hover {
       background-image: none;
