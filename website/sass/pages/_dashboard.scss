@@ -5,34 +5,51 @@
   &__header {
     background-image: linear-gradient(to right, rgba($color-tertiary-light, 0.88), rgba($color-tertiary-dark-1, 0.88));
     padding: 2rem;
+    @include respond(phone) {
+      padding: 0.62rem;
+    }
   }
   &__title {
     margin-left: 8rem;
     color: $color-white;
+
+    @include respond(phone) {
+      margin-left: 3rem;
+    }
   }
   // grid layout for the dashboard
   &__vcontainer {
-    padding: 1rem;
-    padding-top: 4rem;
     display: grid;
-    grid-template-rows: repeat(minmax(150px, max-content));
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
+
+    grid-template-rows: repeat(minmax(150px, min-content));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
     grid-gap: 8rem;
+
     padding: 10rem;
     padding-top: 6rem;
     padding-left: 15rem;
     padding-right: 15rem;
+
+  
+    @include respond(tab-land) {
+      padding: 4rem;
+      grid-gap: 6rem;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 350px));
+    }
+    @include respond(phone) {
+      padding: 4rem;
+    }
+   
   }
   // the video card stored in video--card.scss--->
-
 }
 // the delete button is hidden the pointer is hover to the video division
 .videodelete {
   background: transparent;
   color: $color-white;
-  padding-top: .77rem;
+  padding-top: 0.77rem;
   display: none;
-
 }
 
 // for the timpestamp of the video
@@ -57,5 +74,13 @@
     background-color: $color-tertiary-dark-1;
     transform: translateY(-0.2rem);
   }
+// larger screen mixin at first then the smaller
+  @include respond(tab-land) {
+    top: 9.8%;
+    padding: 0.52rem;
+  }
+  @include respond(phone) {
+    top: 11.5%;
+    padding: 0.52rem;
+  }
 }
-

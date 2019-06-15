@@ -20,7 +20,11 @@
 
 .font-small{ font-size: 2rem;}
 
-.font-medium{   font-size: 3rem;}
+.font-medium{   font-size: 3rem; 
+@include respond(phone){
+font-size: 30px;
+}
+}
 .u-margin-right-large{        margin-right: 3rem;   }
 .list{   
 list-style-type: none;
@@ -31,15 +35,12 @@ overflow-y: scroll;
 }}
 
 .u-margin-top{        margin-top: 15%;   }
-<<<<<<< HEAD
 .flex-center{
     display: flex;
     justify-content: center;
-=======
-
+}
 
 .border
 {
     border-radius: 1rem;
->>>>>>> ab7ac89de27320de6d9de3aef5854729ef9fb306
 }

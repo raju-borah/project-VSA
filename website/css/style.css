@@ -138,6 +138,9 @@ body {
 
 .font-medium {
   font-size: 3rem; }
+  @media (max-width: 813px) {
+    .font-medium {
+      font-size: 30px; } }
 
 .u-margin-right-large {
   margin-right: 3rem; }
@@ -152,14 +155,12 @@ body {
 .u-margin-top {
   margin-top: 15%; }
 
-<<<<<<< HEAD
 .flex-center {
   display: flex;
   justify-content: center; }
-=======
+
 .border {
   border-radius: 1rem; }
->>>>>>> ab7ac89de27320de6d9de3aef5854729ef9fb306
 
 iframe {
   width: 100%;
@@ -1926,25 +1927,38 @@ border-radius for curved end of button
   .dashboard__header {
     background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
     padding: 2rem; }
+    @media (max-width: 813px) {
+      .dashboard__header {
+        padding: 0.62rem; } }
   .dashboard__title {
     margin-left: 8rem;
     color: #fff; }
+    @media (max-width: 813px) {
+      .dashboard__title {
+        margin-left: 3rem; } }
   .dashboard__vcontainer {
-    padding: 1rem;
-    padding-top: 4rem;
     display: grid;
-    grid-template-rows: repeat(minmax(150px, max-content));
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
+    grid-template-rows: repeat(minmax(150px, min-content));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
     grid-gap: 8rem;
     padding: 10rem;
     padding-top: 6rem;
     padding-left: 15rem;
     padding-right: 15rem; }
+    @media (max-width: 1367px) {
+      .dashboard__vcontainer {
+        padding: 4rem;
+        grid-gap: 6rem;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 350px)); } }
+    @media (max-width: 813px) {
+      .dashboard__vcontainer {
+        padding: 4rem; } }
 
 .videodelete {
   background: transparent;
   color: #fff;
-  padding-top: .77rem;
+  padding-top: 0.77rem;
   display: none; }
 
 .timestamp {
@@ -1965,6 +1979,14 @@ border-radius for curved end of button
   .floating--btn:hover {
     background-color: #012A57;
     transform: translateY(-0.2rem); }
+  @media (max-width: 1367px) {
+    .floating--btn {
+      top: 9.8%;
+      padding: 0.52rem; } }
+  @media (max-width: 813px) {
+    .floating--btn {
+      top: 11.5%;
+      padding: 0.52rem; } }
 
 .player {
   width: 100%;
