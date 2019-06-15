@@ -138,19 +138,26 @@ body {
 
 .font-medium {
   font-size: 3rem; }
+  @media (max-width: 813px) {
+    .font-medium {
+      font-size: 30px; } }
 
 .u-margin-right-large {
   margin-right: 3rem; }
 
 .list {
   list-style-type: none;
-  height: 100%;
+  height: 120%;
   overflow-y: scroll; }
   .list--items {
     margin: 1rem; }
 
 .u-margin-top {
   margin-top: 15%; }
+
+.flex-center {
+  display: flex;
+  justify-content: center; }
 
 .border {
   border-radius: 1rem; }
@@ -436,6 +443,10 @@ border-radius for curved end of button
     background-color: #012A57;
     color: #fff;
     padding: 0.99rem; }
+    .btn--comment-1 {
+      font-size: .99rem;
+      float: right;
+      right: 2rem; }
   .btn, .btn:link, .btn:visited {
     text-decoration: none;
     text-transform: capitalize;
@@ -1973,25 +1984,41 @@ border-radius for curved end of button
   .dashboard__header {
     background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
     padding: 2rem; }
+    @media (max-width: 1024px) {
+      .dashboard__header {
+        padding: 1rem; } }
+    @media (max-width: 813px) {
+      .dashboard__header {
+        padding: 0.62rem; } }
   .dashboard__title {
     margin-left: 8rem;
     color: #fff; }
+    @media (max-width: 813px) {
+      .dashboard__title {
+        margin-left: 3rem; } }
   .dashboard__vcontainer {
-    padding: 1rem;
-    padding-top: 4rem;
     display: grid;
-    grid-template-rows: repeat(minmax(150px, max-content));
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
+    grid-template-rows: repeat(minmax(150px, min-content));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
     grid-gap: 8rem;
     padding: 10rem;
     padding-top: 6rem;
     padding-left: 15rem;
     padding-right: 15rem; }
+    @media (max-width: 1024px) {
+      .dashboard__vcontainer {
+        padding: 4rem;
+        grid-gap: 6rem;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 350px)); } }
+    @media (max-width: 813px) {
+      .dashboard__vcontainer {
+        padding: 4rem; } }
 
 .videodelete {
   background: transparent;
   color: #fff;
-  padding-top: .77rem;
+  padding-top: 0.77rem;
   display: none; }
 
 .timestamp {
@@ -2012,6 +2039,14 @@ border-radius for curved end of button
   .floating--btn:hover {
     background-color: #012A57;
     transform: translateY(-0.2rem); }
+  @media (max-width: 1024px) {
+    .floating--btn {
+      top: 10.5%;
+      padding: 0.52rem; } }
+  @media (max-width: 813px) {
+    .floating--btn {
+      top: 11.5%;
+      padding: 0.52rem; } }
 
 .player {
   width: 100%;
@@ -2040,7 +2075,7 @@ border-radius for curved end of button
 
 .play__grid {
   display: grid;
-  grid-template-rows: 100px minmax(150px, min-content);
+  grid-template-rows: minmax(150px, min-content);
   grid-template-columns: 0.1fr 2fr minmax(360px, min-content);
   grid-gap: 2rem;
   padding: 5rem;
@@ -2049,7 +2084,7 @@ border-radius for curved end of button
     .play__grid {
       padding: 2rem;
       grid-template-rows: 1fr;
-      grid-template-columns: .1fr .9fr; } }
+      grid-template-columns: 0.1fr 0.9fr; } }
 
 .user-name {
   padding-top: 2rem;
@@ -2062,6 +2097,10 @@ border-radius for curved end of button
   position: relative;
   left: 0;
   top: 0.3rem; }
+  @media (max-width: 813px) {
+    .profile--image {
+      height: 6.5rem;
+      width: 6.5rem; } }
 
 .suggest {
   padding-top: 0rem;
@@ -2076,86 +2115,62 @@ border-radius for curved end of button
   width: 100%;
   height: 100%;
   padding-bottom: 4rem;
-  grid-area: 2/1/2/3; }
+  grid-area: 1/1/2/3; }
   @media (max-width: 813px) {
     .videoinfo {
-      grid-area: 2/1/2/-1; } }
+      grid-area: 1/1/2/-1; } }
 
 .video__comments {
   border-top: 0.2rem solid #000;
   color: #012A57;
   padding-top: 1rem;
   width: 100%;
-  grid-area: 3/1/3/3; }
+  grid-area: 2/1/4/3; }
 
 .comment--area {
   width: 100%;
-  height: 450px; }
+  height: 550px; }
 
 .comment--card {
   font-size: 1.6rem;
   color: #000;
-  border: 1px solid black;
   border-radius: 1rem;
-  display: grid;
   overflow: hidden;
-  padding: .55rem;
-  grid-template-columns: min-content 2fr;
-  grid-template-rows: minmax(50px, min-content); }
+  padding: 0.55rem; }
   .comment--card--commenter {
-    padding-right: .88rem;
-    align-self: center; }
+    display: inline-block;
+    padding: 0.28rem;
+    background-color: #dad8d8; }
   .comment--card--comments {
-    align-self: center;
-    padding-left: .88rem;
-    border-left: .1rem dotted black; }
-
-.tooltiptext1 {
-  position: absolute;
-  left: 4rem;
-  top: -.2rem;
-  visibility: hidden;
-  font-size: 1.6rem;
-  color: white;
-  background-color: #ffb900;
-  padding: 1rem;
-  border-radius: 1rem;
-  transition: opacity 0.3s; }
-  .tooltiptext1::after {
-    content: "";
-    position: absolute;
-    left: -1.5rem;
-    border-width: 0.8rem;
-    border-style: solid;
-    border-color: transparent #ffb900 transparent transparent; }
+    padding-left: 0.88rem; }
 
 .playpagebtn {
   background: none;
   border: none;
-  position: relative;
-  left: 5%;
-  padding-right: 1rem;
-  outline: none; }
+  outline: none;
+  padding: 1rem;
+  padding-left: 2rem;
+  margin-right: 2rem; }
   .playpagebtn:hover {
-    color: #fff;
+    color: #0d5c25;
     transform: scale(1.2); }
-  .playpagebtn--report:hover .tooltiptext1 {
-    visibility: visible;
-    opacity: 1; }
+  .playpagebtn--report {
+    border-radius: 2rem; }
+    .playpagebtn--report:hover .tooltiptext1 {
+      visibility: visible;
+      opacity: 1; }
 
 .videopanel {
-  padding-left: 18%; }
-  @media (max-width: 813px) {
-    .videopanel {
-      padding: 2rem; } }
+  width: 100%;
+  height: 10rem; }
 
-.endd {
-  padding-left: 44%; }
-  @media (max-width: 813px) {
-    .endd {
-      padding: 1rem;
-      display: flex;
-      justify-items: start; } }
+.userdetails {
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: 0.1fr 2fr;
+  border-bottom: 2px solid grey;
+  border-top: 2px solid grey;
+  padding: 0.2rem; }
 
 .morehead {
   position: sticky;
