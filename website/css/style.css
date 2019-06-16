@@ -110,6 +110,9 @@ body {
 .u-margin-left-large {
   margin-left: 20rem; }
 
+.u-margin-right-large {
+  margin-right: 3rem; }
+
 .u-end-text {
   float: right; }
 
@@ -141,9 +144,6 @@ body {
   @media (max-width: 813px) {
     .font-medium {
       font-size: 30px; } }
-
-.u-margin-right-large {
-  margin-right: 3rem; }
 
 .list {
   list-style-type: none;
