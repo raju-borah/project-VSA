@@ -1187,7 +1187,6 @@ border-radius for curved end of button
       .team__title {
         font-size: 32px; } }
   .team__icon {
-    position: absolute;
     font-size: 40px;
     color: #fff;
     text-align: center; }
