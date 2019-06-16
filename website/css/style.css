@@ -2034,12 +2034,13 @@ border-radius for curved end of button
     transform: translateY(-0.2rem); }
   @media (max-width: 1024px) {
     .floating--btn {
-      top: 10.5%;
-      padding: 0.52rem; } }
+      position: sticky;
+      float: right;
+      padding: .6rem; } }
   @media (max-width: 813px) {
     .floating--btn {
       top: 11.5%;
-      padding: 0.52rem; } }
+      padding: 0.42rem; } }
 
 .player {
   width: 100%;

@@ -81,11 +81,12 @@
   }
 // larger screen mixin at first then the smaller
   @include respond(tab-land) {
-    top: 10.5%;
-    padding: 0.52rem;
+   position: sticky;
+   float: right;
+   padding: .6rem;
   }
   @include respond(phone) {
     top: 11.5%;
-    padding: 0.52rem;
+    padding: 0.42rem;
   }
 }

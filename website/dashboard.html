@@ -27,29 +27,34 @@
     <!-- navigation bar -->
     <div class="navigationbar">
 
+
+
         <!-- name of the Application -->
         <div class="navbarfont navigationbar--left">
             <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
-            <a href="home.html" class="navbar_items font">Vidshare</a>
+            <a href="card.html" class="navbar_items navbar_title">Vidshare </a>
         </div>
 
         <!-- for right option such as search, user profile, upload -->
-        <div class="navbarfont navigationbar--right">
+        <div class="navbarfont navigationbar--right ">
 
             <!--Search button-->
 
-            <div class="search">
+            <div class="search navbar_items ">
                 <input type="text" placeholder="Search" class="search__input" required>
                 <button type="button" class="search__btn" id="searchButton">
-                    <i class="navbar_items fa fa-search search__icon" aria-hidden="true"></i>
+                    <i class=" fa fa-search search__icon" aria-hidden="true"></i>
                 </button>
             </div>
             <!--seacrh button end-->
+
 
             <!-- user button -->
 
             <button type="button" class="navbar_items navbar_items--icon userbutton"><i
                     class="fas fa-user-circle"></i></button>
+
+
             <div class="usercontainer">
 
                 <!-- if user signed the following div will be displayed -->
@@ -57,7 +62,7 @@
                     <img src="img/icons/man.png" class="signincontainer__img" alt="">
                     <ul class="ul__list">
                         <li class="ul__list--items">
-                            <h1 class="font-small accountHolderName">Raju Moni Borah</h1>
+                            <h1 class="accountHolderName">Raju Moni Borah</h1>
                         </li>
                         <li class="ul__list--items">
                             <h2 class="accountHolderId">cs16msiit020@kazirangauniversity.in</h2>
@@ -71,7 +76,7 @@
                         <li class="ul__list--items ul__list--items--progress ">
                             <!-- line  128  navigationbar.scsss  -->
                             <div class="progressbox">
-                                <h4 class="progressbox__text">FILENAME</h4>
+                                <h4 class="progressbox__text">FILENAME heloooooooooooooooooooooooooooooooooo</h4>
                                 <progress class="progressbox__bar" value="50" max="100"></progress>
                                 <div class="progressbox__percentage">50%</div>
                                 <div class="progressbox__btn">
@@ -113,10 +118,12 @@
     <div class="dashboard">
         <!-- floating upload button -->
         <div class="dashboard__header ">
-            <!-- the upload button on right side -->
-            <a href="upload.html" class="floating--btn"><i class="fas fa-upload">upload</i></a>
             <!-- the title  -->
-            <h1 class="font-medium dashboard__title">My videos &nbsp;<i class="fas fa-tasks font-small"></i></h1>
+            <span class="font-medium dashboard__title">My videos &nbsp;<i class="fas fa-tasks font-small"></i></span>
+
+            <!-- the upload button on right side -->
+            
+            <a href="upload.html" class="floating--btn"><i class="fas fa-upload">upload</i></a>
         </div>
 
         <div class="dashboard__vcontainer">
@@ -148,7 +155,7 @@
                     <br>
                     <span style="font-weight: 550;">Description: </span>
                     <!-- dynamic descrptiob of the video -->
-                    <span class="vcard__info--des">Lorem ipsum, dolor 
+                    <span class="vcard__info--des">Lorem ipsum, dolor
                     </span>
 
 
@@ -237,12 +244,8 @@
 
 
 
-
     <!-- javascript of upload button -->
-    <script src="js/upload.js">
-    </script>
-
-
+    <script src="js/upload.js"></script>
     <!-- hide the navbar when scroll -->
     <script src="js/navbar.js"></script>
     <!-- display js for user container -->
