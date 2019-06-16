@@ -361,20 +361,32 @@ iframe {
     text-decoration-style: none;
     font-family: "Philosopher", sans-serif;
     font-size: 2rem;
-    border: 0.1rem; }
+    border: 0.1rem;
+    outline: none; }
     .form__input--settings {
       width: 58%;
-      border: 1px solid #000;
-      outline: none; }
+      border: 1px solid #000; }
     .form__input--comment {
       width: 50%;
       font-size: 1.8rem;
       padding: 0.99rem;
-      border: 0.2rem dotted #333;
-      outline: none; }
+      border: 0.2rem dotted #333; }
       @media (max-width: 813px) {
         .form__input--comment {
           width: 72%; } }
+    .form__input--reply {
+      font-size: 1.5rem;
+      width: 98%;
+      border: 1px solid black; }
+      @media (max-width: 1367px) {
+        .form__input--reply {
+          width: 97%; } }
+      @media (max-width: 1024px) {
+        .form__input--reply {
+          width: 94%; } }
+      @media (max-width: 813px) {
+        .form__input--reply {
+          width: 90%; } }
     .form__input__login {
       width: 74%;
       height: 4rem;
@@ -384,7 +396,6 @@ iframe {
       padding: 0.55rem;
       border-radius: 0rem;
       border-bottom: 0.3rem solid #012A57;
-      outline: none;
       margin-left: 8rem;
       font-size: 1.8rem; }
       .form__input__login--icons {
@@ -1764,6 +1775,11 @@ border-radius for curved end of button
 .vcardmore:hover .playicon {
   transform: scale(1.2);
   transition: all .3s; }
+
+.gridreply {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr max-content; }
 
 .main {
   background-color: #fff; }

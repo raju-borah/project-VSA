@@ -34,11 +34,12 @@
     font-family: "Philosopher", sans-serif;
     font-size: 2rem;
     border: 0.1rem;
+    outline: none;
+
     // for settings
     &--settings {
     width: 58%;
     border: 1px solid $color-black;
-    outline: none;
     }
     // for comment
     &--comment {
@@ -46,11 +47,29 @@
       font-size: 1.8rem;
       padding: 0.99rem;
       border: 0.2rem dotted $color-grey-dark-3;
-      outline: none;
       
       @include respond(phone)
       {
         width: 72%;
+      }
+    }
+    // input field for reply
+    &--reply{
+      font-size: 1.5rem;
+      width: 98%;
+      border: 1px solid black;
+      @include respond(nohd)
+      {
+        width: 97%; //1366px
+      }
+      @include respond(tab-land)
+      {
+        width: 94%;   
+      }
+        
+      @include respond(phone)
+      {
+        width: 90%;
       }
     }
     // signin page input field  properties...
@@ -63,7 +82,6 @@
       padding: 0.55rem;
       border-radius: 0rem;
       border-bottom: 0.3rem solid $color-tertiary-dark-1;
-      outline: none;
       margin-left: 8rem;
       font-size: 1.8rem;
 

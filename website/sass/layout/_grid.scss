@@ -161,3 +161,8 @@
     transition: all .3s;
   }
 
+.gridreply{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr max-content;
+}
