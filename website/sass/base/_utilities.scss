@@ -18,7 +18,11 @@
 
 // font size utilities
 .font-xsmall{ font-size: 1.3rem;}
-.font-small{ font-size: 2rem;}
+.font-small{ font-size: 2rem;
+    @include respond(phone){
+        font-size: 16px;
+        }
+}
 .font-medium{   font-size: 3rem; 
 
 @include respond(phone){

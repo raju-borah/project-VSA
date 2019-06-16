@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 
   // the home button
   &__home {
@@ -26,16 +27,17 @@
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: 0.55rem;
-  
+
+    @include respond(phone) {
+      background: transparent;
+      border: none;
+    }
   }
 
   // positioning the img in the login page
   &__logo {
-    position: absolute;
     width: 14rem;
     height: 14rem;
-    top: 5rem;
-    left: 35%;
     border-radius: 50%;
     background-color: $color-white;
     background-position: center;

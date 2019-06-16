@@ -15,6 +15,9 @@
     background-image: url('/img/Capture.jpg');
     border: 2px solid black;
     border-radius: .55rem;
-
+    @include respond(phone) {
+      background: transparent;
+      border: none;
+    }
   }
 }
