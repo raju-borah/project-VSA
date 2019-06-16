@@ -542,6 +542,9 @@ border-radius for curved end of button
   left: 0;
   padding: 1rem;
   transition: all 0.3s ease; }
+  @media (max-width: 813px) {
+    .navigationbar {
+      height: 6rem; } }
   .navigationbar:hover {
     background-color: #172d44;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.55); }
@@ -549,9 +552,16 @@ border-radius for curved end of button
     font-size: 3rem;
     font-weight: 700;
     color: #fff; }
+    @media (max-width: 813px) {
+      .navigationbar:hover .navbarfont .navbar_items {
+        font-size: 38px; } }
     .navigationbar:hover .navbarfont .navbar_items--icon {
       font-size: 4.6rem;
       top: 0; }
+      @media (max-width: 813px) {
+        .navigationbar:hover .navbarfont .navbar_items--icon {
+          font-size: 42px;
+          top: -.3rem; } }
     .navigationbar:hover .navbarfont .navbar_items:hover {
       color: #9dcfff;
       text-shadow: 0 1rem 3rem #000;
@@ -560,23 +570,42 @@ border-radius for curved end of button
     width: 50%;
     float: left;
     padding-left: 3rem; }
+    @media (max-width: 813px) {
+      .navigationbar--left {
+        padding-left: 0rem; } }
   .navigationbar--right {
     text-align: end;
     width: 50%;
     padding-right: 3rem;
     float: left; }
+    @media (max-width: 813px) {
+      .navigationbar--right {
+        font-size: 20px;
+        float: right;
+        padding-right: 1rem; } }
 
 .navbarfont .navbar_items {
   font-size: 3rem;
   font-weight: 700;
   color: #fff; }
+  @media (max-width: 813px) {
+    .navbarfont .navbar_items {
+      font-size: 38px; } }
   .navbarfont .navbar_items--icon {
     font-size: 4.6rem;
     top: 0; }
+    @media (max-width: 813px) {
+      .navbarfont .navbar_items--icon {
+        font-size: 42px;
+        top: -.3rem; } }
   .navbarfont .navbar_items:hover {
     color: #9dcfff;
     text-shadow: 0 1rem 3rem #000;
     cursor: pointer; }
+
+@media (max-width: 813px) {
+  .navbar_title {
+    display: none; } }
 
 .listlink--item {
   color: #fff; }
@@ -608,6 +637,12 @@ border-radius for curved end of button
     right: 2.8rem;
     border: 1rem solid;
     border-color: transparent transparent #eee transparent; }
+  @media (max-width: 813px) {
+    .usercontainer {
+      width: 30rem;
+      height: 35rem;
+      top: 7rem;
+      right: .5rem; } }
 
 .signincontainer {
   display: none;
@@ -621,6 +656,10 @@ border-radius for curved end of button
   background-color: #eee;
   color: #000;
   border-radius: .55rem; }
+  @media (max-width: 813px) {
+    .signincontainer {
+      width: 28rem;
+      height: 33rem; } }
   .signincontainer__img {
     position: absolute;
     top: .55rem;
@@ -629,6 +668,10 @@ border-radius for curved end of button
     width: 10rem;
     background-position: center;
     border-radius: 50%; }
+    @media (max-width: 813px) {
+      .signincontainer__img {
+        width: 8rem;
+        height: 8rem; } }
 
 .ul__list {
   margin: 1rem;
@@ -679,13 +722,18 @@ border-radius for curved end of button
     box-sizing: border-box;
     width: 0px;
     height: 4.5rem;
-    padding: 0 20px;
+    padding: 0 18px;
     outline: none;
     font-size: 18px;
     border-radius: 50px;
     color: #29313a;
     border: 3px solid rgba(46, 19, 199, 0.5);
     transition: all 0.8s; }
+    @media (max-width: 813px) {
+      .search__input {
+        height: 3.5rem;
+        right: 1.9rem;
+        top: 20px; } }
   .search__btn {
     position: absolute;
     width: 4.59rem;
@@ -696,12 +744,18 @@ border-radius for curved end of button
     cursor: pointer;
     text-align: center;
     line-height: 80px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #fff;
     transition: all 0.1s;
     border: none;
     outline: none;
     background: #2998ff; }
+    @media (max-width: 813px) {
+      .search__btn {
+        width: 4.2rem;
+        height: 4.2rem;
+        right: 2rem;
+        top: 1.7rem; } }
   .search__icon {
     position: absolute;
     top: 1rem;
@@ -709,6 +763,9 @@ border-radius for curved end of button
   .search:hover .search__input {
     width: 25rem;
     color: #000; }
+    @media (max-width: 813px) {
+      .search:hover .search__input {
+        width: 20rem; } }
 
 .infocard {
   display: grid;
@@ -1298,16 +1355,8 @@ border-radius for curved end of button
 .vcardhome {
   width: 100%;
   height: 100%;
-  background-color: #fff; }
-  .vcardhome__learning {
-    border: 2px solid #228B22;
-    box-shadow: 1rem 1rem 1rem rgba(23, 45, 68, 0.36); }
-  .vcardhome__club {
-    border: 2px solid #ff7730;
-    box-shadow: 1rem 1rem 1rem rgba(255, 119, 48, 0.36); }
-  .vcardhome__event {
-    border: 2px solid #5643fa;
-    box-shadow: 1rem 1rem 1rem rgba(86, 67, 250, 0.36); }
+  background-color: #fff;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.36); }
   .vcardhome__img {
     position: relative;
     width: 100%;
@@ -1318,13 +1367,15 @@ border-radius for curved end of button
   .vcardhome__info {
     padding: 1rem;
     font-size: 1.7rem;
-    width: 100%; }
+    width: 100%;
+    color: #fff;
+    overflow: hidden; }
     .vcardhome__info--learning {
-      color: #228B22; }
+      background-color: #28b485; }
     .vcardhome__info--club {
-      color: #ff7730; }
+      background-color: #ff7730; }
     .vcardhome__info--event {
-      color: #5643fa; }
+      background-color: #5643fa; }
     .vcardhome__info--title {
       font-size: 2.12rem;
       font-weight: bold;
@@ -1737,7 +1788,7 @@ border-radius for curved end of button
 .learning {
   padding: 5rem 0 5rem 0;
   background-size: cover;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.75), rgba(40, 180, 133, 0.75)); }
 
 .club {
   padding: 5rem 0 5rem 0;
@@ -2218,13 +2269,18 @@ border-radius for curved end of button
     box-sizing: border-box;
     width: 0px;
     height: 4.5rem;
-    padding: 0 20px;
+    padding: 0 18px;
     outline: none;
     font-size: 18px;
     border-radius: 50px;
     color: #29313a;
     border: 3px solid rgba(46, 19, 199, 0.5);
     transition: all 0.8s; }
+    @media (max-width: 813px) {
+      .searchmore__input {
+        height: 3.5rem;
+        right: 1.9rem;
+        top: 20px; } }
   .searchmore__btn {
     position: absolute;
     width: 4.59rem;
@@ -2235,12 +2291,18 @@ border-radius for curved end of button
     cursor: pointer;
     text-align: center;
     line-height: 80px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #fff;
     transition: all 0.1s;
     border: none;
     outline: none;
     background: #5643fa; }
+    @media (max-width: 813px) {
+      .searchmore__btn {
+        width: 4.2rem;
+        height: 4.2rem;
+        right: 2rem;
+        top: 1.7rem; } }
   .searchmore__icon {
     position: relative;
     top: -1.5rem; }
@@ -2281,6 +2343,13 @@ border-radius for curved end of button
   border: 0.1rem solid #000; }
   .progressbox button:focus {
     outline: none; }
+  @media (max-width: 813px) {
+    .progressbox {
+      width: 27rem;
+      height: 8rem;
+      top: -10rem;
+      right: 3rem;
+      border-radius: 1rem; } }
   .progressbox__text {
     position: absolute;
     width: 30rem;
@@ -2291,16 +2360,26 @@ border-radius for curved end of button
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
+    @media (max-width: 813px) {
+      .progressbox__text {
+        font-size: 1.5rem;
+        width: 25rem; } }
   .progressbox__bar {
     position: absolute;
     top: 3rem;
     right: 22rem; }
+    @media (max-width: 813px) {
+      .progressbox__bar {
+        right: 6rem; } }
   .progressbox__percentage {
     position: absolute;
     color: #000;
     left: 15rem;
     top: 2.4rem;
     font-size: 2rem; }
+    @media (max-width: 813px) {
+      .progressbox__percentage {
+        left: 12rem; } }
   .progressbox__btn {
     display: grid;
     grid-template-rows: repeat(1, minmax(1rem, max-content));
@@ -2309,6 +2388,10 @@ border-radius for curved end of button
     top: 5.3rem;
     left: 12.2rem;
     padding: 0.4rem; }
+    @media (max-width: 813px) {
+      .progressbox__btn {
+        top: 4.8rem;
+        left: 8.5rem; } }
 
 .vidbtn {
   width: 3rem;
@@ -2320,6 +2403,9 @@ border-radius for curved end of button
   cursor: pointer; }
   .vidbtn :hover {
     color: #5643fa; }
+  @media (max-width: 813px) {
+    .vidbtn {
+      font-size: 2.4rem; } }
 
 progress {
   -webkit-appearance: none; }
@@ -2330,6 +2416,10 @@ progress {
   background-color: #eee;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
+  @media (max-width: 813px) {
+    ::-webkit-progress-bar {
+      width: 25rem;
+      height: 2rem; } }
 
 ::-webkit-progress-value {
   background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)), -webkit-linear-gradient(left, #09c, #f44);

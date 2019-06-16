@@ -5,10 +5,23 @@
      font-size: 3rem;
      font-weight: 700;
      color: $color;
+
+     @include respond(phone){
+      font-size: 38px;
+  
+        
+        }
       
      &--icon{
        font-size: 4.6rem;
        top: 0;
+       
+     @include respond(phone){
+      font-size: 42px;
+      top: -.3rem;
+  
+        
+        }
      }
     //  when hovered the following changes will be taking place 
     &:hover{
@@ -154,13 +167,22 @@
   box-sizing: border-box;
   width: 0px;
   height: 4.5rem;
-  padding: 0 20px;
+  padding: 0 18px;
   outline: none;
   font-size: 18px;
   border-radius: 50px;
   color: #29313a;
   border: 3px solid rgba(46, 19, 199, 0.500);
   transition: all 0.8s;
+
+  
+  @include respond(phone){
+    height: 3.5rem;
+    right: 1.9rem;
+    top: 20px;
+
+      
+      }
 }
 
 
@@ -176,11 +198,20 @@
   cursor: pointer;
   text-align: center;
   line-height: 80px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #fff;
   transition: all 0.1s;
   border: none;
   outline:none;
+
+  @include respond(phone){
+    width: 4.2rem;
+    height: 4.2rem;
+    right: 2rem;
+    top: 1.7rem;
+
+      
+      }
 }
 
 // mixin
