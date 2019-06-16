@@ -88,6 +88,9 @@ body {
     padding: 1rem;
     border-bottom: 0.4rem solid rgba(40, 180, 133, 0.98);
     display: inline; }
+    @media (max-width: 813px) {
+      .heading_tag {
+        font-size: 30px; } }
   .heading__title {
     color: #000;
     padding: 1rem;
@@ -342,19 +345,28 @@ iframe {
   background-color: #eee;
   font-family: "Philosopher", sans-serif; }
   .form--login {
-    padding-top: 15rem;
+    padding-top: 4rem;
     width: 100%;
     height: 100%;
     transform: translate(-3rem, -3rem);
     box-shadow: 1rem 2rem 6rem rgba(0, 0, 0, 0.33); }
+    @media (max-width: 813px) {
+      .form--login {
+        padding-top: 6rem; } }
   .form--signup {
     width: 100%;
     height: 100%;
     box-shadow: 1rem 2rem 6rem rgba(0, 0, 0, 0.33);
     transform: translate(-3rem, -3rem);
     padding-left: 4rem; }
+    @media (max-width: 813px) {
+      .form--signup {
+        padding-top: 5rem; } }
   .form__group {
     margin: 1rem; }
+    @media (max-width: 813px) {
+      .form__group {
+        margin: 0.2rem; } }
   .form__input {
     padding: 1rem;
     border-radius: 1.2rem;
@@ -363,6 +375,9 @@ iframe {
     font-size: 2rem;
     border: 0.1rem;
     outline: none; }
+    @media (max-width: 813px) {
+      .form__input {
+        font-size: 16px; } }
     .form__input--settings {
       width: 58%;
       border: 1px solid #000; }
@@ -398,15 +413,26 @@ iframe {
       border-bottom: 0.3rem solid #012A57;
       margin-left: 8rem;
       font-size: 1.8rem; }
+      @media (max-width: 813px) {
+        .form__input__login {
+          margin-left: 6rem; } }
       .form__input__login--icons {
         position: absolute;
-        font-size: 3rem; }
+        font-size: 3rem;
+        left: 7rem; }
         .form__input__login--icons--iconuser {
-          top: 30.3rem;
-          left: 7rem; }
+          top: 30.3rem; }
+          @media (max-width: 813px) {
+            .form__input__login--icons--iconuser {
+              top: 30; } }
         .form__input__login--icons--iconlock {
-          top: 38rem;
-          left: 7rem; }
+          top: 38rem; }
+          @media (max-width: 813px) {
+            .form__input__login--icons--iconlock {
+              top: 37.2rem; } }
+        @media (max-width: 813px) {
+          .form__input__login--icons {
+            left: 4.5rem; } }
     .form__input__signup {
       display: inline-block;
       width: 89%;
@@ -437,6 +463,9 @@ iframe {
     display: block; }
     .form__label--login {
       margin-left: 4.1rem; }
+      @media (max-width: 813px) {
+        .form__label--login {
+          margin-left: 2rem; } }
 
 /* for button */
 /*
@@ -455,7 +484,7 @@ border-radius for curved end of button
     color: #fff;
     padding: 0.99rem; }
     .btn--comment-1 {
-      font-size: .99rem;
+      font-size: 0.99rem;
       float: right;
       right: 2rem; }
   .btn, .btn:link, .btn:visited {
@@ -476,6 +505,9 @@ border-radius for curved end of button
     .btn--white:hover {
       background-image: none;
       background-color: #999; }
+    @media (max-width: 813px) {
+      .btn--white {
+        font-size: 17px; } }
   .btn--green {
     border-radius: 1rem;
     font-size: 2rem;
@@ -484,6 +516,9 @@ border-radius for curved end of button
     background-color: #28b485;
     color: #fff;
     padding: 1rem; }
+    @media (max-width: 813px) {
+      .btn--green {
+        font-size: 20.5px; } }
     .btn--green--login {
       border-radius: 4rem;
       padding: 1.2rem;
@@ -508,10 +543,10 @@ border-radius for curved end of button
     background-color: #5643fa;
     color: #fff;
     padding: 1rem;
-    width: 15rem;
-    left: 22%; }
-    .btn--blue--1 {
-      left: -4rem; }
+    width: 15rem; }
+    @media (max-width: 813px) {
+      .btn--blue {
+        font-size: 22px; } }
   .btn--front {
     background-color: #172d44;
     display: inline-block;
@@ -1834,6 +1869,10 @@ border-radius for curved end of button
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: .55rem; }
+    @media (max-width: 813px) {
+      .signup__container {
+        background: transparent;
+        border: none; } }
 
 .login {
   width: 100%;
@@ -1859,12 +1898,13 @@ border-radius for curved end of button
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: 0.55rem; }
+    @media (max-width: 813px) {
+      .login__container {
+        background: transparent;
+        border: none; } }
   .login__logo {
-    position: absolute;
     width: 14rem;
     height: 14rem;
-    top: 5rem;
-    left: 35%;
     border-radius: 50%;
     background-color: #fff;
     background-position: center; }

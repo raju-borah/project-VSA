@@ -16,12 +16,18 @@ body {
 
   background-color: $color-white;
 
+  // for login and signup
   &_tag {
     font-size: 4rem;
     //text-shadow: 0 1rem 1rem rgba($color-black,0.48);
     padding: 1rem;
     border-bottom: 0.4rem solid rgba($color-primary-dark, 0.98);
     display: inline;
+
+    @include respond(phone){
+      font-size: 30px;
+    }
+
   }
 
   &__title {

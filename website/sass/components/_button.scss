@@ -6,6 +6,9 @@ border-radius for curved end of button
 .btn {
   font-size: 1.9rem;
   background-color: $color-grey-light-2;
+
+  
+
   // for comment
   &--comment {
     border-radius: 2rem;
@@ -14,8 +17,8 @@ border-radius for curved end of button
     background-color: $color-tertiary-dark-1;
     color: $color-white;
     padding: 0.99rem;
-    &-1{
-      font-size: .99rem;
+    &-1 {
+      font-size: 0.99rem;
       float: right;
       right: 2rem;
     }
@@ -46,6 +49,9 @@ border-radius for curved end of button
       background-image: none;
       background-color: $color-grey-dark-2;
     }
+    @include respond(phone) {
+      font-size: 17px;
+    }
   }
   // button green
   &--green {
@@ -56,7 +62,9 @@ border-radius for curved end of button
     background-color: $color-primary-dark;
     color: $color-white;
     padding: 1rem;
-
+    @include respond(phone) {
+      font-size: 20.5px;
+    }
     // for login
     &--login {
       border-radius: 4rem;
@@ -89,9 +97,8 @@ border-radius for curved end of button
     color: $color-white;
     padding: 1rem;
     width: 15rem;
-    left: 22%;
-    &--1 {
-      left: -4rem;
+    @include respond(phone) {
+      font-size: 22px;
     }
   }
   &--front {

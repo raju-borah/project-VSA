@@ -4,15 +4,18 @@
   padding: 2rem;
   background-color: $color-grey-light-2;
   font-family: "Philosopher", sans-serif;
+ 
   // form login properties
   &--login {
     // for bring down the form
-    padding-top: 15rem;
+    padding-top: 4rem;
     width: 100%;
     height: 100%;
     transform: translate(-3rem, -3rem);
-    //border: 0.3rem solid $color-black;
     box-shadow: 1rem 2rem 6rem rgba($color-black, 0.33);
+    @include respond(phone) {
+      padding-top: 6rem
+    }
   }
   &--signup {
     width: 100%;
@@ -20,11 +23,17 @@
     box-shadow: 1rem 2rem 6rem rgba($color-black, 0.33);
     transform: translate(-3rem, -3rem);
     padding-left: 4rem;
+    @include respond(phone) {
+      padding-top: 5rem
+    }
   }
 
   // form-group property
   &__group {
     margin: 1rem;
+    @include respond(phone) {
+      margin: 0.2rem;
+    }
   }
   // input fields properties
   &__input {
@@ -36,10 +45,13 @@
     border: 0.1rem;
     outline: none;
 
+    @include respond(phone){
+      font-size: 16px;
+    }
     // for settings
     &--settings {
-    width: 58%;
-    border: 1px solid $color-black;
+      width: 58%;
+      border: 1px solid $color-black;
     }
     // for comment
     &--comment {
@@ -47,28 +59,24 @@
       font-size: 1.8rem;
       padding: 0.99rem;
       border: 0.2rem dotted $color-grey-dark-3;
-      
-      @include respond(phone)
-      {
+
+      @include respond(phone) {
         width: 72%;
       }
     }
     // input field for reply
-    &--reply{
+    &--reply {
       font-size: 1.5rem;
       width: 98%;
       border: 1px solid black;
-      @include respond(nohd)
-      {
+      @include respond(nohd) {
         width: 97%; //1366px
       }
-      @include respond(tab-land)
-      {
-        width: 94%;   
+      @include respond(tab-land) {
+        width: 94%;
       }
-        
-      @include respond(phone)
-      {
+
+      @include respond(phone) {
         width: 90%;
       }
     }
@@ -84,24 +92,34 @@
       border-bottom: 0.3rem solid $color-tertiary-dark-1;
       margin-left: 8rem;
       font-size: 1.8rem;
-
+      @include respond(phone) {
+        margin-left: 6rem;
+      }
       &--icons {
         position: absolute;
         font-size: 3rem;
+        left: 7rem;
         &--iconuser {
           top: 30.3rem;
-          left: 7rem;
+          @include respond(phone) {
+            top: 30;
+          }
         }
         &--iconlock {
           top: 38rem;
-          left: 7rem;
+          @include respond(phone) {
+            top: 37.2rem;
+          }
+        }
+        @include respond(phone) {
+          left: 4.5rem;
         }
       }
     }
     // signup page form properties...
     &__signup {
       display: inline-block;
-      width:89%;
+      width: 89%;
       padding: 1.2rem;
       border-radius: 1rem;
       border: 0.1rem double $color-tertiary-dark-1;
@@ -138,9 +156,13 @@
     color: $color-black;
     font-weight: 700;
     display: block;
+  
     // for login label
     &--login {
       margin-left: 4.1rem;
+      @include respond(phone) {
+        margin-left: 2rem;
+      }
     }
   }
 }
