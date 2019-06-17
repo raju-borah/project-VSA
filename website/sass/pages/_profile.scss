@@ -1,0 +1,170 @@
+//cover pic of the user//
+.coverpic
+{
+    width: 100%;
+    height: 90vh;
+    position: sticky;
+    
+    
+    &_img
+    {
+        background-image: linear-gradient(to right bottom,rgba(22, 21, 24, 0),rgba(14, 15, 15, 0)),url("../img/cover.jpg");
+        width: 100%;
+        height: 90vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: all .6s;
+        background-attachment: fixed;
+
+    }
+
+    &:hover {
+        .coverpic_name
+        {
+            opacity: 1;
+            transform: scale(1.2);
+            transition: all .6s;
+        }
+         
+        .coverpic_img
+        {
+            background-image: linear-gradient(to right bottom,rgba(22, 21, 24, 0.600),rgba(14, 15, 15, 0.600)),url("../img/cover.jpg");
+            -webkit-filter: blur(2px);
+            filter: blur(2px);
+            transition: all .6s;
+
+        }
+       
+      }
+
+
+      &_namebox
+      {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+          
+      }
+
+      &_name{
+        color:$color-white;
+        text-transform: uppercase;
+        margin-bottom: 6rem;
+
+        &--main
+        {
+
+                    
+    display: inline-block;
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: 1rem; 
+    font-family: 'Roboto', sans-serif;
+        }
+
+        &--sub
+        {
+            display: inline-block;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: .4rem;
+
+        }
+
+      }
+
+
+      &_down
+      {
+          position: relative;
+          border-radius: 50%;
+          width: 4%;
+          height: 8%;
+          background-color:$color-white;
+          left: 50%;
+          top: -4%;
+          box-shadow: 0 0 4px 5px rgba($color-black,.600) ;
+          cursor: pointer;
+      }
+
+      &_icon
+      {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          font-size: 20px;
+          transform: translate(-50%, -50%);
+      }
+}
+//coverpic part done//
+
+
+//user infoe and other details//
+
+.personalinfo
+{
+    
+    width: 100%;
+    margin: 30px auto;
+
+
+    display: grid;
+    grid-template-rows: repeat(1, minmax(40rem, min-content));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
+    grid-auto-rows: 40rem;
+    grid-row-gap: 6rem;
+    grid-column-gap: 5rem;
+
+    padding-top: 8rem;
+  
+    justify-content: center;
+    align-content: center;
+
+    
+
+    .personalinfo_about
+    {
+        &--title
+        {
+            font-weight: 600;
+            color: $color-tertiary-light;
+            letter-spacing: .2rem;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+
+    .personalinfo_img
+    {
+        width: 100%;
+        height: 100%;
+       
+
+        &--pic
+        {
+            margin-top: 4rem;
+            width: 80%;
+            height: 70%;
+            box-shadow: 1rem 1rem 1rem .4rem rgba(14, 15, 15, 0.600);
+            border: 4px solid $color-white;
+        
+
+        
+        }
+
+
+    }
+
+    .personalinfo_details
+    {
+        &--title
+        {
+            font-weight: 600;
+            color: $color-tertiary-light;
+            letter-spacing: .1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+    }
+}
