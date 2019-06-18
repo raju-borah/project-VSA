@@ -2587,7 +2587,7 @@ progress {
 .coverpic {
   width: 100%;
   height: 90vh;
-  position: sticky; }
+  position: relative; }
   .coverpic_img {
     background-image: linear-gradient(to right bottom, rgba(22, 21, 24, 0), rgba(14, 15, 15, 0)), url("../img/cover.jpg");
     width: 100%;
@@ -2647,30 +2647,122 @@ progress {
   width: 100%;
   margin: 30px auto;
   display: grid;
-  grid-template-rows: repeat(1, minmax(40rem, min-content));
-  grid-template-columns: repeat(auto-fill, minmax(200px, 400px));
-  grid-auto-rows: 40rem;
+  grid-template-rows: repeat(1, minmax(44rem, min-content));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-auto-rows: 44rem;
   grid-row-gap: 6rem;
   grid-column-gap: 5rem;
-  padding-top: 8rem;
+  padding: 8rem;
   justify-content: center;
   align-content: center; }
-  .personalinfo .personalinfo_about--title {
-    font-weight: 600;
-    color: #2998ff;
-    letter-spacing: .2rem;
-    font-family: 'Roboto', sans-serif; }
+  .personalinfo .personalinfo_about {
+    border: 1px solid #faf7f7;
+    padding: 1rem; }
+    .personalinfo .personalinfo_about:hover {
+      box-shadow: 0 0 11px rgba(33, 33, 33, 0.2); }
+    .personalinfo .personalinfo_about--title {
+      font-weight: 600;
+      color: #2998ff;
+      letter-spacing: .2rem;
+      font-family: 'Roboto', sans-serif; }
+    .personalinfo .personalinfo_about--para {
+      font-size: 16px;
+      color: #6e6d6d;
+      text-align: left;
+      letter-spacing: .4px;
+      line-height: 28px;
+      margin-top: 1rem;
+      font-weight: 500; }
   .personalinfo .personalinfo_img {
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    margin-left: 2rem; }
     .personalinfo .personalinfo_img--pic {
-      margin-top: 4rem;
-      width: 80%;
-      height: 70%;
+      margin-top: 1rem;
+      width: 35rem;
+      height: 40rem;
       box-shadow: 1rem 1rem 1rem 0.4rem rgba(14, 15, 15, 0.6);
       border: 4px solid #fff; }
-  .personalinfo .personalinfo_details--title {
-    font-weight: 600;
-    color: #2998ff;
-    letter-spacing: .1rem;
-    font-family: 'Roboto', sans-serif; }
+      .personalinfo .personalinfo_img--pic:hover {
+        transform: scale(1.1);
+        transition: all .5s; }
+  .personalinfo .personalinfo_details {
+    border: 1px solid #faf7f7;
+    padding: 1rem; }
+    .personalinfo .personalinfo_details:hover {
+      box-shadow: 0 0 11px rgba(33, 33, 33, 0.2); }
+    .personalinfo .personalinfo_details--title {
+      font-weight: 600;
+      color: #2998ff;
+      letter-spacing: .1rem;
+      font-family: 'Roboto', sans-serif; }
+    .personalinfo .personalinfo_details--info {
+      padding: 1rem;
+      margin-top: 1rem;
+      font-size: 16px;
+      color: #6e6d6d;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-bottom: 1px solid #ebe6e6; }
+      .personalinfo .personalinfo_details--info--text {
+        text-transform: none;
+        margin-left: 1rem;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        color: #000; }
+
+.contact {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right bottom, rgba(22, 21, 24, 0.7), rgba(14, 15, 15, 0.7)), url("../img/contact.jpg");
+  background-size: cover;
+  padding-bottom: 15rem;
+  background-attachment: fixed;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(1rem, max-content)); }
+  .contact_title {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: .4rem;
+    padding: 5rem;
+    margin-bottom: 6rem; }
+  .contact_items {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(1, minmax(5rem, min-content));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-row-gap: 8rem;
+    justify-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 38px; }
+    .contact_items--call {
+      border-right: 1px solid white;
+      padding-right: 15rem; }
+      @media (max-width: 813px) {
+        .contact_items--call {
+          border-right: none;
+          border-bottom: 1px solid white;
+          padding-right: 0rem; } }
+      .contact_items--call i {
+        margin-left: 8rem; }
+      .contact_items--call--1 {
+        font-size: 28px;
+        letter-spacing: .3rem; }
+    .contact_items--location i {
+      margin-left: 15.5rem; }
+    .contact_items--location--1 {
+      font-size: 28px;
+      letter-spacing: .3rem; }
+    .contact_items--mail i {
+      margin-left: 15rem; }
+    .contact_items--mail--1 {
+      font-size: 28px;
+      letter-spacing: .3rem; }
