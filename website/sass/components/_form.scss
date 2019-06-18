@@ -4,7 +4,7 @@
   padding: 2rem;
   background-color: $color-grey-light-2;
   font-family: "Philosopher", sans-serif;
- 
+
   // form login properties
   &--login {
     // for bring down the form
@@ -14,7 +14,7 @@
     transform: translate(-3rem, -3rem);
     box-shadow: 1rem 2rem 6rem rgba($color-black, 0.33);
     @include respond(phone) {
-      padding-top: 6rem
+      padding-top: 6rem;
     }
   }
   &--signup {
@@ -24,7 +24,7 @@
     transform: translate(-3rem, -3rem);
     padding-left: 4rem;
     @include respond(phone) {
-      padding-top: 5rem
+      padding-top: 5rem;
     }
   }
 
@@ -45,13 +45,19 @@
     border: 0.1rem;
     outline: none;
 
-    @include respond(phone){
+    @include respond(phone) {
       font-size: 16px;
     }
     // for settings
     &--settings {
       width: 58%;
       border: 1px solid $color-black;
+      @include respond(phone){
+        width: 90%;
+      }
+      @media (width: 768px) {
+        width: 60%;
+      }
     }
     // for comment
     &--comment {
@@ -156,7 +162,10 @@
     color: $color-black;
     font-weight: 700;
     display: block;
-  
+    @include respond(phone) {
+      font-size: 18px;
+      font-weight: 200;
+    }
     // for login label
     &--login {
       margin-left: 4.1rem;
