@@ -6,10 +6,18 @@
     url("/img/Capture.jpg");
   background-size: cover;
   background-position: center;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
+  @include respond(phone) {
+    padding: 6.9rem;
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
+    height: auto;
+  }
 
   // the home button
   &__home {
@@ -29,6 +37,8 @@
     border-radius: 0.55rem;
 
     @include respond(phone) {
+      width: auto;
+      height: auto;
       background: transparent;
       border: none;
     }

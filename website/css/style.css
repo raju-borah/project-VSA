@@ -146,7 +146,7 @@ body {
   font-size: 3rem; }
   @media (max-width: 813px) {
     .font-medium {
-      font-size: 30px; } }
+      font-size: 22px; } }
 
 .list {
   list-style-type: none;
@@ -381,6 +381,12 @@ iframe {
     .form__input--settings {
       width: 58%;
       border: 1px solid #000; }
+      @media (max-width: 813px) {
+        .form__input--settings {
+          width: 90%; } }
+      @media (width: 768px) {
+        .form__input--settings {
+          width: 60%; } }
     .form__input--comment {
       width: 50%;
       font-size: 1.8rem;
@@ -461,6 +467,10 @@ iframe {
     color: #000;
     font-weight: 700;
     display: block; }
+    @media (max-width: 813px) {
+      .form__label {
+        font-size: 18px;
+        font-weight: 200; } }
     .form__label--login {
       margin-left: 4.1rem; }
       @media (max-width: 813px) {
@@ -1862,6 +1872,13 @@ border-radius for curved end of button
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media (max-width: 813px) {
+    .signup {
+      padding: 5rem;
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+      height: auto; } }
   .signup__container {
     width: 50rem;
     height: 70rem;
@@ -1872,7 +1889,9 @@ border-radius for curved end of button
     @media (max-width: 813px) {
       .signup__container {
         background: transparent;
-        border: none; } }
+        border: none;
+        width: auto;
+        height: auto; } }
 
 .login {
   width: 100%;
@@ -1884,6 +1903,13 @@ border-radius for curved end of button
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media (max-width: 813px) {
+    .login {
+      padding: 6.9rem;
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+      height: auto; } }
   .login__home {
     z-index: 5;
     position: absolute;
@@ -1900,6 +1926,8 @@ border-radius for curved end of button
     border-radius: 0.55rem; }
     @media (max-width: 813px) {
       .login__container {
+        width: auto;
+        height: auto;
         background: transparent;
         border: none; } }
   .login__logo {
@@ -1935,74 +1963,57 @@ border-radius for curved end of button
 
 .settings {
   width: 100%;
-  height: 100vh;
-  background-image: url("/img/back-3.jpg");
+  height: 100%;
+  background-image: url("/img/Capture.jpg");
   background-size: cover;
   background-attachment: fixed;
-  color: #fff; }
-  .settings__container {
-    margin-top: 5rem;
-    color: #000;
-    width: 100%;
-    height: 100%;
-    background-color: #2998ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; }
-    @media (max-width: 1025px) {
-      .settings__container {
-        height: 81.1rem; } }
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 1rem; }
+  @media (max-width: 813px) {
+    .settings {
+      padding-bottom: 0; } }
   .settings__editbutton {
     border-radius: 50%;
     height: 8rem;
     width: 8rem;
-    position: relative;
     background-color: #006064;
     z-index: 1;
-    top: 22rem;
-    left: 7%;
-    border: 0.3rem solid #fff; }
+    border: 0.3rem solid #fff;
+    margin-top: -10rem;
+    margin-left: 20rem; }
+    @media (max-width: 813px) {
+      .settings__editbutton {
+        width: 6rem;
+        height: 6rem;
+        margin-top: -7rem;
+        margin-left: 14rem; } }
     .settings__editbutton:hover .tooltiptext {
       visibility: visible;
       opacity: 1; }
-    @media (max-width: 1367px) {
-      .settings__editbutton {
-        top: 23rem;
-        left: 8%; } }
-    @media (max-width: 1025px) {
-      .settings__editbutton {
-        top: 31rem;
-        left: 10%; } }
-  .settings__img {
-    height: 16rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column; }
-    @media (max-width: 1025px) {
-      .settings__img {
-        height: 35rem; } }
   .settings__icon {
-    width: 30rem;
-    height: 30rem;
+    display: inline-block;
+    width: 28rem;
+    height: 28rem;
     border-radius: 50%;
     overflow: hidden;
-    z-index: 1;
-    top: 30%;
-    position: absolute;
-    left: 40%; }
-    @media (max-width: 1367px) {
+    z-index: 1; }
+    @media (max-width: 813px) {
       .settings__icon {
-        left: 39%; } }
-    @media (max-width: 1025px) {
-      .settings__icon {
-        left: 35%; } }
+        width: 18rem;
+        height: 18rem; } }
   .settings__form {
     box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.66);
     padding: 4rem;
     background-color: #eee;
-    width: 50rem; }
+    width: 50rem;
+    color: black; }
+    @media (max-width: 813px) {
+      .settings__form {
+        width: 100%; } }
 
 .tooltiptext {
   visibility: hidden;
@@ -2015,17 +2026,18 @@ border-radius for curved end of button
   right: -16rem;
   opacity: 0;
   transition: opacity 0.3s; }
+  @media (max-width: 813px) {
+    .tooltiptext {
+      display: none; } }
   .tooltiptext::after {
     content: "";
-    position: absolute;
-    top: 1rem;
-    left: -1.6rem;
+    position: relative;
     border-width: 0.8rem;
     border-style: solid;
     border-color: transparent #eee transparent transparent; }
 
 .upperline {
-  border-top: 0.15rem dotted #000;
+  border-top: 0.15rem dashed #000;
   display: inline-block;
   width: 100%;
   margin-top: 2rem; }

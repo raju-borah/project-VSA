@@ -10,6 +10,8 @@
     <link rel="icon" type="image/png" href="img/download.png" />
     <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Philosopher|Boogaloo" rel="stylesheet">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
         integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
@@ -20,35 +22,37 @@
 </head>
 
 <body>
-    <!-- Setting page layout -->
-    <div class="settings">
+       <!-- navigation bar -->
+       <div class="navigationbar">
 
-        <!-- navigation bar -->
-        <div class="navigationbar">
+
 
             <!-- name of the Application -->
             <div class="navbarfont navigationbar--left">
                 <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
-                <a href="home.html" class="navbar_items">Vidshare </a>
+                <a href="card.html" class="navbar_items navbar_title">Vidshare </a>
             </div>
 
             <!-- for right option such as search, user profile, upload -->
-            <div class="navbarfont navigationbar--right">
+            <div class="navbarfont navigationbar--right ">
 
                 <!--Search button-->
 
-                <div class="search">
+                <div class="search navbar_items ">
                     <input type="text" placeholder="Search" class="search__input" required>
                     <button type="button" class="search__btn" id="searchButton">
-                        <i class="navbar_items fa fa-search search__icon" aria-hidden="true"></i>
+                        <i class=" fa fa-search search__icon" aria-hidden="true"></i>
                     </button>
                 </div>
                 <!--seacrh button end-->
+
 
                 <!-- user button -->
 
                 <button type="button" class="navbar_items navbar_items--icon userbutton"><i
                         class="fas fa-user-circle"></i></button>
+
+
                 <div class="usercontainer">
 
                     <!-- if user signed the following div will be displayed -->
@@ -71,7 +75,7 @@
                             <li class="ul__list--items ul__list--items--progress ">
                                 <!-- line  128  navigationbar.scsss  -->
                                 <div class="progressbox">
-                                    <h4 class="progressbox__text">FILENAME</h4>
+                                    <h4 class="progressbox__text">FILENAME heloooooooooooooooooooooooooooooooooo</h4>
                                     <progress class="progressbox__bar" value="50" max="100"></progress>
                                     <div class="progressbox__percentage">50%</div>
                                     <div class="progressbox__btn">
@@ -108,38 +112,31 @@
         </div>
         <!-- ending of navigation bar -->
 
+    <!-- Setting page layout -->
+    <div class="settings">
 
-
-
+        <div class=" u-center-text flex-center">
+            <h1 class="heading_tag">Account</h1>
+        </div>
 
         <br>
-        <div class=" u-center-text">
-            <h1 class=" heading_tag">Account</h1>
-        </div>
+        <img src="img/icons/man.png" id="profileimage" class="settings__icon" alt="">
 
-        <div class="settings__img ">
-            <img src="img/icons/man.png" id="profileimage" class="settings__icon" alt="">
+        <input type="file" id="imageupload" accept="image/jpeg" hidden="hidden" />
+        <button type="button" class=" btn settings__editbutton" id="editprofileimage">
+            <i class="fas fa-camera font-medium"></i> <span class="tooltiptext">Edit Profile Image</span></button>
 
-            <input type="file" id="imageupload" accept="image/jpeg" hidden="hidden" />
-            <button type="button" class=" btn settings__editbutton" id="editprofileimage"><i
-                    class="fas fa-camera font-medium"></i> <span class="tooltiptext">Edit Profile Image</span></button>
-
-        </div>
-
-
-        <div class="settings__container">
-
-            <h1 class="u-center-text font-small u-margin-bottom-medium">Signed as
+            <br>
+            <h1 class="u-center-text font-medium u-margin-bottom-medium">Signed as
                 <span class="accountHolderName">Raju</span><br><span
                     class="accountHolderId">cs16msiit020@gmail.com</span>
             </h1>
-
             <div class="settings__form">
-                <h1 class="font-small"> Change Account Settings</h1>
+                <h1 class="font-medium"> Change Account Settings</h1>
                 <div class="form__group ">
 
                     <form>
-                        <label for="current_username" class="form__label">Change UserName</label>
+                        <label for="current_username" class="font-small">Change UserName</label>
                         <input type="text" id="current_passwd" class="form__input form__input--settings"
                             placeholder="Enter UserName" required>
                         <!-- for changing username -->
@@ -151,9 +148,10 @@
                     <button class="btn btn--upload">Reset Password </button>
                 </div>
             </div>
+            
 
         </div>
-    </div>
+  
     <!-- Settings button JavaScript -->
     <script src="js/settings.js">
     </script>

@@ -1,114 +1,96 @@
 .settings {
   width: 100%;
-  height: 100vh;
-  background-image: url("/img/back-3.jpg");
+  height: 100%;
+  background-image: url("/img/Capture.jpg");
   background-size: cover;
   background-attachment: fixed;
   color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  @include respond(phone) {
+    padding-bottom: 0;
+   }
 
-  &__container {
-    margin-top: 5rem;
-    color: $color-black;
-    width: 100%;
-    height: 100%;
-    background-color: $color-tertiary-light;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    // for tab
-    @media (max-width: 1025px) {
-      height: 81.1rem;
-    }
-  }
+  // the camera button
   &__editbutton {
     border-radius: 50%;
     height: 8rem;
     width: 8rem;
-    position: relative;
     background-color: $color-tertiary-light-2;
     z-index: 1;
-    top: 22rem;
-    left: 7%;
     border: 0.3rem solid $color-white;
+    margin-top: -10rem;
+    margin-left: 20rem;
+    // media query 
+    @include respond(phone) {
+      width: 6rem;
+      height: 6rem;
+      margin-top: -7rem;
+      margin-left: 14rem;
+     }
+
     &:hover .tooltiptext {
       visibility: visible;
       opacity: 1;
     }
-    // for
-    @media (max-width: 1367px) {
-      top: 23rem;
-      left: 8%;
-    }
-       // for tab
-       @media (max-width: 1025px) {
-        top: 31rem;
-        left: 10%;
-      }
   }
-  &__img {
-    height: 16rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    // for tab
-    @media (max-width: 1025px) {
-      height: 35rem;
-    }
-  }
+  //  the user image
   &__icon {
-    width: 30rem;
-    height: 30rem;
+    display: inline-block;
+    width: 28rem;
+    height: 28rem;
     border-radius: 50%;
     overflow: hidden;
     z-index: 1;
-    top: 30%;
-    position: absolute;
-    left: 40%;
-    @media (max-width: 1367px) {
-      left: 39%;
-    }
-    // for tab
-    @media (max-width: 1025px) {
-      left: 35%;
-    }
+    @include respond(phone) {
+      width: 18rem;
+      height: 18rem;
+     }
   }
-
+  // the form
   &__form {
     box-shadow: 0 1rem 4rem rgba($color-black, 0.66);
     padding: 4rem;
     background-color: $color-grey-light-2;
     width: 50rem;
+    color: black;
+    
+  @include respond(phone) {
+   width: 100%;
+  }
   }
 }
-  // tooltip when the cursor is hovered
-  .tooltiptext {
-    visibility: hidden;
-    position: absolute;
-    font-size: 1.6rem;
-    background-color: $color-grey-light-2;
-    top: 2rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    right: -16rem;
-    opacity: 0;
-    transition: opacity 0.3s;
+// tooltip when the cursor is hovered
+.tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  font-size: 1.6rem;
+  background-color: $color-grey-light-2;
+  top: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  right: -16rem;
+  opacity: 0;
+  transition: opacity 0.3s;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 1rem;
-      left: -1.6rem;
-      border-width: 0.8rem;
-      border-style: solid;
-      border-color: transparent $color-grey-light-2 transparent transparent;
-    }
+  @include respond(phone) {
+    display: none;
   }
 
-
-.upperline{
-  border-top: .15rem dotted $color-black;
+  &::after {
+    content: "";
+    position: relative;
+    border-width: 0.8rem;
+    border-style: solid;
+    border-color: transparent $color-grey-light-2 transparent transparent;
+  }
+}
+// line in the form
+.upperline {
+  border-top: 0.15rem dashed $color-black;
   display: inline-block;
   width: 100%;
   margin-top: 2rem;
