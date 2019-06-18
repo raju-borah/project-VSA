@@ -42,7 +42,6 @@
     display: grid;
     grid-template-rows: repeat(1, minmax(40rem,min-content));//50rem should be same with 50rem of auto-grid-rows to create new rows of same size 
     grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
-    grid-gap: 3rem;
     grid-auto-rows: 40rem;
     grid-row-gap: 10rem;
     grid-column-gap: 3.4rem;
@@ -50,6 +49,17 @@
 
     justify-items: center;
 
+
+    
+@include respond(phone){
+  grid-template-rows: repeat(1, minmax(35rem,min-content));
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+  grid-auto-rows: 35rem;
+  width: 80%;
+  margin: 0px;
+  padding: .5rem;
+  margin-left: 3.5rem;
+  }
 }
 
 
@@ -90,76 +100,7 @@
 
 
 
-.vcardmore {
-    // for each video the info is hold by the vcard division
-    width: 100%;
-    height: 100%;
-    border: 0.1rem solid black;
-    box-shadow: 1rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
-    background-color: #fff;
-    position: relative;
-    // for the image division
-    &--img {
-      width: 100%;
-      height: 20rem;
-      cursor: pointer;
-    }
-    // tag for identifying the type of video category
-    &--tag {
-      font-size: 3rem;
-      font-weight: 700;
-      color: white;
-      padding: .3rem;
-      position: absolute;
-      width: 50%;
-      top: 50%;
-      left: 0;
-    }
-    // division for storing the video info
-    &__info {
-        position:ABSOLUTE;
-        top: 57%;
-      padding: 2rem;
-      font-size: 1.7rem;
-      width: 100%;
-      // fot the title
-      &--title {
-        font-size: 2.12rem;
-        white-space: nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
-        width: 100%;
-        font-weight: bold;
 
-      }
-      //descrpition of the video uploaded...
-      &--des {
-        overflow:hidden;
-        text-overflow:ellipsis;
-        width: 100%;
-      }
-    }
-
-  }
-  
-
-  .playicon
-  {
-      color:rgba($color-black,.4);
-      position:absolute;
-      font-size: 6rem;
-      z-index:1;
-      top:15%;
-      left: 40%;
-      transition: all .3s;
-
-  }
-
-  .vcardmore:hover .playicon
-  {
-    transform: scale(1.2);
-    transition: all .3s;
-  }
 
 .gridreply{
   display: grid;

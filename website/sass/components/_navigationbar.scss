@@ -184,7 +184,17 @@
     border-radius: 1rem;
     margin: 1rem;
     background-color: $color-tertiary-light-1;
+    @include respond(phone){
+      padding: .5rem;
+      margin: .2rem;
+     
+          
+          }
   }    
+  @include respond(phone){
+  font-size: 18px;
+      
+      }
 }
 .notsignincontainer{
   display: none;
@@ -196,13 +206,29 @@
   left: 1rem;
   padding: 2rem;
   background-color: $color-grey-light-2 ;
+  
+  @include respond(phone){
+  
+    width: 28rem;
+    height: 33rem;
+    top: 1rem;
+      
+      }
 
   &__img{
     
-    margin-left: 7.2rem;
+    margin-left: 5.5rem;
     width: 22rem;
     height: 22rem;
     border-radius: 50%;
+    @include respond(phone){
+  
+      width: 18rem;
+      height: 18rem;
+      margin-left: 3rem;
+      top: 1rem;
+        
+        }
   }
   &__imgdiv{
     width: 20rem;
@@ -211,3 +237,28 @@
 }
 
 
+//css to make user conatiner text responsive on mob
+.accountHolderName
+{
+  @include respond(phone){
+  
+     font-size: 18px;
+     margin-top: -2rem;
+      
+      }
+  
+
+}
+
+.accountHolderId
+{
+  @include respond(phone){
+  
+     font-size: 14px;
+     margin-top: -1rem;
+     margin-left: -1.5rem;
+      
+      }
+  
+
+}

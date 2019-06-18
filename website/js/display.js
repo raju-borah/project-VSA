@@ -14,7 +14,7 @@ let display="none";
 userBtn.addEventListener('click',function(){
     // change to see the effect in home page
 
-    /**    
+      
 // when user is not SIGNED IN ,then following codes execute
    
     if(display==="none"){
@@ -27,10 +27,10 @@ userBtn.addEventListener('click',function(){
         notsigin.style.display="none";
         display="none";
     }
-  */  
+   
      
 //when user is SIGNED IN ,then following codes execute
-  if(display==="none"){
+  /*if(display==="none"){
         signindetail.style.display="block";
         userContainer.style.display="block";
       display="block";
@@ -42,7 +42,7 @@ userBtn.addEventListener('click',function(){
         
     }
    
-   
+   */
     
 });
 

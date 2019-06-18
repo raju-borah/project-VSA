@@ -137,13 +137,10 @@ body {
   margin-left: 2rem; }
 
 .font-xsmall {
-  font-size: 1.3rem; }
+  font-size: 1.4rem; }
 
 .font-small {
   font-size: 2rem; }
-  @media (max-width: 813px) {
-    .font-small {
-      font-size: 16px; } }
 
 .font-medium {
   font-size: 3rem; }
@@ -544,6 +541,10 @@ border-radius for curved end of button
       font-size: 1.8rem;
       font-weight: 200;
       margin-left: 10rem; }
+      @media (max-width: 813px) {
+        .btn--green--logout {
+          font-size: 18px;
+          margin-left: 7rem; } }
   .btn--blue {
     border-radius: 4rem;
     font-size: 2.5rem;
@@ -566,6 +567,11 @@ border-radius for curved end of button
     margin: 1rem;
     border-radius: 1rem;
     font-size: 1.7rem; }
+    @media (max-width: 813px) {
+      .btn--front {
+        font-size: 18px;
+        margin-left: 1rem;
+        width: 7rem; } }
   .btn--upload {
     width: 15rem;
     padding: 1rem;
@@ -750,6 +756,14 @@ border-radius for curved end of button
   border-radius: 1rem;
   margin: 1rem;
   background-color: #9dcfff; }
+  @media (max-width: 813px) {
+    .list--link, .list--link:visited {
+      padding: .5rem;
+      margin: .2rem; } }
+
+@media (max-width: 813px) {
+  .list--link {
+    font-size: 18px; } }
 
 .notsignincontainer {
   display: none;
@@ -761,14 +775,36 @@ border-radius for curved end of button
   left: 1rem;
   padding: 2rem;
   background-color: #eee; }
+  @media (max-width: 813px) {
+    .notsignincontainer {
+      width: 28rem;
+      height: 33rem;
+      top: 1rem; } }
   .notsignincontainer__img {
-    margin-left: 7.2rem;
+    margin-left: 5.5rem;
     width: 22rem;
     height: 22rem;
     border-radius: 50%; }
+    @media (max-width: 813px) {
+      .notsignincontainer__img {
+        width: 18rem;
+        height: 18rem;
+        margin-left: 3rem;
+        top: 1rem; } }
   .notsignincontainer__imgdiv {
     width: 20rem;
     height: 15rem; }
+
+@media (max-width: 813px) {
+  .accountHolderName {
+    font-size: 18px;
+    margin-top: -2rem; } }
+
+@media (max-width: 813px) {
+  .accountHolderId {
+    font-size: 14px;
+    margin-top: -1rem;
+    margin-left: -1.5rem; } }
 
 .search {
   position: relative;
@@ -1368,10 +1404,17 @@ border-radius for curved end of button
   .vcard--img {
     width: 100%;
     height: 20rem;
-    border: 1px solid black;
+    border: 1px solid #dfb3b3;
     background-image: url("/img/error-1.png");
     background-size: cover;
     cursor: pointer; }
+  .vcard--playicon {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 5rem;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    left: 44%; }
   .vcard--tag {
     font-size: 2rem;
     font-weight: 700;
@@ -1748,12 +1791,20 @@ border-radius for curved end of button
   display: grid;
   grid-template-rows: repeat(1, minmax(40rem, min-content));
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-gap: 3rem;
   grid-auto-rows: 40rem;
   grid-row-gap: 10rem;
   grid-column-gap: 3.4rem;
   padding: 1rem;
   justify-items: center; }
+  @media (max-width: 813px) {
+    .grid2 {
+      grid-template-rows: repeat(1, minmax(35rem, min-content));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-auto-rows: 35rem;
+      width: 80%;
+      margin: 0px;
+      padding: .5rem;
+      margin-left: 3.5rem; } }
 
 .colorlearn {
   background-color: #28b485; }
@@ -1772,57 +1823,6 @@ border-radius for curved end of button
 
 .textclub {
   color: #ff7730; }
-
-.vcardmore {
-  width: 100%;
-  height: 100%;
-  border: 0.1rem solid black;
-  box-shadow: 1rem 1rem 1rem rgba(23, 45, 68, 0.36);
-  background-color: #fff;
-  position: relative; }
-  .vcardmore--img {
-    width: 100%;
-    height: 20rem;
-    cursor: pointer; }
-  .vcardmore--tag {
-    font-size: 3rem;
-    font-weight: 700;
-    color: white;
-    padding: .3rem;
-    position: absolute;
-    width: 50%;
-    top: 50%;
-    left: 0; }
-  .vcardmore__info {
-    position: ABSOLUTE;
-    top: 57%;
-    padding: 2rem;
-    font-size: 1.7rem;
-    width: 100%; }
-    .vcardmore__info--title {
-      font-size: 2.12rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      width: 100%;
-      font-weight: bold; }
-    .vcardmore__info--des {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      width: 100%; }
-
-.playicon {
-  color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  font-size: 6rem;
-  z-index: 1;
-  top: 15%;
-  left: 40%;
-  transition: all .3s; }
-
-.vcardmore:hover .playicon {
-  transform: scale(1.2);
-  transition: all .3s; }
 
 .gridreply {
   display: grid;
@@ -2229,10 +2229,15 @@ border-radius for curved end of button
   grid-template-columns: repeat(auto-fill, minmax(490px, 1fr));
   grid-row-gap: 1rem;
   grid-column-gap: 1rem;
+  grid-auto-rows: 8rem;
   justify-content: center;
   align-content: center;
   justify-items: center;
   background-image: linear-gradient(120deg, #28b485 30%, #5643fa 60%, #ff7730 90%); }
+  @media (max-width: 813px) {
+    .morehead {
+      grid-template-rows: repeat(1, minmax(4rem, min-content));
+      grid-row-gap: 0rem; } }
   .morehead button:focus {
     outline: none; }
   .morehead__learn {
@@ -2247,6 +2252,10 @@ border-radius for curved end of button
     font-weight: 600;
     letter-spacing: 1rem;
     font-family: 'Averia Serif Libre', cursive; }
+    @media (max-width: 813px) {
+      .morehead__learntext {
+        font-size: 35px;
+        letter-spacing: .5rem; } }
   .morehead__event {
     background-color: transparent;
     border-style: none;
@@ -2259,6 +2268,10 @@ border-radius for curved end of button
     font-weight: 600;
     letter-spacing: 1rem;
     font-family: 'Averia Serif Libre', cursive; }
+    @media (max-width: 813px) {
+      .morehead__eventtext {
+        font-size: 35px;
+        letter-spacing: .5rem; } }
   .morehead__club {
     background-color: transparent;
     border-style: none;
@@ -2270,6 +2283,10 @@ border-radius for curved end of button
     font-weight: 600;
     letter-spacing: 1rem;
     font-family: 'Averia Serif Libre', cursive; }
+    @media (max-width: 813px) {
+      .morehead__clubtext {
+        font-size: 35px;
+        letter-spacing: .5rem; } }
 
 .morenav {
   position: relative;
@@ -2280,20 +2297,35 @@ border-radius for curved end of button
   left: 0;
   padding: 1rem;
   transition: all 0.3s ease; }
+  @media (max-width: 813px) {
+    .morenav {
+      height: 5REM;
+      border-color: white; } }
   .morenav__right {
     text-align: end;
     width: 50%;
     float: right;
     margin-right: .5rem; }
+    @media (max-width: 813px) {
+      .morenav__right {
+        margin-right: 0rem;
+        width: 50%; } }
 
 .morebar_items {
   font-size: 3rem;
   font-weight: 700;
   color: #fff;
   margin-right: 3rem; }
+  @media (max-width: 813px) {
+    .morebar_items {
+      margin-right: .5rem; } }
   .morebar_items--icon {
     font-size: 4.6rem;
     top: 0; }
+    @media (max-width: 813px) {
+      .morebar_items--icon {
+        font-size: 40px;
+        top: -.6rem; } }
   .morebar_items:hover {
     color: #7ed56f;
     text-shadow: 0 1rem 3rem #000;
@@ -2306,6 +2338,11 @@ border-radius for curved end of button
   margin-right: 5rem; }
   .homebutton:active, .homebutton:focus {
     outline: none; }
+  @media (max-width: 813px) {
+    .homebutton {
+      margin-right: 2rem;
+      position: relative;
+      right: 23rem; } }
 
 .morecontainer {
   width: 100%;
@@ -2315,6 +2352,10 @@ border-radius for curved end of button
   position: relative;
   right: 18rem;
   top: -1.8rem; }
+  @media (max-width: 813px) {
+    .searchmore {
+      right: 4rem;
+      top: -2.3rem; } }
   .searchmore__input {
     position: absolute;
     top: 20px;
@@ -2362,6 +2403,9 @@ border-radius for curved end of button
   .searchmore:hover .searchmore__input {
     width: 25rem;
     color: #000; }
+    @media (max-width: 813px) {
+      .searchmore:hover .searchmore__input {
+        width: 20rem; } }
 
 .bgcontain {
   width: 100%;
@@ -2400,7 +2444,7 @@ border-radius for curved end of button
     .progressbox {
       width: 27rem;
       height: 8rem;
-      top: -10rem;
+      top: 1rem;
       right: 3rem;
       border-radius: 1rem; } }
   .progressbox__text {

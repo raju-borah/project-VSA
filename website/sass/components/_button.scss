@@ -81,6 +81,11 @@ border-radius for curved end of button
       font-size: 1.8rem;
       font-weight: 200;
       margin-left: 10rem;
+      @include respond(phone){
+        font-size: 18px;
+        margin-left: 7rem;
+            
+            }
     }
   }
   &--blue {
@@ -106,6 +111,12 @@ border-radius for curved end of button
     margin: 1rem;
     border-radius: 1rem;
     font-size: 1.7rem;
+    @include respond(phone){
+      font-size: 18px;
+      margin-left: 1rem;
+      width: 7rem;
+          
+          }
   }
 
   // upload button
