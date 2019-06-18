@@ -8,6 +8,13 @@
   align-items: center;
   justify-content: center;
 
+  @include respond(phone) {
+    padding: 5rem;
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
+    height: auto;
+  }
   &__container {
     width: 50rem;
     height: 70rem;
@@ -18,6 +25,8 @@
     @include respond(phone) {
       background: transparent;
       border: none;
+      width: auto;
+      height: auto;
     }
   }
 }

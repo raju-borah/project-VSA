@@ -1872,6 +1872,13 @@ border-radius for curved end of button
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media (max-width: 813px) {
+    .signup {
+      padding: 5rem;
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+      height: auto; } }
   .signup__container {
     width: 50rem;
     height: 70rem;
@@ -1882,7 +1889,9 @@ border-radius for curved end of button
     @media (max-width: 813px) {
       .signup__container {
         background: transparent;
-        border: none; } }
+        border: none;
+        width: auto;
+        height: auto; } }
 
 .login {
   width: 100%;
@@ -1894,6 +1903,13 @@ border-radius for curved end of button
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media (max-width: 813px) {
+    .login {
+      padding: 6.9rem;
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+      height: auto; } }
   .login__home {
     z-index: 5;
     position: absolute;
@@ -1910,6 +1926,8 @@ border-radius for curved end of button
     border-radius: 0.55rem; }
     @media (max-width: 813px) {
       .login__container {
+        width: auto;
+        height: auto;
         background: transparent;
         border: none; } }
   .login__logo {
