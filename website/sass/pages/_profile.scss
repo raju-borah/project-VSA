@@ -89,7 +89,7 @@
           cursor: pointer;
       }
 
-      .upload-btn-wrapper {
+      .upload_btn {
         position: relative;
         overflow: hidden;
         display: inline-block;
@@ -117,7 +117,7 @@
         }
       }
       
-      .upload-btn-wrapper input[type=file] {
+      .upload_btn input[type=file] {
         font-size: 100px;
         position: absolute;
         left: 0;
@@ -273,6 +273,7 @@
     background-image: linear-gradient(to right bottom,rgba(22, 21, 24, .700),rgba(14, 15, 15, .700)),url("../img/contact.jpg");
     background-size: cover;
     background-attachment: fixed;
+    padding-bottom: 10rem;
 
           
     @include respond(phone){
