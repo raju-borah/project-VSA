@@ -1,4 +1,169 @@
+.editpanel {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 80px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+  
+
+  
+  
+  /* Modal Content */
+  &_content {
+    background-color: #fefefe;
+    margin: auto;
+   
+    border: 6px solid rgba(9, 109, 223, 0.692);
+    width: 60%;
+    height: 94%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding-left:6%;
+    padding-right:6%;
+    font-size: 20px;
+
+
+    &--icon
+    {
+            text-align: center;
+            position: relative;
+            font-size: 3rem;
+            border-radius: 50%;
+            background-color: #fff;
+            width: 5.5rem;
+            top: -4.5%;
+            left: 47%;
+            border: 2px solid black;
+
+    }
+
+
+    &--close
+    {
+        font-size: 35px;
+        font-weight: bold;
+        position: relative;
+        left: 105%;
+        top: -10%;
+        
+
+        &:hover{
+            color: red;
+            text-decoration: none;
+            cursor: pointer;
+
+        }
+    }
+
+
+  input[type=text],[type=email],[type=date] {
+    width: 70%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 3rem;
+  }
+
+  input[type=text] select,textarea {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    height: 18%;
+  }
+  
+  &_label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+
+  }
+
+  .dob{
+      padding-right: 2rem;
+  }
+
+  .dept
+  {
+    padding-right: 3rem;
+
+  }
+  
+  .ph
+  {
+    padding-right: 5.5rem;
+  }
+
+  .mail
+  {
+    padding-right: 7.5rem;
+
+  }
+
+  .add
+  {
+    padding-right: 6.5rem;
+
+  }
+
+  input[type=submit] {
+    background-color: rgb(17, 14, 233);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #31b4e7;
+    box-shadow: 0 2px 20px rgba(33,33,33,.8);
+    transition: all .4s;
+  }
+    
+  }
+
+}
 //cover pic of the user//
+
+button:focus{
+    outline: none;
+    border: none;
+}
+
+
+
+//button to open the form
+.editform
+{
+    border-radius: 50%;
+    font-size: 35px;
+    position: relative;
+    left: 7%;
+    width: 6rem;
+    height: 6REM;
+    margin-top: 2rem;
+    color: $color-tertiary-dark;
+    background-color: #fff;
+    box-shadow: 0 2px 20px rgba(33,33,33,.8);
+
+    &:hover{
+        transform: translateY(-.5rem);
+        transition: all .4s;
+    }
+
+}
+
+
+
 .coverpic
 {
     width: 100%;
@@ -8,14 +173,23 @@
     
     &_img
     {
-        background-image: linear-gradient(to right bottom,rgba(22, 21, 24, 0),rgba(14, 15, 15, 0)),url("../img/cover.jpg");
+        background-image: linear-gradient(to right bottom,rgba(22, 21, 24, 0),rgba(14, 15, 15, 0));
         width: 100%;
         height: 90vh;
-        background-size: cover;
-        background-repeat: no-repeat;
-        transition: all .6s;
         background-attachment: fixed;
 
+
+        &--pic
+        {
+            width: 100%;
+            height: 90vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all .6s;
+            background-attachment: fixed;
+
+        }
+     
     }
 
     &:hover {
@@ -26,11 +200,15 @@
             transition: all .6s;
         }
          
-        .coverpic_img
+        .coverpic_img::after{
+            background-image: linear-gradient(to right bottom,rgba(22, 21, 24, 0.600),rgba(14, 15, 15, 0.600));
+        }
+        
+        .coverpic_img--pic
         {
-            background-image: linear-gradient(to right bottom,rgba(22, 21, 24, 0.600),rgba(14, 15, 15, 0.600)),url("../img/cover.jpg");
-            -webkit-filter: blur(2px);
-            filter: blur(2px);
+           
+            -webkit-filter: blur(4px);
+            filter: blur(4px);
             transition: all .6s;
 
         }
@@ -109,11 +287,13 @@
         border-radius: 50px;
         font-size: 20px;
         font-weight: bold;
+        cursor: pointer;
 
         &_icon
         {
             margin-left: 1.3rem;
             margin-top: 1rem;
+            cursor: pointer;
         }
       }
       

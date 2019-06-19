@@ -24,9 +24,71 @@
 
 <body>
 
+    <!--editform panel-->
+    <div id="editbox" class="editpanel">
+
+
+        <!-- editform content -->
+        <form class="editpanel_content">
+
+            <!--user icon on top-->
+            <div class="editpanel_content--icon">
+                <i class="fas fa-user-edit"></i>
+            </div>
+
+            <!--close mark -->
+            <div class="editpanel_content--close">
+                <span class="close">&times;</span>
+            </div>
+            
+
+            <!--date of birth-->
+            <i class="far fa-calendar-alt"></i>
+            <label class="editpanel_label dob">Date Of Birth :</label>
+            <input type="date" class="editpanel_input" id="date" required>
+            <br>
+
+            <!--department-->
+            <i class="fas fa-building"></i>
+            <label class="editpanel_label dept">Department :</label>
+            <input type="text" class="editpanel_input" id="department" placeholder="eg: SCS" required>
+            <br>
+
+            <!--phone number-->
+            <i class="fas fa-mobile-alt"></i>
+            <label class="editpanel_label ph">Phone no. :</label>
+            <input type="text" class="editpanel_input" id="phone" placeholder="eg: +91987654321" required>
+            <br>
+
+            <!--email -->
+            <i class="far fa-envelope"></i>
+            <label class="editpanel_label mail">E-mail :</label>
+            <input type="email" class="editpanel_input" id="email" placeholder="eg: name@gmail.com." required>
+            <br>
+
+            <!--address-->
+            <i class="far fa-address-book"></i>
+            <label class="editpanel_label add">Address :</label>
+            <input type="text" class="editpanel_input" id="address" placeholder="eg: jorhat" required>
+            <br>
+
+            <!--about myself-->
+            <i class="fas fa-address-card"></i>
+            <label class="editpanel_label about">About yourself :</label>
+            <textarea class="editpanel_input" id="subject" placeholder="Write something.." required></textarea>
+
+            <!--submit button-->
+            <input type="submit" value="SUBMIT" class="submitbtn">
+
+        </form>
+
+    </div>
+    <!--editpanel end-->
+
     <!--coverphoto and name-->
     <div class="coverpic">
         <div class="coverpic_img">
+            <img src="img/cover.jpg" id="coverimage" class="coverpic_img--pic" alt="">
         </div>
         <div class="coverpic_namebox">
             <h1 class="coverpic_name">
@@ -38,17 +100,21 @@
         <div class="upload_btn">
             <button class="btn"><i class="fas fa-camera font-medium btn_icon"></i></button>
             <input type="file" name="myfile" accept="image/jpeg" />
-          </div>
-       </div>
-       
-    
-       
-    
+        </div>
+    </div>
     <!--coverphoto and name end-->
 
+    <!--button to open form-->
+    <button class="editform">
+            <i class="fas fa-user-edit"></i>
+    </button>
+  
+    <!--button end-->
 
     <!--personal deatils-->
     <div class="personalinfo">
+
+            
 
         <div class="personalinfo_about">
             <div class="personalinfo_about--title font-medium">ABOUT ME</div>
@@ -66,11 +132,16 @@
 
         <div class="personalinfo_details">
             <div class="personalinfo_details--title font-medium">PERSONAL DETAILS</div>
-                <div class="personalinfo_details--info">Name :<span class="personalinfo_details--info--text">Nabajyoti Borah</span></div><br>
-                <div class="personalinfo_details--info">DOB :<span class="personalinfo_details--info--text">12-aug-1998</span></div><br>
-                <div class="personalinfo_details--info">ID :<span class="personalinfo_details--info--text">cs16msiit035</span></div><br>
-                <div class="personalinfo_details--info">Department :<span class="personalinfo_details--info--text">scs</span></div><br>
-                <div class="personalinfo_details--info">Designation : <span class="personalinfo_details--info--text">student</span></div><br>
+            <div class="personalinfo_details--info">Name :<span class="personalinfo_details--info--text">Nabajyoti
+                    Borah</span></div><br>
+            <div class="personalinfo_details--info">DOB :<span
+                    class="personalinfo_details--info--text">12-aug-1998</span></div><br>
+            <div class="personalinfo_details--info">ID :<span
+                    class="personalinfo_details--info--text">cs16msiit035</span></div><br>
+            <div class="personalinfo_details--info">Department :<span
+                    class="personalinfo_details--info--text">scs</span></div><br>
+            <div class="personalinfo_details--info">Designation : <span
+                    class="personalinfo_details--info--text">student</span></div><br>
 
         </div>
 
@@ -86,26 +157,28 @@
 
         <div class="contact_items">
             <div class="contact_items--call">
-                    <i class="fas fa-mobile-alt"></i>
-                    <div class="contact_items--call--1">
-                        987654321
-                    </div>
+                <i class="fas fa-mobile-alt"></i>
+                <div class="contact_items--call--1">
+                    987654321
+                </div>
             </div>
             <div class="contact_items--location">
-                    <i class="fas fa-compass"></i>
-                    <div class="contact_items--location--1">
-                        rowraih nefa tini ali, near kb road
-                    </div>
+                <i class="fas fa-compass"></i>
+                <div class="contact_items--location--1">
+                    rowraih nefa tini ali, near kb road
+                </div>
             </div>
             <div class="contact_items--mail">
-                    <i class="fa fa-envelope"></i>
-                    <div class="contact_items--mail--1">
-                            sirnaba@gmail.com
-                        </div>
+                <i class="fa fa-envelope"></i>
+                <div class="contact_items--mail--1">
+                    sirnaba@gmail.com
+                </div>
             </div>
         </div>
     </div>
 
+
+    <script src="js/editform.js"></script>
 </body>
 
 </html>
