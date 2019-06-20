@@ -2618,17 +2618,32 @@ progress {
   background-color: rgba(0, 0, 0, 0.8);
   /* Black w/ opacity */
   /* Modal Content */ }
+  @media (max-width: 813px) {
+    .editpanel {
+      padding-top: 17px; } }
   .editpanel_content {
     background-color: #fefefe;
     margin: auto;
     border: 6px solid rgba(9, 109, 223, 0.692);
     width: 60%;
-    height: 94%;
+    height: 97%;
     border-radius: 5px;
     background-color: #f2f2f2;
     padding-left: 6%;
     padding-right: 6%;
-    font-size: 20px; }
+    font-size: 20px;
+    line-height: 3rem; }
+    @media (max-width: 813px) {
+      .editpanel_content {
+        width: 90%;
+        height: 98%;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding-left: 2%;
+        padding-right: 2%;
+        font-size: 16px;
+        border: 2px solid rgba(9, 109, 223, 0.692);
+        line-height: 1.8rem; } }
     .editpanel_content--icon {
       text-align: center;
       position: relative;
@@ -2636,15 +2651,23 @@ progress {
       border-radius: 50%;
       background-color: #fff;
       width: 5.5rem;
+      height: 5rem;
       top: -4.5%;
       left: 47%;
       border: 2px solid black; }
+      @media (max-width: 813px) {
+        .editpanel_content--icon {
+          width: 5rem;
+          left: 45%; } }
     .editpanel_content--close {
       font-size: 35px;
       font-weight: bold;
       position: relative;
       left: 105%;
-      top: -10%; }
+      top: -6%; }
+      @media (max-width: 813px) {
+        .editpanel_content--close {
+          left: 90%; } }
       .editpanel_content--close:hover {
         color: red;
         text-decoration: none;
@@ -2656,6 +2679,10 @@ progress {
       border-radius: 4px;
       resize: vertical;
       margin-bottom: 3rem; }
+      @media (max-width: 813px) {
+        .editpanel_content input[type=text], .editpanel_content [type=email], .editpanel_content [type=date] {
+          width: 100%;
+          margin-bottom: 1rem; } }
     .editpanel_content input[type=text] select, .editpanel_content textarea {
       width: 80%;
       padding: 5px;
@@ -2663,6 +2690,10 @@ progress {
       border-radius: 4px;
       resize: vertical;
       height: 18%; }
+      @media (max-width: 813px) {
+        .editpanel_content input[type=text] select, .editpanel_content textarea {
+          width: 100%;
+          margin-bottom: 1rem; } }
     .editpanel_content_label {
       padding: 12px 12px 12px 0;
       display: inline-block; }
@@ -2693,7 +2724,7 @@ button:focus {
   outline: none;
   border: none; }
 
-.editform {
+.editbtn {
   border-radius: 50%;
   font-size: 35px;
   position: relative;
@@ -2704,19 +2735,35 @@ button:focus {
   color: #5643fa;
   background-color: #fff;
   box-shadow: 0 2px 20px rgba(33, 33, 33, 0.8); }
-  .editform:hover {
+  @media (max-width: 813px) {
+    .editbtn {
+      font-size: 25px;
+      left: 7%;
+      width: 5rem;
+      height: 5REM;
+      margin-top: 6rem; } }
+  .editbtn:hover {
     transform: translateY(-0.5rem);
     transition: all .4s; }
+    @media (max-width: 813px) {
+      .editbtn:hover {
+        transform: translateY(-1rem); } }
 
 .coverpic {
   width: 100%;
   height: 90vh;
   position: relative; }
+  @media (max-width: 813px) {
+    .coverpic {
+      height: 70vh; } }
   .coverpic_img {
     background-image: linear-gradient(to right bottom, rgba(22, 21, 24, 0), rgba(14, 15, 15, 0));
     width: 100%;
-    height: 90vh;
-    background-attachment: fixed; }
+    height: 90vh; }
+    @media (max-width: 813px) {
+      .coverpic_img {
+        width: 100%;
+        height: 70vh; } }
     .coverpic_img--pic {
       width: 100%;
       height: 90vh;
@@ -2724,12 +2771,13 @@ button:focus {
       background-repeat: no-repeat;
       transition: all .6s;
       background-attachment: fixed; }
+      @media (max-width: 813px) {
+        .coverpic_img--pic {
+          height: 70vh; } }
   .coverpic:hover .coverpic_name {
     opacity: 1;
     transform: scale(1.2);
     transition: all .6s; }
-  .coverpic:hover .coverpic_img::after {
-    background-image: linear-gradient(to right bottom, rgba(22, 21, 24, 0.6), rgba(14, 15, 15, 0.6)); }
   .coverpic:hover .coverpic_img--pic {
     -webkit-filter: blur(4px);
     filter: blur(4px);
@@ -2744,27 +2792,30 @@ button:focus {
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 6rem; }
+    @media (max-width: 813px) {
+      .coverpic_name {
+        margin-bottom: 0rem; } }
     .coverpic_name--main {
       display: inline-block;
       font-size: 6rem;
       font-weight: 600;
       letter-spacing: 1rem;
       font-family: 'Roboto', sans-serif; }
+      @media (max-width: 813px) {
+        .coverpic_name--main {
+          font-size: 35px;
+          font-weight: 700;
+          letter-spacing: .5rem; } }
     .coverpic_name--sub {
       display: inline-block;
       font-size: 4rem;
       font-weight: 700;
       letter-spacing: .4rem; }
-  .coverpic_down {
-    position: relative;
-    border-radius: 50%;
-    width: 4%;
-    height: 8%;
-    background-color: #fff;
-    left: 50%;
-    top: -4%;
-    box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.6);
-    cursor: pointer; }
+      @media (max-width: 813px) {
+        .coverpic_name--sub {
+          font-size: 25px;
+          font-weight: 700;
+          letter-spacing: .2rem; } }
   .coverpic .upload_btn {
     position: relative;
     overflow: hidden;
@@ -2777,6 +2828,13 @@ button:focus {
     cursor: pointer;
     margin-top: -3rem;
     background-color: #fff; }
+    @media (max-width: 813px) {
+      .coverpic .upload_btn {
+        width: 5rem;
+        height: 5rem;
+        background-color: #fff;
+        left: 45%;
+        top: -4%; } }
   .coverpic .btn {
     border-radius: 50px;
     font-size: 20px;
@@ -2805,6 +2863,12 @@ button:focus {
   padding: 8rem;
   justify-content: center;
   align-content: center; }
+  @media (max-width: 813px) {
+    .personalinfo {
+      grid-template-rows: repeat(1, minmax(40rem, min-content));
+      grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+      grid-auto-rows: 40rem;
+      padding: 4rem; } }
   .personalinfo .personalinfo_about {
     border: 1px solid #faf7f7;
     padding: 1rem; }
@@ -2817,25 +2881,44 @@ button:focus {
       letter-spacing: .2rem;
       padding-left: 3rem;
       font-family: 'Roboto', sans-serif; }
+      @media (max-width: 813px) {
+        .personalinfo .personalinfo_about--title {
+          padding-left: 1rem; } }
     .personalinfo .personalinfo_about--para {
       font-size: 16px;
-      color: #6e6d6d;
+      color: #575555;
       text-align: left;
       letter-spacing: .4px;
       line-height: 28px;
       margin-top: 1rem;
       font-weight: 500;
       padding: 2rem; }
+      @media (max-width: 813px) {
+        .personalinfo .personalinfo_about--para {
+          font-size: 14px;
+          letter-spacing: .2px;
+          line-height: 20px;
+          margin-top: 1rem;
+          font-weight: 500;
+          padding: 1rem; } }
   .personalinfo .personalinfo_img {
     width: 100%;
     height: 100%;
     margin-left: 2rem; }
+    @media (max-width: 813px) {
+      .personalinfo .personalinfo_img {
+        width: 80%;
+        margin-left: 2rem; } }
     .personalinfo .personalinfo_img--pic {
       margin-top: 1rem;
       width: 35rem;
       height: 40rem;
       box-shadow: 1rem 1rem 1rem 0.4rem rgba(14, 15, 15, 0.6);
       border: 4px solid #fff; }
+      @media (max-width: 813px) {
+        .personalinfo .personalinfo_img--pic {
+          width: 30rem;
+          height: 37rem; } }
       .personalinfo .personalinfo_img--pic:hover {
         transform: scale(1.1);
         transition: all .5s; }
@@ -2861,6 +2944,10 @@ button:focus {
       font-weight: bold;
       text-transform: uppercase;
       border-bottom: 1px solid #ebe6e6; }
+      @media (max-width: 813px) {
+        .personalinfo .personalinfo_details--info {
+          padding-left: 1rem;
+          padding-bottom: 0rem; } }
       .personalinfo .personalinfo_details--info--text {
         text-transform: none;
         margin-left: 1rem;
@@ -2870,6 +2957,9 @@ button:focus {
         font-weight: 600;
         letter-spacing: .1rem;
         color: #000; }
+        @media (max-width: 813px) {
+          .personalinfo .personalinfo_details--info--text {
+            font-size: 16px; } }
 
 .contact {
   width: 100%;
@@ -2883,7 +2973,8 @@ button:focus {
   grid-template-rows: repeat(auto-fit, minmax(1rem, max-content)); }
   @media (max-width: 813px) {
     .contact {
-      height: 100%; } }
+      height: 60%;
+      padding-bottom: 5rem; } }
   .contact_title {
     text-align: center;
     font-size: 40px;
@@ -2894,8 +2985,12 @@ button:focus {
     margin-bottom: 2rem; }
     @media (max-width: 813px) {
       .contact_title {
-        margin-bottom: 0rem;
-        padding: 2rem; } }
+        margin-bottom: 1rem;
+        padding: 2rem;
+        font-size: 30px;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: .4rem; } }
   .contact_items {
     width: 100%;
     display: grid;
@@ -2903,40 +2998,74 @@ button:focus {
     grid-template-columns: repeat(auto-fill, minmax(400px, 450px));
     grid-row-gap: 1rem;
     justify-items: center;
-    padding-left: 6rem;
+    justify-content: center;
     color: #fff;
     font-size: 38px; }
+    @media (max-width: 813px) {
+      .contact_items {
+        font-size: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 450px)); } }
     .contact_items--call {
       width: 100%;
       text-align: center;
       padding: 3rem; }
+      @media (max-width: 813px) {
+        .contact_items--call {
+          padding: 2rem;
+          width: 90%; } }
       .contact_items--call:hover {
         box-shadow: inset 0 0 0 10px white;
         transition: all .8s;
         background-color: rgba(0, 0, 0, 0.459); }
+        @media (max-width: 813px) {
+          .contact_items--call:hover {
+            box-shadow: inset 0 0 0 5px white; } }
       .contact_items--call--1 {
         font-size: 25px;
         letter-spacing: .3rem; }
+        @media (max-width: 813px) {
+          .contact_items--call--1 {
+            font-size: 18px; } }
     .contact_items--location {
       width: 100%;
       text-align: center;
       padding: 3rem; }
+      @media (max-width: 813px) {
+        .contact_items--location {
+          padding: 2rem;
+          width: 90%; } }
       .contact_items--location:hover {
         box-shadow: inset 0 0 0 10px white;
         transition: all .8s;
         background-color: rgba(0, 0, 0, 0.459); }
+        @media (max-width: 813px) {
+          .contact_items--location:hover {
+            box-shadow: inset 0 0 0 5px white; } }
       .contact_items--location--1 {
         font-size: 25px;
         letter-spacing: .3rem;
         line-height: 2.5rem; }
+        @media (max-width: 813px) {
+          .contact_items--location--1 {
+            font-size: 18px; } }
     .contact_items--mail {
       width: 100%;
       text-align: center;
       padding: 3rem; }
+      @media (max-width: 813px) {
+        .contact_items--mail {
+          padding: 2rem;
+          width: 90%; } }
       .contact_items--mail:hover {
         box-shadow: inset 0 0 0 10px white;
         transition: all .8s;
         background-color: rgba(0, 0, 0, 0.459); }
+        @media (max-width: 813px) {
+          .contact_items--mail:hover {
+            box-shadow: inset 0 0 0 5px white; } }
       .contact_items--mail--1 {
         font-size: 25px;
         letter-spacing: .3rem; }
+        @media (max-width: 813px) {
+          .contact_items--mail--1 {
+            font-size: 18px; } }

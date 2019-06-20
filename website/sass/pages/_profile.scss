@@ -11,6 +11,9 @@
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
   
+    @include respond(phone){
+        padding-top: 17px;
+    }
 
   
   
@@ -21,13 +24,28 @@
    
     border: 6px solid rgba(9, 109, 223, 0.692);
     width: 60%;
-    height: 94%;
+    height: 97%;
     border-radius: 5px;
     background-color: #f2f2f2;
     padding-left:6%;
     padding-right:6%;
     font-size: 20px;
+    line-height: 3rem;
 
+                      
+    @include respond(phone){
+        width: 90%;
+        height: 98%;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding-left:2%;
+        padding-right:2%;
+        font-size: 16px;
+        border: 2px solid rgba(9, 109, 223, 0.692);
+        line-height: 1.8rem;
+
+    
+    }
 
     &--icon
     {
@@ -37,9 +55,15 @@
             border-radius: 50%;
             background-color: #fff;
             width: 5.5rem;
+            height: 5rem;
             top: -4.5%;
             left: 47%;
             border: 2px solid black;
+               @include respond(phone){
+                width: 5rem;
+                left: 45%;
+    }
+
 
     }
 
@@ -50,7 +74,10 @@
         font-weight: bold;
         position: relative;
         left: 105%;
-        top: -10%;
+        top: -6%;
+        @include respond(phone){
+            left: 90%;
+}
         
 
         &:hover{
@@ -69,6 +96,12 @@
     border-radius: 4px;
     resize: vertical;
     margin-bottom: 3rem;
+
+    @include respond(phone){
+        width: 100%;
+        margin-bottom: 1rem;
+}
+
   }
 
   input[type=text] select,textarea {
@@ -78,6 +111,10 @@
     border-radius: 4px;
     resize: vertical;
     height: 18%;
+    @include respond(phone){
+        width: 100%;
+        margin-bottom: 1rem;
+}
   }
   
   &_label {
@@ -142,7 +179,7 @@ button:focus{
 
 
 //button to open the form
-.editform
+.editbtn
 {
     border-radius: 50%;
     font-size: 35px;
@@ -155,9 +192,24 @@ button:focus{
     background-color: #fff;
     box-shadow: 0 2px 20px rgba(33,33,33,.8);
 
+                      
+    @include respond(phone){
+
+        font-size: 25px;
+        left: 7%;
+        width: 5rem;
+        height: 5REM;
+        margin-top: 6rem;
+    }
+
     &:hover{
         transform: translateY(-.5rem);
         transition: all .4s;
+
+        @include respond(phone){
+
+        transform: translateY(-1rem);
+        }
     }
 
 }
@@ -171,12 +223,23 @@ button:focus{
     position: relative;
     
     
+    @include respond(phone){
+
+        height: 70vh;
+    }
+    
+    
     &_img
     {
         background-image: linear-gradient(to right bottom,rgba(22, 21, 24, 0),rgba(14, 15, 15, 0));
         width: 100%;
         height: 90vh;
-        background-attachment: fixed;
+
+           
+    @include respond(phone){
+
+        width: 100%;
+        height: 70vh;    }
 
 
         &--pic
@@ -188,6 +251,11 @@ button:focus{
             transition: all .6s;
             background-attachment: fixed;
 
+                    
+            @include respond(phone){
+
+          height: 70vh;
+            }
         }
      
     }
@@ -200,9 +268,6 @@ button:focus{
             transition: all .6s;
         }
          
-        .coverpic_img::after{
-            background-image: linear-gradient(to right bottom,rgba(22, 21, 24, 0.600),rgba(14, 15, 15, 0.600));
-        }
         
         .coverpic_img--pic
         {
@@ -230,6 +295,12 @@ button:focus{
         color:$color-white;
         text-transform: uppercase;
         margin-bottom: 6rem;
+               
+    @include respond(phone){
+
+        margin-bottom: 0rem;
+    }
+        
 
         &--main
         {
@@ -240,6 +311,14 @@ button:focus{
     font-weight: 600;
     letter-spacing: 1rem; 
     font-family: 'Roboto', sans-serif;
+
+        
+    @include respond(phone){
+
+        font-size: 35px;
+        font-weight: 700;
+        letter-spacing: .5rem; 
+    }
         }
 
         &--sub
@@ -249,23 +328,20 @@ button:focus{
             font-weight: 700;
             letter-spacing: .4rem;
 
+                  
+    @include respond(phone){
+
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: .2rem; 
+    }
+
         }
 
       }
 
 
-      &_down
-      {
-          position: relative;
-          border-radius: 50%;
-          width: 4%;
-          height: 8%;
-          background-color:$color-white;
-          left: 50%;
-          top: -4%;
-          box-shadow: 0 0 4px 5px rgba($color-black,.600) ;
-          cursor: pointer;
-      }
+    
 
       .upload_btn {
         position: relative;
@@ -279,6 +355,16 @@ button:focus{
         cursor: pointer;
         margin-top: -3rem;
         background-color: #fff;
+
+        @include respond(phone){
+
+            width: 5rem;
+            height: 5rem;
+            background-color:$color-white;
+            left: 45%;
+            top: -4%;
+            
+        }
 
       }
       
@@ -331,6 +417,16 @@ button:focus{
     justify-content: center;
     align-content: center;
 
+    @include respond(phone){
+
+    grid-template-rows: repeat(1, minmax(40rem, min-content));
+    grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+    grid-auto-rows: 40rem;
+
+    padding: 4rem;
+  
+    }
+
     
 
     .personalinfo_about
@@ -349,18 +445,34 @@ button:focus{
             letter-spacing: .2rem;
             padding-left: 3rem;
             font-family: 'Roboto', sans-serif;
+            @include respond(phone){
+
+                padding-left: 1rem;
+              
+                }
         }
 
         &--para
         {
             font-size: 16px;
-            color: rgb(110, 109, 109);
+            color: rgb(87, 85, 85);
             text-align: left;
             letter-spacing: .4px;
             line-height: 28px;
             margin-top: 1rem;
             font-weight: 500;
             padding: 2rem;
+            @include respond(phone){
+
+               
+            font-size: 14px;
+            letter-spacing: .2px;
+            line-height: 20px;
+            margin-top: 1rem;
+            font-weight: 500;
+            padding: 1rem;
+              
+                }
         }
     }
 
@@ -369,6 +481,13 @@ button:focus{
         width: 100%;
         height: 100%;
         margin-left: 2rem;
+
+        @include respond(phone){
+
+            width: 80%;
+            margin-left: 2rem;
+          
+            }
        
 
         &--pic
@@ -378,6 +497,13 @@ button:focus{
             height: 40rem;
             box-shadow: 1rem 1rem 1rem .4rem rgba(14, 15, 15, 0.600);
             border: 4px solid $color-white;
+
+            @include respond(phone){
+
+                width: 30rem;
+                height: 37rem;
+              
+                }
 
             &:hover{
                 transform: scale(1.1);
@@ -422,6 +548,15 @@ button:focus{
             text-transform: uppercase;
             border-bottom: 1px solid rgb(235, 230, 230);
 
+            
+            @include respond(phone){
+
+                padding-left: 1rem;
+                padding-bottom: 0rem;
+               
+              
+                }
+
           
 
             &--text
@@ -434,6 +569,10 @@ button:focus{
                 font-weight: 600;
                 letter-spacing: .1rem;
                 color: $color-black;
+                @include respond(phone){
+                    font-size: 16px;
+                  
+                    }
 
 
             }
@@ -456,13 +595,7 @@ button:focus{
     padding-bottom: 10rem;
 
           
-    @include respond(phone){
-        height: 100%;
   
-      
-      
-        }
-
 
 
 
@@ -471,6 +604,15 @@ button:focus{
   width: 100%;
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(1rem, max-content));
+
+  @include respond(phone){
+    height: 60%;
+    padding-bottom: 5rem;
+
+  
+  
+    }
+
 
 
    &_title
@@ -485,8 +627,12 @@ button:focus{
 
         
     @include respond(phone){
-        margin-bottom: 0rem;
+        margin-bottom: 1rem;
         padding: 2rem;
+        font-size: 30px;
+        color: $color-white;
+        font-weight: bold;
+        letter-spacing: .4rem;
   
       
       
@@ -505,13 +651,21 @@ button:focus{
     grid-row-gap: 1rem;
 
     justify-items: center;
-    padding-left: 6rem;
+    justify-content: center;
 
   
 
 
     color: $color-white;
     font-size: 38px;
+
+    @include respond(phone){
+        font-size: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(350px,450px));
+
+      
+        }
+
 
 
    
@@ -521,18 +675,32 @@ button:focus{
         width: 100%;
         text-align: center;
         padding: 3rem;
+        @include respond(phone){
+            padding: 2rem;
+            width: 90%;
+    
+          
+            }
 
         &:hover{
             
             box-shadow: inset 0 0 0 10px white;
             transition: all .8s;
             background-color:rgba(0, 0, 0, 0.459);
+            @include respond(phone){
+                box-shadow: inset 0 0 0 5px white;
+              
+                }
         }
 
         &--1
         {
             font-size: 25px;
             letter-spacing: .3rem;
+            @include respond(phone){
+                font-size: 18px;
+              
+                }
          
 
         }
@@ -544,6 +712,12 @@ button:focus{
         width: 100%;
         text-align: center;
         padding: 3rem;
+        @include respond(phone){
+            padding: 2rem;
+            width: 90%;
+    
+          
+            }
 
         
         &:hover{
@@ -551,6 +725,10 @@ button:focus{
             box-shadow: inset 0 0 0 10px white;
             transition: all .8s;
             background-color:rgba(0, 0, 0, 0.459);
+            @include respond(phone){
+                box-shadow: inset 0 0 0 5px white;
+              
+                }
         }
 
         &--1
@@ -558,6 +736,10 @@ button:focus{
             font-size: 25px;
             letter-spacing: .3rem;
             line-height: 2.5rem;
+            @include respond(phone){
+                font-size: 18px;
+              
+                }
 
         }
     }
@@ -568,6 +750,12 @@ button:focus{
         width: 100%;
         text-align: center;
         padding: 3rem;
+        @include respond(phone){
+            padding: 2rem;
+            width: 90%;
+    
+          
+            }
 
         
         &:hover{
@@ -575,12 +763,20 @@ button:focus{
             box-shadow: inset 0 0 0 10px white;
             transition: all .8s;
             background-color:rgba(0, 0, 0, 0.459);
+            @include respond(phone){
+                box-shadow: inset 0 0 0 5px white;
+              
+                }
         }
 
         &--1
         {
             font-size: 25px;
             letter-spacing: .3rem;
+            @include respond(phone){
+                font-size: 18px;
+              
+                }
 
         }
     }
