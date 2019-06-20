@@ -19,7 +19,7 @@
     color: $color-white;
 
     @include respond(phone) {
-      margin-left: 3rem;
+      margin-left: 1.5rem;
     }
   }
   // grid layout for the dashboard
@@ -43,7 +43,7 @@
       grid-template-columns: repeat(auto-fill, minmax(120px, 350px));
     }
     @include respond(phone) {
-      padding: 4rem;
+      padding: 2rem;
     }
    
   }
@@ -83,10 +83,13 @@
   @include respond(tab-land) {
    position: sticky;
    float: right;
-   padding: .6rem;
+   padding: .33rem;
   }
   @include respond(phone) {
-    top: 11.5%;
-    padding: 0.42rem;
+    font-size: 2rem;
+    margin-top: -0.4rem;
+    padding: 0.28rem;
+    padding-left: .55rem;
+    padding-right: .55rem;
   }
 }

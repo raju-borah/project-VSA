@@ -5,6 +5,9 @@
   border: 0.1rem solid black;
   box-shadow: 0rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
   background-color: #fff;
+
+  
+
   // for the image division
   &--img {
     width: 100%;
@@ -13,6 +16,9 @@
     background-image: url("/img/error-1.png");
     background-size: cover;
     cursor: pointer;
+    &--playlist{
+      height:auto;
+    }
   }
 
   &--playicon
@@ -35,6 +41,8 @@
     width: 50%;
     top: 73.5%;
     left: 0;
+
+  
     &--learning {
     background-color: $color-primary-dark;
     }
@@ -55,12 +63,19 @@
     padding: 2rem;
     font-size: 1.7rem;
     width: 100%;
+    @include respond(phone){
+      font-size: 1.7rem;
+    }
     // fot the title
     &--title {
       font-size: 2.12rem;
       text-align: start;
       font-weight: bold;
       color: $color-primary-dark-1;
+
+      @include respond(phone){
+        font-size: 1.8rem;
+      }
     }
     //descrpition of the video uploaded...
     &--des {

@@ -26,6 +26,7 @@
     }
   }
 }
+// grid layout for play page
 .play__grid {
   display: grid;
   grid-template-rows: minmax(150px, min-content);
@@ -60,7 +61,8 @@
 .suggest {
   padding-top: 0rem;
   text-align: center;
-  height: 900px;
+  height: 890px;
+  padding-bottom: 2rem;
   grid-area: 1/3/4/-1;
   @include respond(phone) {
     grid-area: 4/1/4/-1;
@@ -84,7 +86,12 @@
 }
 .comment--area {
   width: 100%;
+    height: 1100px;
+
+  @include respond(phone){
   height: 550px;
+
+  }
 }
 .comment--card {
   font-size: 1.6rem;
@@ -134,3 +141,4 @@
   border-top: 2px solid grey;
   padding: 0.2rem;
 }
+
