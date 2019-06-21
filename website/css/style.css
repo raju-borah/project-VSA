@@ -3069,3 +3069,74 @@ button:focus {
         @media (max-width: 813px) {
           .contact_items--mail--1 {
             font-size: 18px; } }
+
+.notify {
+  display: block;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  /* Modal Content */ }
+  .notify_panel {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 65%;
+    height: 80%;
+    overflow-y: scroll;
+    text-align: center; }
+    .notify_panel--title {
+      font-size: 28px;
+      font-weight: bold;
+      display: inline-block;
+      border-bottom: 2px solid grey;
+      padding: 10px; }
+    .notify_panel_layout {
+      width: 100%;
+      display: grid;
+      grid-template-rows: repeat(1, minmax(15rem, min-content));
+      grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+      grid-auto-rows: 15rem;
+      grid-row-gap: 2rem;
+      justify-items: center;
+      justify-content: center;
+      margin-top: 2rem; }
+    .notify_panel_notes {
+      width: 100%;
+      border: 1px solid black;
+      height: 100%;
+      position: relative;
+      background-image: linear-gradient(to right bottom, rgba(46, 12, 236, 0.808), rgba(8, 129, 243, 0.849));
+      padding: 1.3rem;
+      border-radius: .5rem; }
+      .notify_panel_notes:hover {
+        transform: translateY(-0.3rem);
+        transition: all .3s;
+        box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.548); }
+      .notify_panel_notes--thumb {
+        border: 1px solid white;
+        float: left;
+        height: 100%;
+        width: 20%; }
+      .notify_panel_notes--user {
+        border: 1px solid green;
+        display: inline-block; }
+        .notify_panel_notes--user--name {
+          font-size: 20px;
+          color: white; }
