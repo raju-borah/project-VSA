@@ -31,6 +31,7 @@
     padding-right:6%;
     font-size: 20px;
     line-height: 3rem;
+    padding-top: 1rem;
 
                       
     @include respond(phone){
@@ -60,8 +61,7 @@
             left: 47%;
             border: 2px solid black;
                @include respond(phone){
-                width: 5rem;
-                left: 45%;
+             display: none;
     }
 
 
