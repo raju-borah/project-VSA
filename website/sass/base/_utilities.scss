@@ -27,11 +27,17 @@ font-size: 22px;
 }
 }
 
-
+// suggestion list
 .list{   
 list-style-type: none;
 height: 120%;
 overflow-y: scroll; 
+
+
+@include respond(phone){
+    height: 50%;
+}
+
 &--items{
     margin:1rem;
 }}
@@ -45,4 +51,8 @@ overflow-y: scroll;
 .border
 {
     border-radius: 1rem;
+}
+
+.hauto{
+    height: 600px;
 }
