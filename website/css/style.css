@@ -2660,7 +2660,8 @@ progress {
     font-size: 20px;
     line-height: 3rem;
     padding-top: 1rem;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    overflow-x: hidden; }
     @media (max-width: 824px) {
       .editpanel_content {
         width: 90%;
@@ -2680,8 +2681,9 @@ progress {
       background-color: #fff;
       width: 5.5rem;
       height: 5rem;
-      top: -4.5%;
+      top: -.5%;
       left: 47%;
+      z-index: 2;
       border: 2px solid black; }
       @media (max-width: 824px) {
         .editpanel_content--icon {

@@ -33,6 +33,7 @@
     line-height: 3rem;
     padding-top: 1rem;
     overflow-y: scroll;
+    overflow-x: hidden;
 
                       
     @include respond(phone){
@@ -58,8 +59,9 @@
             background-color: #fff;
             width: 5.5rem;
             height: 5rem;
-            top: -4.5%;
+            top: -.5%;
             left: 47%;
+            z-index: 2;
             border: 2px solid black;
                @include respond(phone){
              display: none;
