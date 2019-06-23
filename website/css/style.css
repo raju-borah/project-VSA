@@ -2659,7 +2659,8 @@ progress {
     padding-right: 6%;
     font-size: 20px;
     line-height: 3rem;
-    padding-top: 1rem; }
+    padding-top: 1rem;
+    overflow-y: scroll; }
     @media (max-width: 824px) {
       .editpanel_content {
         width: 90%;
@@ -2693,7 +2694,8 @@ progress {
       top: -6%; }
       @media (max-width: 824px) {
         .editpanel_content--close {
-          left: 90%; } }
+          left: 90%;
+          top: 1%; } }
       .editpanel_content--close:hover {
         color: red;
         text-decoration: none;

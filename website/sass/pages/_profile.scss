@@ -32,6 +32,7 @@
     font-size: 20px;
     line-height: 3rem;
     padding-top: 1rem;
+    overflow-y: scroll;
 
                       
     @include respond(phone){
@@ -77,6 +78,7 @@
         top: -6%;
         @include respond(phone){
             left: 90%;
+            top: 1%;
 }
         
 
