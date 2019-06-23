@@ -88,7 +88,7 @@ body {
     padding: 1rem;
     border-bottom: 0.4rem solid rgba(40, 180, 133, 0.98);
     display: inline; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .heading_tag {
         font-size: 30px; } }
   .heading__title {
@@ -144,7 +144,7 @@ body {
 
 .font-medium {
   font-size: 3rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .font-medium {
       font-size: 22px; } }
 
@@ -152,7 +152,7 @@ body {
   list-style-type: none;
   height: 120%;
   overflow-y: scroll; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .list {
       height: 50%; } }
   .list--items {
@@ -356,7 +356,7 @@ iframe {
     height: 100%;
     transform: translate(-3rem, -3rem);
     box-shadow: 1rem 2rem 6rem rgba(0, 0, 0, 0.33); }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .form--login {
         padding-top: 6rem; } }
   .form--signup {
@@ -365,12 +365,12 @@ iframe {
     box-shadow: 1rem 2rem 6rem rgba(0, 0, 0, 0.33);
     transform: translate(-3rem, -3rem);
     padding-left: 4rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .form--signup {
         padding-top: 5rem; } }
   .form__group {
     margin: 1rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .form__group {
         margin: 0.2rem; } }
   .form__input {
@@ -381,13 +381,13 @@ iframe {
     font-size: 2rem;
     border: 0.1rem;
     outline: none; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .form__input {
         font-size: 16px; } }
     .form__input--settings {
       width: 58%;
       border: 1px solid #000; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .form__input--settings {
           width: 90%; } }
       @media (width: 768px) {
@@ -398,7 +398,7 @@ iframe {
       font-size: 1.8rem;
       padding: 0.99rem;
       border: 0.2rem dotted #333; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .form__input--comment {
           width: 72%; } }
     .form__input--reply {
@@ -411,7 +411,7 @@ iframe {
       @media (max-width: 1024px) {
         .form__input--reply {
           width: 94%; } }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .form__input--reply {
           width: 90%; } }
     .form__input__login {
@@ -425,7 +425,7 @@ iframe {
       border-bottom: 0.3rem solid #012A57;
       margin-left: 8rem;
       font-size: 1.8rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .form__input__login {
           margin-left: 6rem; } }
       .form__input__login--icons {
@@ -434,15 +434,15 @@ iframe {
         left: 7rem; }
         .form__input__login--icons--iconuser {
           top: 30.3rem; }
-          @media (max-width: 813px) {
+          @media (max-width: 824px) {
             .form__input__login--icons--iconuser {
               top: 30; } }
         .form__input__login--icons--iconlock {
           top: 38rem; }
-          @media (max-width: 813px) {
+          @media (max-width: 824px) {
             .form__input__login--icons--iconlock {
               top: 37.2rem; } }
-        @media (max-width: 813px) {
+        @media (max-width: 824px) {
           .form__input__login--icons {
             left: 4.5rem; } }
     .form__input__signup {
@@ -473,13 +473,13 @@ iframe {
     color: #000;
     font-weight: 700;
     display: block; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .form__label {
         font-size: 18px;
         font-weight: 200; } }
     .form__label--login {
       margin-left: 4.1rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .form__label--login {
           margin-left: 2rem; } }
 
@@ -521,7 +521,7 @@ border-radius for curved end of button
     .btn--white:hover {
       background-image: none;
       background-color: #999; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .btn--white {
         font-size: 17px; } }
   .btn--green {
@@ -532,7 +532,7 @@ border-radius for curved end of button
     background-color: #28b485;
     color: #fff;
     padding: 1rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .btn--green {
         font-size: 20.5px; } }
     .btn--green--login {
@@ -547,7 +547,7 @@ border-radius for curved end of button
       font-size: 1.8rem;
       font-weight: 200;
       margin-left: 10rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .btn--green--logout {
           font-size: 18px;
           margin-left: 7rem; } }
@@ -560,7 +560,7 @@ border-radius for curved end of button
     color: #fff;
     padding: 1rem;
     width: 15rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .btn--blue {
         font-size: 22px; } }
   .btn--front {
@@ -573,7 +573,7 @@ border-radius for curved end of button
     margin: 1rem;
     border-radius: 1rem;
     font-size: 1.7rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .btn--front {
         font-size: 18px;
         margin-left: 1rem;
@@ -613,7 +613,7 @@ border-radius for curved end of button
   left: 0;
   padding: 1rem;
   transition: all 0.3s ease; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .navigationbar {
       height: 6rem; } }
   .navigationbar:hover {
@@ -623,13 +623,13 @@ border-radius for curved end of button
     font-size: 3rem;
     font-weight: 700;
     color: #fff; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .navigationbar:hover .navbarfont .navbar_items {
         font-size: 38px; } }
     .navigationbar:hover .navbarfont .navbar_items--icon {
       font-size: 4.6rem;
       top: 0; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .navigationbar:hover .navbarfont .navbar_items--icon {
           font-size: 42px;
           top: -.3rem; } }
@@ -641,7 +641,7 @@ border-radius for curved end of button
     width: 50%;
     float: left;
     padding-left: 3rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .navigationbar--left {
         padding-left: 0rem; } }
   .navigationbar--right {
@@ -649,7 +649,7 @@ border-radius for curved end of button
     width: 50%;
     padding-right: 3rem;
     float: left; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .navigationbar--right {
         font-size: 20px;
         float: right;
@@ -659,13 +659,13 @@ border-radius for curved end of button
   font-size: 3rem;
   font-weight: 700;
   color: #fff; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .navbarfont .navbar_items {
       font-size: 38px; } }
   .navbarfont .navbar_items--icon {
     font-size: 4.6rem;
     top: 0; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .navbarfont .navbar_items--icon {
         font-size: 42px;
         top: -.3rem; } }
@@ -674,7 +674,7 @@ border-radius for curved end of button
     text-shadow: 0 1rem 3rem #000;
     cursor: pointer; }
 
-@media (max-width: 813px) {
+@media (max-width: 824px) {
   .navbar_title {
     display: none; } }
 
@@ -708,7 +708,7 @@ border-radius for curved end of button
     right: 2.8rem;
     border: 1rem solid;
     border-color: transparent transparent #eee transparent; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .usercontainer {
       width: 30rem;
       height: 35rem;
@@ -727,7 +727,7 @@ border-radius for curved end of button
   background-color: #eee;
   color: #000;
   border-radius: .55rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .signincontainer {
       width: 28rem;
       height: 33rem; } }
@@ -739,7 +739,7 @@ border-radius for curved end of button
     width: 10rem;
     background-position: center;
     border-radius: 50%; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .signincontainer__img {
         width: 8rem;
         height: 8rem; } }
@@ -762,12 +762,12 @@ border-radius for curved end of button
   border-radius: 1rem;
   margin: 1rem;
   background-color: #9dcfff; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .list--link, .list--link:visited {
       padding: .5rem;
       margin: .2rem; } }
 
-@media (max-width: 813px) {
+@media (max-width: 824px) {
   .list--link {
     font-size: 18px; } }
 
@@ -781,7 +781,7 @@ border-radius for curved end of button
   left: 1rem;
   padding: 2rem;
   background-color: #eee; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .notsignincontainer {
       width: 28rem;
       height: 33rem;
@@ -791,7 +791,7 @@ border-radius for curved end of button
     width: 22rem;
     height: 22rem;
     border-radius: 50%; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .notsignincontainer__img {
         width: 18rem;
         height: 18rem;
@@ -801,12 +801,12 @@ border-radius for curved end of button
     width: 20rem;
     height: 15rem; }
 
-@media (max-width: 813px) {
+@media (max-width: 824px) {
   .accountHolderName {
     font-size: 18px;
     margin-top: -2rem; } }
 
-@media (max-width: 813px) {
+@media (max-width: 824px) {
   .accountHolderId {
     font-size: 14px;
     margin-top: -1rem;
@@ -830,7 +830,7 @@ border-radius for curved end of button
     color: #29313a;
     border: 3px solid rgba(46, 19, 199, 0.5);
     transition: all 0.8s; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .search__input {
         height: 3.5rem;
         right: 1.9rem;
@@ -851,7 +851,7 @@ border-radius for curved end of button
     border: none;
     outline: none;
     background: #2998ff; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .search__btn {
         width: 4.2rem;
         height: 4.2rem;
@@ -864,7 +864,7 @@ border-radius for curved end of button
   .search:hover .search__input {
     width: 25rem;
     color: #000; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .search:hover .search__input {
         width: 20rem; } }
 
@@ -875,7 +875,7 @@ border-radius for curved end of button
   margin-left: 6rem;
   margin-right: 6rem;
   margin-bottom: 6rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .infocard {
       margin: 4rem; } }
   .infocard__title {
@@ -897,7 +897,7 @@ border-radius for curved end of button
   grid-auto-rows: 40rem;
   justify-content: center;
   padding: 3rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .cardsgrid {
       grid-template-rows: repeat(1, minmax(30rem, min-content));
       grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
@@ -921,7 +921,7 @@ border-radius for curved end of button
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .card__side {
         height: 30rem; } }
     .card__side--front {
@@ -950,7 +950,7 @@ border-radius for curved end of button
     height: 34%;
     margin-top: -9.5rem;
     clip-path: polygon(0 37.5%, 100% 0, 100% 100%, 0% 100%); }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .card__heading {
         top: 29.7rem; } }
     .card__heading--1 {
@@ -967,7 +967,7 @@ border-radius for curved end of button
     font-weight: 600;
     text-transform: uppercase;
     color: #fff; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .card__text {
         top: 3rem; } }
   .card__cta {
@@ -1005,7 +1005,7 @@ border-radius for curved end of button
   margin-bottom: 5rem;
   text-transform: uppercase;
   font-weight: normal; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .feature__heading {
       font-size: 30px; } }
 
@@ -1044,7 +1044,7 @@ border-radius for curved end of button
   display: inline-block;
   left: 10rem;
   background-image: linear-gradient(120deg, #28b485 50%, rgba(40, 180, 133, 0.3) 30%); }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .learning__heading {
       width: 87%;
       left: 2rem; } }
@@ -1057,7 +1057,7 @@ border-radius for curved end of button
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .learning__title {
       letter-spacing: .2rem;
       font-size: 30px;
@@ -1080,7 +1080,7 @@ border-radius for curved end of button
   z-index: 1;
   background: none;
   transition: all 0.5s; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .learning__more {
       font-size: 20px;
       right: 0rem;
@@ -1097,7 +1097,7 @@ border-radius for curved end of button
     transform-origin: left;
     transition: width 0.25s ease;
     z-index: -1; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .learning__more::after {
         top: 2px;
         height: 86%; } }
@@ -1121,7 +1121,7 @@ border-radius for curved end of button
   z-index: 1;
   display: inline-block;
   font-family: 'Open Sans', sans-serif; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .line {
       left: 7rem;
       height: .6rem; } }
@@ -1132,7 +1132,7 @@ border-radius for curved end of button
   display: inline-block;
   left: 10rem;
   background-image: linear-gradient(120deg, #5643fa 50%, rgba(86, 67, 250, 0.3) 30%); }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .event__heading {
       width: 87%;
       left: 2rem; } }
@@ -1145,7 +1145,7 @@ border-radius for curved end of button
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .event__title {
       letter-spacing: .2rem;
       font-size: 30px;
@@ -1168,7 +1168,7 @@ border-radius for curved end of button
   z-index: 1;
   background: none;
   transition: all 0.5s; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .event__more {
       font-size: 20px;
       right: 0rem;
@@ -1185,7 +1185,7 @@ border-radius for curved end of button
     transform-origin: left;
     transition: width 0.25s ease;
     z-index: -1; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .event__more::after {
         top: 2px;
         height: 86%; } }
@@ -1204,7 +1204,7 @@ border-radius for curved end of button
   display: inline-block;
   left: 10rem;
   background-image: linear-gradient(120deg, #ff7730 50%, rgba(255, 119, 48, 0.3) 30%); }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .club__heading {
       width: 87%;
       left: 2rem; } }
@@ -1217,7 +1217,7 @@ border-radius for curved end of button
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .club__title {
       letter-spacing: .2rem;
       font-size: 30px;
@@ -1240,7 +1240,7 @@ border-radius for curved end of button
   z-index: 1;
   background: none;
   transition: all 0.5s; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .club__more {
       font-size: 20px;
       right: 0rem;
@@ -1257,7 +1257,7 @@ border-radius for curved end of button
     transform-origin: left;
     transition: width 0.25s ease;
     z-index: -1; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .club__more::after {
         top: 2px;
         height: 86%; } }
@@ -1284,14 +1284,14 @@ border-radius for curved end of button
     font-weight: bold;
     text-align: center;
     font-family: "norwester"; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .team__title {
         font-size: 32px; } }
   .team__icon {
     font-size: 40px;
     color: #fff;
     text-align: center; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .team__icon {
         font-size: 32px; } }
   .team__description {
@@ -1302,7 +1302,7 @@ border-radius for curved end of button
     line-height: 6rem;
     display: block;
     text-align: center; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .team__description {
         font-size: 16px;
         font-weight: 100;
@@ -1316,7 +1316,7 @@ border-radius for curved end of button
     grid-row-gap: 5rem;
     grid-column-gap: 3rem;
     justify-content: center; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .team__grid {
         grid-template-rows: repeat(1, minmax(5rem, min-content));
         grid-template-columns: repeat(auto-fill, minmax(100px, 250px));
@@ -1358,7 +1358,7 @@ border-radius for curved end of button
     position: relative;
     top: -10rem;
     left: 3rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .team__designation {
         padding: .2rem;
         top: -7rem;
@@ -1371,7 +1371,7 @@ border-radius for curved end of button
     position: relative;
     top: -2rem;
     left: 10rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .team__h4 {
         width: 40%;
         left: 8rem; } }
@@ -1387,7 +1387,7 @@ border-radius for curved end of button
     top: -2rem;
     padding: 1rem;
     left: 9rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .team__list {
         width: 60%;
         left: 7.5rem; } }
@@ -1444,7 +1444,7 @@ border-radius for curved end of button
     padding: 2rem;
     font-size: 1.7rem;
     width: 100%; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .vcard__info {
         font-size: 1.7rem; } }
     .vcard__info--title {
@@ -1452,7 +1452,7 @@ border-radius for curved end of button
       text-align: start;
       font-weight: bold;
       color: #228B22; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .vcard__info--title {
           font-size: 1.8rem; } }
     .vcard__info--des {
@@ -1531,7 +1531,7 @@ border-radius for curved end of button
     height: 55rem;
     background-size: 100% 100%;
     background-repeat: no-repeat; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .footer__back {
         height: 50rem;
         background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)); } }
@@ -1540,7 +1540,7 @@ border-radius for curved end of button
     top: 5rem;
     font-size: 20rem;
     left: 65rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .footer__logo {
         font-size: 100px;
         left: 13rem;
@@ -1552,7 +1552,7 @@ border-radius for curved end of button
     font-size: 5rem;
     top: 25rem;
     left: 4rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .footer__logo-name {
         font-size: 35px;
         left: 1.5rem;
@@ -1561,7 +1561,7 @@ border-radius for curved end of button
     position: absolute;
     font-size: 2rem;
     top: 35rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .footer__copy {
         font-size: 15px;
         top: 45rem;
@@ -1569,7 +1569,7 @@ border-radius for curved end of button
         width: 150%; } }
   .footer__communication {
     font-size: 5rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .footer__communication {
         font-size: 35px; } }
     .footer__communication--text {
@@ -1581,7 +1581,7 @@ border-radius for curved end of button
       font-weight: 600;
       letter-spacing: .5rem;
       transform: rotate(7deg); }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .footer__communication--text {
           font-size: 20px;
           transform: rotate(0);
@@ -1594,7 +1594,7 @@ border-radius for curved end of button
       top: 18rem;
       left: 23rem;
       transition: all .4s; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .footer__communication--call {
           top: 22rem;
           left: 25rem; } }
@@ -1607,7 +1607,7 @@ border-radius for curved end of button
       visibility: hidden;
       color: #fff;
       transition: all .4s; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .footer__communication--callinfo {
           position: relative;
           font-size: 15px;
@@ -1621,7 +1621,7 @@ border-radius for curved end of button
       top: 30rem;
       left: 20rem;
       transition: all .4s; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .footer__communication--location {
           top: 29rem;
           left: 25rem; } }
@@ -1635,7 +1635,7 @@ border-radius for curved end of button
       transition: all .4s;
       color: #fff;
       padding: .7rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .footer__communication--locationinfo {
           position: relative;
           font-size: 10px;
@@ -1649,7 +1649,7 @@ border-radius for curved end of button
       top: 40rem;
       left: 15rem;
       transition: all .4s; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .footer__communication--mail {
           top: 35rem;
           left: 25rem; } }
@@ -1663,7 +1663,7 @@ border-radius for curved end of button
       transition: all .4s;
       padding: .7rem;
       color: #fff; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .footer__communication--mailinfo {
           position: relative;
           font-size: 10px;
@@ -1679,7 +1679,7 @@ border-radius for curved end of button
     letter-spacing: .5rem;
     right: 29rem;
     top: 10rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .footer__social--text {
         font-size: 20px;
         transform: rotate(0);
@@ -1693,7 +1693,7 @@ border-radius for curved end of button
     font-size: 6rem;
     right: 40rem;
     top: 13rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .footer__social--fb {
         font-size: 35px;
         left: 5rem;
@@ -1704,7 +1704,7 @@ border-radius for curved end of button
     font-size: 6rem;
     right: 35rem;
     top: 23rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .footer__social--twit {
         font-size: 35px;
         left: 5rem;
@@ -1715,7 +1715,7 @@ border-radius for curved end of button
     font-size: 6rem;
     right: 30rem;
     top: 33rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .footer__social--link {
         font-size: 35px;
         left: 5rem;
@@ -1733,7 +1733,7 @@ border-radius for curved end of button
     left: 70%;
     transform: translate(-50%, -50%);
     text-align: center; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .header__text-box {
         left: 50%; } }
   .header_img {
@@ -1741,7 +1741,7 @@ border-radius for curved end of button
     left: 0rem;
     height: 91vh;
     min-width: 100%; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .header_img {
         width: 100%;
         height: 60%; } }
@@ -1764,7 +1764,7 @@ border-radius for curved end of button
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .heading-primary--main {
         font-size: 38px;
         letter-spacing: 0.8rem; } }
@@ -1777,7 +1777,7 @@ border-radius for curved end of button
     animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: ease-in; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .heading-primary--sub {
         font-size: 23px;
         letter-spacing: 0; } }
@@ -1794,7 +1794,7 @@ border-radius for curved end of button
   padding-top: 4rem;
   justify-content: center;
   align-content: center; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .grid {
       width: 80%;
       grid-template-rows: repeat(1, minmax(28rem, min-content)); } }
@@ -1810,7 +1810,7 @@ border-radius for curved end of button
   grid-column-gap: 3.4rem;
   padding: 1rem;
   justify-items: center; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .grid2 {
       grid-template-rows: repeat(1, minmax(35rem, min-content));
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1863,7 +1863,7 @@ border-radius for curved end of button
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .feature {
       background-attachment: fixed; } }
 
@@ -1891,7 +1891,7 @@ border-radius for curved end of button
   display: flex;
   align-items: center;
   justify-content: center; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .signup {
       padding: 5rem;
       padding-left: 0;
@@ -1905,7 +1905,7 @@ border-radius for curved end of button
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: .55rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .signup__container {
         background: transparent;
         border: none;
@@ -1922,7 +1922,7 @@ border-radius for curved end of button
   display: flex;
   align-items: center;
   justify-content: center; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .login {
       padding: 6.9rem;
       padding-left: 0;
@@ -1943,7 +1943,7 @@ border-radius for curved end of button
     background-image: url("/img/Capture.jpg");
     border: 2px solid black;
     border-radius: 0.55rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .login__container {
         width: auto;
         height: auto;
@@ -1992,7 +1992,7 @@ border-radius for curved end of button
   justify-content: center;
   flex-direction: column;
   padding-bottom: 1rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .settings {
       padding-bottom: 0; } }
   .settings__editbutton {
@@ -2004,7 +2004,7 @@ border-radius for curved end of button
     border: 0.3rem solid #fff;
     margin-top: -10rem;
     margin-left: 20rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .settings__editbutton {
         width: 6rem;
         height: 6rem;
@@ -2020,7 +2020,7 @@ border-radius for curved end of button
     border-radius: 50%;
     overflow: hidden;
     z-index: 1; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .settings__icon {
         width: 18rem;
         height: 18rem; } }
@@ -2030,7 +2030,7 @@ border-radius for curved end of button
     background-color: #eee;
     width: 50rem;
     color: black; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .settings__form {
         width: 100%; } }
 
@@ -2045,7 +2045,7 @@ border-radius for curved end of button
   right: -16rem;
   opacity: 0;
   transition: opacity 0.3s; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .tooltiptext {
       display: none; } }
   .tooltiptext::after {
@@ -2070,13 +2070,13 @@ border-radius for curved end of button
     @media (max-width: 1024px) {
       .dashboard__header {
         padding: 1rem; } }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .dashboard__header {
         padding: 0.62rem; } }
   .dashboard__title {
     margin-left: 8rem;
     color: #fff; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .dashboard__title {
         margin-left: 1.5rem; } }
   .dashboard__vcontainer {
@@ -2094,7 +2094,7 @@ border-radius for curved end of button
         padding: 4rem;
         grid-gap: 6rem;
         grid-template-columns: repeat(auto-fill, minmax(120px, 350px)); } }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .dashboard__vcontainer {
         padding: 2rem; } }
 
@@ -2127,7 +2127,7 @@ border-radius for curved end of button
       position: sticky;
       float: right;
       padding: .33rem; } }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .floating--btn {
       font-size: 2rem;
       margin-top: -0.4rem;
@@ -2152,10 +2152,10 @@ border-radius for curved end of button
     padding: 2rem; }
     .player__container--1 {
       width: 65%; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .player__container--1 {
           width: 100%; } }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .player__container {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr; } }
@@ -2167,7 +2167,7 @@ border-radius for curved end of button
   grid-gap: 2rem;
   padding: 5rem;
   padding-right: 0rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .play__grid {
       padding: 2rem;
       grid-template-rows: 1fr;
@@ -2184,7 +2184,7 @@ border-radius for curved end of button
   position: relative;
   left: 0;
   top: 0.3rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .profile--image {
       height: 6.5rem;
       width: 6.5rem; } }
@@ -2195,7 +2195,7 @@ border-radius for curved end of button
   height: 890px;
   padding-bottom: 2rem;
   grid-area: 1/3/4/-1; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .suggest {
       grid-area: 4/1/4/-1; } }
 
@@ -2204,7 +2204,7 @@ border-radius for curved end of button
   height: 100%;
   padding-bottom: 4rem;
   grid-area: 1/1/2/3; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .videoinfo {
       grid-area: 1/1/2/-1; } }
 
@@ -2218,7 +2218,7 @@ border-radius for curved end of button
 .comment--area {
   width: 100%;
   height: 1100px; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .comment--area {
       height: 550px; } }
 
@@ -2278,7 +2278,7 @@ border-radius for curved end of button
   align-content: center;
   justify-items: center;
   background-image: linear-gradient(120deg, #28b485 30%, #5643fa 60%, #ff7730 90%); }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .morehead {
       grid-template-rows: repeat(1, minmax(4rem, min-content));
       grid-row-gap: 0rem; } }
@@ -2296,7 +2296,7 @@ border-radius for curved end of button
     font-weight: 600;
     letter-spacing: 1rem;
     font-family: 'Averia Serif Libre', cursive; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .morehead__learntext {
         font-size: 35px;
         letter-spacing: .5rem; } }
@@ -2312,7 +2312,7 @@ border-radius for curved end of button
     font-weight: 600;
     letter-spacing: 1rem;
     font-family: 'Averia Serif Libre', cursive; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .morehead__eventtext {
         font-size: 35px;
         letter-spacing: .5rem; } }
@@ -2327,7 +2327,7 @@ border-radius for curved end of button
     font-weight: 600;
     letter-spacing: 1rem;
     font-family: 'Averia Serif Libre', cursive; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .morehead__clubtext {
         font-size: 35px;
         letter-spacing: .5rem; } }
@@ -2341,7 +2341,7 @@ border-radius for curved end of button
   left: 0;
   padding: 1rem;
   transition: all 0.3s ease; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .morenav {
       height: 5REM;
       border-color: white; } }
@@ -2350,7 +2350,7 @@ border-radius for curved end of button
     width: 50%;
     float: right;
     margin-right: .5rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .morenav__right {
         margin-right: 0rem;
         width: 50%; } }
@@ -2360,13 +2360,13 @@ border-radius for curved end of button
   font-weight: 700;
   color: #fff;
   margin-right: 3rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .morebar_items {
       margin-right: .5rem; } }
   .morebar_items--icon {
     font-size: 4.6rem;
     top: 0; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .morebar_items--icon {
         font-size: 40px;
         top: -.6rem; } }
@@ -2382,7 +2382,7 @@ border-radius for curved end of button
   margin-right: 5rem; }
   .homebutton:active, .homebutton:focus {
     outline: none; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .homebutton {
       margin-right: 2rem;
       position: relative;
@@ -2396,7 +2396,7 @@ border-radius for curved end of button
   position: relative;
   right: 18rem;
   top: -1.8rem; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .searchmore {
       right: 4rem;
       top: -2.3rem; } }
@@ -2414,7 +2414,7 @@ border-radius for curved end of button
     color: #29313a;
     border: 3px solid rgba(46, 19, 199, 0.5);
     transition: all 0.8s; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .searchmore__input {
         height: 3.5rem;
         right: 1.9rem;
@@ -2435,7 +2435,7 @@ border-radius for curved end of button
     border: none;
     outline: none;
     background: #5643fa; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .searchmore__btn {
         width: 4.2rem;
         height: 4.2rem;
@@ -2447,7 +2447,7 @@ border-radius for curved end of button
   .searchmore:hover .searchmore__input {
     width: 25rem;
     color: #000; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .searchmore:hover .searchmore__input {
         width: 20rem; } }
 
@@ -2484,7 +2484,7 @@ border-radius for curved end of button
   border: 0.1rem solid #000; }
   .progressbox button:focus {
     outline: none; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .progressbox {
       width: 27rem;
       height: 8rem;
@@ -2501,7 +2501,7 @@ border-radius for curved end of button
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .progressbox__text {
         font-size: 1.5rem;
         width: 25rem; } }
@@ -2509,7 +2509,7 @@ border-radius for curved end of button
     position: absolute;
     top: 3rem;
     right: 22rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .progressbox__bar {
         right: 6rem; } }
   .progressbox__percentage {
@@ -2518,7 +2518,7 @@ border-radius for curved end of button
     left: 15rem;
     top: 2.4rem;
     font-size: 2rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .progressbox__percentage {
         left: 12rem; } }
   .progressbox__btn {
@@ -2529,7 +2529,7 @@ border-radius for curved end of button
     top: 5.3rem;
     left: 12.2rem;
     padding: 0.4rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .progressbox__btn {
         top: 4.8rem;
         left: 8.5rem; } }
@@ -2544,7 +2544,7 @@ border-radius for curved end of button
   cursor: pointer; }
   .vidbtn :hover {
     color: #5643fa; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .vidbtn {
       font-size: 2.4rem; } }
 
@@ -2557,7 +2557,7 @@ progress {
   background-color: #eee;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     ::-webkit-progress-bar {
       width: 25rem;
       height: 2rem; } }
@@ -2644,7 +2644,7 @@ progress {
   background-color: rgba(0, 0, 0, 0.8);
   /* Black w/ opacity */
   /* Modal Content */ }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .editpanel {
       padding-top: 17px; } }
   .editpanel_content {
@@ -2660,7 +2660,7 @@ progress {
     font-size: 20px;
     line-height: 3rem;
     padding-top: 1rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .editpanel_content {
         width: 90%;
         height: 98%;
@@ -2682,7 +2682,7 @@ progress {
       top: -4.5%;
       left: 47%;
       border: 2px solid black; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .editpanel_content--icon {
           display: none; } }
     .editpanel_content--close {
@@ -2691,7 +2691,7 @@ progress {
       position: relative;
       left: 105%;
       top: -6%; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .editpanel_content--close {
           left: 90%; } }
       .editpanel_content--close:hover {
@@ -2705,7 +2705,7 @@ progress {
       border-radius: 4px;
       resize: vertical;
       margin-bottom: 3rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .editpanel_content input[type=text], .editpanel_content [type=email], .editpanel_content [type=date] {
           width: 100%;
           margin-bottom: 1rem; } }
@@ -2716,7 +2716,7 @@ progress {
       border-radius: 4px;
       resize: vertical;
       height: 18%; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .editpanel_content input[type=text] select, .editpanel_content textarea {
           width: 100%;
           margin-bottom: 1rem; } }
@@ -2761,7 +2761,7 @@ button:focus {
   color: #5643fa;
   background-color: #fff;
   box-shadow: 0 2px 20px rgba(33, 33, 33, 0.8); }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .editbtn {
       font-size: 25px;
       left: 7%;
@@ -2771,7 +2771,7 @@ button:focus {
   .editbtn:hover {
     transform: translateY(-0.5rem);
     transition: all .4s; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .editbtn:hover {
         transform: translateY(-1rem); } }
 
@@ -2779,14 +2779,14 @@ button:focus {
   width: 100%;
   height: 90vh;
   position: relative; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .coverpic {
       height: 70vh; } }
   .coverpic_img {
     background-image: linear-gradient(to right bottom, rgba(22, 21, 24, 0), rgba(14, 15, 15, 0));
     width: 100%;
     height: 90vh; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .coverpic_img {
         width: 100%;
         height: 70vh; } }
@@ -2797,7 +2797,7 @@ button:focus {
       background-repeat: no-repeat;
       transition: all .6s;
       background-attachment: fixed; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .coverpic_img--pic {
           height: 70vh; } }
   .coverpic:hover .coverpic_name {
@@ -2818,7 +2818,7 @@ button:focus {
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 6rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .coverpic_name {
         margin-bottom: 0rem; } }
     .coverpic_name--main {
@@ -2827,7 +2827,7 @@ button:focus {
       font-weight: 600;
       letter-spacing: 1rem;
       font-family: 'Roboto', sans-serif; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .coverpic_name--main {
           font-size: 35px;
           font-weight: 700;
@@ -2837,7 +2837,7 @@ button:focus {
       font-size: 4rem;
       font-weight: 700;
       letter-spacing: .4rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .coverpic_name--sub {
           font-size: 25px;
           font-weight: 700;
@@ -2854,7 +2854,7 @@ button:focus {
     cursor: pointer;
     margin-top: -3rem;
     background-color: #fff; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .coverpic .upload_btn {
         width: 5rem;
         height: 5rem;
@@ -2889,7 +2889,7 @@ button:focus {
   padding: 8rem;
   justify-content: center;
   align-content: center; }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .personalinfo {
       grid-template-rows: repeat(1, minmax(40rem, min-content));
       grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
@@ -2907,7 +2907,7 @@ button:focus {
       letter-spacing: .2rem;
       padding-left: 3rem;
       font-family: 'Roboto', sans-serif; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .personalinfo .personalinfo_about--title {
           padding-left: 1rem; } }
     .personalinfo .personalinfo_about--para {
@@ -2919,7 +2919,7 @@ button:focus {
       margin-top: 1rem;
       font-weight: 500;
       padding: 2rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .personalinfo .personalinfo_about--para {
           font-size: 14px;
           letter-spacing: .2px;
@@ -2931,7 +2931,7 @@ button:focus {
     width: 100%;
     height: 100%;
     margin-left: 2rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .personalinfo .personalinfo_img {
         width: 80%;
         margin-left: 2rem; } }
@@ -2941,7 +2941,7 @@ button:focus {
       height: 40rem;
       box-shadow: 1rem 1rem 1rem 0.4rem rgba(14, 15, 15, 0.6);
       border: 4px solid #fff; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .personalinfo .personalinfo_img--pic {
           width: 30rem;
           height: 37rem; } }
@@ -2970,7 +2970,7 @@ button:focus {
       font-weight: bold;
       text-transform: uppercase;
       border-bottom: 1px solid #ebe6e6; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .personalinfo .personalinfo_details--info {
           padding-left: 1rem;
           padding-bottom: 0rem; } }
@@ -2983,7 +2983,7 @@ button:focus {
         font-weight: 600;
         letter-spacing: .1rem;
         color: #000; }
-        @media (max-width: 813px) {
+        @media (max-width: 824px) {
           .personalinfo .personalinfo_details--info--text {
             font-size: 16px; } }
 
@@ -2997,7 +2997,7 @@ button:focus {
   width: 100%;
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(1rem, max-content)); }
-  @media (max-width: 813px) {
+  @media (max-width: 824px) {
     .contact {
       height: 60%;
       padding-bottom: 5rem; } }
@@ -3009,7 +3009,7 @@ button:focus {
     letter-spacing: .4rem;
     padding: 5rem;
     margin-bottom: 2rem; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .contact_title {
         margin-bottom: 1rem;
         padding: 2rem;
@@ -3027,7 +3027,7 @@ button:focus {
     justify-content: center;
     color: #fff;
     font-size: 38px; }
-    @media (max-width: 813px) {
+    @media (max-width: 824px) {
       .contact_items {
         font-size: 30px;
         grid-template-columns: repeat(auto-fill, minmax(350px, 450px)); } }
@@ -3035,7 +3035,7 @@ button:focus {
       width: 100%;
       text-align: center;
       padding: 3rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .contact_items--call {
           padding: 2rem;
           width: 90%; } }
@@ -3043,20 +3043,20 @@ button:focus {
         box-shadow: inset 0 0 0 10px white;
         transition: all .8s;
         background-color: rgba(0, 0, 0, 0.459); }
-        @media (max-width: 813px) {
+        @media (max-width: 824px) {
           .contact_items--call:hover {
             box-shadow: inset 0 0 0 5px white; } }
       .contact_items--call--1 {
         font-size: 25px;
         letter-spacing: .3rem; }
-        @media (max-width: 813px) {
+        @media (max-width: 824px) {
           .contact_items--call--1 {
             font-size: 18px; } }
     .contact_items--location {
       width: 100%;
       text-align: center;
       padding: 3rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .contact_items--location {
           padding: 2rem;
           width: 90%; } }
@@ -3064,21 +3064,21 @@ button:focus {
         box-shadow: inset 0 0 0 10px white;
         transition: all .8s;
         background-color: rgba(0, 0, 0, 0.459); }
-        @media (max-width: 813px) {
+        @media (max-width: 824px) {
           .contact_items--location:hover {
             box-shadow: inset 0 0 0 5px white; } }
       .contact_items--location--1 {
         font-size: 25px;
         letter-spacing: .3rem;
         line-height: 2.5rem; }
-        @media (max-width: 813px) {
+        @media (max-width: 824px) {
           .contact_items--location--1 {
             font-size: 18px; } }
     .contact_items--mail {
       width: 100%;
       text-align: center;
       padding: 3rem; }
-      @media (max-width: 813px) {
+      @media (max-width: 824px) {
         .contact_items--mail {
           padding: 2rem;
           width: 90%; } }
@@ -3086,38 +3086,32 @@ button:focus {
         box-shadow: inset 0 0 0 10px white;
         transition: all .8s;
         background-color: rgba(0, 0, 0, 0.459); }
-        @media (max-width: 813px) {
+        @media (max-width: 824px) {
           .contact_items--mail:hover {
             box-shadow: inset 0 0 0 5px white; } }
       .contact_items--mail--1 {
         font-size: 25px;
         letter-spacing: .3rem; }
-        @media (max-width: 813px) {
+        @media (max-width: 824px) {
           .contact_items--mail--1 {
             font-size: 18px; } }
 
 .notify {
-  display: block;
-  /* Hidden by default */
+  display: none;
   position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
+  z-index: 3;
   padding-top: 100px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: black;
-  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
   /* Modal Content */ }
+  @media (max-width: 824px) {
+    .notify {
+      padding-top: 30px; } }
   .notify_panel {
     background-color: #fefefe;
     margin: auto;
@@ -3126,31 +3120,62 @@ button:focus {
     width: 65%;
     height: 80%;
     overflow-y: scroll;
-    text-align: center; }
+    text-align: center;
+    position: relative; }
+    @media (max-width: 824px) {
+      .notify_panel {
+        width: 95%;
+        height: 95%;
+        padding: 10px; } }
     .notify_panel--title {
       font-size: 28px;
       font-weight: bold;
       display: inline-block;
       border-bottom: 2px solid grey;
       padding: 10px; }
+      @media (max-width: 824px) {
+        .notify_panel--title {
+          font-size: 18px;
+          padding: 4px; } }
+    .notify_panel--close {
+      position: absolute;
+      right: 4%;
+      top: 6%;
+      font-size: 2.5rem; }
+      @media (max-width: 824px) {
+        .notify_panel--close {
+          right: 4%;
+          top: 2%;
+          font-size: 2.2rem; } }
+      .notify_panel--close:hover {
+        transform: translateY(-0.3rem);
+        transition: all .3s; }
     .notify_panel_layout {
       width: 100%;
       display: grid;
       grid-template-rows: repeat(1, minmax(15rem, min-content));
-      grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+      grid-template-columns: repeat(1, minmax(470px, 1fr));
       grid-auto-rows: 15rem;
       grid-row-gap: 2rem;
       justify-items: center;
       justify-content: center;
       margin-top: 2rem; }
+      @media (max-width: 824px) {
+        .notify_panel_layout {
+          grid-template-rows: repeat(1, minmax(20rem, min-content));
+          grid-template-columns: repeat(1, minmax(200px, 1fr));
+          grid-auto-rows: 20rem; } }
     .notify_panel_notes {
       width: 100%;
       border: 1px solid black;
       height: 100%;
       position: relative;
       background-image: linear-gradient(to right bottom, rgba(46, 12, 236, 0.808), rgba(8, 129, 243, 0.849));
-      padding: 1.3rem;
+      padding: 1rem;
       border-radius: .5rem; }
+      @media (max-width: 824px) {
+        .notify_panel_notes {
+          padding: 1rem; } }
       .notify_panel_notes:hover {
         transform: translateY(-0.3rem);
         transition: all .3s;
@@ -3159,10 +3184,85 @@ button:focus {
         border: 1px solid white;
         float: left;
         height: 100%;
-        width: 20%; }
+        width: 20%;
+        object-fit: cover; }
+        @media (max-width: 824px) {
+          .notify_panel_notes--thumb {
+            display: none; } }
       .notify_panel_notes--user {
-        border: 1px solid green;
-        display: inline-block; }
+        position: absolute;
+        left: 25%;
+        padding-left: 3rem; }
+        @media (max-width: 824px) {
+          .notify_panel_notes--user {
+            left: 5%;
+            top: 4%;
+            width: 75%; } }
+        .notify_panel_notes--user--photo {
+          border-radius: 50%;
+          width: 5rem;
+          height: 4.5rem;
+          position: absolute;
+          left: -3%; }
+          .notify_panel_notes--user--photo--size {
+            width: inherit;
+            border-radius: inherit;
+            height: inherit; }
         .notify_panel_notes--user--name {
-          font-size: 20px;
+          font-size: 24px;
           color: white; }
+          @media (max-width: 824px) {
+            .notify_panel_notes--user--name {
+              font-size: 18px;
+              margin-right: 3%;
+              margin-left: 4%; } }
+        .notify_panel_notes--user--tag {
+          font-size: 14px;
+          padding-left: 1rem;
+          color: #d6d1d1; }
+          @media (max-width: 824px) {
+            .notify_panel_notes--user--tag {
+              font-size: 10px;
+              margin-top: 1rem; } }
+        .notify_panel_notes--user--icon {
+          color: white;
+          font-size: 20px;
+          padding-left: 1rem;
+          width: 2%; }
+          @media (max-width: 824px) {
+            .notify_panel_notes--user--icon {
+              font-size: 10px; } }
+        .notify_panel_notes--user--btn {
+          width: 0%;
+          color: white;
+          font-size: 20px;
+          position: absolute;
+          left: 145%;
+          border: none; }
+          @media (max-width: 824px) {
+            .notify_panel_notes--user--btn {
+              font-size: 14px;
+              left: 115%;
+              top: 2%; } }
+          .notify_panel_notes--user--btn:hover {
+            transform: scale(1.2);
+            color: red;
+            transition: all .4s; }
+      .notify_panel_notes--comment {
+        position: absolute;
+        left: 24%;
+        top: 32%;
+        color: white;
+        font-size: 16px;
+        text-align: left;
+        line-height: 1.8rem;
+        font-weight: 500;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        letter-spacing: .8px;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic; }
+        @media (max-width: 824px) {
+          .notify_panel_notes--comment {
+            font-size: 10px;
+            left: 4%; } }
