@@ -711,7 +711,7 @@ border-radius for curved end of button
   @media (max-width: 824px) {
     .usercontainer {
       width: 30rem;
-      height: 35rem;
+      height: 38rem;
       top: 7rem;
       right: .5rem; } }
 
@@ -730,7 +730,7 @@ border-radius for curved end of button
   @media (max-width: 824px) {
     .signincontainer {
       width: 28rem;
-      height: 33rem; } }
+      height: 36rem; } }
   .signincontainer__img {
     position: absolute;
     top: .55rem;
@@ -750,7 +750,7 @@ border-radius for curved end of button
   list-style-type: none;
   text-align: center; }
   .ul__list--items {
-    margin: .55rem; }
+    margin: .53rem; }
     .ul__list--items--progress {
       display: block; }
 
@@ -760,7 +760,8 @@ border-radius for curved end of button
   font-weight: 700;
   padding: .56rem;
   border-radius: 1rem;
-  margin: 1rem;
+  margin: .2rem;
+  font-size: 18px;
   background-color: #9dcfff; }
   @media (max-width: 824px) {
     .list--link, .list--link:visited {
@@ -1557,16 +1558,6 @@ border-radius for curved end of button
         font-size: 35px;
         left: 1.5rem;
         top: 11.5rem; } }
-  .footer__copy {
-    position: absolute;
-    font-size: 2rem;
-    top: 35rem; }
-    @media (max-width: 824px) {
-      .footer__copy {
-        font-size: 15px;
-        top: 45rem;
-        left: -2rem;
-        width: 150%; } }
   .footer__communication {
     font-size: 5rem; }
     @media (max-width: 824px) {
@@ -1579,7 +1570,7 @@ border-radius for curved end of button
       color: #fff;
       font-size: 3rem;
       font-weight: 600;
-      letter-spacing: .5rem;
+      letter-spacing: .2rem;
       transform: rotate(7deg); }
       @media (max-width: 824px) {
         .footer__communication--text {
@@ -1587,7 +1578,7 @@ border-radius for curved end of button
           transform: rotate(0);
           font-weight: 200;
           top: 15rem;
-          left: 22rem; } }
+          left: 55%; } }
     .footer__communication--call {
       position: absolute;
       color: #5643fa;
@@ -2647,6 +2638,22 @@ progress {
   @media (max-width: 824px) {
     .editpanel {
       padding-top: 17px; } }
+  .editpanel_drop {
+    width: 30%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 3rem; }
+    @media (max-width: 824px) {
+      .editpanel_drop {
+        width: 70%;
+        margin-bottom: 1rem; } }
+    .editpanel_drop--item {
+      font-size: 14px; }
+      @media (max-width: 824px) {
+        .editpanel_drop--item {
+          font-size: 10px; } }
   .editpanel_content {
     background-color: #fefefe;
     margin: auto;
