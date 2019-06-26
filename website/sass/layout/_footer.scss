@@ -55,20 +55,6 @@
     }
 
 
-    //copyright text
-    &__copy
-    {
-        position:absolute;
-        font-size: 2rem;
-        top: 35rem;
-        @include respond(phone){
-            font-size: 15px;
-            top: 45rem;
-            left: -2rem;
-            width: 150%;
-        }
-    }
-
 
 
     //conatact us icons
@@ -90,7 +76,7 @@
             color: $color-white;
             font-size: 3rem;
             font-weight: 600;
-            letter-spacing: .5rem;
+            letter-spacing: .2rem;
             transform: rotate(7deg);
 
             @include respond(phone){
@@ -98,7 +84,7 @@
                 transform: rotate(0);
                 font-weight: 200;
                 top: 15rem;
-                left: 22rem;
+                left: 55%;
                
             }
             
