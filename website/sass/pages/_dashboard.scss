@@ -36,7 +36,6 @@
     padding-left: 15rem;
     padding-right: 15rem;
 
-  
     @include respond(tab-land) {
       padding: 4rem;
       grid-gap: 6rem;
@@ -45,7 +44,6 @@
     @include respond(phone) {
       padding: 2rem;
     }
-   
   }
   // the video card stored in video--card.scss--->
 }
@@ -79,17 +77,27 @@
     background-color: $color-tertiary-dark-1;
     transform: translateY(-0.2rem);
   }
-// larger screen mixin at first then the smaller
+  // larger screen mixin at first then the smaller
   @include respond(tab-land) {
-   position: sticky;
-   float: right;
-   padding: .33rem;
+    position: sticky;
+    float: right;
+    padding: 0.33rem;
   }
   @include respond(phone) {
     font-size: 2rem;
     margin-top: -0.4rem;
     padding: 0.28rem;
-    padding-left: .55rem;
-    padding-right: .55rem;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
   }
+}
+
+// playlist
+.playlist--details {
+  float: right;
+  width: 45%;
+  height: 100%;
+  color: white;
+  background-color: rgba($color-black, 0.66);
+  box-shadow: 0rem 0rem 1rem rgba(#1e2a3b, 0.66);
 }

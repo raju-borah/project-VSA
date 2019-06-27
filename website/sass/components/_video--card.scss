@@ -6,8 +6,9 @@
   box-shadow: 0rem 1rem 1rem rgba($color-tertiary-dark-2, 0.36);
   background-color: #fff;
 
-  
-
+  &--playlist{
+    border: none;
+  }
   // for the image division
   &--img {
     width: 100%;
@@ -16,20 +17,23 @@
     background-image: url("/img/error-1.png");
     background-size: cover;
     cursor: pointer;
-    &--playlist{
-      height:auto;
+
+
+    &--playlist {
+      height: auto;
+      &1{
+        height: 30rem;
+      }
     }
   }
 
-  &--playicon
-  {
-      color:rgba($color-black,.4);
-      font-size: 5rem;
-      z-index:1;
-      display: inline-block;
-      position: relative;
-      left: 44%;
-  
+  &--playicon {
+    color: rgba($color-black, 0.4);
+    font-size: 5rem;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
+    left: 44%;
   }
   // tag for identifying the type of video category
   &--tag {
@@ -41,18 +45,24 @@
     width: 50%;
     top: 73.5%;
     left: 0;
+    &--playlist {
+      background-color: rgba($color-black, 0.8);
+      width: 100%;
+      text-align: center;
+      @include respond(phone){
+    top: 66%;
 
-  
+      }
+    }
+
     &--learning {
-    background-color: $color-primary-dark;
+      background-color: $color-primary-dark;
     }
     &--event {
-      background-color:$color-tertiary-dark;
-
+      background-color: $color-tertiary-dark;
     }
     &--club {
-      background-color:$color-secondary-dark;
-
+      background-color: $color-secondary-dark;
     }
     &--dashboard {
       box-shadow: 1rem 1rem 5rem rgba($color-tertiary-dark-2, 0.36);
@@ -63,7 +73,7 @@
     padding: 2rem;
     font-size: 1.7rem;
     width: 100%;
-    @include respond(phone){
+    @include respond(phone) {
       font-size: 1.7rem;
     }
     // fot the title
@@ -73,7 +83,7 @@
       font-weight: bold;
       color: $color-primary-dark-1;
 
-      @include respond(phone){
+      @include respond(phone) {
         font-size: 1.8rem;
       }
     }
@@ -98,4 +108,3 @@
     display: inline;
   }
 }
-
