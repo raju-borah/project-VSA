@@ -153,14 +153,18 @@ body {
   height: 120%;
   overflow-y: scroll; }
   .list--option {
+    list-style-type: none;
     padding: 1rem;
     display: none;
     height: auto;
     overflow-y: hidden;
     position: absolute;
     right: 3.5%;
-    top: 38%;
+    margin-top: -3rem;
     background: black; }
+    .list--option--plist {
+      margin-top: -3.5rem;
+      margin-right: 0rem; }
     .list--option:hover {
       display: block; }
   @media (max-width: 824px) {
@@ -170,7 +174,7 @@ body {
     margin: 1rem; }
     .list--items--option {
       margin: 0;
-      padding: .5rem; }
+      padding: 0.5rem; }
       .list--items--option:hover {
         background: white; }
       .list--items--option:hover .btnlist {

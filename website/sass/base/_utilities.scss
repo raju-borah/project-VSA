@@ -57,16 +57,24 @@
   list-style-type: none;
   height: 120%;
   overflow-y: scroll;
+
+  // for the playlist videos
   &--option {
+    list-style-type: none;
     padding: 1rem;
     display: none;
     height: auto;
     overflow-y: hidden;
     position: absolute;
     right: 3.5%;
-    top: 38%;
+    margin-top: -3rem;
+
     background: black;
 
+    &--plist {
+      margin-top: -3.5rem;
+      margin-right: 0rem;
+    }
     &:hover {
       display: block;
     }
@@ -80,7 +88,7 @@
 
     &--option {
       margin: 0;
-      padding: .5rem;
+      padding: 0.5rem;
       &:hover {
         background: white;
       }
