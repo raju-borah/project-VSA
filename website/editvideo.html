@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- google font style -->
-    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Philosopher|Boogaloo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Philosopher" rel="stylesheet">
     <!-- Icon on Title  -->
 
     <!-- font awesome -->
@@ -23,19 +23,18 @@
     <div class="upload" id="upload">
         <!-- container     width: 50%;  height: auto; -->
         <form class="upload__container u-center-text ">
-            <!-- upload videos section -->
 
             <!-- anchor tag  to redirect to the dashboard-->
             <button class="btn--close">&times;</button>
 
             <!-- heading -->
-            <h1 class="font-medium u-margin-bottom-small">Edit Video Details</h1>
+            <h1 class="font-medium u-margin-bottom-small"><i class="fas fa-edit"></i>Edit Video Details</h1>
             <!-- for video title that will be given by the user -->
             <input type="text" class="form__input--upload form__input--upload--1" id="upload-title" placeholder="Title"
-                required>
+                >
             <!-- for description of video -->
             <textarea class="form__input--upload form__input--upload--1" id="upload-description"
-                placeholder="Description" required></textarea>
+                placeholder="Description"></textarea>
             <!-- for selecting the category -->
             <select id="video-category" class="form__input--upload form__input--upload--2">
                 <option value="Select Category" selected>Select Category</option>
@@ -43,27 +42,14 @@
                 <option value="Events">Events</option>
                 <option value="Entertainment">Club activities</option>
             </select>
-            <!-- radio button for playlist -->
-            <label for="opt1" class="font-small">
-                <input type="radio" name="rdo"  id="opt1" />
-                Create Playlist
-            </label>
-            <label for="opt2" class="font-small">
-                <input type="radio" name="rdo" id="opt2" />
-                Exsiting playlist
-            </label>
-
+    
             <br>
-            <!-- button that will start the process of upload the file to server -->
-            <button class="btn btn--upload" type="submit" id="upload-video">Save Changes</button>
+            <!-- button that will save the changes-->
+            <button class="btn btn--upload" type="submit">Save Changes</button>
         </form>
 
     </div>
-    <!-- ending of upload section -->
 
-    <!-- javascript of upload button -->
-    <script src="js/upload.js">
-    </script>
 </body>
 
 </html>

@@ -634,7 +634,8 @@ border-radius for curved end of button
   background: transparent;
   border: none;
   outline: none;
-  color: white; }
+  color: white;
+  font-weight: 300; }
 
 .navigationbar {
   position: relative;
@@ -2021,12 +2022,12 @@ border-radius for curved end of button
     transform: translateY(-0.3rem); }
 
 .custom-text {
+  width: 200px;
   font-size: 2rem;
   margin: 1rem;
-  text-overflow: ellipsis;
-  /* Required for text-overflow to do anything */
   white-space: nowrap;
-  overflow: hidden; }
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .settings {
   width: 100%;
@@ -2551,7 +2552,6 @@ border-radius for curved end of button
     position: absolute;
     width: 30rem;
     left: 1rem;
-    top: 0.1rem;
     top: 0.1rem;
     font-size: 1.9rem;
     white-space: nowrap;

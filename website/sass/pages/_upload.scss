@@ -19,10 +19,12 @@
 }
 // custom text
 .custom-text {
+
+  width: 200px;
   font-size: 2rem;
   margin: 1rem;
-  text-overflow: ellipsis;
-  /* Required for text-overflow to do anything */
+
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
