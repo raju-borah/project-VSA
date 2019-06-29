@@ -1539,12 +1539,12 @@ border-radius for curved end of button
   .footer__logo {
     position: absolute;
     top: 5rem;
-    font-size: 20rem;
-    left: 65rem; }
+    font-size: 200px;
+    left: 42%; }
     @media (max-width: 824px) {
       .footer__logo {
         font-size: 100px;
-        left: 13rem;
+        left: 40%;
         top: -2rem;
         color: white; } }
   .footer__logo-name {
@@ -1565,8 +1565,8 @@ border-radius for curved end of button
         font-size: 35px; } }
     .footer__communication--text {
       position: absolute;
-      top: 11rem;
-      left: 18rem;
+      top: 20%;
+      left: 12%;
       color: #fff;
       font-size: 3rem;
       font-weight: 600;
@@ -1578,17 +1578,17 @@ border-radius for curved end of button
           transform: rotate(0);
           font-weight: 200;
           top: 15rem;
-          left: 55%; } }
+          left: 65%; } }
     .footer__communication--call {
       position: absolute;
       color: #5643fa;
-      top: 18rem;
-      left: 23rem;
+      top: 30%;
+      left: 15%;
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--call {
           top: 22rem;
-          left: 25rem; } }
+          left: 70%; } }
       .footer__communication--call:hover {
         transform: translateY(-2rem); }
     .footer__communication--callinfo {
@@ -1602,20 +1602,21 @@ border-radius for curved end of button
         .footer__communication--callinfo {
           position: relative;
           font-size: 15px;
-          top: -4rem; } }
+          top: -4rem;
+          left: -15%; } }
     .footer__communication--call:hover .footer__communication--callinfo {
       visibility: visible;
       color: #fff; }
     .footer__communication--location {
       position: absolute;
       color: #28b485;
-      top: 30rem;
-      left: 20rem;
+      top: 50%;
+      left: 13%;
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--location {
           top: 29rem;
-          left: 25rem; } }
+          left: 70%; } }
       .footer__communication--location:hover {
         transform: translateY(-2rem); }
     .footer__communication--locationinfo {
@@ -1630,20 +1631,21 @@ border-radius for curved end of button
         .footer__communication--locationinfo {
           position: relative;
           font-size: 10px;
-          top: -3rem; } }
+          top: -3rem;
+          left: -15%; } }
     .footer__communication--location:hover .footer__communication--locationinfo {
       visibility: visible;
       color: #fff; }
     .footer__communication--mail {
       position: absolute;
       color: red;
-      top: 40rem;
-      left: 15rem;
+      top: 70%;
+      left: 10%;
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--mail {
           top: 35rem;
-          left: 25rem; } }
+          left: 70%; } }
       .footer__communication--mail:hover {
         transform: translateY(-2rem); }
     .footer__communication--mailinfo {
@@ -1658,7 +1660,8 @@ border-radius for curved end of button
         .footer__communication--mailinfo {
           position: relative;
           font-size: 10px;
-          top: -3rem; } }
+          top: -3rem;
+          left: -15%; } }
     .footer__communication--mail:hover .footer__communication--mailinfo {
       visibility: visible;
       color: #fff; }
@@ -1668,7 +1671,7 @@ border-radius for curved end of button
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: .5rem;
-    right: 29rem;
+    right: 10%;
     top: 10rem; }
     @media (max-width: 824px) {
       .footer__social--text {
@@ -1682,8 +1685,8 @@ border-radius for curved end of button
     position: absolute;
     color: #5643fa;
     font-size: 6rem;
-    right: 40rem;
-    top: 13rem; }
+    right: 20%;
+    top: 24%; }
     @media (max-width: 824px) {
       .footer__social--fb {
         font-size: 35px;
@@ -1693,8 +1696,8 @@ border-radius for curved end of button
     position: absolute;
     color: #2998ff;
     font-size: 6rem;
-    right: 35rem;
-    top: 23rem; }
+    right: 18%;
+    top: 40%; }
     @media (max-width: 824px) {
       .footer__social--twit {
         font-size: 35px;
@@ -1704,8 +1707,8 @@ border-radius for curved end of button
     position: absolute;
     color: #2998ff;
     font-size: 6rem;
-    right: 30rem;
-    top: 33rem; }
+    right: 16%;
+    top: 55%; }
     @media (max-width: 824px) {
       .footer__social--link {
         font-size: 35px;
