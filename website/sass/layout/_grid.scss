@@ -113,4 +113,23 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
+
+    &--1{
+        grid-template-rows: max-content;
+        grid-template-columns: .2fr .8fr;
+
+        @include respond(nohd){
+        grid-template-columns: .5fr .5fr;
+
+        }
+        @include respond(phone){
+        grid-template-rows: 200px;
+        grid-template-columns: .5fr .5fr;
+
+        .playlist--desc{
+            display: none;
+        }
+
+        }
+    }
   }

@@ -1,58 +1,116 @@
 // these are utilies class for better adjustment of the division,text etc.
-.u-center-text{              text-align: center;          }
-.u-margin-bottom-small{      margin-bottom: 1.5rem;   }
-.u-margin-top-large{        margin-top: 3rem;   }
-.u-margin-left-large{        margin-left: 20rem;   }
-.u-margin-right-large{        margin-right: 3rem;   }
-.u-end-text{              float: right;        }
-.u-margin{ margin: 4rem;}
-.u-margin-bottom-medium{     margin-bottom: 4rem;   }
-.u-margin-right-medium{        margin-right: 2rem;   }
-.textShadow{    text-shadow: 0 .61rem 1rem rgba($color-black,0.99);    }
+.u-center-text {
+  text-align: center;
+}
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+.u-margin-top-large {
+  margin-top: 3rem;
+}
+.u-margin-left-large {
+  margin-left: 20rem;
+}
+.u-margin-right-large {
+  margin-right: 3rem;
+}
+.u-end-text {
+  float: right;
+}
+.u-margin {
+  margin: 4rem;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+.u-margin-right-medium {
+  margin-right: 2rem;
+}
+.textShadow {
+  text-shadow: 0 0.61rem 1rem rgba($color-black, 0.99);
+}
 // for icon
-.icon{
-    width: 3rem;
-    height: 3rem;
-    margin-left: 2rem;
+.icon {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 2rem;
 }
 
 // font size utilities
-.font-xsmall{ font-size: 1.4rem;}
-.font-small{ font-size: 2rem;}
-
-.font-medium{   font-size: 3rem; 
-
-@include respond(phone){
-font-size: 22px;
+.font-xsmall {
+  font-size: 1.4rem;
 }
+.font-small {
+  font-size: 2rem;
+}
+
+.font-medium {
+  font-size: 3rem;
+
+  @include respond(phone) {
+    font-size: 22px;
+  }
 }
 
 // suggestion list
-.list{   
-list-style-type: none;
-height: 120%;
-overflow-y: scroll; 
+.list {
+  list-style-type: none;
+  height: 120%;
+  overflow-y: scroll;
 
+  // for the playlist videos
+  &--option {
+    list-style-type: none;
+    padding: 1rem;
+    display: none;
+    height: auto;
+    overflow-y: hidden;
+    position: absolute;
+    right: 3.5%;
+    margin-top: -3rem;
 
-@include respond(phone){
+    background: black;
+
+    &--plist {
+      margin-top: -3.5rem;
+      margin-right: 0rem;
+    }
+    &:hover {
+      display: block;
+    }
+  }
+  @include respond(phone) {
     height: 50%;
+  }
+
+  &--items {
+    margin: 1rem;
+
+    &--option {
+      margin: 0;
+      padding: 0.5rem;
+      &:hover {
+        background: white;
+      }
+      &:hover .btnlist {
+        color: black;
+      }
+    }
+  }
 }
 
-&--items{
-    margin:1rem;
-}}
-
-.u-margin-top{        margin-top: 15%;   }
-.flex-center{
-    display: flex;
-    justify-content: center;
+.u-margin-top {
+  margin-top: 15%;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
 }
 
-.border
-{
-    border-radius: 1rem;
+.border {
+  border-radius: 1rem;
 }
 
-.hauto{
-    height: 600px;
+.hauto {
+  height: 600px;
 }

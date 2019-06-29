@@ -1,0 +1,19 @@
+.dashboardplaylist{
+    widows: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: .3fr .7fr;
+    grid-gap: 30px;
+    padding: 1rem;
+    padding-top: 3rem;
+    @include respond(tab-land){
+        grid-template-rows: 1fr;
+        grid-template-columns: .4fr .6fr;
+    }
+    @include respond(phone){
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+
+    }
+}

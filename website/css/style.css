@@ -152,11 +152,33 @@ body {
   list-style-type: none;
   height: 120%;
   overflow-y: scroll; }
+  .list--option {
+    list-style-type: none;
+    padding: 1rem;
+    display: none;
+    height: auto;
+    overflow-y: hidden;
+    position: absolute;
+    right: 3.5%;
+    margin-top: -3rem;
+    background: black; }
+    .list--option--plist {
+      margin-top: -3.5rem;
+      margin-right: 0rem; }
+    .list--option:hover {
+      display: block; }
   @media (max-width: 824px) {
     .list {
       height: 50%; } }
   .list--items {
     margin: 1rem; }
+    .list--items--option {
+      margin: 0;
+      padding: 0.5rem; }
+      .list--items--option:hover {
+        background: white; }
+      .list--items--option:hover .btnlist {
+        color: black; }
 
 .u-margin-top {
   margin-top: 15%; }
@@ -492,6 +514,12 @@ border-radius for curved end of button
   background-color: #eee;
   /* button hover */
   /* when clicked */ }
+  .btn--trans {
+    background: transparent; }
+    .btn--trans:hover {
+      color: #012A57; }
+    .btn--trans:hover ~ .list--option {
+      display: block; }
   .btn--comment {
     border-radius: 2rem;
     font-size: 2rem;
@@ -601,6 +629,13 @@ border-radius for curved end of button
     outline: none;
     /* for moving down */
     transform: translateY(-0.01rem); }
+
+.btnlist {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 300; }
 
 .navigationbar {
   position: relative;
@@ -1408,6 +1443,8 @@ border-radius for curved end of button
   border: 0.1rem solid black;
   box-shadow: 0rem 1rem 1rem rgba(23, 45, 68, 0.36);
   background-color: #fff; }
+  .vcard--playlist {
+    border: none; }
   .vcard--img {
     width: 100%;
     height: 20rem;
@@ -1417,6 +1454,8 @@ border-radius for curved end of button
     cursor: pointer; }
     .vcard--img--playlist {
       height: auto; }
+      .vcard--img--playlist1 {
+        height: 30rem; }
   .vcard--playicon {
     color: rgba(0, 0, 0, 0.4);
     font-size: 5rem;
@@ -1433,6 +1472,13 @@ border-radius for curved end of button
     width: 50%;
     top: 73.5%;
     left: 0; }
+    .vcard--tag--playlist {
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      text-align: center; }
+      @media (max-width: 824px) {
+        .vcard--tag--playlist {
+          top: 66%; } }
     .vcard--tag--learning {
       background-color: #28b485; }
     .vcard--tag--event {
@@ -1841,6 +1887,18 @@ border-radius for curved end of button
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr; }
+  .gridplaylist--1 {
+    grid-template-rows: max-content;
+    grid-template-columns: .2fr .8fr; }
+    @media (max-width: 1367px) {
+      .gridplaylist--1 {
+        grid-template-columns: .5fr .5fr; } }
+    @media (max-width: 824px) {
+      .gridplaylist--1 {
+        grid-template-rows: 200px;
+        grid-template-columns: .5fr .5fr; }
+        .gridplaylist--1 .playlist--desc {
+          display: none; } }
 
 .main {
   background-color: #fff; }
@@ -1967,12 +2025,12 @@ border-radius for curved end of button
     transform: translateY(-0.3rem); }
 
 .custom-text {
+  width: 200px;
   font-size: 2rem;
   margin: 1rem;
-  text-overflow: ellipsis;
-  /* Required for text-overflow to do anything */
   white-space: nowrap;
-  overflow: hidden; }
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .settings {
   width: 100%;
@@ -2120,14 +2178,22 @@ border-radius for curved end of button
     .floating--btn {
       position: sticky;
       float: right;
-      padding: .33rem; } }
+      padding: 0.33rem; } }
   @media (max-width: 824px) {
     .floating--btn {
       font-size: 2rem;
       margin-top: -0.4rem;
       padding: 0.28rem;
-      padding-left: .55rem;
-      padding-right: .55rem; } }
+      padding-left: 0.55rem;
+      padding-right: 0.55rem; } }
+
+.playlist--details {
+  float: right;
+  width: 45%;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.66);
+  box-shadow: 0rem 0rem 1rem rgba(30, 42, 59, 0.66); }
 
 .player {
   width: 100%;
@@ -2489,7 +2555,6 @@ border-radius for curved end of button
     position: absolute;
     width: 30rem;
     left: 1rem;
-    top: 0.1rem;
     top: 0.1rem;
     font-size: 1.9rem;
     white-space: nowrap;
@@ -3109,6 +3174,24 @@ button:focus {
         @media (max-width: 824px) {
           .contact_items--mail--1 {
             font-size: 18px; } }
+
+.dashboardplaylist {
+  widows: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: .3fr .7fr;
+  grid-gap: 30px;
+  padding: 1rem;
+  padding-top: 3rem; }
+  @media (max-width: 1024px) {
+    .dashboardplaylist {
+      grid-template-rows: 1fr;
+      grid-template-columns: .4fr .6fr; } }
+  @media (max-width: 824px) {
+    .dashboardplaylist {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr; } }
 
 .notify {
   display: none;

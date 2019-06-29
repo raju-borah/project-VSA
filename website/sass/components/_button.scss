@@ -7,7 +7,16 @@ border-radius for curved end of button
   font-size: 1.9rem;
   background-color: $color-grey-light-2;
 
-  
+  &--trans{
+    background: transparent;
+
+    &:hover{
+      color: $color-tertiary-dark-1;
+    }
+    &:hover ~ .list--option{
+      display: block;
+    }
+  }
 
   // for comment
   &--comment {
@@ -152,4 +161,14 @@ border-radius for curved end of button
     /* for moving down */
     transform: translateY(-0.01rem);
   }
+}
+
+.btnlist{
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 300;
+  
+
 }
