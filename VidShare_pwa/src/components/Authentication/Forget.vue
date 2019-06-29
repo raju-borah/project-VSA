@@ -7,9 +7,9 @@
         <form class="form form--login">
           <!-- home link -->
           <router-link :to="{name: 'Home'}">
-          <a class="login__home">
-            <i class="fas fa-home"></i>
-          </a>
+            <a class="login__home">
+              <i class="fas fa-home"></i>
+            </a>
           </router-link>
           <div class="flex-center">
             <!--signin  logo -->
@@ -55,7 +55,7 @@
 </template>
 <script>
 import { required, email } from "vuelidate/lib/validators";
-import firebase from "firebase";
+import { auth } from "firebase";
 export default {
   name: "Forget",
   data() {
@@ -72,8 +72,7 @@ export default {
   methods: {
     sendLink(state) {
       if (!state) {
-        firebase
-          .auth()
+        auth()
           .sendPasswordResetEmail(this.email)
           .then(() => {
             swal.fire({
