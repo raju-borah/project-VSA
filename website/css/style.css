@@ -174,7 +174,7 @@ body {
     margin: 1rem; }
     .list--items--option {
       margin: 0;
-      padding: 0.5rem; }
+      padding: 0; }
       .list--items--option:hover {
         background: white; }
       .list--items--option:hover .btnlist {
@@ -631,11 +631,16 @@ border-radius for curved end of button
     transform: translateY(-0.01rem); }
 
 .btnlist {
+  display: block;
   background: transparent;
   border: none;
   outline: none;
   color: white;
-  font-weight: 300; }
+  font-weight: 300;
+  padding: 1rem;
+  text-align: start; }
+  .btnlist--btn {
+    width: 100%; }
 
 .navigationbar {
   position: relative;

@@ -164,11 +164,15 @@ border-radius for curved end of button
 }
 
 .btnlist{
+  display: block;
   background: transparent;
   border: none;
   outline: none;
   color: white;
   font-weight: 300;
-  
-
+  padding: 1rem;
+  text-align: start;
+  &--btn{
+    width: 100%;
+  }
 }
