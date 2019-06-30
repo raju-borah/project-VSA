@@ -155,13 +155,50 @@ export default {
       swal.fire({
         title: "Upload Video",
         html:
-          '<input type="file" id="upload-file" accept="video/*" hidden="hidden"/>' +
-          '<span class="custom-text" >No file Choosen yet !</span>' +
-          '<button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A FILE</button>' +
-          '<input type="text" class="form__input--upload form__input--upload--1" id="upload-title" placeholder="Title" required>' +
-          '<textarea class="form__input--upload form__input--upload--1" id="upload-description" placeholder="Description" required></textarea>' +
-          '<select id="video-category" class="form__input--upload form__input--upload--2"><option value="" selected disabled>Select Category</option><option value="learning">Learning</option><option value="Events">Events</option><option value="Entertainment">Club activities</option></select>' +
-          '<button class="btn btn--upload" type="submit" id="upload-video">Upload</button>',
+          `<input type="file" id="upload-file" accept="video/*" hidden="hidden"/>` +
+          `<div class="flex-center">
+            <p class="custom-text">No file Choosen yet !</p>
+          </div>` +
+          `<button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A FILE</button>` +
+          `<input type="text" class="form__input--upload form__input--upload--1" id="upload-title" placeholder="Title" required>` +
+          `<textarea class="form__input--upload form__input--upload--1" id="upload-description" placeholder="Description" required></textarea>` +
+          `<select id="video-category" class="form__input--upload form__input--upload--2">
+            <option value="" selected disabled>Select Category</option>
+            <option value="learning">Learning</option>
+            <option value="Events">Events</option>
+            <option value="Entertainment">Club activities</option>
+            </select>
+            <br>` +
+          `<label for="playlistopt1" class="font-small">
+            <input type="radio" name="playlist" id="playlistopt1" />Create a New Playlist
+            </label>` +
+          `<div id="createplaylist" style="display: none;">
+                <input type="text" class="form__input--upload form__input--upload--1" id="playlist-title"
+                    placeholder="Playlist Title">
+                <textarea class="form__input--upload form__input--upload--1" id="playlist-description"
+                    placeholder="Playlist Description"></textarea>
+                <br>
+           </div>` +
+          `<br>
+            <label for="playlistopt2" class="font-small">
+                 <input type="radio" name="playlist" id="playlistopt2" />
+                Add to Exsiting playlist
+            </label>` +
+          ` <div id="existingplaylist" style="display: none;">
+                <!-- for selecting the category -->
+                <select id="video-playlist" class="form__input--upload form__input--upload--2">
+                    <option value="1" selected>Select Playlist</option>
+                    <option value="2">java tut</option>
+                    <option value="3">c# tut</option>
+                    <option value="4">vue tut</option>
+                </select>
+            </div>
+            <br>` +
+          ` <label for="playlistopt3" class="font-small">
+                 <input type="radio" name="playlist" id="playlistopt3" checked="checked"/>
+                Don't create a playlist
+            </label><br>` +
+          `<button class="btn btn--upload" type="submit" id="upload-video">Upload</button>`,
         focusConfirm: false,
         showCloseButton: true,
         showConfirmButton: false,
@@ -171,6 +208,29 @@ export default {
           const customBtn = dom.querySelector("#choose-video");
           const customText = dom.querySelector(".custom-text");
           const upload = dom.querySelector("#upload-video");
+
+          //  for createplaylist division selection
+          const createplaylist = dom.querySelector("#createplaylist");
+          //  for existing playlist division selection
+          const existingplaylist = dom.querySelector("#existingplaylist");
+          // radio button for create playlist and existing playlist
+
+          const crplaylist = dom.querySelector("#playlistopt1");
+          const explaylist = dom.querySelector("#playlistopt2");
+          const dontCreatePlaylist = dom.querySelector("#playlistopt3");
+          crplaylist.addEventListener("click", function() {
+            createplaylist.style.display = "block";
+            existingplaylist.style.display = "none";
+          });
+
+          explaylist.addEventListener("click", function() {
+            existingplaylist.style.display = "block";
+            createplaylist.style.display = "none";
+          });
+          dontCreatePlaylist.addEventListener("click", function() {
+            existingplaylist.style.display = "none";
+            createplaylist.style.display = "none";
+          });
 
           customBtn.addEventListener("click", function() {
             realFileBtn.click();
@@ -255,6 +315,38 @@ export default {
               }
             }
           });
+          // func to show warning msg
+          const showWarning = msg => {
+            swal
+              .fire({
+                type: "warning",
+                text: msg
+              })
+              .then(() => {
+                this.uploadForm();
+              });
+          };
+          // func to validate the title from firestore
+          const fireValidate = title => {
+            upload.style.display = "none";
+            swal.showLoading();
+            db.collection("uploadedVideos")
+              .where("by", "==", this.$store.state.uid)
+              .where("title", "==", title)
+              .get()
+              .then(querySnaphot => {
+                if (!querySnaphot.empty) {
+                  // title exist show warning
+                  showWarning(
+                    "You have already uploaded the video with same title! Please give unique title to your video"
+                  );
+                } else {
+                  // upload video
+                  this.$store.dispatch("uploadVideo", videoDetails);
+                  swal.close();
+                }
+              });
+          };
 
           //validation the upload form
           upload.addEventListener("click", () => {
@@ -266,67 +358,77 @@ export default {
               .value.trim();
             videoDetails.category = dom.querySelector("#video-category").value;
             videoDetails.thumbnail = videoThumbnail;
+
+            if (crplaylist.checked) {
+              // console.log("Create playlist");
+              videoDetails["playListTitle"] = dom.querySelector(
+                "#playlist-title"
+              ).value;
+              videoDetails["playListDescription"] = dom.querySelector(
+                "#playlist-description"
+              ).value;
+            }
+            if (explaylist.checked) {
+              videoDetails["existingPlayList"] = dom.querySelector(
+                "#video-playlist"
+              ).value;
+            }
+
             // console.log(videoDetails.title, videoDetails.description, videoDetails.category);
             // title check
             if (videoDetails.title.trim().length >= 4) {
               // category check
               if (videoDetails.category.length > 0) {
                 // validating video selection
-                console.log(customText.innerHTML);
                 if (customText.innerHTML !== "No file Choosen yet !") {
-                  upload.style.display = "none";
-                  swal.showLoading();
-                  db.collection("uploadedVideos")
-                    .where("title", "==", videoDetails.title)
-                    .get()
-                    .then(querySnaphot => {
-                      if (!querySnaphot.empty) {
-                        console.log("video can be uploaded");
-                        console.log(videoThumbnail);
-                        this.$store.dispatch("uploadVideo", videoDetails);
-                        swal.close();
-                      } else {
-                        // swal.hideLoading();
-                        swal
-                          .fire({
-                            type: "warning",
-                            text:
-                              "You have already uploaded the video with same title! Please give unique title to your video"
-                          })
-                          .then(res => {
-                            this.uploadForm();
-                          });
-                      }
-                    });
+                  //validating for check list
+                  if (crplaylist.checked) {
+                    //playlist name and description validation
+                    if (
+                      videoDetails.playListTitle.length > 4 &&
+                      videoDetails.playListDescription.length > 0
+                    ) {
+                      //firestore validate if playlist title is unique
+                      db.collection("playlist")
+                        .where("by", "==", this.$store.state.uid)
+                        .where("title", "==", videoDetails.playListTitle)
+                        .get()
+                        .then(querySnaphot => {
+                          if (!querySnaphot.empty) {
+                            showWarning(
+                              "Playlist with the same title already exist!"
+                            );
+                          } else {
+                            fireValidate(videoDetails.title);
+                          }
+                        });
+                    } else {
+                      showWarning(
+                        "Playlist title should be greater than 4char long, title and description cannot be empty"
+                      );
+                    }
+                  }
+                  // if existing playlist opt
+                  else if (explaylist.checked) {
+                    //existing playlist validation
+                    if (videoDetails.existingPlayList.length > 0) {
+                      fireValidate(videoDetails.title);
+                    } else {
+                      showWarning("Please select a playlist!");
+                    }
+                  }
+                  // if default - create no playlist
+                  else {
+                    fireValidate(videoDetails.title);
+                  }
                 } else {
-                  swal
-                    .fire({
-                      type: "warning",
-                      text: "Select a video to upload"
-                    })
-                    .then(res => {
-                      this.uploadForm();
-                    });
+                  showWarning("Select a video to upload");
                 }
               } else {
-                swal
-                  .fire({
-                    type: "warning",
-                    text: "Please select a category"
-                  })
-                  .then(res => {
-                    this.uploadForm();
-                  });
+                showWarning("Please select a category");
               }
             } else {
-              swal
-                .fire({
-                  type: "warning",
-                  text: "Title cannot be empty or less than 4 char length"
-                })
-                .then(res => {
-                  this.uploadForm();
-                });
+              showWarning("Title cannot be empty or less than 4 char length");
             }
           });
         }
