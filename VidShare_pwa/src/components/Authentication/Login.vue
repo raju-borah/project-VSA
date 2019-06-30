@@ -90,11 +90,10 @@
   </div>
 </template>
 <script>
-import firebase from "firebase";
+import { auth } from "firebase";
 import { required, email, minLength } from "vuelidate/lib/validators";
 import { FulfillingBouncingCircleSpinner } from "epic-spinners";
-
-import db from "../../firebase/init";
+import db from "../../main.js";
 export default {
   name: "Login",
   components: {
@@ -103,8 +102,7 @@ export default {
   data() {
     return {
       email: null,
-      password: null,
-      spinner: false
+      password: null
     };
   },
   validations: {
@@ -115,6 +113,11 @@ export default {
     password: {
       required,
       minLen: minLength(6)
+    }
+  },
+  computed: {
+    spinner() {
+      return this.$store.state.loginSpinner;
     }
   },
   // watch: {
@@ -154,52 +157,11 @@ export default {
   methods: {
     login(state) {
       if (!state) {
-        this.spinner = true;
-        firebase
-          .auth()
-          .signInWithEmailAndPassword(this.email, this.password)
-          .then(user => {
-            this.$store.state.loggedInUser = user.user;
-            if (user.user.emailVerified) {
-              db.collection("validuser")
-                .where("email", "==", this.email)
-                .get()
-                .then(querySnapshot => {
-                  if (querySnapshot.docs[0].data().active === false) {
-                    querySnapshot.docs[0].ref.update({ active: true });
-                  }
-                })
-                .then(() => {
-                  this.spinner = false;
-                  this.$router.push({ name: "Home" });
-                })
-                .catch(err => {
-                  this.spinner = false;
-                  swal.fire({
-                    type: "error",
-                    title: "Oops..",
-                    text: err.message
-                  });
-                  console.error(err);
-                });
-            } else {
-              this.spinner = false;
-              swal.fire({
-                type: "error",
-                title: "Oops...",
-                text: "Email is not verified, please verify it!"
-              });
-            }
-          })
-          .catch(err => {
-            this.spinner = false;
-            swal.fire({
-              type: "error",
-              title: "Oops...",
-              text: "Invalid Email or Password"
-            });
-            console.error(err);
-          });
+        const userLoginDetails = {
+          email: this.email,
+          password: this.password
+        };
+        this.$store.dispatch("login", userLoginDetails);
       } else {
         swal.fire({
           type: "warning",

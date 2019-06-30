@@ -53,7 +53,7 @@
           <div class="form__group" :class="{'invalid': $v.email.$error}">
             <label for="signup_email" class="form__label">
               E-mail
-              <span v-if="!$v.email.unique">: already used or not valid</span>
+              <span v-if="!$v.email.unique">: cannot use this email</span>
               <span v-if="!$v.email.required && $v.email.$dirty">: must not be empty</span>
             </label>
             <input
@@ -120,10 +120,10 @@
 </template>
 
 <script>
-import firebase from "firebase";
-import db from "../../firebase/init";
+import db from "../../main";
 import { FingerprintSpinner } from "epic-spinners";
 import { required, email, minLength, sameAs } from "vuelidate/lib/validators";
+import { sign } from "crypto";
 export default {
   name: "Signup",
   components: {
@@ -135,9 +135,13 @@ export default {
       lastName: "",
       email: "",
       password: "",
-      confirmPassword: "",
-      spinner: false
+      confirmPassword: ""
     };
+  },
+  computed: {
+    spinner() {
+      return this.$store.state.signupSpinner;
+    }
   },
   validations: {
     email: {
@@ -179,55 +183,15 @@ export default {
           text: "Invalid form input!"
         });
       } else {
-        this.spinner = true;
-        firebase
-          .auth()
-          .createUserWithEmailAndPassword(this.email, this.password)
-          .then(user => {
-            user.user.sendEmailVerification().then(() => {
-              // as signup will login the user automatically but dont want than
-              // untill user is verifired !
-              firebase
-                .auth()
-                .signOut()
-                .then(() => {
-                  this.$router.push({ name: "Login" });
-                  this.spinner = false;
-                  swal.fire({
-                    type: "success",
-                    text:
-                      "Please check the link sent to your email to verify your account!"
-                  });
-                });
-            });
-          })
-          .then(() => {
-            let ref = db.collection("validuser");
-            ref = ref.where("active", "==", false);
-            ref = ref.where("email", "==", this.email);
-            ref
-              .get()
-              .then(querySnapshot => {
-                querySnapshot.forEach(doc => {
-                  // Build doc ref from doc.id
-                  console.log(doc.id);
-                  let refDoc = db.collection("validuser").doc(doc.id);
-                  refDoc.update({
-                    name: this.firstName + " " + this.lastName
-                  });
-                });
-              })
-              .then(() => {
-                this.vmodalReset();
-              });
-          })
-          .catch(err => {
-            this.spinner = false;
-            swal.fire({
-              type: "error",
-              text: err.message
-            });
-          });
+        const signupDetails = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          password: this.password,
+          confirmPassword: this.confirmPassword
+        };
+        this.$store.dispatch("signup", signupDetails);
+        this.vmodalReset();
       }
     },
     vmodalReset() {
