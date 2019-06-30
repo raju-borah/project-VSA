@@ -32,12 +32,12 @@
           </li>
 
           <!-- list item for progress bar -->
-          <li class="ul__list--items ul__list--items--progress">
+          <li class="ul__list--items ul__list--items--progress" v-if="task">
             <!-- line  128  navigationbar.scsss  -->
             <div class="progressbox">
-              <h4 class="progressbox__text">FILENAME heloooooooooooooooooooooooooooooooooo</h4>
-              <progress class="progressbox__bar" value="50" max="100"></progress>
-              <div class="progressbox__percentage">50%</div>
+              <h4 class="progressbox__text">{{fileName}}</h4>
+              <progress class="progressbox__bar" :value="percentage" max="100"></progress>
+              <div class="progressbox__percentage">{{percentage}}%</div>
               <div class="progressbox__btn">
                 <button type="button" class="progressbox__play vidbtn">
                   <i class="fas fa-play-circle"></i>
@@ -51,7 +51,9 @@
               </div>
             </div>
           </li>
-
+          <li class="ul__list--items" v-else>
+            <h2 style="color:grey;background: white" class="list--link">No upload is active.</h2>
+          </li>
           <li class="ul__list--items">
             <button type="button" class="btn btn--green btn--green--logout" @click="logout">Logout</button>
           </li>
@@ -99,6 +101,15 @@ export default {
     },
     profilePic() {
       return this.$store.state.profilePic;
+    },
+    task() {
+      return this.$store.state.task;
+    },
+    percentage() {
+      return this.$store.state.percentage;
+    },
+    fileName() {
+      return this.$store.state.fileName;
     }
   },
   methods: {

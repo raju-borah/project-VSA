@@ -204,6 +204,7 @@ export default {
         showConfirmButton: false,
         onOpen: dom => {
           // globals
+          let file = null;
           const realFileBtn = dom.querySelector("#upload-file");
           const customBtn = dom.querySelector("#choose-video");
           const customText = dom.querySelector(".custom-text");
@@ -250,7 +251,7 @@ export default {
             _VIDEO = document.createElement("VIDEO");
 
           // when file will be selected, validating the video
-          realFileBtn.addEventListener("change", () => {
+          realFileBtn.addEventListener("change", e => {
             // video validation
             // check if file is selected or not
             if (realFileBtn.files.length > 0) {
@@ -310,6 +311,8 @@ export default {
                     );
                     //conerting the drawn image to data-url
                     videoThumbnail = _CANVAS.toDataURL("image/jpeg", 0.8);
+                    file = e.target.files[0];
+                    console.log(file);
                   });
                 }
               }
@@ -358,7 +361,7 @@ export default {
               .value.trim();
             videoDetails.category = dom.querySelector("#video-category").value;
             videoDetails.thumbnail = videoThumbnail;
-
+            videoDetails["file"] = file;
             if (crplaylist.checked) {
               // console.log("Create playlist");
               videoDetails["playListTitle"] = dom.querySelector(
