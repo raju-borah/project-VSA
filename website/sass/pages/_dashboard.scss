@@ -26,16 +26,19 @@
   &__vcontainer {
     display: grid;
     justify-content: center;
-
+   
     grid-template-rows: repeat(minmax(150px, min-content));
     grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
     grid-gap: 8rem;
 
     padding: 10rem;
     padding-top: 6rem;
-    padding-left: 15rem;
-    padding-right: 15rem;
 
+
+    &--addvideo{
+      padding: 5rem;
+      grid-column-gap:13rem;
+    }
     @include respond(tab-land) {
       padding: 4rem;
       grid-gap: 6rem;
@@ -52,6 +55,7 @@
   background: transparent;
   color: $color-white;
   padding-top: 0.77rem;
+  font-weight: bold;
   display: none;
 }
 

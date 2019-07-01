@@ -7,6 +7,10 @@ border-radius for curved end of button
   font-size: 1.9rem;
   background-color: $color-grey-light-2;
 
+  @include respond(phone){
+  font-size: 1.5rem;
+
+  }
   &--trans{
     background: transparent;
 
@@ -120,6 +124,7 @@ border-radius for curved end of button
     margin: 1rem;
     border-radius: 1rem;
     font-size: 1.7rem;
+
     @include respond(phone){
       font-size: 18px;
       margin-left: 1rem;
@@ -138,6 +143,14 @@ border-radius for curved end of button
     background-color: $color-tertiary-light;
     color: $color-white;
     font-size: 1.6rem;
+  }
+
+  &--addvideo{
+    background-color: $color-tertiary-dark-2;
+    color: $color-white;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 4px;
   }
 
   /* button hover */

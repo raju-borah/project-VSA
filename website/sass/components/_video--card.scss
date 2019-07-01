@@ -45,6 +45,14 @@
     width: 50%;
     top: 73.5%;
     left: 0;
+
+    // for add video 
+    &--addvideo{
+      top: 71%;
+    }
+
+
+
     &--playlist {
       background-color: rgba($color-black, 0.8);
       width: 100%;

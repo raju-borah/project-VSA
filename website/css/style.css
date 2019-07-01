@@ -514,6 +514,9 @@ border-radius for curved end of button
   background-color: #eee;
   /* button hover */
   /* when clicked */ }
+  @media (max-width: 824px) {
+    .btn {
+      font-size: 1.5rem; } }
   .btn--trans {
     background: transparent; }
     .btn--trans:hover {
@@ -615,6 +618,12 @@ border-radius for curved end of button
     background-color: #2998ff;
     color: #fff;
     font-size: 1.6rem; }
+  .btn--addvideo {
+    background-color: #172d44;
+    color: #fff;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 4px; }
   .btn:hover {
     /* shadow when hover */
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -857,6 +866,10 @@ border-radius for curved end of button
   position: relative;
   right: 3rem;
   top: -1.8rem; }
+  .search--addvideo {
+    position: absolute;
+    top: 0;
+    right: 0; }
   .search__input {
     position: absolute;
     top: 20px;
@@ -1477,6 +1490,8 @@ border-radius for curved end of button
     width: 50%;
     top: 73.5%;
     left: 0; }
+    .vcard--tag--addvideo {
+      top: 71%; }
     .vcard--tag--playlist {
       background-color: rgba(0, 0, 0, 0.8);
       width: 100%;
@@ -1574,6 +1589,59 @@ border-radius for curved end of button
   .hoverbtn__event {
     color: #2998ff;
     background-color: rgba(86, 67, 250, 0.3); }
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 91%;
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee; }
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc; }
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block; }
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
 
 .footer {
   position: relative; }
@@ -2143,9 +2211,10 @@ border-radius for curved end of button
     grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
     grid-gap: 8rem;
     padding: 10rem;
-    padding-top: 6rem;
-    padding-left: 15rem;
-    padding-right: 15rem; }
+    padding-top: 6rem; }
+    .dashboard__vcontainer--addvideo {
+      padding: 5rem;
+      grid-column-gap: 13rem; }
     @media (max-width: 1024px) {
       .dashboard__vcontainer {
         padding: 4rem;
@@ -2159,6 +2228,7 @@ border-radius for curved end of button
   background: transparent;
   color: #fff;
   padding-top: 0.77rem;
+  font-weight: bold;
   display: none; }
 
 .timestamp {
@@ -3368,3 +3438,20 @@ button:focus {
           .notify_panel_notes--comment {
             font-size: 10px;
             left: 4%; } }
+
+.addvideo {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 80px 594px 80px;
+  grid-template-columns: 1fr; }
+  .addvideo--top {
+    background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
+    padding: 2rem; }
+  .addvideo--mid {
+    overflow-y: scroll;
+    overflow-x: hidden; }
+  .addvideo--footer {
+    background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
+    padding: 2rem;
+    padding-left: 6%; }
