@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { auth } from 'firebase'
+import { auth, storage, firestore } from 'firebase'
 import db from './main'
 import { router } from './router'
 
 Vue.use(Vuex)
+
+// const alert = msg => {
+//   swal
+// }
 
 export let store = new Vuex.Store({
   state: {
@@ -49,7 +53,13 @@ export let store = new Vuex.Store({
           type: "video/mp4"
         }
       ]
-    }
+    },
+
+    //upload task
+    task: null,
+    percentage: 0,
+    paused: false,
+    fileName: null
   },
   mutations: {
     resetUser(state) {
@@ -262,8 +272,57 @@ export let store = new Vuex.Store({
         })
     },
     uploadVideo(state, payload) {
-      console.log('upload started')
-      console.log(payload)
+      // create a storage ref
+      let storageRef = storage().ref("video/" + state.uid + "/" + payload.title + ".mp4");
+
+      state.fileName = payload.file.name
+
+      // upload file
+      state.task = storageRef.put(payload.file);
+      state.task.on(
+        "state_changed",
+        // when upload is in progress
+        snapShot => {
+          let percentage = Math.floor(
+            (snapShot.bytesTransferred / snapShot.totalBytes) * 100
+          );
+          state.percentage = Math.floor(percentage);
+        },
+        // incase any error
+        err => {
+          state.task = null;
+          state.percentage = 0;
+          state.paused = false;
+          swal.fire({
+            type: 'error',
+            text: 'Upload error, ' + err.message
+          })
+          console.error(err);
+        },
+        // when upload is completed
+        () => {
+          state.percentage = 0;
+          state.paused = false;
+          state.task = null;
+
+          db.collection('uploadedVideos')
+            .doc()
+            .set({
+              title: payload.title,
+              description: payload.description,
+              thumbnail: payload.thumbnail,
+              timestamp: firestore.FieldValue.serverTimestamp(),
+              by: state.uid,
+              category: payload.category
+            })
+            .then(() => {
+              swal.fire({
+                type: 'success',
+                text: 'File uploaded!'
+              })
+            })
+        }
+      );
     }
   },
   actions: {
