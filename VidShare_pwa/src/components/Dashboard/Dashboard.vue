@@ -17,122 +17,42 @@
 
       <div class="dashboard__vcontainer">
         <!-- the videos uploaded by user will be displayed in this division along with the details -->
-
-        <!-- video playlist cards -->
-        <div class="vcard">
-          <!-- the thumbnail position  vcard 1 st part-->
-          <div class="vcard--img">
-            <div class="playlist--details flex-center" style="align-items: center;">
-              <div>
-                <div class="font-small">12 videos</div>
-                <div class="flex-center">
-                  <i class="fas fa-play-circle font-medium"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- the division that contain the information of the video .It is the second part of the vcard -->
-          <div class="vcard__info">
-            <div class="vcard__info--title">
-              <!-- dynamiv title of the video -->
-              <span>Fun way to Learn JavaScript.</span>
-            </div>
-            <!-- timestamp when the video was created -->
-            <span class="timestamp font-small">Created on: 15-04-2019</span>
-            <br />
-            <span style="font-weight: 550;">Description:</span>
-            <!-- dynamic descrptiob of the video -->
-            <span class="vcard__info--des">Lorem ipsum, dolor</span>
-          </div>
-        </div>
-
-        <!-- video cards -->
-        <div class="vcard">
-          <!-- the thumbnail position  vcard 1 st part-->
-          <div class="vcard--img">
-            <!-- the tag for video  defining the category of video-->
-            <h1 class="vcard--tag vcard--tag--dashboard vcard--tag--learning">
-              Learning
-              <!-- the delete button  -->
+        <div
+          class="vcard"
+          v-for="video in videos"
+          :key="video.id"
+          @click.stop="redirectToPlay(video)"
+        >
+          <div class="vcard--img" :style="{backgroundImage: 'url(' +video.thumbnail + ')',}">
+            <!-- the tag for video -->
+            <h1
+              class="vcard--tag vcard--tag--dashboard"
+              :class="{
+                'vcard--tag--learning': video.category === 'Learning', 
+                'vcard--tag--event': video.category === 'Events', 
+                'vcard--tag--club': video.category === 'Club activities'
+                }"
+            >
+              {{video.category}}
+              <!-- event to trigger delete and show warning window -->
               <button type="button" class="videodelete u-end-text btn">
                 <i class="fas fa-trash-alt font-small"></i>
               </button>
             </h1>
           </div>
-          <!-- the division that contain the information of the video .It is the second part of the vcard -->
           <div class="vcard__info">
             <div class="vcard__info--title">
               <!-- dynamiv title of the video -->
-              <span>Fun way to Learn JavaScript.</span>
+              <span>{{video.title}}</span>
+
+              <!-- timestamp when the video was created -->
             </div>
-            <!-- timestamp when the video was created -->
-            <span class="timestamp font-small">Created on: 15-04-2019</span>
+            <!-- will add video.timestamp here -->
+            <span class="timestamp font-small">Created on: {{video.timestamp}}</span>
             <br />
             <span style="font-weight: 550;">Description:</span>
             <!-- dynamic descrptiob of the video -->
-            <span class="vcard__info--des">Lorem ipsum, dolor</span>
-          </div>
-        </div>
-
-        <!-- end of vcard -->
-
-        <!-- video cards -->
-        <div class="vcard">
-          <!-- the thumbnail position  vcard 1 st part-->
-          <div class="vcard--img">
-            <!-- the tag for video  defining the category of video-->
-            <h1 class="vcard--tag vcard--tag--dashboard vcard--tag--club">
-              Learning
-              <!-- the delete button  -->
-              <button type="button" class="videodelete u-end-text btn">
-                <i class="fas fa-trash-alt font-small"></i>
-              </button>
-            </h1>
-          </div>
-          <!-- the division that contain the information of the video .It is the second part of the vcard -->
-          <div class="vcard__info">
-            <div class="vcard__info--title">
-              <!-- dynamiv title of the video -->
-              <span>Fun way to Learn JavaScript.</span>
-            </div>
-            <!-- timestamp when the video was created -->
-            <span class="timestamp font-small">Created on: 15-04-2019</span>
-            <br />
-            <span style="font-weight: 550;">Description:</span>
-            <!-- dynamic descrptiob of the video -->
-            <span class="vcard__info--des">Lorem ipsum, dolor sit amet consec</span>
-          </div>
-        </div>
-
-        <!-- end of vcard -->
-        <!-- video cards -->
-        <div class="vcard">
-          <!-- the thumbnail position  vcard 1 st part-->
-          <div class="vcard--img">
-            <!-- the tag for video  defining the category of video-->
-            <h1 class="vcard--tag vcard--tag--dashboard vcard--tag--event">
-              Learning
-              <!-- the delete button  -->
-              <button type="button" class="videodelete u-end-text btn">
-                <i class="fas fa-trash-alt font-small"></i>
-              </button>
-            </h1>
-          </div>
-          <!-- the division that contain the information of the video .It is the second part of the vcard -->
-          <div class="vcard__info">
-            <div class="vcard__info--title">
-              <!-- dynamiv title of the video -->
-              <span>Fun way to Learn JavaScript.</span>
-            </div>
-            <!-- timestamp when the video was created -->
-            <span class="timestamp font-small">Created on: 15-04-2019</span>
-            <br />
-            <span style="font-weight: 550;">Description:</span>
-            <!-- dynamic descrptiob of the video -->
-            <span class="vcard__info--des">
-              Lorem ipsum, dolor sit amet consectetur adipisicing
-              elit.Suscipit sit, explicabo hic nostrum
-            </span>
+            <span class="vcard__info--des">{{video.description}}</span>
           </div>
         </div>
 
@@ -144,15 +64,110 @@
 <script>
 import db from "../../main";
 import Navbar from "../Navbar/Navbar";
+import { functions } from "firebase";
 export default {
   name: "Dashboard",
   components: {
     Navbar
   },
+  data() {
+    return {
+      videos: []
+    };
+  },
+  watch: {
+    uid: {
+      handler: function(id) {
+        let vref = db.collection("uploadedVideos").where("by", "==", id);
+        //whenever anything update/change/else in firebase it takes snapshot of it
+        //this can be used for looking or changes occuring in firebase
+        vref.onSnapshot(snapshot => {
+          //we will use docChanges() to get the type changes
+          snapshot.docChanges().forEach(change => {
+            if (change.type === "added") {
+              let doc = change.doc;
+              console.log(doc.data().timestamp);
+              if (doc.data().timestamp) {
+                this.videos.push({
+                  //doc keeps id can retrive using;
+                  id: doc.id,
+                  // field that we have created can be retirve using;
+                  title: doc.data().title,
+                  description: doc.data().description,
+                  url: doc.data().url,
+                  category: doc.data().category,
+                  thumbnail: doc.data().thumbnail,
+                  timestamp: doc.data().timestamp.toDate()
+                });
+              } else {
+                this.videos.push({
+                  //doc keeps id can retrive using;
+                  id: doc.id,
+                  // field that we have created can be retirve using;
+                  title: doc.data().title,
+                  description: doc.data().description,
+                  url: doc.data().url,
+                  category: doc.data().category,
+                  thumbnail: doc.data().thumbnail
+                });
+              }
+            }
+            // this.spinner = false;
+          });
+          // this.spinner = false;
+        });
+      }
+    }
+  },
   computed: {
     task() {
       return this.$store.state.task;
+    },
+    uid() {
+      return this.$store.state.uid;
     }
+  },
+  beforeMount() {
+    let vref = db
+      .collection("uploadedVideos")
+      .where("by", "==", this.$store.state.uid);
+    //whenever anything update/change/else in firebase it takes snapshot of it
+    //this can be used for looking or changes occuring in firebase
+    vref.onSnapshot(snapshot => {
+      //we will use docChanges() to get the type changes
+      snapshot.docChanges().forEach(change => {
+        if (change.type === "added") {
+          let doc = change.doc;
+          console.log(doc.data().timestamp);
+          if (doc.data().timestamp) {
+            this.videos.push({
+              //doc keeps id can retrive using;
+              id: doc.id,
+              // field that we have created can be retirve using;
+              title: doc.data().title,
+              description: doc.data().description,
+              url: doc.data().url,
+              category: doc.data().category,
+              thumbnail: doc.data().thumbnail,
+              timestamp: doc.data().timestamp.toDate()
+            });
+          } else {
+            this.videos.push({
+              //doc keeps id can retrive using;
+              id: doc.id,
+              // field that we have created can be retirve using;
+              title: doc.data().title,
+              description: doc.data().description,
+              url: doc.data().url,
+              category: doc.data().category,
+              thumbnail: doc.data().thumbnail
+            });
+          }
+        }
+        // this.spinner = false;
+      });
+      // this.spinner = false;
+    });
   },
   methods: {
     uploadForm() {
@@ -512,7 +527,8 @@ export default {
             '<p>One upload task is active, please wait for it to finish <br> Click <i class="fas fa-user-circle"></i> to check upload progress</p>'
         });
       }
-    }
+    },
+    redirectToPlay(id) {}
   }
 };
 </script>
