@@ -6,9 +6,29 @@ import { router } from './router'
 
 Vue.use(Vuex)
 
-// const alert = msg => {
-//   swal
-// }
+const alertError = msg => {
+  swal.fire({
+    type: 'error',
+    title: 'Oops...',
+    text: msg
+  })
+}
+const alertSuccess = msg => {
+  swal.fire({
+    type: 'success',
+    text: msg
+  })
+}
+const alertSuccessToast = msg => {
+  swal.fire({
+    type: 'success',
+    title: msg,
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    timer: 3000
+  })
+}
 
 export let store = new Vuex.Store({
   state: {
@@ -20,7 +40,6 @@ export let store = new Vuex.Store({
     profilePic: null,
     department: null,
     designation: null,
-    dob: null,
     coverPic: null,
     profileDetails: {
       dob: {
@@ -67,6 +86,18 @@ export let store = new Vuex.Store({
       state.email = null
       state.name = null
       state.uid = null
+      state.profileDetails = {
+        dob: {
+          day: null,
+          month: null,
+          year: null
+        },
+        department: "",
+        phoneno: "",
+        emailPersonal: "",
+        address: "",
+        aboutYourself: "",
+      }
     },
     login(state, payload) {
       state.loginSpinner = true
@@ -86,40 +117,21 @@ export let store = new Vuex.Store({
               .then(() => {
                 state.loginSpinner = false;
                 router.push({ name: "Home" });
-                swal.fire({
-                  type: 'success',
-                  title: 'Signed in successfully',
-                  toast: true,
-                  position: 'bottom-end',
-                  showConfirmButton: false,
-                  timer: 3000
-                })
+                alertSuccessToast("Signed in successfully")
               })
               .catch(err => {
                 state.loginSpinner = false;
-                swal.fire({
-                  type: "error",
-                  title: "Oops..",
-                  text: err.message
-                });
+                alertError(err.message)
                 console.error(err);
               });
           } else {
             state.loginSpinner = false;
-            swal.fire({
-              type: "error",
-              title: "Oops...",
-              text: "Email is not verified, please verify it!"
-            });
+            alertError("Email is not verified, please verify it!")
           }
         })
         .catch(err => {
           state.loginSpinner = false;
-          swal.fire({
-            type: "error",
-            title: "Oops...",
-            text: "Invalid Email or Password"
-          });
+          alertError("Invalid Email or Password")
           console.error(err);
         });
 
@@ -137,18 +149,11 @@ export let store = new Vuex.Store({
               .then(() => {
                 router.push({ name: "Login" });
                 state.signupSpinner = false;
-                swal.fire({
-                  type: "success",
-                  text:
-                    "Please check the link sent to your email to verify your account!"
-                });
+                alertSuccess("Please check the link sent to your email to verify your account!")
               })
               .catch(err => {
                 state.signupSpinner = false;
-                swal.fire({
-                  type: 'error',
-                  text: 'Database error \nIf the problem still persist, please contact the developer!'
-                })
+                alertError('Database error, If the problem still persist, please contact the developer!')
               });
           });
         })
@@ -161,23 +166,17 @@ export let store = new Vuex.Store({
             .then(querySnapshot => {
               querySnapshot.forEach(doc => {
                 // Build doc ref from doc.id
-                console.log(doc.id);
                 let refDoc = db.collection("validuser").doc(doc.id);
                 refDoc.update({
                   name: payload.firstName + " " + payload.lastName
                 });
               });
             })
-          // .then(() => {
-          //   payload.vmodalReset();
-          // });
         })
         .catch(err => {
           state.signupSpinner = false;
-          swal.fire({
-            type: "error",
-            text: err.message
-          });
+          alertError(err.message)
+          console.error(err)
         });
     },
     logout() {
@@ -185,14 +184,7 @@ export let store = new Vuex.Store({
         .signOut()
         .then(() => {
           router.push({ name: "Home" });
-          swal.fire({
-            type: 'success',
-            title: 'Logout successfully',
-            toast: true,
-            position: 'bottom-end',
-            showConfirmButton: false,
-            timer: 3000
-          })
+          alertSuccessToast('Logout successfully')
         });
     },
     changeName(state, payload) {
@@ -202,25 +194,16 @@ export let store = new Vuex.Store({
       })
         .then(() => {
           state.name = payload
-          swal.fire({
-            type: 'success',
-            text: 'Name changed!'
-          })
+          alertSuccess('Name changed!')
         })
         .catch(err => {
           console.error(err)
-          swal.fire({
-            type: ' error',
-            text: 'Name change error'
-          })
+          alertError('Name change error')
         })
     },
     sendPasswordResetLink(state) {
       auth().sendPasswordResetEmail(state.email).then(() => {
-        swal.fire({
-          type: 'success',
-          text: 'Link sent to your email!'
-        })
+        alertSuccess('Link sent to your email!')
       })
     },
     changeProfilePic(state, payload) {
@@ -230,11 +213,7 @@ export let store = new Vuex.Store({
         profilePic: payload
       })
         .then(() => {
-          // alert("Profile Pic Changed! :)");
-          swal.fire({
-            type: 'success',
-            text: 'Profile Pic Changed! :)'
-          })
+          alertSuccess('Profile Pic Changed! :)')
           state.profilePic = payload
         });
     },
@@ -242,10 +221,7 @@ export let store = new Vuex.Store({
       let ref = db.collection('profile').doc(state.uid)
       ref.set(payload, { merge: true })
         .then(() => {
-          swal.fire({
-            type: 'success',
-            text: 'Profile edited !'
-          })
+          alertSuccess('Profile edited !')
           state.profileDetails = payload
         })
     },
@@ -265,10 +241,7 @@ export let store = new Vuex.Store({
       }, { merge: true })
         .then(() => {
           state.coverPic = payload
-          swal.fire({
-            type: 'success',
-            text: 'Cover Pic changed!'
-          })
+          alertSuccess('Cover Pic changed!')
         })
     },
     uploadVideo(state, payload) {
@@ -293,10 +266,7 @@ export let store = new Vuex.Store({
           state.task = null;
           state.percentage = 0;
           state.paused = false;
-          swal.fire({
-            type: 'error',
-            text: 'Upload error, ' + err.message
-          })
+          alertError(`Upload error, ${err.message}`)
           console.error(err);
         },
         // when upload is completed
@@ -305,22 +275,71 @@ export let store = new Vuex.Store({
           state.paused = false;
           state.task = null;
 
-          db.collection('uploadedVideos')
-            .doc()
-            .set({
-              title: payload.title,
-              description: payload.description,
-              thumbnail: payload.thumbnail,
-              timestamp: firestore.FieldValue.serverTimestamp(),
-              by: state.uid,
-              category: payload.category
+          let videoRef = db.collection('uploadedVideos').doc()
+          let playlistRef = db.collection('playlist').doc()
+
+          videoRef.set({
+            title: payload.title,
+            description: payload.description,
+            thumbnail: payload.thumbnail,
+            timestamp: firestore.FieldValue.serverTimestamp(),
+            by: state.uid,
+            category: payload.category
+          })
+            .then(res => {
+              if (!payload.playListMode && !payload.playListExist) {
+                alertSuccess("Video uploaded!")
+              }
+              else if (payload.playListExist) {
+                db
+                  .collection('uploadedVideos')
+                  .doc(videoRef.id)
+                  .set({
+                    playList: payload.playListID
+                  },
+                    {
+                      merge: true
+                    })
+                  .then(() => {
+                    db
+                      .collection('playlist')
+                      .doc(payload.playListID)
+                      .set({
+                        videos: firestore.FieldValue.arrayUnion(videoRef.id)
+                      },
+                        {
+                          merge: true
+                        })
+                      .then(() => {
+                        alertSuccess('Video uploaded!')
+                      })
+                  })
+
+              }
+              else {
+                playlistRef.set({
+                  title: payload.playListTitle,
+                  description: payload.playListDescription,
+                  by: state.uid,
+                  videos: firestore.FieldValue.arrayUnion(videoRef.id)
+                })
+                  .then(() => {
+                    db
+                      .collection('uploadedVideos')
+                      .doc(videoRef.id)
+                      .set({
+                        playList: playlistRef.id
+                      },
+                        {
+                          merge: true
+                        })
+                      .then(() => {
+                        alertSuccess('Video uploaded!')
+                      })
+                  })
+              }
             })
-            .then(() => {
-              swal.fire({
-                type: 'success',
-                text: 'File uploaded!'
-              })
-            })
+
         }
       );
     }
