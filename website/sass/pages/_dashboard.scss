@@ -105,3 +105,16 @@
   background-color: rgba($color-black, 0.66);
   box-shadow: 0rem 0rem 1rem rgba(#1e2a3b, 0.66);
 }
+
+.dashboard--option{
+  @include respond(phone){
+    display: none;
+  }
+
+  &--1{
+    display: none;
+    @include respond(phone){
+      display: inline;
+    }
+  }
+}

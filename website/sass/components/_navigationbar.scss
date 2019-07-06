@@ -14,11 +14,10 @@
   left: 0;
   padding: 1rem;
   transition: all 0.3s ease;
-  
-  @include respond(phone){
+
+  @include respond(phone) {
     height: 6rem;
-      
-      }
+  }
 
   // when hovered
   &:hover {
@@ -40,9 +39,9 @@
     float: left;
     padding-left: 3rem;
 
-    @include respond(phone){
+    @include respond(phone) {
       padding-left: 0rem;
-        }
+    }
   }
   // for right options
   &--right {
@@ -50,13 +49,11 @@
     width: 50%;
     padding-right: 3rem;
     float: left;
-    @include respond(phone){
+    @include respond(phone) {
       font-size: 20px;
       float: right;
       padding-right: 1rem;
-   
-        
-        }
+    }
   }
 }
 // for the navbar properties
@@ -65,14 +62,10 @@
   @include navigationbarfonts($color-white);
 }
 
-.navbar_title
-{
-  @include respond(phone){
-  display: none;
- 
-      
-      }
-
+.navbar_title {
+  @include respond(phone) {
+    display: none;
+  }
 }
 //for list items
 .listlink {
@@ -82,184 +75,147 @@
   }
 }
 // userbutton
-.userbutton{
+.userbutton {
   @include buttonnav;
-
 }
 
 // container settings
-.usercontainer{
+.usercontainer {
   z-index: 2;
   display: none;
   clear: left;
   position: absolute;
   width: 38rem;
-  height: 41rem;
+  height: auto;
   border-radius: 1rem;
   top: 8rem;
-  right: 3rem;
+  right: 2.8rem;
   padding: 1rem;
-  background-image: radial-gradient(rgba($color-tertiary-dark-2,1),rgba($color-white,.1)),url('/img/Capture.jpg');
-  box-shadow: .44rem 1rem 1rem rgba($color-black, 0.55);
-  &::after{
+  box-shadow: 0.44rem 1rem 1rem rgba($color-black, 0.55);
+  &::after {
     content: "";
     position: absolute;
-    top: -1.99rem;
+    top: -1.05rem;
     right: 2.8rem;
-    border:1rem solid;
-    border-color:  transparent  transparent $color-grey-light-2 transparent;
+    border: 1rem solid;
+    border-color: transparent transparent $color-grey-light-2 transparent;
   }
 
-  @include respond(phone){
-  
+  @include respond(phone) {
     width: 30rem;
-    height: 38rem;
     top: 7rem;
-    right: .5rem;
-      
-      }
- 
-
+    right: 1rem;
+  }
 }
-.signincontainer{
+.signincontainer {
   display: none;
   z-index: 2;
   position: absolute;
-  width: 36rem;
-  height: 39rem;
+  width: 37rem;
+  height: auto;
   top: 1rem;
-  left: .97rem;
+  left: 0.97rem;
   padding: 2rem;
-  background-color: $color-grey-light-2 ;
+  background-color: $color-grey-light-2;
+  border: 8px solid $color-grey-dark-3;
   color: $color-black;
-  border-radius: .55rem;
-  
-  @include respond(phone){
-  
-    width: 28rem;
-    height: 36rem;
-      
-      }
-  
-  &__img{
-    position: absolute;
-    top:.55rem;
-    left: 36%;
+  border-radius: 0.55rem;
+
+  @include respond(phone) {
+    width: 29.5rem;
+  }
+
+  &__img {
     height: 10rem;
     width: 10rem;
     background-position: center;
     border-radius: 50%;
 
-    @include respond(phone){
-  
+    @include respond(phone) {
       width: 8rem;
       height: 8rem;
-        
-        }
+    }
   }
 }
-.ul__list 
-{
+.ul__list {
   margin: 1rem;
-  margin-top: 9rem;
+  margin-top: 1%;
   list-style-type: none;
   text-align: center;
+  @include respond(phone){
+  margin-top: 18px;
 
-  &--items{
-    margin: .53rem;
+  }
+  &--items {
+    margin: 0.53rem;
     // change to hide or visible the progress bar
-    &--progress{
+    &--progress {
       display: block;
     }
   }
-
 }
-.list--link{
-  &,&:visited{
-
+.list--link {
+  &,
+  &:visited {
+    display: inline-block;
     text-decoration: none;
     color: $color-black;
     font-weight: 700;
-    padding: .56rem;
+    padding: 0.56rem;
     border-radius: 1rem;
-    margin: .2rem;
+    margin: 0.2rem;
     font-size: 18px;
     background-color: $color-tertiary-light-1;
-    @include respond(phone){
-      padding: .5rem;
-      margin: .2rem;
-     
-          
-          }
-  }    
-  @include respond(phone){
-  font-size: 18px;
-      
-      }
+    @include respond(phone) {
+      padding: 0.4rem;
+      margin: 0.2rem;
+    }
+  }
+  @include respond(phone) {
+    font-size: 18px;
+  }
 }
-.notsignincontainer{
+.notsignincontainer {
   display: none;
   z-index: 2;
   position: absolute;
-  width: 36rem;
-  height: 37rem;
+  width: 37rem;
+  height: auto;
   top: 2rem;
   left: 1rem;
   padding: 2rem;
-  background-color: $color-grey-light-2 ;
-  
-  @include respond(phone){
-  
-    width: 28rem;
-    height: 33rem;
-    top: 1rem;
-      
-      }
+  border: 8px solid $color-grey-dark-3;
+  background-color: $color-grey-light-2;
 
-  &__img{
-    
-    margin-left: 5.5rem;
+  @include respond(phone) {
+    width: 28rem;
+    height: auto;
+    top: 1rem;
+  }
+
+  &__img {
     width: 22rem;
     height: 22rem;
     border-radius: 50%;
-    @include respond(phone){
-  
+    @include respond(phone) {
       width: 18rem;
       height: 18rem;
-      margin-left: 3rem;
-      top: 1rem;
-        
-        }
-  }
-  &__imgdiv{
-    width: 20rem;
-    height: 15rem;
+    }
   }
 }
-
 
 //css to make user conatiner text responsive on mob
-.accountHolderName
-{
-  @include respond(phone){
-  
-     font-size: 18px;
-     margin-top: -2rem;
-      
-      }
-  
-
+.accountHolderName {
+  @include respond(phone) {
+    font-size: 18px;
+    margin-top: -2rem;
+  }
 }
 
-.accountHolderId
-{
-  @include respond(phone){
-  
-     font-size: 14px;
-     margin-top: -1rem;
-     margin-left: -1.5rem;
-      
-      }
-  
-
+.accountHolderId {
+  @include respond(phone) {
+    font-size: 14px;
+    margin-top: -1rem;
+    margin-left: -1.5rem;
+  }
 }
