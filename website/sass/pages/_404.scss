@@ -2,6 +2,9 @@
   width: 100%; //width of the division
   height: 90.5vh; //the heightof the divion
   animation: change steps(1) 2s infinite ;
+  @include respond(phone){
+  height: 91.5vh; //the heightof the divion
+  }
 }
 
 .backhome{
