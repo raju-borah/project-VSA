@@ -7,7 +7,7 @@
      color: $color;
 
      @include respond(phone){
-      font-size: 38px;
+      font-size: 35px;
   
         
         }
@@ -17,7 +17,7 @@
        top: 0;
        
      @include respond(phone){
-      font-size: 42px;
+      font-size: 35px;
       top: -.3rem;
   
         
@@ -177,7 +177,7 @@
 
   
   @include respond(phone){
-    height: 3.5rem;
+    height: 3rem;
     right: 1.9rem;
     top: 20px;
 
@@ -203,10 +203,11 @@
   transition: all 0.1s;
   border: none;
   outline:none;
+  
 
   @include respond(phone){
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 4rem;
+    height: 3.8rem;
     right: 2rem;
     top: 1.7rem;
 

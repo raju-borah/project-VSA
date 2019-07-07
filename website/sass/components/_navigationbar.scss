@@ -47,12 +47,11 @@
   &--right {
     text-align: end;
     width: 50%;
-    padding-right: 3rem;
+    padding-right: 4rem;
     float: left;
     @include respond(phone) {
-      font-size: 20px;
       float: right;
-      padding-right: 1rem;
+      padding-right: 0rem;
     }
   }
 }
@@ -77,6 +76,35 @@
 // userbutton
 .userbutton {
   @include buttonnav;
+ 
+}
+
+.notibutton {
+  @include buttonnav;
+  margin-right: 1rem;
+
+
+  &_dot {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 50%;
+    display:block;
+    position: relative;
+    left: 70%;
+    top:-2rem;
+    @include respond(phone){
+      height: 15px;
+      width: 15px;
+    }
+
+    
+      
+  }
+  
+  @include respond(phone) {
+    margin-right: 1rem;
+  }
 }
 
 // container settings
