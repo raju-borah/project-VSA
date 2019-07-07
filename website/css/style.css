@@ -159,7 +159,7 @@ body {
     height: auto;
     overflow-y: hidden;
     position: absolute;
-    right: 3.5%;
+    right: 3.5rem;
     margin-top: -3rem;
     background: black; }
     .list--option--plist {
@@ -167,7 +167,7 @@ body {
       margin-right: 0rem; }
       @media (max-width: 824px) {
         .list--option--plist {
-          margin-right: 3rem; } }
+          margin-right: 2rem; } }
     .list--option:hover {
       display: block; }
   @media (max-width: 824px) {
@@ -195,180 +195,6 @@ body {
 
 .hauto {
   height: 600px; }
-
-iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 2rem;
-  overflow: hidden; }
-
-.video-js {
-  font-size: 1.6rem;
-  color: #cacaca;
-  outline: none; }
-
-.video-js .vjs-play-control,
-.video-js .vjs-remaining-time,
-.video-js .vjs-volume-menu-button {
-  border-right: 1px solid #323232; }
-
-.video-js .vjs-volume-menu-button .vjs-menu-content:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%; }
-
-.video-js .vjs-volume-menu-button .vjs-menu-content {
-  display: inline-block;
-  vertical-align: middle; }
-
-/* The default color of control backgrounds is mostly black but with a little
-   bit of blue so it can still be seen on all-black video frames, which are common. */
-.video-js .vjs-control.vjs-play-control,
-.video-js .vjs-control.vjs-play-control.vjs-playing,
-.video-js .vjs-control.vjs-fullscreen-control,
-.video-js .vjs-control.vjs-volume-menu-button,
-.video-js .vjs-control.vjs-captions-button {
-  outline: none; }
-
-.video-js .vjs-control-bar,
-.video-js .vjs-menu-button .vjs-menu-content {
-  /* IE8 - has no alpha support */
-  background-color: #262626;
-  /* Opacity: 1.0 = 100%, 0.0 = 0% */
-  background-color: rgba(38, 38, 38, 0.9); }
-
-.video-js .vjs-control-bar {
-  background-color: rgba(38, 38, 38, 0.9);
-  width: auto;
-  left: 4em;
-  right: 4em;
-  bottom: 2em;
-  border-radius: 0.5em; }
-
-.video-js .vjs-control-bar:hover .vjs-progress-control {
-  opacity: 1;
-  top: -2.5em; }
-
-.video-js .vjs-control-bar .vjs-menu {
-  z-index: 2;
-  height: 100%; }
-
-.video-js.vjs-fullscreen .vjs-control-bar {
-  bottom: 4em; }
-
-.video-js .vjs-current-time {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: -2.5em; }
-
-/* Slider - used for Volume bar and Progress bar */
-.video-js .vjs-slider {
-  background-color: #2e2e2e;
-  background-color: rgba(46, 46, 46, 0.8);
-  border-radius: 1em;
-  margin: 0; }
-
-.video-js .vjs-remaining-time {
-  flex: 1;
-  text-align: left; }
-
-/* The slider bar color is used for the progress bar and the volume bar
-   (the first two can be removed after a fix that's coming) */
-.video-js .vjs-play-progress,
-.video-js .vjs-volume-level,
-.video-js .vjs-slider-bar {
-  background: transparent;
-  border-radius: 1em; }
-
-.video-js .vjs-play-progress {
-  background: white; }
-
-.video-js .vjs-volume-level {
-  background: #fff;
-  top: 2rem; }
-
-.video-js .vjs-play-progress {
-  color: #fff;
-  background: #012A57;
-  font-size: 1.3em; }
-
-.video-js .vjs-play-progress:before {
-  transition: width 0.1s ease-out, height 0.1s ease-out;
-  content: "";
-  top: -0.2em;
-  border: 0;
-  background: radial-gradient(#fff 33%, #eee);
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  box-shadow: #000 0 0 2px; }
-
-.video-js .vjs-play-progress:hover:before {
-  width: 1.1em;
-  height: 1.1em;
-  border: 2px solid transparent; }
-
-.video-js .vjs-progress-control {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
-  padding: 0 4em 0 0.4em;
-  top: -2.3em;
-  border-radius: 1em;
-  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear, -moz-transform 150ms linear, -o-transform 150ms linear;
-  z-index: 1;
-  opacity: 0; }
-
-.video-js .vjs-progress-control:hover .vjs-progress-holder {
-  font-size: inherit; }
-
-.video-js .vjs-progress-control .vjs-mouse-display {
-  background: #cacaca; }
-
-.video-js .vjs-time-tooltip {
-  background: #cacaca !important;
-  color: #b7090b; }
-
-.video-js .vjs-time-tooltip:before {
-  top: 100%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top-color: #262626;
-  border-width: 0.8em;
-  right: 25%;
-  margin-left: -0.8em; }
-
-.video-js .vjs-play-progress,
-.video-js .vjs-load-progress {
-  height: 0.7em !important; }
-
-.video-js .vjs-progress-holder {
-  height: 0.9em; }
-
-/* The main progress bar also has a bar that shows how much has been loaded. */
-.video-js .vjs-load-progress {
-  /* For IE8 we'll lighten the color */
-  background: #3a3a3a;
-  /* Otherwise we'll rely on stacked opacities */
-  background: rgba(46, 46, 46, 0.5);
-  border-radius: 1em;
-  height: 0.9em !important; }
-
-/* The load progress bar also has internal divs that represent
-   smaller disconnected loaded time ranges */
-.video-js .vjs-load-progress div {
-  /* For IE8 we'll lighten the color */
-  background: #3a3a3a;
-  /* Otherwise we'll rely on stacked opacities */
-  background: rgba(46, 46, 46, 0.75);
-  border-radius: 1em;
-  height: 0.9em !important; }
 
 .form {
   margin: 3rem;
@@ -1655,7 +1481,8 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__back {
         height: 50rem;
-        background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)); } }
+        background-color: black;
+        background-image: none; } }
   .footer__logo {
     position: absolute;
     top: 5rem;
@@ -1664,7 +1491,6 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__logo {
         font-size: 100px;
-        left: 40%;
         top: -2rem;
         color: white; } }
   .footer__logo-name {
@@ -1704,11 +1530,12 @@ border-radius for curved end of button
       color: #5643fa;
       top: 30%;
       left: 15%;
+      display: inline-block;
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--call {
-          top: 22rem;
-          left: 70%; } }
+          top: 45%;
+          left: 69%; } }
       .footer__communication--call:hover {
         transform: translateY(-2rem); }
     .footer__communication--callinfo {
@@ -1720,10 +1547,11 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--callinfo {
+          visibility: visible;
+          background-color: transparent;
           position: relative;
           font-size: 15px;
-          top: -4rem;
-          left: -15%; } }
+          font-weight: 100; } }
     .footer__communication--call:hover .footer__communication--callinfo {
       visibility: visible;
       color: #fff; }
@@ -1735,8 +1563,8 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--location {
-          top: 29rem;
-          left: 70%; } }
+          top: 62%;
+          left: 68%; } }
       .footer__communication--location:hover {
         transform: translateY(-2rem); }
     .footer__communication--locationinfo {
@@ -1749,10 +1577,10 @@ border-radius for curved end of button
       padding: .7rem; }
       @media (max-width: 824px) {
         .footer__communication--locationinfo {
-          position: relative;
-          font-size: 10px;
-          top: -3rem;
-          left: -15%; } }
+          font-size: 12px;
+          font-weight: 100;
+          visibility: visible;
+          background-color: transparent; } }
     .footer__communication--location:hover .footer__communication--locationinfo {
       visibility: visible;
       color: #fff; }
@@ -1764,8 +1592,8 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--mail {
-          top: 35rem;
-          left: 70%; } }
+          top: 79%;
+          left: 69%; } }
       .footer__communication--mail:hover {
         transform: translateY(-2rem); }
     .footer__communication--mailinfo {
@@ -1779,9 +1607,10 @@ border-radius for curved end of button
       @media (max-width: 824px) {
         .footer__communication--mailinfo {
           position: relative;
-          font-size: 10px;
-          top: -3rem;
-          left: -15%; } }
+          font-size: 12px;
+          font-weight: 100;
+          visibility: visible;
+          background-color: transparent; } }
     .footer__communication--mail:hover .footer__communication--mailinfo {
       visibility: visible;
       color: #fff; }
@@ -1798,7 +1627,7 @@ border-radius for curved end of button
         font-size: 20px;
         transform: rotate(0);
         font-weight: 200;
-        top: 15rem;
+        top: 30%;
         left: 2rem;
         width: 30%; } }
   .footer__social--fb {
@@ -1809,9 +1638,9 @@ border-radius for curved end of button
     top: 24%; }
     @media (max-width: 824px) {
       .footer__social--fb {
-        font-size: 35px;
-        left: 5rem;
-        top: 22rem; } }
+        font-size: 45px;
+        left: 20%;
+        top: 45%; } }
   .footer__social--twit {
     position: absolute;
     color: #2998ff;
@@ -1820,9 +1649,9 @@ border-radius for curved end of button
     top: 40%; }
     @media (max-width: 824px) {
       .footer__social--twit {
-        font-size: 35px;
-        left: 5rem;
-        top: 29rem; } }
+        font-size: 45px;
+        left: 20%;
+        top: 60%; } }
   .footer__social--link {
     position: absolute;
     color: #2998ff;
@@ -1831,9 +1660,9 @@ border-radius for curved end of button
     top: 55%; }
     @media (max-width: 824px) {
       .footer__social--link {
-        font-size: 35px;
-        left: 5rem;
-        top: 35rem; } }
+        font-size: 45px;
+        left: 20%;
+        top: 75%; } }
 
 .header {
   height: 91vh;
@@ -2601,6 +2430,9 @@ border-radius for curved end of button
   width: 100%;
   height: 90.5vh;
   animation: change steps(1) 2s infinite; }
+  @media (max-width: 824px) {
+    .bgcontain {
+      height: 91.5vh; } }
 
 .backhome {
   position: relative;

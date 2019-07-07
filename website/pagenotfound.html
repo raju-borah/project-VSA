@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Philosopher" rel="stylesheet">
 
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css">
@@ -14,54 +15,66 @@
 </head>
 
 <body>
-    <!-- navigation bar -->
-    <div class="navigationbar">
+  <!-- navigation bar -->
+  <div class="navigationbar" >
 
+        
+    
         <!-- name of the Application -->
         <div class="navbarfont navigationbar--left">
             <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
-            <a href="home.html" class="navbar_items">Vidshare </a>
+            <a href="card.html" class="navbar_items navbar_title">Vidshare </a>
         </div>
 
         <!-- for right option such as search, user profile, upload -->
-        <div class="navbarfont navigationbar--right">
+        <div class="navbarfont navigationbar--right ">
 
             <!--Search button-->
 
-            <div class="search">
+            <div class="search navbar_items ">
                 <input type="text" placeholder="Search" class="search__input" required>
                 <button type="button" class="search__btn" id="searchButton">
-                    <i class="navbar_items fa fa-search search__icon" aria-hidden="true"></i>
+                    <i class=" fa fa-search search__icon" aria-hidden="true"></i>
                 </button>
             </div>
             <!--seacrh button end-->
+
 
             <!-- user button -->
 
             <button type="button" class="navbar_items navbar_items--icon userbutton"><i
                     class="fas fa-user-circle"></i></button>
-            <div class="usercontainer">
 
+
+            <div class="usercontainer">
                 <!-- if user signed the following div will be displayed -->
                 <div class="signincontainer">
-                    <img src="img/icons/man.png" class="signincontainer__img" alt="">
+                    <div class="flex-center">
+                            <img src="img/icons/man.png" class="signincontainer__img" alt="">
+                    </div>
                     <ul class="ul__list">
                         <li class="ul__list--items">
-                            <h1 class="accountHolderName">Raju Moni Borah</h1>
+                            <h1 class="accountHolderName font-small">Raj Moni Borah</h1>
                         </li>
                         <li class="ul__list--items">
-                            <h2 class="accountHolderId">cs16msiit020@kazirangauniversity.in</h2>
+                            <h2 class="accountHolderId font-xsmall">cs16msiit020@kazirangauniversity.in</h2>
                         </li>
-                        <li class="ul__list--items"><a href="settings.html" class="list--link font-small"> Account</a>
-                            &nbsp;
+                        <li class="ul__list--items">
+                            
+                            <a href="settings.html" class="list--link font-small"> Account</a>
 
-                            <a href="dashboard.html" class="list--link font-small">My videos</a></li>
+                            <a href="dashboard.html" class="list--link font-small">My&nbsp;videos</a>
+
+                            <a href="profile.html" class="list--link font-small">My&nbsp;Profile</a>
+                        
+                        
+                        </li>
 
                         <!-- list item for progress bar -->
                         <li class="ul__list--items ul__list--items--progress ">
                             <!-- line  128  navigationbar.scsss  -->
                             <div class="progressbox">
-                                <h4 class="progressbox__text">FILENAME</h4>
+                                <h4 class="progressbox__text">FILENAME heloooooooooooooooooooooooooooooooooo</h4>
                                 <progress class="progressbox__bar" value="50" max="100"></progress>
                                 <div class="progressbox__percentage">50%</div>
                                 <div class="progressbox__btn">
@@ -84,7 +97,7 @@
                 </div>
                 <!-- if user is signed out then -->
                 <div class="notsignincontainer">
-                    <div class="notsignincontainer__imgdiv">
+                    <div class="flex-center">
                         <img class="notsignincontainer__img" src="img/display.jpg" alt="">
                     </div>
                     <ul class="ul__list">
@@ -93,10 +106,12 @@
                     </ul>
                 </div>
 
+
             </div>
         </div>
-    </div>
-    <!-- ending of navigation bar -->
+</div>
+<!-- ending of navigation bar -->
+
 
     <!-- for the background -->
     <div class="bgcontain">

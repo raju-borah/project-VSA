@@ -66,7 +66,7 @@
     height: auto;
     overflow-y: hidden;
     position: absolute;
-    right: 3.5%;
+    right: 3.5rem;
     margin-top: -3rem;
 
     background: black;
@@ -76,7 +76,7 @@
       margin-right: 0rem;
 
       @include respond(phone) {
-        margin-right: 3rem;
+        margin-right: 2rem;
       }
     }
     &:hover {
