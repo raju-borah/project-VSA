@@ -159,12 +159,15 @@ body {
     height: auto;
     overflow-y: hidden;
     position: absolute;
-    right: 3.5%;
+    right: 3.5rem;
     margin-top: -3rem;
     background: black; }
     .list--option--plist {
       margin-top: -3.5rem;
       margin-right: 0rem; }
+      @media (max-width: 824px) {
+        .list--option--plist {
+          margin-right: 2rem; } }
     .list--option:hover {
       display: block; }
   @media (max-width: 824px) {
@@ -174,7 +177,7 @@ body {
     margin: 1rem; }
     .list--items--option {
       margin: 0;
-      padding: 0.5rem; }
+      padding: 0; }
       .list--items--option:hover {
         background: white; }
       .list--items--option:hover .btnlist {
@@ -192,181 +195,6 @@ body {
 
 .hauto {
   height: 600px; }
-
-iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 2rem;
-  overflow: hidden; }
-
-.video-js {
-  font-size: 1.6rem;
-  color: #cacaca;
-  outline: none; }
-
-.video-js .vjs-play-control,
-.video-js .vjs-remaining-time,
-.video-js .vjs-volume-menu-button {
-  border-right: 1px solid #323232; }
-
-.video-js .vjs-volume-menu-button .vjs-menu-content:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%; }
-
-.video-js .vjs-volume-menu-button .vjs-menu-content {
-  display: inline-block;
-  vertical-align: middle; }
-
-/* The default color of control backgrounds is mostly black but with a little
-   bit of blue so it can still be seen on all-black video frames, which are common. */
-.video-js .vjs-control.vjs-play-control,
-.video-js .vjs-control.vjs-play-control.vjs-playing,
-.video-js .vjs-control.vjs-fullscreen-control,
-.video-js .vjs-control.vjs-volume-menu-button,
-.video-js .vjs-control.vjs-captions-button {
-  outline: none; }
-
-.video-js .vjs-control-bar,
-.video-js .vjs-menu-button .vjs-menu-content {
-  /* IE8 - has no alpha support */
-  background-color: #262626;
-  /* Opacity: 1.0 = 100%, 0.0 = 0% */
-  background-color: rgba(38, 38, 38, 0.9); }
-
-.video-js .vjs-control-bar {
-  background-color: rgba(38, 38, 38, 0.9);
-  width: auto;
-  left: 4em;
-  right: 4em;
-  bottom: 2em;
-  border-radius: 0.5em; }
-
-.video-js .vjs-control-bar:hover .vjs-progress-control {
-  opacity: 1;
-  top: -2.5em; }
-
-.video-js .vjs-control-bar .vjs-menu {
-  z-index: 2;
-  height: 100%; }
-
-.video-js.vjs-fullscreen .vjs-control-bar {
-  bottom: 4em; }
-
-.video-js .vjs-current-time {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: -2.5em; }
-
-/* Slider - used for Volume bar and Progress bar */
-.video-js .vjs-slider {
-  background-color: #2e2e2e;
-  background-color: rgba(46, 46, 46, 0.8);
-  border-radius: 1em;
-  margin: 0; }
-
-.video-js .vjs-remaining-time {
-  flex: 1;
-  text-align: left; }
-
-/* The slider bar color is used for the progress bar and the volume bar
-   (the first two can be removed after a fix that's coming) */
-.video-js .vjs-play-progress,
-.video-js .vjs-volume-level,
-.video-js .vjs-slider-bar {
-  background: transparent;
-  border-radius: 1em; }
-
-.video-js .vjs-play-progress {
-  background: white; }
-
-.video-js .vjs-volume-level {
-  background: #fff;
-  top: 2rem; }
-
-.video-js .vjs-play-progress {
-  color: #fff;
-  background: #012A57;
-  font-size: 1.3em; }
-
-.video-js .vjs-play-progress:before {
-  transition: width 0.1s ease-out, height 0.1s ease-out;
-  content: "";
-  top: -0.2em;
-  border: 0;
-  background: radial-gradient(#fff 33%, #eee);
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  box-shadow: #000 0 0 2px; }
-
-.video-js .vjs-play-progress:hover:before {
-  width: 1.1em;
-  height: 1.1em;
-  border: 2px solid transparent; }
-
-.video-js .vjs-progress-control {
-  position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
-  padding: 0 4em 0 0.4em;
-  top: -2.3em;
-  border-radius: 1em;
-  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear,
- -moz-transform 150ms linear, -o-transform 150ms linear;
-  z-index: 1;
-  opacity: 0; }
-
-.video-js .vjs-progress-control:hover .vjs-progress-holder {
-  font-size: inherit; }
-
-.video-js .vjs-progress-control .vjs-mouse-display {
-  background: #cacaca; }
-
-.video-js .vjs-time-tooltip {
-  background: #cacaca !important;
-  color: #b7090b; }
-
-.video-js .vjs-time-tooltip:before {
-  top: 100%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top-color: #262626;
-  border-width: 0.8em;
-  right: 25%;
-  margin-left: -0.8em; }
-
-.video-js .vjs-play-progress,
-.video-js .vjs-load-progress {
-  height: 0.7em !important; }
-
-.video-js .vjs-progress-holder {
-  height: 0.9em; }
-
-/* The main progress bar also has a bar that shows how much has been loaded. */
-.video-js .vjs-load-progress {
-  /* For IE8 we'll lighten the color */
-  background: #3a3a3a;
-  /* Otherwise we'll rely on stacked opacities */
-  background: rgba(46, 46, 46, 0.5);
-  border-radius: 1em;
-  height: 0.9em !important; }
-
-/* The load progress bar also has internal divs that represent
-   smaller disconnected loaded time ranges */
-.video-js .vjs-load-progress div {
-  /* For IE8 we'll lighten the color */
-  background: #3a3a3a;
-  /* Otherwise we'll rely on stacked opacities */
-  background: rgba(46, 46, 46, 0.75);
-  border-radius: 1em;
-  height: 0.9em !important; }
 
 .form {
   margin: 3rem;
@@ -513,12 +341,17 @@ border-radius for curved end of button
 .btn {
   font-size: 1.9rem;
   background-color: #eee;
+  font-family: 'Averia Serif Libre', cursive;
   /* button hover */
   /* when clicked */ }
+  @media (max-width: 824px) {
+    .btn {
+      font-size: 1.5rem; } }
   .btn--trans {
+    font-size: 2.5rem;
     background: transparent; }
     .btn--trans:hover {
-      color: #012A57; }
+      color: #2998ff; }
     .btn--trans:hover ~ .list--option {
       display: block; }
   .btn--comment {
@@ -596,6 +429,7 @@ border-radius for curved end of button
     background-color: #172d44;
     display: inline-block;
     width: 10rem;
+    text-align: center;
     font-weight: 700;
     padding: 1rem;
     color: #fff;
@@ -606,7 +440,7 @@ border-radius for curved end of button
       .btn--front {
         font-size: 18px;
         margin-left: 1rem;
-        width: 7rem; } }
+        width: 7.5rem; } }
   .btn--upload {
     width: 15rem;
     padding: 1rem;
@@ -616,6 +450,12 @@ border-radius for curved end of button
     background-color: #2998ff;
     color: #fff;
     font-size: 1.6rem; }
+  .btn--addvideo {
+    background-color: #172d44;
+    color: #fff;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 4px; }
   .btn:hover {
     /* shadow when hover */
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
@@ -632,11 +472,17 @@ border-radius for curved end of button
     transform: translateY(-0.01rem); }
 
 .btnlist {
+  display: block;
   background: transparent;
   border: none;
   outline: none;
   color: white;
-  font-weight: 300; }
+  font-weight: 450;
+  padding: 1rem;
+  text-align: start;
+  font-family: 'Averia Serif Libre', cursive; }
+  .btnlist--btn {
+    width: 100%; }
 
 .navigationbar {
   position: relative;
@@ -661,13 +507,13 @@ border-radius for curved end of button
     color: #fff; }
     @media (max-width: 824px) {
       .navigationbar:hover .navbarfont .navbar_items {
-        font-size: 38px; } }
+        font-size: 35px; } }
     .navigationbar:hover .navbarfont .navbar_items--icon {
       font-size: 4.6rem;
       top: 0; }
       @media (max-width: 824px) {
         .navigationbar:hover .navbarfont .navbar_items--icon {
-          font-size: 42px;
+          font-size: 35px;
           top: -.3rem; } }
     .navigationbar:hover .navbarfont .navbar_items:hover {
       color: #9dcfff;
@@ -683,13 +529,12 @@ border-radius for curved end of button
   .navigationbar--right {
     text-align: end;
     width: 50%;
-    padding-right: 3rem;
+    padding-right: 4rem;
     float: left; }
     @media (max-width: 824px) {
       .navigationbar--right {
-        font-size: 20px;
         float: right;
-        padding-right: 1rem; } }
+        padding-right: 0rem; } }
 
 .navbarfont .navbar_items {
   font-size: 3rem;
@@ -697,13 +542,13 @@ border-radius for curved end of button
   color: #fff; }
   @media (max-width: 824px) {
     .navbarfont .navbar_items {
-      font-size: 38px; } }
+      font-size: 35px; } }
   .navbarfont .navbar_items--icon {
     font-size: 4.6rem;
     top: 0; }
     @media (max-width: 824px) {
       .navbarfont .navbar_items--icon {
-        font-size: 42px;
+        font-size: 35px;
         top: -.3rem; } }
   .navbarfont .navbar_items:hover {
     color: #9dcfff;
@@ -724,53 +569,72 @@ border-radius for curved end of button
   .userbutton:active, .userbutton:focus {
     outline: none; }
 
+.notibutton {
+  background: transparent;
+  border: none;
+  position: relative;
+  margin-right: 1rem; }
+  .notibutton:active, .notibutton:focus {
+    outline: none; }
+  .notibutton_dot {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    left: 70%;
+    top: -2rem; }
+    @media (max-width: 824px) {
+      .notibutton_dot {
+        height: 15px;
+        width: 15px; } }
+  @media (max-width: 824px) {
+    .notibutton {
+      margin-right: 1rem; } }
+
 .usercontainer {
   z-index: 2;
   display: none;
   clear: left;
   position: absolute;
   width: 38rem;
-  height: 41rem;
+  height: auto;
   border-radius: 1rem;
   top: 8rem;
-  right: 3rem;
+  right: 2.8rem;
   padding: 1rem;
-  background-image: radial-gradient(#172d44, rgba(255, 255, 255, 0.1)), url("../img/Capture.jpg");
   box-shadow: 0.44rem 1rem 1rem rgba(0, 0, 0, 0.55); }
   .usercontainer::after {
     content: "";
     position: absolute;
-    top: -1.99rem;
+    top: -1.05rem;
     right: 2.8rem;
     border: 1rem solid;
     border-color: transparent transparent #eee transparent; }
   @media (max-width: 824px) {
     .usercontainer {
       width: 30rem;
-      height: 38rem;
       top: 7rem;
-      right: .5rem; } }
+      right: 1rem; } }
 
 .signincontainer {
   display: none;
   z-index: 2;
   position: absolute;
-  width: 36rem;
-  height: 39rem;
+  width: 37rem;
+  height: auto;
   top: 1rem;
-  left: .97rem;
+  left: 0.97rem;
   padding: 2rem;
   background-color: #eee;
+  border: 8px solid #333;
   color: #000;
-  border-radius: .55rem; }
+  border-radius: 0.55rem; }
   @media (max-width: 824px) {
     .signincontainer {
-      width: 28rem;
-      height: 36rem; } }
+      width: 29.5rem; } }
   .signincontainer__img {
-    position: absolute;
-    top: .55rem;
-    left: 36%;
     height: 10rem;
     width: 10rem;
     background-position: center;
@@ -782,27 +646,31 @@ border-radius for curved end of button
 
 .ul__list {
   margin: 1rem;
-  margin-top: 9rem;
+  margin-top: 1%;
   list-style-type: none;
   text-align: center; }
+  @media (max-width: 824px) {
+    .ul__list {
+      margin-top: 18px; } }
   .ul__list--items {
-    margin: .53rem; }
+    margin: 0.53rem; }
     .ul__list--items--progress {
       display: block; }
 
 .list--link, .list--link:visited {
+  display: inline-block;
   text-decoration: none;
   color: #000;
   font-weight: 700;
-  padding: .56rem;
+  padding: 0.56rem;
   border-radius: 1rem;
-  margin: .2rem;
+  margin: 0.2rem;
   font-size: 18px;
   background-color: #9dcfff; }
   @media (max-width: 824px) {
     .list--link, .list--link:visited {
-      padding: .5rem;
-      margin: .2rem; } }
+      padding: 0.4rem;
+      margin: 0.2rem; } }
 
 @media (max-width: 824px) {
   .list--link {
@@ -812,31 +680,26 @@ border-radius for curved end of button
   display: none;
   z-index: 2;
   position: absolute;
-  width: 36rem;
-  height: 37rem;
+  width: 37rem;
+  height: auto;
   top: 2rem;
   left: 1rem;
   padding: 2rem;
+  border: 8px solid #333;
   background-color: #eee; }
   @media (max-width: 824px) {
     .notsignincontainer {
       width: 28rem;
-      height: 33rem;
+      height: auto;
       top: 1rem; } }
   .notsignincontainer__img {
-    margin-left: 5.5rem;
     width: 22rem;
     height: 22rem;
     border-radius: 50%; }
     @media (max-width: 824px) {
       .notsignincontainer__img {
         width: 18rem;
-        height: 18rem;
-        margin-left: 3rem;
-        top: 1rem; } }
-  .notsignincontainer__imgdiv {
-    width: 20rem;
-    height: 15rem; }
+        height: 18rem; } }
 
 @media (max-width: 824px) {
   .accountHolderName {
@@ -851,8 +714,12 @@ border-radius for curved end of button
 
 .search {
   position: relative;
-  right: 3rem;
-  top: -1.8rem; }
+  right: 7rem;
+  top: -2rem; }
+  .search--addvideo {
+    position: absolute;
+    top: 0;
+    right: 0; }
   .search__input {
     position: absolute;
     top: 20px;
@@ -869,7 +736,7 @@ border-radius for curved end of button
     transition: all 0.8s; }
     @media (max-width: 824px) {
       .search__input {
-        height: 3.5rem;
+        height: 3rem;
         right: 1.9rem;
         top: 20px; } }
   .search__btn {
@@ -890,13 +757,13 @@ border-radius for curved end of button
     background: #2998ff; }
     @media (max-width: 824px) {
       .search__btn {
-        width: 4.2rem;
-        height: 4.2rem;
+        width: 4rem;
+        height: 3.8rem;
         right: 2rem;
         top: 1.7rem; } }
   .search__icon {
     position: absolute;
-    top: 1rem;
+    top: .8rem;
     left: 1rem; }
   .search:hover .search__input {
     width: 25rem;
@@ -1349,10 +1216,11 @@ border-radius for curved end of button
     width: 100%;
     display: grid;
     grid-template-rows: repeat(1, minmax(10rem, min-content));
-    grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
     grid-row-gap: 5rem;
-    grid-column-gap: 3rem;
-    justify-content: center; }
+    grid-column-gap: 10rem;
+    justify-content: center;
+    align-content: center; }
     @media (max-width: 824px) {
       .team__grid {
         grid-template-rows: repeat(1, minmax(5rem, min-content));
@@ -1473,6 +1341,8 @@ border-radius for curved end of button
     width: 50%;
     top: 73.5%;
     left: 0; }
+    .vcard--tag--addvideo {
+      top: 71%; }
     .vcard--tag--playlist {
       background-color: rgba(0, 0, 0, 0.8);
       width: 100%;
@@ -1571,6 +1441,59 @@ border-radius for curved end of button
     color: #2998ff;
     background-color: rgba(86, 67, 250, 0.3); }
 
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 91%;
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee; }
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc; }
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block; }
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
 .footer {
   position: relative; }
   .footer__back {
@@ -1582,7 +1505,8 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__back {
         height: 50rem;
-        background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)); } }
+        background-color: black;
+        background-image: none; } }
   .footer__logo {
     position: absolute;
     top: 5rem;
@@ -1591,7 +1515,6 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__logo {
         font-size: 100px;
-        left: 40%;
         top: -2rem;
         color: white; } }
   .footer__logo-name {
@@ -1631,11 +1554,12 @@ border-radius for curved end of button
       color: #5643fa;
       top: 30%;
       left: 15%;
+      display: inline-block;
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--call {
-          top: 22rem;
-          left: 70%; } }
+          top: 45%;
+          left: 69%; } }
       .footer__communication--call:hover {
         transform: translateY(-2rem); }
     .footer__communication--callinfo {
@@ -1647,10 +1571,11 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--callinfo {
+          visibility: visible;
+          background-color: transparent;
           position: relative;
           font-size: 15px;
-          top: -4rem;
-          left: -15%; } }
+          font-weight: 100; } }
     .footer__communication--call:hover .footer__communication--callinfo {
       visibility: visible;
       color: #fff; }
@@ -1662,8 +1587,8 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--location {
-          top: 29rem;
-          left: 70%; } }
+          top: 62%;
+          left: 68%; } }
       .footer__communication--location:hover {
         transform: translateY(-2rem); }
     .footer__communication--locationinfo {
@@ -1676,10 +1601,10 @@ border-radius for curved end of button
       padding: .7rem; }
       @media (max-width: 824px) {
         .footer__communication--locationinfo {
-          position: relative;
-          font-size: 10px;
-          top: -3rem;
-          left: -15%; } }
+          font-size: 12px;
+          font-weight: 100;
+          visibility: visible;
+          background-color: transparent; } }
     .footer__communication--location:hover .footer__communication--locationinfo {
       visibility: visible;
       color: #fff; }
@@ -1691,8 +1616,8 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--mail {
-          top: 35rem;
-          left: 70%; } }
+          top: 79%;
+          left: 69%; } }
       .footer__communication--mail:hover {
         transform: translateY(-2rem); }
     .footer__communication--mailinfo {
@@ -1706,9 +1631,10 @@ border-radius for curved end of button
       @media (max-width: 824px) {
         .footer__communication--mailinfo {
           position: relative;
-          font-size: 10px;
-          top: -3rem;
-          left: -15%; } }
+          font-size: 12px;
+          font-weight: 100;
+          visibility: visible;
+          background-color: transparent; } }
     .footer__communication--mail:hover .footer__communication--mailinfo {
       visibility: visible;
       color: #fff; }
@@ -1725,7 +1651,7 @@ border-radius for curved end of button
         font-size: 20px;
         transform: rotate(0);
         font-weight: 200;
-        top: 15rem;
+        top: 30%;
         left: 2rem;
         width: 30%; } }
   .footer__social--fb {
@@ -1736,9 +1662,9 @@ border-radius for curved end of button
     top: 24%; }
     @media (max-width: 824px) {
       .footer__social--fb {
-        font-size: 35px;
-        left: 5rem;
-        top: 22rem; } }
+        font-size: 45px;
+        left: 20%;
+        top: 45%; } }
   .footer__social--twit {
     position: absolute;
     color: #2998ff;
@@ -1747,9 +1673,9 @@ border-radius for curved end of button
     top: 40%; }
     @media (max-width: 824px) {
       .footer__social--twit {
-        font-size: 35px;
-        left: 5rem;
-        top: 29rem; } }
+        font-size: 45px;
+        left: 20%;
+        top: 60%; } }
   .footer__social--link {
     position: absolute;
     color: #2998ff;
@@ -1758,9 +1684,9 @@ border-radius for curved end of button
     top: 55%; }
     @media (max-width: 824px) {
       .footer__social--link {
-        font-size: 35px;
-        left: 5rem;
-        top: 35rem; } }
+        font-size: 45px;
+        left: 20%;
+        top: 75%; } }
 
 .header {
   height: 91vh;
@@ -2139,9 +2065,10 @@ border-radius for curved end of button
     grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
     grid-gap: 8rem;
     padding: 10rem;
-    padding-top: 6rem;
-    padding-left: 15rem;
-    padding-right: 15rem; }
+    padding-top: 6rem; }
+    .dashboard__vcontainer--addvideo {
+      padding: 5rem;
+      grid-column-gap: 13rem; }
     @media (max-width: 1024px) {
       .dashboard__vcontainer {
         padding: 4rem;
@@ -2155,6 +2082,7 @@ border-radius for curved end of button
   background: transparent;
   color: #fff;
   padding-top: 0.77rem;
+  font-weight: bold;
   display: none; }
 
 .timestamp {
@@ -2195,6 +2123,16 @@ border-radius for curved end of button
   color: white;
   background-color: rgba(0, 0, 0, 0.66);
   box-shadow: 0rem 0rem 1rem rgba(30, 42, 59, 0.66); }
+
+@media (max-width: 824px) {
+  .dashboard--option {
+    display: none; } }
+
+.dashboard--option--1 {
+  display: none; }
+  @media (max-width: 824px) {
+    .dashboard--option--1 {
+      display: inline; } }
 
 .player {
   width: 100%;
@@ -2477,7 +2415,7 @@ border-radius for curved end of button
     transition: all 0.8s; }
     @media (max-width: 824px) {
       .searchmore__input {
-        height: 3.5rem;
+        height: 3rem;
         right: 1.9rem;
         top: 20px; } }
   .searchmore__btn {
@@ -2498,8 +2436,8 @@ border-radius for curved end of button
     background: #5643fa; }
     @media (max-width: 824px) {
       .searchmore__btn {
-        width: 4.2rem;
-        height: 4.2rem;
+        width: 4rem;
+        height: 3.8rem;
         right: 2rem;
         top: 1.7rem; } }
   .searchmore__icon {
@@ -2516,6 +2454,9 @@ border-radius for curved end of button
   width: 100%;
   height: 90.5vh;
   animation: change steps(1) 2s infinite; }
+  @media (max-width: 824px) {
+    .bgcontain {
+      height: 91.5vh; } }
 
 .backhome {
   position: relative;
@@ -3218,6 +3159,7 @@ button:focus {
     width: 65%;
     height: 80%;
     overflow-y: scroll;
+    overflow-x: hidden;
     text-align: center;
     position: relative; }
     @media (max-width: 824px) {
@@ -3364,3 +3306,20 @@ button:focus {
           .notify_panel_notes--comment {
             font-size: 10px;
             left: 4%; } }
+
+.addvideo {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 80px 594px 80px;
+  grid-template-columns: 1fr; }
+  .addvideo--top {
+    background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
+    padding: 2rem; }
+  .addvideo--mid {
+    overflow-y: scroll;
+    overflow-x: hidden; }
+  .addvideo--footer {
+    background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
+    padding: 2rem;
+    padding-left: 6%; }

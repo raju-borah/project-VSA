@@ -4,8 +4,10 @@
       <!-- if user signed the following div will be displayed -->
 
       <div class="signincontainer" v-if="userIn">
-        <img :src="profilePic" class="signincontainer__img" alt v-if="profilePic">
-        <img src="../../assets/img/icons/man.png" class="signincontainer__img" alt v-else>
+        <div class="flex-center">
+          <img :src="profilePic" class="signincontainer__img" alt v-if="profilePic" />
+          <img src="../../assets/img/icons/man.png" class="signincontainer__img" alt v-else />
+        </div>
         <ul class="ul__list">
           <li class="ul__list--items">
             <h1 class="accountHolderName font-small">{{name}}</h1>
@@ -21,7 +23,7 @@
             </span>
             <span v-if="!hideMyVideoBtn">
               <router-link :to="{name: 'Dashboard'}">
-                <a class="list--link font-small">My videos</a>
+                <a class="list--link font-small">My&nbsp;videos</a>
               </router-link>
             </span>
             <span v-if="!hideProfileBtn">
@@ -61,8 +63,8 @@
       </div>
       <!-- if user is signed out then -->
       <div class="notsignincontainer" v-if="!userIn">
-        <div class="notsignincontainer__imgdiv">
-          <img class="notsignincontainer__img" src="../../assets/img/display.jpg" alt>
+        <div class="flex-center">
+          <img class="notsignincontainer__img" src="../../assets/img/display.jpg" alt />
         </div>
         <ul class="ul__list">
           <li>
