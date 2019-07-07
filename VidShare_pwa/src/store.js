@@ -92,7 +92,11 @@ export let store = new Vuex.Store({
     percentage: 0,
     paused: false,
     fileName: null,
-    url: null
+    url: null,
+
+    // app update state
+    registration: null,
+    updateExists: false
   },
   mutations: {
     resetUser(state) {
@@ -399,6 +403,28 @@ export let store = new Vuex.Store({
           router.push({ name: "Play", params: { id: payload } });
           state.show = true
         })
+    },
+    updateApp(state) {
+      swal
+        .fire({
+          type: "success",
+          title: "Update",
+          showCloseButton: true,
+          html: `<div class="flex-center">
+                    <p>
+                      Click Ok to update now </p>
+                    <p>
+                  </div>`,
+        })
+        .then(res => {
+          if (res.value) {
+            state.updateExists = false;
+            if (!state.registration || !state.registration.waiting) {
+              return;
+            }
+            state.registration.waiting.postMessage("skipWaiting");
+          }
+        });
     }
   },
   actions: {
@@ -437,6 +463,9 @@ export let store = new Vuex.Store({
     },
     getVideo(context, payload) {
       context.commit('getVideo', payload)
+    },
+    updateApp(context) {
+      context.commit('updateApp')
     }
   }
 })

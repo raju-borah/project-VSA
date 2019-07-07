@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <transition name="fade" mode="out-in">
-      <router-view/>
+      <router-view />
     </transition>
   </div>
 </template>
@@ -9,6 +9,39 @@
 <script>
 export default {
   name: "App",
+  data() {
+    return {
+      refreshing: false
+    };
+  },
+  watch: {
+    updateExists: {
+      handler: function(value) {
+        if (value) {
+          this.$store.dispatch("updateApp");
+        }
+      }
+    }
+  },
+  computed: {
+    updateExists() {
+      return this.$store.state.updateExists;
+    }
+  },
+  methods: {
+    showRefreshUI(e) {
+      this.$store.state.registration = e.detail;
+      this.$store.state.updateExists = true;
+    }
+  },
+  created() {
+    document.addEventListener("swUpdated", this.showRefreshUI, { once: true });
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (this.refreshing) return;
+      this.refreshing = true;
+      window.location.reload();
+    });
+  }
 };
 </script>
 
