@@ -2550,7 +2550,7 @@ border-radius for curved end of button
     right: 22rem; }
     @media (max-width: 824px) {
       .progressbox__bar {
-        right: 6rem; } }
+        right: 16rem; } }
   .progressbox__percentage {
     position: absolute;
     color: #000;
