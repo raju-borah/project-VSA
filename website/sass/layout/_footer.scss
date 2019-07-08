@@ -64,6 +64,7 @@
         font-size: 5rem;
         @include respond(phone){
             font-size: 35px;
+            text-align: center;
            
         }
 
@@ -72,7 +73,7 @@
         {
             position:absolute;
             top: 20%;
-            left: 12%;
+            left: 10%;
             color: $color-white;
             font-size: 3rem;
             font-weight: 600;
@@ -83,8 +84,8 @@
                 font-size: 20px;
                 transform: rotate(0);
                 font-weight: 200;
-                top: 15rem;
-                left: 65%;
+                top: 70%;
+                left: 30%;
                
             }
             
@@ -101,8 +102,8 @@
             display: inline-block;
             transition: all .4s;
             @include respond(phone){
-                top: 45%;
-                left: 69%;
+                top: 80.5%;
+                left: 8%;
                
             }
 
@@ -126,9 +127,10 @@
             @include respond(phone){
                 visibility: visible;
                 background-color:transparent;
-                position: relative;
-                font-size: 15px;
+                font-size: 12px;
                 font-weight: 100;
+             
+            
          
               
                
@@ -155,8 +157,8 @@
             transition: all .4s;
 
             @include respond(phone){
-                top: 62%;
-                left: 68%;
+                top: 79%;
+                left: 35%;
                
             }
 
@@ -202,8 +204,9 @@
             transition: all .4s;
 
             @include respond(phone){
+                text-align: center;
                 top: 79%;
-                left: 69%;
+                left: 70%;
                
             }
 
@@ -222,7 +225,7 @@
             padding: .7rem;
             color: $color-white;
             @include respond(phone){
-                position: relative;
+                display: block;
                 font-size: 12px;
                 font-weight: 100;
                 visibility: visible;
@@ -246,6 +249,7 @@
     &__social
     {
 
+        border-bottom: solid 1px white;
         &--text
         {
             position: absolute;
@@ -259,9 +263,8 @@
                 font-size: 20px;
                 transform: rotate(0);
                 font-weight: 200;
-                top: 30%;
-                left: 2rem;
-                width: 30%;
+                top: 35%;
+                left: 20%;
                
             }
          
@@ -298,8 +301,8 @@
             top: 40%;
             @include respond(phone){
                 font-size: 45px;
-                left: 20%;
-                top: 60%;
+                left: 40%;
+                top: 45%;
             
                
             }
@@ -318,8 +321,8 @@
             top: 55%;
             @include respond(phone){
                 font-size: 45px;
-                left: 20%;
-                top: 75%;
+                left: 60%;
+                top: 45%;
             
                
             }

@@ -1532,11 +1532,12 @@ border-radius for curved end of button
     font-size: 5rem; }
     @media (max-width: 824px) {
       .footer__communication {
-        font-size: 35px; } }
+        font-size: 35px;
+        text-align: center; } }
     .footer__communication--text {
       position: absolute;
       top: 20%;
-      left: 12%;
+      left: 10%;
       color: #fff;
       font-size: 3rem;
       font-weight: 600;
@@ -1547,8 +1548,8 @@ border-radius for curved end of button
           font-size: 20px;
           transform: rotate(0);
           font-weight: 200;
-          top: 15rem;
-          left: 65%; } }
+          top: 70%;
+          left: 30%; } }
     .footer__communication--call {
       position: absolute;
       color: #5643fa;
@@ -1558,8 +1559,8 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--call {
-          top: 45%;
-          left: 69%; } }
+          top: 80.5%;
+          left: 8%; } }
       .footer__communication--call:hover {
         transform: translateY(-2rem); }
     .footer__communication--callinfo {
@@ -1573,8 +1574,7 @@ border-radius for curved end of button
         .footer__communication--callinfo {
           visibility: visible;
           background-color: transparent;
-          position: relative;
-          font-size: 15px;
+          font-size: 12px;
           font-weight: 100; } }
     .footer__communication--call:hover .footer__communication--callinfo {
       visibility: visible;
@@ -1587,8 +1587,8 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--location {
-          top: 62%;
-          left: 68%; } }
+          top: 79%;
+          left: 35%; } }
       .footer__communication--location:hover {
         transform: translateY(-2rem); }
     .footer__communication--locationinfo {
@@ -1616,8 +1616,9 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--mail {
+          text-align: center;
           top: 79%;
-          left: 69%; } }
+          left: 70%; } }
       .footer__communication--mail:hover {
         transform: translateY(-2rem); }
     .footer__communication--mailinfo {
@@ -1630,7 +1631,7 @@ border-radius for curved end of button
       color: #fff; }
       @media (max-width: 824px) {
         .footer__communication--mailinfo {
-          position: relative;
+          display: block;
           font-size: 12px;
           font-weight: 100;
           visibility: visible;
@@ -1638,55 +1639,56 @@ border-radius for curved end of button
     .footer__communication--mail:hover .footer__communication--mailinfo {
       visibility: visible;
       color: #fff; }
-  .footer__social--text {
-    position: absolute;
-    color: #fff;
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: .5rem;
-    right: 10%;
-    top: 10rem; }
-    @media (max-width: 824px) {
-      .footer__social--text {
-        font-size: 20px;
-        transform: rotate(0);
-        font-weight: 200;
-        top: 30%;
-        left: 2rem;
-        width: 30%; } }
-  .footer__social--fb {
-    position: absolute;
-    color: #5643fa;
-    font-size: 6rem;
-    right: 20%;
-    top: 24%; }
-    @media (max-width: 824px) {
-      .footer__social--fb {
-        font-size: 45px;
-        left: 20%;
-        top: 45%; } }
-  .footer__social--twit {
-    position: absolute;
-    color: #2998ff;
-    font-size: 6rem;
-    right: 18%;
-    top: 40%; }
-    @media (max-width: 824px) {
-      .footer__social--twit {
-        font-size: 45px;
-        left: 20%;
-        top: 60%; } }
-  .footer__social--link {
-    position: absolute;
-    color: #2998ff;
-    font-size: 6rem;
-    right: 16%;
-    top: 55%; }
-    @media (max-width: 824px) {
-      .footer__social--link {
-        font-size: 45px;
-        left: 20%;
-        top: 75%; } }
+  .footer__social {
+    border-bottom: solid 1px white; }
+    .footer__social--text {
+      position: absolute;
+      color: #fff;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: .5rem;
+      right: 10%;
+      top: 10rem; }
+      @media (max-width: 824px) {
+        .footer__social--text {
+          font-size: 20px;
+          transform: rotate(0);
+          font-weight: 200;
+          top: 35%;
+          left: 20%; } }
+    .footer__social--fb {
+      position: absolute;
+      color: #5643fa;
+      font-size: 6rem;
+      right: 20%;
+      top: 24%; }
+      @media (max-width: 824px) {
+        .footer__social--fb {
+          font-size: 45px;
+          left: 20%;
+          top: 45%; } }
+    .footer__social--twit {
+      position: absolute;
+      color: #2998ff;
+      font-size: 6rem;
+      right: 18%;
+      top: 40%; }
+      @media (max-width: 824px) {
+        .footer__social--twit {
+          font-size: 45px;
+          left: 40%;
+          top: 45%; } }
+    .footer__social--link {
+      position: absolute;
+      color: #2998ff;
+      font-size: 6rem;
+      right: 16%;
+      top: 55%; }
+      @media (max-width: 824px) {
+        .footer__social--link {
+          font-size: 45px;
+          left: 60%;
+          top: 45%; } }
 
 .header {
   height: 91vh;
