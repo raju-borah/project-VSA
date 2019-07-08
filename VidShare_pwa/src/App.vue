@@ -41,7 +41,7 @@ export default {
       this.refreshing = true;
       window.location.reload();
     });
-  }
+  },
 };
 </script>
 

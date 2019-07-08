@@ -400,6 +400,7 @@ export let store = new Vuex.Store({
             })
         })
         .then(() => {
+          window.scrollTo(0, 0);
           router.push({ name: "Play", params: { id: payload } });
           state.show = true
         })
@@ -425,6 +426,38 @@ export let store = new Vuex.Store({
             state.registration.waiting.postMessage("skipWaiting");
           }
         });
+    },
+    deleteVideo(state, payload) {
+      let deleteRef
+      db.collection("uploadedVideos")
+        .doc(payload)
+        .get()
+        .then(doc => {
+          deleteRef = storage().refFromURL(doc.data().url)
+        })
+        .then(() => {
+          deleteRef
+            .delete()
+            .then(() => {
+              // delete video doc from db after video file delete
+              db.collection("uploadedVideos")
+                .doc(payload)
+                .delete()
+                .then(() => {
+                  alertSuccess("Video Deleted!")
+                })
+                .catch(error => {
+                  console.error(error.message)
+                  alertError("Error removing document")
+                })
+            })
+            .catch(error => {
+              console.error(error.message)
+            })
+        })
+        .catch(err => {
+          console.error(err.message)
+        })
     }
   },
   actions: {
@@ -466,6 +499,9 @@ export let store = new Vuex.Store({
     },
     updateApp(context) {
       context.commit('updateApp')
+    },
+    deleteVideo(context, payload) {
+      context.commit('deleteVideo', payload)
     }
   }
 })

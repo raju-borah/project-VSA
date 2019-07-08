@@ -109,13 +109,19 @@ export default {
     }
   },
   mounted() {
+    let prevScrollpos;
     //not the scroll position at the starting of page loading
-    let prevScrollpos = window.pageYOffset; //at starting it is 0
+    if (this.$route.name === "Dashboard") {
+      // window.pageYOffset = 0;
+      prevScrollpos = 1;
+    } else {
+      prevScrollpos = window.pageYOffset; //at starting it is 0
+    }
     const navposition = () => {
       //note the scroll position while scrolling on the page
       let currentScrollPos = window.pageYOffset; //increases as we scroll down and decreses as we scroll up
       //if we scroll up it will show the scroll bar
-      if (prevScrollpos > currentScrollPos) {
+      if (prevScrollpos >= currentScrollPos) {
         document.querySelector(".navigationbar").style.opacity = "1"; //show the navbar
       } else {
         //else hide it when we go down
@@ -130,6 +136,5 @@ export default {
 };
 </script>
 <style>
-
 </style>
 
