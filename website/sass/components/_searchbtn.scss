@@ -1,59 +1,44 @@
-.search
-{
-    position: relative;
-    right: 7rem;
-    top: -2rem;
+.search {
+  position: relative;
+  right: 7rem;
+  top: -2rem;
 
-  &--addvideo{
+  &--addvideo {
     position: absolute;
     top: 0;
     right: 0;
-  }    
+  }
 
-
-//input area of the searcg button
-  &__input
-  {
+  //input area of the searcg button
+  &__input {
     @include inputbox;
-
-
-    
   }
 
   //button of the search
-  &__btn
-  {
-  
+  &__btn {
     @include button;
 
     background: $color-tertiary-light;
-
-    
-
-
   }
 
   //to set the search icon position
-  &__icon
-  {
-      position: absolute;
-      top: .8rem;
-      left: 1rem;
+  &__icon {
+    position: absolute;
+    top: 0.8rem;
+    left: 1rem;
+    @include respond(phone) {
+      top: 0.7rem;
+      left: 0.8rem;
+    }
   }
 
   //on hover on the search icon
-  &:hover &__input
-  {
-
+  &:hover &__input {
     width: 25rem;
     color: $color-black;
 
-    
-    @include respond(phone){
+    @include respond(phone) {
       width: 20rem;
-        
-        }
+    }
   }
-
-
 }
