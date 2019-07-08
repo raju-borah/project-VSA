@@ -1,7 +1,21 @@
 #project-VSA
 <!-- install video.js -->
 npm install video.js
+........................................................................
+New AOS library added
 
+1) style sheet link
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ 
+ 
+2) script source 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+3) To initiate the AOS
+ <script>
+    AOS.init();
+</script>
+.........................................................................
 signin form id's:
 ------------------
  signin_email
@@ -110,20 +124,7 @@ img2->"img/event1.jpg"
 img3->"img/floor1.jpg"
 
 
-........................................................................
-New AOS library added
 
-1) style sheet link
- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
- 
- 
-2) script source 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
-3) To initiate the AOS
- <script>
-    AOS.init();
-</script>
 
 ......................................................
  

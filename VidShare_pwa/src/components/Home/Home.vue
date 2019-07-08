@@ -1,12 +1,13 @@
 <template>
   <div id="Home">
-    <Navbar/>
+    <Navbar />
+
     <!--heading section-->
     <section class="head" id="headSection">
       <header class="header">
         <!-- Events -->
         <div class="mySlides fade">
-          <img src="../../assets/img/event-1.jpg" class="header_img">
+          <img src="../../assets/img/event-1.jpg" class="header_img" />
           <div class="header__text-box">
             <h1 class="heading-primary textShadow">
               <span class="heading-primary--main">EVENTS</span>
@@ -16,7 +17,7 @@
         </div>
         <!-- learning -->
         <div class="mySlides fade">
-          <img src="../../assets/img/head.jpg" class="header_img">
+          <img src="../../assets/img/head.jpg" class="header_img" />
           <div class="header__text-box textShadow">
             <h1 class="heading-primary">
               <span class="heading-primary--main">LEARNING</span>
@@ -26,7 +27,7 @@
         </div>
         <!-- activities -->
         <div class="mySlides fade">
-          <img src="../../assets/img/club.jpg" class="header_img">
+          <img src="../../assets/img/club.jpg" class="header_img" />
           <div class="header__text-box">
             <h1 class="heading-primary textShadow">
               <span class="heading-primary--main">CLUB ACTIVITIES</span>
@@ -39,34 +40,8 @@
 
     <!--main body design after header-->
     <main class="main">
-      <!--notification panel-->
-      <div id="notification" class="notify">
-        <!-- inner content -->
-        <div class="notify_panel">
-          <!--title for notification-->
-          <div class="notify_panel--title">
-            <i class="fas fa-exclamation-circle"></i>
-            NOTIFICATIONS
-          </div>
-
-          <!--grid for notfication-->
-          <div class="notify_panel_layout">
-            <!--notification box-->
-            <div class="notify_panel_notes">
-              <div class="notify_panel_notes--thumb"></div>
-              <div class="notify_panel_notes--user">
-                <span class="notify_panel_notes--user--name">Nabajyoti borah</span>
-                <span class="notify_panel_notes--user--tag">COMMENTED ON OUR VIDEO</span>
-              </div>
-              <div class="notify_panel_notes--comment"></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!--info story section-->
-      <!---------------------------New html and css-------------------------------->
-
       <section class="infocard">
         <!--heading of info card-->
         <div
@@ -79,7 +54,7 @@
         <div class="cardsgrid">
           <div class="card" data-aos="fade-up" data-aos-duration="1000">
             <div class="card__side card__side--front">
-              <img src="../../assets/img/card-learn.jpg" alt="House 1" class="card__img">
+              <img src="../../assets/img/card-learn.jpg" alt="House 1" class="card__img" />
               <h4 class="card__heading card__heading--1">
                 <span class="card__text">learning</span>
               </h4>
@@ -97,7 +72,7 @@
 
           <div class="card" data-aos="fade-up" data-aos-duration="1000">
             <div class="card__side card__side--front">
-              <img src="../../assets/img/card-club.jpg" alt="House 1" class="card__img">
+              <img src="../../assets/img/card-club.jpg" alt="House 1" class="card__img" />
               <h4 class="card__heading card__heading--2">
                 <span class="card__text">club</span>
               </h4>
@@ -115,7 +90,7 @@
 
           <div class="card" data-aos="fade-up" data-aos-duration="1000">
             <div class="card__side card__side--front">
-              <img src="../../assets/img/head1.jpg" alt="House 1" class="card__img">
+              <img src="../../assets/img/head1.jpg" alt="House 1" class="card__img" />
               <h4 class="card__heading card__heading--3">
                 <span class="card__text">event</span>
               </h4>
@@ -134,7 +109,6 @@
       </section>
       <!--INFO SECTION DONE-->
 
-      <!---------------------------New html and css-------------------------------->
       <!--Featured section-->
       <section class="feature">
         <div class="feature__container">
@@ -165,7 +139,7 @@
                   <!-- dynamiv title of the video -->
 
                   <span>Fun way to Learn JavaScript And other new contents</span>
-                  <br>
+                  <br />
                   <!-- timestamp when the video was created -->
                   <span class="timestamp font-small">Created on: 15-04-2019</span>
                 </div>
@@ -186,7 +160,7 @@
                   <!-- dynamiv title of the video -->
 
                   <span>Fun way to Learn JavaScript And other new contents</span>
-                  <br>
+                  <br />
                   <!-- timestamp when the video was created -->
                   <span class="timestamp font-small">Created on: 15-04-2019</span>
                 </div>
@@ -205,7 +179,7 @@
                   <!-- dynamiv title of the video -->
 
                   <span>Fun way to Learn JavaScript And other new contents</span>
-                  <br>
+                  <br />
                   <!-- timestamp when the video was created -->
                   <span class="timestamp font-small">Created on: 15-04-2019</span>
                 </div>
@@ -216,7 +190,6 @@
       </section>
       <!--feature SECTION DONE-->
 
-      <!---------------------------New html and css-------------------------------->
       <!--Learning section-->
       <section class="learning">
         <div class="learning__heading">
@@ -239,117 +212,7 @@
                 <!-- dynamiv title of the video -->
 
                 <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__learning border">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__learning">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--learning">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__learning border">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__learning">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--learning">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__learning border">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__learning">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--learning">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__learning border">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__learning">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--learning">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__learning border">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__learning">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--learning">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
+                <br />
                 <!-- timestamp when the video was created -->
                 <span class="timestamp font-small">Created on: 15-04-2019</span>
               </div>
@@ -360,7 +223,6 @@
         <span class="line"></span>
       </section>
 
-      <!---------------------------New html and css-------------------------------->
       <!--Club section-->
       <section class="club">
         <div class="club__heading">
@@ -383,117 +245,7 @@
                 <!-- dynamiv title of the video -->
 
                 <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__club">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__club">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--club">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__club">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__club">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--club">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__club">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__club">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--club">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__club">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__club">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--club">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__club">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__club">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--club">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
+                <br />
                 <!-- timestamp when the video was created -->
                 <span class="timestamp font-small">Created on: 15-04-2019</span>
               </div>
@@ -502,7 +254,6 @@
         </div>
       </section>
 
-      <!---------------------------New html and css-------------------------------->
       <!--Event section-->
       <section class="event">
         <div class="event__heading">
@@ -528,117 +279,7 @@
                 <!-- dynamiv title of the video -->
 
                 <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__event">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__event">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--event">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__event">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__event">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--event">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__event">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__event">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--event">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__event">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__event">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--event">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
-                <!-- timestamp when the video was created -->
-                <span class="timestamp font-small">Created on: 15-04-2019</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="vcardhome vcardhome__event">
-            <div class="vcardhome__img">
-              <!-- the tag for video -->
-              <!--new colours for all categories added in grid.scss-->
-
-              <div class="hoverbtn hoverbtn__event">
-                <i class="fas fa-play-circle homeplay"></i>
-              </div>
-            </div>
-
-            <div class="vcardhome__info vcardhome__info--event">
-              <div class="vcardhome__info--title">
-                <!-- dynamiv title of the video -->
-
-                <span>Fun way to Learn JavaScript And other new contents</span>
-                <br>
+                <br />
                 <!-- timestamp when the video was created -->
                 <span class="timestamp font-small">Created on: 15-04-2019</span>
               </div>
@@ -678,11 +319,11 @@
           <div class="team__member">
             <a href="#" class="team__profile">
               <div class="team__unhover-img">
-                <img class="team__img" src="../../assets/img/man.png" alt>
+                <img class="team__img" src="../../assets/img/man.png" alt />
               </div>
 
               <div class="team__hover-img">
-                <img class="team__img" src="../../assets/img/man.png" alt>
+                <img class="team__img" src="../../assets/img/man.png" alt />
               </div>
 
               <span class="team__designation">CS16MSIIT004</span>
@@ -711,11 +352,11 @@
           <div class="team__member">
             <a href="#" class="team__profile">
               <div class="team__unhover-img">
-                <img class="team__img" src="../../assets/img/man.png" alt>
+                <img class="team__img" src="../../assets/img/man.png" alt />
               </div>
 
               <div class="team__hover-img">
-                <img class="team__img" src="../../assets/img/man.png" alt>
+                <img class="team__img" src="../../assets/img/man.png" alt />
               </div>
 
               <span class="team__designation">CS16MSIIT020</span>
@@ -740,15 +381,17 @@
             </ul>
           </div>
 
+          <!--member 3-->
+
           <!--member 4-->
           <div class="team__member">
             <a href="#" class="team__profile">
               <div class="team__unhover-img">
-                <img class="team__img" src="../../assets/img/man.png" alt>
+                <img class="team__img" src="../../assets/img/man.png" alt />
               </div>
 
               <div class="team__hover-img">
-                <img class="team__img" src="../../assets/img/man.png" alt>
+                <img class="team__img" src="../../assets/img/man.png" alt />
               </div>
               <span class="team__designation">CS16MSIIT035</span>
 
@@ -789,18 +432,21 @@
           <div class="footer__communication--text">CONTACT US</div>
 
           <div class="footer__communication--call">
-            <i class="fa fa-phone"></i>
-            <span class="footer__communication--callinfo">+919876543210</span>
+            <i class="fa fa-phone">
+              <span class="footer__communication--callinfo">+919876543210</span>
+            </i>
           </div>
 
           <div class="footer__communication--location">
-            <i class="fa fa-map-marker"></i>
-            <span class="footer__communication--locationinfo">Kaziranga&nbsp;university</span>
+            <i class="fa fa-map-marker">
+              <span class="footer__communication--locationinfo">Kaziranga&nbsp;university</span>
+            </i>
           </div>
 
           <div class="footer__communication--mail">
-            <i class="fa fa-envelope"></i>
-            <span class="footer__communication--mailinfo">VSA@gmail.com</span>
+            <i class="fa fa-envelope">
+              <span class="footer__communication--mailinfo">VSA@gmail.com</span>
+            </i>
           </div>
         </div>
 

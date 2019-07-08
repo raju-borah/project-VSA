@@ -21,10 +21,11 @@
           class="vcard"
           v-for="video in videos"
           :key="video.id"
-          @click.stop="redirectToPlay(video)"
+          @click.stop="redirectToPlay(video.id)"
         >
+          <!-- the thumbnail position  vcard 1 st part-->
           <div class="vcard--img" :style="{backgroundImage: 'url(' +video.thumbnail + ')',}">
-            <!-- the tag for video -->
+            <!-- the tag for video  defining the category of video-->
             <h1
               class="vcard--tag vcard--tag--dashboard"
               :class="{
@@ -34,28 +35,112 @@
                 }"
             >
               {{video.category}}
-              <!-- event to trigger delete and show warning window -->
-              <button type="button" class="videodelete u-end-text btn">
-                <i class="fas fa-trash-alt font-small"></i>
-              </button>
+              <!-- the delete button  -->
+              <span class="dashboard--option">
+                <button class="u-end-text btn btn--trans videodelete">
+                  <i class="fas fa-list"></i>
+                </button>
+                <ul class="list--option list--option--plist">
+                  <li class="list--items list--items--option">
+                    <a href="/editvideo.html" class="btnlist font-xsmall">
+                      Edit title &
+                      description
+                    </a>
+                  </li>
+                  <li class="list--items list--items--option">
+                    <a href="/addplaylist.html" class="btnlist font-xsmall">
+                      Add
+                      video to playlist
+                    </a>
+                  </li>
+                  <li class="list--items list--items--option">
+                    <button class="btnlist btnlist--btn font-xsmall">
+                      Delete
+                      video
+                    </button>
+                  </li>
+                </ul>
+              </span>
             </h1>
           </div>
+          <!-- the division that contain the information of the video .It is the second part of the vcard -->
           <div class="vcard__info">
             <div class="vcard__info--title">
               <!-- dynamiv title of the video -->
               <span>{{video.title}}</span>
-
-              <!-- timestamp when the video was created -->
             </div>
-            <!-- will add video.timestamp here -->
-            <span class="timestamp font-small">Created on: {{video.timestamp}}</span>
+            <!-- timestamp when the video was created -->
+            <span class="timestamp font-small">
+              Created on: {{video.timestamp}}
+              <!-- will be hhidden when opened in pc  -->
+              <span class="dashboard--option--1">
+                <button class="u-end-text btn btn--trans">
+                  <i class="fas fa-list"></i>
+                </button>
+                <ul class="list--option list--option--plist">
+                  <li class="list--items list--items--option">
+                    <a href="/editvideo.html" class="btnlist font-xsmall">
+                      Edit title &
+                      description
+                    </a>
+                  </li>
+                  <li class="list--items list--items--option">
+                    <a href="/addplaylist.html" class="btnlist font-xsmall">
+                      Add
+                      video to playlist
+                    </a>
+                  </li>
+                  <li class="list--items list--items--option">
+                    <button class="btnlist btnlist--btn font-xsmall">
+                      Delete
+                      video
+                    </button>
+                  </li>
+                </ul>
+              </span>
+            </span>
             <br />
             <span style="font-weight: 550;">Description:</span>
             <!-- dynamic descrptiob of the video -->
             <span class="vcard__info--des">{{video.description}}</span>
           </div>
         </div>
+        <!-- video playlist cards -->
+        <div class="vcard" v-for="playlist in videoPlayList" :key="playlist.id">
+          <!-- the thumbnail position  vcard 1 st part-->
+          <div class="vcard--img" :style="{backgroundImage: 'url(' +playlist.thumbnail + ')',}">
+            <div class="playlist--details flex-center" style="align-items: center;">
+              <div>
+                <div class="font-small">{{playlist.totalVideos}}</div>
+                <div class="flex-center">
+                  <i class="fas fa-play-circle font-medium"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- the division that contain the information of the video .It is the second part of the vcard -->
+          <div class="vcard__info">
+            <div class="vcard__info--title">
+              <!-- dynamiv title of the video -->
+              <span>{{playlist.title}}</span>
+            </div>
+            <!-- timestamp when the video was created -->
+            <span class="timestamp font-small">{{playlist.timestamp}}</span>
+            <button class="u-end-text btn btn--trans">
+              <i class="fas fa-list"></i>
+            </button>
 
+            <ul class="list--option list--option--plist">
+              <li class="list--items list--items--option">
+                <a href="/dashboardplaylist.html" class="btnlist font-xsmall">Edit playlist</a>
+              </li>
+            </ul>
+            <br />
+            <span style="font-weight: 550;">Description:</span>
+            <!-- dynamic descrptiob of the video -->
+            <span class="vcard__info--des">{{playlist.description}}</span>
+          </div>
+        </div>
         <!-- end of vcard -->
       </div>
     </div>
@@ -64,7 +149,7 @@
 <script>
 import db from "../../main";
 import Navbar from "../Navbar/Navbar";
-import { functions } from "firebase";
+
 export default {
   name: "Dashboard",
   components: {
@@ -72,49 +157,81 @@ export default {
   },
   data() {
     return {
-      videos: []
+      videos: [],
+      videoPlayList: []
     };
   },
   watch: {
     uid: {
       handler: function(id) {
         let vref = db.collection("uploadedVideos").where("by", "==", id);
-        //whenever anything update/change/else in firebase it takes snapshot of it
-        //this can be used for looking or changes occuring in firebase
+        let vplayListref = db
+          .collection("playlist")
+          .where("by", "==", this.$store.state.uid);
+        // initial load when page is refreshed
         vref.onSnapshot(snapshot => {
           //we will use docChanges() to get the type changes
           snapshot.docChanges().forEach(change => {
             if (change.type === "added") {
               let doc = change.doc;
-              console.log(doc.data().timestamp);
+              if (!doc.data().playList) {
+                if (doc.data().timestamp) {
+                  this.videos.push({
+                    //doc keeps id can retrive using;
+                    id: doc.id,
+                    // field that we have created can be retirve using;
+                    title: doc.data().title,
+                    description: doc.data().description,
+                    url: doc.data().url,
+                    category: doc.data().category,
+                    thumbnail: doc.data().thumbnail,
+                    timestamp: doc.data().timestamp.toDate()
+                  });
+                } else {
+                  this.videos.push({
+                    //doc keeps id can retrive using;
+                    id: doc.id,
+                    // field that we have created can be retirve using;
+                    title: doc.data().title,
+                    description: doc.data().description,
+                    url: doc.data().url,
+                    category: doc.data().category,
+                    thumbnail: doc.data().thumbnail
+                  });
+                }
+              }
+            }
+          });
+        });
+
+        vplayListref.onSnapshot(snapshot => {
+          snapshot.docChanges().forEach(change => {
+            if (change.type === "added") {
+              let doc = change.doc;
               if (doc.data().timestamp) {
-                this.videos.push({
+                this.videoPlayList.push({
                   //doc keeps id can retrive using;
                   id: doc.id,
                   // field that we have created can be retirve using;
                   title: doc.data().title,
                   description: doc.data().description,
-                  url: doc.data().url,
-                  category: doc.data().category,
                   thumbnail: doc.data().thumbnail,
-                  timestamp: doc.data().timestamp.toDate()
+                  timestamp: doc.data().timestamp.toDate(),
+                  totalVideos: doc.data().videos.length
                 });
               } else {
-                this.videos.push({
+                this.videoPlayList.push({
                   //doc keeps id can retrive using;
                   id: doc.id,
                   // field that we have created can be retirve using;
                   title: doc.data().title,
                   description: doc.data().description,
-                  url: doc.data().url,
-                  category: doc.data().category,
-                  thumbnail: doc.data().thumbnail
+                  thumbnail: doc.data().thumbnail,
+                  totalVideos: doc.data().videos.length
                 });
               }
             }
-            // this.spinner = false;
           });
-          // this.spinner = false;
         });
       }
     }
@@ -131,42 +248,75 @@ export default {
     let vref = db
       .collection("uploadedVideos")
       .where("by", "==", this.$store.state.uid);
-    //whenever anything update/change/else in firebase it takes snapshot of it
-    //this can be used for looking or changes occuring in firebase
+
+    let vplayListref = db
+      .collection("playlist")
+      .where("by", "==", this.$store.state.uid);
+
+    // react to firebase firestore realtime snaphot
     vref.onSnapshot(snapshot => {
       //we will use docChanges() to get the type changes
       snapshot.docChanges().forEach(change => {
         if (change.type === "added") {
           let doc = change.doc;
-          console.log(doc.data().timestamp);
+          if (!doc.data().playList) {
+            if (doc.data().timestamp) {
+              this.videos.push({
+                //doc keeps id can retrive using;
+                id: doc.id,
+                // field that we have created can be retirve using;
+                title: doc.data().title,
+                description: doc.data().description,
+                url: doc.data().url,
+                category: doc.data().category,
+                thumbnail: doc.data().thumbnail,
+                timestamp: doc.data().timestamp.toDate()
+              });
+            } else {
+              this.videos.push({
+                //doc keeps id can retrive using;
+                id: doc.id,
+                // field that we have created can be retirve using;
+                title: doc.data().title,
+                description: doc.data().description,
+                url: doc.data().url,
+                category: doc.data().category,
+                thumbnail: doc.data().thumbnail
+              });
+            }
+          }
+        }
+      });
+    });
+
+    vplayListref.onSnapshot(snapshot => {
+      snapshot.docChanges().forEach(change => {
+        if (change.type === "added") {
+          let doc = change.doc;
           if (doc.data().timestamp) {
-            this.videos.push({
+            this.videoPlayList.push({
               //doc keeps id can retrive using;
               id: doc.id,
               // field that we have created can be retirve using;
               title: doc.data().title,
               description: doc.data().description,
-              url: doc.data().url,
-              category: doc.data().category,
               thumbnail: doc.data().thumbnail,
-              timestamp: doc.data().timestamp.toDate()
+              timestamp: doc.data().timestamp.toDate(),
+              totalVideos: doc.data().videos.length
             });
           } else {
-            this.videos.push({
+            this.videoPlayList.push({
               //doc keeps id can retrive using;
               id: doc.id,
               // field that we have created can be retirve using;
               title: doc.data().title,
               description: doc.data().description,
-              url: doc.data().url,
-              category: doc.data().category,
-              thumbnail: doc.data().thumbnail
+              thumbnail: doc.data().thumbnail,
+              totalVideos: doc.data().videos.length
             });
           }
         }
-        // this.spinner = false;
       });
-      // this.spinner = false;
     });
   },
   methods: {
@@ -185,9 +335,9 @@ export default {
             `<textarea class="form__input--upload form__input--upload--1" id="upload-description" placeholder="Description" required></textarea>` +
             `<select id="video-category" class="form__input--upload form__input--upload--2">
             <option value="" selected disabled>Select Category</option>
-            <option value="learning">Learning</option>
+            <option value="Learning">Learning</option>
             <option value="Events">Events</option>
-            <option value="Entertainment">Club activities</option>
+            <option value="Club activities">Club activities</option>
             </select>
             <br>` +
             `<label for="playlistopt1" class="font-small">
@@ -248,6 +398,11 @@ export default {
               createplaylist.style.display = "none";
               const option = document.createElement("option");
               swal.showLoading();
+              for (let i = 1; i < select.length; i++) {
+                console.log(i);
+                select.remove(i);
+              }
+
               //get all the playlist from firestore
               db.collection("playlist")
                 .get()
@@ -528,7 +683,9 @@ export default {
         });
       }
     },
-    redirectToPlay(id) {}
+    redirectToPlay(id) {
+      this.$store.dispatch("getVideo", id);
+    }
   }
 };
 </script>
