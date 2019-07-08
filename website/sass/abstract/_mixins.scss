@@ -1,145 +1,129 @@
-@mixin navigationbarfonts($color){
-     // font properties for the navigation bar as all option needed the same property
-     .navbar_items{
-        //  settings font properties....
-     font-size: 3rem;
-     font-weight: 700;
-     color: $color;
+@mixin navigationbarfonts($color) {
+  // font properties for the navigation bar as all option needed the same property
+  .navbar_items {
+    //  settings font properties....
+    font-size: 3rem;
+    font-weight: 700;
+    color: $color;
 
-     @include respond(phone){
+    @include respond(phone) {
       font-size: 35px;
-  
-        
-        }
-      
-     &--icon{
-       font-size: 4.6rem;
-       top: 0;
-       
-     @include respond(phone){
-      font-size: 35px;
-      top: -.3rem;
-  
-        
-        }
-     }
-    //  when hovered the following changes will be taking place 
-    &:hover{
-        color:$color-tertiary-light-1;
-        text-shadow: 0 1rem 3rem $color-black; 
-        // when hovered the cursor will look like pointer
-        cursor: pointer;      
     }
-    }    
+
+    &--icon {
+      font-size: 4.6rem;
+      top: 0;
+
+      @include respond(phone) {
+        font-size: 35px;
+        top: -0.3rem;
+      }
+    }
+    //  when hovered the following changes will be taking place
+    &:hover {
+      color: $color-tertiary-light-1;
+      text-shadow: 0 1rem 3rem $color-black;
+      // when hovered the cursor will look like pointer
+      cursor: pointer;
+    }
+  }
 }
 @mixin focus {
-     // focus properties
-     &:focus {
-        // when foucused no outline
-        outline: none;
-        // shadow
-        box-shadow: 0 1rem 1rem rgba($color-black, 0.1);
-        // bottom border
-        border-bottom: 0.3rem solid $color-primary;
-        &:invalid {
-          // if invalid bottom border color different
-          border-bottom: 0.3rem solid $color-secondary-light;
-        }
-      }
-    
+  // focus properties
+  &:focus {
+    // when foucused no outline
+    outline: none;
+    // shadow
+    box-shadow: 0 1rem 1rem rgba($color-black, 0.1);
+    // bottom border
+    border-bottom: 0.3rem solid $color-primary;
+    &:invalid {
+      // if invalid bottom border color different
+      border-bottom: 0.3rem solid $color-secondary-light;
+    }
+  }
 }
 
-
-
-//mixins for three contents sections 
+//mixins for three contents sections
 //1.Main heading division
 @mixin head {
   position: relative;
   width: 87%;
   display: inline-block;
   left: 10rem;
-  @include respond(phone){
-  width: 87%;
-  left: 2rem;
-
+  @include respond(phone) {
+    width: 87%;
+    left: 2rem;
   }
-
 }
- 
+
 //2.main heading
-@mixin title{
+@mixin title {
   color: $color-white;
   float: left;
   font-size: 5rem;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1rem; 
-  @include respond(phone){
-  letter-spacing: .2rem; 
-  font-size: 30px;
-  font-weight: 300;
-  width: 60%;
-    }
-
+  letter-spacing: 1rem;
+  @include respond(phone) {
+    letter-spacing: 0.2rem;
+    font-size: 30px;
+    font-weight: 300;
+    width: 60%;
+  }
 }
 
 //3.view more part
-@mixin more{
-  
+@mixin more {
   font-size: 3rem;
   display: inline-block;
   padding: 1rem;
-  margin-left: .4rem;
+  margin-left: 0.4rem;
   cursor: pointer;
   vertical-align: middle;
-  font-weight: 500; 
+  font-weight: 500;
   position: absolute;
   top: 1rem;
-  right:5rem;
-  transition: color .25s ease;
+  right: 5rem;
+  transition: color 0.25s ease;
   border-left: 2px solid $color-tertiary-dark;
   z-index: 1;
   background: none;
   transition: all 0.5s;
 
-  @include respond(phone){
+  @include respond(phone) {
     font-size: 20px;
-    right:0rem;
+    right: 0rem;
     top: 0rem;
     border: none;
+  }
 
-      
-      }
-
-  //after element on view more 
-  &::after{
+  //after element on view more
+  &::after {
     position: absolute;
-    content: '';
-    top:0;
+    content: "";
+    top: 0;
     left: 0;
     width: 0;
     height: 100%;
     background-color: $color-tertiary-dark;
-    transform-origin:left;
-    transition:width 0.25s ease;
-    z-index:-1;
-    
-    @include respond(phone){
-    top:2px;
-    height: 86%;
-  
-        
-        }
+    transform-origin: left;
+    transition: width 0.25s ease;
+    z-index: -1;
+
+    @include respond(phone) {
+      top: 2px;
+      height: 86%;
+    }
   }
 
   //when the view more link is visited or clicked
-  &:visited
-  {
-      color: $color-black;
+  &:visited {
+    color: $color-black;
   }
-//when view more link is hovered
-  &:hover{
+  //when view more link is hovered
+  &:hover {
     color: $color-white;
     transform: scale(1.1);
   }
@@ -151,46 +135,38 @@
   border: none;
   position: relative;
   &:active,
-  &:focus{
+  &:focus {
     outline: none;
   }
-
-  
 }
 
-
 //search button mixin
-@mixin inputbox{
+@mixin inputbox {
   position: absolute;
   top: 20px;
-  right: 4.6rem;
+  right: 5rem;
   box-sizing: border-box;
   width: 0px;
   height: 4.5rem;
-  padding: 0 18px;
+  padding: 0 15px;
   outline: none;
   font-size: 18px;
   border-radius: 50px;
   color: #29313a;
-  border: 3px solid rgba(46, 19, 199, 0.500);
+  border: 3px solid rgba(46, 19, 199, 0.5);
   transition: all 0.8s;
 
-  
-  @include respond(phone){
+  @include respond(phone) {
     height: 3rem;
-    right: 1.9rem;
+    right: 1.99rem;
     top: 20px;
-
-      
-      }
+  }
 }
 
-
-@mixin button
-{
+@mixin button {
   position: absolute;
-  width: 4.59rem;
-  height: 4.59rem;
+  width: 4.69rem;
+  height: 4.69rem;
 
   border-radius: 50%;
   right: 4.6rem;
@@ -198,45 +174,45 @@
   cursor: pointer;
   text-align: center;
   line-height: 80px;
-  font-size: 2.5rem;
+  font-size: 2.9rem;
   color: #fff;
   transition: all 0.1s;
   border: none;
-  outline:none;
-  
+  outline: none;
 
-  @include respond(phone){
+  @include respond(phone) {
     width: 4rem;
     height: 3.8rem;
+    font-size: 2.5rem;
+
     right: 2rem;
     top: 1.7rem;
-
-      
-      }
+  }
 }
 
 // mixin
 @mixin respond($breakpoint) {
-  @if $breakpoint == phone 
-  {
-  @media (max-width:824px) {@content};    //800px    
+  @if $breakpoint == phone {
+    @media (max-width: 824px) {
+      @content;
+    } //800px
   }
- @if $breakpoint == tab-land 
-  {
-  @media (max-width:1024px) {@content};        //1024px//using this
-  }
- 
-  @if $breakpoint == nohd 
-  {
-  @media (max-width:1367px) {@content};        //1366px
+  @if $breakpoint == tab-land {
+    @media (max-width: 1024px) {
+      @content;
+    } //1024px//using this
   }
 
+  @if $breakpoint == nohd {
+    @media (max-width: 1367px) {
+      @content;
+    } //1366px
+  }
 
   // not used
-  @if $breakpoint == big-desktop 
-  {
-  @media (max-width:112.5em) {@content};        //1800px
+  @if $breakpoint == big-desktop {
+    @media (max-width: 112.5em) {
+      @content;
+    } //1800px
   }
-
 }
-

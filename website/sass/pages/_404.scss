@@ -1,27 +1,73 @@
 .bgcontain {
   width: 100%; //width of the division
   height: 90.5vh; //the heightof the divion
-  animation: change steps(1) 2s infinite ;
-  @include respond(phone){
-  height: 91.5vh; //the heightof the divion
+  color: white;
+  background-repeat: no-repeat;
+  
+  animation: change steps(1) 2s infinite;
+  @include respond(phone) {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 92.6vh; //the heightof the divion
   }
 }
 
-.backhome{
-  position: relative;
-  top: 30%;
-  left: 60%;
+.backhome {
+
   color: $color-white;
   font-weight: 900;
   font-size: 2rem;
-  padding: .77rem;
-  border: .2rem solid $color-white;
+  padding: 0.77rem;
+  border: 0.2rem solid $color-white;
   border-radius: 2rem;
-
-  &:hover{
-    transition: all .6s;
-    background-color:$color-grey-light-2;
+  
+  @include respond(nohd){
+    margin-left: 24rem;
+  }
+  @include respond(tab-land){
+    margin-left: 34rem;
+  }
+  @include respond(phone){
+    margin-left: 0rem;
+  }
+  &:hover {
+    transition: all 0.6s;
+    background-color: $color-grey-light-2;
     border-color: $color-black;
     color: $color-black;
   }
 }
+.breakneeded{
+  display: none;
+  @include respond(phone){
+    display: inline;
+  }
+}
+// position of error texts
+.errortext{
+  position: absolute;
+  top: 19%;
+  left: 24.3%;
+  @include respond(tab-land){
+    left: 33%;
+  } 
+ 
+  @include respond(phone){
+    top: 13.5%;
+    left: 65%;
+  }
+ 
+ 
+}
+.errorpara{
+  @include respond(phone){
+    display: none;
+  }
+}
+
+// error text fonr size
+.error-font{
+  font-size: 4rem;
+  @include respond(phone){
+    font-size: 20px;
+  }}
