@@ -4,29 +4,8 @@
 
 <script>
 import videojs from "video.js";
-
 export default {
   name: "VideoPlayer",
-  // props: {
-  //   options: {
-  //     type: Object,
-  //     default() {
-  //       return {};
-  //     }
-  //   }
-  // },
-  watch: {
-    playerOption: {
-      handler: function(state) {
-        this.player = videojs(this.$refs.videoPlayer, state);
-      }
-    }
-  },
-  computed: {
-    playerOption() {
-      return this.$store.state.videoOptions;
-    }
-  },
   data() {
     return {
       player: null

@@ -1,34 +1,42 @@
 <template>
-  <div id="Navbar">
+  <div id="Navbar" class="navigationbar">
     <!-- navigation bar -->
-    <div class="navigationbar">
-      <!-- name of the Application -->
-      <div class="navbarfont navigationbar--left">
-        <router-link :to="{name: 'Home'}">
-          <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
-          <a class="navbar_items navbar_title">Vidshare</a>
-        </router-link>
-      </div>
+    <!-- name of the Application -->
+    <div class="navbarfont navigationbar--left">
+      <router-link :to="{name: 'Home'}">
+        <i class="fas fa-camera-retro navbar_items u-margin-right-large"></i>
+        <a class="navbar_items navbar_title">Vidshare</a>
+      </router-link>
+    </div>
 
-      <!-- for right option such as search, user profile, upload -->
-      <div class="navbarfont navigationbar--right">
-        <!--Search button-->
+    <!-- for right option such as search, user profile, upload -->
+    <div class="navbarfont navigationbar--right">
+      <!--Search button-->
 
-        <div class="search navbar_items">
-          <input type="text" placeholder="Search" class="search__input" required>
-          <button type="button" class="search__btn" id="searchButton">
-            <i class="fa fa-search search__icon" aria-hidden="true"></i>
-          </button>
-        </div>
-        <!--seacrh button end-->
-
-        <!-- user button -->
-
-        <button type="button" class="navbar_items navbar_items--icon userbutton" @click="toggle">
-          <i class="fas fa-user-circle"></i>
+      <div class="search navbar_items">
+        <input type="text" placeholder="Search" class="search__input" required />
+        <button type="button" class="search__btn" id="searchButton">
+          <i class="fa fa-search search__icon" aria-hidden="true"></i>
         </button>
-        <UserContainer/>
       </div>
+      <!--seacrh button end-->
+      <!--notification button-->
+      <button type="button" class="navbar_items navbar_items--icon notibutton">
+        <i class="fas fa-bell">
+          <!--red dot -->
+          <span class="notibutton_dot"></span>
+          <!--red dot end-->
+        </i>
+      </button>
+      &nbsp;
+      <button
+        type="button"
+        class="navbar_items navbar_items--icon userbutton"
+        @click="toggle"
+      >
+        <i class="fas fa-user-circle"></i>
+      </button>
+      <UserContainer />
     </div>
   </div>
 </template>
@@ -99,7 +107,29 @@ export default {
           this.$store.dispatch("getProfileDetails");
         });
     }
+  },
+  mounted() {
+    //not the scroll position at the starting of page loading
+    let prevScrollpos = window.pageYOffset; //at starting it is 0
+    const navposition = () => {
+      //note the scroll position while scrolling on the page
+      let currentScrollPos = window.pageYOffset; //increases as we scroll down and decreses as we scroll up
+      //if we scroll up it will show the scroll bar
+      if (prevScrollpos > currentScrollPos) {
+        document.querySelector(".navigationbar").style.opacity = "1"; //show the navbar
+      } else {
+        //else hide it when we go down
+        document.querySelector(".navigationbar").style.opacity = "0"; //hide the navbar
+      }
+      //using the current scroll position to compare with previous postion
+      prevScrollpos = currentScrollPos;
+    };
+    //call the function navposition
+    window.addEventListener("scroll", navposition);
   }
 };
 </script>
+<style>
+
+</style>
 

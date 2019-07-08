@@ -1,14 +1,13 @@
 <template>
-  <div id="Play">
-    <Navbar/>
+  <div id="Play" class="player">
+    <Navbar />
     <!-- play page when user click the video card thwn this page will open with respective video that user ha clicked -->
-    <div class="player">
       <!-- grid of video player -->
       <div class="player__container">
         <!-- division of video player -->
         <div class="player__container--1">
           <!-- video player of video.js -->
-          <Player/>
+          <Player v-if="show" />
         </div>
       </div>
 
@@ -114,7 +113,7 @@
         <!-- video titles and descrptions in the play page -->
         <div class="videoinfo">
           <!-- video title -->
-          <div class="font-medium" id="video-title">JavaScript</div>
+          <div class="font-medium" id="video-title">{{ videoDetails.title }}</div>
           <div class="videopanel">
             <div class="font-small">
               <i class="fas fa-eye"></i> 12k views
@@ -135,23 +134,32 @@
           <!-- image of the user that has uplodede the video  -->
           <div class="userdetails">
             <div class="uploader-image">
-              <img class="profile--image" src="/img/man.png">
+              <img
+                class="profile--image"
+                :src="videoDetails.uploadedByThumbnail"
+                v-if="videoDetails.uploadedByThumbnail"
+              />
+              <img class="profile--image" src="../../assets/img/man.png" v-else />
             </div>
             <div class="user-name">
               <!-- the that have uploaded the video -->
-              <span>Vivek Chetia</span>
+              <span>{{ videoDetails.uploadedBy }}</span>
             </div>
           </div>
 
           <!-- description -->
-          <div class="font-small" id="video-description" style="padding-top:1rem;">
-            Lorem ipsum dolor
-            sit amet
-            consectetur adipisicing elit.
-            Rerum recusandae animi, nostrum,
-            facilis dicta, excepturi atque dolore quam velit quas cum. Quae unde dolor doloremque delectus, qui
-            assumenda vitae aliquam?
-          </div>
+          <div
+            class="font-small"
+            id="video-description"
+            style="padding-top:1rem;"
+            v-if="videoDetails.description"
+          >{{ videoDetails.description }}</div>
+          <div
+            class="font-small"
+            id="video-description"
+            style="padding-top:1rem;"
+            v-else
+          >No description available</div>
         </div>
 
         <!-- comment section -->
@@ -168,14 +176,14 @@
             class="form__input form__input--comment"
             placeholder="Enter comment"
             required
-          >
+          />
           <!-- button to send the comment  -->
           <button class="btn btn--comment">
             send
             <i class="far fa-arrow-alt-circle-right"></i>
           </button>
-          <br>
-          <br>
+          <br />
+          <br />
           <!-- user comments list -->
           <ul class="comment--area list">
             <!-- if no comments ais there then display the li -->
@@ -192,7 +200,7 @@
                   <span class="font-small">Raju</span>
                 </div>
                 <span class="font-xsmall">1 day ago</span>
-                <br>
+                <br />
 
                 <!-- comment given by the user -->
                 <div class="comment--card comment--card--comments">
@@ -201,13 +209,13 @@
                 </div>
                 <!-- reply box -->
                 <div class="gridreply">
-                  <input type="text" class="form__input form__input--reply" required>
+                  <input type="text" class="form__input form__input--reply" required />
                   <!-- reply button -->
                   <button class="btn btn--comment btn--comment-1">
                     <i class="fas fa-reply">reply</i>
                   </button>
                 </div>
-                <br>View Replies
+                <br />View Replies
                 <!-- replies -->
                 <ul class="list">
                   <!-- contains the user comments and username -->
@@ -223,7 +231,7 @@
                         1 day
                         ago
                       </span>
-                      <br>
+                      <br />
                       <!-- comment given by the user -->
                       <div class="comment--card--comments">
                         Nice video Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non aut
@@ -248,7 +256,7 @@
                   <span class="font-small">Raju</span>
                 </div>
                 <span class="font-xsmall">1 day ago</span>
-                <br>
+                <br />
 
                 <!-- comment given by the user -->
                 <div class="comment--card comment--card--comments">
@@ -257,13 +265,13 @@
                 </div>
                 <!-- reply box -->
                 <div class="gridreply">
-                  <input type="text" class="form__input form__input--reply" required>
+                  <input type="text" class="form__input form__input--reply" required />
                   <!-- reply button -->
                   <button class="btn btn--comment btn--comment-1">
                     <i class="fas fa-reply">reply</i>
                   </button>
                 </div>
-                <br>View Replies
+                <br />View Replies
                 <!-- replies -->
                 <ul class="list">
                   <!-- contains the user comments and username -->
@@ -279,7 +287,7 @@
                         1 day
                         ago
                       </span>
-                      <br>
+                      <br />
                       <!-- comment given by the user -->
                       <div class="comment--card--comments">
                         Nice video Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non aut
@@ -302,7 +310,6 @@
           </ul>
         </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -317,6 +324,18 @@ export default {
   },
   data() {
     return {};
+  },
+  computed: {
+    show() {
+      return this.$store.state.show;
+    },
+    videoDetails() {
+      return this.$store.state.videoDetails;
+    }
+  },
+  beforeCreate() {
+    this.$store.state.show = false;
+    this.$store.dispatch("getVideo", this.$route.params.id);
   }
 };
 </script>

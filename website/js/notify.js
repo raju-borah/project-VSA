@@ -1,5 +1,5 @@
 //btn to open the form
-const notifyBtn=document.querySelector('.editbtn');
+const notifyBtn=document.querySelector('.notibutton');
 
 ////name of the editform
 const notificationpanel=document.querySelector('.notify');

@@ -507,13 +507,13 @@ border-radius for curved end of button
     color: #fff; }
     @media (max-width: 824px) {
       .navigationbar:hover .navbarfont .navbar_items {
-        font-size: 38px; } }
+        font-size: 35px; } }
     .navigationbar:hover .navbarfont .navbar_items--icon {
       font-size: 4.6rem;
       top: 0; }
       @media (max-width: 824px) {
         .navigationbar:hover .navbarfont .navbar_items--icon {
-          font-size: 42px;
+          font-size: 35px;
           top: -.3rem; } }
     .navigationbar:hover .navbarfont .navbar_items:hover {
       color: #9dcfff;
@@ -529,13 +529,12 @@ border-radius for curved end of button
   .navigationbar--right {
     text-align: end;
     width: 50%;
-    padding-right: 3rem;
+    padding-right: 4rem;
     float: left; }
     @media (max-width: 824px) {
       .navigationbar--right {
-        font-size: 20px;
         float: right;
-        padding-right: 1rem; } }
+        padding-right: 0rem; } }
 
 .navbarfont .navbar_items {
   font-size: 3rem;
@@ -543,13 +542,13 @@ border-radius for curved end of button
   color: #fff; }
   @media (max-width: 824px) {
     .navbarfont .navbar_items {
-      font-size: 38px; } }
+      font-size: 35px; } }
   .navbarfont .navbar_items--icon {
     font-size: 4.6rem;
     top: 0; }
     @media (max-width: 824px) {
       .navbarfont .navbar_items--icon {
-        font-size: 42px;
+        font-size: 35px;
         top: -.3rem; } }
   .navbarfont .navbar_items:hover {
     color: #9dcfff;
@@ -569,6 +568,30 @@ border-radius for curved end of button
   position: relative; }
   .userbutton:active, .userbutton:focus {
     outline: none; }
+
+.notibutton {
+  background: transparent;
+  border: none;
+  position: relative;
+  margin-right: 1rem; }
+  .notibutton:active, .notibutton:focus {
+    outline: none; }
+  .notibutton_dot {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    left: 70%;
+    top: -2rem; }
+    @media (max-width: 824px) {
+      .notibutton_dot {
+        height: 15px;
+        width: 15px; } }
+  @media (max-width: 824px) {
+    .notibutton {
+      margin-right: 1rem; } }
 
 .usercontainer {
   z-index: 2;
@@ -691,8 +714,8 @@ border-radius for curved end of button
 
 .search {
   position: relative;
-  right: 3rem;
-  top: -1.8rem; }
+  right: 7rem;
+  top: -2rem; }
   .search--addvideo {
     position: absolute;
     top: 0;
@@ -713,7 +736,7 @@ border-radius for curved end of button
     transition: all 0.8s; }
     @media (max-width: 824px) {
       .search__input {
-        height: 3.5rem;
+        height: 3rem;
         right: 1.9rem;
         top: 20px; } }
   .search__btn {
@@ -734,13 +757,13 @@ border-radius for curved end of button
     background: #2998ff; }
     @media (max-width: 824px) {
       .search__btn {
-        width: 4.2rem;
-        height: 4.2rem;
+        width: 4rem;
+        height: 3.8rem;
         right: 2rem;
         top: 1.7rem; } }
   .search__icon {
     position: absolute;
-    top: 1rem;
+    top: .8rem;
     left: 1rem; }
   .search:hover .search__input {
     width: 25rem;
@@ -1193,10 +1216,11 @@ border-radius for curved end of button
     width: 100%;
     display: grid;
     grid-template-rows: repeat(1, minmax(10rem, min-content));
-    grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
     grid-row-gap: 5rem;
-    grid-column-gap: 3rem;
-    justify-content: center; }
+    grid-column-gap: 10rem;
+    justify-content: center;
+    align-content: center; }
     @media (max-width: 824px) {
       .team__grid {
         grid-template-rows: repeat(1, minmax(5rem, min-content));
@@ -1481,7 +1505,8 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__back {
         height: 50rem;
-        background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)); } }
+        background-color: black;
+        background-image: none; } }
   .footer__logo {
     position: absolute;
     top: 5rem;
@@ -1490,7 +1515,6 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__logo {
         font-size: 100px;
-        left: 40%;
         top: -2rem;
         color: white; } }
   .footer__logo-name {
@@ -1530,11 +1554,12 @@ border-radius for curved end of button
       color: #5643fa;
       top: 30%;
       left: 15%;
+      display: inline-block;
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--call {
-          top: 22rem;
-          left: 70%; } }
+          top: 45%;
+          left: 69%; } }
       .footer__communication--call:hover {
         transform: translateY(-2rem); }
     .footer__communication--callinfo {
@@ -1546,10 +1571,11 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--callinfo {
+          visibility: visible;
+          background-color: transparent;
           position: relative;
           font-size: 15px;
-          top: -4rem;
-          left: -15%; } }
+          font-weight: 100; } }
     .footer__communication--call:hover .footer__communication--callinfo {
       visibility: visible;
       color: #fff; }
@@ -1561,8 +1587,8 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--location {
-          top: 29rem;
-          left: 70%; } }
+          top: 62%;
+          left: 68%; } }
       .footer__communication--location:hover {
         transform: translateY(-2rem); }
     .footer__communication--locationinfo {
@@ -1575,10 +1601,10 @@ border-radius for curved end of button
       padding: .7rem; }
       @media (max-width: 824px) {
         .footer__communication--locationinfo {
-          position: relative;
-          font-size: 10px;
-          top: -3rem;
-          left: -15%; } }
+          font-size: 12px;
+          font-weight: 100;
+          visibility: visible;
+          background-color: transparent; } }
     .footer__communication--location:hover .footer__communication--locationinfo {
       visibility: visible;
       color: #fff; }
@@ -1590,8 +1616,8 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--mail {
-          top: 35rem;
-          left: 70%; } }
+          top: 79%;
+          left: 69%; } }
       .footer__communication--mail:hover {
         transform: translateY(-2rem); }
     .footer__communication--mailinfo {
@@ -1605,9 +1631,10 @@ border-radius for curved end of button
       @media (max-width: 824px) {
         .footer__communication--mailinfo {
           position: relative;
-          font-size: 10px;
-          top: -3rem;
-          left: -15%; } }
+          font-size: 12px;
+          font-weight: 100;
+          visibility: visible;
+          background-color: transparent; } }
     .footer__communication--mail:hover .footer__communication--mailinfo {
       visibility: visible;
       color: #fff; }
@@ -1624,7 +1651,7 @@ border-radius for curved end of button
         font-size: 20px;
         transform: rotate(0);
         font-weight: 200;
-        top: 15rem;
+        top: 30%;
         left: 2rem;
         width: 30%; } }
   .footer__social--fb {
@@ -1635,9 +1662,9 @@ border-radius for curved end of button
     top: 24%; }
     @media (max-width: 824px) {
       .footer__social--fb {
-        font-size: 35px;
-        left: 5rem;
-        top: 22rem; } }
+        font-size: 45px;
+        left: 20%;
+        top: 45%; } }
   .footer__social--twit {
     position: absolute;
     color: #2998ff;
@@ -1646,9 +1673,9 @@ border-radius for curved end of button
     top: 40%; }
     @media (max-width: 824px) {
       .footer__social--twit {
-        font-size: 35px;
-        left: 5rem;
-        top: 29rem; } }
+        font-size: 45px;
+        left: 20%;
+        top: 60%; } }
   .footer__social--link {
     position: absolute;
     color: #2998ff;
@@ -1657,9 +1684,9 @@ border-radius for curved end of button
     top: 55%; }
     @media (max-width: 824px) {
       .footer__social--link {
-        font-size: 35px;
-        left: 5rem;
-        top: 35rem; } }
+        font-size: 45px;
+        left: 20%;
+        top: 75%; } }
 
 .header {
   height: 91vh;
@@ -2388,7 +2415,7 @@ border-radius for curved end of button
     transition: all 0.8s; }
     @media (max-width: 824px) {
       .searchmore__input {
-        height: 3.5rem;
+        height: 3rem;
         right: 1.9rem;
         top: 20px; } }
   .searchmore__btn {
@@ -2409,8 +2436,8 @@ border-radius for curved end of button
     background: #5643fa; }
     @media (max-width: 824px) {
       .searchmore__btn {
-        width: 4.2rem;
-        height: 4.2rem;
+        width: 4rem;
+        height: 3.8rem;
         right: 2rem;
         top: 1.7rem; } }
   .searchmore__icon {
@@ -3170,6 +3197,7 @@ button:focus {
     width: 65%;
     height: 80%;
     overflow-y: scroll;
+    overflow-x: hidden;
     text-align: center;
     position: relative; }
     @media (max-width: 824px) {

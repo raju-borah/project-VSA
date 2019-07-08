@@ -1,60 +1,53 @@
 <template>
-  <div id="Account">
-    <Navbar/>
-    <div class="settings">
-      <div class="u-center-text flex-center">
-        <h1 class="heading_tag">Account</h1>
-      </div>
+  <div id="Account" class="settings">
+    <Navbar />
+    <div class="u-center-text flex-center">
+      <h1 class="heading_tag">Account</h1>
+    </div>
 
-      <br>
-      <img
-        src="../../assets/img/icons/man.png"
-        id="profileimage"
-        class="settings__icon"
-        alt
-        v-if="!profilePic"
-      >
-      <img :src="profilePic" id="profileimage" class="settings__icon" alt v-else>
+    <br />
+    <img
+      src="../../assets/img/icons/man.png"
+      id="profileimage"
+      class="settings__icon"
+      alt
+      v-if="!profilePic"
+    />
+    <img :src="profilePic" id="profileimage" class="settings__icon" alt v-else />
 
-      <input type="file" id="imageupload" accept="image/jpeg" hidden="hidden" @change="filePicked">
-      <button
-        type="button"
-        class="btn settings__editbutton"
-        id="editprofileimage"
-        @click="pickFile"
-      >
-        <i class="fas fa-camera font-medium"></i>
-        <span class="tooltiptext">Edit Profile Image</span>
-      </button>
+    <input type="file" id="imageupload" accept="image/jpeg" hidden="hidden" @change="filePicked" />
+    <button type="button" class="btn settings__editbutton" id="editprofileimage" @click="pickFile">
+      <i class="fas fa-camera font-medium"></i>
+      <span class="tooltiptext">Edit Profile Image</span>
+    </button>
 
-      <br>
-      <h1 class="u-center-text font-medium u-margin-bottom-medium">
-        Signed as
-        <span class="accountHolderName">{{name}}</span>
-        <br>
-        <span class="accountHolderId">{{email}}</span>
-      </h1>
-      <div class="settings__form">
-        <h1 class="font-medium">Change Account Settings</h1>
-        <div class="form__group">
-          <form>
-            <label for="current_username" class="font-small">Change User Name</label>
-            <input
-              type="text"
-              id="current_passwd"
-              class="form__input form__input--settings"
-              placeholder="Enter UserName"
-              required
-              v-model.trim="nameNew"
-            >
-            <!-- for changing username -->
-            <button class="btn btn--upload" type="submit" @click.prevent="changeName">Save Changes</button>
-          </form>
-          <span class="upperline"></span>
-          <!-- for sending the password reset link -->
-          <label class="font-small">Send reset Password link</label>
-          <button class="btn btn--upload" @click="sendPasswordResetLink">Reset Password</button>
-        </div>
+    <br />
+    <h1 class="u-center-text font-medium u-margin-bottom-medium">
+      Signed as
+      <span class="accountHolderName">{{name}}</span>
+      <br />
+      <span class="accountHolderId">{{email}}</span>
+    </h1>
+    <div class="settings__form">
+      <h1 class="font-medium">Change Account Settings</h1>
+      <div class="form__group">
+        <form>
+          <label for="current_username" class="font-small">Change User Name</label>
+          <input
+            type="text"
+            id="current_passwd"
+            class="form__input form__input--settings"
+            placeholder="Enter UserName"
+            required
+            v-model.trim="nameNew"
+          />
+          <!-- for changing username -->
+          <button class="btn btn--upload" type="submit" @click.prevent="changeName">Save Changes</button>
+        </form>
+        <span class="upperline"></span>
+        <!-- for sending the password reset link -->
+        <label class="font-small">Send reset Password link</label>
+        <button class="btn btn--upload" @click="sendPasswordResetLink">Reset Password</button>
       </div>
     </div>
   </div>

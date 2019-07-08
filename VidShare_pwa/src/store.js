@@ -68,17 +68,35 @@ export let store = new Vuex.Store({
       playbackRates: [1, 1.5, 2],
       sources: [
         {
-          src: 'https://firebasestorage.googleapis.com/v0/b/thevsapp.appspot.com/o/001%20Introduction%20to%20the%20App%20Design%20Course.mp4?alt=media&token=83dbf921-ebfe-4639-9db0-ac9c8d0a0b98',
+          src: null,
           type: "video/mp4"
         }
       ]
+    },
+    show: false,
+
+    //current video details fetched from firebase
+    videoDetails: {
+      title: '',
+      description: '',
+      category: '',
+      thumbnail: '',
+      playList: '',
+      uploadedBy: '',
+      timestamp: '',
+      uploadedByThumbnail: ''
     },
 
     //upload task
     task: null,
     percentage: 0,
     paused: false,
-    fileName: null
+    fileName: null,
+    url: null,
+
+    // app update state
+    registration: null,
+    updateExists: false
   },
   mutations: {
     resetUser(state) {
@@ -249,9 +267,9 @@ export let store = new Vuex.Store({
       let storageRef = storage().ref("video/" + state.uid + "/" + payload.title + ".mp4");
 
       state.fileName = payload.file.name
-
       // upload file
-      state.task = storageRef.put(payload.file);
+      state.task = storageRef.put(payload.file)
+
       state.task.on(
         "state_changed",
         // when upload is in progress
@@ -278,70 +296,135 @@ export let store = new Vuex.Store({
           let videoRef = db.collection('uploadedVideos').doc()
           let playlistRef = db.collection('playlist').doc()
 
-          videoRef.set({
-            title: payload.title,
-            description: payload.description,
-            thumbnail: payload.thumbnail,
-            timestamp: firestore.FieldValue.serverTimestamp(),
-            by: state.uid,
-            category: payload.category
-          })
-            .then(res => {
-              if (!payload.playListMode && !payload.playListExist) {
-                alertSuccess("Video uploaded!")
-              }
-              else if (payload.playListExist) {
-                db
-                  .collection('uploadedVideos')
-                  .doc(videoRef.id)
-                  .set({
-                    playList: payload.playListID
-                  },
-                    {
-                      merge: true
-                    })
-                  .then(() => {
-                    db
-                      .collection('playlist')
-                      .doc(payload.playListID)
-                      .set({
-                        videos: firestore.FieldValue.arrayUnion(videoRef.id)
-                      },
-                        {
-                          merge: true
-                        })
-                      .then(() => {
-                        alertSuccess('Video uploaded!')
-                      })
-                  })
-
-              }
-              else {
-                playlistRef.set({
-                  title: payload.playListTitle,
-                  description: payload.playListDescription,
-                  by: state.uid,
-                  videos: firestore.FieldValue.arrayUnion(videoRef.id)
-                })
-                  .then(() => {
+          storageRef
+            .getDownloadURL()
+            .then(downloadURL => {
+              state.url = downloadURL;
+            })
+            .then(() => {
+              videoRef.set({
+                title: payload.title,
+                description: payload.description,
+                thumbnail: payload.thumbnail,
+                timestamp: firestore.FieldValue.serverTimestamp(),
+                by: state.uid,
+                category: payload.category,
+                url: state.url
+              })
+                .then(() => {
+                  if (!payload.playListMode && !payload.playListExist) {
+                    alertSuccess("Video uploaded!")
+                  }
+                  else if (payload.playListExist) {
                     db
                       .collection('uploadedVideos')
                       .doc(videoRef.id)
                       .set({
-                        playList: playlistRef.id
+                        playList: payload.playListID
                       },
                         {
                           merge: true
                         })
                       .then(() => {
-                        alertSuccess('Video uploaded!')
+                        db
+                          .collection('playlist')
+                          .doc(payload.playListID)
+                          .set({
+                            videos: firestore.FieldValue.arrayUnion(videoRef.id)
+                          },
+                            {
+                              merge: true
+                            })
+                          .then(() => {
+                            alertSuccess('Video uploaded!')
+                          })
                       })
-                  })
-              }
+
+                  }
+                  else {
+                    playlistRef.set({
+                      title: payload.playListTitle,
+                      description: payload.playListDescription,
+                      by: state.uid,
+                      videos: firestore.FieldValue.arrayUnion(videoRef.id),
+                      timestamp: firestore.FieldValue.serverTimestamp(),
+                      thumbnail: payload.thumbnail
+                    })
+                      .then(() => {
+                        db
+                          .collection('uploadedVideos')
+                          .doc(videoRef.id)
+                          .set({
+                            playList: playlistRef.id
+                          },
+                            {
+                              merge: true
+                            })
+                          .then(() => {
+                            alertSuccess('Video uploaded!')
+                          })
+                      })
+                  }
+                })
             })
+            .catch(err => {
+              console.error(err)
+              alertError(err.message)
+            })
+
 
         }
       );
+    },
+    getVideo(state, payload) {
+      let vidRef = db.collection('uploadedVideos').doc(payload)
+      vidRef
+        .get()
+        .then(doc => {
+          state.videoOptions.sources[0].src = doc.data().url
+          state.videoDetails.title = doc.data().title
+          state.videoDetails.category = doc.data().category
+          state.videoDetails.thumbnail = doc.data().thumbnail
+          state.videoDetails.timestamp = doc.data().timestamp.toDate()
+          state.videoDetails.playList = doc.data().playList
+          return doc.data().by
+        })
+        .then(id => {
+          db
+            .collection('validuser')
+            .doc(id)
+            .get()
+            .then(doc => {
+              state.videoDetails.uploadedBy = doc.data().name
+              state.videoDetails.uploadedByThumbnail = doc.data().profilePic
+            })
+        })
+        .then(() => {
+          router.push({ name: "Play", params: { id: payload } });
+          state.show = true
+        })
+    },
+    updateApp(state) {
+      swal
+        .fire({
+          type: "success",
+          title: "Update",
+          showCloseButton: true,
+          html: `<div class="flex-center">
+                    <p>
+                      Click Ok to update now </p>
+                    <p>
+                  </div>`,
+        })
+        .then(res => {
+          if (res.value) {
+            state.updateExists = false;
+            if (!state.registration || !state.registration.waiting) {
+              return;
+            }
+            state.registration.waiting.postMessage("skipWaiting");
+          }
+        });
     }
   },
   actions: {
@@ -377,6 +460,12 @@ export let store = new Vuex.Store({
     },
     uploadVideo(context, payload) {
       context.commit('uploadVideo', payload)
+    },
+    getVideo(context, payload) {
+      context.commit('getVideo', payload)
+    },
+    updateApp(context) {
+      context.commit('updateApp')
     }
   }
 })
