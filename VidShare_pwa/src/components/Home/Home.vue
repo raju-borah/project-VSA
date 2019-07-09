@@ -21,7 +21,7 @@
           <div class="header__text-box textShadow">
             <h1 class="heading-primary">
               <span class="heading-primary--main">LEARNING</span>
-              <span class="heading-primary--sub">Knowleadge</span>
+              <span class="heading-primary--sub">KNOWLEDGE</span>
             </h1>
           </div>
         </div>
@@ -40,7 +40,6 @@
 
     <!--main body design after header-->
     <main class="main">
-
       <!--info story section-->
       <section class="infocard">
         <!--heading of info card-->
@@ -252,6 +251,7 @@
             </div>
           </div>
         </div>
+        <span class="line"></span>
       </section>
 
       <!--Event section-->
