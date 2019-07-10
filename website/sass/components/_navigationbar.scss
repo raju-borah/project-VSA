@@ -49,6 +49,7 @@
     width: 50%;
     padding-right: 4rem;
     float: left;
+    height: 100%;
     @include respond(phone) {
       float: right;
       padding-right: 0rem;

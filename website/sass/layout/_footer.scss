@@ -28,11 +28,15 @@
         top: 5rem;
         font-size: 200px;
         left: 42%;
+       
 
         @include respond(phone){
             font-size: 100px;
             top: -2rem;
             color: white;
+            width: 100%;
+            left: 0;
+            text-align: center;
         }
 
 
@@ -49,8 +53,10 @@
 
         @include respond(phone){
             font-size: 35px;
-            left: 1.5rem;
+            left:0%;
             top: 11.5rem;
+            width: 100%;
+            text-align: center;
         }
     }
 
@@ -64,6 +70,7 @@
         font-size: 5rem;
         @include respond(phone){
             font-size: 35px;
+            text-align: center;
            
         }
 
@@ -72,7 +79,7 @@
         {
             position:absolute;
             top: 20%;
-            left: 12%;
+            left: 10%;
             color: $color-white;
             font-size: 3rem;
             font-weight: 600;
@@ -83,8 +90,9 @@
                 font-size: 20px;
                 transform: rotate(0);
                 font-weight: 200;
-                top: 15rem;
-                left: 65%;
+                top: 70%;
+                left: 0%;
+                width: 100%;
                
             }
             
@@ -98,11 +106,12 @@
             color: $color-tertiary-dark;
             top: 30%;
             left: 15%;
-            display: inline-block;
             transition: all .4s;
             @include respond(phone){
-                top: 45%;
-                left: 69%;
+                top: 80.5%;
+                width: 15%;
+                left: 7%;
+                
                
             }
 
@@ -126,9 +135,10 @@
             @include respond(phone){
                 visibility: visible;
                 background-color:transparent;
-                position: relative;
-                font-size: 15px;
+                font-size: 12px;
                 font-weight: 100;
+             
+            
          
               
                
@@ -155,8 +165,9 @@
             transition: all .4s;
 
             @include respond(phone){
-                top: 62%;
-                left: 68%;
+                top: 79%;
+                right: 14%;
+              
                
             }
 
@@ -202,8 +213,11 @@
             transition: all .4s;
 
             @include respond(phone){
+                text-align: center;
                 top: 79%;
-                left: 69%;
+                left: 0%;
+                margin-left: 70%;
+          
                
             }
 
@@ -222,7 +236,7 @@
             padding: .7rem;
             color: $color-white;
             @include respond(phone){
-                position: relative;
+                display: block;
                 font-size: 12px;
                 font-weight: 100;
                 visibility: visible;
@@ -259,10 +273,10 @@
                 font-size: 20px;
                 transform: rotate(0);
                 font-weight: 200;
-                top: 30%;
-                left: 2rem;
-                width: 30%;
-               
+                top: 35%;
+                left: 10%;
+                text-align: center;
+            
             }
          
             
@@ -279,7 +293,7 @@
             top: 24%;
             @include respond(phone){
                 font-size: 45px;
-                left: 20%;
+                left: -32%;
                 top: 45%;
             
                
@@ -298,8 +312,8 @@
             top: 40%;
             @include respond(phone){
                 font-size: 45px;
-                left: 20%;
-                top: 60%;
+                left: 18%;
+                top: 45%;
             
                
             }
@@ -318,8 +332,8 @@
             top: 55%;
             @include respond(phone){
                 font-size: 45px;
-                left: 20%;
-                top: 75%;
+                left: 70%;
+                top: 45%;
             
                
             }

@@ -12,19 +12,19 @@
     background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
   
     @include respond(phone){
-        padding-top: 17px;
+        padding-top: 70px;
     }
 
     &_drop
   {
-    width: 30%;
+    width: 70%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
     margin-bottom: 3rem;
     @include respond(phone){
-        width: 70%;
+        width: 100%;
         margin-bottom: 1rem;
 }
 
@@ -53,18 +53,20 @@
     padding-right:6%;
     font-size: 20px;
     line-height: 3rem;
-    padding-top: 1rem;
+    padding-top: 2%;
+    padding-bottom: 4%;
     overflow-y: scroll;
     overflow-x: hidden;
 
                       
     @include respond(phone){
         width: 90%;
-        height: 98%;
+        height: 85%;
         border-radius: 5px;
         background-color: #f2f2f2;
-        padding-left:2%;
-        padding-right:2%;
+        padding-left:5%;
+        padding-right:5%;
+        padding-bottom: 4%;
         font-size: 16px;
         border: 2px solid rgba(9, 109, 223, 0.692);
         line-height: 1.8rem;
@@ -82,24 +84,43 @@
             width: 5.5rem;
             height: 5rem;
             top: -.5%;
-            left: 47%;
+            right: -45%;
             z-index: 2;
             border: 2px solid black;
                @include respond(phone){
-             display: none;
+                font-size: 2rem;
+                width: 4rem;
+                height: 3.5rem;
+            
+    }
+        &--edit
+        {
+            position: relative;
+            top: 10%;
+            left: 4%;
+        }
+
+
     }
 
-
+    &--closebtn
+    {
+        margin-bottom: 2%;
     }
-
 
     &--close
     {
-        font-size: 35px;
+        font-size: 25px;
         font-weight: bold;
         position: relative;
         left: 105%;
         top: -6%;
+         outline: none;
+         border: none;
+         background: transparent;
+         margin-bottom: 2%;
+         z-index: 4;
+        
         @include respond(phone){
             left: 90%;
             top: 1%;
@@ -133,7 +154,7 @@
 
 
   input[type=text] select,textarea {
-    width: 80%;
+    width: 95%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -189,7 +210,14 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
+    position: relative;
+    width: 50%;
+    right: -25%;
+    
+    @include respond(phone){
+     
+       
+}
   }
   
   input[type=submit]:hover {
