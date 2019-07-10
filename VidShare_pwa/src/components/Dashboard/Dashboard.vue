@@ -46,7 +46,10 @@
                   >Edit video details</a>
                 </li>
                 <li class="list--items list--items--option">
-                  <a class="btnlist font-xsmall" @click.stop="addToPlaylist(video.id)">
+                  <a
+                    class="btnlist font-xsmall"
+                    @click.stop="addToPlaylist(video.id, video.thumbnail)"
+                  >
                     Add
                     video to playlist
                   </a>
@@ -79,20 +82,29 @@
                 <i class="fas fa-list"></i>
               </button>
               <ul class="list--option list--option--plist">
-                <li class="list--items list--items--option">
-                  <a href="/editvideo.html" class="btnlist font-xsmall">
+                <li
+                  class="list--items list--items--option"
+                  @click.stop="editVideoDetails(video.id)"
+                >
+                  <a class="btnlist font-xsmall">
                     Edit title &
                     description
                   </a>
                 </li>
-                <li class="list--items list--items--option">
-                  <a href="/addplaylist.html" class="btnlist font-xsmall">
+                <li
+                  class="list--items list--items--option"
+                  @click.stop="addToPlaylist(video.id, video.thumbnail)"
+                >
+                  <a class="btnlist font-xsmall">
                     Add
                     video to playlist
                   </a>
                 </li>
                 <li class="list--items list--items--option">
-                  <button class="btnlist btnlist--btn font-xsmall">
+                  <button
+                    class="btnlist btnlist--btn font-xsmall"
+                    @click.stop="deleteVideo(video.id)"
+                  >
                     Delete
                     video
                   </button>
@@ -126,14 +138,16 @@
             <span>{{playlist.title}}</span>
           </div>
           <!-- timestamp when the video was created -->
-          <span class="timestamp font-small">{{playlist.timestamp}}</span>
+          <span class="timestamp font-small">Created on: {{playlist.timestamp}}</span>
           <button class="u-end-text btn btn--trans">
             <i class="fas fa-list"></i>
           </button>
 
           <ul class="list--option list--option--plist">
             <li class="list--items list--items--option">
-              <a href="/dashboardplaylist.html" class="btnlist font-xsmall">Edit playlist</a>
+              <router-link :to="{name:'Playlist'}">
+                <a class="btnlist font-xsmall">Edit playlist</a>
+              </router-link>
             </li>
           </ul>
           <br />
@@ -543,9 +557,6 @@ export default {
                       // playlist id
                       videoDetails["playListID"] =
                         select.options[select.selectedIndex].value;
-                      // playlist name
-                      // videoDetails["playListTitle"] =
-                      //   select.options[select.selectedIndex].text;
                       this.$store.dispatch("uploadVideo", videoDetails);
                       swal.close();
                     } else {
@@ -624,8 +635,6 @@ export default {
                   "#video-playlist"
                 ).value;
               }
-
-              // console.log(videoDetails.title, videoDetails.description, videoDetails.category);
               // title check
               if (videoDetails.title.trim().length >= 4) {
                 // category check
@@ -728,12 +737,6 @@ export default {
               });
           };
           save.addEventListener("click", () => {
-            //remove old outdated video from dashboard
-            // this.videos = this.videos.filter(video => {
-            //   // when id matches with applied id
-            //   // below condition retuns false
-            //   return video.id !== id;
-            // });
             videoChanges.title = dom.querySelector("#video-title").value.trim();
             videoChanges.description = dom
               .querySelector("#video-description")
@@ -743,15 +746,47 @@ export default {
             if (videoChanges.title.trim().length >= 4) {
               // category check
               if (videoChanges.category.length > 0) {
+                swal.showLoading();
+                // check if title unique
+                db.collection("uploadedVideos")
+                  .where("by", "==", this.$store.state.uid)
+                  .where("title", "==", videoChanges.title)
+                  .get()
+                  .then(querySnaphot => {
+                    if (!querySnaphot.empty) {
+                      // title exist show warning
+                      showWarning(
+                        "You have already uploaded the video with same title! Please give unique title to your video"
+                      );
+                    } else {
+                      swal.close();
+                      videoChanges["id"] = id;
+                      this.$store.dispatch("editVideoDetails", videoChanges);
+                      //update outdated video in dashboard
+                      this.videos.forEach(video => {
+                        // when id matches with applied id
+                        if (video.id === id) {
+                          video.title = videoChanges.title;
+                          video.description = videoChanges.description;
+                          video.category = videoChanges.category;
+
+                          console.log(video);
+                        }
+                      });
+                    }
+                  });
               } else {
+                showWarning("Please select video category!");
               }
             } else {
+              showWarning("Title cannot be less than 4char length!");
             }
           });
         }
       });
     },
-    addToPlaylist(id) {
+    addToPlaylist(id, thumbnail) {
+      console.log(id, thumbnail);
       swal.fire({
         focusConfirm: false,
         showCloseButton: true,
@@ -787,9 +822,10 @@ export default {
           //  for existing playlist division selection
           const existingplaylist = dom.querySelector("#existingplaylist");
           // radio button for create playlist and existing playlist
-
           const crplaylist = dom.querySelector("#playlistopt1");
           const explaylist = dom.querySelector("#playlistopt2");
+          // save changes button
+          const save = dom.querySelector("#savePlaylist");
 
           crplaylist.addEventListener("click", function() {
             createplaylist.style.display = "block";
@@ -799,6 +835,72 @@ export default {
           explaylist.addEventListener("click", function() {
             existingplaylist.style.display = "block";
             createplaylist.style.display = "none";
+          });
+          // show alert for errors or warning
+          const showWarning = msg => {
+            swal
+              .fire({
+                type: "warning",
+                text: msg
+              })
+              .then(() => {
+                this.addToPlaylist(id, thumbnail);
+              });
+          };
+
+          let playlistDetail = {
+            title: "",
+            description: ""
+          };
+
+          save.addEventListener("click", () => {
+            if (crplaylist.checked) {
+              // console.log("Create playlist");
+              playlistDetail["title"] = dom.querySelector(
+                "#playlist-title"
+              ).value;
+              playlistDetail["description"] = dom.querySelector(
+                "#playlist-description"
+              ).value;
+            }
+            if (explaylist.checked) {
+              playlistDetail["existingPlayList"] = dom.querySelector(
+                "#video-playlist"
+              ).value;
+            }
+            // validation
+            if (
+              playlistDetail.title.length > 4 &&
+              playlistDetail.description.length > 0
+            ) {
+              swal.showLoading();
+              let playListRef = db
+                .collection("playlist")
+                .where("by", "==", this.$store.state.uid)
+                .where("title", "==", playlistDetail.title);
+              playListRef.get().then(querySnaphot => {
+                if (!querySnaphot.empty) {
+                  // playlist title validation
+                  showWarning(
+                    "You have already created playlist with the same name! Please give unique title to your playlist"
+                  );
+                } else {
+                  playlistDetail["id"] = id;
+                  playlistDetail["thumbnail"] = thumbnail;
+                  this.$store.dispatch("createPlaylist", playlistDetail);
+                  swal.close();
+                  this.videos = this.videos.filter(video => {
+                    // when id matches with applied id
+                    // below condition retuns false
+                    return video.id !== id;
+                  });
+                }
+              });
+            } else {
+              showWarning(
+                "Playlist title should be greater than 4char long, title and description cannot be empty"
+              );
+            }
           });
         }
       });
