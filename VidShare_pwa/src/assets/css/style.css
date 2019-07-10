@@ -72,6 +72,7 @@ a {
   text-decoration: none; }
 
 body {
+  overscroll-behavior-y: contain;
   font-weight: 400;
   /* font-size: 16px;*/
   line-height: 1.7;
@@ -514,7 +515,7 @@ border-radius for curved end of button
       @media (max-width: 824px) {
         .navigationbar:hover .navbarfont .navbar_items--icon {
           font-size: 35px;
-          top: -.3rem; } }
+          top: -0.3rem; } }
     .navigationbar:hover .navbarfont .navbar_items:hover {
       color: #9dcfff;
       text-shadow: 0 1rem 3rem #000;
@@ -530,7 +531,8 @@ border-radius for curved end of button
     text-align: end;
     width: 50%;
     padding-right: 4rem;
-    float: left; }
+    float: left;
+    height: 100%; }
     @media (max-width: 824px) {
       .navigationbar--right {
         float: right;
@@ -549,7 +551,7 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .navbarfont .navbar_items--icon {
         font-size: 35px;
-        top: -.3rem; } }
+        top: -0.3rem; } }
   .navbarfont .navbar_items:hover {
     color: #9dcfff;
     text-shadow: 0 1rem 3rem #000;
@@ -609,9 +611,12 @@ border-radius for curved end of button
     content: "";
     position: absolute;
     top: -1.05rem;
-    right: 2.8rem;
+    right: 3.5rem;
     border: 1rem solid;
     border-color: transparent transparent #eee transparent; }
+    @media (max-width: 824px) {
+      .usercontainer::after {
+        right: 1rem; } }
   @media (max-width: 824px) {
     .usercontainer {
       width: 30rem;
@@ -723,11 +728,11 @@ border-radius for curved end of button
   .search__input {
     position: absolute;
     top: 20px;
-    right: 4.6rem;
+    right: 5rem;
     box-sizing: border-box;
     width: 0px;
     height: 4.5rem;
-    padding: 0 18px;
+    padding: 0 15px;
     outline: none;
     font-size: 18px;
     border-radius: 50px;
@@ -737,19 +742,19 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .search__input {
         height: 3rem;
-        right: 1.9rem;
+        right: 1.99rem;
         top: 20px; } }
   .search__btn {
     position: absolute;
-    width: 4.59rem;
-    height: 4.59rem;
+    width: 4.69rem;
+    height: 4.69rem;
     border-radius: 50%;
     right: 4.6rem;
     top: 2rem;
     cursor: pointer;
     text-align: center;
     line-height: 80px;
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     color: #fff;
     transition: all 0.1s;
     border: none;
@@ -759,12 +764,17 @@ border-radius for curved end of button
       .search__btn {
         width: 4rem;
         height: 3.8rem;
+        font-size: 2.5rem;
         right: 2rem;
         top: 1.7rem; } }
   .search__icon {
     position: absolute;
-    top: .8rem;
+    top: 0.8rem;
     left: 1rem; }
+    @media (max-width: 824px) {
+      .search__icon {
+        top: 0.7rem;
+        left: 0.8rem; } }
   .search:hover .search__input {
     width: 25rem;
     color: #000; }
@@ -963,7 +973,7 @@ border-radius for curved end of button
   letter-spacing: 1rem; }
   @media (max-width: 824px) {
     .learning__title {
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       font-size: 30px;
       font-weight: 300;
       width: 60%; } }
@@ -972,14 +982,14 @@ border-radius for curved end of button
   font-size: 3rem;
   display: inline-block;
   padding: 1rem;
-  margin-left: .4rem;
+  margin-left: 0.4rem;
   cursor: pointer;
   vertical-align: middle;
   font-weight: 500;
   position: absolute;
   top: 1rem;
   right: 5rem;
-  transition: color .25s ease;
+  transition: color 0.25s ease;
   border-left: 2px solid #5643fa;
   z-index: 1;
   background: none;
@@ -992,7 +1002,7 @@ border-radius for curved end of button
       border: none; } }
   .learning__more::after {
     position: absolute;
-    content: '';
+    content: "";
     top: 0;
     left: 0;
     width: 0;
@@ -1051,7 +1061,7 @@ border-radius for curved end of button
   letter-spacing: 1rem; }
   @media (max-width: 824px) {
     .event__title {
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       font-size: 30px;
       font-weight: 300;
       width: 60%; } }
@@ -1060,14 +1070,14 @@ border-radius for curved end of button
   font-size: 3rem;
   display: inline-block;
   padding: 1rem;
-  margin-left: .4rem;
+  margin-left: 0.4rem;
   cursor: pointer;
   vertical-align: middle;
   font-weight: 500;
   position: absolute;
   top: 1rem;
   right: 5rem;
-  transition: color .25s ease;
+  transition: color 0.25s ease;
   border-left: 2px solid #5643fa;
   z-index: 1;
   background: none;
@@ -1080,7 +1090,7 @@ border-radius for curved end of button
       border: none; } }
   .event__more::after {
     position: absolute;
-    content: '';
+    content: "";
     top: 0;
     left: 0;
     width: 0;
@@ -1123,7 +1133,7 @@ border-radius for curved end of button
   letter-spacing: 1rem; }
   @media (max-width: 824px) {
     .club__title {
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       font-size: 30px;
       font-weight: 300;
       width: 60%; } }
@@ -1132,14 +1142,14 @@ border-radius for curved end of button
   font-size: 3rem;
   display: inline-block;
   padding: 1rem;
-  margin-left: .4rem;
+  margin-left: 0.4rem;
   cursor: pointer;
   vertical-align: middle;
   font-weight: 500;
   position: absolute;
   top: 1rem;
   right: 5rem;
-  transition: color .25s ease;
+  transition: color 0.25s ease;
   border-left: 2px solid #5643fa;
   z-index: 1;
   background: none;
@@ -1152,7 +1162,7 @@ border-radius for curved end of button
       border: none; } }
   .club__more::after {
     position: absolute;
-    content: '';
+    content: "";
     top: 0;
     left: 0;
     width: 0;
@@ -1516,7 +1526,10 @@ border-radius for curved end of button
       .footer__logo {
         font-size: 100px;
         top: -2rem;
-        color: white; } }
+        color: white;
+        width: 100%;
+        left: 0;
+        text-align: center; } }
   .footer__logo-name {
     position: absolute;
     color: #5643fa;
@@ -1526,17 +1539,20 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__logo-name {
         font-size: 35px;
-        left: 1.5rem;
-        top: 11.5rem; } }
+        left: 0%;
+        top: 11.5rem;
+        width: 100%;
+        text-align: center; } }
   .footer__communication {
     font-size: 5rem; }
     @media (max-width: 824px) {
       .footer__communication {
-        font-size: 35px; } }
+        font-size: 35px;
+        text-align: center; } }
     .footer__communication--text {
       position: absolute;
       top: 20%;
-      left: 12%;
+      left: 10%;
       color: #fff;
       font-size: 3rem;
       font-weight: 600;
@@ -1547,19 +1563,20 @@ border-radius for curved end of button
           font-size: 20px;
           transform: rotate(0);
           font-weight: 200;
-          top: 15rem;
-          left: 65%; } }
+          top: 70%;
+          left: 0%;
+          width: 100%; } }
     .footer__communication--call {
       position: absolute;
       color: #5643fa;
       top: 30%;
       left: 15%;
-      display: inline-block;
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--call {
-          top: 45%;
-          left: 69%; } }
+          top: 80.5%;
+          width: 15%;
+          left: 7%; } }
       .footer__communication--call:hover {
         transform: translateY(-2rem); }
     .footer__communication--callinfo {
@@ -1573,8 +1590,7 @@ border-radius for curved end of button
         .footer__communication--callinfo {
           visibility: visible;
           background-color: transparent;
-          position: relative;
-          font-size: 15px;
+          font-size: 12px;
           font-weight: 100; } }
     .footer__communication--call:hover .footer__communication--callinfo {
       visibility: visible;
@@ -1587,8 +1603,8 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--location {
-          top: 62%;
-          left: 68%; } }
+          top: 79%;
+          right: 14%; } }
       .footer__communication--location:hover {
         transform: translateY(-2rem); }
     .footer__communication--locationinfo {
@@ -1616,8 +1632,10 @@ border-radius for curved end of button
       transition: all .4s; }
       @media (max-width: 824px) {
         .footer__communication--mail {
+          text-align: center;
           top: 79%;
-          left: 69%; } }
+          left: 0%;
+          margin-left: 70%; } }
       .footer__communication--mail:hover {
         transform: translateY(-2rem); }
     .footer__communication--mailinfo {
@@ -1630,7 +1648,7 @@ border-radius for curved end of button
       color: #fff; }
       @media (max-width: 824px) {
         .footer__communication--mailinfo {
-          position: relative;
+          display: block;
           font-size: 12px;
           font-weight: 100;
           visibility: visible;
@@ -1651,9 +1669,9 @@ border-radius for curved end of button
         font-size: 20px;
         transform: rotate(0);
         font-weight: 200;
-        top: 30%;
-        left: 2rem;
-        width: 30%; } }
+        top: 35%;
+        left: 10%;
+        text-align: center; } }
   .footer__social--fb {
     position: absolute;
     color: #5643fa;
@@ -1663,7 +1681,7 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__social--fb {
         font-size: 45px;
-        left: 20%;
+        left: -32%;
         top: 45%; } }
   .footer__social--twit {
     position: absolute;
@@ -1674,8 +1692,8 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__social--twit {
         font-size: 45px;
-        left: 20%;
-        top: 60%; } }
+        left: 18%;
+        top: 45%; } }
   .footer__social--link {
     position: absolute;
     color: #2998ff;
@@ -1685,15 +1703,20 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .footer__social--link {
         font-size: 45px;
-        left: 20%;
-        top: 75%; } }
+        left: 70%;
+        top: 45%; } }
 
 .header {
+  width: 100%;
   height: 91vh;
   position: relative;
   background-image: cover;
   background-position: top;
+  background-size: cover;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  @media (max-width: 824px) {
+    .header {
+      height: 85vh; } }
   .header__text-box {
     position: absolute;
     top: 40%;
@@ -1711,7 +1734,7 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .header_img {
         width: 100%;
-        height: 60%; } }
+        height: 100%; } }
 
 .fade {
   animation-name: fade;
@@ -2402,11 +2425,11 @@ border-radius for curved end of button
   .searchmore__input {
     position: absolute;
     top: 20px;
-    right: 4.6rem;
+    right: 5rem;
     box-sizing: border-box;
     width: 0px;
     height: 4.5rem;
-    padding: 0 18px;
+    padding: 0 15px;
     outline: none;
     font-size: 18px;
     border-radius: 50px;
@@ -2416,19 +2439,19 @@ border-radius for curved end of button
     @media (max-width: 824px) {
       .searchmore__input {
         height: 3rem;
-        right: 1.9rem;
+        right: 1.99rem;
         top: 20px; } }
   .searchmore__btn {
     position: absolute;
-    width: 4.59rem;
-    height: 4.59rem;
+    width: 4.69rem;
+    height: 4.69rem;
     border-radius: 50%;
     right: 4.6rem;
     top: 2rem;
     cursor: pointer;
     text-align: center;
     line-height: 80px;
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     color: #fff;
     transition: all 0.1s;
     border: none;
@@ -2438,6 +2461,7 @@ border-radius for curved end of button
       .searchmore__btn {
         width: 4rem;
         height: 3.8rem;
+        font-size: 2.5rem;
         right: 2rem;
         top: 1.7rem; } }
   .searchmore__icon {
@@ -2453,26 +2477,64 @@ border-radius for curved end of button
 .bgcontain {
   width: 100%;
   height: 90.5vh;
+  color: white;
+  background-repeat: no-repeat;
   animation: change steps(1) 2s infinite; }
   @media (max-width: 824px) {
     .bgcontain {
-      height: 91.5vh; } }
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 92.6vh; } }
 
 .backhome {
-  position: relative;
-  top: 30%;
-  left: 60%;
   color: #fff;
   font-weight: 900;
   font-size: 2rem;
-  padding: .77rem;
+  padding: 0.77rem;
   border: 0.2rem solid #fff;
   border-radius: 2rem; }
+  @media (max-width: 1367px) {
+    .backhome {
+      margin-left: 24rem; } }
+  @media (max-width: 1024px) {
+    .backhome {
+      margin-left: 34rem; } }
+  @media (max-width: 824px) {
+    .backhome {
+      margin-left: 0rem; } }
   .backhome:hover {
-    transition: all .6s;
+    transition: all 0.6s;
     background-color: #eee;
     border-color: #000;
     color: #000; }
+
+.breakneeded {
+  display: none; }
+  @media (max-width: 824px) {
+    .breakneeded {
+      display: inline; } }
+
+.errortext {
+  position: absolute;
+  top: 19%;
+  left: 24.3%; }
+  @media (max-width: 1024px) {
+    .errortext {
+      left: 33%; } }
+  @media (max-width: 824px) {
+    .errortext {
+      top: 13.5%;
+      left: 65%; } }
+
+@media (max-width: 824px) {
+  .errorpara {
+    display: none; } }
+
+.error-font {
+  font-size: 4rem; }
+  @media (max-width: 824px) {
+    .error-font {
+      font-size: 20px; } }
 
 .progressbox {
   position: relative;
@@ -2512,7 +2574,7 @@ border-radius for curved end of button
     right: 22rem; }
     @media (max-width: 824px) {
       .progressbox__bar {
-        right: 6rem; } }
+        right: 16rem; } }
   .progressbox__percentage {
     position: absolute;
     color: #000;
@@ -2647,9 +2709,9 @@ progress {
   /* Modal Content */ }
   @media (max-width: 824px) {
     .editpanel {
-      padding-top: 17px; } }
+      padding-top: 70px; } }
   .editpanel_drop {
-    width: 30%;
+    width: 70%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -2657,7 +2719,7 @@ progress {
     margin-bottom: 3rem; }
     @media (max-width: 824px) {
       .editpanel_drop {
-        width: 70%;
+        width: 100%;
         margin-bottom: 1rem; } }
     .editpanel_drop--item {
       font-size: 14px; }
@@ -2676,17 +2738,19 @@ progress {
     padding-right: 6%;
     font-size: 20px;
     line-height: 3rem;
-    padding-top: 1rem;
+    padding-top: 2%;
+    padding-bottom: 4%;
     overflow-y: scroll;
     overflow-x: hidden; }
     @media (max-width: 824px) {
       .editpanel_content {
         width: 90%;
-        height: 98%;
+        height: 85%;
         border-radius: 5px;
         background-color: #f2f2f2;
-        padding-left: 2%;
-        padding-right: 2%;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 4%;
         font-size: 16px;
         border: 2px solid rgba(9, 109, 223, 0.692);
         line-height: 1.8rem; } }
@@ -2699,18 +2763,31 @@ progress {
       width: 5.5rem;
       height: 5rem;
       top: -.5%;
-      left: 47%;
+      right: -45%;
       z-index: 2;
       border: 2px solid black; }
       @media (max-width: 824px) {
         .editpanel_content--icon {
-          display: none; } }
+          font-size: 2rem;
+          width: 4rem;
+          height: 3.5rem; } }
+      .editpanel_content--icon--edit {
+        position: relative;
+        top: 10%;
+        left: 4%; }
+    .editpanel_content--closebtn {
+      margin-bottom: 2%; }
     .editpanel_content--close {
-      font-size: 35px;
+      font-size: 25px;
       font-weight: bold;
       position: relative;
       left: 105%;
-      top: -6%; }
+      top: -6%;
+      outline: none;
+      border: none;
+      background: transparent;
+      margin-bottom: 2%;
+      z-index: 4; }
       @media (max-width: 824px) {
         .editpanel_content--close {
           left: 90%;
@@ -2731,7 +2808,7 @@ progress {
           width: 100%;
           margin-bottom: 1rem; } }
     .editpanel_content input[type=text] select, .editpanel_content textarea {
-      width: 80%;
+      width: 95%;
       padding: 5px;
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -2761,7 +2838,9 @@ progress {
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      float: right; }
+      position: relative;
+      width: 50%;
+      right: -25%; }
     .editpanel_content input[type=submit]:hover {
       background-color: #31b4e7;
       box-shadow: 0 2px 20px rgba(33, 33, 33, 0.8);
