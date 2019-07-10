@@ -431,38 +431,40 @@
         <div class="footer__communication">
           <div class="footer__communication--text">CONTACT US</div>
 
-          <div class="footer__communication--call">
-            <i class="fa fa-phone">
-              <span class="footer__communication--callinfo">+919876543210</span>
-            </i>
+          <div class="footer__communication--grid">
+            <div class="footer__communication--call">
+              <i class="fa fa-phone">
+                <div class="footer__communication--callinfo">+919876543210</div>
+              </i>
+            </div>
+
+            <div class="footer__communication--location">
+              <i class="fa fa-map-marker">
+                <div class="footer__communication--locationinfo">Kaziranga&nbsp;university</div>
+              </i>
+            </div>
+
+            <div class="footer__communication--mail">
+              <i class="fa fa-envelope">
+                <div class="footer__communication--mailinfo">VSA@gmail.com</div>
+              </i>
+            </div>
           </div>
 
-          <div class="footer__communication--location">
-            <i class="fa fa-map-marker">
-              <span class="footer__communication--locationinfo">Kaziranga&nbsp;university</span>
-            </i>
+          <div class="footer__social">
+            <div class="footer__social--text">FOLLOW US AT</div>
+            <a href="#" class="footer__social--fb">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+
+            <a href="#" class="footer__social--twit">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+
+            <a href="#" class="footer__social--link">
+              <i class="fab fa-linkedin"></i>
+            </a>
           </div>
-
-          <div class="footer__communication--mail">
-            <i class="fa fa-envelope">
-              <span class="footer__communication--mailinfo">VSA@gmail.com</span>
-            </i>
-          </div>
-        </div>
-
-        <div class="footer__social">
-          <div class="footer__social--text">FOLLOW US AT</div>
-          <a href="#" class="footer__social--fb">
-            <i class="fab fa-facebook-square"></i>
-          </a>
-
-          <a href="#" class="footer__social--twit">
-            <i class="fab fa-twitter-square"></i>
-          </a>
-
-          <a href="#" class="footer__social--link">
-            <i class="fab fa-linkedin"></i>
-          </a>
         </div>
       </div>
     </section>
