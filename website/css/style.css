@@ -2068,7 +2068,8 @@ border-radius for curved end of button
 
 .dashboard {
   width: 100%;
-  height: auto; }
+  height: auto;
+  padding-bottom: 5rem; }
   .dashboard__header {
     background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
     padding: 2rem; }

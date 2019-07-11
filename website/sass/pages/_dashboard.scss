@@ -1,7 +1,7 @@
 .dashboard {
   width: 100%;
   height: auto;
-
+  padding-bottom: 5rem;
   &__header {
     background-image: linear-gradient(to right, rgba($color-tertiary-light, 0.88), rgba($color-tertiary-dark-1, 0.88));
     padding: 2rem;
