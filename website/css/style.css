@@ -164,10 +164,11 @@ body {
     background: black; }
     .list--option--plist {
       margin-top: -3.5rem;
-      margin-right: 0rem; }
+      margin-right: 0rem;
+      padding: 1rem; }
       @media (max-width: 824px) {
         .list--option--plist {
-          margin-right: 2rem; } }
+          margin-right: 1rem; } }
     .list--option:hover {
       display: block; }
   @media (max-width: 824px) {

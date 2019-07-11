@@ -74,9 +74,10 @@
     &--plist {
       margin-top: -3.5rem;
       margin-right: 0rem;
+      padding: 1rem;
 
       @include respond(phone) {
-        margin-right: 2rem;
+        margin-right: 1rem;
       }
     }
     &:hover {
