@@ -1,25 +1,28 @@
 <template>
   <div id="Profile">
-    <Navbar/>
+    <Navbar />
     <!--editform panel-->
     <div id="editbox" class="editpanel">
       <!-- editform content -->
       <form class="editpanel_content" id="profileForm">
         <!--user icon on top-->
         <div class="editpanel_content--icon">
-          <i class="fas fa-user-edit"></i>
+          <i class="fas fa-user-edit editpanel_content--icon--edit"></i>
         </div>
 
         <!--close mark -->
-        <div class="editpanel_content--close">
-          <span class="close" @click="closeEdit">&times;</span>
+        <div class="editpanel_content--closebtn">
+          <button class="editpanel_content--close" @click="closeEdit">
+            <span class="close">
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
         </div>
-
         <!--date of birth-->
         <i class="far fa-calendar-alt"></i>
         <label class="editpanel_label dob">Date Of Birth :</label>
-        <input type="date" class="editpanel_input" id="date" required>
-        <br>
+        <input type="date" class="editpanel_input" id="date" required />
+        <br />
 
         <!--department-->
         <i class="fas fa-building"></i>
@@ -27,6 +30,7 @@
         <!-- <input type="text" class="editpanel_input" id="department" placeholder="eg: SCS" required> -->
 
         <select class="editpanel_drop" v-model="profileDetails.department">
+          <option value class="editpanel_drop--item" selected disabled>Select your Department</option>
           <option value="SCS" class="editpanel_drop--item">SCS</option>
           <option value="SOB" class="editpanel_drop--item">SOB</option>
           <option value="SET" class="editpanel_drop--item">SET</option>
@@ -34,8 +38,7 @@
           <option value="SBS" class="editpanel_drop--item">SBS</option>
           <option value="SHS" class="editpanel_drop--item">SHS</option>
         </select>
-        <br>
-        <br>
+        <br />
 
         <!--phone number-->
         <i class="fas fa-mobile-alt"></i>
@@ -47,8 +50,8 @@
           placeholder="eg: +91987654321"
           required
           v-model.trim="profileDetails.phoneno"
-        >
-        <br>
+        />
+        <br />
 
         <!--email -->
         <i class="far fa-envelope"></i>
@@ -60,8 +63,8 @@
           placeholder="eg: name@gmail.com."
           required
           v-model.trim="profileDetails.emailPersonal"
-        >
-        <br>
+        />
+        <br />
 
         <!--address-->
         <i class="far fa-address-book"></i>
@@ -73,8 +76,8 @@
           placeholder="eg: jorhat"
           required
           v-model="profileDetails.address"
-        >
-        <br>
+        />
+        <br />
 
         <!--about myself-->
         <i class="fas fa-address-card"></i>
@@ -88,7 +91,7 @@
         ></textarea>
 
         <!--submit button-->
-        <input type="submit" value="SUBMIT" class="submitbtn" @click.prevent="edit">
+        <input type="submit" value="SUBMIT" class="submitbtn" @click.prevent="edit" />
       </form>
     </div>
     <!--editpanel end-->
@@ -96,19 +99,19 @@
     <!--coverphoto and name-->
     <div class="coverpic">
       <div class="coverpic_img">
-        <img :src="coverPic" id="coverimage" class="coverpic_img--pic" alt v-if="coverPic">
+        <img :src="coverPic" id="coverimage" class="coverpic_img--pic" alt v-if="coverPic" />
         <img
           src="../../assets/img/sf-boat.jpg"
           id="coverimage"
           class="coverpic_img--pic"
           alt
           v-else
-        >
+        />
       </div>
       <div class="coverpic_namebox">
         <h1 class="coverpic_name">
           <span class="coverpic_name--main textShadow">Hi, My Name Is</span>
-          <br>
+          <br />
           <span class="coverpic_name--sub textShadow">{{name}}</span>
         </h1>
       </div>
@@ -117,7 +120,7 @@
         <button class="btn">
           <i class="fas fa-camera font-medium btn_icon"></i>
         </button>
-        <input type="file" accept="image/jpeg" id="coverFilePicker" @change="changeCoverPic">
+        <input type="file" accept="image/jpeg" id="coverFilePicker" @change="changeCoverPic" />
       </div>
     </div>
     <!--coverphoto and name end-->
@@ -144,14 +147,14 @@
           class="personalinfo_img--pic"
           alt
           v-if="profilePic"
-        >
+        />
         <img
           src="../../assets/img/display.jpg"
           id="profileimage"
           class="personalinfo_img--pic"
           alt
           v-else
-        >
+        />
       </div>
 
       <div class="personalinfo_details">
@@ -160,29 +163,29 @@
           Name :
           <span class="personalinfo_details--info--text">{{name}}</span>
         </div>
-        <br>
+        <br />
         <div class="personalinfo_details--info">
           DOB :
           <span
             class="personalinfo_details--info--text"
           >{{profile.dob.day}}-{{profile.dob.month}}-{{profile.dob.year}}</span>
         </div>
-        <br>
+        <br />
         <div class="personalinfo_details--info">
           ID :
           <span class="personalinfo_details--info--text">{{uid}}</span>
         </div>
-        <br>
+        <br />
         <div class="personalinfo_details--info">
           Department :
           <span class="personalinfo_details--info--text">{{profile.department}}</span>
         </div>
-        <br>
+        <br />
         <div class="personalinfo_details--info">
           Designation :
           <span class="personalinfo_details--info--text">{{designation}}</span>
         </div>
-        <br>
+        <br />
       </div>
     </div>
     <!--personal deatils done-->

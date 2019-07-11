@@ -400,6 +400,7 @@ export let store = new Vuex.Store({
             })
         })
         .then(() => {
+          window.scrollTo(0, 0);
           router.push({ name: "Play", params: { id: payload } });
           state.show = true
         })
@@ -425,6 +426,75 @@ export let store = new Vuex.Store({
             state.registration.waiting.postMessage("skipWaiting");
           }
         });
+    },
+    deleteVideo(state, payload) {
+      let deleteRef
+      db.collection("uploadedVideos")
+        .doc(payload)
+        .get()
+        .then(doc => {
+          deleteRef = storage().refFromURL(doc.data().url)
+        })
+        .then(() => {
+          deleteRef
+            .delete()
+            .then(() => {
+              // delete video doc from db after video file delete
+              db.collection("uploadedVideos")
+                .doc(payload)
+                .delete()
+                .then(() => {
+                  alertSuccess("Video Deleted!")
+                })
+                .catch(error => {
+                  console.error(error.message)
+                  alertError("Error removing document")
+                })
+            })
+            .catch(error => {
+              console.error(error.message)
+            })
+        })
+        .catch(err => {
+          console.error(err.message)
+        })
+    },
+    editVideoDetails(state, payload) {
+      let editRef = db.collection('uploadedVideos').doc(payload.id)
+      editRef.update({
+        title: payload.title,
+        description: payload.description,
+        category: payload.category
+      })
+        .then(() => {
+          alertSuccess('Video details updated !')
+        })
+    },
+    createPlaylist(state, payload) {
+      let playlistRef = db.collection('playlist').doc()
+
+      playlistRef.set({
+        title: payload.title,
+        description: payload.description,
+        by: state.uid,
+        videos: firestore.FieldValue.arrayUnion(payload.id),
+        timestamp: firestore.FieldValue.serverTimestamp(),
+        thumbnail: payload.thumbnail
+      })
+        .then(() => {
+          db
+            .collection('uploadedVideos')
+            .doc(payload.id)
+            .set({
+              playList: playlistRef.id
+            },
+              {
+                merge: true
+              })
+            .then(() => {
+              alertSuccess('Video added to playlist !')
+            })
+        })
     }
   },
   actions: {
@@ -466,6 +536,15 @@ export let store = new Vuex.Store({
     },
     updateApp(context) {
       context.commit('updateApp')
+    },
+    deleteVideo(context, payload) {
+      context.commit('deleteVideo', payload)
+    },
+    editVideoDetails(context, payload) {
+      context.commit('editVideoDetails', payload)
+    },
+    createPlaylist(context, payload) {
+      context.commit('createPlaylist', payload)
     }
   }
 })

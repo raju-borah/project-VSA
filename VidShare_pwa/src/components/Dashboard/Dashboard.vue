@@ -1,148 +1,162 @@
 <template>
-  <div id="Dashboard">
+  <div id="Dashboard" class="dashboard">
     <Navbar />
 
-    <div class="dashboard">
-      <!-- floating upload button -->
-      <div class="dashboard__header">
-        <!-- the title  -->
-        <span class="font-medium dashboard__title">My videos</span>
+    <!-- floating upload button -->
+    <div class="dashboard__header">
+      <!-- the title  -->
+      <span class="font-medium dashboard__title">My videos</span>
 
-        <!-- the upload button on right side -->
-        <!-- LINK UPLOAD FORM HERE -->
-        <a class="floating--btn" @click.prevent="uploadForm">
-          <i class="fas fa-upload">upload</i>
-        </a>
-      </div>
+      <!-- the upload button on right side -->
+      <!-- LINK UPLOAD FORM HERE -->
+      <a class="floating--btn" @click.prevent="uploadForm">
+        <i class="fas fa-upload">upload</i>
+      </a>
+    </div>
 
-      <div class="dashboard__vcontainer">
-        <!-- the videos uploaded by user will be displayed in this division along with the details -->
+    <div class="dashboard__vcontainer">
+      <!-- the videos uploaded by user will be displayed in this division along with the details -->
+      <div class="vcard" v-for="video in videos" :key="video.id">
+        <!-- the thumbnail position  vcard 1 st part-->
         <div
-          class="vcard"
-          v-for="video in videos"
-          :key="video.id"
+          class="vcard--img"
+          :style="{backgroundImage: 'url(' +video.thumbnail + ')',}"
           @click.stop="redirectToPlay(video.id)"
         >
-          <!-- the thumbnail position  vcard 1 st part-->
-          <div class="vcard--img" :style="{backgroundImage: 'url(' +video.thumbnail + ')',}">
-            <!-- the tag for video  defining the category of video-->
-            <h1
-              class="vcard--tag vcard--tag--dashboard"
-              :class="{
+          <!-- the tag for video  defining the category of video-->
+          <h1
+            class="vcard--tag vcard--tag--dashboard"
+            :class="{
                 'vcard--tag--learning': video.category === 'Learning', 
                 'vcard--tag--event': video.category === 'Events', 
                 'vcard--tag--club': video.category === 'Club activities'
                 }"
-            >
-              {{video.category}}
-              <!-- the delete button  -->
-              <span class="dashboard--option">
-                <button class="u-end-text btn btn--trans videodelete">
-                  <i class="fas fa-list"></i>
-                </button>
-                <ul class="list--option list--option--plist">
-                  <li class="list--items list--items--option">
-                    <a href="/editvideo.html" class="btnlist font-xsmall">
-                      Edit title &
-                      description
-                    </a>
-                  </li>
-                  <li class="list--items list--items--option">
-                    <a href="/addplaylist.html" class="btnlist font-xsmall">
-                      Add
-                      video to playlist
-                    </a>
-                  </li>
-                  <li class="list--items list--items--option">
-                    <button class="btnlist btnlist--btn font-xsmall">
-                      Delete
-                      video
-                    </button>
-                  </li>
-                </ul>
-              </span>
-            </h1>
-          </div>
-          <!-- the division that contain the information of the video .It is the second part of the vcard -->
-          <div class="vcard__info">
-            <div class="vcard__info--title">
-              <!-- dynamiv title of the video -->
-              <span>{{video.title}}</span>
-            </div>
-            <!-- timestamp when the video was created -->
-            <span class="timestamp font-small">
-              Created on: {{video.timestamp}}
-              <!-- will be hhidden when opened in pc  -->
-              <span class="dashboard--option--1">
-                <button class="u-end-text btn btn--trans">
-                  <i class="fas fa-list"></i>
-                </button>
-                <ul class="list--option list--option--plist">
-                  <li class="list--items list--items--option">
-                    <a href="/editvideo.html" class="btnlist font-xsmall">
-                      Edit title &
-                      description
-                    </a>
-                  </li>
-                  <li class="list--items list--items--option">
-                    <a href="/addplaylist.html" class="btnlist font-xsmall">
-                      Add
-                      video to playlist
-                    </a>
-                  </li>
-                  <li class="list--items list--items--option">
-                    <button class="btnlist btnlist--btn font-xsmall">
-                      Delete
-                      video
-                    </button>
-                  </li>
-                </ul>
-              </span>
+          >
+            {{video.category}}
+            <!-- the delete button  -->
+            <span class="dashboard--option">
+              <button class="u-end-text btn btn--trans videodelete">
+                <i class="fas fa-list"></i>
+              </button>
+              <ul class="list--option list--option--plist">
+                <li class="list--items list--items--option">
+                  <a
+                    class="btnlist font-xsmall"
+                    @click.stop="editVideoDetails(video.id)"
+                  >Edit video details</a>
+                </li>
+                <li class="list--items list--items--option">
+                  <a
+                    class="btnlist font-xsmall"
+                    @click.stop="addToPlaylist(video.id, video.thumbnail)"
+                  >
+                    Add
+                    video to playlist
+                  </a>
+                </li>
+                <li class="list--items list--items--option">
+                  <button
+                    class="btnlist btnlist--btn font-xsmall"
+                    @click.stop="deleteVideo(video.id)"
+                  >
+                    Delete
+                    video
+                  </button>
+                </li>
+              </ul>
             </span>
-            <br />
-            <span style="font-weight: 550;">Description:</span>
-            <!-- dynamic descrptiob of the video -->
-            <span class="vcard__info--des">{{video.description}}</span>
-          </div>
+          </h1>
         </div>
-        <!-- video playlist cards -->
-        <div class="vcard" v-for="playlist in videoPlayList" :key="playlist.id">
-          <!-- the thumbnail position  vcard 1 st part-->
-          <div class="vcard--img" :style="{backgroundImage: 'url(' +playlist.thumbnail + ')',}">
-            <div class="playlist--details flex-center" style="align-items: center;">
-              <div>
-                <div class="font-small">{{playlist.totalVideos}}</div>
-                <div class="flex-center">
-                  <i class="fas fa-play-circle font-medium"></i>
-                </div>
+        <!-- the division that contain the information of the video .It is the second part of the vcard -->
+        <div class="vcard__info">
+          <div class="vcard__info--title">
+            <!-- dynamiv title of the video -->
+            <span>{{video.title}}</span>
+          </div>
+          <!-- timestamp when the video was created -->
+          <span class="timestamp font-small">
+            Created on: {{video.timestamp}}
+            <!-- will be hhidden when opened in pc  -->
+            <span class="dashboard--option--1">
+              <button class="u-end-text btn btn--trans">
+                <i class="fas fa-list"></i>
+              </button>
+              <ul class="list--option list--option--plist">
+                <li
+                  class="list--items list--items--option"
+                  @click.stop="editVideoDetails(video.id)"
+                >
+                  <a class="btnlist font-xsmall">
+                    Edit title &
+                    description
+                  </a>
+                </li>
+                <li
+                  class="list--items list--items--option"
+                  @click.stop="addToPlaylist(video.id, video.thumbnail)"
+                >
+                  <a class="btnlist font-xsmall">
+                    Add
+                    video to playlist
+                  </a>
+                </li>
+                <li class="list--items list--items--option">
+                  <button
+                    class="btnlist btnlist--btn font-xsmall"
+                    @click.stop="deleteVideo(video.id)"
+                  >
+                    Delete
+                    video
+                  </button>
+                </li>
+              </ul>
+            </span>
+          </span>
+          <br />
+          <span style="font-weight: 550;">Description:</span>
+          <!-- dynamic descrptiob of the video -->
+          <span class="vcard__info--des">{{video.description}}</span>
+        </div>
+      </div>
+      <!-- video playlist cards -->
+      <div class="vcard" v-for="playlist in videoPlayList" :key="playlist.id">
+        <!-- the thumbnail position  vcard 1 st part-->
+        <div class="vcard--img" :style="{backgroundImage: 'url(' +playlist.thumbnail + ')',}">
+          <div class="playlist--details flex-center" style="align-items: center;">
+            <div>
+              <div class="font-small">{{playlist.totalVideos}}</div>
+              <div class="flex-center">
+                <i class="fas fa-play-circle font-medium"></i>
               </div>
             </div>
           </div>
-          <!-- the division that contain the information of the video .It is the second part of the vcard -->
-          <div class="vcard__info">
-            <div class="vcard__info--title">
-              <!-- dynamiv title of the video -->
-              <span>{{playlist.title}}</span>
-            </div>
-            <!-- timestamp when the video was created -->
-            <span class="timestamp font-small">{{playlist.timestamp}}</span>
-            <button class="u-end-text btn btn--trans">
-              <i class="fas fa-list"></i>
-            </button>
-
-            <ul class="list--option list--option--plist">
-              <li class="list--items list--items--option">
-                <a href="/dashboardplaylist.html" class="btnlist font-xsmall">Edit playlist</a>
-              </li>
-            </ul>
-            <br />
-            <span style="font-weight: 550;">Description:</span>
-            <!-- dynamic descrptiob of the video -->
-            <span class="vcard__info--des">{{playlist.description}}</span>
-          </div>
         </div>
-        <!-- end of vcard -->
+        <!-- the division that contain the information of the video .It is the second part of the vcard -->
+        <div class="vcard__info">
+          <div class="vcard__info--title">
+            <!-- dynamiv title of the video -->
+            <span>{{playlist.title}}</span>
+          </div>
+          <!-- timestamp when the video was created -->
+          <span class="timestamp font-small">Created on: {{playlist.timestamp}}</span>
+          <button class="u-end-text btn btn--trans">
+            <i class="fas fa-list"></i>
+          </button>
+
+          <ul class="list--option list--option--plist">
+            <li class="list--items list--items--option">
+              <router-link :to="{name:'Playlist'}">
+                <a class="btnlist font-xsmall">Edit playlist</a>
+              </router-link>
+            </li>
+          </ul>
+          <br />
+          <span style="font-weight: 550;">Description:</span>
+          <!-- dynamic descrptiob of the video -->
+          <span class="vcard__info--des">{{playlist.description}}</span>
+        </div>
       </div>
+      <!-- end of vcard -->
     </div>
   </div>
 </template>
@@ -543,9 +557,6 @@ export default {
                       // playlist id
                       videoDetails["playListID"] =
                         select.options[select.selectedIndex].value;
-                      // playlist name
-                      // videoDetails["playListTitle"] =
-                      //   select.options[select.selectedIndex].text;
                       this.$store.dispatch("uploadVideo", videoDetails);
                       swal.close();
                     } else {
@@ -624,8 +635,6 @@ export default {
                   "#video-playlist"
                 ).value;
               }
-
-              // console.log(videoDetails.title, videoDetails.description, videoDetails.category);
               // title check
               if (videoDetails.title.trim().length >= 4) {
                 // category check
@@ -685,6 +694,216 @@ export default {
     },
     redirectToPlay(id) {
       this.$store.dispatch("getVideo", id);
+    },
+    deleteVideo(id) {
+      this.videos = this.videos.filter(video => {
+        // when id matches with applied id
+        // below condition retuns false
+        return video.id !== id;
+      });
+      this.$store.dispatch("deleteVideo", id);
+    },
+    editVideoDetails(id) {
+      swal.fire({
+        html:
+          `<h1 class="font-medium u-margin-bottom-small"><i class="fas fa-edit"></i>Edit Video Details</h1>` +
+          `<input type="text" class="form__input--upload form__input--upload--1" id="video-title" placeholder="Title">` +
+          `<textarea class="form__input--upload form__input--upload--1" id="video-description" placeholder="Description"></textarea>` +
+          `<select id="video-category" class="form__input--upload form__input--upload--2">
+                <option value="" selected disabled>Select Category</option>
+                <option value="Learning">Learning</option>
+                <option value="Events">Events</option>
+                <option value="Club activities">Club activities</option>
+            </select><br>` +
+          `<button class="btn btn--upload" type="submit" id="saveDetails">Save Changes</button>`,
+        focusConfirm: false,
+        showCloseButton: true,
+        showConfirmButton: false,
+        onOpen: dom => {
+          const save = dom.querySelector("#saveDetails");
+          let videoChanges = {
+            title: "",
+            description: "",
+            category: ""
+          };
+          const showWarning = msg => {
+            swal
+              .fire({
+                type: "warning",
+                text: msg
+              })
+              .then(() => {
+                this.editVideoDetails(id);
+              });
+          };
+          save.addEventListener("click", () => {
+            videoChanges.title = dom.querySelector("#video-title").value.trim();
+            videoChanges.description = dom
+              .querySelector("#video-description")
+              .value.trim();
+            videoChanges.category = dom.querySelector("#video-category").value;
+            //validation
+            if (videoChanges.title.trim().length >= 4) {
+              // category check
+              if (videoChanges.category.length > 0) {
+                swal.showLoading();
+                // check if title unique
+                db.collection("uploadedVideos")
+                  .where("by", "==", this.$store.state.uid)
+                  .where("title", "==", videoChanges.title)
+                  .get()
+                  .then(querySnaphot => {
+                    if (!querySnaphot.empty) {
+                      // title exist show warning
+                      showWarning(
+                        "You have already uploaded the video with same title! Please give unique title to your video"
+                      );
+                    } else {
+                      swal.close();
+                      videoChanges["id"] = id;
+                      this.$store.dispatch("editVideoDetails", videoChanges);
+                      //update outdated video in dashboard
+                      this.videos.forEach(video => {
+                        // when id matches with applied id
+                        if (video.id === id) {
+                          video.title = videoChanges.title;
+                          video.description = videoChanges.description;
+                          video.category = videoChanges.category;
+
+                          console.log(video);
+                        }
+                      });
+                    }
+                  });
+              } else {
+                showWarning("Please select video category!");
+              }
+            } else {
+              showWarning("Title cannot be less than 4char length!");
+            }
+          });
+        }
+      });
+    },
+    addToPlaylist(id, thumbnail) {
+      console.log(id, thumbnail);
+      swal.fire({
+        focusConfirm: false,
+        showCloseButton: true,
+        showConfirmButton: false,
+        html:
+          `<h1 class="font-medium u-margin-bottom-small"><i class="fas fa-edit"></i>Playlist</h1>` +
+          `<label for="playlistopt1" class="font-small">
+                <input type="radio" name="playlist" id="playlistopt1" />
+                Create a New Playlist
+            </label>` +
+          ` <div id="createplaylist" style="display: none;">
+                <input type="text" class="form__input--upload form__input--upload--1" id="playlist-title"
+                    placeholder="Title">
+                <textarea class="form__input--upload form__input--upload--1" id="playlist-description"
+                    placeholder="Description"></textarea>
+                <br>
+            </div><br>` +
+          `<label for="playlistopt2" class="font-small">
+                &nbsp;&nbsp; <input type="radio" name="playlist" id="playlistopt2" />
+                Add to Exsiting playlist
+            </label>` +
+          ` <div id="existingplaylist" style="display: none;">
+                <!-- for selecting the category -->
+                <select id="video-playlist" class="form__input--upload form__input--upload--2">
+                    <option value="" selected disabled>Select Playlist</option>
+                </select>
+            </div>
+            <br>` +
+          `<button class="btn btn--upload" type="submit" id="savePlaylist">Save Changes</button>`,
+        onOpen: dom => {
+          //  for createplaylist division selection
+          const createplaylist = dom.querySelector("#createplaylist");
+          //  for existing playlist division selection
+          const existingplaylist = dom.querySelector("#existingplaylist");
+          // radio button for create playlist and existing playlist
+          const crplaylist = dom.querySelector("#playlistopt1");
+          const explaylist = dom.querySelector("#playlistopt2");
+          // save changes button
+          const save = dom.querySelector("#savePlaylist");
+
+          crplaylist.addEventListener("click", function() {
+            createplaylist.style.display = "block";
+            existingplaylist.style.display = "none";
+          });
+
+          explaylist.addEventListener("click", function() {
+            existingplaylist.style.display = "block";
+            createplaylist.style.display = "none";
+          });
+          // show alert for errors or warning
+          const showWarning = msg => {
+            swal
+              .fire({
+                type: "warning",
+                text: msg
+              })
+              .then(() => {
+                this.addToPlaylist(id, thumbnail);
+              });
+          };
+
+          let playlistDetail = {
+            title: "",
+            description: ""
+          };
+
+          save.addEventListener("click", () => {
+            if (crplaylist.checked) {
+              // console.log("Create playlist");
+              playlistDetail["title"] = dom.querySelector(
+                "#playlist-title"
+              ).value;
+              playlistDetail["description"] = dom.querySelector(
+                "#playlist-description"
+              ).value;
+            }
+            if (explaylist.checked) {
+              playlistDetail["existingPlayList"] = dom.querySelector(
+                "#video-playlist"
+              ).value;
+            }
+            // validation
+            if (
+              playlistDetail.title.length > 4 &&
+              playlistDetail.description.length > 0
+            ) {
+              swal.showLoading();
+              let playListRef = db
+                .collection("playlist")
+                .where("by", "==", this.$store.state.uid)
+                .where("title", "==", playlistDetail.title);
+              playListRef.get().then(querySnaphot => {
+                if (!querySnaphot.empty) {
+                  // playlist title validation
+                  showWarning(
+                    "You have already created playlist with the same name! Please give unique title to your playlist"
+                  );
+                } else {
+                  playlistDetail["id"] = id;
+                  playlistDetail["thumbnail"] = thumbnail;
+                  this.$store.dispatch("createPlaylist", playlistDetail);
+                  swal.close();
+                  this.videos = this.videos.filter(video => {
+                    // when id matches with applied id
+                    // below condition retuns false
+                    return video.id !== id;
+                  });
+                }
+              });
+            } else {
+              showWarning(
+                "Playlist title should be greater than 4char long, title and description cannot be empty"
+              );
+            }
+          });
+        }
+      });
     }
   }
 };
