@@ -302,70 +302,70 @@ export let store = new Vuex.Store({
               state.url = downloadURL;
             })
             .then(() => {
-              videoRef.set({
-                title: payload.title,
-                description: payload.description,
-                thumbnail: payload.thumbnail,
-                timestamp: firestore.FieldValue.serverTimestamp(),
-                by: state.uid,
-                category: payload.category,
-                url: state.url
-              })
-                .then(() => {
-                  if (!payload.playListMode && !payload.playListExist) {
+              if (!payload.playListMode && !payload.playListExist) {
+                videoRef.set({
+                  title: payload.title,
+                  description: payload.description,
+                  thumbnail: payload.thumbnail,
+                  timestamp: firestore.FieldValue.serverTimestamp(),
+                  by: state.uid,
+                  category: payload.category,
+                  url: state.url
+                })
+                  .then(() => {
                     alertSuccess("Video uploaded!")
-                  }
-                  else if (payload.playListExist) {
+                  })
+              }
+              else if (payload.playListExist) {
+                db
+                  .collection('uploadedVideos')
+                  .doc(videoRef.id)
+                  .set({
+                    playList: payload.playListID
+                  },
+                    {
+                      merge: true
+                    })
+                  .then(() => {
                     db
-                      .collection('uploadedVideos')
-                      .doc(videoRef.id)
+                      .collection('playlist')
+                      .doc(payload.playListID)
                       .set({
-                        playList: payload.playListID
+                        videos: firestore.FieldValue.arrayUnion(videoRef.id)
                       },
                         {
                           merge: true
                         })
                       .then(() => {
-                        db
-                          .collection('playlist')
-                          .doc(payload.playListID)
-                          .set({
-                            videos: firestore.FieldValue.arrayUnion(videoRef.id)
-                          },
-                            {
-                              merge: true
-                            })
-                          .then(() => {
-                            alertSuccess('Video uploaded!')
-                          })
+                        alertSuccess('Video uploaded!')
                       })
-
-                  }
-                  else {
-                    playlistRef.set({
-                      title: payload.playListTitle,
-                      description: payload.playListDescription,
-                      by: state.uid,
-                      videos: firestore.FieldValue.arrayUnion(videoRef.id),
-                      timestamp: firestore.FieldValue.serverTimestamp(),
-                      thumbnail: payload.thumbnail
-                    })
-                      .then(() => {
-                        db
-                          .collection('uploadedVideos')
-                          .doc(videoRef.id)
-                          .set({
-                            playList: playlistRef.id
-                          },
-                            {
-                              merge: true
-                            })
-                          .then(() => {
-                            alertSuccess('Video uploaded!')
-                          })
-                      })
-                  }
+                  })
+              }
+              else {
+                playlistRef.set({
+                  title: payload.playListTitle,
+                  description: payload.playListDescription,
+                  by: state.uid,
+                  videos: firestore.FieldValue.arrayUnion(videoRef.id),
+                  timestamp: firestore.FieldValue.serverTimestamp(),
+                  thumbnail: payload.thumbnail
                 })
+                  .then(() => {
+                    db
+                      .collection('uploadedVideos')
+                      .doc(videoRef.id)
+                      .set({
+                        playList: playlistRef.id
+                      },
+                        {
+                          merge: true
+                        })
+                      .then(() => {
+                        alertSuccess('Video uploaded!')
+                      })
+                  })
+              }
+
             })
             .catch(err => {
               console.error(err)

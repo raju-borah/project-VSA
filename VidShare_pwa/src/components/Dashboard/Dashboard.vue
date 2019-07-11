@@ -143,7 +143,7 @@
             <i class="fas fa-list"></i>
           </button>
 
-          <ul class="list--option list--option--plist">
+          <ul class="list--option list--option--plist list-option-playlist">
             <li class="list--items list--items--option">
               <router-link :to="{name:'Playlist'}">
                 <a class="btnlist font-xsmall">Edit playlist</a>
@@ -262,11 +262,9 @@ export default {
     let vref = db
       .collection("uploadedVideos")
       .where("by", "==", this.$store.state.uid);
-
     let vplayListref = db
       .collection("playlist")
       .where("by", "==", this.$store.state.uid);
-
     // react to firebase firestore realtime snaphot
     vref.onSnapshot(snapshot => {
       //we will use docChanges() to get the type changes
@@ -302,11 +300,10 @@ export default {
         }
       });
     });
-
     vplayListref.onSnapshot(snapshot => {
       snapshot.docChanges().forEach(change => {
+        let doc = change.doc;
         if (change.type === "added") {
-          let doc = change.doc;
           if (doc.data().timestamp) {
             this.videoPlayList.push({
               //doc keeps id can retrive using;
@@ -329,6 +326,20 @@ export default {
               totalVideos: doc.data().videos.length
             });
           }
+        }
+        if (change.type === "modified") {
+          this.videoPlayList = this.videoPlayList.filter(playlist => {
+            return playlist.id !== doc.id;
+          });
+          this.videoPlayList.push({
+            //doc keeps id can retrive using;
+            id: doc.id,
+            // field that we have created can be retirve using;
+            title: doc.data().title,
+            description: doc.data().description,
+            thumbnail: doc.data().thumbnail,
+            totalVideos: doc.data().videos.length
+          });
         }
       });
     });
@@ -407,21 +418,21 @@ export default {
               existingplaylist.style.display = "none";
             });
 
-            explaylist.addEventListener("click", function() {
+            explaylist.addEventListener("click", () => {
               existingplaylist.style.display = "block";
               createplaylist.style.display = "none";
-              const option = document.createElement("option");
               swal.showLoading();
               for (let i = 1; i < select.length; i++) {
-                console.log(i);
                 select.remove(i);
               }
 
               //get all the playlist from firestore
               db.collection("playlist")
+                .where("by", "==", this.$store.state.uid)
                 .get()
                 .then(querySnaphot => {
                   querySnaphot.docs.forEach(doc => {
+                    const option = document.createElement("option");
                     option.text = doc.data().title;
                     option.value = doc.id;
                     select.appendChild(option);
@@ -645,7 +656,7 @@ export default {
                     if (crplaylist.checked) {
                       //playlist name and description validation
                       if (
-                        videoDetails.playListTitle.length > 4 &&
+                        videoDetails.playListTitle.length >= 4 &&
                         videoDetails.playListDescription.length > 0
                       ) {
                         //firestore validate if playlist title is unique
@@ -655,7 +666,7 @@ export default {
                         );
                       } else {
                         showWarning(
-                          "Playlist title should be greater than 4char long, title and description cannot be empty"
+                          "Playlist title should be atleast 4char long, title and description cannot be empty"
                         );
                       }
                     }
