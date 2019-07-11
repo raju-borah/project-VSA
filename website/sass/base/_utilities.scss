@@ -70,7 +70,14 @@
     margin-top: -3rem;
 
     background: black;
+    &--playlist{
+      @include respond(phone){
+        top: 10rem;
+        right: 4rem;
+      }
+    
 
+    }
     &--plist {
       margin-top: -3.5rem;
       margin-right: 0rem;
@@ -79,14 +86,15 @@
       @include respond(phone) {
         margin-right: 1rem;
       }
+
+
+    
     }
     &:hover {
       display: block;
     }
   }
-  @include respond(phone) {
-    height: 50%;
-  }
+ 
 
   &--items {
     margin: 1rem;

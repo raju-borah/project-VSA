@@ -63,7 +63,9 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* Disables pull-to-refresh but allows overscroll glow effects. */
+  overscroll-behavior-y: contain; }
 
 body {
   box-sizing: border-box; }
@@ -162,6 +164,10 @@ body {
     right: 3.5rem;
     margin-top: -3rem;
     background: black; }
+    @media (max-width: 824px) {
+      .list--option--playlist {
+        top: 10rem;
+        right: 4rem; } }
     .list--option--plist {
       margin-top: -3.5rem;
       margin-right: 0rem;
@@ -171,9 +177,6 @@ body {
           margin-right: 1rem; } }
     .list--option:hover {
       display: block; }
-  @media (max-width: 824px) {
-    .list {
-      height: 50%; } }
   .list--items {
     margin: 1rem; }
     .list--items--option {
