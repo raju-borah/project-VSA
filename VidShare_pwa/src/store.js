@@ -317,15 +317,16 @@ export let store = new Vuex.Store({
                   })
               }
               else if (payload.playListExist) {
-                db
-                  .collection('uploadedVideos')
-                  .doc(videoRef.id)
-                  .set({
-                    playList: payload.playListID
-                  },
-                    {
-                      merge: true
-                    })
+                videoRef.set({
+                  title: payload.title,
+                  description: payload.description,
+                  thumbnail: payload.thumbnail,
+                  timestamp: firestore.FieldValue.serverTimestamp(),
+                  by: state.uid,
+                  category: payload.category,
+                  url: state.url,
+                  playList: payload.playListID
+                })
                   .then(() => {
                     db
                       .collection('playlist')
@@ -351,15 +352,16 @@ export let store = new Vuex.Store({
                   thumbnail: payload.thumbnail
                 })
                   .then(() => {
-                    db
-                      .collection('uploadedVideos')
-                      .doc(videoRef.id)
-                      .set({
-                        playList: playlistRef.id
-                      },
-                        {
-                          merge: true
-                        })
+                    videoRef.set({
+                      title: payload.title,
+                      description: payload.description,
+                      thumbnail: payload.thumbnail,
+                      timestamp: firestore.FieldValue.serverTimestamp(),
+                      by: state.uid,
+                      category: payload.category,
+                      url: state.url,
+                      playList: playlistRef.id
+                    })
                       .then(() => {
                         alertSuccess('Video uploaded!')
                       })
@@ -430,7 +432,7 @@ export let store = new Vuex.Store({
     deleteVideo(state, payload) {
       let deleteRef
       db.collection("uploadedVideos")
-        .doc(payload)
+        .doc(payload.id)
         .get()
         .then(doc => {
           deleteRef = storage().refFromURL(doc.data().url)
@@ -441,14 +443,29 @@ export let store = new Vuex.Store({
             .then(() => {
               // delete video doc from db after video file delete
               db.collection("uploadedVideos")
-                .doc(payload)
+                .doc(payload.id)
                 .delete()
                 .then(() => {
-                  alertSuccess("Video Deleted!")
+                  if (!payload.deleteFromPlaylist) {
+                    alertSuccess("Video Deleted!")
+                  } else {
+                    db.collection('playlist')
+                      .doc(payload.playlistID)
+                      .update({
+                        'videos': firestore.FieldValue.arrayRemove(payload.id)
+                      })
+                      .then(() => {
+                        alertSuccess("Video Deleted!")
+                      })
+                      .catch(err => {
+                        console.error(err)
+                        alertError("Delete Error, please try again!")
+                      })
+                  }
                 })
                 .catch(error => {
                   console.error(error.message)
-                  alertError("Error removing document")
+                  alertError("Error removing video")
                 })
             })
             .catch(error => {
@@ -494,6 +511,52 @@ export let store = new Vuex.Store({
             .then(() => {
               alertSuccess('Video added to playlist !')
             })
+        })
+    },
+    addToPlaylist(state, payload) {
+      let listRef = db.collection('playlist').doc(payload.playlistID)
+      let vidRef = db.collection('uploadedVideos').doc(payload.videoID)
+
+      listRef.set({
+        videos: firestore.FieldValue.arrayUnion(payload.videoID)
+      },
+        {
+          merge: true
+        })
+        .then(() => {
+          vidRef.set({
+            playList: payload.playlistID
+          }, {
+              merge: true
+            })
+        })
+        .then(() => {
+          alertSuccess("Video Added to the playlist !")
+        })
+        .catch(err => {
+          console.error(err)
+          alertError("Failed to add video to playlist, please try again!")
+        })
+    },
+    removeFromPlaylist(state, payload) {
+      db.collection('playlist')
+        .doc(payload.playlistID)
+        .update({
+          'videos': firestore.FieldValue.arrayRemove(payload.videoID)
+        })
+        .then(() => {
+          db.collection("uploadedVideos")
+            .doc(payload.videoID)
+            .update({
+              playList: firestore.FieldValue.delete()
+            })
+            .then(() => {
+              alertSuccess("Video removed from playlist !")
+            })
+        })
+        .catch(err => {
+          console.error(err)
+          alertError("Delete Error, please try again!")
         })
     }
   },
@@ -545,6 +608,12 @@ export let store = new Vuex.Store({
     },
     createPlaylist(context, payload) {
       context.commit('createPlaylist', payload)
+    },
+    addToPlaylist(context, payload) {
+      context.commit('addToPlaylist', payload)
+    },
+    removeFromPlaylist(context, payload) {
+      context.commit('removeFromPlaylist', payload)
     }
   }
 })

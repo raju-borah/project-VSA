@@ -86,10 +86,7 @@
                   class="list--items list--items--option"
                   @click.stop="editVideoDetails(video.id)"
                 >
-                  <a class="btnlist font-xsmall">
-                    Edit title &
-                    description
-                  </a>
+                  <a class="btnlist font-xsmall">Edit video details</a>
                 </li>
                 <li
                   class="list--items list--items--option"
@@ -113,7 +110,9 @@
             </span>
           </span>
           <br />
-          <span style="font-weight: 550;">Description:</span>
+          <span style="font-weight: 550;">
+            <b>Description:</b>
+          </span>
           <!-- dynamic descrptiob of the video -->
           <span class="vcard__info--des">{{video.description}}</span>
         </div>
@@ -145,13 +144,15 @@
 
           <ul class="list--option list--option--plist list-option-playlist">
             <li class="list--items list--items--option">
-              <router-link :to="{name:'Playlist'}">
+              <router-link :to="{name:'Playlist', params:{playlistID: playlist.id}}">
                 <a class="btnlist font-xsmall">Edit playlist</a>
               </router-link>
             </li>
           </ul>
           <br />
-          <span style="font-weight: 550;">Description:</span>
+          <span style="font-weight: 550;">
+            <b>Description:</b>
+          </span>
           <!-- dynamic descrptiob of the video -->
           <span class="vcard__info--des">{{playlist.description}}</span>
         </div>
@@ -338,6 +339,7 @@ export default {
             title: doc.data().title,
             description: doc.data().description,
             thumbnail: doc.data().thumbnail,
+            timestamp: doc.data().timestamp.toDate(),
             totalVideos: doc.data().videos.length
           });
         }
@@ -422,8 +424,8 @@ export default {
               existingplaylist.style.display = "block";
               createplaylist.style.display = "none";
               swal.showLoading();
-              for (let i = 1; i < select.length; i++) {
-                select.remove(i);
+              for (let i = 1; i <= select.length; i++) {
+                select.removeChild(select.lastChild);
               }
 
               //get all the playlist from firestore
@@ -634,12 +636,12 @@ export default {
               videoDetails["file"] = file;
               if (crplaylist.checked) {
                 // console.log("Create playlist");
-                videoDetails["playListTitle"] = dom.querySelector(
-                  "#playlist-title"
-                ).value;
-                videoDetails["playListDescription"] = dom.querySelector(
-                  "#playlist-description"
-                ).value;
+                videoDetails["playListTitle"] = dom
+                  .querySelector("#playlist-title")
+                  .value.trim();
+                videoDetails["playListDescription"] = dom
+                  .querySelector("#playlist-description")
+                  .value.trim();
               }
               if (explaylist.checked) {
                 videoDetails["existingPlayList"] = dom.querySelector(
@@ -656,8 +658,8 @@ export default {
                     if (crplaylist.checked) {
                       //playlist name and description validation
                       if (
-                        videoDetails.playListTitle.length >= 4 &&
-                        videoDetails.playListDescription.length > 0
+                        videoDetails.playListTitle.trim().length >= 4 &&
+                        videoDetails.playListDescription.trim().length > 0
                       ) {
                         //firestore validate if playlist title is unique
                         fireValidateList(
@@ -712,7 +714,11 @@ export default {
         // below condition retuns false
         return video.id !== id;
       });
-      this.$store.dispatch("deleteVideo", id);
+      let deleteDetails = {
+        id: id,
+        deleteFromPlaylist: false
+      };
+      this.$store.dispatch("deleteVideo", deleteDetails);
     },
     editVideoDetails(id) {
       swal.fire({
@@ -780,8 +786,7 @@ export default {
                           video.title = videoChanges.title;
                           video.description = videoChanges.description;
                           video.category = videoChanges.category;
-
-                          console.log(video);
+                          video.timestamp;
                         }
                       });
                     }
@@ -797,7 +802,6 @@ export default {
       });
     },
     addToPlaylist(id, thumbnail) {
-      console.log(id, thumbnail);
       swal.fire({
         focusConfirm: false,
         showCloseButton: true,
@@ -837,15 +841,39 @@ export default {
           const explaylist = dom.querySelector("#playlistopt2");
           // save changes button
           const save = dom.querySelector("#savePlaylist");
+          const select = dom.querySelector("#video-playlist");
 
           crplaylist.addEventListener("click", function() {
             createplaylist.style.display = "block";
             existingplaylist.style.display = "none";
           });
 
-          explaylist.addEventListener("click", function() {
+          explaylist.addEventListener("click", () => {
             existingplaylist.style.display = "block";
             createplaylist.style.display = "none";
+            swal.showLoading();
+            for (let i = 1; i <= select.length; i++) {
+              select.removeChild(select.lastChild);
+            }
+
+            //get all the playlist from firestore
+            db.collection("playlist")
+              .where("by", "==", this.$store.state.uid)
+              .get()
+              .then(querySnaphot => {
+                querySnaphot.docs.forEach(doc => {
+                  const option = document.createElement("option");
+                  option.text = doc.data().title;
+                  option.value = doc.id;
+                  select.appendChild(option);
+                });
+                swal.hideLoading();
+              })
+              .catch(err => {
+                showWarning(
+                  "Playlist Error, please re-try! If problem still persist, please contact the developer."
+                );
+              });
           });
           // show alert for errors or warning
           const showWarning = msg => {
@@ -873,44 +901,57 @@ export default {
               playlistDetail["description"] = dom.querySelector(
                 "#playlist-description"
               ).value;
-            }
-            if (explaylist.checked) {
-              playlistDetail["existingPlayList"] = dom.querySelector(
-                "#video-playlist"
-              ).value;
-            }
-            // validation
-            if (
-              playlistDetail.title.length > 4 &&
-              playlistDetail.description.length > 0
-            ) {
-              swal.showLoading();
-              let playListRef = db
-                .collection("playlist")
-                .where("by", "==", this.$store.state.uid)
-                .where("title", "==", playlistDetail.title);
-              playListRef.get().then(querySnaphot => {
-                if (!querySnaphot.empty) {
-                  // playlist title validation
-                  showWarning(
-                    "You have already created playlist with the same name! Please give unique title to your playlist"
-                  );
-                } else {
-                  playlistDetail["id"] = id;
-                  playlistDetail["thumbnail"] = thumbnail;
-                  this.$store.dispatch("createPlaylist", playlistDetail);
-                  swal.close();
-                  this.videos = this.videos.filter(video => {
-                    // when id matches with applied id
-                    // below condition retuns false
-                    return video.id !== id;
-                  });
-                }
-              });
+
+              if (
+                playlistDetail.title.length > 4 &&
+                playlistDetail.description.length > 0
+              ) {
+                swal.showLoading();
+                let playListRef = db
+                  .collection("playlist")
+                  .where("by", "==", this.$store.state.uid)
+                  .where("title", "==", playlistDetail.title);
+                playListRef.get().then(querySnaphot => {
+                  if (!querySnaphot.empty) {
+                    // playlist title validation
+                    showWarning(
+                      "You have already created playlist with the same name! Please give unique title to your playlist"
+                    );
+                  } else {
+                    playlistDetail["id"] = id;
+                    playlistDetail["thumbnail"] = thumbnail;
+                    this.$store.dispatch("createPlaylist", playlistDetail);
+                    swal.close();
+                    this.videos = this.videos.filter(video => {
+                      // when id matches with applied id
+                      // below condition retuns false
+                      return video.id !== id;
+                    });
+                  }
+                });
+              } else {
+                showWarning(
+                  "Playlist title should be greater than 4char long, title and description cannot be empty"
+                );
+              }
+            } else if (explaylist.checked) {
+              const idObj = {
+                videoID: id,
+                playlistID: select.options[select.selectedIndex].value
+              };
+              if (idObj.playlistID) {
+                this.$store.dispatch("addToPlaylist", idObj);
+                swal.close();
+                this.videos = this.videos.filter(video => {
+                  // when id matches with applied id
+                  // below condition retuns false
+                  return video.id !== id;
+                });
+              } else {
+                showWarning("Please select a playlist!");
+              }
             } else {
-              showWarning(
-                "Playlist title should be greater than 4char long, title and description cannot be empty"
-              );
+              showWarning("Please select a option to proceed!");
             }
           });
         }
