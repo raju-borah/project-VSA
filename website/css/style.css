@@ -77,7 +77,7 @@ body {
   font-weight: 400;
   /* font-size: 16px;*/
   line-height: 1.7;
-  font-family: 'Averia Serif Libre', cursive; }
+  font-family: 'Averia Serif Libre'; }
 
 .heading {
   position: absolute;
@@ -345,7 +345,7 @@ border-radius for curved end of button
 .btn {
   font-size: 1.9rem;
   background-color: #eee;
-  font-family: 'Averia Serif Libre', cursive;
+  font-family: 'Averia Serif Libre';
   /* button hover */
   /* when clicked */ }
   @media (max-width: 824px) {
@@ -484,7 +484,7 @@ border-radius for curved end of button
   font-weight: 450;
   padding: 1rem;
   text-align: start;
-  font-family: 'Averia Serif Libre', cursive; }
+  font-family: 'Averia Serif Libre'; }
   .btnlist--btn {
     width: 100%; }
 
