@@ -623,7 +623,7 @@ export let store = new Vuex.Store({
                   .then(() => {
                     // delete video doc from db after video file delete
                     db.collection("uploadedVideos")
-                      .doc(payload.id)
+                      .doc(id)
                       .delete()
                   })
               })

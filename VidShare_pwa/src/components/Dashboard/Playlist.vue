@@ -52,7 +52,7 @@
               <li class="list--items list--items--option">
                 <button
                   class="btnlist btnlist--btn font-xsmall"
-                  @click.stop="deleteAllVideos(playlistDetails.id)"
+                  @click.stop="deleteAllVideos(playlistDetails.id, playlistDetails.videos)"
                 >
                   Delete all the
                   videos
@@ -178,22 +178,26 @@ export default {
       this.videoList.playlistID = doc.id;
 
       //get videos of the playlist
-      this.playlistDetails.videos.forEach(id => {
-        db.collection("uploadedVideos")
-          .doc(id)
-          .get()
-          .then(doc => {
-            let data = doc.data();
-            this.videoList.videos.push({
-              title: data.title,
-              description: data.description,
-              thumbnail: data.thumbnail,
-              id: doc.id,
-              by: data.by,
-              timestamp: data.timestamp.toDate()
+      if (this.playlistDetails.videos.length > 0) {
+        this.playlistDetails.videos.forEach(id => {
+          db.collection("uploadedVideos")
+            .doc(id)
+            .get()
+            .then(doc => {
+              let data = doc.data();
+              this.videoList.videos.push({
+                title: data.title,
+                description: data.description,
+                thumbnail: data.thumbnail,
+                id: doc.id,
+                by: data.by,
+                timestamp: data.timestamp.toDate()
+              });
             });
-          });
-      });
+        });
+      } else {
+        this.videoList.videos = [];
+      }
     });
   },
   methods: {
@@ -385,10 +389,10 @@ export default {
       };
       this.$store.dispatch("deletePlaylist", toRemove);
     },
-    deleteAllVideos(id) {
+    deleteAllVideos(id, videos) {
       let deleteOpt = {
         id: id,
-        videoIDs: this.playlistDetails.videos
+        videoIDs: videos
       };
       this.$store.dispatch("deleteAllVideos", deleteOpt);
     }
