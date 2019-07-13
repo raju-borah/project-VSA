@@ -358,7 +358,7 @@ export default {
             <p class="custom-text">No file Choosen yet !</p>
           </div>` +
             `<button type="button" class="btn btn--upload u-margin-bottom-medium" id="choose-video">CHOOSE A FILE</button>` +
-            `<input type="text" class="form__input--upload form__input--upload--1" id="upload-title" placeholder="Title" required>` +
+            `<input type="text" class="form__input--upload form__input--upload--1" id="upload-title" placeholder="Title (required, atleast 4char)" required>` +
             `<textarea class="form__input--upload form__input--upload--1" id="upload-description" placeholder="Description" required></textarea>` +
             `<select id="video-category" class="form__input--upload form__input--upload--2">
             <option value="" selected disabled>Select Category</option>
@@ -372,9 +372,9 @@ export default {
             </label>` +
             `<div id="createplaylist" style="display: none;">
                 <input type="text" class="form__input--upload form__input--upload--1" id="playlist-title"
-                    placeholder="Playlist Title">
+                    placeholder="Title (required, atleast 4char)">
                 <textarea class="form__input--upload form__input--upload--1" id="playlist-description"
-                    placeholder="Playlist Description"></textarea>
+                    placeholder="Description (required, atleast 4char)"></textarea>
                 <br>
            </div>` +
             `<br>
@@ -659,7 +659,7 @@ export default {
                       //playlist name and description validation
                       if (
                         videoDetails.playListTitle.trim().length >= 4 &&
-                        videoDetails.playListDescription.trim().length > 0
+                        videoDetails.playListDescription.trim().length >= 4
                       ) {
                         //firestore validate if playlist title is unique
                         fireValidateList(
@@ -668,7 +668,7 @@ export default {
                         );
                       } else {
                         showWarning(
-                          "Playlist title should be atleast 4char long, title and description cannot be empty"
+                          "Playlist title and description should be atleast 4char long, title and description cannot be empty"
                         );
                       }
                     }
@@ -724,7 +724,7 @@ export default {
       swal.fire({
         html:
           `<h1 class="font-medium u-margin-bottom-small"><i class="fas fa-edit"></i>Edit Video Details</h1>` +
-          `<input type="text" class="form__input--upload form__input--upload--1" id="video-title" placeholder="Title">` +
+          `<input type="text" class="form__input--upload form__input--upload--1" id="video-title" placeholder="Title (required, atleast 4char)">` +
           `<textarea class="form__input--upload form__input--upload--1" id="video-description" placeholder="Description"></textarea>` +
           `<select id="video-category" class="form__input--upload form__input--upload--2">
                 <option value="" selected disabled>Select Category</option>
@@ -814,9 +814,9 @@ export default {
             </label>` +
           ` <div id="createplaylist" style="display: none;">
                 <input type="text" class="form__input--upload form__input--upload--1" id="playlist-title"
-                    placeholder="Title">
+                    placeholder="Title (required, atleast 4char)">
                 <textarea class="form__input--upload form__input--upload--1" id="playlist-description"
-                    placeholder="Description"></textarea>
+                    placeholder="Description (required, atleast 4char)"></textarea>
                 <br>
             </div><br>` +
           `<label for="playlistopt2" class="font-small">
@@ -895,16 +895,16 @@ export default {
           save.addEventListener("click", () => {
             if (crplaylist.checked) {
               // console.log("Create playlist");
-              playlistDetail["title"] = dom.querySelector(
-                "#playlist-title"
-              ).value;
-              playlistDetail["description"] = dom.querySelector(
-                "#playlist-description"
-              ).value;
+              playlistDetail["title"] = dom
+                .querySelector("#playlist-title")
+                .value.trim();
+              playlistDetail["description"] = dom
+                .querySelector("#playlist-description")
+                .value.trim();
 
               if (
-                playlistDetail.title.length > 4 &&
-                playlistDetail.description.length > 0
+                playlistDetail.title.trim().length > 4 &&
+                playlistDetail.description.trim().length >= 4
               ) {
                 swal.showLoading();
                 let playListRef = db
@@ -931,7 +931,7 @@ export default {
                 });
               } else {
                 showWarning(
-                  "Playlist title should be greater than 4char long, title and description cannot be empty"
+                  "Playlist title and description should be greater than 4char long, title and description cannot be empty"
                 );
               }
             } else if (explaylist.checked) {

@@ -29,25 +29,33 @@
             </button>
 
             <ul class="list--option list--option--plist">
-              <li class="list--items list--items--option">
-                <a href="/editplaylist.html" class="btnlist font-xsmall">
-                  Edit title &
-                  description
-                </a>
+              <li
+                class="list--items list--items--option"
+                @click.stop="editPlaylistDetails(playlistDetails.id)"
+              >
+                <a class="btnlist font-xsmall">Edit Playlist details</a>
               </li>
               <li class="list--items list--items--option">
-                <a href="/addvideo.html" class="btnlist font-xsmall">
-                  Add
-                  video
-                </a>
+                <router-link :to="{name: 'AddVideo', params:{playlistID: playlistDetails.id}}">
+                  <a class="btnlist font-xsmall">
+                    Add
+                    video
+                  </a>
+                </router-link>
               </li>
               <li class="list--items list--items--option">
-                <button class="btnlist btnlist--btn font-xsmall">Delete playlist</button>
+                <button
+                  class="btnlist btnlist--btn font-xsmall"
+                  @click.stop="deletePlaylist(playlistDetails.id)"
+                >Delete playlist</button>
               </li>
               <li class="list--items list--items--option">
-                <button class="btnlist btnlist--btn font-xsmall">
+                <button
+                  class="btnlist btnlist--btn font-xsmall"
+                  @click.stop="deleteAllVideos(playlistDetails.id)"
+                >
                   Delete all the
-                  video
+                  videos
                 </button>
               </li>
             </ul>
@@ -156,54 +164,26 @@ export default {
   },
   beforeCreate() {
     // get playlist details
-    db.collection("playlist")
-      .doc(this.$route.params.playlistID)
-      .get()
-      .then(doc => {
-        let data = doc.data();
-        this.playlistDetails.title = data.title;
-        this.playlistDetails.description = data.description;
-        this.playlistDetails.thumbnail = data.thumbnail;
-        this.playlistDetails.timestamp = data.timestamp.toDate();
-        this.playlistDetails.videos = data.videos;
-        this.playlistDetails.by = data.by;
-        this.playlistDetails.id = doc.id;
-        this.videoList.playlistID = doc.id;
-      })
-      .then(() => {
-        // get the video details from the ids
-
-        this.playlistDetails.videos.forEach(id => {
-          db.collection("uploadedVideos")
-            .doc(id)
-            .get()
-            .then(doc => {
-              let data = doc.data();
-              this.videoList.videos.push({
-                title: data.title,
-                description: data.description,
-                thumbnail: data.thumbnail,
-                timestamp: data.timestamp.toDate(),
-                by: data.by,
-                id: doc.id
-              });
-            });
-        });
-      })
-      .catch(err => {
-        console.error(err);
-        swal.fire({
-          type: "error",
-          text: "Fetch error, please try again!"
-        });
-      });
+    let vplayListref = db
+      .collection("playlist")
+      .doc(this.$route.params.playlistID);
+    vplayListref.onSnapshot(doc => {
+      let data = doc.data();
+      this.playlistDetails.title = data.title;
+      this.playlistDetails.description = data.description;
+      this.playlistDetails.thumbnail = data.thumbnail;
+      this.playlistDetails.timestamp = data.timestamp.toDate();
+      this.playlistDetails.videos = data.videos;
+      this.playlistDetails.id = doc.id;
+      this.videoList.playlistID = doc.id;
+    });
   },
   methods: {
     editVideoDetails(id) {
       swal.fire({
         html:
           `<h1 class="font-medium u-margin-bottom-small"><i class="fas fa-edit"></i>Edit Video Details</h1>` +
-          `<input type="text" class="form__input--upload form__input--upload--1" id="video-title" placeholder="Title">` +
+          `<input type="text" class="form__input--upload form__input--upload--1" id="video-title" placeholder="Title (required, atleast 4char)">` +
           `<textarea class="form__input--upload form__input--upload--1" id="video-description" placeholder="Description"></textarea>` +
           `<select id="video-category" class="form__input--upload form__input--upload--2">
                 <option value="" selected disabled>Select Category</option>
@@ -307,6 +287,92 @@ export default {
         playlistID: this.videoList.playlistID
       };
       this.$store.dispatch("removeFromPlaylist", removeDetails);
+    },
+    editPlaylistDetails(id) {
+      swal.fire({
+        html:
+          `<h1 class="font-medium u-margin-bottom-small"><i class="fas fa-edit"></i>Edit Playlist Details</h1>` +
+          `<input type="text" class="form__input--upload form__input--upload--1" id="video-title" placeholder="Title (required, atleast 4char)">` +
+          `<textarea class="form__input--upload form__input--upload--1" id="video-description" placeholder="Description (required, atleast 4char)"></textarea><br>` +
+          `<button class="btn btn--upload" type="submit" id="saveDetails">Save Changes</button>`,
+        focusConfirm: false,
+        showCloseButton: true,
+        showConfirmButton: false,
+        onOpen: dom => {
+          const save = dom.querySelector("#saveDetails");
+          let playlistChanges = {
+            title: "",
+            description: ""
+          };
+          const showWarning = msg => {
+            swal
+              .fire({
+                type: "warning",
+                text: msg
+              })
+              .then(() => {
+                this.editPlaylistDetails(id);
+              });
+          };
+          save.addEventListener("click", () => {
+            playlistChanges.title = dom
+              .querySelector("#video-title")
+              .value.trim();
+            playlistChanges.description = dom
+              .querySelector("#video-description")
+              .value.trim();
+            //validation
+            if (playlistChanges.title.trim().length >= 4) {
+              // category check
+              if (playlistChanges.description.trim().length >= 4) {
+                swal.showLoading();
+                // check if title unique
+                db.collection("playlist")
+                  .where("by", "==", this.$store.state.uid)
+                  .where("title", "==", playlistChanges.title)
+                  .get()
+                  .then(querySnaphot => {
+                    if (!querySnaphot.empty) {
+                      // title exist show warning
+                      showWarning(
+                        "You have already created playlist with same title! Please give unique title to your playlist"
+                      );
+                    } else {
+                      swal.close();
+                      playlistChanges["id"] = id;
+                      this.$store.dispatch(
+                        "editPlaylistDetails",
+                        playlistChanges
+                      );
+                      //update outdated playlist description in dashboard
+                      this.playlistDetails.title = playlistChanges.title;
+                      this.playlistDetails.description =
+                        playlistChanges.description;
+                    }
+                  });
+              } else {
+                showWarning("Description cannot be less than 4char length!");
+              }
+            } else {
+              showWarning("Title cannot be less than 4char length!");
+            }
+          });
+        }
+      });
+    },
+    deletePlaylist(id) {
+      let toRemove = {
+        id: id,
+        videos: this.playlistDetails.videos
+      };
+      this.$store.dispatch("deletePlaylist", toRemove);
+    },
+    deleteAllVideos(id) {
+      let deleteOpt = {
+        id: id,
+        videoIDs: this.playlistDetails.videos
+      };
+      this.$store.dispatch("deleteAllVideos", deleteOpt);
     }
   }
 };
