@@ -176,6 +176,24 @@ export default {
       this.playlistDetails.videos = data.videos;
       this.playlistDetails.id = doc.id;
       this.videoList.playlistID = doc.id;
+
+      //get videos of the playlist
+      this.playlistDetails.videos.forEach(id => {
+        db.collection("uploadedVideos")
+          .doc(id)
+          .get()
+          .then(doc => {
+            let data = doc.data();
+            this.videoList.videos.push({
+              title: data.title,
+              description: data.description,
+              thumbnail: data.thumbnail,
+              id: doc.id,
+              by: data.by,
+              timestamp: data.timestamp.toDate()
+            });
+          });
+      });
     });
   },
   methods: {
