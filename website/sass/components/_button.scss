@@ -6,7 +6,7 @@ border-radius for curved end of button
 .btn {
   font-size: 1.9rem;
   background-color: $color-grey-light-2;
-  font-family: 'Averia Serif Libre', cursive;
+  font-family: 'Averia Serif Libre';
 
   @include respond(phone){
   font-size: 1.5rem;
@@ -189,7 +189,7 @@ border-radius for curved end of button
   font-weight: 450;
   padding: 1rem;
   text-align: start;
-  font-family: 'Averia Serif Libre', cursive;
+  font-family: 'Averia Serif Libre';
 
   &--btn{
     width: 100%;
