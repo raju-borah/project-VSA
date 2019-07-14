@@ -132,6 +132,11 @@
         }
       
         }
+        @media (max-width:361px) {
+        grid-template-columns: 45% 55%;
+
+            
+        }
       
     }
   }
