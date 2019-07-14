@@ -725,9 +725,13 @@ border-radius for curved end of button
   right: 7rem;
   top: -2rem; }
   .search--addvideo {
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -7rem;
     right: 0; }
+    @media (max-width: 824px) {
+      .search--addvideo {
+        top: -5rem;
+        right: -2rem; } }
   .search__input {
     position: absolute;
     top: 20px;

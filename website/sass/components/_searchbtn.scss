@@ -4,9 +4,14 @@
   top: -2rem;
 
   &--addvideo {
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -7rem;
     right: 0;
+    @include respond(phone){
+    top: -5rem;
+    right: -2rem;
+
+    }
   }
 
   //input area of the searcg button
