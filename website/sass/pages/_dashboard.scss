@@ -26,7 +26,7 @@
   &__vcontainer {
     display: grid;
     justify-content: center;
-   
+
     grid-template-rows: repeat(minmax(150px, min-content));
     grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
     grid-gap: 8rem;
@@ -34,10 +34,9 @@
     padding: 10rem;
     padding-top: 6rem;
 
-
-    &--addvideo{
+    &--addvideo {
       padding: 5rem;
-      grid-column-gap:13rem;
+      grid-column-gap: 13rem;
     }
     @include respond(tab-land) {
       padding: 4rem;
@@ -62,6 +61,13 @@
 // for the timpestamp of the video
 .timestamp {
   font-size: 1.4rem;
+
+  @include respond(phone) {
+    width: 107px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 // for the upload button
@@ -106,14 +112,14 @@
   box-shadow: 0rem 0rem 1rem rgba(#1e2a3b, 0.66);
 }
 
-.dashboard--option{
-  @include respond(phone){
+.dashboard--option {
+  @include respond(phone) {
     display: none;
   }
 
-  &--1{
+  &--1 {
     display: none;
-    @include respond(phone){
+    @include respond(phone) {
       display: inline;
     }
   }

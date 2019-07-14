@@ -1846,16 +1846,19 @@ border-radius for curved end of button
   grid-template-columns: 1fr 1fr; }
   .gridplaylist--1 {
     grid-template-rows: max-content;
-    grid-template-columns: .2fr .8fr; }
+    grid-template-columns: .3fr .7fr; }
     @media (max-width: 1367px) {
       .gridplaylist--1 {
         grid-template-columns: .5fr .5fr; } }
     @media (max-width: 824px) {
       .gridplaylist--1 {
-        grid-template-rows: 200px;
+        grid-template-rows: max-content;
         grid-template-columns: .5fr .5fr; }
         .gridplaylist--1 .playlist--desc {
           display: none; } }
+    @media (max-width: 320px) {
+      .gridplaylist--1 {
+        grid-template-columns: 140px 150px; } }
 
 .main {
   background-color: #fff; }
@@ -2118,6 +2121,12 @@ border-radius for curved end of button
 
 .timestamp {
   font-size: 1.4rem; }
+  @media (max-width: 824px) {
+    .timestamp {
+      width: 107px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; } }
 
 .floating--btn {
   position: absolute;
