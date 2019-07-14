@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import { auth, storage, firestore } from 'firebase'
 import db from './main'
 import { router } from './router'
+import { DH_CHECK_P_NOT_PRIME } from 'constants';
 
 Vue.use(Vuex)
 
@@ -317,15 +318,16 @@ export let store = new Vuex.Store({
                   })
               }
               else if (payload.playListExist) {
-                db
-                  .collection('uploadedVideos')
-                  .doc(videoRef.id)
-                  .set({
-                    playList: payload.playListID
-                  },
-                    {
-                      merge: true
-                    })
+                videoRef.set({
+                  title: payload.title,
+                  description: payload.description,
+                  thumbnail: payload.thumbnail,
+                  timestamp: firestore.FieldValue.serverTimestamp(),
+                  by: state.uid,
+                  category: payload.category,
+                  url: state.url,
+                  playList: payload.playListID
+                })
                   .then(() => {
                     db
                       .collection('playlist')
@@ -351,15 +353,16 @@ export let store = new Vuex.Store({
                   thumbnail: payload.thumbnail
                 })
                   .then(() => {
-                    db
-                      .collection('uploadedVideos')
-                      .doc(videoRef.id)
-                      .set({
-                        playList: playlistRef.id
-                      },
-                        {
-                          merge: true
-                        })
+                    videoRef.set({
+                      title: payload.title,
+                      description: payload.description,
+                      thumbnail: payload.thumbnail,
+                      timestamp: firestore.FieldValue.serverTimestamp(),
+                      by: state.uid,
+                      category: payload.category,
+                      url: state.url,
+                      playList: playlistRef.id
+                    })
                       .then(() => {
                         alertSuccess('Video uploaded!')
                       })
@@ -430,7 +433,7 @@ export let store = new Vuex.Store({
     deleteVideo(state, payload) {
       let deleteRef
       db.collection("uploadedVideos")
-        .doc(payload)
+        .doc(payload.id)
         .get()
         .then(doc => {
           deleteRef = storage().refFromURL(doc.data().url)
@@ -441,14 +444,29 @@ export let store = new Vuex.Store({
             .then(() => {
               // delete video doc from db after video file delete
               db.collection("uploadedVideos")
-                .doc(payload)
+                .doc(payload.id)
                 .delete()
                 .then(() => {
-                  alertSuccess("Video Deleted!")
+                  if (!payload.deleteFromPlaylist) {
+                    alertSuccess("Video Deleted!")
+                  } else {
+                    db.collection('playlist')
+                      .doc(payload.playlistID)
+                      .update({
+                        'videos': firestore.FieldValue.arrayRemove(payload.id)
+                      })
+                      .then(() => {
+                        alertSuccess("Video Deleted!")
+                      })
+                      .catch(err => {
+                        console.error(err)
+                        alertError("Delete Error, please try again!")
+                      })
+                  }
                 })
                 .catch(error => {
                   console.error(error.message)
-                  alertError("Error removing document")
+                  alertError("Error removing video")
                 })
             })
             .catch(error => {
@@ -494,6 +512,129 @@ export let store = new Vuex.Store({
             .then(() => {
               alertSuccess('Video added to playlist !')
             })
+        })
+    },
+    addToPlaylist(state, payload) {
+      let listRef = db.collection('playlist').doc(payload.playlistID)
+      let vidRef = db.collection('uploadedVideos').doc(payload.videoID)
+
+      listRef.set({
+        videos: firestore.FieldValue.arrayUnion(payload.videoID)
+      },
+        {
+          merge: true
+        })
+        .then(() => {
+          vidRef.set({
+            playList: payload.playlistID
+          }, {
+              merge: true
+            })
+        })
+        .then(() => {
+          alertSuccess("Video Added to the playlist !")
+        })
+        .catch(err => {
+          console.error(err)
+          alertError("Failed to add video to playlist, please try again!")
+        })
+    },
+    removeFromPlaylist(state, payload) {
+      db.collection('playlist')
+        .doc(payload.playlistID)
+        .update({
+          'videos': firestore.FieldValue.arrayRemove(payload.videoID)
+        })
+        .then(() => {
+          db.collection("uploadedVideos")
+            .doc(payload.videoID)
+            .update({
+              playList: firestore.FieldValue.delete()
+            })
+            .then(() => {
+              alertSuccess("Video removed from playlist !")
+            })
+        })
+        .catch(err => {
+          console.error(err)
+          alertError("Delete Error, please try again!")
+        })
+    },
+    editPlaylistDetails(state, payload) {
+      db
+        .collection('playlist')
+        .doc(payload.id)
+        .update({
+          title: payload.title,
+          description: payload.description
+        })
+        .then(() => {
+          alertSuccess("Playlist details updated!")
+        })
+        .catch(err => {
+          console.error(err)
+          alertError("Cannot update, please try again!")
+        })
+    },
+    deletePlaylist(state, payload) {
+      db
+        .collection('playlist')
+        .doc(payload.id)
+        .delete()
+        .then(() => {
+          payload.videos.forEach(id => {
+            db
+              .collection('uploadedVideos')
+              .doc(id)
+              .update({
+                playList: firestore.FieldValue.delete()
+              })
+          })
+        })
+        .then(() => {
+          router.push({ name: "Dashboard" });
+          alertSuccess("Playlist deleted!")
+        })
+        .catch(err => {
+          console.error(err)
+          alertError("Playlist delete error, please try again!")
+        })
+    },
+    deleteAllVideos(state, payload) {
+      db.collection('playlist')
+        .doc(payload.id)
+        .set({
+          'videos': []
+        }, {
+            merge: true
+          })
+        .then(() => {
+          payload.videoIDs.forEach(id => {
+            let deleteRef
+            db.collection("uploadedVideos")
+              .doc(id)
+              .get()
+              .then(doc => {
+                deleteRef = storage().refFromURL(doc.data().url)
+              })
+              .then(() => {
+                deleteRef
+                  .delete()
+                  .then(() => {
+                    // delete video doc from db after video file delete
+                    db.collection("uploadedVideos")
+                      .doc(id)
+                      .delete()
+                  })
+              })
+          })
+        })
+        .then(() => {
+          alertSuccess("All videos deleted!")
+        })
+        .catch(err => {
+          console.error(err)
+          alertError("Delete Error, please try again!")
         })
     }
   },
@@ -545,6 +686,21 @@ export let store = new Vuex.Store({
     },
     createPlaylist(context, payload) {
       context.commit('createPlaylist', payload)
+    },
+    addToPlaylist(context, payload) {
+      context.commit('addToPlaylist', payload)
+    },
+    removeFromPlaylist(context, payload) {
+      context.commit('removeFromPlaylist', payload)
+    },
+    editPlaylistDetails(context, payload) {
+      context.commit('editPlaylistDetails', payload)
+    },
+    deletePlaylist(context, payload) {
+      context.commit('deletePlaylist', payload)
+    },
+    deleteAllVideos(context, payload) {
+      context.commit('deleteAllVideos', payload)
     }
   }
 })

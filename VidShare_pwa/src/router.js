@@ -55,9 +55,14 @@ export const router = new Router({
       component: () => import(/* webpackChunkName: "Play" */ './components/Profile/Profile.vue')
     },
     {
-      path: '/dashboard/playlist',
+      path: '/dashboard/playlist/:playlistID',
       name: 'Playlist',
       component: () => import(/* webpackChunkName: "Playlist" */ './components/Dashboard/Playlist.vue')
+    },
+    {
+      path: '/dashboard/playlist/addvideo/:playlistID',
+      name: 'AddVideo',
+      component: () => import(/* webpackChunkName: "AddVideo" */ './components/Dashboard/AddVideo.vue')
     }
   ]
 })
