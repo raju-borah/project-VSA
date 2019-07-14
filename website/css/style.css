@@ -2121,12 +2121,11 @@ border-radius for curved end of button
 
 .timestamp {
   font-size: 1.4rem; }
-  @media (max-width: 824px) {
-    .timestamp {
-      width: 107px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis; } }
+  .timestamps {
+    width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 .floating--btn {
   position: absolute;

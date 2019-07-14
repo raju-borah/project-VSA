@@ -61,13 +61,14 @@
 // for the timpestamp of the video
 .timestamp {
   font-size: 1.4rem;
-
-  @include respond(phone) {
-    width: 107px;
+&s{
+  
+    width: 140px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+}
+ 
 }
 
 // for the upload button
