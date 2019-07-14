@@ -2119,7 +2119,7 @@ border-radius for curved end of button
 .timestamp {
   font-size: 1.4rem; }
   .timestamps {
-    width: 140px;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
