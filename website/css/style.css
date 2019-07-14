@@ -1856,9 +1856,6 @@ border-radius for curved end of button
         grid-template-columns: .5fr .5fr; }
         .gridplaylist--1 .playlist--desc {
           display: none; } }
-    @media (max-width: 320px) {
-      .gridplaylist--1 {
-        grid-template-columns: 140px 150px; } }
 
 .main {
   background-color: #fff; }
@@ -2126,6 +2123,10 @@ border-radius for curved end of button
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
+    @media (max-width: 824px) {
+      .timestamps {
+        width: 120px;
+        font-size: 1.58rem; } }
 
 .floating--btn {
   position: absolute;

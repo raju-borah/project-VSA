@@ -120,7 +120,6 @@
 
         @include respond(nohd){
         grid-template-columns: .5fr .5fr;
-
         }
         @include respond(phone){
         grid-template-rows: max-content;
@@ -131,10 +130,6 @@
         }
 
         }
-        @media (max-width:320px) {
-
-        grid-template-columns:140px 150px ;
-            
-        }
+      
     }
   }

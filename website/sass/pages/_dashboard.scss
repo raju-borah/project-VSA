@@ -67,6 +67,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+
+    @include respond(phone){
+    width: 120px;
+    font-size: 1.58rem;
+
+    }
 }
  
 }
