@@ -120,7 +120,11 @@
       <!-- video playlist cards -->
       <div class="vcard" v-for="playlist in videoPlayList" :key="playlist.id">
         <!-- the thumbnail position  vcard 1 st part-->
-        <div class="vcard--img" :style="{backgroundImage: 'url(' +playlist.thumbnail + ')',}">
+        <div
+          class="vcard--img"
+          :style="{backgroundImage: 'url(' +playlist.thumbnail + ')',}"
+          @click.stop="redirectToPlayPlaylist(playlist.id)"
+        >
           <div class="playlist--details flex-center" style="align-items: center;">
             <div>
               <div class="font-small">{{playlist.totalVideos}}</div>
@@ -706,7 +710,11 @@ export default {
       }
     },
     redirectToPlay(id) {
-      this.$store.dispatch("getVideo", id);
+      // this.$store.dispatch("getVideo", id);
+      this.$router.push({ name: Play, params: { is: 0 } });
+    },
+    redirectToPlayPlaylist(id) {
+      this.$store.dispatch("getPlaylistVideos", id);
     },
     deleteVideo(id) {
       this.videos = this.videos.filter(video => {

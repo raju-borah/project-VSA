@@ -1,5 +1,5 @@
 <template>
-  <video ref="videoPlayer" class="video-js vjs-big-play-centered vjs-default-skin"></video>
+  <video ref="videoPlayer" class="video-js vjs-big-play-centered vjs-default-skin player__container--1"></video>
 </template>
 
 <script>

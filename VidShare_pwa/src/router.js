@@ -44,7 +44,7 @@ export const router = new Router({
       component: () => import(/* webpackChunkName: "Account" */ './components/Dashboard/Dashboard.vue')
     },
     {
-      path: '/play/:id',
+      path: '/play/:id/playlist/:is',
       name: 'Play',
       props: true,
       component: () => import(/* webpackChunkName: "Play" */ './components/Play/Play.vue')
