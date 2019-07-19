@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import { auth, storage, firestore } from 'firebase'
 import db from './main'
 import { router } from './router'
-import { DH_CHECK_P_NOT_PRIME } from 'constants';
+
 
 Vue.use(Vuex)
 
@@ -77,6 +77,8 @@ export let store = new Vuex.Store({
     show: false,
 
     //current video details fetched from firebase
+    videoIDs: [],
+    playlistVideos: [],
     videoDetails: {
       title: '',
       description: '',
@@ -404,9 +406,15 @@ export let store = new Vuex.Store({
         })
         .then(() => {
           window.scrollTo(0, 0);
-          router.push({ name: "Play", params: { id: payload } });
+          router.push({ name: "Play", params: { id: payload, is: 0 } });
           state.show = true
         })
+        .catch(err => {
+          console.error(err)
+          alertError('Video load error, please try again!')
+        })
+
+
     },
     updateApp(state) {
       swal
@@ -636,6 +644,55 @@ export let store = new Vuex.Store({
           console.error(err)
           alertError("Delete Error, please try again!")
         })
+    },
+    getPlaylistVideos(state, payload) {
+      let playlistRef = db.collection('playlist').doc(payload)
+      let userDetails = {
+        name: '',
+        profile: ''
+      }
+      playlistRef
+        .get()
+        .then(doc => {
+          // getting user details who uploaded the video
+          db.collection('uploadedVideos').doc(id)
+            .get()
+            .then(doc => {
+              doc.collection('validuser')
+                .doc(doc.data().by)
+                .get()
+                .then(doc => {
+                  userDetails.name = doc.data().name
+                  userDetails.profile = doc.data().profilePic
+                })
+            })
+            .catch(err => {
+              console.error(err)
+              alertError("Unable to get the uploader details, please try again!")
+            })
+          // loop for getting all the videos details from the ids in array
+          doc.data().videos.forEach(id => {
+            state.playlistVideos.push({
+              title: doc.data().title,
+              description: doc.data().description,
+              thumbnail: doc.data().thumbnail,
+              uploadedBy: userDetails.name,
+              uploadedByThumbnail: userDetails.profile,
+              category: doc.data().category,
+              timestamp: doc.data().timestamp.toDate(),
+              playList: doc.data().playList,
+              source: doc.data().url
+            })
+          })
+        })
+        .then(() => {
+          window.scrollTo(0, 0);
+          router.push({ name: "Play", params: { id: payload } });
+        })
+        .catch(err => {
+          console.error(err)
+          alertError('Playlist load error, please try again!')
+        })
     }
   },
   actions: {
@@ -701,6 +758,9 @@ export let store = new Vuex.Store({
     },
     deleteAllVideos(context, payload) {
       context.commit('deleteAllVideos', payload)
+    },
+    getPlaylistVideos(context, payload) {
+      context.commit('getPlaylistVideos', payload)
     }
   }
 })

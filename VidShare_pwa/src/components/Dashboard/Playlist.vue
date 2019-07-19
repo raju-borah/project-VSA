@@ -55,7 +55,7 @@
                   @click.stop="deleteAllVideos(playlistDetails.id, playlistDetails.videos)"
                 >
                   Delete all the
-                  videos
+                  video
                 </button>
               </li>
             </ul>
@@ -69,7 +69,7 @@
             </span>
             <br />
             <!-- dynamic descrptiob of the video -->
-            <span class="vcard__info--des">{{playlistDetails.description}}.</span>
+            <span class="vcard__info--des">{{playlistDetails.description}}</span>
           </div>
         </div>
         <!-- end of vcard -->
@@ -93,7 +93,8 @@
                 <span>{{video.title}}</span>
               </div>
               <!-- timestamp when the video was created -->
-              <span class="timestamp font-small">Created on: {{video.timestamp}}</span>
+              <span class="timestamp font-small">Created on:</span>
+              <p class="timestamps">{{video.timestamp}}</p>
               <button class="u-end-text btn btn--trans">
                 <i class="fas fa-list"></i>
               </button>
@@ -178,26 +179,24 @@ export default {
       this.videoList.playlistID = doc.id;
 
       //get videos of the playlist
-      if (this.playlistDetails.videos.length > 0) {
-        this.playlistDetails.videos.forEach(id => {
-          db.collection("uploadedVideos")
-            .doc(id)
-            .get()
-            .then(doc => {
-              let data = doc.data();
-              this.videoList.videos.push({
-                title: data.title,
-                description: data.description,
-                thumbnail: data.thumbnail,
-                id: doc.id,
-                by: data.by,
-                timestamp: data.timestamp.toDate()
-              });
+
+      this.videoList.videos = [];
+      this.playlistDetails.videos.forEach(id => {
+        db.collection("uploadedVideos")
+          .doc(id)
+          .get()
+          .then(doc => {
+            let data = doc.data();
+            this.videoList.videos.push({
+              title: data.title,
+              description: data.description,
+              thumbnail: data.thumbnail,
+              id: doc.id,
+              by: data.by,
+              timestamp: data.timestamp.toDate()
             });
-        });
-      } else {
-        this.videoList.videos = [];
-      }
+          });
+      });
     });
   },
   methods: {

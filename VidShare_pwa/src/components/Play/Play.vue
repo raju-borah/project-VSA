@@ -335,6 +335,11 @@ export default {
   },
   beforeCreate() {
     this.$store.state.show = false;
+    // let idRef = {
+    //   id: this.$route.params.id,
+    //   isPlaylist: this.$route.params
+    // };
+    console.log(this.$route.params);
     this.$store.dispatch("getVideo", this.$route.params.id);
   }
 };
