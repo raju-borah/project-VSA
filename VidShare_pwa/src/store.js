@@ -65,7 +65,6 @@ export let store = new Vuex.Store({
       autoplay: true,
       controls: true,
       preload: "auto",
-      fluid: true,
       playbackRates: [1, 1.5, 2],
       sources: [
         {
