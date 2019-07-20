@@ -87,7 +87,12 @@ body {
   overscroll-behavior-y: contain;
   font-family: 'Averia Serif Libre';
 }
+body {
+  box-sizing: border-box; }
 
+a {
+  text-decoration: none; }
+  
 .heading {
   position: absolute;
   top: 1%;
