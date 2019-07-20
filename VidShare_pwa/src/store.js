@@ -78,6 +78,8 @@ export let store = new Vuex.Store({
     //current video details fetched from firebase
     videoIDs: [],
     playlistVideos: [],
+    playlistVideoDetails: [],
+    playlistVideoIndex: 0,
     videoDetails: {
       title: '',
       description: '',
@@ -381,7 +383,8 @@ export let store = new Vuex.Store({
       );
     },
     getVideo(state, payload) {
-      let vidRef = db.collection('uploadedVideos').doc(payload)
+      state.show = false
+      let vidRef = db.collection('uploadedVideos').doc(payload.id)
       vidRef
         .get()
         .then(doc => {
@@ -402,11 +405,14 @@ export let store = new Vuex.Store({
               state.videoDetails.uploadedBy = doc.data().name
               state.videoDetails.uploadedByThumbnail = doc.data().profilePic
             })
-        })
-        .then(() => {
-          window.scrollTo(0, 0);
-          router.push({ name: "Play", params: { id: payload, is: 0 } });
-          state.show = true
+            .then(() => {
+              window.scrollTo(0, 0);
+              state.show = true
+            })
+            .catch(err => {
+              console.error(err)
+              alertError("Please try again!")
+            })
         })
         .catch(err => {
           console.error(err)
@@ -645,7 +651,9 @@ export let store = new Vuex.Store({
         })
     },
     getPlaylistVideos(state, payload) {
-      let playlistRef = db.collection('playlist').doc(payload)
+      state.show = false
+      state.playlistVideos = []
+      let playlistRef = db.collection('playlist').doc(payload.id)
       let userDetails = {
         name: '',
         profile: ''
@@ -654,39 +662,53 @@ export let store = new Vuex.Store({
         .get()
         .then(doc => {
           // getting user details who uploaded the video
-          db.collection('uploadedVideos').doc(id)
+          db.collection('validuser')
+            .doc(doc.data().by)
             .get()
             .then(doc => {
-              doc.collection('validuser')
-                .doc(doc.data().by)
-                .get()
-                .then(doc => {
-                  userDetails.name = doc.data().name
-                  userDetails.profile = doc.data().profilePic
-                })
+              userDetails.name = doc.data().name
+              userDetails.profile = doc.data().profilePic
             })
             .catch(err => {
               console.error(err)
-              alertError("Unable to get the uploader details, please try again!")
+              alertError("Please try again!")
             })
+          const check = doc.data().videos.length - 1
           // loop for getting all the videos details from the ids in array
-          doc.data().videos.forEach(id => {
-            state.playlistVideos.push({
-              title: doc.data().title,
-              description: doc.data().description,
-              thumbnail: doc.data().thumbnail,
-              uploadedBy: userDetails.name,
-              uploadedByThumbnail: userDetails.profile,
-              category: doc.data().category,
-              timestamp: doc.data().timestamp.toDate(),
-              playList: doc.data().playList,
-              source: doc.data().url
-            })
+          doc.data().videos.forEach((id, i) => {
+            db.collection('uploadedVideos')
+              .doc(id)
+              .get()
+              .then(doc => {
+                state.playlistVideos.push({
+                  sources: [
+                    {
+                      src: doc.data().url,
+                      type: "video/mp4"
+                    }
+                  ],
+                })
+
+                state.playlistVideoDetails.push({
+                  title: doc.data().title,
+                  description: doc.data().description,
+                  category: doc.data().category,
+                  thumbnail: doc.data().thumbnail,
+                  playList: doc.data().playList,
+                  uploadedBy: userDetails.name,
+                  timestamp: doc.data().timestamp.toDate(),
+                  uploadedByThumbnail: userDetails.profile
+                })
+              })
+              .then(() => {
+                if (check === i) {
+                  state.show = true
+                }
+              })
           })
         })
         .then(() => {
-          window.scrollTo(0, 0);
-          router.push({ name: "Play", params: { id: payload } });
+          window.scrollTo(0, 0);;
         })
         .catch(err => {
           console.error(err)

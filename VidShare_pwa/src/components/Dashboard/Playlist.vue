@@ -295,7 +295,7 @@ export default {
       this.$store.dispatch("deleteVideo", deleteDetails);
     },
     redirectToPlay(id) {
-      this.$store.dispatch("getVideo", id);
+      this.$router.push({ name: "Play", params: { id: id, is: 0 } });
     },
     removeFromPlaylist(id) {
       this.videoList.videos = this.videoList.videos.filter(video => {
