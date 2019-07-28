@@ -710,11 +710,10 @@ export default {
       }
     },
     redirectToPlay(id) {
-      // this.$store.dispatch("getVideo", id);
-      this.$router.push({ name: Play, params: { is: 0 } });
+      this.$router.push({ name: "Play", params: { id: id, is: "0" } });
     },
     redirectToPlayPlaylist(id) {
-      this.$store.dispatch("getPlaylistVideos", id);
+      this.$router.push({ name: "Play", params: { id: id, is: "1" } });
     },
     deleteVideo(id) {
       this.videos = this.videos.filter(video => {
