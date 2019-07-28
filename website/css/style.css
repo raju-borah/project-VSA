@@ -3425,6 +3425,9 @@ button:focus {
   display: grid;
   grid-template-rows: 80px 594px 80px;
   grid-template-columns: 1fr; }
+  @media (max-width: 824px) {
+    .addvideo {
+      grid-template-rows: 80px 500px 80px; } }
   .addvideo--top {
     background-image: linear-gradient(to right, rgba(41, 152, 255, 0.88), rgba(1, 42, 87, 0.88));
     padding: 2rem; }

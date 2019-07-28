@@ -4,10 +4,14 @@
   display: grid;
   grid-template-rows: 80px 594px 80px;
   grid-template-columns: 1fr;
-  &--top{
-    background-image: linear-gradient(to right, rgba($color-tertiary-light, 0.88), rgba($color-tertiary-dark-1, 0.88));
+@include respond(phone){
+  grid-template-rows: 80px 500px 80px;
 
-      padding: 2rem;
+}
+
+  &--top {
+    background-image: linear-gradient(to right, rgba($color-tertiary-light, 0.88), rgba($color-tertiary-dark-1, 0.88));
+    padding: 2rem;
   }
   &--mid {
     overflow-y: scroll;
@@ -18,6 +22,5 @@
     background-image: linear-gradient(to right, rgba($color-tertiary-light, 0.88), rgba($color-tertiary-dark-1, 0.88));
     padding: 2rem;
     padding-left: 6%;
-    
-}
+  }
 }
